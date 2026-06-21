@@ -1,31 +1,37 @@
-// app/music/page.tsx
-const tracks = [
-  { id: "HNYdZTp1qNc", title: "May 28, 2026" },
-  { id: "UT1c5Q81kVk", title: "horn stab silence" },
-  { id: "NQTRyHDDlK0", title: "May 23, 2026" },
-]
+// app/music/[id]/page.tsx
+"use client"
 
-export default function Music() {
+import { useParams } from "next/navigation"
+import Link from "next/link"
+import { musicCatalog } from "@/lib/musicCatalog"
+
+export default function MusicDetail() {
+  const params = useParams()
+  const id = params?.id as string
+  const track = musicCatalog.find(t => t.id === id)
+
+  if (!track) {
+    return (
+      <main style={{ padding: 40, color: "#e8e0d0", background: "#0b0b0f", minHeight: "100vh" }}>
+        <p>Track not found.</p>
+        <Link href="/music" style={{ color: "#5b7a99" }}>← Back</Link>
+      </main>
+    )
+  }
+
   return (
-    <main style={{maxWidth: 480, margin: "0 auto", padding: "48px 16px", fontFamily: "system-ui", background: "#0b0b0f", color: "#e8e0d0", minHeight: "100vh"}}>
-      <h1>RunningWolf SRK — Music</h1>
-      <p style={{opacity: 0.7}}>Viking / Norse selections only</p>
-      <div style={{display: "grid", gap: "32px", marginTop: "32px"}}>
-        {tracks.map(t => (
-          <div key={t.id}>
-            <div style={{position: "relative", width: "100%", aspectRatio: "9 / 16", borderRadius: 12, overflow: "hidden", background: "#000"}}>
-              <iframe
-                src={`https://www.youtube.com/embed/${t.id}`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0}}
-              />
-            </div>
-            <p style={{marginTop: 8, opacity: 0.8}}>{t.title}</p>
-          </div>
-        ))}
+    <main style={{ maxWidth: 480, margin: "0 auto", padding: "48px 16px", background: "#0b0b0f", minHeight: "100vh", color: "#e8e0d0", fontFamily: "system-ui" }}>
+      <Link href="/music" style={{ color: "#5b7a99" }}>← Back to Album Wall</Link>
+      <h1 style={{ marginTop: 24 }}>{track.tag}</h1>
+      <p style={{ opacity: 0.6 }}>{track.title}</p>
+      <div style={{ marginTop: 24, position: "relative", width: "100%", aspectRatio: "9 / 16", borderRadius: 12, overflow: "hidden", background: "#000" }}>
+        <iframe
+          src={`https://www.youtube.com/embed/${track.id}`}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
+        />
       </div>
-      <p style={{marginTop: 48}}><a href="/" style={{color: "#e8e0d0"}}>← Home</a></p>
     </main>
   )
 }
