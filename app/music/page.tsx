@@ -1,23 +1,43 @@
-import Link from "next/link"
-import { musicCatalog } from "@/lib/musicCatalog"
+"use client"
 
-export default function MusicPage() {
+import { musicCatalog } from "@/src/lib/musicCatalog"
+
+export default function Music() {
   return (
-    <main style={{maxWidth:900,margin:"0 auto",padding:"40px 20px",background:"#0b0b0f",color:"#e8e0d0",minHeight:"100vh"}}>
-      <h1>RunningWolf — Music</h1>
-      <p style={{opacity:.7}}>Album Wall</p>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))",gap:16,marginTop:24}}>
-        {musicCatalog.map(t=>(
-          <Link key={t.id} href={`/music/${t.id}`} style={{textDecoration:"none",color:"inherit"}}>
-            <div style={{background:"#1a1a22",borderRadius:10,padding:16,textAlign:"center"}}>
-              <div style={{aspectRatio:"1/1",background:"#111",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:8}}>COVER</div>
-              <b>{t.tag}</b>
-              <div style={{fontSize:12,opacity:.6}}>{t.title}</div>
-            </div>
-          </Link>
+    <main
+      style={{
+        maxWidth: 800,
+        margin: "0 auto",
+        padding: "48px 24px",
+        fontFamily: "system-ui",
+        background: "#0b0b0f",
+        color: "#e8e0d0",
+        minHeight: "100vh",
+      }}
+    >
+      <h1>RunningWolf SRK — Music</h1>
+      <p style={{ opacity: 0.7 }}>Viking / Norse selections only</p>
+
+      <div style={{ display: "grid", gap: "24px", marginTop: "32px" }}>
+        {musicCatalog.map((t) => (
+          <div key={t.id}>
+            <h3 style={{ margin: "0 0 8px" }}>{t.title}</h3>
+            <iframe
+              width="100%"
+              height="315"
+              src={`https://www.youtube.com/embed/${t.youtube}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ border: 0, borderRadius: 12 }}
+            />
+            <p style={{ opacity: 0.6, fontSize: 14 }}>{t.tag}</p>
+          </div>
         ))}
       </div>
-      <p style={{marginTop:40}}><Link href="/" style={{color:"#5b7a99"}}>← Home</Link></p>
+
+      <p style={{ marginTop: 48 }}>
+        <a href="/" style={{ color: "#e8e0d0" }}>← Home</a>
+      </p>
     </main>
   )
 }
