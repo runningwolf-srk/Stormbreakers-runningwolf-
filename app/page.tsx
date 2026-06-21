@@ -1,12 +1,8 @@
-// app/page.tsx
 "use client"
 
 import Link from "next/link"
-import { musicCatalog } from "@/src/lib/musicCatalog"
 
 export default function HomePage() {
-  const featured = musicCatalog.find(s => s.id === "heaven-calling")?? musicCatalog[0]
-
   return (
     <main
       style={{
@@ -14,86 +10,65 @@ export default function HomePage() {
         background: "#0b0b0f",
         color: "#e8e0d0",
         fontFamily: "system-ui, sans-serif",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 24,
       }}
     >
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "64px 24px" }}>
-        {/* HERO */}
-        <section style={{ textAlign: "center", marginBottom: 56 }}>
-          <h1 style={{ fontSize: 52, margin: 0, letterSpacing: "-1px" }}>
-            RunningWolf SRK
-          </h1>
-          <p style={{ opacity: 0.7, marginTop: 8, fontSize: 18 }}>
-            Stormbreaker — Guymon, OK
-          </p>
-          <p style={{ opacity: 0.6, marginTop: 8 }}>
-            Viking metal • Cinematic worship • Storm-driven sound
-          </p>
+      <div
+        style={{
+          width: "min(1000px, 100%)",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          background: "#11121a",
+          borderRadius: 16,
+          overflow: "hidden",
+          border: "1px solid #2a2a3a",
+        }}
+      >
+        <div style={{ padding: 40, display: "flex", flexDirection: "column", justifyContent: "center", gap: 20 }}>
+          <img
+            src="/jessy-marquez.jpg"
+            alt="Jessy Marquez"
+            style={{ width: "100%", borderRadius: 12, border: "1px solid #2a2a3a", objectFit: "cover" }}
+          />
+          <div>
+            <h1 style={{ margin: "16px 0 8px", color: "#d4a84b" }}>Jessy Marquez</h1>
+            <p style={{ margin: 0, opacity: 0.7 }}>RunningWolf SRK • Cinematic Worship • Viking Sound</p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            padding: 40,
+            background: "radial-gradient(circle at top, #1a1a2a 0%, #0b0b0f 100%)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <div style={{ fontSize: 18, lineHeight: 1.6, opacity: 0.85 }}>
+            <p style={{ marginTop: 0 }}>Sound forged in storm, memory, and faith.</p>
+            <p>A cinematic journey built from worship, Viking energy, and story-driven music.</p>
+          </div>
           <Link
             href="/music"
             style={{
+              marginTop: 32,
               display: "inline-block",
-              marginTop: 24,
-              padding: "12px 24px",
+              padding: "12px 20px",
               background: "#d4a84b",
               color: "#0b0b0f",
               borderRadius: 8,
-              fontWeight: 700,
               textDecoration: "none",
+              fontWeight: 600,
+              width: "fit-content",
             }}
           >
-            Listen Now →
+            Enter Music →
           </Link>
-        </section>
-
-        {/* FEATURED TRACK */}
-        <section
-          style={{
-            background: "#12121a",
-            borderRadius: 12,
-            padding: 24,
-            marginBottom: 48,
-          }}
-        >
-          <h2 style={{ marginTop: 0, color: "#d4a84b" }}>
-            Featured: {featured.title}
-          </h2>
-          <p style={{ opacity: 0.7, marginTop: -8, marginBottom: 16 }}>
-            {featured.artist} • {featured.genre}
-          </p>
-          <div style={{ position: "relative", paddingTop: "56.25%" }}>
-            <iframe
-              src={`https://www.youtube.com/embed/${featured.youtubeId}`}
-              title={featured.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                border: 0,
-                borderRadius: 8,
-              }}
-            />
-          </div>
-        </section>
-
-        {/* ABOUT */}
-        <section style={{ maxWidth: 680, margin: "0 auto", opacity: 0.85, lineHeight: 1.6 }}>
-          <h3 style={{ color: "#d4a84b" }}>About</h3>
-          <p>
-            RunningWolf SRK is a cinematic Viking-inspired sound project blending metal energy with worship atmospheres.
-          </p>
-          <p>
-            Built from Guymon, Oklahoma — forged in storm sound and story-driven music.
-          </p>
-          <p style={{ marginTop: 24 }}>
-            <Link href="/music" style={{ color: "#d4a84b" }}>Browse all tracks →</Link>
-            {" · "}
-            <Link href="/lab" style={{ color: "#d4a84b" }}>Lab</Link>
-          </p>
-        </section>
+        </div>
       </div>
     </main>
   )
