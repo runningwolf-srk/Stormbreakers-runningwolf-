@@ -3,7 +3,6 @@
 import { musicCatalog } from "@/lib/musicCatalog"
 
 function getYoutubeId(url: string) {
-  // handles https://www.youtube.com/shorts/XXXX and watch?v=XXXX
   const m = url.match(/(?:shorts\/|v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)
   return m? m[1] : url
 }
