@@ -1,6 +1,6 @@
 "use client"
 
-import { musicCatalog } from "@/src/lib/musicCatalog"
+import { musicCatalog } from "@/lib/musicCatalog"
 
 function getYoutubeId(url: string) {
   // handles https://www.youtube.com/shorts/XXXX and watch?v=XXXX
