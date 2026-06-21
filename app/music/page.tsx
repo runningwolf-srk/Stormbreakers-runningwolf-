@@ -1,37 +1,23 @@
-// app/music/[id]/page.tsx
-"use client"
-
-import { useParams } from "next/navigation"
 import Link from "next/link"
 import { musicCatalog } from "@/lib/musicCatalog"
 
-export default function MusicDetail() {
-  const params = useParams()
-  const id = params?.id as string
-  const track = musicCatalog.find(t => t.id === id)
-
-  if (!track) {
-    return (
-      <main style={{ padding: 40, color: "#e8e0d0", background: "#0b0b0f", minHeight: "100vh" }}>
-        <p>Track not found.</p>
-        <Link href="/music" style={{ color: "#5b7a99" }}>← Back</Link>
-      </main>
-    )
-  }
-
+export default function MusicPage() {
   return (
-    <main style={{ maxWidth: 480, margin: "0 auto", padding: "48px 16px", background: "#0b0b0f", minHeight: "100vh", color: "#e8e0d0", fontFamily: "system-ui" }}>
-      <Link href="/music" style={{ color: "#5b7a99" }}>← Back to Album Wall</Link>
-      <h1 style={{ marginTop: 24 }}>{track.tag}</h1>
-      <p style={{ opacity: 0.6 }}>{track.title}</p>
-      <div style={{ marginTop: 24, position: "relative", width: "100%", aspectRatio: "9 / 16", borderRadius: 12, overflow: "hidden", background: "#000" }}>
-        <iframe
-          src={`https://www.youtube.com/embed/${track.id}`}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
-        />
+    <main style={{maxWidth:900,margin:"0 auto",padding:"40px 20px",background:"#0b0b0f",color:"#e8e0d0",minHeight:"100vh"}}>
+      <h1>RunningWolf — Music</h1>
+      <p style={{opacity:.7}}>Album Wall</p>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))",gap:16,marginTop:24}}>
+        {musicCatalog.map(t=>(
+          <Link key={t.id} href={`/music/${t.id}`} style={{textDecoration:"none",color:"inherit"}}>
+            <div style={{background:"#1a1a22",borderRadius:10,padding:16,textAlign:"center"}}>
+              <div style={{aspectRatio:"1/1",background:"#111",display:"flex",alignItems:"center",justifyContent:"center",marginBottom:8}}>COVER</div>
+              <b>{t.tag}</b>
+              <div style={{fontSize:12,opacity:.6}}>{t.title}</div>
+            </div>
+          </Link>
+        ))}
       </div>
+      <p style={{marginTop:40}}><Link href="/" style={{color:"#5b7a99"}}>← Home</Link></p>
     </main>
   )
 }
