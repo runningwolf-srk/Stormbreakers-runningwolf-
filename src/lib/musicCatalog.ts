@@ -34,4 +34,4 @@ export const musicCatalog: Song[] = [
     genre: "Worship",
     coverArt: "/covers/heaven-calling.jpg"
   },
-]]
+]
