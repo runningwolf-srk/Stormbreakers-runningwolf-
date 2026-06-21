@@ -2,7 +2,7 @@
 "use client"
 
 import Link from "next/link"
-import { musicCatalog } from "@/lib/musicCatalog"
+import { musicCatalog } from "@/src/lib/musicCatalog"
 
 export default function HomePage() {
   const featured = musicCatalog.find(s => s.id === "heaven-calling")?? musicCatalog[0]
