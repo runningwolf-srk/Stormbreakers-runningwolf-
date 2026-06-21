@@ -15,7 +15,7 @@ export const musicCatalog: Track[] = [
   {
     id: "horn-of-war",
     title: "HORN OF WAR",
-    tag: "HORN OF WAR",
+    tag: "HORN OF EAR",
     youtube: "https://www.youtube.com/shorts/c4fPNzqlzIc"
   },
   {
