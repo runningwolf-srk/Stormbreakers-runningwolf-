@@ -1,30 +1,31 @@
-export type SRKEvent = 
-  | { type: 'TRACK_SELECT', trackId: string, ts: number }
-  | { type: 'PLAY', trackId: string, ts: number }
-  | { type: 'PAUSE', trackId: string, ts: number }
-
-type Listener = (e: SRKEvent) => void
-const listeners = new Set<Listener>()
-const history: SRKEvent[] = []
-
-export function emit(e: Omit<SRKEvent, 'ts'>) {
-  const event = { ...e, ts: Date.now() } as SRKEvent
-  history.push(event)
-  localStorage.setItem('srk_wall', JSON.stringify(history.slice(-200)))
-  listeners.forEach(l => l(event))
+export type Track = {
+  id: string
+  title: string
+  artist: string
+  youtubeId?: string
+  coverUrl?: string
 }
 
-export function subscribe(fn: Listener) {
-  listeners.add(fn)
-  return () => listeners.delete(fn)
-}
-
-export function getHistory(): SRKEvent[] {
-  if (history.length === 0) {
-    try {
-      const saved = localStorage.getItem('srk_wall')
-      if (saved) history.push(...JSON.parse(saved))
-    } catch {}
+export const musicCatalog: Track[] = [
+  {
+    id: "iron-collide",
+    title: "IRON COLLIDE",
+    artist: "RunningWolf",
+    youtubeId: "dQw4w9WgXcQ",
+    coverUrl: ""
+  },
+  {
+    id: "horn-of-war",
+    title: "HORN OF WAR",
+    artist: "RunningWolf",
+    youtubeId: "dQw4w9WgXcQ",
+    coverUrl: ""
+  },
+  {
+    id: "running-wolf-iii",
+    title: "RUNNING WOLF III",
+    artist: "RunningWolf",
+    youtubeId: "dQw4w9WgXcQ",
+    coverUrl: ""
   }
-  return [...history].reverse()
-}
+]
