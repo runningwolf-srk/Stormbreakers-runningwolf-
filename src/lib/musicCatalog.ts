@@ -32,4 +32,5 @@ export const musicCatalog: Track[] = [
     coverUrl: "/covers/spiritual-journey.jpg",
     note: "Cinematic worship"
   }
+
 ]
