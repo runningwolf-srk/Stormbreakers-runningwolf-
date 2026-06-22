@@ -24,10 +24,37 @@ export default function Home() {
         padding: 24,
         color: "#e8e0d0",
         background:
-          "radial-gradient(circle at top, rgba(212,168,75,0.12), transparent 40%), radial-gradient(circle at bottom, #0b0b0f, #050507)",
+          "radial-gradient(circle at center, rgba(212,168,75,0.12), transparent 45%), radial-gradient(circle at top, rgba(255,255,255,0.03), transparent 60%), #050507",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <div style={{ width: "100%", maxWidth: 520, textAlign: "center" }}>
+      {/* AMBIENT GLOW LAYER */}
+      <div
+        style={{
+          position: "absolute",
+          width: 500,
+          height: 500,
+          borderRadius: "50%",
+          background: "rgba(212,168,75,0.14)",
+          filter: "blur(90px)",
+          top: "38%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          animation: "pulse 6s ease-in-out infinite",
+          zIndex: 0,
+        }}
+      />
+
+      <div
+        style={{
+          width: "100%",
+          maxWidth: 520,
+          textAlign: "center",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
         <div
           style={{
             padding: 5,
@@ -62,38 +89,4 @@ export default function Home() {
             Jessy Marquez
           </h1>
           <p
-            style={{
-              fontSize: 13,
-              fontWeight: 600,
-              letterSpacing: "0.22em",
-              textTransform: "uppercase",
-              opacity: 0.65,
-              margin: 0,
-            }}
-          >
-            RunningWolf
-          </p>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 10,
-            justifyContent: "center",
-          }}
-        >
-          <a href="https://youtube.com/@jessymarquez-e5t" target="_blank" rel="noopener noreferrer" style={btnStyle}>
-            YouTube
-          </a>
-          <a href="https://instagram.com/jesgel87" target="_blank" rel="noopener noreferrer" style={btnStyle}>
-            Instagram
-          </a>
-          <a href="mailto:runningwolf2027@gmail.com" style={btnStyle}>
-            Email
-          </a>
-        </div>
-      </div>
-    </main>
-  )
-}
+           
