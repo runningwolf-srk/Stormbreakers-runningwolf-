@@ -64,6 +64,49 @@ export default function Home() {
             justifyContent: "center",
           }}
         >
+          <a href="https://youtube.com/@jessymarquez-e5t" target="_blank" rel="noopener noreferrer" style={btnStyle}>
+            YouTube
+          </a>
+          <a href="https://instagram.com/jesgel87" target="_blank" rel="noopener noreferrer" style={btnStyle}>
+            Instagram
+          </a>
+          <a href="mailto:runningwolf2027@gmail.com" style={btnStyle}>
+            Email
+          </a>
+        </div>
+      </div>
+    </main>
+  )
+}          }}
+        >
+          <img
+            src="/729068345_1706992463868756_7233760520950384832_n~2.jpg"
+            alt="Jessy Marquez - RunningWolf"
+            style={{
+              width: "100%",
+              borderRadius: 14,
+              display: "block",
+              filter: "contrast(1.05) saturate(1.1)",
+            }}
+          />
+        </div>
+
+        <h1 style={{ fontSize: 36, fontWeight: 700, color: "#d4a84b", margin: "0 0 8px" }}>
+          Jessy Marquez
+        </h1>
+
+        <p style={{ fontSize: 18, opacity: 0.75, margin: "0 0 24px" }}>
+          RunningWolf
+        </p>
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 10,
+            justifyContent: "center",
+          }}
+        >
           <a href="https://youtube.com/@YOURHANDLE" target="_blank" rel="noopener noreferrer" style={btnStyle}>
             YouTube
           </a>
