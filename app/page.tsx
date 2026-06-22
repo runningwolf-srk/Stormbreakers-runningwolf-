@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-8 text-center">
       <Image
-        src="/729068345_1706992463868756_7233760520950384832_n.jpg"
+        src="/729068345_1706992463868756_7233760520950384832_n~2.jpg"
         alt="Jessy Marquez"
         width={200}
         height={200}
