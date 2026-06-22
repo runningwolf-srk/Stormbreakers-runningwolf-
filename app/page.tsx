@@ -29,7 +29,6 @@ export default function Home() {
         overflow: "hidden",
       }}
     >
-      {/* AMBIENT GLOW LAYER */}
       <div
         style={{
           position: "absolute",
@@ -45,7 +44,6 @@ export default function Home() {
           zIndex: 0,
         }}
       />
-
       <div
         style={{
           width: "100%",
@@ -75,18 +73,21 @@ export default function Home() {
             }}
           />
         </div>
-
         <div style={{ marginBottom: 28 }}>
-          <h1
-            style={{
-              fontSize: 38,
-              fontWeight: 700,
-              color: "#d4a84b",
-              margin: "0 0 6px",
-              letterSpacing: "-0.01em",
-            }}
-          >
+          <h1 style={{ fontSize: 38, fontWeight: 700, color: "#d4a84b", margin: "0 0 6px", letterSpacing: "-0.01em" }}>
             Jessy Marquez
           </h1>
-          <p
-           
+          <p style={{ fontSize: 13, fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", opacity: 0.65, margin: 0 }}>
+            RunningWolf
+          </p>
+        </div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, justifyContent: "center" }}>
+          <a href="https://youtube.com/@jessymarquez-e5t" target="_blank" rel="noopener noreferrer" style={btnStyle}>YouTube</a>
+          <a href="https://instagram.com/jesgel87" target="_blank" rel="noopener noreferrer" style={btnStyle}>Instagram</a>
+          <a href="mailto:runningwolf2027@gmail.com" style={btnStyle}>Email</a>
+        </div>
+      </div>
+      <style>{`@keyframes pulse { 0% { opacity: 0.35; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.08); } 100% { opacity: 0.35; transform: translate(-50%, -50%) scale(1); } }`}</style>
+    </main>
+  )
+}
