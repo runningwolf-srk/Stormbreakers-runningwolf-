@@ -1,4 +1,3 @@
-"use client"
 import Link from "next/link"
 
 const catalog = [
@@ -12,26 +11,17 @@ const catalog = [
 
 export default function MusicPage() {
   return (
-    <main style={{ minHeight: "100vh", fontFamily: "system-ui" }}>
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "24px" }}>
-        <div style={{ textAlign: "center", marginBottom: "24px" }}>
-          <Link href="/" style={{ color: "#d4a84b" }}>← Home</Link>
-          <h1 style={{ fontSize: 36, fontWeight: 700 }}>Music Catalog</h1>
-          <p style={{ fontSize: 13, letterSpacing: "0.1em" }}>Jessy Marquez</p>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "16px" }}>
-          {catalog.map((t) => (
-            <a key={t.id} href={t.youtube} target="_blank" rel="noreferrer" style={{ textDecoration: "none", color: "inherit", border: "1px solid #333", borderRadius: 12, overflow: "hidden", display: "block" }}>
-              <div style={{ aspectRatio: "1 / 1", background: "#111" }}>
-                <img src={t.cover} alt={t.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-              </div>
-              <div style={{ padding: "14px 16px" }}>
-                <div style={{ fontWeight: 600 }}>{t.title}</div>
-              </div>
-            </a>
-          ))}
-        </div>
+    <div className="container">
+      <h1 style={{ fontSize: "36px", marginBottom: "8px" }}>Music Catalog</h1>
+      <p style={{ color: "#9a9590" }}>Jessy Marquez</p>
+      <div className="card-grid">
+        {catalog.map((t) => (
+          <a key={t.id} href={t.youtube} target="_blank" rel="noreferrer" className="music-card">
+            <img src={t.cover} alt={t.title} />
+            <div className="music-card-body">{t.title}</div>
+          </a>
+        ))}
       </div>
-    </main>
+    </div>
   )
-}
+}}
