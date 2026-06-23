@@ -1,29 +1,19 @@
-import Link from "next/link"
-
-const catalog = [
-  { id: "heaven-calling", title: "Heaven Calling", cover: "/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp", youtube: "#" },
-  { id: "iron-collide", title: "Iron Collide", cover: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp", youtube: "#" },
-  { id: "blood-of-cross", title: "Blood of Cross", cover: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp", youtube: "#" },
-  { id: "lord-of-lords", title: "Lord of Lords", cover: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp", youtube: "#" },
-  { id: "horn-of-war", title: "Horn of War", cover: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp", youtube: "#" },
-  { id: "spiritual-journey", title: "Spiritual Journey", cover: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp", youtube: "#" },
-]
-
 export default function MusicPage() {
   return (
-    <div className="container">
-      <h1 style={{ fontSize: "36px", marginBottom: "8px" }}>Music Catalog</h1>
-      <p style={{ color: "#9a9590" }}>Jessy Marquez</p>
-      <div className="card-grid">
-        {catalog.map((t) => (
-          <a key={t.id} href={t.youtube} target="_blank" rel="noreferrer" className="music-card">
-            <img src={t.cover} alt={t.title} />
-            <div className="music-card-body">{t.title}</div>
-          </a>
-        ))}
-      </div>
-      <div style={{ marginTop: "24px" }}>
-        <Link href="/">← Home</Link>
+    <div style={{ padding: "24px", maxWidth: "980px", margin: "0 auto", color: "#e8e2da" }}>
+      <h1 style={{ fontSize: "36px", marginBottom: "4px" }}>Music Catalog</h1>
+      <p style={{ color: "#9a8a7a", marginBottom: "24px" }}>Jessy Marquez</p>
+
+      <div style={{ display: "grid", gap: "20px" }}>
+        <div style={{ background: "#141011", border: "1px solid #2a1818", borderRadius: "14px", overflow: "hidden" }}>
+          <img src="/music/heaven-calling.jpg" alt="Heaven Calling" style={{ width: "100%", display: "block" }} />
+          <div style={{ padding: "14px 16px", color: "#d4a84b", fontWeight: 600 }}>Heaven Calling</div>
+        </div>
+
+        <div style={{ background: "#141011", border: "1px solid #2a1818", borderRadius: "14px", overflow: "hidden" }}>
+          <img src="/music/iron-collide.jpg" alt="Iron Collide" style={{ width: "100%", display: "block" }} />
+          <div style={{ padding: "14px 16px", color: "#d4a84b", fontWeight: 600 }}>Iron Collide</div>
+        </div>
       </div>
     </div>
   )
