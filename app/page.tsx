@@ -6,7 +6,7 @@ export default function MusicPage() {
       {/* RunningWolf Brand Header */}
       <div className="max-w-3xl mx-auto mb-12 text-center">
         <Image 
-          src="/viking-warrior.png"  // <-- your Viking file name here
+          src="/729068345_1706992463868756_7233760520950384832_n~2.jpg"  // <-- your Viking file name here
           alt="RunningWolf - Stormbreakers"
           width={200}
           height={200}
