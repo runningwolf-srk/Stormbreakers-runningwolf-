@@ -16,7 +16,22 @@ export default function MusicPage() {
         />
       </div>
 
-      {/* Stormbreakers Playlist - This is the part that broke */}
+      {/* Heaven Calling YouTube Video */}
+      <div className="max-w-3xl mx-auto mb-16">
+        <h2 className="text-2xl font-semibold mb-6 text-center">Official Visualizer</h2>
+        <div className="aspect-video w-full">
+          <iframe 
+            className="rounded-lg w-full h-full"
+            src="https://www.youtube.com/embed/oxNauKuxg4Q" 
+            title="Heaven Is Calling - RUNNINGWOLF"
+            frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+
+      {/* Stormbreakers Playlist */}
       <div className="max-w-3xl mx-auto mt-16">
         <h2 className="text-2xl font-semibold mb-6 text-center">Stormbreakers Playlist</h2>
         <iframe 
