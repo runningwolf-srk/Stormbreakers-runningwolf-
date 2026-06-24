@@ -1,21 +1,46 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 export default function MusicPage() {
   return (
-    <div style={{ padding: "24px", maxWidth: "980px", margin: "0 auto", color: "#e8e2da", textAlign: "center" }}>
-      <h1 style={{ fontSize: "36px", color: "#d4a84b", marginBottom: "4px" }}>Music Catalog</h1>
-      <p style={{ color: "#9a8a7a", marginBottom: "24px", letterSpacing: "2px", textTransform: "uppercase", fontSize: "14px" }}>
-        Jessy Marquez<br />
-        <span style={{ fontSize: "12px" }}>RUNNINGWOLF</span>
-      </p>
-
-      <div style={{ display: "grid", gap: "20px", textAlign: "left" }}>
-        <div style={{ background: "#141011", border: "1px solid #2a1818", borderRadius: "14px", overflow: "hidden" }}>
-          <img src="/music/heaven-calling.jpg" alt="Heaven Calling" style={{ width: "100%", display: "block" }} />
-          <div style={{ padding: "14px 16px", color: "#d4a84b", fontWeight: 600 }}>Heaven Calling</div>
-        </div>
-
-        <div style={{ background: "#141011", border: "1px solid #2a1818", borderRadius: "14px", overflow: "hidden" }}>
-          <img src="/music/iron-collide.jpg" alt="Iron Collide" style={{ width: "100%", display: "block" }} />
-          <div style={{ padding: "14px 16px", color: "#d4a84b", fontWeight: 600 }}>Iron Collide</div>
+    <div className="min-h-screen bg-black text-white px-6 py-12">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-4xl font-bold mb-2 text-center tracking-wider">RUNNINGWOLF</h1>
+        <p className="text-center text-gray-400 mb-2">Jessy Marquez</p>
+        <p className="text-center text-red-400/80 text-sm mb-12">
+          Revival worship with spiritual adrenaline. Stormbreakers rise.
+        </p>
+        
+        <h2 className="text-2xl font-semibold mb-6">Latest Single</h2>
+        
+        <div className="bg-gray-900 rounded-lg overflow-hidden border border-red-900/30 shadow-2xl shadow-red-900/20">
+          <Image 
+            src="/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp" 
+            alt="Heaven Is Calling - A Worship Anthem"
+            width={1200}
+            height={1200}
+            className="w-full"
+            priority
+          />
+          <div className="p-6">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-2xl font-bold">Heaven Is Calling</h3>
+              <span className="bg-red-900/50 text-red-200 text-xs px-3 py-1 rounded-full">
+                Visualizer Ready
+              </span>
+            </div>
+            <p className="text-gray-400 mb-6">
+              A Viking worship anthem. Through fire and storm, we rise.
+            </p>
+            <div className="flex gap-4">
+              <Link 
+                href="/music/heaven-is-calling" 
+                className="bg-red-700 hover:bg-red-600 px-6 py-3 rounded font-semibold transition"
+              >
+                View Lyrics + Video
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
