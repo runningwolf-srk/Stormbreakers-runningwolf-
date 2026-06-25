@@ -13,7 +13,7 @@ const hymns = [
     slug: "iron-collide",
     title: "Iron Collide",
     cover: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp",
-    tagline: "Where Worship Meets War", 
+    tagline: "An Epic Hard Rock Anthem", 
     shortStory: "Metal isn’t evil — silence is."
   },
   {
