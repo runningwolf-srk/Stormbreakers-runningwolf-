@@ -54,6 +54,9 @@ export default function MusicPage() {
               src={hymn.cover} 
               alt={hymn.title}
               className="w-full h-64 object-cover group-hover:scale-105 transition-transform"
+              onError={(e) => {
+                e.currentTarget.src = "/placeholder-cover.webp";
+              }}
             />
             <div className="p-6">
               <h2 className="text-2xl font-bold mb-2">{hymn.title}</h2>
