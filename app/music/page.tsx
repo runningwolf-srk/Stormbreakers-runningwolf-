@@ -30,6 +30,13 @@ const hymns = [
     tagline: "By His Wounds We Are Healed", 
     shortStory: "5 minutes at the foot of the cross."
   },
+  {
+    slug: "spiritual-journey",
+    title: "Spiritual Journey",
+    cover: "/spiritual-journey-cover.webp", // UPLOAD THIS TO /public
+    tagline: "From Dust to Destiny", 
+    shortStory: "The Suno track that mapped the whole war."
+  },
 ];
 
 export default function MusicPage() {
