@@ -69,6 +69,19 @@ const musicCatalog: Song[] = [
       lyric: "By His wounds we are healed",
       meaning: "5 minutes wasn’t too long for the crucifixion. It’s not too long for worship."
     }
+  },
+  {
+    slug: "spiritual-journey",
+    title: "Spiritual Journey",
+    youtubeId: "umDFjJjh0_c",
+    cover: "/spiritual-journey-cover.webp", // UPLOAD THIS TO /public
+    tagline: "From Dust to Destiny",
+    story: {
+      written: "2026",
+      origin: "The Suno track that started it all. AI wrote the notes. God wrote the story.",
+      lyric: "From dust to destiny, He’s calling me",
+      meaning: "This is the map. Every battle, every breakthrough, every time we thought it was over."
+    }
   }
 ];
 
