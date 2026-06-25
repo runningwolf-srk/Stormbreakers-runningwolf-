@@ -58,18 +58,18 @@ const musicCatalog: Song[] = [
     }
   },
   {
-    slug: "suno-weapon", // CHANGE THIS SLUG
-    title: "Suno Weapon", // CHANGE THIS TO REAL TITLE
-    audioUrl: "/suno-weapon.mp3", // CHANGE THIS FILENAME - UPLOAD MP3 TO /public
-    cover: "/suno-weapon-cover.webp", // CHANGE THIS FILENAME - UPLOAD IMAGE TO /public
+    slug: "suno-weapon",
+    title: "Suno Weapon",
+    audioUrl: "/suno-weapon.mp3",
+    cover: "/suno-weapon-cover.webp",
     tagline: "Forged by AI, Anointed by Fire",
     story: {
       written: "2026",
       origin: "Started in Suno as an experiment. God finished it in the mix.",
-      lyric: "CHANGE THIS LYRIC", // PUT YOUR BEST LINE HERE
+      lyric: "CHANGE THIS LYRIC",
       meaning: "Even machines can worship when the Spirit moves. This tool is just another instrument."
     }
-  },
+  }
 ];
 
 export default function SongPage({ params }: { params: { slug: string } }) {
@@ -117,4 +117,24 @@ export default function SongPage({ params }: { params: { slug: string } }) {
               <audio 
                 controls 
                 className="w-full"
-                src={song.audioUrl
+                src={song.audioUrl}
+              >
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          )}
+        </div>
+        
+        <div className="bg-zinc-900 p-8 rounded-lg">
+          <h2 className="text-3xl font-bold mb-6">The Story</h2>
+          <p className="text-zinc-400 mb-4"><strong>Written:</strong> {song.story.written}</p>
+          <p className="text-zinc-300 mb-4"><strong>Origin:</strong> {song.story.origin}</p>
+          <blockquote className="border-l-4 border-red-600 pl-4 my-6 text-xl italic">
+            "{song.story.lyric}"
+          </blockquote>
+          <p className="text-zinc-300"><strong>Meaning:</strong> {song.story.meaning}</p>
+        </div>
+      </div>
+    </main>
+  );
+}
