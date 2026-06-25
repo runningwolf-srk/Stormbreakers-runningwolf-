@@ -33,9 +33,9 @@ const hymns = [
   {
     slug: "spiritual-journey",
     title: "Spiritual Journey",
-    cover: "/spiritual-journey-cover.webp", // UPLOAD THIS TO /public
-    tagline: "From Dust to Destiny", 
-    shortStory: "The Suno track that mapped the whole war."
+    cover: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp",
+    tagline: "A Journey to His Presence", 
+    shortStory: "From dust to destiny. The Suno track that started it all."
   },
 ];
 
