@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 const relics = [
   { 
-    slug: 'heaven-calling', 
-    title: 'Heaven Is Calling', 
-    hook: 'When every other voice falls silent, heaven still speaks.',
-    bgImage: '/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp'
+    slug: 'horn-of-war', 
+    title: 'Horn of War', 
+    hook: 'The call to stand before the battle begins.',
+    bgImage: '/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp'
   },
   { 
     slug: 'iron-collide', 
@@ -26,16 +26,16 @@ const relics = [
     bgImage: '/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp'
   },
   { 
-    slug: 'horn-of-war', 
-    title: 'Horn of War', 
-    hook: 'The call to stand before the battle begins.',
-    bgImage: '/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp'
+    slug: 'heaven-calling', 
+    title: 'Heaven Is Calling', 
+    hook: 'When every other voice falls silent, heaven still speaks.',
+    bgImage: '/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp'
   },
   { 
     slug: 'im-on-fire', 
     title: 'I\'m On Fire', 
-    hook: 'Holy fire cannot be contained. It must be released.',
-    bgImage: '/file_0000000065a071f5832301f52d11fb80.png' // ← YOUR NEW FIRE ART
+    hook: 'The flame of faith was never meant to stay hidden.',
+    bgImage: '/file_0000000065a071f5832301f52d11fb80.png'
   },
   { 
     slug: 'spiritual-journey', 
@@ -70,11 +70,11 @@ export default function Page() {
           marginBottom:'60px',
           fontStyle:'italic'
         }}>
-          A cinematic worship mythology database
+          An archive where every song is a relic and every relic tells a story.
         </p>
         
         <div style={{display:'grid',gap:'30px'}}>
-          {relics.map((relic) => (
+          {relics.map((relic, index) => (
             <a 
               key={relic.slug}
               href={`/music/${relic.slug}`}
@@ -91,6 +91,19 @@ export default function Page() {
                 backgroundPosition:'center'
               }}
             >
+              <div style={{
+                position:'absolute',
+                top:'20px',
+                left:'20px',
+                background:'rgba(0,0,0,0.7)',
+                padding:'8px 16px',
+                borderRadius:'4px',
+                fontSize:'14px',
+                color:'#999',
+                fontFamily:'Georgia, serif'
+              }}>
+                RELIC {index + 1} OF {relics.length}
+              </div>
               <div style={{
                 position:'absolute',
                 top:0,
