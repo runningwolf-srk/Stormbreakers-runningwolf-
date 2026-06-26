@@ -5,45 +5,45 @@ const relics = [
     slug: 'heaven-calling', 
     title: 'Heaven Is Calling', 
     hook: 'When every other voice falls silent, heaven still speaks.',
-    bgImage: 'https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=1200&q=80'
+    bgImage: '/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp'
   },
   { 
     slug: 'iron-collide', 
     title: 'Iron Collide', 
     hook: 'Faith sharpened in the fire of resistance.',
-    bgImage: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&q=80'
+    bgImage: '/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp'
   },
   { 
     slug: 'iron-collide-worship', 
     title: 'Iron Collide Worship', 
     hook: 'Where the battlefield becomes an altar.',
-    bgImage: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&q=80'
+    bgImage: '/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp' // Using same art for now
   },
   { 
     slug: 'blood-of-cross', 
     title: 'Blood of the Cross', 
     hook: 'Mercy written in sacrifice. Hope carried through suffering.',
-    bgImage: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?w=1200&q=80'
+    bgImage: '/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp'
   },
   { 
     slug: 'horn-of-war', 
     title: 'Horn of War', 
     hook: 'The call to stand before the battle begins.',
-    bgImage: 'https://images.unsplash.com/photo-1519563459339-59bb6d7f5e5e?w=1200&q=80'
+    bgImage: '/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp'
   },
   { 
     slug: 'im-on-fire', 
     title: 'I\'m On Fire', 
     hook: 'Holy fire cannot be contained. It must be released.',
-    bgImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&q=80'
+    bgImage: '/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp' // Using Horn of War art as placeholder
   },
   { 
     slug: 'spiritual-journey', 
     title: 'Spiritual Journey', 
     hook: 'Survival was never the goal. Purpose was.',
-    bgImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80'
-  }
-]; // ← THIS LINE WAS MISSING IN YOUR FILE
+    bgImage: '/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp'
+  },
+];
 
 export default function Page() {
   return (
@@ -80,7 +80,7 @@ export default function Page() {
               href={`/music/${relic.slug}`}
               style={{
                 display:'block',
-                height:'200px',
+                height:'250px',
                 borderRadius:'8px',
                 overflow:'hidden',
                 border:'1px solid #333',
@@ -97,47 +97,35 @@ export default function Page() {
                 left:0,
                 right:0,
                 bottom:0,
-                background:'rgba(0,0,0,0.7)',
+                background:'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%)',
                 display:'flex',
                 flexDirection:'column',
-                justifyContent:'center',
+                justifyContent:'flex-end',
                 padding:'30px',
                 textAlign:'left'
               }}>
                 <h2 style={{
-                  fontSize:'32px',
+                  fontSize:'36px',
                   margin:'0 0 10px 0',
                   color:'white',
                   fontFamily:'Georgia, serif',
-                  fontWeight:'bold'
+                  fontWeight:'bold',
+                  textShadow:'2px 2px 4px rgba(0,0,0,0.8)'
                 }}>
                   {relic.title}
                 </h2>
                 <p style={{
-                  color:'#ccc',
+                  color:'#ddd',
                   margin:0,
                   fontSize:'16px',
-                  fontStyle:'italic'
+                  fontStyle:'italic',
+                  textShadow:'1px 1px 2px rgba(0,0,0,0.8)'
                 }}>
                   {relic.hook}
                 </p>
               </div>
             </a>
           ))}
-        </div>
-
-        <div style={{
-          marginTop:'80px',
-          paddingTop:'40px',
-          borderTop:'1px solid #333'
-        }}>
-          <p style={{
-            color:'#666',
-            fontSize:'12px',
-            letterSpacing:'2px'
-          }}>
-            SEVEN RELICS. ONE KINGDOM.
-          </p>
         </div>
       </div>
     </div>
