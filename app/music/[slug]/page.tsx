@@ -5,14 +5,15 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 
 // ============================================
-// HALL OF RELICS — DESIGN SYSTEM v2.0
+// HALL OF RELICS — DESIGN SYSTEM v2.1
+// Added: Cinematic Hook for immediate emotional identity
 // Emotional Arc: Origin → Reflection → Meaning → Revelation
-// Tone: Cinematic Worship Mythology Database
 // ============================================
 
 const songs = {
   "heaven-calling": {
     title: "Heaven Is Calling",
+    hook: "When every other voice falls silent, heaven still speaks.",
     subtitle: "By His Voice We Are Known",
     youtubeId: "oxNauKuxg4Q", 
     bgImage: "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e",
@@ -27,6 +28,7 @@ const songs = {
   },
   "iron-collide": {
     title: "Iron Collide", 
+    hook: "Faith sharpened in the fire of resistance.",
     subtitle: "When Faith Meets the Fight",
     youtubeId: "odIsEMUtNJI",
     bgImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96",
@@ -41,6 +43,7 @@ const songs = {
   },
   "iron-collide-worship": {
     title: "Iron Collide Worship", 
+    hook: "Where the battlefield becomes an altar.",
     subtitle: "Praise Is the Weapon",
     youtubeId: "fIkUDO2emoc",
     bgImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96",
@@ -55,6 +58,7 @@ const songs = {
   },
   "blood-of-cross": {
     title: "Blood of the Cross",
+    hook: "Mercy written in sacrifice. Hope carried through suffering.",
     subtitle: "By His Wounds We Are Healed", 
     youtubeId: "4lcbjsNLlzo",
     bgImage: "https://images.unsplash.com/photo-1507692049790-de58290a4334",
@@ -69,6 +73,7 @@ const songs = {
   },
   "horn-of-war": {
     title: "Horn of War",
+    hook: "The call to stand before the battle begins.",
     subtitle: "The Call to Purpose",
     youtubeId: "M4wGCg5oCx0",
     bgImage: "https://images.unsplash.com/photo-1519563459339-59bb6d7f5e5e",
@@ -83,6 +88,7 @@ const songs = {
   },
   "im-on-fire": {
     title: "I'm On Fire",
+    hook: "Holy fire cannot be contained. It must be released.",
     subtitle: "Holy Fire Cannot Be Contained",
     youtubeId: "8XQUhWB_N5M",
     bgImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23",
@@ -97,6 +103,7 @@ const songs = {
   },
   "spiritual-journey": {
     title: "Spiritual Journey",
+    hook: "Survival was never the goal. Purpose was.",
     subtitle: "God Kept Me Alive",
     youtubeId: "umDFjJjh0_c",
     bgImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4", 
@@ -134,7 +141,7 @@ function RelicStory({ story }: { story: typeof songs[keyof typeof songs]['story'
         </p>
       </div>
 
-      <div className="space-y-6 leading-relaxed">
+      <div className="space-y-6 leading-relaxed text-lg">
         <p className="text-zinc-300">
           {story.reflection}
         </p>
@@ -216,7 +223,13 @@ export default function SongPage() {
           >
             {song.title}
           </h1>
-          <p className="text-xl md:text-2xl text-amber-400 mb-8 italic">
+          
+          {/* CINEMATIC HOOK — THE 10/10 UPGRADE */}
+          <p className="text-xl md:text-2xl text-zinc-200 mb-6 max-w-2xl mx-auto leading-relaxed italic">
+            {song.hook}
+          </p>
+          
+          <p className="text-lg md:text-xl text-amber-400 mb-8 font-semibold">
             {song.subtitle}
           </p>
 
@@ -270,4 +283,4 @@ export default function SongPage() {
       `}</style>
     </div>
   );
-}
+        }
