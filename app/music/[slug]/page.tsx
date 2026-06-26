@@ -5,121 +5,150 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 
 // ============================================
-// HALL OF RELICS — UNIFIED DESIGN SYSTEM v1.1
-// 7 Relics Locked. Structure: Title → Subtitle → Story → Meaning
+// HALL OF RELICS — DESIGN SYSTEM v2.0
+// Emotional Arc: Origin → Reflection → Meaning → Revelation
+// Tone: Cinematic Worship Mythology Database
 // ============================================
 
 const songs = {
   "heaven-calling": {
     title: "Heaven Is Calling",
-    subtitle: "A Stormbreakers Worship Anthem",
+    subtitle: "By His Voice We Are Known",
     youtubeId: "oxNauKuxg4Q", 
     bgImage: "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e",
     story: {
       written: "2024",
-      origin: "Written in a season where worship became the only weapon against silence.",
+      origin: "Forged in a season where worship became the only weapon against silence. A declaration of divine pursuit.",
       lyricQuote: "Heaven is calling out my name.",
-      meaning: "God speaks most clearly when words fail."
+      reflection: "A reminder that even in stillness, we are sought. What was distant became the sound that draws near.",
+      meaning: "Divine calling is not earned—it is answered. This song stands as a moment of recognition: that we were heard before we ever learned to speak.",
+      revelation: "God speaks most clearly when words fail."
     }
   },
   "iron-collide": {
     title: "Iron Collide", 
-    subtitle: "A Stormbreakers Worship Anthem",
+    subtitle: "When Faith Meets the Fight",
     youtubeId: "odIsEMUtNJI",
     bgImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96",
     story: {
       written: "2024",
-      origin: "Forged in the fire of spiritual warfare. This track is the sound of a believer who refuses to bow.",
+      origin: "Forged in the fire of spiritual warfare. A sound for those who refuse to bow.",
       lyricQuote: "Let iron collide with iron.",
-      meaning: "You don't fight FOR victory. You fight FROM it. The iron collides, but the outcome is already written."
+      reflection: "A reminder that resistance shapes resolve. What was pressure became the forge of strength.",
+      meaning: "The battle is not for victory—it is from victory. This song stands as a declaration: the outcome was written before the first strike.",
+      revelation: "We don't fight FOR the crown. We fight FROM it."
     }
   },
   "iron-collide-worship": {
     title: "Iron Collide Worship", 
-    subtitle: "A Stormbreakers Worship Anthem",
+    subtitle: "Praise Is the Weapon",
     youtubeId: "fIkUDO2emoc",
     bgImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96",
     story: {
       written: "2024",
-      origin: "The worship version — where the battle becomes surrender and the clash becomes praise.",
+      origin: "Where warfare becomes worship. The moment the clash transforms into praise.",
       lyricQuote: "Every weapon formed against me falls.",
-      meaning: "Worship is warfare. Praise breaks chains."
+      reflection: "A reminder that surrender is strength. What was conflict became the pathway to peace.",
+      meaning: "Praise breaks what force cannot. This song stands as an altar: where the fight ends and worship begins.",
+      revelation: "Worship is warfare in its highest form."
     }
   },
   "blood-of-cross": {
     title: "Blood of the Cross",
-    subtitle: "A Stormbreakers Worship Anthem", 
+    subtitle: "By His Wounds We Are Healed", 
     youtubeId: "4lcbjsNLlzo",
     bgImage: "https://images.unsplash.com/photo-1507692049790-de58290a4334",
     story: {
       written: "2024",
-      origin: "Forged through cinematic worship and inspired by the sacrifice of Christ. A song of redemption, mercy, and hope that points to the power of the cross.",
+      origin: "Forged in sound and shaped through worship. A reflection on sacrifice, mercy, and redemption at the cross.",
       lyricQuote: "By His wounds we are healed.",
-      meaning: "Five minutes of worship is a small offering in light of such great sacrifice."
+      reflection: "A reminder that what was broken became the source of healing. What was suffering became the doorway to grace.",
+      meaning: "The cross is not only an event—it is the turning point of restoration. This song stands as a moment of reflection: that healing was carried through sacrifice, and love was proven through pain.",
+      revelation: "Mercy spoke louder than the grave."
     }
   },
   "horn-of-war": {
     title: "Horn of War",
-    subtitle: "A Stormbreakers Worship Anthem",
+    subtitle: "The Call to Purpose",
     youtubeId: "M4wGCg5oCx0",
     bgImage: "https://images.unsplash.com/photo-1519563459339-59bb6d7f5e5e",
     story: {
       written: "2024",
-      origin: "The horn blast that awakens the sleeping warband. This is the call — not to violence, but to purpose.",
+      origin: "The horn blast that awakens the sleeping warband. A call not to violence, but to purpose.",
       lyricQuote: "Sound the horn. Wake the dead.",
-      meaning: "Every movement needs a sound that says 'we're here.' This is ours."
+      reflection: "A reminder that awakening precedes movement. What was dormant became the signal to rise.",
+      meaning: "Every movement needs a sound that declares its arrival. This song stands as the call: we are here, and we were sent.",
+      revelation: "The war was won before the horn ever sounded."
     }
   },
   "im-on-fire": {
     title: "I'm On Fire",
-    subtitle: "A Stormbreakers Worship Anthem",
+    subtitle: "Holy Fire Cannot Be Contained",
     youtubeId: "8XQUhWB_N5M",
     bgImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23",
     story: {
       written: "2024",
-      origin: "Written when the Holy Spirit set the dry bones ablaze. This isn't hype — it's holy fire.",
+      origin: "Written when the Holy Spirit set dry bones ablaze. A testimony of divine ignition.",
       lyricQuote: "Let the fire fall. Let it burn.",
-      meaning: "God doesn't call the qualified. He sets the available on fire."
+      reflection: "A reminder that holy fire purifies before it empowers. What was cold became the vessel for flame.",
+      meaning: "God doesn't call the qualified—He sets the available on fire. This song stands as an altar: where human effort ends and divine fire begins.",
+      revelation: "You cannot manufacture what only heaven can ignite."
     }
   },
   "spiritual-journey": {
     title: "Spiritual Journey",
-    subtitle: "A Stormbreakers Worship Anthem",
+    subtitle: "God Kept Me Alive",
     youtubeId: "umDFjJjh0_c",
     bgImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4", 
     story: {
       written: "2024",
-      origin: "The soundtrack to sanctification. The long walk between who you were and who you’re becoming.",
+      origin: "The soundtrack to sanctification. A testimony of survival through the wilderness.",
       lyricQuote: "God kept me alive.",
-      meaning: "This is for the 3am prayers. The wilderness seasons. The moments when faith feels like walking uphill in fog."
+      reflection: "A reminder that preservation is proof of purpose. What was meant to destroy became the path to destiny.",
+      meaning: "This song stands for the 3am prayers. The wilderness seasons. The moments when faith felt like walking uphill in fog—and still, He sustained.",
+      revelation: "You survived because you were called."
     }
   },
 };
 
 // ============================================
-// RELIC STORY COMPONENT — REUSABLE TEMPLATE
+// RELIC STORY COMPONENT — 10/10 TEMPLATE
 // ============================================
 function RelicStory({ story }: { story: typeof songs[keyof typeof songs]['story'] }) {
   return (
-    <div className="max-w-2xl mx-auto text-left space-y-8 text-zinc-300">
-      <h2 className="text-2xl font-bold text-white mb-6">The Story</h2>
+    <div className="max-w-2xl mx-auto text-left space-y-10 text-zinc-300">
+      <h2 className="text-2xl font-bold text-white mb-8" style={{ fontFamily: 'Cinzel, serif' }}>
+        The Story
+      </h2>
       
-      <div className="space-y-4 text-zinc-400">
+      <div className="space-y-3 text-zinc-400">
         <p><span className="text-zinc-500">Written:</span> {story.written}</p>
-        <p>
+        <p className="leading-relaxed">
           <span className="text-zinc-500">Origin:</span> {story.origin}
         </p>
       </div>
 
-      <div className="my-8 py-6 border-y border-zinc-800">
-        <p className="text-2xl text-center text-amber-400 italic" style={{ fontFamily: 'Cinzel, serif' }}>
+      <div className="my-10 py-8 border-y border-zinc-800">
+        <p className="text-3xl text-center text-amber-400 italic leading-relaxed" style={{ fontFamily: 'Cinzel, serif' }}>
           “{story.lyricQuote}”
         </p>
       </div>
 
-      <p className="text-xl text-zinc-300 font-semibold">
-        {story.meaning}
-      </p>
+      <div className="space-y-6 leading-relaxed">
+        <p className="text-zinc-300">
+          {story.reflection}
+        </p>
+        
+        <p className="text-zinc-300">
+          {story.meaning}
+        </p>
+      </div>
+
+      <div className="pt-6 mt-8 border-t border-zinc-800">
+        <p className="text-xl text-amber-400 font-semibold text-center" style={{ fontFamily: 'Cinzel, serif' }}>
+          {story.revelation}
+        </p>
+      </div>
     </div>
   );
 }
@@ -176,9 +205,9 @@ export default function SongPage() {
         <div className="relative z-10 text-center px-4 max-w-4xl">
           <Link 
             href="/music" 
-            className="inline-block mb-8 text-amber-400 hover:text-amber-300 transition-colors"
+            className="inline-block mb-8 text-amber-400 hover:text-amber-300 transition-colors text-sm tracking-widest uppercase"
           >
-            ← Back to Hall of Relics
+            ← Hall of Relics
           </Link>
           
           <h1 
@@ -187,7 +216,7 @@ export default function SongPage() {
           >
             {song.title}
           </h1>
-          <p className="text-xl md:text-2xl text-zinc-300 mb-8">
+          <p className="text-xl md:text-2xl text-amber-400 mb-8 italic">
             {song.subtitle}
           </p>
 
@@ -214,17 +243,17 @@ export default function SongPage() {
         </div>
       </div>
 
-      {/* STORY SECTION — UNIFIED TEMPLATE */}
-      <div className="relative bg-zinc-950 py-20 px-4">
+      {/* STORY SECTION — CINEMATIC RELIC ENTRY */}
+      <div className="relative bg-zinc-950 py-24 px-4">
         <div className="max-w-4xl mx-auto">
           <RelicStory story={song.story} />
           
-          <div className="mt-16 text-center">
+          <div className="mt-20 text-center">
             <Link 
               href="/music"
-              className="inline-block px-8 py-3 bg-amber-600 hover:bg-amber-500 text-black font-bold rounded-lg transition-colors"
+              className="inline-block px-8 py-3 bg-amber-600 hover:bg-amber-500 text-black font-bold rounded-lg transition-colors tracking-wide"
             >
-              ← Return to Hall of Relics
+              ← RETURN TO THE HALL
             </Link>
           </div>
         </div>
