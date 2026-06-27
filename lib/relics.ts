@@ -11,7 +11,7 @@ export interface Relic {
 export const RELICS: Relic[] = [
   {
     id: 'horn-of-war',
-    title: 'HORN OF WAR',
+    title: 'HORN-OF-WAR',
     subtitle: 'RELIC 01',
     cover: '/covers/horn-of-war.webp',
     youtubeId: 'dQw4w9WgXcQ', // REPLACE WITH YOUR YOUTUBE ID
@@ -29,7 +29,7 @@ export const RELICS: Relic[] = [
   },
   {
     id: 'iron-collide-worship',
-    title: 'IRON COLLIDE [WORSHIP]',
+    title: 'IRON-COLLIDE [WORSHIP]',
     subtitle: 'RELIC 03',
     cover: '/covers/iron-collide-worship.webp',
     youtubeId: 'dQw4w9WgXcQ', // REPLACE WITH YOUR YOUTUBE ID
@@ -38,7 +38,7 @@ export const RELICS: Relic[] = [
   },
   {
     id: 'blood-of-cross',
-    title: 'BLOOD OF THE CROSS',
+    title: 'BLOOD-OF-THE-CROSS',
     subtitle: 'RELIC 04',
     cover: '/covers/blood-of-cross.webp',
     youtubeId: 'dQw4w9WgXcQ', // REPLACE WITH YOUR YOUTUBE ID
@@ -47,7 +47,7 @@ export const RELICS: Relic[] = [
   },
   {
     id: 'heaven-calling',
-    title: 'HEAVEN CALLING',
+    title: 'HEAVEN-CALLING',
     subtitle: 'RELIC 05',
     cover: '/covers/heaven-calling.webp',
     youtubeId: 'dQw4w9WgXcQ', // REPLACE WITH YOUR YOUTUBE ID
@@ -56,7 +56,7 @@ export const RELICS: Relic[] = [
   },
   {
     id: 'im-on-fire',
-    title: "I'M ON FIRE",
+    title: "I'M-ON-FIRE",
     subtitle: 'RELIC 06',
     cover: '/covers/im-on-fire.webp',
     youtubeId: 'dQw4w9WgXcQ', // REPLACE WITH YOUR YOUTUBE ID
@@ -65,7 +65,7 @@ export const RELICS: Relic[] = [
   },
   {
     id: 'spiritual-journey',
-    title: 'SPIRITUAL JOURNEY',
+    title: 'SPIRITUAL-JOURNEY',
     subtitle: 'RELIC 07',
     cover: '/covers/spiritual-journey.webp',
     youtubeId: 'dQw4w9WgXcQ', // REPLACE WITH YOUR YOUTUBE ID
