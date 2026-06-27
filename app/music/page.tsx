@@ -1,3 +1,5 @@
+'use client' // ← ADD THIS LINE AT THE TOP
+
 import Link from 'next/link';
 import { relics } from '@/lib/relics';
 
@@ -59,18 +61,10 @@ export default function HallOfRelics() {
               href={`/music/${relic.slug}`}
               style={{ textDecoration:'none' }}
             >
-              <div style={{
+              <div className="relic-card" style={{
                 border:'1px solid #1a1a1a',
                 transition:'all 0.3s ease',
                 cursor:'pointer'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#333';
-                e.currentTarget.style.transform = 'translateY(-4px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#1a1a1a';
-                e.currentTarget.style.transform = 'translateY(0)';
               }}>
                 {/* COVER */}
                 <div style={{
@@ -124,6 +118,14 @@ export default function HallOfRelics() {
           ))}
         </div>
       </div>
+
+      {/* CSS HOVER - NO JS EVENTS NEEDED */}
+      <style jsx>{`
+        .relic-card:hover {
+          border-color: #333;
+          transform: translateY(-4px);
+        }
+      `}</style>
     </div>
   );
 }
