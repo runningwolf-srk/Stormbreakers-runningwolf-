@@ -1,19 +1,5 @@
-import type { Metadata } from 'next'
-import './globals.css'
-
-export const metadata: Metadata = {
-  title: 'Stormbreakers - RunningWolf',
-  description: 'Worship is your weapon. The storm is your calling.',
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  )
-}
+<div style={{ display:'flex', gap:'32px', fontSize:'14px' }}>
+  <Link href="/" style={{ color:'#fff', textDecoration:'none' }}>Home</Link>
+  <Link href="/music" style={{ color:'#d4af37', textDecoration:'none' }}>Music</Link>
+  <Link href="/scrolls" style={{ color:'#fff', textDecoration:'none' }}>Scrolls</Link>
+</div>
