@@ -1,44 +1,68 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
-const CHAPTERS = [
-  {
-    id: 'darkness',
+const CHAPTERS = {
+  darkness: {
     number: 'I',
     title: 'The Darkness',
     subtitle: 'Where it began',
-    excerpt: 'Addiction. Brokenness. The valley of dry bones.'
+    content: `
+      // WRITE YOUR TESTIMONY HERE
+      // Replace this with your Chapter I story
+      // Use <p> tags for paragraphs
+      
+      <p>I was born into brokenness...</p>
+      
+      <p>The addiction started when...</p>
+      
+      <p>At my lowest point...</p>
+    `
   },
-  {
-    id: 'crossroads',
+  crossroads: {
     number: 'II',
     title: 'The Crossroads',
     subtitle: 'The moment of choice',
-    excerpt: 'When heaven collided with hell in my living room.'
+    content: `
+      <p>Then God showed up...</p>
+    `
   },
-  {
-    id: 'calling',
+  calling: {
     number: 'III',
     title: 'The Calling',
     subtitle: 'RunningWolf is born',
-    excerpt: 'From death to life. From addict to apostle.'
+    content: `
+      <p>He called me RunningWolf because...</p>
+    `
   },
-  {
-    id: 'stormbreakers',
+  stormbreakers: {
     number: 'IV',
     title: 'The Stormbreakers',
     subtitle: 'Forging the weapons',
-    excerpt: 'Why worship is warfare. Why the songs exist.'
+    content: `
+      <p>Each song is a weapon forged in fire...</p>
+    `
   },
-  {
-    id: 'journey',
+  journey: {
     number: 'V',
     title: 'The Journey Continues',
     subtitle: 'Where we go from here',
-    excerpt: 'The pack is gathering. The storm is rising.'
+    content: `
+      <p>This is just the beginning...</p>
+    `
   }
-];
+};
 
-export default function Saga() {
+export async function generateStaticParams() {
+  return Object.keys(CHAPTERS).map((id) => ({ slug: id }));
+}
+
+export default function ChapterPage({ params }: { params: { slug: string } }) {
+  const chapter = CHAPTERS[params.slug as keyof typeof CHAPTERS];
+  
+  if (!chapter) {
+    notFound();
+  }
+
   return (
     <div style={{
       background:'#000',
@@ -47,87 +71,70 @@ export default function Saga() {
       padding:'60px 24px',
       fontFamily:'system-ui, -apple-system, sans-serif'
     }}>
-      <div style={{ maxWidth:'800px', margin:'0 auto' }}>
+      <div style={{ maxWidth:'700px', margin:'0 auto' }}>
         
-        <div style={{ textAlign:'center', marginBottom:'80px' }}>
-          <div style={{
-            fontSize:'11px',
-            letterSpacing:'4px',
-            color:'#444',
-            marginBottom:'16px'
-          }}>
-            THE CHRONICLES
-          </div>
-          <h1 style={{
-            fontSize:'48px',
-            fontFamily:'Georgia, serif',
-            color:'#d4af37',
-            margin:'0 0 16px 0'
-          }}>
-            The Saga
-          </h1>
-          <p style={{ 
-            fontSize:'18px', 
-            color:'#999',
-            lineHeight:'1.7',
-            maxWidth:'600px',
-            margin:'0 auto'
-          }}>
-            This is not my story. It's His story written in my scars.<br/>
-            Five chapters. One redemption.
-          </p>
+        <Link href="/saga" style={{
+          color:'#d4af37',
+          textDecoration:'none',
+          fontSize:'14px',
+          display:'inline-block',
+          marginBottom:'60px'
+        }}>
+          ← Back to The Saga
+        </Link>
+
+        <div style={{
+          fontSize:'11px',
+          letterSpacing:'4px',
+          color:'#d4af37',
+          marginBottom:'16px'
+        }}>
+          CHAPTER {chapter.number}
+        </div>
+        
+        <h1 style={{
+          fontSize:'56px',
+          fontFamily:'Georgia, serif',
+          color:'#fff',
+          margin:'0 0 12px 0',
+          lineHeight:'1.1'
+        }}>
+          {chapter.title}
+        </h1>
+
+        <div style={{
+          fontSize:'18px',
+          color:'#999',
+          fontStyle:'italic',
+          marginBottom:'60px',
+          paddingBottom:'60px',
+          borderBottom:'1px solid #1a1a1a'
+        }}>
+          {chapter.subtitle}
         </div>
 
-        <div style={{ display:'flex', flexDirection:'column', gap:'24px' }}>
-          {CHAPTERS.map((chapter) => (
-            <Link 
-              key={chapter.id} 
-              href={`/saga/${chapter.id}`}
-              style={{ textDecoration:'none' }}
-            >
-              <div style={{
-                background:'#0a0a0a',
-                border:'1px solid #1a1a1a',
-                borderLeft:'4px solid #d4af37',
-                padding:'32px',
-                borderRadius:'4px',
-                transition:'all 0.3s ease'
-              }}>
-                <div style={{
-                  fontSize:'11px',
-                  letterSpacing:'3px',
-                  color:'#d4af37',
-                  marginBottom:'12px'
-                }}>
-                  CHAPTER {chapter.number}
-                </div>
-                <h2 style={{
-                  fontSize:'32px',
-                  fontFamily:'Georgia, serif',
-                  color:'#fff',
-                  margin:'0 0 8px 0'
-                }}>
-                  {chapter.title}
-                </h2>
-                <div style={{
-                  fontSize:'14px',
-                  color:'#999',
-                  fontStyle:'italic',
-                  marginBottom:'12px'
-                }}>
-                  {chapter.subtitle}
-                </div>
-                <p style={{
-                  fontSize:'16px',
-                  color:'#666',
-                  lineHeight:'1.6',
-                  margin:0
-                }}>
-                  {chapter.excerpt}
-                </p>
-              </div>
-            </Link>
-          ))}
+        <div 
+          style={{
+            fontSize:'18px',
+            lineHeight:'1.8',
+            color:'#ccc'
+          }}
+          dangerouslySetInnerHTML={{ __html: chapter.content }}
+        />
+
+        <div style={{
+          marginTop:'80px',
+          paddingTop:'40px',
+          borderTop:'1px solid #1a1a1a',
+          textAlign:'center'
+        }}>
+          <Link href="/saga" style={{
+            color:'#d4af37',
+            textDecoration:'none',
+            fontSize:'14px'
+          }}>
+            ← Return to all chapters
+          </Link>
         </div>
 
       </div>
