@@ -1,97 +1,80 @@
 import Link from 'next/link';
-import { RELICS } from '@/lib/relics';
+import { RELICS } from '../../lib/relics';
 
-export default function MusicGallery() {
+export default function Music() {
   return (
     <div style={{
       background:'#000',
       color:'#fff',
       minHeight:'100vh',
       padding:'60px 24px',
-      fontFamily:'system-ui, -apple-system, sans-serif'
+      fontFamily:'Georgia, serif'
     }}>
-      <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
-        
-        <div style={{ textAlign:'center', marginBottom:'60px' }}>
-          <div style={{
-            fontSize:'11px',
-            letterSpacing:'4px',
-            color:'#444',
-            marginBottom:'16px'
-          }}>
-            THE HALL OF RELICS
-          </div>
-          <h1 style={{
-            fontSize:'40px',
-            fontFamily:'Georgia, serif',
-            color:'#d4af37',
-            margin:'0 0 16px 0'
-          }}>
-            Stormbreakers Archive
-          </h1>
-          <p style={{ fontSize:'16px', color:'#666' }}>
-            Seven weapons. One calling. Choose your relic.
-          </p>
-        </div>
-
+      <div style={{ maxWidth:'700px', margin:'0 auto' }}>
         <div style={{
-          display:'grid',
-          gridTemplateColumns:'repeat(auto-fill, minmax(280px, 1fr))',
-          gap:'32px'
+          fontSize:'12px',
+          letterSpacing:'4px',
+          color:'#d4af37',
+          marginBottom:'40px',
+          fontFamily:'system-ui, sans-serif'
         }}>
+          THE SOUNDTRACK
+        </div>
+        <h1 style={{
+          fontSize:'48px',
+          color:'#d4af37',
+          margin:'0 0 60px 0',
+          letterSpacing:'3px'
+        }}>
+          MUSIC
+        </h1>
+        <div style={{ display:'flex', flexDirection:'column', gap:'16px' }}>
           {RELICS.map((relic) => (
             <Link 
               key={relic.id} 
               href={`/music/${relic.id}`}
-              style={{ textDecoration:'none' }}
-            >
-              <div style={{
+              style={{
+                display:'flex',
+                alignItems:'center',
+                gap:'24px',
+                padding:'24px',
                 background:'#0a0a0a',
                 border:'1px solid #1a1a1a',
-                borderRadius:'4px',
-                overflow:'hidden',
-                transition:'all 0.3s ease',
-                cursor:'pointer'
-              }}>
+                textDecoration:'none'
+              }}
+            >
+              <div style={{
+                width:'80px',
+                height:'80px',
+                backgroundImage:`url(${relic.cover})`,
+                backgroundSize:'cover',
+                backgroundPosition:'center',
+                backgroundColor:'#111',
+                border:'1px solid #1a1a1a',
+                flexShrink:0
+              }}></div>
+              <div style={{ flex:1 }}>
                 <div style={{
-                  width:'100%',
-                  aspectRatio:'1/1',
-                  backgroundImage:`url(${relic.cover})`,
-                  backgroundSize:'cover',
-                  backgroundPosition:'center',
-                  backgroundColor:'#111'
-                }}></div>
-                
-                <div style={{ padding:'20px' }}>
-                  <div style={{
-                    fontSize:'11px',
-                    letterSpacing:'2px',
-                    color:'#d4af37',
-                    marginBottom:'8px'
-                  }}>
-                    {relic.subtitle}
-                  </div>
-                  <h3 style={{
-                    fontSize:'18px',
-                    fontFamily:'Georgia, serif',
-                    color:'#fff',
-                    margin:'0 0 12px 0'
-                  }}>
-                    {relic.title}
-                  </h3>
-                  <div style={{
-                    fontSize:'12px',
-                    color:'#666',
-                    fontStyle:'italic'
-                  }}>
-                    {relic.scripture}
-                  </div>
+                  fontSize:'11px',
+                  color:'#666',
+                  letterSpacing:'2px',
+                  marginBottom:'4px',
+                  fontFamily:'system-ui, sans-serif'
+                }}>
+                  {relic.subtitle}
+                </div>
+                <div style={{
+                  fontSize:'20px',
+                  color:'#fff',
+                  letterSpacing:'2px'
+                }}>
+                  {relic.title}
                 </div>
               </div>
+              <div style={{ fontSize:'24px', color:'#d4af37' }}>▶</div>
             </Link>
           ))}
         </div>
-
       </div>
     </div>
   );
