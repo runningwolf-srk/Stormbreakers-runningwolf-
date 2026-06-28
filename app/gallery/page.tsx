@@ -1,4 +1,4 @@
-import { RELICS } from '../../lib/relics';
+import { RELICS } from '../../src/lib/relics';
 
 export default function Gallery() {
   return (
