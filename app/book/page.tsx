@@ -7,7 +7,7 @@ export default function BookOfWeapons() {
   const [page, setPage] = useState(0);
   const [unlocked, setUnlocked] = useState(false);
   const [readPages, setReadPages] = useState<number[]>([]);
-  const relic = RELICS; // ← THE ACTUAL FIX IS 
+  const relic = RELICS; 
   const totalPages = RELICS.length;
   const progress = ((page + 1) / totalPages) * 100;
 
