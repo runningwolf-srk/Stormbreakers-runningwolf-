@@ -1,89 +1,115 @@
-export type Relic = {
-  id: string;
-  title: string;
-  subtitle: string;
-  cover: string;
-  youtubeId: string;
-  scripture: string;
-  prophecy: string;
-};
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { RELICS } from '../../../lib/relics';
 
-export const RELICS: Relic[] = [
-  {
-    id: 'horn-of-war',
-    title: 'HORN OF WAR',
-    subtitle: 'RELIC 01',
-    cover: '/covers/horn-of-war.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Joel 2:1',
-    prophecy: 'Blow the trumpet in Zion, sound the alarm on my holy hill.'
-  },
-  {
-    id: 'iron-collide',
-    title: 'IRON COLLIDE',
-    subtitle: 'RELIC 02',
-    cover: '/covers/iron-collide.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Proverbs 27:17',
-    prophecy: 'As iron sharpens iron, so one person sharpens another.'
-  },
-  {
-    id: 'iron-collide-worship',
-    title: 'IRON COLLIDE [WORSHIP]',
-    subtitle: 'RELIC 03',
-    cover: '/covers/iron-collide-worship.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Psalm 29:1',
-    prophecy: 'Ascribe to the Lord, you heavenly beings, ascribe to the Lord glory and strength.'
-  },
-  {
-    id: 'blood-of-cross',
-    title: 'BLOOD OF THE CROSS',
-    subtitle: 'RELIC 04',
-    cover: '/covers/blood-of-cross.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Colossians 1:20',
-    prophecy: 'Through him to reconcile to himself all things, making peace by his blood.'
-  },
-  {
-    id: 'heaven-calling',
-    title: 'HEAVEN CALLING',
-    subtitle: 'RELIC 05',
-    cover: '/covers/heaven-calling.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Philippians 3:14',
-    prophecy: 'I press on toward the goal for the prize of the upward call of God in Christ Jesus.'
-  },
-  {
-    id: 'im-on-fire',
-    title: "I'M ON FIRE",
-    subtitle: 'RELIC 06',
-    cover: '/covers/im-on-fire.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Leviticus 6:13',
-    prophecy: 'The fire must be kept burning on the altar continuously; it must not go out.'
-  },
-  {
-    id: 'spiritual-journey',
-    title: 'SPIRITUAL JOURNEY',
-    subtitle: 'RELIC 07',
-    cover: '/covers/spiritual-journey.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: '2 Corinthians 5:7',
-    prophecy: 'For we live by faith, not by sight.'
+export async function generateStaticParams() {
+  return RELICS.map((relic) => ({ slug: relic.id }));
+}
+
+export default function SagaChapter({ params }: { params: { slug: string } }) {
+  const relic = RELICS.find(r => r.id === params.slug);
+  
+  if (!relic) {
+    notFound();
   }
-];
 
-// ADD THESE 2 FUNCTIONS TO FIX YOUR ERROR
-export function getRelicBySlug(slug: string): Relic | undefined {
-  return RELICS.find(relic => relic.id === slug);
-}
+  return (
+    <div style={{
+      background:'#000',
+      color:'#fff',
+      minHeight:'100vh',
+      padding:'60px 24px',
+      fontFamily:'Georgia, serif'
+    }}>
+      <div style={{ maxWidth:'700px', margin:'0 auto' }}>
+        
+        <Link href="/saga" style={{
+          color:'#d4af37',
+          textDecoration:'none',
+          fontSize:'14px',
+          fontFamily:'system-ui, sans-serif',
+          display:'inline-block',
+          marginBottom:'60px'
+        }}>
+          ← Back to The Saga
+        </Link>
 
-export function getAdjacentRelics(slug: string) {
-  const index = RELICS.findIndex(relic => relic.id === slug);
-  const prev = index > 0 ? RELICS[index - 1] : null;
-  const next = index < RELICS.length - 1 ? RELICS[index + 1] : null;
-  return { prev, next };
-}
+        <div style={{
+          width:'100%',
+          aspectRatio:'16/9',
+          backgroundImage:`url(${relic.cover})`,
+          backgroundSize:'cover',
+          backgroundPosition:'center',
+          backgroundColor:'#111',
+          marginBottom:'40px',
+          borderRadius:'4px',
+          border:'1px solid #1a1a1a'
+        }}></div>
 
-export const relics = RELICS; // alias for old code
+        <div style={{
+          fontSize:'11px',
+          letterSpacing:'4px',
+          color:'#d4af37',
+          marginBottom:'16px',
+          fontFamily:'system-ui, sans-serif'
+        }}>
+          {relic.subtitle} | {relic.scripture}
+        </div>
+        
+        <h1 style={{
+          fontSize:'56px',
+          color:'#fff',
+          margin:'0 0 40px 0',
+          lineHeight:'1.1'
+        }}>
+          {relic.title}
+        </h1>
+
+        <div style={{
+          background:'#0a0a0a',
+          border:'1px solid #1a1a1a',
+          borderLeft:'3px solid #d4af37',
+          padding:'24px',
+          marginBottom:'40px',
+          borderRadius:'4px'
+        }}>
+          <p style={{
+            fontSize:'18px',
+            fontStyle:'italic',
+            color:'#d4af37',
+            lineHeight:'1.6',
+            margin:0
+          }}>
+            "{relic.prophecy}"
+          </p>
+        </div>
+
+        <div style={{
+          fontSize:'18px',
+          lineHeight:'1.8',
+          color:'#ccc'
+        }}>
+          <p>Your testimony for {relic.title} goes here.</p>
+          <p>This is where you tell the story behind the weapon.</p>
+          <p>What darkness did you face? What did God do?</p>
+        </div>
+
+        <div style={{
+          marginTop:'80px',
+          paddingTop:'40px',
+          borderTop:'1px solid #1a1a1a',
+          fontFamily:'system-ui, sans-serif'
+        }}>
+          <Link href="/music" style={{
+            color:'#d4af37',
+            textDecoration:'none',
+            fontSize:'14px'
+          }}>
+            🎵 Listen to this relic
+          </Link>
+        </div>
+
+      </div>
+    </div>
+  );
+              }
