@@ -23,11 +23,10 @@ type Relic = {
   relicNumber: string; 
   sagaNext?: string; 
   sagaPrev?: string;
-  status?: "live" | "coming-soon";
-};
-  written: string; genre: string; relicNumber: string; sagaNext?: string; sagaPrev?: string;
-  status?: "live" | "coming-soon";
-};
+    status?: "live" | "coming-soon";
+  };
+  
+ 
 
 const RELICS: Record<string, Relic> = {
   "horn-of-war": {
