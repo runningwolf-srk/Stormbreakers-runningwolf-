@@ -13,10 +13,9 @@ type SongData = {
   title: string;
   subtitle: string;
   scripture: string;
-  scriptureRef?: string; // ← ADDED THIS TO FIX YOUR ERROR
-  youtubeId?: string;
+  scriptureRef: string;
+  youtubeId?: string; // PRIMARY MEDIA SOURCE
   youtubeIdBonus?: string;
-  audioFile?: string;
   genre: string;
   story: StoryItem[]; // MUST BE 3 ITEMS
   meaning: string;
@@ -25,7 +24,7 @@ type SongData = {
   trackNumber: string; // Format: "01 / 07"
 };
 
-// CANON LOCKED: 7 RELICS ONLY
+// CANON LOCKED: 7 RELICS ONLY - YOUTUBE FIRST
 const songs: Record<string, SongData> = {
   "horn-of-war": {
     slug: "horn-of-war",
@@ -35,7 +34,6 @@ const songs: Record<string, SongData> = {
     scriptureRef: "Proverbs 27:17",
     youtubeId: "odIsEMUtNJI",
     youtubeIdBonus: "fIkUDO2emoc",
-    audioFile: "horn-of-war.mp3",
     genre: "Cinematic Worship • Viking War Hymn • Orchestral",
     story: [
       {
@@ -63,7 +61,6 @@ const songs: Record<string, SongData> = {
     scripture: "As iron sharpens iron, so one person sharpens another.",
     scriptureRef: "Proverbs 27:17",
     youtubeId: "M4wGCg5oCx0",
-    audioFile: "iron-collide.mp3",
     genre: "Cinematic Worship • Viking War Hymn • Orchestral",
     story: [
       {
@@ -91,7 +88,6 @@ const songs: Record<string, SongData> = {
     scripture: "But he was pierced for our transgressions, he was crushed for our iniquities.",
     scriptureRef: "Isaiah 53:5",
     youtubeId: "4lcbjsNLlzo",
-    audioFile: "blood-of-the-cross.mp3",
     genre: "Cinematic Worship • Orchestral • Choral",
     story: [
       {
@@ -119,7 +115,6 @@ const songs: Record<string, SongData> = {
     scripture: "I saw heaven standing open and there before me was a white horse.",
     scriptureRef: "Revelation 19:11",
     youtubeId: "8XQUhWB_N5M",
-    audioFile: "white-horse.mp3",
     genre: "Cinematic Worship • Orchestral • Epic",
     story: [
       {
@@ -146,7 +141,6 @@ const songs: Record<string, SongData> = {
     subtitle: "The King of Pain",
     scripture: "They twisted together a crown of thorns and set it on his head.",
     scriptureRef: "Matthew 27:29",
-    audioFile: "crown-of-thorns.mp3",
     genre: "Cinematic Worship • Orchestral • Choral",
     story: [
       {
@@ -174,7 +168,6 @@ const songs: Record<string, SongData> = {
     scripture: "See, the Lion of the tribe of Judah has triumphed.",
     scriptureRef: "Revelation 5:5",
     youtubeId: "oxNauKuxg4Q",
-    audioFile: "lion-and-lamb.mp3",
     genre: "Cinematic Worship • Orchestral • Choral",
     story: [
       {
@@ -199,183 +192,3 @@ const songs: Record<string, SongData> = {
     slug: "seven-seals",
     title: "Seven Seals",
     subtitle: "The End and Beginning",
-    scripture: "Then I saw in the right hand of him who sat on the throne a scroll with writing on both sides.",
-    scriptureRef: "Revelation 5:1",
-    audioFile: "seven-seals.mp3",
-    genre: "Cinematic Worship • Orchestral • Epic Finale",
-    story: [
-      {
-        title: "THE SCROLL",
-        text: "History is written. The end is decided. No one was found worthy to open it."
-      },
-      {
-        title: "THE WORTHY ONE",
-        text: "Then the Lamb appeared. Slaughtered, yet standing. He alone can break the seals."
-      },
-      {
-        title: "THE NEW SONG",
-        text: "They sang a new song: You are worthy. You purchased people for God. The saga continues in eternity."
-      }
-    ],
-    meaning: "The story doesn't end with judgment. It ends with worship.",
-    sagaNext: undefined,
-    sagaPrev: "lion-and-lamb",
-    trackNumber: "07 / 07"
-  }
-};
-
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const song = songs[params.slug];
-  if (!song) return { title: "Relic Not Found | RUNNINGWOLF" };
-  
-  return {
-    title: `${song.title} | RUNNINGWOLF`,
-    description: song.meaning,
-  };
-}
-
-export default function RelicPage({ params }: { params: { slug: string } }) {
-  const song = songs[params.slug];
-  if (!song) notFound();
-
-  const prevRelic = song.sagaPrev ? songs[song.sagaPrev] : null;
-  const nextRelic = song.sagaNext ? songs[song.sagaNext] : null;
-
-  return (
-    <main className="min-h-screen bg-black text-white antialiased">
-      <div className="max-w-4xl mx-auto px-6 py-8 md:py-16">
-        
-        {/* IDENTITY HEADER - TIERED EMPHASIS */}
-        <header className="mb-12 md:mb-16">
-          <p className="text-amber-500 text-xs md:text-sm tracking-[0.3em] mb-4 font-mono">
-            {song.trackNumber}
-          </p>
-          <h1 className="text-5xl md:text-7xl font-black mb-4 leading-none tracking-tight">
-            {song.title}
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-6 font-light">
-            {song.subtitle}
-          </p>
-          
-          {/* SCRIPTURE QUOTE BLOCK */}
-          <blockquote className="border-l-4 border-amber-500/50 pl-6 py-2 mb-4">
-            <p className="text-lg md:text-xl text-gray-200 italic leading-relaxed">
-              “{song.scripture}”
-            </p>
-            {song.scriptureRef && (
-              <cite className="text-sm text-gray-500 not-italic mt-2 block">
-                {song.scriptureRef}
-              </cite>
-            )}
-          </blockquote>
-          
-          <p className="text-xs text-gray-600 tracking-widest uppercase">
-            {song.genre}
-          </p>
-        </header>
-
-        {/* PRIMARY VISUAL - YOUTUBE */}
-        {song.youtubeId && (
-          <div className="aspect-video mb-8 md:mb-12 rounded-none md:rounded-sm overflow-hidden bg-gray-950 ring-1 ring-gray-800">
-            <iframe
-              className="w-full h-full"
-              src={`https://www.youtube.com/embed/${song.youtubeId}`}
-              title={song.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        )}
-
-        {/* BONUS VISUAL */}
-        {song.youtubeIdBonus && (
-          <div className="mb-8 md:mb-12">
-            <p className="text-xs text-amber-500 mb-4 tracking-[0.2em] font-mono">
-              BONUS: LIVE WAR VERSION
-            </p>
-            <div className="aspect-video rounded-none md:rounded-sm overflow-hidden bg-gray-950 ring-1 ring-gray-800">
-              <iframe
-                className="w-full h-full"
-                src={`https://www.youtube.com/embed/${song.youtubeIdBonus}`}
-                title={`${song.title} Live`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        )}
-
-        {/* AUDIO RELIC - CINEMATIC BUTTON */}
-        {song.audioFile && (
-          <div className="mb-12 md:mb-16 p-6 md:p-8 bg-gradient-to-b from-gray-900/80 to-gray-950/80 border border-gray-800 backdrop-blur-sm">
-            <p className="text-xs text-amber-500 mb-4 tracking-[0.2em] font-mono">
-              RELIC AUDIO
-            </p>
-            <audio 
-              controls 
-              className="w-full h-12 [&::-webkit-media-controls-panel]:bg-gray-900 [&::-webkit-media-controls-current-time-display]:text-amber-500" 
-              preload="metadata"
-            >
-              <source src={`/audio/${song.audioFile}`} type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-            <button className="mt-4 text-sm text-gray-500 hover:text-amber-500 transition-colors tracking-wider">
-              ▶ ENTER SOUND OF WAR
-            </button>
-          </div>
-        )}
-
-        {/* 3-SCENE STORY - ALWAYS SAME FORMAT */}
-        <div className="space-y-12 md:space-y-16 mb-12 md:mb-16">
-          {song.story.map((item, index) => (
-            <section key={index} className="border-l-2 border-amber-500/30 pl-6 md:pl-8">
-              <h2 className="text-2xl md:text-3xl font-black text-amber-500 mb-4 tracking-wide">
-                {item.title}
-              </h2>
-              <p className="text-gray-300 leading-relaxed text-lg md:text-xl font-light">
-                {item.text}
-              </p>
-            </section>
-          ))}
-        </div>
-
-        {/* FINAL ECHO - MEANING LINE */}
-        <div className="bg-gradient-to-b from-gray-900/50 to-transparent border-t border-amber-500/20 p-8 md:p-12 mb-12 md:mb-16">
-          <p className="text-xl md:text-2xl text-gray-100 leading-relaxed font-light text-center">
-            {song.meaning}
-          </p>
-        </div>
-
-        {/* CHAPTER NAVIGATION - IMMERSIVE */}
-        <nav className="flex justify-between items-center pt-8 border-t border-gray-900 text-sm md:text-base">
-          {prevRelic ? (
-            <Link 
-              href={`/music/${prevRelic.slug}`} 
-              className="group text-gray-500 hover:text-amber-500 transition-colors flex items-center gap-2"
-            >
-              <span className="text-amber-500/50 group-hover:text-amber-500">←</span>
-              <span>{prevRelic.title}</span>
-            </Link>
-          ) : <div />}
-          
-          <Link 
-            href="/music" 
-            className="text-gray-600 hover:text-white transition-colors tracking-widest uppercase text-xs"
-          >
-            Return to Hall
-          </Link>
-          
-          {nextRelic ? (
-            <Link 
-              href={`/music/${nextRelic.slug}`} 
-              className="group text-gray-500 hover:text-amber-500 transition-colors flex items-center gap-2 ml-auto text-right"
-            >
-              <span>{nextRelic.title}</span>
-              <span className="text-amber-500/50 group-hover:text-amber-500">→</span>
-            </Link>
-          ) : <div />}
-        </nav>
-      </div>
-    </main>
-  );
-    }
