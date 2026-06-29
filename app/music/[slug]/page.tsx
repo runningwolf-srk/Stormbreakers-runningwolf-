@@ -269,7 +269,7 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
     utterance.onend = () => setIsNarrating(false);
     setIsNarrating(true);
     window.speechSynthesis.speak(utterance);
-  };
+  
 
   return (
     <main className="min-h-screen bg-black text-white">
