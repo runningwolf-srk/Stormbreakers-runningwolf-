@@ -220,7 +220,6 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      {/* HERO */}
       <div className="relative h-screen flex items-center justify-center text-center px-4">
         <div className="absolute inset-0 z-0">
           <Image
@@ -265,7 +264,6 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      {/* MUSIC PLAYER - TOP VISIBILITY */}
       {relic.status !== "coming-soon" && relic.youtubeId && (
         <div className="bg-zinc-950 py-12 px-4 md:px-6 border-y border-zinc-900">
           <div className="max-w-4xl mx-auto">
@@ -283,7 +281,6 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
         </div>
       )}
 
-      {/* SCRIPTURE SCENE */}
       <div className="relative min-h-screen flex items-center justify-center px-4 py-32 bg-zinc-950">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
@@ -302,7 +299,6 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      {/* STORY SCENES - 3 PART STRUCTURE */}
       {relic.story.map((scene, i) => (
         <div 
           key={i} 
@@ -337,7 +333,6 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
         </div>
       ))}
 
-      {/* MEANING - MEMORABLE LINE */}
       <div className="relative min-h-screen flex items-center justify-center px-4 py-32 bg-zinc-950">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -354,7 +349,6 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
         </motion.div>
       </div>
 
-      {/* BONUS VIDEO */}
       {relic.youtubeIdBonus && relic.status !== "coming-soon" && (
         <div className="bg-black py-20 px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
@@ -378,5 +372,46 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
         </div>
       )}
 
-      {/* SAGA NAVIGATION */}
-      <div className="bg-black border-t border-zinc-900 px-4 md:px-6 py-8
+      <div className="bg-black border-t border-zinc-900 px-4 md:px-6 py-8 md:py-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-3 gap-4 items-center">
+          {prevRelic? (
+            <Link href={`/music/${prevRelic.slug}`} className="group text-left">
+              <p className="text-xs text-zinc-600 mb-1">Previous</p>
+              <p className="text-zinc-400 group-hover:text-amber-500 transition-colors font-bold text-sm md:text-base">
+                ← {prevRelic.title}
+              </p>
+            </Link>
+          ) : (
+            <Link href="/music" className="group text-left">
+              <p className="text-xs text-zinc-700 mb-1">Hall</p>
+              <p className="text-zinc-600 group-hover:text-zinc-400 transition-colors font-bold text-sm md:text-base">
+                ← Relics
+              </p>
+            </Link>
+          )}
+
+          <Link 
+            href="/music" 
+            className="text-zinc-700 hover:text-amber-500 uppercase tracking-widest text-xs text-center transition-colors"
+          >
+            Hall of Relics
+          </Link>
+
+          {nextRelic? (
+            <Link href={`/music/${nextRelic.slug}`} className="group text-right">
+              <p className="text-xs text-zinc-600 mb-1">Next</p>
+              <p className="text-zinc-400 group-hover:text-amber-500 transition-colors font-bold text-sm md:text-base">
+                {nextRelic.title} →
+              </p>
+            </Link>
+          ) : (
+            <div className="text-right">
+              <p className="text-xs text-zinc-800 mb-1">End</p>
+              <p className="text-zinc-700 font-bold text-sm md:text-base">Saga</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </main>
+  );
+          }
