@@ -1,25 +1,71 @@
-import Link from 'next/link';
-import { RELICS } from '../../src/lib/relics';
+import Link from "next/link";
+import { Metadata } from "next";
 
-export default function Music() {
+export const metadata: Metadata = {
+  title: "Hall of Relics | Running Wolf",
+  description: "Cinematic war hymns. Truth in audio form."
+};
+
+const RELICS_LIST = [
+  { slug: "horn-of-war", title: "Horn of War", number: "01", status: "live" },
+  { slug: "iron-collide", title: "Iron Collide", number: "02", status: "live" },
+  { slug: "blood-of-the-cross", title: "Blood of the Cross", number: "03", status: "live" },
+  { slug: "seven-veils", title: "Seven Veils", number: "04", status: "coming-soon" },
+  { slug: "ghost-code", title: "Ghost Code", number: "05", status: "coming-soon" },
+  { slug: "lion-rises", title: "Lion Rises", number: "06", status: "coming-soon" },
+];
+
+export default function MusicPage() {
   return (
-    <div style={{ background:'#000', color:'#fff', minHeight:'100vh', padding:'60px 24px', fontFamily:'Georgia, serif' }}>
-      <div style={{ maxWidth:'700px', margin:'0 auto' }}>
-        <div style={{ fontSize:'12px', letterSpacing:'4px', color:'#d4af37', marginBottom:'40px', fontFamily:'system-ui, sans-serif' }}>THE SOUNDTRACK</div>
-        <h1 style={{ fontSize:'48px', color:'#d4af37', margin:'0 0 60px 0', letterSpacing:'3px' }}>MUSIC</h1>
-        <div style={{ display:'flex', flexDirection:'column', gap:'16px' }}>
-          {RELICS.map((relic) => (
-            <Link key={relic.id} href={`/music/${relic.id}`} style={{ display:'flex', alignItems:'center', gap:'24px', padding:'24px', background:'#0a0a0a', border:'1px solid #1a1a1a', textDecoration:'none' }}>
-              <div style={{ width:'80px', height:'80px', backgroundImage:`url(${relic.cover})`, backgroundSize:'cover', backgroundPosition:'center', backgroundColor:'#111', border:'1px solid #1a1a1a', flexShrink:0 }}></div>
-              <div style={{ flex:1 }}>
-                <div style={{ fontSize:'11px', color:'#666', letterSpacing:'2px', marginBottom:'4px', fontFamily:'system-ui, sans-serif' }}>{relic.subtitle}</div>
-                <div style={{ fontSize:'20px', color:'#fff', letterSpacing:'2px' }}>{relic.title}</div>
+    <main className="min-h-screen bg-black text-white px-6 py-16">
+      <div className="max-w-4xl mx-auto">
+        <div className="mb-16 text-center">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-4">
+            HALL OF RELICS
+          </h1>
+          <p className="text-zinc-400 text-lg">
+            Each relic is a weapon. Each song is a war hymn.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {RELICS_LIST.map((relic) => (
+            <Link
+              key={relic.slug}
+              href={`/music/${relic.slug}`}
+              className="block group"
+            >
+              <div className="bg-zinc-950 border border-zinc-900 rounded-lg p-6 hover:border-amber-500/50 transition-all duration-300 hover:bg-zinc-900/80">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-6">
+                    <div className="w-16 h-16 bg-zinc-900 rounded flex items-center justify-center">
+                      <span className="text-zinc-600 text-xs font-bold">
+                        {relic.number}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-xs text-zinc-600 uppercase tracking-widest mb-1">
+                        RELIC {relic.number}
+                      </p>
+                      <h2 className="text-2xl md:text-3xl font-black text-white group-hover:text-amber-500 transition-colors">
+                        {relic.title}
+                      </h2>
+                      {relic.status === "coming-soon" && (
+                        <p className="text-xs text-amber-600 font-bold mt-1">
+                          COMING SOON
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <div className="text-amber-500 text-2xl group-hover:translate-x-2 transition-transform">
+                    ▶
+                  </div>
+                </div>
               </div>
-              <div style={{ fontSize:'24px', color:'#d4af37' }}>▶</div>
             </Link>
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
