@@ -1,70 +1,125 @@
+// app/music/page.tsx
 import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hall of Relics | Running Wolf",
-  description: "Cinematic war hymns. Truth in audio form."
+  title: "The Seven Relics | RUNNINGWOLF",
+  description: "A sealed archive of seven cinematic worship artifacts. Each relic forged in battle, scripture, and sound.",
 };
 
-const RELICS_LIST = [
-  { slug: "horn-of-war", title: "Horn of War", number: "01", status: "live" },
-  { slug: "iron-collide", title: "Iron Collide", number: "02", status: "live" },
-  { slug: "blood-of-the-cross", title: "Blood of the Cross", number: "03", status: "live" },
-  { slug: "spiritual-journey", title: "Spiritual Journey", number: "04", status: "live" },
-  { slug: "lord-of-lords", title: "Lord of Lords", number: "05", status: "coming-soon" },
-  { slug: "scars-that-preach", title: "Scars That Preach", number: "06", status: "coming-soon" },
+const relics = [
+  {
+    slug: "horn-of-war",
+    title: "Horn of War",
+    subtitle: "The Battle Cry",
+    track: "01 / 07",
+    rune: "ᚺ" // Hagalaz - hail/disruption
+  },
+  {
+    slug: "iron-collide",
+    title: "Iron Collide", 
+    subtitle: "Sharpened Together",
+    track: "02 / 07",
+    rune: "ᚠ" // Fehu - wealth/power
+  },
+  {
+    slug: "blood-of-the-cross",
+    title: "Blood of the Cross",
+    subtitle: "The Sacrifice", 
+    track: "03 / 07",
+    rune: "ᛉ" // Algiz - protection
+  },
+  {
+    slug: "white-horse",
+    title: "White Horse",
+    subtitle: "The Return",
+    track: "04 / 07", 
+    rune: "ᛋ" // Sowilo - sun/victory
+  },
+  {
+    slug: "crown-of-thorns",
+    title: "Crown of Thorns",
+    subtitle: "The King of Pain",
+    track: "05 / 07",
+    rune: "ᚾ" // Nauthiz - need/hardship
+  },
+  {
+    slug: "lion-and-lamb", 
+    title: "Lion and Lamb",
+    subtitle: "The Paradox",
+    track: "06 / 07",
+    rune: "ᛚ" // Laguz - water/flow
+  },
+  {
+    slug: "seven-seals",
+    title: "Seven Seals",
+    subtitle: "The End and Beginning", 
+    track: "07 / 07",
+    rune: "ᛟ" // Othala - heritage/inheritance
+  }
 ];
 
-export default function MusicPage() {
+export default function HallOfRelics() {
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-16">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-16 text-center">
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-4">
-            HALL OF RELICS
-          </h1>
-          <p className="text-zinc-400 text-lg">
-            Each relic is a weapon. Each song is a war hymn.
+    <main className="min-h-screen bg-black text-white antialiased">
+      <div className="max-w-6xl mx-auto px-6 py-12 md:py-24">
+        
+        {/* HALL HEADER */}
+        <header className="text-center mb-16 md:mb-24">
+          <p className="text-amber-500 text-xs md:text-sm tracking-[0.4em] mb-6 font-mono">
+            RUNNINGWOLF ARCHIVE
           </p>
-        </div>
+          <h1 className="text-5xl md:text-8xl font-black mb-6 leading-none tracking-tighter">
+            THE SEVEN RELICS
+          </h1>
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+            A sealed archive of cinematic worship artifacts. Each relic forged in battle, scripture, and sound.
+          </p>
+        </header>
 
-        <div className="space-y-4">
-          {RELICS_LIST.map((relic) => (
-            <Link
+        {/* RELIC GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-2">
+          {relics.map((relic) => (
+            <Link 
               key={relic.slug}
               href={`/music/${relic.slug}`}
-              className="block group"
+              className="group relative bg-gradient-to-b from-gray-950 to-black border border-gray-900 hover:border-amber-500/50 transition-all duration-500 p-8 md:p-10"
             >
-              <div className="bg-zinc-950 border border-zinc-900 rounded-lg p-6 hover:border-amber-500/50 transition-all duration-300 hover:bg-zinc-900/80">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 bg-zinc-900 rounded flex items-center justify-center">
-                      <span className="text-zinc-600 text-xs font-bold">
-                        {relic.number}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="text-xs text-zinc-600 uppercase tracking-widest mb-1">
-                        RELIC {relic.number}
-                      </p>
-                      <h2 className="text-2xl md:text-3xl font-black text-white group-hover:text-amber-500 transition-colors">
-                        {relic.title}
-                      </h2>
-                      {relic.status === "coming-soon" && (
-                        <p className="text-xs text-amber-600 font-bold mt-1">
-                          COMING SOON
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                  <div className="text-amber-500 text-2xl group-hover:translate-x-2 transition-transform">
-                    ▶
-                  </div>
-                </div>
+              {/* RUNE WATERMARK */}
+              <div className="absolute top-6 right-6 text-6xl md:text-7xl text-gray-900 group-hover:text-amber-500/10 transition-colors duration-700 font-black">
+                {relic.rune}
               </div>
+              
+              {/* TRACK NUMBER */}
+              <p className="text-xs text-amber-500/70 tracking-[0.3em] mb-4 font-mono relative z-10">
+                {relic.track}
+              </p>
+              
+              {/* TITLE */}
+              <h2 className="text-2xl md:text-3xl font-black mb-2 tracking-tight relative z-10 group-hover:text-amber-500 transition-colors">
+                {relic.title}
+              </h2>
+              
+              {/* SUBTITLE */}
+              <p className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors relative z-10">
+                {relic.subtitle}
+              </p>
+
+              {/* HOVER LINE */}
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-500" />
             </Link>
           ))}
         </div>
+
+        {/* FOOTER SEAL */}
+        <footer className="mt-16 md:mt-24 text-center">
+          <div className="inline-block border-t border-gray-900 pt-8">
+            <p className="text-xs text-gray-700 tracking-[0.3em] uppercase">
+              Canon Sealed • 7 of 7
+            </p>
+          </div>
+        </footer>
+
       </div>
     </main>
   );
