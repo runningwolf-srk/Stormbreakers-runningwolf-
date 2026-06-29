@@ -3,9 +3,42 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Music - Stormbreakers",
-  description: "Stormbreakers tracks: Horn of War Mahalla, Iron Collide Hybrid.",
+  title: "The Relics - Stormbreakers",
+  description: "Cinematic worship artifacts. Each track is Scripture forged in sound.",
 };
+
+const relics = [
+  {
+    number: "01",
+    slug: "horn-of-war",
+    title: "Horn of War",
+    subtitle: "The Battle Cry",
+    verse: "Joel 2:1",
+    verseText: "Blow the trumpet in Zion; sound the alarm on my holy hill.",
+    tags: "CINEMATIC WORSHIP • VIKING WAR HYMN • ORCHESTRAL",
+    status: "released"
+  },
+  {
+    number: "02", 
+    slug: "iron-collide",
+    title: "Iron Collide",
+    subtitle: "Sharpened Together", 
+    verse: "Proverbs 27:17",
+    verseText: "As iron sharpens iron, so one person sharpens another.",
+    tags: "CINEMATIC WORSHIP • VIKING WAR HYMN • ORCHESTRAL",
+    status: "released"
+  },
+  {
+    number: "03",
+    slug: "crown-of-thorns",
+    title: "Crown of Thorns",
+    subtitle: "The King of Pain",
+    verse: "Matthew 27:29",
+    verseText: "They twisted together a crown of thorns and set it on his head.",
+    tags: "CINEMATIC WORSHIP • ORCHESTRAL • CHORAL",
+    status: "sealed"
+  }
+];
 
 export default function MusicPage() {
   return (
@@ -18,7 +51,7 @@ export default function MusicPage() {
           </Link>
           <nav className="flex gap-6 text-sm">
             <Link href="/" className="text-gray-400 hover:text-white transition-colors">Home</Link>
-            <Link href="/music" className="text-amber-500">Music</Link>
+            <Link href="/music" className="text-amber-500">Relics</Link>
             <Link href="/gallery" className="text-gray-400 hover:text-amber-500 transition-colors flex items-center gap-1">
               Gallery <span className="text-amber-500">LOCKED</span>
             </Link>
@@ -29,55 +62,37 @@ export default function MusicPage() {
       <section className="flex-1 px-6 py-12 md:py-20">
         <div className="max-w-4xl mx-auto">
           
-          <h1 className="text-4xl md:text-6xl font-black text-amber-500 mb-4 text-center tracking-tight">
-            THE SOUND
+          <h1 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">
+            The Relics
           </h1>
-          <p className="text-gray-400 text-center mb-12 text-lg">
-            Cinematic worship. Epic spiritual rock. Forged in fire.
+          <p className="text-gray-400 mb-16 text-lg">
+            Scripture forged in sound. Click a relic to enter the experience.
           </p>
 
-          <div className="space-y-12">
-            
-            {/* Horn of War */}
-            <div className="border border-amber-500/20 bg-black/40 p-6">
-              <h2 className="text-2xl md:text-3xl font-black text-white mb-2">
-                Horn of War <span className="text-amber-500">Mahalla</span>
-              </h2>
-              <p className="text-gray-400 mb-6 text-sm tracking-[0.2em]">THE BATTLE CRY</p>
-              <div className="aspect-video">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/REPLACE_WITH_YOUR_ID_1"
-                  title="Horn of War - Mahalla"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-
-            {/* Iron Collide */}
-            <div className="border border-amber-500/20 bg-black/40 p-6">
-              <h2 className="text-2xl md:text-3xl font-black text-white mb-2">
-                Iron Collide <span className="text-amber-500">Hybrid</span>
-              </h2>
-              <p className="text-gray-400 mb-6 text-sm tracking-[0.2em]">WHERE WORSHIP MEETS WAR</p>
-              <div className="aspect-video">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/REPLACE_WITH_YOUR_ID_2"
-                  title="Iron Collide - Hybrid"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-
+          <div className="space-y-6">
+            {relics.map((relic) => (
+              <Link 
+                key={relic.slug}
+                href={relic.status === 'released' ? `/music/${relic.slug}` : '#'}
+                className={`block border border-gray-800 hover:border-amber-500/50 p-6 transition-colors group ${relic.status === 'sealed' ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                <div className="flex items-start justify-between">
+                  <div>
+                    <p className="text-xs text-amber-500 font-mono mb-2">{relic.number} / 07</p>
+                    <h2 className="text-2xl md:text-3xl font-black text-white group-hover:text-amber-500 transition-colors">
+                      {relic.title}
+                    </h2>
+                    <p className="text-gray-500 mb-4">{relic.subtitle}</p>
+                    <p className="text-xs text-gray-600 tracking-wider">{relic.tags}</p>
+                  </div>
+                  <span className="text-amber-500 text-2xl">→</span>
+                </div>
+              </Link>
+            ))}
           </div>
+
         </div>
       </section>
-
     </main>
   );
 }
