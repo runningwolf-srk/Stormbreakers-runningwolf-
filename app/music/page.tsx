@@ -36,13 +36,43 @@ const relics = [
     verse: "Matthew 27:29",
     verseText: "They twisted together a crown of thorns and set it on his head.",
     tags: "CINEMATIC WORSHIP • ORCHESTRAL • CHORAL",
-    status: "sealed"
+    status: "released"
+  },
+  {
+    number: "04",
+    slug: "lion-and-lamb",
+    title: "Lion and Lamb",
+    subtitle: "The Paradox",
+    verse: "Revelation 5:5",
+    verseText: "See, the Lion of the tribe of Judah has triumphed.",
+    tags: "CINEMATIC WORSHIP • ORCHESTRAL • CHORAL",
+    status: "released"
+  },
+  {
+    number: "05",
+    slug: "blood-of-cross",
+    title: "Blood of Cross",
+    subtitle: "The Covenant", 
+    verse: "Colossians 1:20",
+    verseText: "Making peace through his blood, shed on the cross.",
+    tags: "CINEMATIC WORSHIP • ORCHESTRAL • CHORAL • SACRED",
+    status: "released"
+  },
+  {
+    number: "06",
+    slug: "heaven-calling",
+    title: "Heaven Calling",
+    subtitle: "The Summoning", 
+    verse: "1 Samuel 3:10",
+    verseText: "Speak, for your servant is listening.",
+    tags: "CINEMATIC WORSHIP • VIKING • ORCHESTRAL • CHORAL",
+    status: "released"
   }
 ];
 
 export default function MusicPage() {
   return (
-    <main className="min-h-screen text-white antialiased relative z-0 flex flex-col">
+    <main className="min-h-screen text-white antialiased relative z-0 flex flex-col bg-black">
       
       <header className="w-full border-b border-gray-900 bg-black/80 backdrop-blur-sm sticky top-0 z-20">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -85,7 +115,7 @@ export default function MusicPage() {
                     <p className="text-gray-500 mb-4">{relic.subtitle}</p>
                     <p className="text-xs text-gray-600 tracking-wider">{relic.tags}</p>
                   </div>
-                  <span className="text-amber-500 text-2xl">→</span>
+                  <span className="text-amber-500 text-2xl group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </Link>
             ))}
