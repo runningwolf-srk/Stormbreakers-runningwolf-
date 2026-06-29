@@ -32,7 +32,7 @@ const RELICS: Record<string, Relic> = {
     scripture: "Blow the trumpet in Zion, declare a holy fast, call a sacred assembly.",
     scriptureRef: "Joel 2:1",
     theme: "By His Call We Rise",
-    backgroundImage: "/relics/horn-of-war.jpg",
+    backgroundImage: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp",
     youtubeId: "M4wGCg5oCx0",
     audioUrl: "/audio/horn-of-war.mp3",
     story: [
@@ -54,7 +54,7 @@ const RELICS: Record<string, Relic> = {
     scripture: "As iron sharpens iron, so one person sharpens another.",
     scriptureRef: "Proverbs 27:17",
     theme: "By His Strength We Endure",
-    backgroundImage: "/relics/iron-collide.jpg",
+    backgroundImage: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp",
     youtubeId: "odIsEMUtNJI",
     youtubeIdBonus: "fIkUDO2emoc",
     audioUrl: "/audio/iron-collide.mp3",
@@ -78,7 +78,7 @@ const RELICS: Record<string, Relic> = {
     scripture: "And through him to reconcile to himself all things, making peace by his blood, shed on the cross.",
     scriptureRef: "Colossians 1:20",
     theme: "By His Blood We Are Redeemed",
-    backgroundImage: "/relics/blood-of-the-cross.jpg",
+    backgroundImage: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp",
     youtubeId: "4lcbjsNLlzo",
     audioUrl: "/audio/blood-of-the-cross.mp3",
     story: [
@@ -92,63 +92,40 @@ const RELICS: Record<string, Relic> = {
       }
     ],
     sagaPrev: "iron-collide",
-    sagaNext: "seven-veils"
+    sagaNext: "spiritual-journey"
   },
-  "seven-veils": {
-    slug: "seven-veils",
-    title: "Seven Veils",
-    subtitle: "Truth hidden in layers. Revelation comes to those who seek.",
-    scripture: "But when one turns to the Lord, the veil is removed.",
-    scriptureRef: "2 Corinthians 3:16",
-    theme: "By His Light We See",
-    backgroundImage: "/relics/seven-veils.jpg",
-    audioUrl: "/audio/seven-veils.mp3",
+  "spiritual-journey": {
+    slug: "spiritual-journey",
+    title: "Spiritual Journey",
+    subtitle: "Survival was never the goal. Purpose was.",
+    scripture: "And we know that in all things God works for the good of those who love him.",
+    scriptureRef: "Romans 8:28",
+    theme: "By His Purpose We Are Led",
+    backgroundImage: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp",
+    youtubeId: "umDFjJjh0_c",
+    audioUrl: "/audio/spiritual-journey.mp3",
     story: [
       {
         title: "WRITTEN 2024",
-        text: "Seven layers between you and truth. Each veil torn is another lie exposed."
+        text: "Written in the middle of nowhere between broken and becoming. You are not lost. You are being led."
       },
       {
         title: "MEANING",
-        text: "You cannot see clearly until the veils fall."
+        text: "The path is the transformation."
       }
     ],
     sagaPrev: "blood-of-the-cross",
-    sagaNext: "ghost-code",
-    status: "coming-soon"
+    sagaNext: "lord-of-lords"
   },
-  "ghost-code": {
-    slug: "ghost-code",
-    title: "Ghost Code",
-    subtitle: "The unseen war. The written law. The spirit that executes.",
-    scripture: "For the letter kills, but the Spirit gives life.",
-    scriptureRef: "2 Corinthians 3:6",
-    theme: "By His Spirit We Live",
-    backgroundImage: "/relics/ghost-code.jpg",
-    audioUrl: "/audio/ghost-code.mp3",
-    story: [
-      {
-        title: "WRITTEN 2024",
-        text: "There is a code running beneath reality. Most never see it. Few can read it."
-      },
-      {
-        title: "MEANING",
-        text: "The ghost in the machine is the Holy Ghost in you."
-      }
-    ],
-    sagaPrev: "seven-veils",
-    sagaNext: "lion-rises",
-    status: "coming-soon"
-  },
-  "lion-rises": {
-    slug: "lion-rises",
-    title: "Lion Rises",
-    subtitle: "The king does not ask. He roars.",
-    scripture: "The lion has roared. Who will not fear? The Lord GOD has spoken.",
-    scriptureRef: "Amos 3:8",
+  "lord-of-lords": {
+    slug: "lord-of-lords",
+    title: "Lord of Lords",
+    subtitle: "Every knee will bow. Every tongue confess.",
+    scripture: "On his robe and on his thigh he has this name written: King of kings and Lord of lords.",
+    scriptureRef: "Revelation 19:16",
     theme: "By His Authority We Rule",
-    backgroundImage: "/relics/lion-rises.jpg",
-    audioUrl: "/audio/lion-rises.mp3",
+    backgroundImage: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    audioUrl: "/audio/lord-of-lords.mp3",
     story: [
       {
         title: "WRITTEN 2024",
@@ -159,7 +136,30 @@ const RELICS: Record<string, Relic> = {
         text: "When the Lion rises, everything bows."
       }
     ],
-    sagaPrev: "ghost-code",
+    sagaPrev: "spiritual-journey",
+    sagaNext: "scars-that-preach",
+    status: "coming-soon"
+  },
+  "scars-that-preach": {
+    slug: "scars-that-preach",
+    title: "Scars That Preach",
+    subtitle: "Born through the fire. Testimony in flesh.",
+    scripture: "But he was pierced for our transgressions, he was crushed for our iniquities.",
+    scriptureRef: "Isaiah 53:5",
+    theme: "By His Wounds We Are Healed",
+    backgroundImage: "/file_0000000065a071f5832301f52d11fb80.png",
+    audioUrl: "/audio/scars-that-preach.mp3",
+    story: [
+      {
+        title: "WRITTEN 2024",
+        text: "Your scars are not shame. They are scripture. Every wound is a sermon."
+      },
+      {
+        title: "MEANING",
+        text: "The fire did not consume you. It commissioned you."
+      }
+    ],
+    sagaPrev: "lord-of-lords",
     status: "coming-soon"
   }
 };
@@ -185,7 +185,7 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
   return (
     <main className="min-h-screen bg-black text-white">
       <div
-        className="relative h-[60vh] flex flex-col justify-center items-center text-center px-6"
+        className="relative h- flex flex-col justify-center items-center text-center px-6"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${relic.backgroundImage})`,
           backgroundSize: "cover",
@@ -309,4 +309,4 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
       </div>
     </main>
   );
-            }
+      }
