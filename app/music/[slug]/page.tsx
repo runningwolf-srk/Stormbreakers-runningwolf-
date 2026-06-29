@@ -31,8 +31,8 @@ const songs: Record<string, SongData> = {
     subtitle: "The Battle Cry",
     scripture: "As iron sharpens iron, so one person sharpens another.",
     scriptureRef: "Proverbs 27:17",
-    youtubeId: "odIsEMUtNJI", // Fixed: Horn of War ID
-    youtubeIdBonus: "fIkUDO2emoc", // Fixed: Horn of War Live
+    youtubeId: "odIsEMUtNJI",
+    youtubeIdBonus: "fIkUDO2emoc",
     genre: "Cinematic Worship • Viking War Hymn • Orchestral",
     story: [
       {
@@ -59,7 +59,7 @@ const songs: Record<string, SongData> = {
     subtitle: "Sharpened Together",
     scripture: "As iron sharpens iron, so one person sharpens another.",
     scriptureRef: "Proverbs 27:17",
-    youtubeId: "M4wGCg5oCx0", // Fixed: Iron Collide ID
+    youtubeId: "M4wGCg5oCx0",
     genre: "Cinematic Worship • Viking War Hymn • Orchestral",
     story: [
       {
