@@ -99,7 +99,6 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
   const [audioError, setAudioError] = useState(false);
   const [currentScene, setCurrentScene] = useState(0);
   const ambientRef = useRef<HTMLAudioElement>(null);
-  const relicRef = useRef<HTMLAudioElement>(null);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedVoice, setSelectedVoice] = useState("");
   const [isPaused, setIsPaused] = useState(false);
@@ -132,18 +131,6 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
     }
   }, [storyMode]);
 
-  useEffect(() => {
-    if (!storyMode) return;
-    const onScroll = () => {
-      document.querySelectorAll('[data-scene]').forEach((el, i) => {
-        const r = el.getBoundingClientRect();
-        if (r.top <= innerHeight / 2 && r.bottom >= innerHeight / 2) setCurrentScene(i);
-      });
-    };
-    addEventListener('scroll', onScroll);
-    return () => removeEventListener('scroll', onScroll);
-  }, [storyMode]);
-
   const narrateStory = () => {
     if (isNarrating) return window.speechSynthesis.cancel(), setIsNarrating(false), setIsPaused(false);
     const t = `${relic.title}. ${relic.subtitle}. ${relic.story.map(s => `${s.title}. ${s.text}`).join('. ')} ${relic.meaning}`;
@@ -164,7 +151,6 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
   return (
     <main className="min-h-screen bg-black text-white">
       <audio ref={ambientRef} loop src={relic.ambientUrl || "/audio/wind-horn.mp3"} preload="none" />
-
       <div className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src={relic.backgroundImage} alt={relic.title} fill className="object-cover scale-105" priority sizes="100vw" />
@@ -173,4 +159,98 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
         <div className="relative z-10 max-w-4xl mx-auto">
           <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1,delay:0.2}} className="text-amber-500 uppercase tracking-[0.3em] text-sm font-bold mb-6">{relic.theme}</motion.p>
           <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:1.2,delay:0.5}} className="text-5xl md:text-7xl lg:text-9xl font-black mb-6 px-2">{relic.title}</motion.h1>
-          <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1,delay:1.2}} className="text-xl md:text-3xl text-zinc-300 mb-12 max-w-2xl mx-auto px-4 font-light
+          <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1,delay:1.2}} className="text-xl md:text-3xl text-zinc-300 mb-12 max-w-2xl mx-auto px-4 font-light">{relic.subtitle}</motion.p>
+          <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1,delay:1.8}}>
+            <button onClick={() => setStoryMode(true)} className="bg-amber-600 hover:bg-amber-500 text-black font-black py-4 px-12 rounded-lg transition-all hover:scale-105 shadow-2xl shadow-amber-600/40 text-lg tracking-wider w-full sm:w-auto">ENTER STORY MODE</button>
+          </motion.div>
+        </div>
+      </div>
+
+      {relic.status!== "coming-soon" && (
+        <div className="bg-black py-16 px-4">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 md:p-8">
+              <p className="text-sm text-zinc-400 uppercase tracking-wider mb-4">Play Relic</p>
+              {relic.audioUrl &&!audioError? (
+                <audio controls className="w-full" src={relic.audioUrl} preload="metadata" onError={() => setAudioError(true)} />
+              ) : (
+                <div className="bg-zinc-950 rounded-lg p-8 text-center border border-zinc-800"><p className="text-amber-500 font-bold">Audio preparing for battle...</p></div>
+              )}
+            </div>
+            <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 md:p-8">
+              <p className="text-sm text-zinc-400 uppercase tracking-wider mb-4">Play Story</p>
+              <select value={selectedVoice} onChange={e => {setSelectedVoice(e.target.value); localStorage.setItem('relic-voice', e.target.value);}} className="w-full bg-zinc-950 border border-zinc-800 text-zinc-300 text-sm rounded-lg p-3 mb-4">
+                {voices.filter(v => v.lang.startsWith('en')).map(v => <option key={v.name} value={v.name}>{v.name}</option>)}
+              </select>
+              <div className="grid grid-cols-2 gap-3">
+                <button onClick={narrateStory} className="bg-zinc-800 hover:bg-amber-600 text-white hover:text-black font-bold py-4 rounded-lg transition-all">{isNarrating? "■ STOP" : "▶ PLAY"}</button>
+                <button onClick={pauseResumeNarration} disabled={!isNarrating} className="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-4 rounded-lg transition-all disabled:opacity-30">{isPaused? "RESUME" : "PAUSE"}</button>
+              </div>
+            </div>
+            {relic.youtubeId && <div className="aspect-video w-full rounded-xl overflow-hidden"><iframe className="w-full h-full" src={`https://www.youtube.com/embed/${relic.youtubeId}?rel=0&modestbranding=1`} title={relic.title} allowFullScreen /></div>}
+          </div>
+        </div>
+      )}
+
+      <div className="relative min-h-screen flex items-center justify-center px-4 py-32 bg-zinc-950">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="border-l-4 border-amber-500 pl-6 md:pl-8 text-left">
+            <p className="text-2xl md:text-4xl italic text-zinc-200 leading-relaxed font-light">"{relic.scripture}"</p>
+            <p className="text-amber-500 font-bold mt-4 text-xl">{relic.scriptureRef}</p>
+          </div>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {storyMode && (
+          <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="fixed inset-0 bg-black z-50 overflow-y-auto">
+            <button onClick={() => setStoryMode(false)} className="fixed top-6 right-6 z-50 bg-zinc-900 hover:bg-amber-600 text-white hover:text-black p-3 rounded-lg">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            {relic.story.map((scene, i) => (
+              <div key={i} data-scene={i} className="relative min-h-screen flex items-center justify-center px-4 py-32 bg-black">
+                <div className="max-w-3xl mx-auto">
+                  <p className="text-amber-600 font-black text-base mb-4 tracking-[0.3em]">SCENE {["I","II","III"][i]}</p>
+                  <h2 className="text-3xl md:text-6xl font-black text-white mb-8">{scene.title}</h2>
+                  <p className="text-xl md:text-3xl leading-relaxed text-zinc-300 font-light">{scene.text}</p>
+                </div>
+              </div>
+            ))}
+            <div className="relative min-h-screen flex items-center justify-center px-4 py-32 bg-zinc-950">
+              <div className="max-w-4xl mx-auto text-center">
+                <div className="border-t-2 border-b-2 border-amber-600 py-12 px-8">
+                  <p className="text-2xl md:text-5xl font-black text-amber-500">{relic.meaning}</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {!storyMode && (
+        <div className="bg-black border-t border-zinc-900 px-4 py-12">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+            {prevRelic? (
+              <Link href={`/music/${prevRelic.slug}`} className="group text-center sm:text-left">
+                <p className="text-xs text-zinc-600 mb-1">← Return to Hall</p>
+                <p className="text-zinc-400 group-hover:text-amber-500 transition-colors font-bold">{prevRelic.title}</p>
+              </Link>
+            ) : (
+              <Link href="/music" className="group text-center sm:text-left">
+                <p className="text-xs text-zinc-700 mb-1">← Return to Hall</p>
+                <p className="text-zinc-600 group-hover:text-zinc-400 font-bold">All Relics</p>
+              </Link>
+            )}
+            <Link href="/music" className="text-zinc-700 hover:text-amber-500 uppercase tracking-widest text-xs text-center">Hall of Relics</Link>
+            {nextRelic? (
+              <Link href={`/music/${nextRelic.slug}`} className="group text-center sm:text-right">
+                <p className="text-xs text-zinc-600 mb-1">Next Relic →</p>
+                <p className="text-zinc-400 group-hover:text-amber-500 font-bold">{nextRelic.title}</p>
+              </Link>
+            ) : <div className="text-center sm:text-right"><p className="text-xs text-zinc-800 mb-1">Saga Complete</p><p className="text-zinc-700 font-bold">End</p></div>}
+          </div>
+        </div>
+      )}
+    </main>
+  );
+              }
