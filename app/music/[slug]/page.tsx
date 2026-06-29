@@ -31,8 +31,8 @@ const songs: Record<string, SongData> = {
     subtitle: "The Battle Cry",
     scripture: "As iron sharpens iron, so one person sharpens another.",
     scriptureRef: "Proverbs 27:17",
-    youtubeId: "odIsEMUtNJI", // HORN OF WAR - FIXED
-    youtubeIdBonus: "fIkUDO2emoc", // HORN OF WAR LIVE - FIXED
+    youtubeId: "odIsEMUtNJI",
+    youtubeIdBonus: "fIkUDO2emoc",
     genre: "Cinematic Worship • Viking War Hymn • Orchestral",
     story: [
       {
@@ -113,7 +113,7 @@ const songs: Record<string, SongData> = {
     subtitle: "The Return",
     scripture: "I saw heaven standing open and there before me was a white horse.",
     scriptureRef: "Revelation 19:11",
-    youtubeId: "8XQUhWB_N5M", // WHITE HORSE - FIXED
+    youtubeId: "8XQUhWB_N5M",
     genre: "Cinematic Worship • Orchestral • Epic",
     story: [
       {
@@ -166,7 +166,7 @@ const songs: Record<string, SongData> = {
     subtitle: "The Paradox",
     scripture: "See, the Lion of the tribe of Judah has triumphed.",
     scriptureRef: "Revelation 5:5",
-    youtubeId: "oxNauKuxg4Q", // LION AND LAMB - FIXED
+    youtubeId: "oxNauKuxg4Q",
     genre: "Cinematic Worship • Orchestral • Choral",
     story: [
       {
@@ -323,6 +323,25 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
         <div className="bg-gradient-to-b from-gray-900/50 to-transparent border-t border-amber-500/20 p-8 md:p-12 mb-12 md:mb-16">
           <p className="text-xl md:text-2xl text-gray-100 leading-relaxed font-light text-center">
             {song.meaning}
+          </p>
+        </div>
+
+        {/* SAGA TEASER - LOCKED */}
+        <div className="mt-16 p-8 md:p-12 bg-gradient-to-b from-amber-950/20 to-transparent border border-amber-500/20 text-center">
+          <p className="text-xs text-amber-500 tracking-[0.3em] mb-4 font-mono">
+            THE SAGA
+          </p>
+          <p className="text-lg text-gray-300 mb-6 font-light">
+            This relic is Chapter {song.trackNumber} of a 7-part chronicle.
+          </p>
+          <button 
+            disabled
+            className="bg-gray-800 text-gray-600 font-black text-sm px-8 py-3 cursor-not-allowed tracking-wide"
+          >
+            UNLOCK FULL SAGA — COMING SOON
+          </button>
+          <p className="text-xs text-gray-700 mt-4">
+            Narrative bridges, interludes, and director's commentary
           </p>
         </div>
 
