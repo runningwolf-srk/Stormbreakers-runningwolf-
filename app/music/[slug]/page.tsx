@@ -31,8 +31,8 @@ const songs: Record<string, SongData> = {
     subtitle: "The Battle Cry",
     scripture: "As iron sharpens iron, so one person sharpens another.",
     scriptureRef: "Proverbs 27:17",
-    youtubeId: "odIsEMUtNJI",
-    youtubeIdBonus: "fIkUDO2emoc",
+    youtubeId: "odIsEMUtNJI", // HORN OF WAR - FIXED
+    youtubeIdBonus: "fIkUDO2emoc", // HORN OF WAR LIVE - FIXED
     genre: "Cinematic Worship • Viking War Hymn • Orchestral",
     story: [
       {
@@ -113,7 +113,7 @@ const songs: Record<string, SongData> = {
     subtitle: "The Return",
     scripture: "I saw heaven standing open and there before me was a white horse.",
     scriptureRef: "Revelation 19:11",
-    youtubeId: "8XQUhWB_N5M",
+    youtubeId: "8XQUhWB_N5M", // WHITE HORSE - FIXED
     genre: "Cinematic Worship • Orchestral • Epic",
     story: [
       {
@@ -166,7 +166,7 @@ const songs: Record<string, SongData> = {
     subtitle: "The Paradox",
     scripture: "See, the Lion of the tribe of Judah has triumphed.",
     scriptureRef: "Revelation 5:5",
-    youtubeId: "oxNauKuxg4Q",
+    youtubeId: "oxNauKuxg4Q", // LION AND LAMB - FIXED
     genre: "Cinematic Worship • Orchestral • Choral",
     story: [
       {
