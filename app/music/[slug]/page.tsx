@@ -233,7 +233,7 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
   const nextRelic = song.sagaNext? songs[song.sagaNext] : null;
 
   return (
-    <main className="min-h-screen bg-black text-white antialiased">
+    <main className="min-h-screen text-white antialiased relative z-0">
       <div className="max-w-4xl mx-auto px-6 py-8 md:py-16">
         
         <header className="mb-12 md:mb-16">
@@ -330,7 +330,7 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
           {prevRelic? (
             <Link 
               href={`/music/${prevRelic.slug}`} 
-              className="group text-gray-500 hover:text-amber-500 transition-colors flex items-center gap-2 min-h-"
+              className="group text-gray-500 hover:text-amber-500 transition-colors flex items-center gap-2"
             >
               <span className="text-amber-500/50 group-hover:text-amber-500">←</span>
               <span>{prevRelic.title}</span>
@@ -339,7 +339,7 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
           
           <Link 
             href="/music" 
-            className="text-gray-600 hover:text-white transition-colors tracking-widest uppercase text-xs min-h- flex items-center"
+            className="text-gray-600 hover:text-white transition-colors tracking-widest uppercase text-xs flex items-center"
           >
             Return to Hall
           </Link>
@@ -347,7 +347,7 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
           {nextRelic? (
             <Link 
               href={`/music/${nextRelic.slug}`} 
-              className="group text-gray-500 hover:text-amber-500 transition-colors flex items-center gap-2 ml-auto text-right min-h-"
+              className="group text-gray-500 hover:text-amber-500 transition-colors flex items-center gap-2 ml-auto text-right"
             >
               <span>{nextRelic.title}</span>
               <span className="text-amber-500/50 group-hover:text-amber-500">→</span>
