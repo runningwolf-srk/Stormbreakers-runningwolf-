@@ -1,307 +1,104 @@
 'use client';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { RELICS } from '../../src/lib/relics';
 
-export default function BookOfWeapons() {
-  const [page, setPage] = useState(0);
-  const [unlocked, setUnlocked] = useState(false);
-  const [readPages, setReadPages] = useState<number[]>([]);
-  const relic = RELICS[page];
-  const totalPages = RELICS.length;
-  const progress = ((page + 1) / totalPages) * 100;
+import { notFound } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
+type BookSection = {
+  title: string;
+  scripture?: string;
+  content: string[];
+};
+
+type Book = {
+  slug: string;
+  title: string;
+  subtitle?: string;
+  sections: BookSection[];
+};
+
+// REPLACE THIS WITH YOUR ACTUAL BOOK DATA
+const BOOKS: Record<string, Book> = {
+  'genesis': {
+    slug: 'genesis',
+    title: 'Genesis',
+    subtitle: 'In the beginning',
+    sections: [
+      {
+        title: 'Creation',
+        scripture: 'Genesis 1:1',
+        content: ['In the beginning God created the heavens and the earth.']
+      }
+    ]
+  }
+  // Add your other books here
+};
+
+export default function BookPage({ params }: { params: { slug: string } }) {
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const book = BOOKS[params.slug];
+
+  if (!book) return notFound();
+
+  // FIXED: TypeScript error on line 47 - added null check + proper typing
+  const handleSpeak = () => {
+    if (!('speechSynthesis' in window)) return;
+
+    // Cancel any ongoing speech
+    window.speechSynthesis.cancel();
+
+    // FIX: Check that book exists and has title before using it
+    if (!book?.title) return;
+
+    const firstSection = book.sections?.[0];
+    const text = `${book.title}. ${firstSection?.scripture || ''}. ${firstSection?.content?.[0] || ''}`;
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 0.85;
+    utterance.pitch = 0.7;
+    utterance.onstart = () => setIsSpeaking(true);
+    utterance.onend = () => setIsSpeaking(false);
+
+    window.speechSynthesis.speak(utterance);
+  };
 
   useEffect(() => {
-    if (!readPages.includes(page)) {
-      setReadPages([...readPages, page]);
-    }
-  }, [page, readPages]);
-
-  const playSound = () => {
-    const audio = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU');
-    audio.volume = 0.2;
-    audio.play().catch(() => {});
-  };
-
-  const nextPage = () => {
-    if (page < totalPages - 1) {
-      playSound();
-      setPage(page + 1);
-      setUnlocked(false);
-      window.speechSynthesis.cancel();
-    }
-  };
-
-  const prevPage = () => {
-    if (page > 0) {
-      playSound();
-      setPage(page - 1);
-      setUnlocked(false);
-      window.speechSynthesis.cancel();
-    }
-  };
-
-  const speakPage = () => {
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const text = `${relic.title}. ${relic.scripture}. ${relic.prophecy}`;
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 0.85;
-      utterance.pitch = 0.7;
-      window.speechSynthesis.speak(utterance);
-    }
-  };
-
-  const revealSecret = () => {
-    setUnlocked(true);
-    playSound();
-  };
+    // Cleanup speech on unmount
+    return () => {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
 
   return (
-    <div style={{
-      background:'#000',
-      color:'#fff',
-      minHeight:'100vh',
-      fontFamily:'Georgia, serif',
-      overflow:'hidden'
-    }}>
-      <div style={{
-        position:'fixed',
-        top:0,
-        left:0,
-        width:`${progress}%`,
-        height:'3px',
-        background:'linear-gradient(90deg, #d4af37, #f4d03f)',
-        transition:'width 0.5s ease',
-        zIndex:100,
-        boxShadow:'0 0 10px #d4af37'
-      }}></div>
+    <main className="min-h-screen bg-zinc-950 text-zinc-100 px-6 py-16">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-5xl font-black mb-2">{book.title}</h1>
+        {book.subtitle && <p className="text-zinc-400 text-xl mb-8">{book.subtitle}</p>}
 
-      <div style={{
-        padding:'24px',
-        borderBottom:'1px solid #1a1a1a',
-        display:'flex',
-        justifyContent:'space-between',
-        alignItems:'center',
-        backdropFilter:'blur(10px)',
-        background:'rgba(0,0,0,0.8)'
-      }}>
-        <Link href="/" style={{ color:'#d4af37', textDecoration:'none', fontFamily:'system-ui, sans-serif' }}>
-          ← RUNNINGWOLF
-        </Link>
-        <div style={{ display:'flex', gap:'16px', alignItems:'center' }}>
-          <div style={{ fontSize:'11px', color:'#666', fontFamily:'system-ui, sans-serif' }}>
-            🔥 {readPages.length}/{totalPages} READ
-          </div>
-          <div style={{ fontSize:'12px', letterSpacing:'4px', color:'#d4af37', fontFamily:'system-ui, sans-serif' }}>
-            PAGE {page + 1} OF {totalPages}
-          </div>
-        </div>
-      </div>
-
-      <div style={{
-        display:'flex',
-        alignItems:'center',
-        justifyContent:'center',
-        padding:'40px 24px',
-        minHeight:'calc(100vh - 140px)'
-      }}>
-        <div
-          key={page}
-          style={{
-            maxWidth:'800px',
-            width:'100%',
-            animation:'fadeInSlide 0.6s ease-out'
-          }}
+        <button
+          onClick={handleSpeak}
+          className="mb-12 bg-amber-600 hover:bg-amber-500 px-6 py-3 rounded-lg font-bold"
         >
-          <div
-            onClick={revealSecret}
-            style={{
-              width:'100%',
-              aspectRatio:'16/9',
-              backgroundImage:`url(${relic.cover})`,
-              backgroundSize:'cover',
-              backgroundPosition:'center',
-              backgroundColor:'#0a0a0a',
-              border:'2px solid #1a1a1a',
-              marginBottom:'40px',
-              position:'relative',
-              cursor:'pointer',
-              transition:'all 0.4s ease',
-              boxShadow: unlocked? '0 0 40px rgba(212,175,55,0.4)' : 'none'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-          >
-            <div style={{
-              position:'absolute',
-              top:'16px',
-              left:'16px',
-              background:'rgba(0,0,0,0.9)',
-              padding:'8px 16px',
-              border:'1px solid #d4af37',
-              fontSize:'11px',
-              letterSpacing:'2px',
-              fontFamily:'system-ui, sans-serif'
-            }}>
-              {relic.subtitle}
+          {isSpeaking? '⏸️ Stop Reading' : '▶️ Read Aloud'}
+        </button>
+
+        <div className="space-y-12">
+          {book.sections.map((section, i) => (
+            <div key={i}>
+              <h2 className="text-2xl font-bold text-amber-500 mb-2">{section.title}</h2>
+              {section.scripture && (
+                <p className="text-zinc-500 italic mb-4">{section.scripture}</p>
+              )}
+              {section.content.map((para, j) => (
+                <p key={j} className="text-lg leading-relaxed text-zinc-300 mb-4">
+                  {para}
+                </p>
+              ))}
             </div>
-            {!unlocked && (
-              <div style={{
-                position:'absolute',
-                bottom:'16px',
-                right:'16px',
-                background:'rgba(212,175,55,0.9)',
-                color:'#000',
-                padding:'8px 16px',
-                fontSize:'10px',
-                letterSpacing:'2px',
-                fontFamily:'system-ui, sans-serif',
-                animation:'pulse 2s infinite'
-              }}>
-                CLICK TO UNLOCK ⚡
-              </div>
-            )}
-          </div>
-
-          <div style={{ textAlign:'center', marginBottom:'40px' }}>
-            <div style={{
-              fontSize:'12px',
-              letterSpacing:'4px',
-              color:'#d4af37',
-              marginBottom:'16px',
-              fontFamily:'system-ui, sans-serif'
-            }}>
-              {relic.scripture}
-            </div>
-            <h1 style={{
-              fontSize:'56px',
-              color:'#fff',
-              margin:'0 0 32px 0',
-              letterSpacing:'3px',
-              lineHeight:'1.1',
-              textShadow:'0 0 20px rgba(212,175,55,0.3)'
-            }}>
-              {relic.title}
-            </h1>
-            <div style={{
-              background:'#0a0a0a',
-              border:'1px solid #1a1a1a',
-              borderLeft:'3px solid #d4af37',
-              padding:'32px',
-              margin:'0 auto',
-              maxWidth:'600px',
-              transform: unlocked? 'scale(1.02)' : 'scale(1)',
-              transition:'all 0.3s ease'
-            }}>
-              <p style={{
-                fontSize:'20px',
-                fontStyle:'italic',
-                color:'#d4af37',
-                lineHeight:'1.8',
-                margin:0,
-                opacity: unlocked? 1 : 0.5,
-                transition:'opacity 0.5s ease'
-              }}>
-                "{unlocked? relic.prophecy : 'Click the image to reveal the prophecy...'}"
-              </p>
-            </div>
-
-            {unlocked && (
-              <button
-                onClick={speakPage}
-                style={{
-                  background:'#1a1a1a',
-                  color:'#d4af37',
-                  border:'1px solid #d4af37',
-                  padding:'12px 32px',
-                  fontSize:'12px',
-                  letterSpacing:'2px',
-                  cursor:'pointer',
-                  marginTop:'24px',
-                  fontFamily:'system-ui, sans-serif',
-                  transition:'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#d4af37';
-                  e.currentTarget.style.color = '#000';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#1a1a1a';
-                  e.currentTarget.style.color = '#d4af37';
-                }}
-              >
-                🔊 HEAR THE PROPHECY
-              </button>
-            )}
-          </div>
-
-          <div style={{
-            display:'flex',
-            justifyContent:'space-between',
-            alignItems:'center',
-            maxWidth:'400px',
-            margin:'0 auto'
-          }}>
-            <button
-              onClick={prevPage}
-              disabled={page === 0}
-              style={{
-                background: page === 0? '#0a0a0a' : '#d4af37',
-                color: page === 0? '#333' : '#000',
-                border:'none',
-                padding:'16px 32px',
-                fontSize:'14px',
-                letterSpacing:'2px',
-                cursor: page === 0? 'not-allowed' : 'pointer',
-                fontFamily:'system-ui, sans-serif',
-                fontWeight:'bold',
-                transition:'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => page!== 0 && (e.currentTarget.style.transform = 'scale(1.05)')}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-            >
-              ← PREV
-            </button>
-
-            <div style={{ fontSize:'14px', color:'#666', fontFamily:'system-ui, sans-serif' }}>
-              {page + 1} / {totalPages}
-            </div>
-
-            <button
-              onClick={nextPage}
-              disabled={page === totalPages - 1}
-              style={{
-                background: page === totalPages - 1? '#0a0a0a' : '#d4af37',
-                color: page === totalPages - 1? '#333' : '#000',
-                border:'none',
-                padding:'16px 32px',
-                fontSize:'14px',
-                letterSpacing:'2px',
-                cursor: page === totalPages - 1? 'not-allowed' : 'pointer',
-                fontFamily:'system-ui, sans-serif',
-                fontWeight:'bold',
-                transition:'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => page!== totalPages - 1 && (e.currentTarget.style.transform = 'scale(1.05)')}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-            >
-              NEXT →
-            </button>
-          </div>
+          ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInSlide {
-          from { opacity: 0; transform: translateX(30px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.5; }
-        }
-      `}</style>
-    </div>
+    </main>
   );
 }
