@@ -116,3 +116,125 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
     loadVoices();
     window.speechSynthesis.onvoiceschanged = loadVoices;
   }, []);
+
+  useEffect(() => {
+    if (storyMode) {
+      document.body.style.overflow = "hidden";
+      ambientRef.current?.play().catch(() => {});
+    } else {
+      document.body.style.overflow = "auto";
+      ambientRef.current?.pause();
+      window.speechSynthesis.cancel();
+      setIsNarrating(false);
+      setIsPaused(false);
+    }
+  }, [storyMode]);
+
+  const narrateStory = () => {
+    if (isNarrating) return window.speechSynthesis.cancel(), setIsNarrating(false), setIsPaused(false);
+    const t = `${relic.title}. ${relic.subtitle}. ${relic.story.map(s => `${s.title}. ${s.text}`).join('. ')} ${relic.meaning}`;
+    const u = new SpeechSynthesisUtterance(t);
+    const v = voices.find(v => v.name === selectedVoice);
+    if (v) u.voice = v;
+    u.rate = 0.85; u.pitch = 0.9;
+    u.onend = () => { setIsNarrating(false); setIsPaused(false); };
+    setIsNarrating(true);
+    window.speechSynthesis.speak(u);
+  };
+
+  const pauseResumeNarration = () => {
+    isPaused? window.speechSynthesis.resume() : window.speechSynthesis.pause();
+    setIsPaused(!isPaused);
+  };
+
+  return (
+    <main className="min-h-screen bg-black text-white">
+      <audio ref={ambientRef} loop src={relic.ambientUrl || "/audio/wind-horn.mp3"} preload="none" />
+      <div className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image src={relic.backgroundImage} alt={relic.title} fill className="object-cover scale-105" priority sizes="100vw" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/70 to-black" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1,delay:0.2}} className="text-amber-500 uppercase tracking-[0.3em] text-sm font-bold mb-6">{relic.theme}</motion.p>
+          <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:1.2,delay:0.5}} className="text-5xl md:text-7xl lg:text-9xl font-black mb-6 px-2">{relic.title}</motion.h1>
+          <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1,delay:1.2}} className="text-xl md:text-3xl text-zinc-300 mb-12 max-w-2xl mx-auto px-4 font-light">{relic.subtitle}</motion.p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <button onClick={() => setStoryMode(true)} className="px-10 py-5 bg-amber-600 hover:bg-amber-500 text-black font-bold text-lg tracking-wider transition-all transform hover:scale-105">ENTER STORY MODE</button>
+            <Link href="/music" className="px-10 py-5 border-2 border-zinc-600 hover:border-zinc-400 text-white font-bold text-lg tracking-wider transition-all transform hover:scale-105">ALL RELICS</Link>
+          </div>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {storyMode && (
+          <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="fixed inset-0 z-50 bg-black overflow-y-auto">
+            <div className="absolute inset-0">
+              <Image src={relic.backgroundImage} alt={relic.title} fill className="object-cover opacity-30" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
+            </div>
+
+            <div className="relative z-10 min-h-screen p-6 md:p-12">
+              <button onClick={() => setStoryMode(false)} className="fixed top-6 right-6 z-50 w-12 h-12 border border-zinc-700 hover:border-zinc-500 flex items-center justify-center text-zinc-400 hover:text-white transition-colors">✕</button>
+
+              <div className="max-w-4xl mx-auto pt-20">
+                <div className="mb-16 text-center">
+                  <p className="text-amber-500 uppercase tracking-[0.3em] text-sm font-bold mb-4">{relic.relicNumber}</p>
+                  <h2 className="text-4xl md:text-6xl font-black mb-4">{relic.title}</h2>
+                  <p className="text-xl text-zinc-400 italic">"{relic.scripture}"</p>
+                  <p className="text-zinc-500 text-sm mt-2">{relic.scriptureRef}</p>
+                </div>
+
+                <div className="space-y-16 mb-16">
+                  {relic.story.map((s, i) => (
+                    <motion.div key={i} initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:i*0.2}} className="border-l-2 border-amber-600/30 pl-8">
+                      <h3 className="text-amber-500 font-bold text-sm tracking-widest mb-4">{s.title}</h3>
+                      <p className="text-xl md:text-2xl text-zinc-200 leading-relaxed font-light">{s.text}</p>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="bg-zinc-900/50 border border-zinc-800 p-8 md:p-12 mb-16">
+                  <p className="text-2xl md:text-3xl text-amber-400 font-light italic leading-relaxed">"{relic.meaning}"</p>
+                </div>
+
+                {relic.youtubeId && (
+                  <div className="mb-16">
+                    <div className="aspect-video w-full">
+                      <iframe className="w-full h-full" src={`https://www.youtube.com/embed/${relic.youtubeId}`} title={relic.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                    </div>
+                  </div>
+                )}
+
+                {relic.youtubeIdBonus && (
+                  <div className="mb-16">
+                    <h3 className="text-amber-500 font-bold text-sm tracking-widest mb-6 text-center">BONUS RELIC</h3>
+                    <div className="aspect-video w-full">
+                      <iframe className="w-full h-full" src={`https://www.youtube.com/embed/${relic.youtubeIdBonus}`} title={`${relic.title} Bonus`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                    </div>
+                  </div>
+                )}
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-32 text-center">
+                  <div className="border border-zinc-800 p-6">
+                    <p className="text-zinc-500 text-xs uppercase tracking-widest mb-2">Written</p>
+                    <p className="text-white font-bold">{relic.written}</p>
+                  </div>
+                  <div className="border border-zinc-800 p-6">
+                    <p className="text-zinc-500 text-xs uppercase tracking-widest mb-2">Genre</p>
+                    <p className="text-white font-bold">{relic.genre}</p>
+                  </div>
+                  <div className="border border-zinc-800 p-6">
+                    <p className="text-zinc-500 text-xs uppercase tracking-widest mb-2">Relic</p>
+                    <p className="text-white font-bold">{relic.relicNumber}</p>
+                  </div>
+                </div>
+
+                <div className="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-sm border-t border-zinc-800 p-4 z-40">
+                  <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
+                    <div className="flex gap-3">
+                      {prevRelic && <Link href={`/music/${prevRelic.slug}`} className="px-4 py-2 border border-zinc-700 hover:border-zinc-500 text-sm">← PREV</Link>}
+                      {nextRelic && <Link href={`/music/${nextRelic.slug}`} className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-black text-sm font-bold">NEXT →</Link>}
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <select value={selectedVoice} onChange={e => {setSelectedVoice(e.target.value); localStorage.setItem('relic-voice', e.target.value)}} className="bg-zinc-900 border border-zinc-
