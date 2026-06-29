@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 type RelicStory = {
   title: string;
@@ -34,7 +35,7 @@ const RELICS: Record<string, Relic> = {
     theme: "By His Call We Rise",
     backgroundImage: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp",
     youtubeId: "M4wGCg5oCx0",
-    audioUrl: "/audio/horn-of-war.mp3",
+    // audioUrl: "/audio/horn-of-war.mp3", // Uncomment when file uploaded
     story: [
       {
         title: "WRITTEN 2024",
@@ -57,7 +58,6 @@ const RELICS: Record<string, Relic> = {
     backgroundImage: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp",
     youtubeId: "odIsEMUtNJI",
     youtubeIdBonus: "fIkUDO2emoc",
-    audioUrl: "/audio/iron-collide.mp3",
     story: [
       {
         title: "WRITTEN 2024",
@@ -80,7 +80,6 @@ const RELICS: Record<string, Relic> = {
     theme: "By His Blood We Are Redeemed",
     backgroundImage: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp",
     youtubeId: "4lcbjsNLlzo",
-    audioUrl: "/audio/blood-of-the-cross.mp3",
     story: [
       {
         title: "WRITTEN 2024",
@@ -103,7 +102,6 @@ const RELICS: Record<string, Relic> = {
     theme: "By His Purpose We Are Led",
     backgroundImage: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp",
     youtubeId: "umDFjJjh0_c",
-    audioUrl: "/audio/spiritual-journey.mp3",
     story: [
       {
         title: "WRITTEN 2024",
@@ -125,7 +123,6 @@ const RELICS: Record<string, Relic> = {
     scriptureRef: "Revelation 19:16",
     theme: "By His Authority We Rule",
     backgroundImage: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp",
-    audioUrl: "/audio/lord-of-lords.mp3",
     story: [
       {
         title: "WRITTEN 2024",
@@ -148,7 +145,6 @@ const RELICS: Record<string, Relic> = {
     scriptureRef: "Isaiah 53:5",
     theme: "By His Wounds We Are Healed",
     backgroundImage: "/file_0000000065a071f5832301f52d11fb80.png",
-    audioUrl: "/audio/scars-that-preach.mp3",
     story: [
       {
         title: "WRITTEN 2024",
@@ -169,7 +165,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!relic) return { title: "Relic Not Found" };
   return {
     title: `${relic.title} | Hall of Relics`,
-    description: `${relic.subtitle} — ${relic.scriptureRef}`
+    description: `${relic.subtitle} — ${relic.scriptureRef}`,
+    openGraph: {
+      title: relic.title,
+      description: relic.subtitle,
+      images: [relic.backgroundImage],
+    }
   };
 }
 
@@ -182,29 +183,37 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
 
   if (!relic) return notFound();
 
+  const prevRelic = relic.sagaPrev ? RELICS[relic.sagaPrev] : null;
+  const nextRelic = relic.sagaNext ? RELICS[relic.sagaNext] : null;
+
   return (
     <main className="min-h-screen bg-black text-white">
-      <div
-        className="relative h- flex flex-col justify-center items-center text-center px-6"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${relic.backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed"
-        }}
-      >
-        <div className="relative z-10 max-w-4xl">
-          <p className="text-amber-500 uppercase tracking-[0.3em] text-sm font-bold mb-4">
+      {/* HERO - MOBILE FIXED */}
+      <div className="relative min-h- flex items-center justify-center text-center px-4 py-24 md:py-32">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={relic.backgroundImage}
+            alt={relic.title}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <p className="text-amber-500 uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm font-bold mb-4">
             {relic.theme}
           </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tight mb-4 md:mb-6 px-2">
             {relic.title}
           </h1>
-          <p className="text-xl md:text-2xl text-zinc-300 mb-4 max-w-2xl mx-auto">
+          <p className="text-lg md:text-2xl text-zinc-300 mb-6 max-w-2xl mx-auto px-4">
             {relic.subtitle}
           </p>
-          <div className="border-l-4 border-amber-500 pl-6 text-left max-w-2xl mx-auto mt-8">
-            <p className="text-lg md:text-xl italic text-zinc-200">
+          <div className="border-l-4 border-amber-500 pl-4 md:pl-6 text-left max-w-2xl mx-auto mt-8">
+            <p className="text-base md:text-xl italic text-zinc-200 leading-relaxed">
               "{relic.scripture}"
             </p>
             <p className="text-amber-500 font-bold mt-2">{relic.scriptureRef}</p>
@@ -212,27 +221,30 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      <div className="bg-zinc-950 py-12 px-6">
+      {/* MEDIA SECTION - CONDITIONAL RENDERING */}
+      <div className="bg-zinc-950 py-12 px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           {relic.status === "coming-soon"? (
-            <div className="bg-zinc-900/80 border border-zinc-800 rounded-xl p-16 text-center">
-              <p className="text-3xl font-black text-amber-500 tracking-wider">COMING SOON</p>
+            <div className="bg-zinc-900/80 border border-zinc-800 rounded-xl p-12 md:p-16 text-center">
+              <p className="text-2xl md:text-3xl font-black text-amber-500 tracking-wider">COMING SOON</p>
               <p className="text-zinc-500 mt-3">This relic is being forged.</p>
             </div>
           ) : (
             <div className="space-y-8">
+              {/* AUDIO - ONLY SHOWS IF FILE EXISTS */}
               {relic.audioUrl && (
-                <div className="bg-zinc-900 p-6 rounded-xl">
-                  <p className="text-sm text-zinc-400 mb-3 uppercase tracking-wider">Audio Relic</p>
+                <div className="bg-zinc-900 p-4 md:p-6 rounded-xl">
+                  <p className="text-xs md:text-sm text-zinc-400 mb-3 uppercase tracking-wider">Audio Relic</p>
                   <audio controls className="w-full" src={relic.audioUrl}>
                     Your browser does not support the audio element.
                   </audio>
                 </div>
               )}
 
+              {/* YOUTUBE - PRIMARY */}
               {relic.youtubeId && (
                 <div>
-                  <p className="text-sm text-zinc-400 mb-3 uppercase tracking-wider">Video Scroll</p>
+                  <p className="text-xs md:text-sm text-zinc-400 mb-3 uppercase tracking-wider">Video Scroll</p>
                   <div className="aspect-video w-full">
                     <iframe
                       className="w-full h-full rounded-xl"
@@ -245,9 +257,10 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
                 </div>
               )}
 
+              {/* YOUTUBE - BONUS */}
               {relic.youtubeIdBonus && (
                 <div>
-                  <p className="text-sm text-zinc-400 mb-3 uppercase tracking-wider">Bonus: Original Version</p>
+                  <p className="text-xs md:text-sm text-zinc-400 mb-3 uppercase tracking-wider">Bonus: Original Version</p>
                   <div className="aspect-video w-full">
                     <iframe
                       className="w-full h-full rounded-xl"
@@ -263,14 +276,15 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      <div className="bg-black px-6 py-20">
-        <div className="max-w-3xl mx-auto space-y-16">
+      {/* STORY SECTIONS */}
+      <div className="bg-black px-4 md:px-6 py-16 md:py-20">
+        <div className="max-w-3xl mx-auto space-y-12 md:space-y-16">
           {relic.story.map((section, i) => (
-            <div key={i} className="border-l-2 border-zinc-800 pl-8">
-              <h2 className="text-2xl font-black text-amber-500 mb-4 tracking-wide">
+            <div key={i} className="border-l-2 border-zinc-800 pl-6 md:pl-8">
+              <h2 className="text-xl md:text-2xl font-black text-amber-500 mb-3 md:mb-4 tracking-wide">
                 {section.title}
               </h2>
-              <p className="text-xl md:text-2xl leading-relaxed text-zinc-300 font-light">
+              <p className="text-lg md:text-2xl leading-relaxed text-zinc-300 font-light">
                 {section.text}
               </p>
             </div>
@@ -278,35 +292,47 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      <div className="bg-zinc-950 border-t border-zinc-900 px-6 py-8">
-        <div className="max-w-4xl mx-auto flex justify-between items-center text-sm">
-          {relic.sagaPrev? (
+      {/* SAGA NAVIGATION - MOBILE FIXED */}
+      <div className="bg-zinc-950 border-t border-zinc-900 px-4 md:px-6 py-6 md:py-8">
+        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4 items-center text-sm">
+          {prevRelic? (
             <Link
-              href={`/music/${relic.sagaPrev}`}
-              className="text-zinc-400 hover:text-amber-500 transition-colors font-semibold"
+              href={`/music/${prevRelic.slug}`}
+              className="text-zinc-400 hover:text-amber-500 transition-colors font-semibold text-left"
             >
-              ← {RELICS[relic.sagaPrev].title}
+              <span className="block text-xs text-zinc-600">Previous</span>
+              ← {prevRelic.title}
             </Link>
           ) : (
-            <Link href="/music" className="text-zinc-600 hover:text-zinc-400">
-              ← Hall of Relics
+            <Link href="/music" className="text-zinc-600 hover:text-zinc-400 text-left">
+              <span className="block text-xs text-zinc-700">Hall</span>
+              ← Relics
             </Link>
           )}
 
-          <span className="text-zinc-700 uppercase tracking-widest text-xs">Relic Scroll</span>
+          <Link 
+            href="/music" 
+            className="text-zinc-700 hover:text-amber-500 uppercase tracking-widest text-xs text-center transition-colors"
+          >
+            Hall
+          </Link>
 
-          {relic.sagaNext? (
+          {nextRelic? (
             <Link
-              href={`/music/${relic.sagaNext}`}
-              className="text-zinc-400 hover:text-amber-500 transition-colors font-semibold"
+              href={`/music/${nextRelic.slug}`}
+              className="text-zinc-400 hover:text-amber-500 transition-colors font-semibold text-right"
             >
-              {RELICS[relic.sagaNext].title} →
+              <span className="block text-xs text-zinc-600">Next</span>
+              {nextRelic.title} →
             </Link>
           ) : (
-            <span className="text-zinc-700">End of Saga</span>
+            <span className="text-zinc-700 text-right">
+              <span className="block text-xs text-zinc-800">End</span>
+              Saga
+            </span>
           )}
         </div>
       </div>
     </main>
   );
-      }
+}
