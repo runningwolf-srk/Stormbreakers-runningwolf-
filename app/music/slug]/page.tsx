@@ -41,7 +41,7 @@ const RELICS: Record<string, Relic> = {
       { title: "THE CHOICE", text: "Every person must decide whether to stand or retreat. The battlefield is already inside you. The horn just reveals it." }
     ],
     meaning: "The horn does not promise an easy battle. It calls the faithful to stand.", sagaNext: "iron-collide"
-  },
+  };
   "iron-collide": {
     slug: "iron-collide", title: "Iron Collide", subtitle: "Faith sharpened in the fire of resistance.",
     scripture: "As iron sharpens iron, so one person sharpens another.", scriptureRef: "Proverbs 27:17",
@@ -54,7 +54,7 @@ const RELICS: Record<string, Relic> = {
       { title: "THE EDGE", text: "Pressure does not destroy the called. It gives them an edge. What tried to crush you sharpened you." }
     ],
     meaning: "You were not meant to survive the fire. You were meant to be shaped by it.", sagaPrev: "horn-of-war", sagaNext: "blood-of-the-cross"
-  },
+  };
   "blood-of-the-cross": {
     slug: "blood-of-the-cross", title: "Blood of the Cross", subtitle: "Mercy written in sacrifice. Hope carried through suffering.",
     scripture: "And through him to reconcile to himself all things, making peace by his blood, shed on the cross.", scriptureRef: "Colossians 1:20",
@@ -66,7 +66,7 @@ const RELICS: Record<string, Relic> = {
       { title: "THE EXCHANGE", text: "What looked like loss became eternal victory. His blood bought your freedom. His death bought your life." }
     ],
     meaning: "The cross was not the end of the story. It was the turning point of history.", sagaPrev: "iron-collide", sagaNext: "spiritual-journey"
-  },
+  };
   "spiritual-journey": {
     slug: "spiritual-journey", title: "Spiritual Journey", subtitle: "Survival was never the goal. Purpose was.",
     scripture: "And we know that in all things God works for the good of those who love him.", scriptureRef: "Romans 8:28",
@@ -78,7 +78,7 @@ const RELICS: Record<string, Relic> = {
       { title: "THE BECOMING", text: "You are not lost. You are being led. The path is not the problem. The path is the transformation." }
     ],
     meaning: "God wastes no wilderness. Every step is preparing you for where you're going.", sagaPrev: "blood-of-the-cross", sagaNext: "lord-of-lords"
-  },
+  };
   "lord-of-lords": {
     slug: "lord-of-lords", title: "Lord of Lords", subtitle: "Every knee will bow. Every tongue confess.",
     scripture: "On his robe and on his thigh he has this name written: King of kings and Lord of lords.", scriptureRef: "Revelation 19:16",
@@ -90,7 +90,7 @@ const RELICS: Record<string, Relic> = {
       { title: "THE BOW", text: "When the Lion rises, everything bows. Kings. Kingdoms. Demons. You. There is no debate." }
     ],
     meaning: "He was slain to receive power. He returns to exercise it.", sagaPrev: "spiritual-journey", sagaNext: "scars-that-preach", status: "coming-soon"
-  },
+  };
   "scars-that-preach": {
     slug: "scars-that-preach", title: "Scars That Preach", subtitle: "Born through the fire. Testimony in flesh.",
     scripture: "But he was pierced for our transgressions, he was crushed for our iniquities.", scriptureRef: "Isaiah 53:5",
@@ -141,7 +141,7 @@ export default function RelicPage({ params }: { params: { slug: string } }) {
       setIsNarrating(false);
       setIsPaused(false);
     }
-  }, [storyMode]);
+  }; [storyMode]);
 
   const narrateStory = () => {
     if (isNarrating) return window.speechSynthesis.cancel(), setIsNarrating(false), setIsPaused(false);
