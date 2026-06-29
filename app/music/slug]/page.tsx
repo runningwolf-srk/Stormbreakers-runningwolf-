@@ -36,8 +36,7 @@ const RELICS: Record<string, Relic> = {
     audioUrl: "/audio/horn-of-war.mp3", ambientUrl: "/audio/wind-horn.mp3", youtubeId: "M4wGCg5oCx0",
     written: "2024", genre: "Cinematic Worship • Viking War Hymn • Orchestral", relicNumber: "01 / 07",
     story: [
-      { title: "THE SILENCE", text: "Before the battle, everything is still. The enemy whispers that silence means safety. Heaven says silence is surrender." },
-      { title: "THE HORN", text: "The call goes out, awakening courage. Not to signal fear, but to summon the faithful. One note breaks the spell." };
+      { title: "THE SILENCE", text: "Before the battle, everything is still. The enemy whispers that silence means safety. Heaven says silence is surrender."};   { title: "THE HORN", text: "The call goes out, awakening courage. Not to signal fear, but to summon the faithful. One note breaks the spell." };
       { title: "THE CHOICE", text: "Every person must decide whether to stand or retreat. The battlefield is already inside you. The horn just reveals it." };
     ],
     meaning: "The horn does not promise an easy battle. It calls the faithful to stand.", sagaNext: "iron-collide"
