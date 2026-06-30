@@ -227,7 +227,8 @@ export default async function RelicPage({
     notFound();
   }
 
-  const isSealed = relic.status === 'sealed';
+  // Fixed: TypeScript-safe check for sealed status
+  const isSealed = 'status' in relic && relic.status === 'sealed';
 
   return (
     <main className="min-h-screen text-white antialiased relative z-0 flex flex-col bg-black">
@@ -316,4 +317,4 @@ export default async function RelicPage({
       </section>
     </main>
   );
-}
+          }
