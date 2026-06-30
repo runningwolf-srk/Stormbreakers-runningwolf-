@@ -1,10 +1,7 @@
 // app/music//page.tsx
-"use client";
-
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { useState } from "react";
 
 const relicsData = {
   "horn-of-war": {
@@ -286,4 +283,39 @@ export default async function RelicPage({
             </div>
           ) : (
             <div className="mb-16">
-              <p className="text-xs text-amber-
+              <p className="text-xs text-amber-500 tracking-[0.3em] mb-4 font-mono">▶ RELIC EXPERIENCE</p>
+              <div
+                className={`${relic.isVertical ? "aspect-[9/16] max-w-sm mx-auto" : "aspect-video"} border border-gray-800 bg-gray-950 relic-glow`}
+              >
+                <iframe
+                  className="w-full h-full"
+                  src={`https://www.youtube.com/embed/${relic.youtubeId}?rel=0&modestbranding=1`}
+                  title={relic.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          )}
+
+          <div className="space-y-12">
+            {relic.sections.map((section, idx) => (
+              <div key={idx} className="border-l border-gray-800 pl-6">
+                <h3 className="text-amber-500 font-black text-lg mb-3 tracking-wide">{section.title}</h3>
+                <p className="text-gray-300 leading-relaxed text-lg">{section.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="border-t border-gray-900 mt-16 pt-8 flex justify-between items-center">
+            <Link href="/music" className="text-amber-500 hover:text-amber-400 text-sm font-mono">
+              ← RETURN TO HALL
+            </Link>
+            <p className="text-xs text-gray-700">STORMBREAKERS</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
