@@ -27,9 +27,9 @@ export default function HomePage() {
         <div className="relative mb-8">
           <div className="w-40 h-40 md:w-48 md:h-48 rounded-full border-2 border-amber-500/60 p-1 bg-black shadow-[0_0_40px_rgba(245,158,11,0.25)] overflow-hidden">
             <img 
-              src="/Screenshot_20260623-093852_Chrome~2.png" 
+              src="/729068345_1706992463868756_7233760520950384832_n~2.jpg" 
               alt="RunningWolf" 
-              className="w-full h-full object-contain" 
+              className="w-full h-full object-cover rounded-full" 
             />
           </div>
         </div>
