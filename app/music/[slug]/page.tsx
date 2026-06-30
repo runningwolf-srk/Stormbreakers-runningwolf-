@@ -271,8 +271,13 @@ export default async function RelicPage({
           <p className="text-xs text-gray-600 tracking-wider mb-12">{relic.tags}</p>
 
           {relic.coverImage && (
-            <div className="mb-8 border border-gray-800 relic-glow">
-              <img src={relic.coverImage} alt={`${relic.title} Album Art`} className="w-full h-auto" />
+            <div className="mb-8 border border-amber-500/30 rounded-lg overflow-hidden bg-black">
+              <img 
+                src={relic.coverImage} 
+                alt={`${relic.title} Album Art`} 
+                className="w-full h-auto max-w-full block mx-auto" 
+                style={{ maxHeight: '70vh' }}
+              />
             </div>
           )}
 
