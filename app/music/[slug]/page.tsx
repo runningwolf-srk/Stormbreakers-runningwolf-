@@ -5,7 +5,8 @@ import type { Metadata } from "next";
 
 const relicsData = {
   "horn-of-war": {
-    number: "01 / 07",
+    number: "01",
+    total: "07",
     title: "Horn of War",
     subtitle: "The Battle Cry",
     verse: "Joel 2:1",
@@ -20,7 +21,7 @@ const relicsData = {
         text: "Before the battle, everything is still. The enemy whispers that silence means safety. Heaven says silence is surrender."
       },
       {
-        title: "THE HORN",
+        title: "THE HORN", 
         text: "Mahalla wasn’t written in a studio. It was birthed at 3am when addiction was screaming. The Spirit said: ‘Blow the horn.’ This is your war cry. The distorted guitars are the alarm. The chant is the army assembling."
       },
       {
@@ -30,8 +31,9 @@ const relicsData = {
     ]
   },
   "iron-collide": {
-    number: "02 / 07",
-    title: "Iron Collide",
+    number: "02",
+    total: "07",
+    title: "Iron Collide", 
     subtitle: "Sharpened Together",
     verse: "Proverbs 27:17",
     verseText: "As iron sharpens iron, so one person sharpens another.",
@@ -55,8 +57,9 @@ const relicsData = {
     ]
   },
   "crown-of-thorns": {
-    number: "03 / 07",
-    title: "Crown of Thorns",
+    number: "03",
+    total: "07",
+    title: "Crown of Thorns", 
     subtitle: "The King of Pain",
     verse: "Matthew 27:29",
     verseText: "They twisted together a crown of thorns and set it on his head. They put a staff in his right hand. Then they knelt in front of him and mocked him.",
@@ -70,7 +73,7 @@ const relicsData = {
         text: "They gave Him a crown to humiliate Him. Heaven saw a coronation. Every thorn was meant to shame Him. Every thorn was proof He was taking your place. The world laughs at broken people. Jesus put on their mockery and made it royal."
       },
       {
-        title: "THE BLOOD",
+        title: "THE BLOOD", 
         text: "Every thorn drew blood. Every drop paid for rebellion you couldn't cover. This wasn't a minor cut. This was the curse of Genesis 3:18 — thorns from the ground — being crushed on His brow. Your addiction, your shame, your sin drew blood first from His skull."
       },
       {
@@ -80,9 +83,10 @@ const relicsData = {
     ]
   },
   "lion-and-lamb": {
-    number: "04 / 07",
-    title: "Lion and Lamb",
-    subtitle: "The Paradox",
+    number: "04",
+    total: "07",
+    title: "Lion and Lamb", 
+    subtitle: "The Victorious King",
     verse: "Revelation 5:5",
     verseText: "Then one of the elders said to me, 'Do not weep! See, the Lion of the tribe of Judah, the Root of David, has triumphed. He is able to open the scroll and its seven seals.'",
     tags: "CINEMATIC WORSHIP • ORCHESTRAL • CHORAL",
@@ -95,7 +99,7 @@ const relicsData = {
         text: "He didn't come to dominate. He came to be slaughtered. Weakness was the weapon. The cross looked like defeat. Hell thought it won. But the Lamb slain was the key to the scroll. Your brokenness isn't your end — it's where His power starts."
       },
       {
-        title: "THE LION",
+        title: "THE LION", 
         text: "The same one who was slain now roars. The grave couldn't hold Him. Death couldn't keep Him. The Lion of Judah has triumphed. When you worship from your wounds, you don't sound like a victim. You sound like victory. He roars through your surrender."
       },
       {
@@ -108,9 +112,10 @@ const relicsData = {
       }
     ]
   },
-  "blood-of-cross": {
-    number: "05 / 07",
-    title: "Blood of Cross",
+  "blood-of-the-cross": {
+    number: "05",
+    total: "07",
+    title: "Blood of the Cross", 
     subtitle: "The Covenant",
     verse: "Colossians 1:20",
     verseText: "And through him to reconcile to himself all things, whether things on earth or things in heaven, by making peace through his blood, shed on the cross.",
@@ -124,7 +129,7 @@ const relicsData = {
         text: "Peace wasn’t negotiated. It was bled for. The cross wasn’t a symbol of religion — it was a receipt. Paid in full. Every sin you’ve committed, every chain you’ve forged, every lie you’ve believed was nailed there. The blood settled the debt."
       },
       {
-        title: "THE RECONCILING",
+        title: "THE RECONCILING", 
         text: "Colossians says He reconciled ALL things. Your past. Your family. Your future. Your addiction. Your trauma. Nothing is too far. The blood doesn’t just cover sin — it makes peace where there was war. Between you and God. Between you and yourself."
       },
       {
@@ -138,9 +143,10 @@ const relicsData = {
     ]
   },
   "heaven-calling": {
-    number: "06 / 07",
-    title: "Heaven Calling",
-    subtitle: "The Summoning",
+    number: "06",
+    total: "07",
+    title: "Heaven Calling", 
+    subtitle: "The Voice That Finds Us",
     verse: "1 Samuel 3:10",
     verseText: "The Lord came and stood there, calling as at the other times, 'Samuel! Samuel!' Then Samuel said, 'Speak, for your servant is listening.'",
     tags: "CINEMATIC WORSHIP • VIKING • ORCHESTRAL • CHORAL",
@@ -153,7 +159,7 @@ const relicsData = {
         text: "Heaven doesn't always shout. Sometimes it whispers your name in the dark. 3am. When you're numb. When you're running. When addiction is screaming louder than prayer. That's when He calls. Not to condemn you — to summon you."
       },
       {
-        title: "THE ANSWER",
+        title: "THE ANSWER", 
         text: "Samuel said 'Speak, for your servant is listening.' That's the whole war. Not your strength. Not your sobriety streak. Your surrender. Heaven is calling your name right now. Not the name your past gave you. The name your Father spoke over you before you were born."
       },
       {
@@ -163,6 +169,33 @@ const relicsData = {
       {
         title: "THE SUMMONING",
         text: "You were made for more than coping. More than surviving. More than relapse and repent cycles. Heaven is calling you out of the cave. Out of the grave. Out of the lie that you're too far gone. Your name is on His lips. Answer."
+      }
+    ]
+  },
+  "scars-that-preach": {
+    number: "07",
+    total: "07",
+    title: "Scars That Preach", 
+    subtitle: "The Living Testimony",
+    verse: "Job 23:10",
+    verseText: "But he knows the way that I take; when he has tested me, I will come forth as gold.",
+    tags: "CINEMATIC WORSHIP • TESTIMONY • ORCHESTRAL",
+    youtubeId: "",
+    isVertical: false,
+    coverImage: "/photo5805324504711009414.jpeg",
+    status: "sealed",
+    sections: [
+      {
+        title: "THE FIRE",
+        text: "Gold isn’t found. It’s refined. Job lost everything and still said 'He knows the way I take.' Your scars aren’t evidence you failed. They’re proof you survived the furnace. And Heaven doesn’t waste scars. It preaches through them."
+      },
+      {
+        title: "THE TESTIMONY",
+        text: "Revelation 12:11 — They overcame by the blood of the Lamb and the word of their testimony. Your story is a weapon. The enemy wants you silent because your scars tell the truth: God brings dead things back to life."
+      },
+      {
+        title: "THE SEAL",
+        text: "This relic is sealed until the appointed time. Tier 3 unlocks the full saga. The fire, the gold, the voice that says 'I was there too.' Your scars will preach. But first, walk the first six."
       }
     ]
   }
@@ -194,6 +227,8 @@ export default async function RelicPage({
     notFound();
   }
 
+  const isSealed = relic.status === 'sealed';
+
   return (
     <main className="min-h-screen text-white antialiased relative z-0 flex flex-col bg-black">
       <header className="w-full border-b border-gray-900 bg-black/80 backdrop-blur-sm sticky top-0 z-20">
@@ -210,7 +245,11 @@ export default async function RelicPage({
 
       <section className="flex-1 px-6 py-12 md:py-20">
         <div className="max-w-3xl mx-auto pt-8">
-          <p className="text-xs text-amber-500 font-mono mb-4">{relic.number}</p>
+          <div className="flex justify-between items-start mb-4">
+            <p className="text-xs text-amber-500 font-mono">{relic.number} / {relic.total}</p>
+            <p className="text-xs text-gray-600 font-mono">Journey Progress: {relic.number} of {relic.total} Relics</p>
+          </div>
+          
           <h1 className="text-4xl md:text-6xl font-black text-white mb-2 tracking-tight leading-tight">
             {relic.title}
           </h1>
@@ -233,19 +272,26 @@ export default async function RelicPage({
             </div>
           )}
 
-          <div className="mb-16">
-            <p className="text-xs text-amber-500 tracking-[0.3em] mb-4 font-mono">▶ RELIC EXPERIENCE</p>
-            <div className={`${relic.isVertical ? 'aspect-[9/16] max-w-sm mx-auto' : 'aspect-video'} border border-gray-800 bg-gray-950`}>
-              <iframe
-                className="w-full h-full"
-                src={`https://www.youtube.com/embed/${relic.youtubeId}?rel=0&modestbranding=1`}
-                title={relic.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+          {isSealed ? (
+            <div className="mb-16 border border-amber-500/30 bg-amber-500/5 p-8 text-center">
+              <p className="text-amber-500 font-black text-lg mb-2 tracking-wider">🔒 TIER 3 SEALED</p>
+              <p className="text-gray-400 text-sm">This relic unlocks when the saga begins. Walk the first six.</p>
             </div>
-          </div>
+          ) : (
+            <div className="mb-16">
+              <p className="text-xs text-amber-500 tracking-[0.3em] mb-4 font-mono">▶ RELIC EXPERIENCE</p>
+              <div className={`${relic.isVertical ? 'aspect-[9/16] max-w-sm mx-auto' : 'aspect-video'} border border-gray-800 bg-gray-950`}>
+                <iframe
+                  className="w-full h-full"
+                  src={`https://www.youtube.com/embed/${relic.youtubeId}?rel=0&modestbranding=1`}
+                  title={relic.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          )}
 
           <div className="space-y-12">
             {relic.sections.map((section, idx) => (
