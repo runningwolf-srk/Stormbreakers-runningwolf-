@@ -1,87 +1,167 @@
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 const relics = [
-  {
+  { // THIS FIXES HORN OF WAR 404
     id: 1,
     title: "HORN OF WAR",
     subtitle: "A BATTLE CRY. A LEGEND RISES.",
-    image: "/images/horn-of-war.jpg"
+    videoId: "M4wGCg5oCx0",
+    verse: "Blow the trumpet in Zion, declare a holy fast, call a sacred assembly.",
+    ref: "Joel 2:1",
+    devotional: [
+      {
+        heading: "The horn does not promise an easy battle.",
+        text: "Vikings didn't blow horns to start parties. They blew them to end peace. The sound meant one thing: war has come."
+      }
+    ]
   },
-  {
+  { // THIS IS WHY HEAVEN CALLING WORKS
     id: 2,
     title: "HEAVEN CALLING",
     subtitle: "THE ASCENT BEGINS.",
-    image: "/images/heaven-calling.jpg"
+    videoId: "dQw4w9WgXcQ", // CHANGE THIS TO YOUR REAL VIDEO
+    verse: "After this I looked, and there before me was a door standing open in heaven.",
+    ref: "Revelation 4:1",
+    devotional: [
+      {
+        heading: "Heaven is not passive.",
+        text: "It calls. It invites. It commands ascent. You were not made to live in the valley of survival."
+      }
+    ]
   },
-  {
+  { // THIS FIXES IRON COLLIDE 404
     id: 3,
     title: "IRON COLLIDE",
     subtitle: "KINGDOMS CLASH.",
-    image: "/images/iron-collide.jpg"
+    videoId: "YOUR_VIDEO_ID", // ADD YOUR YOUTUBE ID
+    verse: "Choose this day whom you will serve... but as for me and my house, we will serve the Lord.",
+    ref: "Joshua 24:15",
+    devotional: [
+      {
+        heading: "Iron does not bend unless it chooses to.",
+        text: "When kingdoms collide, neutral ground burns first. You cannot serve both fear and faith."
+      }
+    ]
   },
-  {
+  { // THIS FIXES SPIRITUAL JOURNEY 404
     id: 4,
     title: "SPIRITUAL JOURNEY",
     subtitle: "THE PATH HOME.",
-    image: "/images/spiritual-journey.jpg"
+    videoId: "YOUR_VIDEO_ID", // ADD YOUR YOUTUBE ID
+    verse: "Your word is a lamp to my feet and a light to my path.",
+    ref: "Psalm 119:105",
+    devotional: [
+      {
+        heading: "Every saga is a journey.",
+        text: "Vikings sailed by stars. Believers walk by the Word. You will get lost without it."
+      }
+    ]
   },
-  {
+  { // THIS FIXES BLOOD OF CROSS 404
     id: 5,
     title: "BLOOD OF CROSS",
     subtitle: "THE COVENANT SEALED.",
-    image: "/images/blood-of-cross.jpg"
+    videoId: "YOUR_VIDEO_ID", // ADD YOUR YOUTUBE ID
+    verse: "Without the shedding of blood there is no forgiveness.",
+    ref: "Hebrews 9:22",
+    devotional: [
+      {
+        heading: "Viking warriors swore blood oaths.",
+        text: "Christ sealed a blood covenant. Their blood was for vengeance. His blood was for victory."
+      }
+    ]
   },
-  {
+  { // THIS FIXES I'M ON FIRE 404
     id: 6,
     title: "I'M ON FIRE",
     subtitle: "WILDFIRE SPREADS.",
-    image: "/images/im-on-fire.jpg"
+    videoId: "YOUR_VIDEO_ID", // ADD YOUR YOUTUBE ID
+    verse: "He will baptize you with the Holy Spirit and fire.",
+    ref: "Matthew 3:11",
+    devotional: [
+      {
+        heading: "Vikings feared the wildfire.",
+        text: "Christians become the wildfire. The Holy Spirit does not visit. He possesses."
+      }
+    ]
   }
 ]
 
-export default function RelicsPage() {
+export default function RelicPage({ params }: { params: { id: string } }) {
+  const relicId = parseInt(params.id)
+  const relic = relics.find(r => r.id === relicId)
+
+  if (!relic) {
+    notFound()
+  }
+
+  const prevRelic = relicId > 1? relicId - 1 : null
+  const nextRelic = relicId < 6? relicId + 1 : null
+
   return (
     <main className="min-h-screen bg-black text-zinc-200">
-      <div className="max-w-4xl mx-auto px-6 py-20">
-        
-        {/* CHANGED FROM "THE ARMORY" TO "RELICS" */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-serif text-amber-500 mb-4">
-            RELICS
-          </h1>
-          <p className="text-zinc-500 tracking-widest">
-            Cinematic Worship • Viking Spirit • Holy Fire
-          </p>
-          <div className="w-24 h-px bg-amber-500/50 mx-auto mt-8"></div>
+      <div className="max-w-3xl mx-auto px-6 py-20">
+        <div className="flex justify-between text-sm text-zinc-500 mb-16 tracking-widest font-sans">
+          <Link href="/relics" className="hover:text-amber-500">← Hall of Relics</Link>
+          <span>RELIC {String(relic.id).padStart(2, '0')}</span>
+          <div className="w-16"></div>
         </div>
 
-        <div className="space-y-8">
-          {relics.map((relic) => (
-            <Link
-              key={relic.id}
-              href={`/relics/${relic.id}`}
-              className="block border border-zinc-800 rounded-lg overflow-hidden hover:border-amber-500 transition-all cursor-pointer"
-            >
-              <div className="aspect-video bg-zinc-900">
-                <img 
-                  src={relic.image} 
-                  alt={relic.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <div className="p-6">
-                <h2 className="text-2xl font-serif text-white mb-2">
-                  {relic.title}
-                </h2>
-                <p className="text-zinc-400 text-sm tracking-wider">
-                  {relic.subtitle}
-                </p>
-              </div>
-            </Link>
+        <h1 className="text-5xl md:text-7xl font-serif text-amber-500 mb-4 text-center">
+          {relic.title}
+        </h1>
+        <p className="text-zinc-500 text-center mb-16 font-sans tracking-wider">
+          {relic.subtitle}
+        </p>
+
+        <div className="aspect-video bg-zinc-900 mb-16 border border-zinc-800">
+          <iframe
+            src={`https://www.youtube.com/embed/${relic.videoId}`}
+            className="w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+
+        <div className="mb-16 text-center">
+          <p className="text-xl italic text-zinc-400 font-serif leading-relaxed mb-2">
+            "{relic.verse}"
+          </p>
+          <p className="text-amber-500/70 text-sm font-sans">{relic.ref}</p>
+        </div>
+
+        <div className="w-24 h-px bg-zinc-800 mx-auto mb-16"></div>
+
+        <div className="space-y-12">
+          <h2 className="text-amber-500 font-serif text-2xl text-center">The Devotional</h2>
+          {relic.devotional.map((section, index) => (
+            <div key={index}>
+              <h3 className="text-xl font-serif text-white mb-4">{section.heading}</h3>
+              <p className="text-zinc-300 leading-loose font-sans">{section.text}</p>
+            </div>
           ))}
         </div>
 
+        <div className="flex justify-between mt-24 pt-12 border-t border-zinc-800 text-sm font-sans">
+          {prevRelic? (
+            <Link href={`/relics/${prevRelic}`} className="text-zinc-500 hover:text-amber-500">
+              ← Relic {prevRelic}
+            </Link>
+          ) : (
+            <div></div>
+          )}
+
+          {nextRelic? (
+            <Link href={`/relics/${nextRelic}`} className="text-zinc-500 hover:text-amber-500">
+              Relic {nextRelic} →
+            </Link>
+          ) : (
+            <Link href="/relics" className="text-amber-500">
+              Back to Hall
+            </Link>
+          )}
+        </div>
       </div>
     </main>
   )
