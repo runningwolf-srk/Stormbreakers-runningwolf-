@@ -6,7 +6,7 @@ const relics = [
     id: 1,
     title: "HORN OF WAR",
     subtitle: "A BATTLE CRY. A LEGEND RISES.",
-    videoId: "M4wGCg5oCx0", // Replace with your YouTube ID
+    videoId: "M4wGCg5oCx0", // HORN OF WAR
     verse: "Blow the trumpet in Zion, declare a holy fast, call a sacred assembly.",
     ref: "Joel 2:1",
     devotional: [
@@ -24,7 +24,7 @@ const relics = [
     id: 2,
     title: "HEAVEN CALLING",
     subtitle: "THE ASCENT BEGINS.",
-    videoId: "dQw4w9WgXcQ", // Replace with your YouTube ID
+    videoId: "oxNauKuxg4Q", // HEAVEN CALLING
     verse: "After this I looked, and there before me was a door standing open in heaven. And the voice I had first heard speaking to me like a trumpet said, 'Come up here, and I will show you what must take place after this.'",
     ref: "Revelation 4:1",
     devotional: [
@@ -33,25 +33,79 @@ const relics = [
         text: "It calls. It invites. It commands ascent. You were not made to live in the valley of survival. You were called to the mountain of encounter. Vikings climbed for glory. We climb for God."
       }
     ]
+  },
+  {
+    id: 3,
+    title: "IRON COLLIDE",
+    subtitle: "KINGDOMS CLASH.",
+    videoId: "odIsEMUtNJI", // IRON COLLIDE
+    verse: "Choose this day whom you will serve... but as for me and my house, we will serve the Lord.",
+    ref: "Joshua 24:15",
+    devotional: [
+      {
+        heading: "Iron does not bend unless it chooses to.",
+        text: "When kingdoms collide, neutral ground burns first. You cannot serve both fear and faith. The battlefield is inside you. Will you retreat to comfort, or collide with your calling?"
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "SPIRITUAL JOURNEY",
+    subtitle: "THE PATH HOME.",
+    videoId: "umDFjJjh0_c", // SPIRITUAL JOURNEY
+    verse: "Your word is a lamp to my feet and a light to my path.",
+    ref: "Psalm 119:105",
+    devotional: [
+      {
+        heading: "Every saga is a journey.",
+        text: "Every pilgrim has a path. Vikings sailed by stars. Believers walk by the Word. You will get lost without it. You will wander in circles. But with His light, even the wilderness becomes a road home."
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "BLOOD OF CROSS",
+    subtitle: "THE COVENANT SEALED.",
+    videoId: "4IcbjsNLIzo", // BLOOD OF CROSS
+    verse: "Without the shedding of blood there is no forgiveness.",
+    ref: "Hebrews 9:22",
+    devotional: [
+      {
+        heading: "Viking warriors swore blood oaths.",
+        text: "Christ sealed a blood covenant. The difference? Their blood was for vengeance. His blood was for victory. Your sin for His righteousness. Your death for His life. The cross is where the war was won."
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: "I'M ON FIRE",
+    subtitle: "WILDFIRE SPREADS.",
+    videoId: "8XQUhWB_N5M", // I'M ON FIRE
+    verse: "He will baptize you with the Holy Spirit and fire.",
+    ref: "Matthew 3:11",
+    devotional: [
+      {
+        heading: "Vikings feared the wildfire.",
+        text: "Christians become the wildfire. This is not emotion - this is invasion. The Holy Spirit does not visit. He possesses. When He sets you ablaze, you don't just feel warm. You become dangerous to darkness."
+      }
+    ]
   }
-  // Add relics 3-6 here with same structure
 ]
 
 export default function RelicPage({ params }: { params: { id: string } }) {
   const relicId = parseInt(params.id)
   const relic = relics.find(r => r.id === relicId)
-  
+
   if (!relic) {
     notFound()
   }
 
-  const prevRelic = relicId > 1 ? relicId - 1 : null
-  const nextRelic = relicId < 6 ? relicId + 1 : null
+  const prevRelic = relicId > 1? relicId - 1 : null
+  const nextRelic = relicId < 6? relicId + 1 : null
 
   return (
     <main className="min-h-screen bg-black text-zinc-200">
       <div className="max-w-3xl mx-auto px-6 py-20">
-        
         <div className="flex justify-between text-sm text-zinc-500 mb-16 tracking-widest font-sans">
           <Link href="/relics" className="hover:text-amber-500">← Hall of Relics</Link>
           <span>RELIC {String(relic.id).padStart(2, '0')}</span>
@@ -65,7 +119,6 @@ export default function RelicPage({ params }: { params: { id: string } }) {
           {relic.subtitle}
         </p>
 
-        {/* VIDEO - THE MUSIC */}
         <div className="aspect-video bg-zinc-900 mb-16 border border-zinc-800">
           <iframe
             src={`https://www.youtube.com/embed/${relic.videoId}`}
@@ -75,7 +128,6 @@ export default function RelicPage({ params }: { params: { id: string } }) {
           />
         </div>
 
-        {/* SCRIPTURE */}
         <div className="mb-16 text-center">
           <p className="text-xl italic text-zinc-400 font-serif leading-relaxed mb-2">
             "{relic.verse}"
@@ -85,7 +137,6 @@ export default function RelicPage({ params }: { params: { id: string } }) {
 
         <div className="w-24 h-px bg-zinc-800 mx-auto mb-16"></div>
 
-        {/* THE MEANING / BLOG */}
         <div className="space-y-12">
           <h2 className="text-amber-500 font-serif text-2xl text-center">The Devotional</h2>
           {relic.devotional.map((section, index) => (
@@ -96,17 +147,16 @@ export default function RelicPage({ params }: { params: { id: string } }) {
           ))}
         </div>
 
-        {/* NAVIGATION */}
         <div className="flex justify-between mt-24 pt-12 border-t border-zinc-800 text-sm font-sans">
-          {prevRelic ? (
+          {prevRelic? (
             <Link href={`/relics/${prevRelic}`} className="text-zinc-500 hover:text-amber-500">
               ← Relic {prevRelic}
             </Link>
           ) : (
             <div></div>
           )}
-          
-          {nextRelic ? (
+
+          {nextRelic? (
             <Link href={`/relics/${nextRelic}`} className="text-zinc-500 hover:text-amber-500">
               Relic {nextRelic} →
             </Link>
