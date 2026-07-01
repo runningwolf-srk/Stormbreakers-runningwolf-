@@ -1,72 +1,92 @@
 import Link from 'next/link'
 
-export default function MusicPage() {
-  const tracks = [
-    { 
-      id: 1, 
-      title: 'Spiritual Journey', 
-      url: 'https://youtu.be/umDFjJjh0_c',
-      duration: '3:47'
-    },
-    { 
-      id: 2, 
-      title: "I'm on Fire", 
-      url: 'https://youtu.be/8XQUhWB_N5M',
-      duration: '4:12'
-    },
-  ];
+const tracks = [
+  {
+    title: "HORN OF WAR",
+    subtitle: "A BATTLE CRY. A LEGEND RISES.",
+    img: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp"
+  },
+  {
+    title: "HEAVEN CALLING", 
+    subtitle: "A WORSHIP ANTHEM",
+    img: "/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp"
+  },
+  {
+    title: "SCARS THAT PREACH",
+    subtitle: "BORN THROUGH THE FIRE",
+    img: "/file_0000000065a071f5832301f52d11fb80.png"
+  },
+  {
+    title: "SPIRITUAL JOURNEY",
+    subtitle: "A JOURNEY TO HIS PRESENCE", 
+    img: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp"
+  },
+  {
+    title: "IRON COLLIDE",
+    subtitle: "AN EPIC HARD ROCK ANTHEM",
+    img: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp"
+  },
+  {
+    title: "BLOOD OF CROSS",
+    subtitle: "BY HIS WOUNDS WE ARE HEALED",
+    img: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp"
+  },
+  {
+    title: "LORD OF LORDS",
+    subtitle: "A SPIRITUAL ANTHEM",
+    img: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp"
+  }
+]
 
+export default function MusicPage() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white px-4 py-16">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-black text-amber-400 mb-4">
-            STORMBREAKERS MUSIC
-          </h1>
-          <p className="text-zinc-400">
-            Cinematic worship by RunningWolf
-          </p>
-        </div>
+    <main className="min-h-screen bg-black text-white">
+      <div className="max-w-6xl mx-auto px-6 py-20">
         
-        <div className="space-y-4">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <Link href="/" className="text-zinc-500 hover:text-amber-500 text-sm mb-8 inline-block">
+            ← Back to Home
+          </Link>
+          <h1 className="text-5xl md:text-7xl font-black text-amber-500 mb-4 font-serif">
+            THE ARMORY
+          </h1>
+          <p className="text-zinc-400">Cinematic Worship • Viking Spirit • Holy Fire</p>
+          <div className="w-24 h-px bg-amber-500/50 mx-auto mt-8"></div>
+        </div>
+
+        {/* Album Grid - No Animation, Seizure Safe */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {tracks.map((track) => (
-            <div 
-              key={track.id} 
-              className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex flex-col md:flex-row md:justify-between md:items-center gap-4 hover:border-amber-500/50 transition"
-            >
-              <div className="flex items-center gap-4">
-                <span className="text-zinc-600 text-2xl font-black w-8">
-                  {track.id}
-                </span>
-                <div>
-                  <div className="text-xl font-bold">{track.title}</div>
-                  <div className="text-zinc-500 text-sm">{track.duration}</div>
+            <div key={track.title} className="group">
+              <div className="bg-zinc-900 rounded-lg overflow-hidden border border-zinc-800 hover:border-amber-500/50 transition-colors duration-200">
+                <img 
+                  src={track.img} 
+                  alt={track.title}
+                  className="w-full h-64 object-cover"
+                  loading="lazy"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-white mb-1 font-serif">
+                    {track.title}
+                  </h3>
+                  <p className="text-sm text-zinc-500 uppercase tracking-wider">
+                    {track.subtitle}
+                  </p>
                 </div>
               </div>
-              <a 
-                href={track.url} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-amber-500 text-black px-8 py-3 rounded-lg font-bold hover:bg-amber-400 text-center"
-              >
-                PLAY ON YOUTUBE
-              </a>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12 space-y-4">
-          <p className="text-zinc-600 text-sm">
-            More tracks coming soon 🔥🐺⚔️
+        {/* Joel 2:1 Footer */}
+        <div className="text-center mt-24 pt-12 border-t border-zinc-800">
+          <p className="text-zinc-600 text-sm italic">
+            "Blow the trumpet in Zion..." - Joel 2:1
           </p>
-          <Link 
-            href="/" 
-            className="inline-block text-zinc-500 hover:text-amber-400 transition"
-          >
-            ← Back to Home
-          </Link>
         </div>
+
       </div>
     </main>
-  );
+  )
 }
