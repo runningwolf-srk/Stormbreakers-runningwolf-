@@ -67,7 +67,6 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
   return (
     <main className="min-h-screen bg-black text-zinc-200">
       <div className="max-w-2xl mx-auto px-6 py-20">
-        
         <div className="flex justify-between text-sm text-zinc-500 mb-16 tracking-widest font-sans">
           <Link href="/saga" className="hover:text-amber-500">← Contents</Link>
           <span>Chapter {chapter.id}</span>
@@ -95,4 +94,24 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
         <div className="flex justify-between mt-24 pt-12 border-t border-zinc-800 text-sm font-sans">
           {prevChapter ? (
-            <Link href={`/saga/${prevChapter}`} className="text-zinc-500 hover:text-amber
+            <Link href={`/saga/${prevChapter}`} className="text-zinc-500 hover:text-amber-500">
+              ← Chapter {prevChapter}
+            </Link>
+          ) : (
+            <div></div>
+          )}
+          
+          {nextChapter ? (
+            <Link href={`/saga/${nextChapter}`} className="text-zinc-500 hover:text-amber-500">
+              Chapter {nextChapter} →
+            </Link>
+          ) : (
+            <Link href="/saga" className="text-amber-500">
+              Back to Contents
+            </Link>
+          )}
+        </div>
+      </div>
+    </main>
+  )
+}
