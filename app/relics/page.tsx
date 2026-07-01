@@ -1,58 +1,88 @@
 import Link from 'next/link'
 
-export default function HomePage() {
+const relics = [
+  {
+    id: 1,
+    title: "HORN OF WAR",
+    subtitle: "A BATTLE CRY. A LEGEND RISES.",
+    image: "/images/horn-of-war.jpg"
+  },
+  {
+    id: 2,
+    title: "HEAVEN CALLING",
+    subtitle: "THE ASCENT BEGINS.",
+    image: "/images/heaven-calling.jpg"
+  },
+  {
+    id: 3,
+    title: "IRON COLLIDE",
+    subtitle: "KINGDOMS CLASH.",
+    image: "/images/iron-collide.jpg"
+  },
+  {
+    id: 4,
+    title: "SPIRITUAL JOURNEY",
+    subtitle: "THE PATH HOME.",
+    image: "/images/spiritual-journey.jpg"
+  },
+  {
+    id: 5,
+    title: "BLOOD OF CROSS",
+    subtitle: "THE COVENANT SEALED.",
+    image: "/images/blood-of-cross.jpg"
+  },
+  {
+    id: 6,
+    title: "I'M ON FIRE",
+    subtitle: "WILDFIRE SPREADS.",
+    image: "/images/im-on-fire.jpg"
+  }
+]
+
+export default function RelicsPage() {
   return (
-    <main className="min-h-screen bg-black text-zinc-200 flex flex-col items-center justify-center px-6">
+    <main className="min-h-screen bg-black text-zinc-200">
+      <div className="max-w-4xl mx-auto px-6 py-20">
+        
+        {/* CHANGED FROM "THE ARMORY" TO "RELICS" */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-7xl font-serif text-amber-500 mb-4">
+            RELICS
+          </h1>
+          <p className="text-zinc-500 tracking-widest">
+            Cinematic Worship • Viking Spirit • Holy Fire
+          </p>
+          <div className="w-24 h-px bg-amber-500/50 mx-auto mt-8"></div>
+        </div>
 
-      {/* Viking Warrior Circle */}
-      <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-amber-500/30 mb-8">
-        <img
-          src="/images/viking-warrior.jpg"
-          alt="RunningWolf"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* STORMBREAKERS */}
-      <h1 className="text-5xl md:text-7xl font-serif text-amber-500 mb-4 text-center">
-        STORMBREAKERS
-      </h1>
-
-      <p className="text-zinc-400 text-lg mb-2 text-center">
-        RunningWolf - Jessy Marquez
-      </p>
-
-      <div className="w-24 h-px bg-amber-500/50 mx-auto my-6"></div>
-
-      <p className="text-zinc-500 text-sm tracking-widest mb-12 text-center">
-        Cinematic Worship • Spirit Led • 🔥🐺⚔️
-      </p>
-
-      {/* BUTTONS - THESE MAKE IT CLICKABLE */}
-      <div className="space-y-4 w-full max-w-sm">
-
-        {/* LISTEN NOW = GOES TO RELICS WITH MUSIC */}
-        <Link
-          href="/relics"
-          className="block w-full bg-amber-500 text-black text-center py-4 rounded-lg font-bold text-lg hover:bg-amber-400 transition-colors"
-        >
-          LISTEN NOW
-        </Link>
-
-        {/* READ THE SAGA = GOES TO SAGA CHAPTERS */}
-        <Link
-          href="/saga"
-          className="block w-full border-2 border-amber-500 text-amber-500 text-center py-4 rounded-lg font-bold text-lg hover:bg-amber-500/10 transition-colors"
-        >
-          READ THE SAGA
-        </Link>
+        <div className="space-y-8">
+          {relics.map((relic) => (
+            <Link
+              key={relic.id}
+              href={`/relics/${relic.id}`}
+              className="block border border-zinc-800 rounded-lg overflow-hidden hover:border-amber-500 transition-all cursor-pointer"
+            >
+              <div className="aspect-video bg-zinc-900">
+                <img 
+                  src={relic.image} 
+                  alt={relic.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <div className="p-6">
+                <h2 className="text-2xl font-serif text-white mb-2">
+                  {relic.title}
+                </h2>
+                <p className="text-zinc-400 text-sm tracking-wider">
+                  {relic.subtitle}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
 
       </div>
-
-      <p className="text-zinc-600 text-sm mt-16 text-center">
-        By His call we rise.
-      </p>
-
     </main>
   )
 }
