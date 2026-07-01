@@ -7,7 +7,7 @@ const chapters = [
     id: 0,
     title: "PROLOGUE: THE CALL OF THE WOLF",
     subtitle: "How the Stormbreaker Was Named",
-    image: "/729068345_1706992463868756_7233760520950384832_n~2.jpg", // <-- Update this if you uploaded a different wolf image
+    image: "/729068345_1706992463868756_7233760520950384832_n~2.jpg",
     text: `The wind never stopped in Guymon, Oklahoma.
 
 Dust. Silence. Flat earth to the horizon.
@@ -42,7 +42,7 @@ The songs. The relics. The saga.`,
     id: 1,
     title: "CHAPTER I: HORN OF WAR",
     subtitle: "The Sound That Ended Peace",
-    image: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp", // HORN OF WAR image
+    image: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp",
     text: `The snow fell sideways in the Valley of Bones.
 
 Not the gentle kind that covers sin. The kind that cuts. The kind that blinds. The kind that makes men question if God is still watching.
@@ -173,28 +173,188 @@ It had invited itself.`,
     id: 2,
     title: "CHAPTER II: IRON COLLIDE",
     subtitle: "The Forge of Brothers",
-    image: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp", // IRON COLLIDE image
-    text: `The law was brutal: No man fights alone.
+    image: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    text: `The law was older than the mountains: No man fights alone.
 
-Hakon Iron-Hand enforced it with broken bones and harder truths.
+But laws mean nothing without teeth. Hakon Iron-Hand was the teeth.
 
-Every dawn in the training circle. Not to spar. To collide.
+He stood six and a half feet of scar tissue and broken bone, with hands that looked like they were carved from oak and then used to split stone. They called him Iron-Hand because his left hand had been crushed in a bear trap twenty winters ago. The bonesmiths set it wrong. Or maybe right. Because when it healed, it healed into a club. No fingers that bent. Just a fist. Forever.
 
-"Your enemy will not wait for you to be ready," Hakon roared. "So we make you ready in pain."
+He used it to teach.
 
-Young Kael was the smallest. First to bleed. Last to quit.
+Dawn broke blood-red over the training circle. Not a circle of stones. A circle of mud, piss, and frozen sweat. The ground was churned up from three hundred years of boys becoming men or becoming corpses.
 
-On the seventh day, as Kael lay in the mud with a cracked rib, Hakon stood over him. "Why do you keep coming back, pup?"
+"No songs today," Hakon roared. His voice could make ravens fall out of trees. "No poems. No glory. Today we collide."
 
-Kael spat blood. "Because the horn blew. And I will not watch my brothers die while I hide."
+Twenty boys stood shivering. Ages fourteen to eighteen. Sons of farmers. Sons of fishermen. Sons of nobody. All of them thinking they were warriors because they'd killed a wolf or won a wrestling match at harvest.
 
-Hakon hauled him up. "Then tomorrow, you don't block. You strike first."
+Kael was the smallest. Sixteen, but he looked twelve. All elbows and knees and wide eyes. The spear in his hands was older than he was. His father's spear. His father's father before that. The wood was dark with old blood and older oil.
 
-When the raiders came over the White Pass that winter, it was Kael who held the line.
+"You," Hakon pointed his iron hand at Kael. The sound it made cutting the air was like a hammer. "Front and center."
 
-Iron doesn't sharpen iron by accident. It takes heat. Pressure. Friction.
+Kael stepped forward. The mud sucked at his boots. Every other boy took a half-step back. Not from fear of Kael. From fear of what Hakon did to whoever went first.
 
-It takes brothers willing to break you so the enemy can't.`,
+"Rule one," Hakon said. "Your enemy will not wait for you to be ready. So we make you ready in pain."
+
+He didn't warn him. He didn't count down. He just moved.
+
+Hakon's good hand shot out and grabbed Kael by the throat. Lifted him. One-handed. Like Kael was a kitten. Like he weighed nothing. Kael's feet kicked three feet above the mud.
+
+"Do you see me counting to three, pup?" Hakon asked the other boys. His voice was conversational. Like he was asking about the weather. "Do you see me giving him a fair start?"
+
+The boys shook their heads. One of them, Torvin, was crying already. Not from sadness. From knowing.
+
+"That's because war doesn't count to three," Hakon said. He dropped Kael.
+
+Kael hit the mud face-first. Couldn't breathe. Couldn't see. Could only taste iron and cold.
+
+"Up," Hakon said.
+
+Kael pushed himself up. Blood ran from his nose. Mixed with the mud. Made pink slurry.
+
+"Again," Hakon said.
+
+For three hours, it was the same. Hakon would point. A boy would step forward. Hakon would break him. Not kill. Not maim. But break. Ribs. Noses. Fingers. Pride.
+
+The point wasn't to win. There was no winning against Hakon. The point was to get up.
+
+By midday, Kael's left eye was swollen shut. His ribs felt like someone had taken a hammer to them. Which someone had. He couldn't lift his spear with both hands anymore. The weight made his cracked ribs scream.
+
+"Why do you keep coming back, pup?" Hakon stood over him during the water break. The other boys were lying in the mud, gasping. Kael was sitting. Because lying down hurt worse.
+
+Kael spat blood. His tooth went with it. Baby tooth. He was sixteen and still losing baby teeth. "Because the horn blew."
+
+Hakon was quiet for a long time. The wind moved through the circle. Carried the smell of blood and boy-sweat.
+
+"And?" Hakon finally said.
+
+"And I will not watch my brothers die while I hide," Kael said. His voice was a whisper. His throat was bruised from Hakon's grip.
+
+Hakon nodded once. Then he hauled Kael to his feet by his tunic. Like lifting a sack of grain. "Then tomorrow, you don't block. You strike first."
+
+That night, Kael couldn't sleep. Not from pain. From remembering. He lay in the barracks with nineteen other broken boys and listened to them breathe. Listen to Torvin sob quietly because his shoulder was dislocated. Listen to Bjorn the Younger—named after the chieftain—whisper prayers to gods who didn't answer.
+
+He thought about his father. His father died at the Battle of Red Creek. Holding the line. Kael was six. He remembered the spear coming home before his father did. His mother took it. Hung it above the hearth. Told Kael it was waiting for him.
+
+For ten years, Kael looked at that spear and thought about glory. About being a hero. About songs.
+
+Now he looked at it and thought about mud. About blood in his mouth. About Hakon's iron hand around his throat.
+
+He didn't want glory anymore. He wanted to not die.
+
+Day seven was different.
+
+The snow had come early. Covered the mud in white. Made everything clean and cold and honest.
+
+Kael stepped into the circle before Hakon called him. His ribs were wrapped in linen. His eye was still swollen. He held his father's spear in one hand. Couldn't lift it with two.
+
+"Ready to quit, pup?" Hakon asked. There was no mockery in it. Just fact.
+
+Kael shook his head. "Ready to strike first."
+
+Hakon smiled. First time Kael had seen it. It was not a nice smile. It was the smile of a wolf seeing a rabbit finally stop running.
+
+Hakon came at him.
+
+Kael didn't dodge. Didn't block. Didn't parry.
+
+He stepped inside Hakon's reach—inside the place where the iron hand couldn't swing—and drove the butt of his spear up. Into Hakon's solar plexus. Into the place where all the air lives.
+
+Hakon made a sound like a bull choking. Staggered back. For one second—one heartbeat—Hakon Iron-Hand, terror of the valley, breaker of boys, was off-balance.
+
+Kael could have followed. Could have swung the blade. Could have drawn blood.
+
+He didn't.
+
+He stepped back. Lowered the spear. Waited.
+
+Hakon stared at him. Really looked. Not at a boy. At something else. Then he laughed. The sound boomed off the mountains.
+
+"Finally," Hakon said. "Finally, you understand."
+
+"Understand what?" Kael asked. His whole body was shaking. Not from fear. From adrenaline. From doing the thing.
+
+"Iron doesn't sharpen iron by accident," Hakon said. He rubbed his chest where Kael hit him. "It takes heat. Pressure. Friction. It takes brothers willing to break you so the enemy can't."
+
+He looked at all of them. Twenty broken boys in the snow. "You are not my students. You are my sons. And I will hurt you. Every day. Until the day someone else tries to hurt you. And fails."
+
+Three moons later, the raiders came over the White Pass.
+
+Three hundred of them. Painted faces. Wolf pelts. Axes that had tasted blood in ten kingdoms.
+
+They expected farmers. Expected old men and scared boys.
+
+They found the warband.
+
+Kael was seventeen by then. Still the smallest. Still with one eye that didn't open all the way from that first day.
+
+He stood in the shield wall. Not in the back. Not hiding. In the front. Beside Torvin, whose shoulder had healed crooked but strong. Beside Bjorn the Younger, who didn't pray anymore. Beside nineteen other boys who weren't boys anymore.
+
+Hakon stood behind them. Not fighting. Watching.
+
+The raider chief came first. Seven feet tall. Carried an axe as big as Kael. He pointed at Kael and laughed. Said something in the tongue of the north. The words for "child" and "corpse" were the same.
+
+Kael didn't answer with words.
+
+He answered with his father's spear. Straight through the chief's throat. Before the chief finished laughing.
+
+The raider chief made a sound like Hakon made three moons ago. The sound of air leaving and not coming back.
+
+He fell. The axe fell with him. Landed blade-down in the snow. Stuck there. Like a marker. Like a grave.
+
+Three hundred raiders saw it. Saw a child kill their chief before the battle started.
+
+Half of them turned and ran right then. The other half died.
+
+After, when the snow was red and the ravens were fat, Hakon found Kael. Kael was sitting on a rock. Staring at his hands. They weren't shaking. That scared him more than if they were.
+
+"Did we win?" Kael asked.
+
+Hakon sat beside him. The rock groaned under his weight. "No."
+
+"But they're dead. We're alive."
+
+"We survived," Hakon said. "Winning is different. Winning is when you don't have to do this again."
+
+He put his iron hand on Kael's shoulder. Gentle. For the first time. "You struck first today. Just like I told you."
+
+Kael nodded. "You broke me so they couldn't."
+
+"No," Hakon said. "I broke you so you could break them. There's a difference."
+
+He stood. Looked at the battlefield. At the boys—men—cleaning their blades. At the pyres being built.
+
+"Iron Collide," Hakon said. "That's what we call it. The law. The training. The truth."
+
+"Why?" Kael asked.
+
+"Because iron doesn't sharpen in silence. It doesn't sharpen in peace. It sharpens in the collision. In the violence. In the breaking."
+
+He walked away. Left Kael with that.
+
+Kael stayed on the rock until sunset. Watching the pyres burn. Watching the smoke go up. Watching his breath in the cold.
+
+He thought about his father. Thought about the spear. Thought about Hakon's iron hand around his throat on that first day.
+
+He understood now.
+
+The horn had blown for war.
+
+But Hakon had been preparing them for war since before they were born.
+
+The law was brutal: No man fights alone.
+
+But the truth was worse: No man becomes a man alone.
+
+It takes a brother. It takes a breaker. It takes iron colliding with iron until sparks fly or bones do.
+
+Kael stood. Picked up his father's spear. It was heavier now. Or maybe he was stronger.
+
+He walked back to the warband.
+
+Not as a boy. Not as a son.
+
+As a brother.`,
     relicLink: 2,
     relicTitle: "Iron Collide"
   },
@@ -202,7 +362,7 @@ It takes brothers willing to break you so the enemy can't.`,
     id: 3,
     title: "CHAPTER III: CROWN OF THORNS",
     subtitle: "The King With No Kingdom",
-    image: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp", // LORD OF LORDS - using for Crown of Thorns
+    image: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp",
     text: `They found him in the ruins of the old chapel at Ravenscar.
 
 Not on a throne. On his knees in the snow.
@@ -235,7 +395,7 @@ Astrid did not take it. She drew her knife and cut the thorns from his head, one
     id: 4,
     title: "CHAPTER IV: BLOOD OF THE CROSS",
     subtitle: "The Covenant in the Cave",
-    image: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp", // BLOOD OF CROSS image
+    image: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp",
     text: `Every Viking knew the blood oath.
 
 A cut across the palm. "My blood for your vengeance." Sealed in fire, broken only by death.
@@ -262,253 +422,4 @@ He pressed his palm flat against the stone. No cut. No blood. Just contact.
 
 Above them, the mountain groaned. Not in anger. In recognition.
 
-The war was over before it began.`,
-    relicLink: 4,
-    relicTitle: "Blood of the Cross"
-  },
-  {
-    id: 5,
-    title: "CHAPTER V: HEAVEN CALLING",
-    subtitle: "The Voice in the Fire",
-    image: "/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp", // HEAVEN CALLING image
-    text: `The warband was dying.
-
-Not from battle. From the third winter. From hunger. From the silence that follows when hope runs out.
-
-Kael built a fire that night. Not for warmth — they had no wood to spare. For defiance.
-
-"If the gods are real," he shouted to the indifferent stars, "then speak! We are done with silence!"
-
-The fire answered.
-
-Not with words. With a name.
-
-"Kael."
-
-He scrambled back. "Who speaks?"
-
-"Kael."
-
-The third time, the flames did not flicker. They parted. Like a curtain. Like a veil.
-
-And beyond it, Kael saw it: a door standing open in heaven. No stairs leading up. No path. Just invitation.
-
-"You were not made for the valley," the voice said. It was not thunder. It was not whisper. It was home.
-
-"I know," Kael wept. "But I don't know the way up."
-
-The voice was not angry. It was not distant. It was closer than his own breath.
-
-"Then stop looking for a way. Look for Me. I AM the way."
-
-The fire collapsed into embers. The vision ended.
-
-But that night, Kael did not sleep in the valley with the others.
-
-He took one step up the mountain. Then another.
-
-He began to climb.`,
-    relicLink: 5,
-    relicTitle: "Heaven Calling"
-  },
-  {
-    id: 6,
-    title: "CHAPTER VI: I'M ON FIRE",
-    subtitle: "Wildfire Spreads",
-    image: "/file_0000000065a071f5832301f52d11fb80.png", // SCARS THAT PREACH - using for I'm On Fire
-    text: `It started with a spark.
-
-The first spark landed on Astrid's fur cloak as she stood watch. She beat it out. Thought nothing of it.
-
-The second spark caught in Hakon Iron-Hand's beard. He cursed and slapped it away.
-
-But the third spark landed in the dry grass of the Valley of Bones.
-
-And the valley was ready.
-
-It did not burn like a campfire. It did not burn like a forge.
-
-It burned like judgment. Like cleansing. Like a world being baptized in flame.
-
-The warband ran. Not from the fire. With it. Beside it. Ahead of it.
-
-"The horn called us to war!" Bjorn One-Eye bellowed. "The fire calls us to cleanse!"
-
-They did not fight that day. They ran through abandoned villages, not with swords, but with torches torn from the wildfire itself.
-
-Not to destroy. To ignite.
-
-Every cold hearth they passed, they lit. Every dark home, they woke. Every heart that had forgotten heat, they warmed.
-
-By dawn, the valley was not ash and death.
-
-It was alive. Smoking, yes. Scarred, yes. But alive.
-
-Astrid stood on the ridge, face black with soot, watching sunrise through the haze.
-
-"Wildfire doesn't ask permission," she said to Kael.
-
-He nodded. "It spreads."
-
-"So does revival."
-
-Below them, the first green shoots were already pushing through the black earth.`,
-    relicLink: 6,
-    relicTitle: "I'm On Fire"
-  },
-  {
-    id: 7,
-    title: "CHAPTER VII: SPIRITUAL JOURNEY",
-    subtitle: "God Kept Me Alive",
-    image: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp", // SPIRITUAL JOURNEY image
-    text: `I should have died before I was born.
-
-Ten months late. Cord wrapped. Doctors said zero chance.
-
-But I came anyway. Screaming. Fighting. Alive.
-
-That was the first time.
-
-The second was the fever. Burning up. Mother praying while the preacher said "if it's God's will."
-
-The third was the wreck. Metal and glass and blood. Walked away with scars and questions.
-
-The fourth was the silence. The kind that makes you put a gun in your mouth just to hear something louder than the void.
-
-But the trigger never pulled.
-
-The fifth was the overdose. The sixth was the knife. The seventh was the bridge.
-
-Seven times I should have died.
-
-Seven times something stopped it.
-
-A hand I couldn't see. A voice I couldn't hear. A war I didn't know I was in.
-
-People ask me why I believe in God.
-
-I don't believe. I know.
-
-Because dead men don't get second chances.
-
-I got seven.
-
-Born 10 months late. Lived a bad life. Made bad choices. Hurt people. Got hurt.
-
-But every time death came for me, Heaven said "Not yet."
-
-Not yet, because the horn hadn't blown.
-Not yet, because the fire hadn't started.
-Not yet, because the saga wasn't written.
-
-God kept me alive.
-
-Not because I was good. Because the story wasn't finished.
-
-And now you're reading it.
-
-The warband is forming. The wolves are gathering. The storm is breaking.
-
-I'm Jessy Marquez.
-
-I was born late.
-
-But I'm right on time.`,
-    relicLink: 7,
-    relicTitle: "Spiritual Journey",
-    isOrigin: true
-  }
-]
-
-export default function SagaPage() {
-  const [currentChapter, setCurrentChapter] = useState(0)
-  const chapter = chapters[currentChapter]
-
-  return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-100">
-      <div className="bg-black/80 backdrop-blur-md border-b border-zinc-800 sticky top-0 z-50">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-amber-500 font-bold text-lg font-serif">
-            The Stormbreakers Saga
-          </Link>
-          <div className="flex gap-6 text-sm">
-            <Link href="/" className="text-zinc-400 hover:text-amber-500">Home</Link>
-            <Link href="/relics" className="text-zinc-400 hover:text-amber-500">Relics</Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-4xl mx-auto px-6 py-16">
-        <div className="text-center mb-12">
-          {chapter.isOrigin && (
-            <p className="text-amber-500 text-sm tracking-[0.4em] mb-4">
-              THE ORIGIN
-            </p>
-          )}
-          {!chapter.isOrigin && (
-            <p className="text-amber-500 text-sm tracking-[0.4em] mb-4">
-              {chapter.title.split(':')[0]}
-            </p>
-          )}
-          <h1 className="text-4xl md:text-6xl font-serif text-white mb-2">
-            {chapter.title.split(': ')[1] || chapter.title}
-          </h1>
-          <p className="text-zinc-500 text-lg italic">
-            {chapter.subtitle}
-          </p>
-        </div>
-
-        <div className="w-full aspect-[16/9] bg-zinc-900 rounded-lg overflow-hidden border border-zinc-800 mb-12 shadow-2xl">
-          <img
-            src={chapter.image}
-            alt={chapter.title}
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        <div className="max-w-2xl mx-auto">
-          {chapter.text.split('\n\n').map((paragraph, i) => (
-            <p key={i} className="text-zinc-300 leading-loose mb-8 text-lg font-serif first-letter:text-5xl first-letter:text-amber-500 first-letter:font-bold first-letter:mr-3 first-letter:float-left">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-
-        {chapter.relicLink && (
-          <div className="text-center mt-16">
-            <Link
-              href={`/relics/${chapter.relicLink}`}
-              className="inline-block bg-amber-500 text-black px-8 py-4 rounded-lg font-bold hover:bg-amber-400 transition-colors"
-            >
-              LISTEN TO THE RELIC → {chapter.relicTitle}
-            </Link>
-          </div>
-        )}
-
-        <div className="w-32 h-px bg-zinc-800 mx-auto my-16"></div>
-
-        <div className="flex justify-between items-center max-w-2xl mx-auto">
-          <button
-            onClick={() => setCurrentChapter(Math.max(0, currentChapter - 1))}
-            disabled={currentChapter === 0}
-            className="text-zinc-500 hover:text-amber-500 disabled:opacity-20 disabled:cursor-not-allowed font-serif"
-          >
-            ← PREVIOUS CHAPTER
-          </button>
-
-          <span className="text-zinc-600 text-sm font-mono">
-            {String(currentChapter).padStart(2, '0')} / {String(chapters.length - 1).padStart(2, '0')}
-          </span>
-
-          <button
-            onClick={() => setCurrentChapter(Math.min(chapters.length - 1, currentChapter + 1))}
-            disabled={currentChapter === chapters.length - 1}
-            className="text-zinc-500 hover:text-amber-500 disabled:opacity-20 disabled:cursor-not-allowed font-serif"
-          >
-            NEXT CHAPTER →
-          </button>
-        </div>
-      </div>
-    </main>
-  )
-}
+The war was over b
