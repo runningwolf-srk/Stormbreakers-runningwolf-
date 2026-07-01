@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-zinc-950 text-white flex items-center justify-center p-4">
@@ -14,12 +12,12 @@ export default function Home() {
           Cinematic Worship • Spirit Led • 🔥🐺⚔️
         </p>
         
-        <Link 
+        <a 
           href="/music" 
           className="inline-block bg-amber-500 text-black px-10 py-4 rounded-lg font-black text-lg hover:bg-amber-400 transition"
         >
           LISTEN NOW
-        </Link>
+        </a>
         
         <p className="text-zinc-700 mt-16 text-sm">
           Clean slate. Rebuilt right.
