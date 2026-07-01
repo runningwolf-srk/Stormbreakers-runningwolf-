@@ -1,4 +1,4 @@
-'use client'
+I'm'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -424,5 +424,5 @@ Above them, the mountain groaned. Not in anger. In recognition.
 
 The war was over before it began.`,
     relicLink: 4,
-    relicTitle "Blood of the Cross"
+    relicTitle "Blood-of-the-Cross"
   
