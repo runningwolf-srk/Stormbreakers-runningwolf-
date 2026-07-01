@@ -5,6 +5,11 @@ export default function HomePage() {
     <main className="min-h-screen bg-black text-zinc-200 flex flex-col items-center justify-center px-6">
       
       <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-amber-500/30 mb-8 bg-zinc-900">
+        <img 
+          src="/729068345_1706992463868756_7233760520950384832_n~2.jpg" 
+          alt="RunningWolf - Stormbreaker" 
+          className="w-full h-full object-cover" 
+        />
       </div>
 
       <h1 className="text-5xl md:text-7xl font-serif text-amber-500 mb-4 text-center">
