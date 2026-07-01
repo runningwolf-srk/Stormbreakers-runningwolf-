@@ -422,4 +422,7 @@ He pressed his palm flat against the stone. No cut. No blood. Just contact.
 
 Above them, the mountain groaned. Not in anger. In recognition.
 
-The war was over b
+The war was over before it began.`,
+    relicLink: 4,
+    relicTitle: "Blood of the Cross"
+  },
