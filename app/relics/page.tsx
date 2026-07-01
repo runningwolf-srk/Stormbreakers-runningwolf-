@@ -71,7 +71,7 @@ export default function RelicsPage() {
               <p className="text-amber-500 text-xs tracking-[0.3em] mb-3 font-sans">
                 RELIC {String(relic.id).padStart(2, '0')}
               </p>
-              <h2 className="text-2xl font-serif text-white mb-2 hover:text-amber-500 transition-colors">
+              <h2 className="text-2xl font-serif text-white mb-2">
                 {relic.title}
               </h2>
               <p className="text-zinc-500 text-sm mb-6 font-sans">
