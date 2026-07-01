@@ -1,75 +1,70 @@
-export type Relic = {
-  id: string;
-  title: string;
-  subtitle: string;
-  cover: string;
-  youtubeId: string;
-  scripture: string;
-  prophecy: string;
-};
+import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import { RELICS } from '@/src/lib/relics'; // ← IMPORT FROM YOUR LIB
 
-export const RELICS: Relic[] = [
-  {
-    id: 'horn-of-war',
-    title: 'HORN OF WAR',
-    subtitle: 'RELIC 01',
-    cover: '/covers/horn-of-war.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Joel 2:1',
-    prophecy: 'Blow the trumpet in Zion, sound the alarm on my holy hill.'
-  },
-  {
-    id: 'iron-collide',
-    title: 'IRON COLLIDE',
-    subtitle: 'RELIC 02',
-    cover: '/covers/iron-collide.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Proverbs 27:17',
-    prophecy: 'As iron sharpens iron, so one person sharpens another.'
-  },
-  {
-    id: 'blood-of-cross',
-    title: 'BLOOD OF THE CROSS',
-    subtitle: 'RELIC 03',
-    cover: '/covers/blood-of-cross.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Colossians 1:20',
-    prophecy: 'Making peace through his blood, shed on the cross.'
-  },
-  {
-    id: 'seven-veils',
-    title: 'SEVEN VEILS',
-    subtitle: 'RELIC 04',
-    cover: '/covers/seven-veils.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Hebrews 10:20',
-    prophecy: 'Through the veil, that is, his flesh.'
-  },
-  {
-    id: 'ghost-code',
-    title: 'GHOST CODE',
-    subtitle: 'RELIC 05',
-    cover: '/covers/ghost-code.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Romans 8:11',
-    prophecy: 'The Spirit of him who raised Jesus from the dead dwells in you.'
-  },
-  {
-    id: 'lion-rises',
-    title: 'LION RISES',
-    subtitle: 'RELIC 06',
-    cover: '/covers/lion-rises.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Revelation 5:5',
-    prophecy: 'Behold, the Lion of the tribe of Judah has conquered.'
-  },
-  {
-    id: 'throne-torn',
-    title: 'THRONE TORN',
-    subtitle: 'RELIC 07',
-    cover: '/covers/throne-torn.webp',
-    youtubeId: 'dQw4w9WgXcQ',
-    scripture: 'Revelation 11:15',
-    prophecy: 'The kingdom of the world has become the kingdom of our Lord.'
-  }
-];
+export async function generateStaticParams() {
+  return RELICS.map((relic) => ({
+    slug: relic.id, // ← You use 'id' not 'slug'
+  }));
+}
+
+export default function RelicPage({ params }: { params: { slug: string } }) {
+  const relic = RELICS.find((r) => r.id === params.slug); // ← Use 'id'
+  
+  if (!relic) notFound();
+  
+  return (
+    <main className="min-h-screen bg-black text-white">
+      <div className="max-w-4xl mx-auto px-6 py-12">
+        <Link 
+          href="/relics" 
+          className="inline-block text-amber-400 hover:text-amber-300 mb-8 font-semibold"
+        >
+          ← Back to Hall of Relics
+        </Link>
+        
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <Image 
+              src={relic.cover} 
+              alt={relic.title}
+              width={600}
+              height={600}
+              className="rounded-xl shadow-2xl w-full border border-amber-900/30"
+              priority
+            />
+          </div>
+          
+          <div>
+            <div className="text-amber-500 text-sm font-bold tracking-widest mb-2">
+              {relic.subtitle} {/* ← Shows "RELIC 01" */}
+            </div>
+            <h1 className="text-5xl font-black text-amber-400 mb-3 tracking-tight">
+              {relic.title}
+            </h1>
+            
+            <p className="text-zinc-300 mb-6 text-lg leading-relaxed">
+              {relic.scripture}
+            </p>
+            
+            <div className="bg-zinc-900/50 rounded-xl p-6 border border-zinc-800 mb-6">
+              <h2 className="text-amber-400 font-bold mb-4 text-xl">Prophecy</h2>
+              <p className="text-lg text-zinc-200 leading-relaxed">
+                {relic.prophecy}
+              </p>
+            </div>
+
+            <iframe
+              width="100%"
+              height="200"
+              src={`https://www.youtube.com/embed/${relic.youtubeId}`}
+              title={relic.title}
+              className="rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+              }
