@@ -1,13 +1,13 @@
-import './globals.css'
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  )
-  }
+body {
+  background: #09090b;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
