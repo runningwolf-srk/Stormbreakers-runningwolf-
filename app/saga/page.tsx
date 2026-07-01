@@ -5,193 +5,201 @@ import Link from 'next/link'
 const chapters = [
   {
     id: 1,
-    title: "PROLOGUE: THE SILENT PLAINS",
-    image: "/729068345_1706992463868756_7233760520950384832_n~2.jpg",
-    text: `The wind never stopped in Guymon.
+    title: "CHAPTER I: THE HORN OF WAR",
+    subtitle: "The Silence Before the Sound",
+    image: "/images/horn-of-war-bg.jpg",
+    text: `For three hundred winters, the Horn of War hung silent in the Hall of the Stormkeepers.
 
-It scraped across the plains like a blade on stone, carrying dust and silence in equal measure.
+Forged from the skull of the last dragon, it was said only a king could wake it. Kings had tried. Kings had failed. The horn remained mute.
 
-A boy named RunningWolf stood on that flat earth, eyes on the horizon. No mountains. No trees. Nothing to break the sky.
+Until the Night of Red Skies.
 
-The elders said the land was cursed. Too much blood. Too many broken promises.
+No hand touched it. No breath filled it. Yet it sounded once — a note so deep it cracked the frozen rivers.
 
-But RunningWolf heard something else in the wind.
+The old wolves knew what it meant: The Long Peace was over.
 
-A horn.
+In the valley below, raiders lit their torches. In the mountains, exiles sharpened rusted blades.
 
-Distant. Waiting.
+But in the hall, a young shield-maiden named Astrid asked the question none dared speak:
 
-He didn't know its name yet. He only knew that silence was not peace.
+"Who blew the horn?"
 
-It was the space before war.`,
+The chieftain Bjorn One-Eye pointed not to the sky, nor to the enemy.
+
+He pointed to the shadows behind the throne.
+
+"Something older than kings," he said. "Something that remembers what we are."`,
     relicLink: 1,
     relicTitle: "Horn of War"
   },
   {
     id: 2,
-    title: "CHAPTER I: THE HORN AWAKENS",
-    image: "/images/horn-of-war-bg.jpg",
-    text: `The horn was carved from the bone of a beast that no longer walked the earth.
-
-It hung in the great hall of the Stormkeepers, silent for three generations.
-
-"Why do we keep it?" the young wolves asked.
-
-The old chieftain, Bjorn One-Eye, would only say: "Because it remembers."
-
-RunningWolf was not born a Stormkeeper. He was a wanderer. An exile.
-
-But the night the sky turned red, the horn blew itself.
-
-No hand touched it. No breath filled it.
-
-It sounded once.
-
-And every wolf in the valley stopped breathing.
-
-War had come. Not from the north. Not from raiders.
-
-From within.`,
-    relicLink: 1,
-    relicTitle: "Horn of War"
-  },
-  {
-    id: 3,
-    title: "CHAPTER II: THE FORGE OF BROTHERS",
+    title: "CHAPTER II: IRON COLLIDE",
+    subtitle: "The Forge of Brothers",
     image: "/images/iron-collide-bg.jpg",
-    text: `"You fight like a man with no brothers," growled Hakon Iron-Hand.
+    text: `The law was simple: No man fights alone.
 
-RunningWolf blocked the axe with his shield. Wood splintered. "I have no brothers."
+Hakon Iron-Hand enforced it with his fists.
 
-"Then you will die alone."
+Every dawn, the warband gathered in the training circle. Not to spar. To collide.
 
-The training yard was mud and blood. No glory. Only friction.
+"Your enemy will not wait for you to be ready," Hakon would roar. "So we make you ready in pain."
 
-Hakon swung again. "Iron sharpens iron, pup. But only if you stay in the fire."
+Young Kael was the smallest. The slowest. The first to bleed every morning.
 
-That night, RunningWolf found Hakon by the forge, mending his own armor.
+"Why do you keep coming back?" Hakon asked him on the seventh day, as Kael spat blood into the mud.
 
-"You let me win," RunningWolf said.
+Kael looked up. "Because the horn blew. And I will not watch my brothers die while I hide."
 
-Hakon didn't look up. "No. I let you survive."
+Hakon grunted. He tossed Kael a new shield. "Then tomorrow, you don't block. You strike first."
 
-He tossed a leather bracer across the fire. "Put that on. Tomorrow we bleed together."`,
+That winter, when the raiders came over the pass, it was Kael who stood in the gap.
+
+Iron doesn't sharpen iron by accident. It takes heat. Pressure. Friction.
+
+It takes brothers willing to break you so the enemy can't.`,
     relicLink: 3,
     relicTitle: "Iron Collide"
   },
   {
-    id: 4,
-    title: "CHAPTER III: THE THORN KING",
+    id: 3,
+    title: "CHAPTER III: CROWN OF THORNS",
+    subtitle: "The King With No Kingdom",
     image: "/images/crown-thorns-bg.jpg",
-    text: `They called him the Thorn King.
+    text: `They found him in the ruins of the old chapel.
 
-He ruled from a throne of rusted swords, a crown of black thorns pressed into his skull.
+Not on a throne. On his knees.
 
-"Another one?" he rasped as they dragged RunningWolf forward. "The plains send me wolves now?"
+A crown of black thorns pressed into his brow. Blood frozen on his cheeks.
 
-"I'm not here to kneel," RunningWolf said.
+"Are you the Thorn King?" Astrid asked, her axe ready.
 
-The Thorn King laughed. Blood ran from his temples. "All kneel. To fear. To gold. To death."
+The man laughed. It was not a sane sound. "I was. Once."
 
-He leaned forward. "What makes you different?"
+He told them the story: He had been a prince who sought to end war by becoming the most feared warrior in the north. He conquered. He burned. He crowned himself with thorns to show he feared no pain.
 
-RunningWolf met his eyes. "I already died."
+"And then He came," the Thorn King whispered.
 
-The hall went silent.
+"Who?"
 
-The Thorn King stood. "Then you have nothing left to lose."
+"The one who wore thorns before me. But His were not for glory. They were for guilt. Mine. Yours. The world's."
 
-"No," RunningWolf said. "I have everything left to give."`,
+The Thorn King looked at his hands. "I built a kingdom with blood. He bought one with His own."
+
+He stood, unsteadily. "Take my crown. It's heavy. And it saves no one."
+
+Astrid did not take it. She buried it instead.`,
     relicLink: null,
     relicTitle: null
   },
   {
-    id: 5,
-    title: "CHAPTER IV: THE CRIMSON COVENANT",
+    id: 4,
+    title: "CHAPTER IV: BLOOD OF THE CROSS",
+    subtitle: "The Covenant in the Cave",
     image: "/images/blood-of-cross-bg.jpg",
-    text: `Viking blood oaths were sealed with a cut across the palm.
+    text: `Every Viking knew the blood oath.
 
-"My blood for your vengeance," they would swear.
+A cut across the palm. "My blood for your vengeance." Sealed in fire, broken only by death.
 
-But in the cave beneath the mountain, RunningWolf found a different altar.
+But in the deepest cave beneath the mountain, Bjorn One-Eye led them to a different altar.
 
-No gold. No skulls.
+No gold. No skulls of enemies. Just a single cross, carved from black stone that was warm to the touch.
 
-Just a cross.
+"Older than our gods," Bjorn said. "Older than the mountains."
 
-Carved from black stone, older than the mountains.
-
-And beneath it, words in a language he didn't know, but his heart understood:
+On the stone, letters in a language none of them knew. But Astrid could read them.
 
 "Without the shedding of blood, there is no crossing over."
 
-He drew his knife.
+Kael drew his knife. "Another oath?"
 
-Not for vengeance.
+Bjorn shook his head. "No. The end of oaths."
 
-For surrender.
+He pressed his palm to the stone. No cut. No blood.
 
-The covenant was not his to make.
+"The covenant is not ours to make," he said. "It's ours to enter."
 
-It was his to enter.`,
+Above them, the mountain groaned. As if recognizing its Maker.`,
     relicLink: 5,
     relicTitle: "Blood of the Cross"
   },
   {
-    id: 6,
-    title: "CHAPTER V: THE VOICE IN THE FIRE",
+    id: 5,
+    title: "CHAPTER V: HEAVEN CALLING",
+    subtitle: "The Voice in the Fire",
     image: "/images/heaven-calling-bg.jpg",
-    text: `The fire did not burn him.
+    text: `The warband was dying.
 
-It called him.
+Not from battle. From winter. From hunger. From the silence that follows when hope runs out.
 
-"RunningWolf."
+Kael built a fire that night. Not for warmth. For signal. "If the gods are real," he shouted to the sky, "then speak!"
 
-He turned. No one there. Just flames licking the night sky.
+The fire answered.
 
-"RunningWolf."
+Not with words. With a name.
 
-The third time, he answered. "I'm here."
+"Kael."
 
-The fire parted. Not like a door. Like a veil.
+He fell back. "Who speaks?"
 
-And beyond it, a figure. Not of this world.
+"Kael."
+
+The third time, the flames parted like a curtain. And beyond it, he saw it: a door standing open in heaven.
+
+No stairs. No path. Just a call.
 
 "You were not made for the valley," the voice said.
 
-"I know," RunningWolf whispered.
+"I know," Kael wept. "But I don't know the way up."
 
-"Then why do you still live there?"
+The voice was not angry. It was not distant.
 
-The fire collapsed inward. The vision ended.
+"Then stop looking for a way. Look for Me."
 
-But the calling remained.
+The fire collapsed. The vision ended.
 
-Ascend.`,
+But that night, Kael did not sleep in the valley.
+
+He began to climb.`,
     relicLink: 6,
     relicTitle: "Heaven Calling"
   },
   {
-    id: 7,
-    title: "EPILOGUE: WE RISE",
-    image: "/729068345_1706992463868756_7233760520950384832_n~2.jpg",
-    text: `This is not the end.
+    id: 6,
+    title: "CHAPTER VI: I'M ON FIRE",
+    subtitle: "Wildfire Spreads",
+    image: "/file_0000000065a071f5832301f52d11fb80.png",
+    text: `The first spark landed on Astrid's cloak.
 
-This is the beginning of the hunt.
+She beat it out. Thought nothing of it.
 
-The Stormbreakers do not gather to remember.
+The second spark caught in Hakon's beard. He cursed and slapped it away.
 
-We gather to advance.
+But the third spark — the third spark landed in the dry grass of the valley.
 
-One horn. One fire. One King.
+And the valley was ready.
 
-By His call we rise.
+It did not burn like a campfire. It burned like judgment. Like cleansing. Like a world being remade.
 
-🔥🐺⚔️
+The warband ran. Not from the fire. With it.
 
-TO BE CONTINUED...`,
-    relicLink: null,
-    relicTitle: null
+"The horn called us to war," Bjorn shouted over the roar. "The fire calls us to cleanse!"
+
+They did not fight that day. They ran through villages, not with swords, but with torches.
+
+Not to destroy. To ignite.
+
+Every hearth they passed, they lit. Every cold heart, they warmed.
+
+By dawn, the valley was not ash.
+
+It was alive.
+
+Wildfire doesn't ask permission. It spreads.
+
+So does revival.`,
+    relicLink: 6,
+    relicTitle: "I'm On Fire"
   }
 ]
 
@@ -205,7 +213,7 @@ export default function SagaPage() {
       <div className="bg-black/80 backdrop-blur-md border-b border-zinc-800 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="text-amber-500 font-bold text-lg font-serif">
-            Stormbreakers - RunningWolf
+            The Stormbreakers Saga
           </Link>
           <div className="flex gap-6 text-sm">
             <Link href="/" className="text-zinc-400 hover:text-amber-500">Home</Link>
@@ -215,27 +223,30 @@ export default function SagaPage() {
       </div>
 
       <div className="max-w-4xl mx-auto px-6 py-16">
-        
+
         {/* Chapter Header */}
         <div className="text-center mb-12">
           <p className="text-amber-500 text-sm tracking-[0.4em] mb-4">
             {chapter.title.split(':')[0]}
           </p>
-          <h1 className="text-4xl md:text-6xl font-serif text-white mb-8">
-            {chapter.title.split(': ')[1] || chapter.title}
+          <h1 className="text-4xl md:text-6xl font-serif text-white mb-2">
+            {chapter.title.split(': ')[1]}
           </h1>
+          <p className="text-zinc-500 text-lg italic">
+            {chapter.subtitle}
+          </p>
         </div>
 
         {/* Full-Page Illustration */}
         <div className="w-full aspect-[16/9] bg-zinc-900 rounded-lg overflow-hidden border border-zinc-800 mb-12 shadow-2xl">
-          <img 
-            src={chapter.image} 
+          <img
+            src={chapter.image}
             alt={chapter.title}
             className="w-full h-full object-cover"
           />
         </div>
 
-        {/* Story Text */}
+        {/* Story Text - NO VERSES, NO DEVOTIONALS */}
         <div className="max-w-2xl mx-auto">
           {chapter.text.split('\n\n').map((paragraph, i) => (
             <p key={i} className="text-zinc-300 leading-loose mb-8 text-lg font-serif first-letter:text-5xl first-letter:text-amber-500 first-letter:font-bold first-letter:mr-3 first-letter:float-left">
