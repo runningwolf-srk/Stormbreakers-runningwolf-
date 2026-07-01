@@ -1,71 +1,103 @@
 import Link from 'next/link'
 
+const relics = [
+  {
+    id: 1,
+    title: "HORN OF WAR",
+    subtitle: "The Battle Cry Relic",
+    verse: "Joel 2:1",
+    excerpt: "The horn does not promise an easy battle. It calls the faithful to stand.",
+    videoId: "M4wGCg5oCx0"
+  },
+  {
+    id: 2,
+    title: "HEAVEN CALLING",
+    subtitle: "The Ascent Relic",
+    verse: "Revelation 4:1",
+    excerpt: "Come up here, and I will show you what must take place.",
+    videoId: "oxNauKuxg4Q"
+  },
+  {
+    id: 3,
+    title: "IRON COLLIDE",
+    subtitle: "The Choice Relic",
+    verse: "Joshua 24:15",
+    excerpt: "Choose this day whom you will serve.",
+    videoId: "odIsEMUtNJI"
+  },
+  {
+    id: 4,
+    title: "SPIRITUAL JOURNEY",
+    subtitle: "The Path Relic",
+    verse: "Psalm 119:105",
+    excerpt: "Your word is a lamp to my feet and a light to my path.",
+    videoId: "umDFjJjh0_c"
+  },
+  {
+    id: 5,
+    title: "BLOOD OF CROSS",
+    subtitle: "The Sacrifice Relic",
+    verse: "Hebrews 9:22",
+    excerpt: "Without the shedding of blood there is no forgiveness.",
+    videoId: "4lcbjsNLlzo"
+  },
+  {
+    id: 6,
+    title: "I'M ON FIRE",
+    subtitle: "The Wildfire Relic",
+    verse: "Matthew 3:11",
+    excerpt: "He will baptize you with the Holy Spirit and fire.",
+    videoId: "8XQUhWB_N5M"
+  }
+]
+
 export default function RelicsPage() {
   return (
-    <main className="min-h-screen bg-black text-zinc-200 font-sans">
-      <div className="max-w-3xl mx-auto px-6 py-20">
+    <main className="min-h-screen bg-black text-zinc-200">
+      <div className="max-w-5xl mx-auto px-6 py-20">
         
         {/* Nav */}
-        <div className="flex justify-between text-sm text-zinc-500 mb-16 tracking-widest">
+        <div className="flex justify-between text-sm text-zinc-500 mb-24 tracking-widest font-sans">
           <Link href="/" className="hover:text-amber-500">← RUNNINGWOLF</Link>
           <span>HALL OF RELICS</span>
           <Link href="/saga" className="hover:text-amber-500">Saga →</Link>
         </div>
 
-        {/* Relic Title */}
-        <div className="mb-12">
-          <p className="text-amber-500 text-sm tracking-[0.3em] mb-2">RELIC 01</p>
-          <h1 className="text-4xl md:text-6xl font-serif text-white mb-4">HORN OF WAR</h1>
-          <p className="text-zinc-400">A BATTLE CRY. A LEGEND RISES.</p>
+        {/* Header */}
+        <div className="text-center mb-20">
+          <h1 className="text-6xl md:text-8xl font-serif text-amber-500 mb-4">RELICS</h1>
+          <p className="text-zinc-500">Artifacts of war and worship</p>
+          <div className="w-24 h-px bg-amber-500/50 mx-auto mt-8"></div>
         </div>
 
-        {/* Video Player */}
-        <div className="aspect-video mb-12">
-          <iframe 
-            className="w-full h-full rounded-lg border border-amber-500/20"
-            src="https://www.youtube.com/embed/M4wGCg5oCx0"
-            title="Horn of War"
-            frameBorder="0" 
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen>
-          </iframe>
-        </div>
-
-        {/* Blog Section - Devotional Reading */}
-        <div className="prose prose-invert max-w-none">
-          <h2 className="text-amber-500 font-serif text-2xl mb-6">The Devotional</h2>
-          
-          <div className="border-l-2 border-amber-500 pl-6 mb-8">
-            <p className="text-xl italic text-white font-serif mb-2">
-              "Blow the trumpet in Zion, declare a holy fast, call a sacred assembly."
-            </p>
-            <p className="text-amber-500 text-sm">Joel 2:1</p>
-          </div>
-
-          <h3 className="text-white text-xl font-bold mt-12 mb-4">The horn does not promise an easy battle.</h3>
-          <p className="text-zinc-300 leading-relaxed mb-6">
-            Vikings didn't blow horns to start parties. They blew them to start wars. When you hear 
-            HORN OF WAR, understand this: God is not calling you to comfort. He's calling you to 
-            combat. The faithful don't wait for peace. They stand when the horn sounds.
-          </p>
-
-          <h3 className="text-white text-xl font-bold mt-12 mb-4">It calls the faithful to stand.</h3>
-          <p className="text-zinc-300 leading-relaxed mb-6">
-            Standing is a choice. Retreating is easier. But Stormbreakers were not forged in retreat. 
-            Every time you press play on this track, you're making a covenant: "I will not bow to fear. 
-            I will not surrender to silence. I will rise when He calls."
-          </p>
-
-          <h3 className="text-white text-xl font-bold mt-12 mb-4">Declare a holy fast.</h3>
-          <p className="text-zinc-300 leading-relaxed mb-6">
-            Before Vikings went to battle, they fasted. Before Jesus went to the cross, He fasted. 
-            Fasting empties you of self so God can fill you with war fire. This song hits different 
-            when you're hungry for Him instead of comfort.
-          </p>
-
-          <div className="mt-16 pt-8 border-t border-zinc-800 text-center">
-            <p className="text-zinc-500 italic">Posted in the Hall of Relics</p>
-          </div>
+        {/* Relic Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {relics.map((relic) => (
+            <Link 
+              key={relic.id}
+              href={`/relics/${relic.id}`}
+              className="block border border-zinc-800 rounded-lg p-8 hover:border-amber-500/50 hover:bg-zinc-900/30 transition-all group"
+            >
+              <p className="text-amber-500 text-xs tracking-[0.3em] mb-3 font-sans">
+                RELIC {String(relic.id).padStart(2, '0')}
+              </p>
+              <h2 className="text-2xl font-serif text-white mb-2 group-hover:text-amber-500 transition-colors">
+                {relic.title}
+              </h2>
+              <p className="text-zinc-500 text-sm mb-6 font-sans">
+                {relic.subtitle}
+              </p>
+              <div className="border-l-2 border-zinc-800 pl-4">
+                <p className="text-zinc-400 text-sm italic font-serif mb-1">
+                  "{relic.excerpt}"
+                </p>
+                <p className="text-amber-500/70 text-xs font-sans">{relic.verse}</p>
+              </div>
+              <p className="text-amber-500 text-sm mt-6 opacity-0 group-hover:opacity-100 transition-opacity font-sans">
+                Enter the Relic →
+              </p>
+            </Link>
+          ))}
         </div>
 
       </div>
