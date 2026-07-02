@@ -137,17 +137,23 @@ The war is already won. We're just enforcing the victory.`
   },
   {
     id: 8,
-    title: "NEW RELIC NAME",
+    title: "RESURRECTION POWER",
     artist: "RunningWolf",
     videoId: "REPLACE_WITH_VIDEO_ID",
-    verse: `"Your verse here"`,
-    ref: "Book 1:1",
-    tags: ["TAG1", "TAG2", "TAG3"],
-    content: `Your devotional content here.
+    verse: `"I want to know Christ—yes, to know the power of his resurrection and participation in his sufferings"`,
+    ref: "Philippians 3:10",
+    tags: ["RESURRECTION", "POWER", "VICTORY"],
+    content: `The grave couldn't hold Him.
 
-Line breaks work. Keep the prophetic fire.
+Death thought it had the final word. The stone was sealed. The guards were posted. The case was closed.
 
-Add your text.`
+But Sunday came.
+
+Resurrection isn't just an event. It's an engine. The same power that rolled the stone runs in your veins.
+
+Dead things don't stay dead when He speaks.
+
+RESURRECTION POWER: Not just for after you die. For what's dead while you live.`
   }
 ]
 
@@ -231,4 +237,4 @@ export async function generateStaticParams() {
   return relics.map((relic) => ({
     id: relic.id.toString(),
   }))
-}
+          }
