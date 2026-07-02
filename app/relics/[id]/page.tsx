@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 const relics = [
   {
     id: 1,
+    slug: 'horn-of-war',
     title: "Horn of War",
     subtitle: "The Battle Cry",
     verse: "Blow the trumpet in Zion; sound the alarm on my holy hill. Let all who live in the land tremble, for the day of the Lord is coming.",
@@ -12,68 +13,13 @@ const relics = [
     videoId: "M4wGCg5oCx0",
     videoTitle: "Horn of war mahalla",
     backgroundImage: "/images/horn-of-war-bg.jpg",
-    progress: "01 / 07",
+    progress: "01 / 06",
     devotionalTitle: "THE SILENCE",
     devotional: "Before the horn, there is silence. Not peace - silence. The moment before war breaks. God uses silence to prepare warriors."
   },
   {
     id: 2,
-    title: "Iron Collide",
-    subtitle: "Sharpened Together",
-    verse: "As iron sharpens iron, so one person sharpens another.",
-    ref: "Proverbs 27:17",
-    tags: "CINEMATIC WORSHIP • VIKING WAR HYMN • ORCHESTRAL",
-    videoId: "odIsEMUtNJI",
-    videoTitle: "Iron collide hybrid",
-    backgroundImage: "/images/iron-collide-bg.jpg",
-    progress: "02 / 07",
-    devotionalTitle: "THE FORGE",
-    devotional: "Iron doesn't sharpen iron by accident. It takes heat. Pressure. Friction. God will put people in your life that scrape against your pride until Christ is formed."
-  },
-  {
-    id: 3,
-    title: "Crown of Thorns",
-    subtitle: "The King of Pain",
-    verse: "They twisted together a crown of thorns and set it on his head. They put a staff in his right hand. Then they knelt in front of him and mocked him.",
-    ref: "Matthew 27:29",
-    tags: "CINEMATIC WORSHIP • ORCHESTRAL • CHORAL",
-    videoId: "umDFjJjh0_c", // Replace with your actual video
-    videoTitle: "Spiritual Journey - god kept me alive",
-    backgroundImage: "/images/crown-thorns-bg.jpg",
-    progress: "03 / 07",
-    devotionalTitle: "THE MOCKERY",
-    devotional: "They crowned Him to shame Him. But thorns were the curse of Eden. He wore your curse so you could wear His crown."
-  },
-  {
-    id: 4,
-    title: "Lion and Lamb",
-    subtitle: "The Paradox",
-    verse: "Then one of the elders said to me, 'Do not weep! See, the Lion of the tribe of Judah, the Root of David, has triumphed. He is able to open the scroll and its seven seals.'",
-    ref: "Revelation 5:5",
-    tags: "CINEMATIC WORSHIP • ORCHESTRAL • CHORAL",
-    videoId: "8XQUhWB_N5M", // Replace with your actual video
-    videoTitle: "Im on fire",
-    backgroundImage: "/images/lion-lamb-bg.jpg",
-    progress: "04 / 07",
-    devotionalTitle: "THE LAMB",
-    devotional: "He didn't come to dominate. He came to be slaughtered. Weakness was the weapon. The cross looked like defeat."
-  },
-  {
-    id: 5,
-    title: "Blood of the Cross",
-    subtitle: "The Covenant",
-    verse: "And through him to reconcile to himself all things, whether things on earth or things in heaven, by making peace through his blood, shed on the cross.",
-    ref: "Colossians 1:20",
-    tags: "CINEMATIC WORSHIP • ORCHESTRAL • CHORAL • SACRED",
-    videoId: "4lcbjsNLlzo",
-    videoTitle: "Blood of cross in viking",
-    backgroundImage: "/images/blood-of-cross-bg.jpg",
-    progress: "05 / 07",
-    devotionalTitle: "THE PRICE",
-    devotional: "Viking blood oaths bound men to vengeance. Christ's blood binds us to victory. Your sin for His righteousness."
-  },
-  {
-    id: 6,
+    slug: 'heaven-calling',
     title: "Heaven Calling",
     subtitle: "The Voice That Finds Us",
     verse: "The Lord came and stood there, calling as at the other times, 'Samuel! Samuel!' Then Samuel said, 'Speak, for your servant is listening.'",
@@ -82,9 +28,69 @@ const relics = [
     videoId: "oxNauKuxg4Q",
     videoTitle: "Heaven calling in Viking",
     backgroundImage: "/images/heaven-calling-bg.jpg",
-    progress: "06 / 07",
+    progress: "02 / 06",
     devotionalTitle: "THE CALL",
     devotional: "Heaven doesn't whisper suggestions. It calls names. When God speaks your name, the valley ends and the ascent begins."
+  },
+  {
+    id: 3,
+    slug: 'iron-collide',
+    title: "Iron Collide",
+    subtitle: "Sharpened Together",
+    verse: "As iron sharpens iron, so one person sharpens another.",
+    ref: "Proverbs 27:17",
+    tags: "CINEMATIC WORSHIP • VIKING WAR HYMN • ORCHESTRAL",
+    videoId: "odIsEMUtNJI",
+    videoTitle: "Iron collide hybrid",
+    backgroundImage: "/images/iron-collide-bg.jpg",
+    progress: "03 / 06",
+    devotionalTitle: "THE FORGE",
+    devotional: "Iron doesn't sharpen iron by accident. It takes heat. Pressure. Friction. God will put people in your life that scrape against your pride until Christ is formed."
+  },
+  {
+    id: 4,
+    slug: 'spiritual-journey',
+    title: "Spiritual Journey",
+    subtitle: "The Path Home",
+    verse: "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me.",
+    ref: "Psalm 23:4",
+    tags: "CINEMATIC WORSHIP • ORCHESTRAL • CHORAL",
+    videoId: "umDFjJjh0_c", // Replace with actual Spiritual Journey video
+    videoTitle: "Spiritual Journey - god kept me alive",
+    backgroundImage: "/images/spiritual-journey-bg.jpg",
+    progress: "04 / 06",
+    devotionalTitle: "THE VALLEY",
+    devotional: "Every warrior walks through shadow. The valley isn't punishment. It's preparation for the mountain."
+  },
+  {
+    id: 5,
+    slug: 'blood-of-cross',
+    title: "Blood of the Cross",
+    subtitle: "The Covenant",
+    verse: "And through him to reconcile to himself all things, whether things on earth or things in heaven, by making peace through his blood, shed on the cross.",
+    ref: "Colossians 1:20",
+    tags: "CINEMATIC WORSHIP • ORCHESTRAL • CHORAL • SACRED",
+    videoId: "4lcbjsNLlzo",
+    videoTitle: "Blood of cross in viking",
+    backgroundImage: "/images/blood-of-cross-bg.jpg",
+    progress: "05 / 06",
+    devotionalTitle: "THE PRICE",
+    devotional: "Viking blood oaths bound men to vengeance. Christ's blood binds us to victory. Your sin for His righteousness."
+  },
+  {
+    id: 6,
+    slug: 'im-on-fire',
+    title: "I'm On Fire",
+    subtitle: "Wildfire Spreads",
+    verse: "Then one of the seraphim flew to me with a live coal in his hand, which he had taken with tongs from the altar.",
+    ref: "Isaiah 6:6",
+    tags: "CINEMATIC WORSHIP • HOLY FIRE • COMMISSION",
+    videoId: "8XQUhWB_N5M", // ← THIS IS YOUR FIRE VIDEO, NOT HEAVEN CALLING
+    videoTitle: "Im on fire",
+    backgroundImage: "/images/im-on-fire-bg.jpg",
+    progress: "06 / 06",
+    devotionalTitle: "THE HOLY COAL",
+    devotional: "This is not natural fire. This is altar fire. It doesn't consume the bush. It commissions the prophet."
   }
 ]
 
@@ -189,12 +195,12 @@ export default function RelicPage({ params }: { params: { id: string } }) {
           <div className="flex justify-between mt-16 pt-8 border-t border-zinc-800">
             {relicId > 1 ? (
               <Link href={`/relics/${relicId - 1}`} className="text-zinc-500 hover:text-amber-500">
-                ← Relic {relicId - 1}
+                ← {relics[relicId - 2]?.title || `Relic ${relicId - 1}`}
               </Link>
             ) : <div />}
             {relicId < relics.length ? (
               <Link href={`/relics/${relicId + 1}`} className="text-zinc-500 hover:text-amber-500">
-                Relic {relicId + 1} →
+                {relics[relicId]?.title || `Relic ${relicId + 1}`} →
               </Link>
             ) : <div />}
           </div>
