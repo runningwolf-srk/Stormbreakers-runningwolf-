@@ -336,16 +336,16 @@ Now go.`,
     scripture: 'Isaiah 6:8',
     relicSlug: null
   }
-]
+];
 
 export default function SagaBook() {
-  const [currentPage, setCurrentPage] = useState(0)
-  const totalPages = sagaChapters.length
-  const chapter = sagaChapters[currentPage]
-  const relic = relics.find(r => r.slug === chapter.relicSlug)
+  const [currentPage, setCurrentPage] = useState(0);
+  const totalPages = sagaChapters.length;
+  const chapter = sagaChapters[currentPage];
+  const relic = relics.find(r => r.slug === chapter.relicSlug);
 
-  const nextPage = () => currentPage < totalPages - 1 && setCurrentPage(currentPage + 1)
-  const prevPage = () => currentPage > 0 && setCurrentPage(currentPage - 1)
+  const nextPage = () => currentPage < totalPages - 1 && setCurrentPage(currentPage + 1);
+  const prevPage = () => currentPage > 0 && setCurrentPage(currentPage - 1);
 
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-200 flex flex-col items-center justify-center px-4 py-8">
@@ -358,4 +358,4 @@ export default function SagaBook() {
           {relic && (
             <div className="text-center mb-8">
               <Link href={`/music/track?slug=${relic.slug}`}>
-                <button className="border border-amber-500 text-amber-500 px-6 py-2 hover:bg-amber-500/10 transition-colors f
+                <button className="border border-amber-500 text-amber-500 px-6 py-2 hover:bg-amber-500/10 transition-c
