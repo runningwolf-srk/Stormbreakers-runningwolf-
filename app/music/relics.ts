@@ -52,5 +52,14 @@ export const relics = [
     description: 'After this I looked, and there before me was a door standing open in heaven. And the voice I had first heard speaking to me like a trumpet said, "Come up here."',
     tags: ['CINEMATIC WORSHIP', 'PROPHETIC', 'CALLING'],
     lore: 'The call is not down to earth. The call is up to the throne room. Stormbreakers fight FROM victory, not FOR victory.'
+  },
+  {
+    slug: 'lord-of-lords',
+    title: 'Lord of lords',
+    youtubeId: '9vP0NPrEv9s', // <-- NEW RELIC ADDED
+    scripture: 'Revelation 19:16',
+    description: 'On his robe and on his thigh he has this name written: King of kings and Lord of lords.',
+    tags: ['CINEMATIC WORSHIP', 'MAJESTY', 'KINGDOM'],
+    lore: 'Every knee will bow. Every tongue confess. The King returns not as lamb, but as Lion. The war ends when He speaks.'
   }
 ]
