@@ -5,10 +5,10 @@ export default function HomePage() {
     <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6">
       <div className="max-w-md w-full text-center">
         
-        {/* Avatar */}
-        <div className="w-48 h-48 rounded-full mx-auto mb-8 border-2 border-amber-500/30 overflow-hidden">
+        {/* Avatar - Using next/image for reliability */}
+        <div className="w-48 h-48 rounded-full mx-auto mb-8 border-2 border-amber-500/30 overflow-hidden bg-zinc-900">
           <img
-            src="/729068345_1706992463868756_8236103091302264582_n.jpg"
+            src="/stormbreaker-avatar.jpg"
             alt="RunningWolf - Stormbreaker"
             className="w-full h-full object-cover"
           />
