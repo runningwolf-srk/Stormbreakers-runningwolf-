@@ -8,7 +8,7 @@ export default function HomePage() {
         {/* Avatar */}
         <div className="w-48 h-48 rounded-full mx-auto mb-8 border-2 border-amber-500/30 overflow-hidden">
           <img
-            src="/avatar.jpg"
+            src="/729068345_1706992463868756_8236103091302264582_n.jpg"
             alt="RunningWolf - Stormbreaker"
             className="w-full h-full object-cover"
           />
@@ -33,7 +33,7 @@ export default function HomePage() {
 
         {/* Buttons */}
         <div className="flex flex-col gap-4 w-full">
-          <Link href="https://youtube.com/@your-channel">
+          <Link href="/music">
             <button className="bg-amber-500 text-black px-8 py-3 w-full font-bold text-lg hover:bg-amber-400 transition-colors">
               LISTEN NOW
             </button>
