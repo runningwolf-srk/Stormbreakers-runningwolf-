@@ -1,4 +1,4 @@
-/export const relics = [
+export const relics = [
   {
     slug: 'horn-of-war',
     title: 'Horn of War',
@@ -6,6 +6,7 @@
     scripture: 'Joel 2:1',
     description: 'Blow the trumpet in Zion; sound the alarm on my holy hill. Let all who live in the land tremble, for the day of the Lord is coming.',
     tags: ['CINEMATIC WORSHIP', 'VIKING WAR HYMN', 'ORCHESTRAL'],
+    chapter: 1,
   },
   {
     slug: 'im-on-fire',
@@ -14,14 +15,7 @@
     scripture: 'Isaiah 6:6-7',
     description: 'Then one of the seraphim flew to me with a live coal in his hand... "See, this has touched your lips; your guilt is taken away."',
     tags: ['CINEMATIC WORSHIP', 'SPIRITUAL WARFARE', 'HOLY FIRE'],
-  },
-  {
-    slug: 'spiritual-journey',
-    title: 'Spiritual Journey',
-    youtubeId: 'umDFjJjh0_c',
-    scripture: 'Psalm 23:4',
-    description: 'Even though I walk through the darkest valley, I will fear no evil, for you are with me.',
-    tags: ['CINEMATIC WORSHIP', 'JOURNEY', 'ORCHESTRAL'],
+    chapter: 2,
   },
   {
     slug: 'blood-of-cross',
@@ -30,6 +24,7 @@
     scripture: 'Colossians 1:20',
     description: 'And through him to reconcile to himself all things, whether things on earth or things in heaven, by making peace through his blood, shed on the cross.',
     tags: ['CINEMATIC WORSHIP', 'REDEMPTION', 'SACRIFICE'],
+    chapter: 3,
   },
   {
     slug: 'iron-collide',
@@ -38,13 +33,24 @@
     scripture: 'Proverbs 27:17',
     description: 'As iron sharpens iron, so one person sharpens another.',
     tags: ['CINEMATIC WORSHIP', 'BROTHERHOOD', 'WARFARE'],
+    chapter: 4,
+  },
+  {
+    slug: 'spiritual-journey',
+    title: 'Spiritual Journey',
+    youtubeId: 'umDFjJjh0_c',
+    scripture: 'Psalm 23:4',
+    description: 'Even though I walk through the darkest valley, I will fear no evil, for you are with me.',
+    tags: ['CINEMATIC WORSHIP', 'JOURNEY', 'ORCHESTRAL'],
+    chapter: 5,
   },
   {
     slug: 'heaven-calling',
     title: 'Heaven Calling',
-    youtubeId: 'oxNauKuxg4Q', // <-- NEW RELIC
+    youtubeId: 'oxNauKuxg4Q',
     scripture: 'Revelation 4:1',
     description: 'After this I looked, and there before me was a door standing open in heaven. And the voice I had first heard speaking to me like a trumpet said, "Come up here."',
     tags: ['CINEMATIC WORSHIP', 'PROPHETIC', 'CALLING'],
+    chapter: 6,
   }
 ]
