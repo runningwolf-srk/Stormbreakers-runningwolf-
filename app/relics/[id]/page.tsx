@@ -30,16 +30,17 @@ const relics = [
     devotionalTitle: "THE CALL",
     devotional: "Heaven doesn't whisper suggestions. It calls names. When God speaks your name, the valley ends and the ascent begins. Samuel thought it was Eli. You might think it's coincidence. It's not. Answer: Speak, Lord."
   },
-  {
-    id: 3,
-    title: "Iron Collide",
-    subtitle: "Sharpened Together",
-    verse: "As iron sharpens iron, so one person sharpens another.",
-    ref: "Proverbs 27:17",
-    tags: "CINEMATIC WORSHIP • VIKING WAR HYMN • ORCHESTRAL",
-    videoId: "odIsEMUtNJI",
-    videoTitle: "Iron collide hybrid",
-    backgroundImage: "/images/iron-collide-bg.jpg",
-    progress: "03 / 06",
-    devotionalTitle: "THE FORGE",
-    devotional: "
+{
+  id: 3,
+  title: "Iron Collide",
+  subtitle: "Sharpened Together",
+  verse: "As iron sharpens iron, so one person sharpens another.",
+  ref: "Proverbs 27:17",
+  tags: "CINEMATIC WORSHIP • VIKING WAR HYMN • ORCHESTRAL",
+  videoId: "odIsEMUtNJI",
+  videoTitle: "Iron collide hybrid",
+  backgroundImage: "/images/iron-collide-bg.jpg",
+  progress: "03 / 06",
+  devotionalTitle: "THE FORGE",
+  devotional: "Iron doesn't sharpen iron by accident. It takes heat. Pressure. Friction. God will put people in your life that scrape against your pride until Christ is formed. Don't run from the collision. It's how weapons are made."
+},
