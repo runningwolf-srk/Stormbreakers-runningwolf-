@@ -134,6 +134,20 @@ Every knee will bow. Not because they're forced. Because they're finally home.
 Lord of lords. King of kings. Name above all names.
 
 The war is already won. We're just enforcing the victory.`
+  },
+  {
+    id: 8,
+    title: "NEW RELIC NAME",
+    artist: "RunningWolf",
+    videoId: "REPLACE_WITH_VIDEO_ID",
+    verse: `"Your verse here"`,
+    ref: "Book 1:1",
+    tags: ["TAG1", "TAG2", "TAG3"],
+    content: `Your devotional content here.
+
+Line breaks work. Keep the prophetic fire.
+
+Add your text.`
   }
 ]
 
