@@ -15,8 +15,11 @@ export default function RelicsPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <h1 className="text-6xl font-bold mb-4">THE ARMORY</h1>
-        <p className="text-zinc-400 mb-12">Eight relics have awakened</p>
+        <div className="text-center mb-12">
+          <p className="text-amber-500 text-sm tracking-widest mb-2">HALL OF RELICS</p>
+          <h1 className="text-6xl font-bold mb-4">THE ARMORY</h1>
+          <p className="text-zinc-400">Eight relics have awakened</p>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {relics.map((relic) => (
@@ -25,7 +28,7 @@ export default function RelicsPage() {
               href={`/relics/${relic.id}`}
               className="border border-zinc-800 p-6 hover:border-amber-500 transition-colors group"
             >
-              <div className="flex gap-2 mb-3">
+              <div className="flex gap-2 mb-3 flex-wrap">
                 {relic.tags.map(tag => (
                   <span key={tag} className="text-xs border border-zinc-700 px-2 py-1 rounded">
                     {tag}
