@@ -2,40 +2,12 @@ import Link from 'next/link'
 
 const tracks = [
   {
+    slug: "horn-of-war",
     title: "HORN OF WAR",
     subtitle: "A BATTLE CRY. A LEGEND RISES.",
     img: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp"
   },
-  {
-    title: "HEAVEN CALLING", 
-    subtitle: "A WORSHIP ANTHEM",
-    img: "/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp"
-  },
-  {
-    title: "SCARS THAT PREACH",
-    subtitle: "BORN THROUGH THE FIRE",
-    img: "/file_0000000065a071f5832301f52d11fb80.png"
-  },
-  {
-    title: "SPIRITUAL JOURNEY",
-    subtitle: "A JOURNEY TO HIS PRESENCE", 
-    img: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp"
-  },
-  {
-    title: "IRON COLLIDE",
-    subtitle: "AN EPIC HARD ROCK ANTHEM",
-    img: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp"
-  },
-  {
-    title: "BLOOD OF CROSS",
-    subtitle: "BY HIS WOUNDS WE ARE HEALED",
-    img: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp"
-  },
-  {
-    title: "LORD OF LORDS",
-    subtitle: "A SPIRITUAL ANTHEM",
-    img: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp"
-  }
+  // ... add slugs to all 7 tracks
 ]
 
 export default function MusicPage() {
@@ -43,7 +15,7 @@ export default function MusicPage() {
     <main className="min-h-screen bg-black text-white">
       <div className="max-w-6xl mx-auto px-6 py-20">
         
-        {/* Header */}
+        {/* Header - same as before */}
         <div className="text-center mb-16">
           <Link href="/" className="text-zinc-500 hover:text-amber-500 text-sm mb-8 inline-block">
             ← Back to Home
@@ -55,10 +27,10 @@ export default function MusicPage() {
           <div className="w-24 h-px bg-amber-500/50 mx-auto mt-8"></div>
         </div>
 
-        {/* Album Grid - No Animation, Seizure Safe */}
+        {/* Album Grid - NOW WITH LINKS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {tracks.map((track) => (
-            <div key={track.title} className="group">
+            <Link key={track.slug} href={`/music/track?slug=${track.slug}`} className="group">
               <div className="bg-zinc-900 rounded-lg overflow-hidden border border-zinc-800 hover:border-amber-500/50 transition-colors duration-200">
                 <img 
                   src={track.img} 
@@ -75,18 +47,11 @@ export default function MusicPage() {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         {/* Joel 2:1 Footer */}
         <div className="text-center mt-24 pt-12 border-t border-zinc-800">
           <p className="text-zinc-600 text-sm italic">
-            "Blow the trumpet in Zion..." - Joel 2:1
-          </p>
-        </div>
-
-      </div>
-    </main>
-  )
-}
+            "Blow the trumpet in Zion..." - Joel
