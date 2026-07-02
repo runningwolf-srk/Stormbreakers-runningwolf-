@@ -1,3 +1,5 @@
+  import Link from 'next/link'
+
 const relics = [
   {
     id: 1,
@@ -36,3 +38,39 @@ const relics = [
     image: "/file_0000000065a071f5832301f52d11fb80.png"
   }
 ]
+
+export default function RelicsPage() {
+  return (
+    <main className="min-h-screen bg-black text-zinc-200">
+      <div className="max-w-4xl mx-auto px-6 py-20">
+        <div className="flex justify-between text-sm text-zinc-500 mb-16 tracking-widest font-sans">
+          <Link href="/" className="hover:text-amber-500">← STORMBREAKERS</Link>
+          <span>RELICS</span>
+          <div className="w-16"></div>
+        </div>
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-7xl font-serif text-amber-500 mb-4">RELICS</h1>
+          <p className="text-zinc-500 tracking-widest">Cinematic Worship • Viking Spirit • Holy Fire</p>
+          <div className="w-24 h-px bg-amber-500/50 mx-auto mt-8"></div>
+        </div>
+        <div className="space-y-8">
+          {relics.map((relic) => (
+            <Link
+              key={relic.id}
+              href={`/relics/${relic.id}`}
+              className="block border border-zinc-800 rounded-lg overflow-hidden hover:border-amber-500 transition-all cursor-pointer"
+            >
+              <div className="aspect-video bg-zinc-900 relative">
+                <img src={relic.image} alt={relic.title} className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6">
+                <h2 className="text-2xl font-serif text-white mb-2">{relic.title}</h2>
+                <p className="text-zinc-400 text-sm tracking-wider">{relic.subtitle}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </main>
+  )
+}
