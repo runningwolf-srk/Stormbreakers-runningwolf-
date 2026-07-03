@@ -15,28 +15,30 @@ export default function RelicsPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="mb-4">
-          <Link href="/" className="text-zinc-400 hover:text-white text-sm">← Back to Home</Link>
+        <div className="mb-8">
+          <Link href="/" className="text-amber-500 hover:text-amber-400 text-sm">
+            ← STORMBREAKERS
+          </Link>
         </div>
         
         <div className="mb-12 text-center">
-          <p className="text-zinc-400 text-sm tracking-widest mb-2">RELICS</p>
-          <h1 className="text-amber-500 text-5xl font-bold mb-4">STORMBREAKERS</h1>
-          <p className="text-zinc-500 text-sm">Cinematic Worship • Viking Spirit • Holy Fire</p>
+          <h1 className="text-amber-500 text-6xl font-bold mb-4">RELICS</h1>
+          <p className="text-zinc-400 text-sm">Cinematic Worship • Viking Spirit • Holy Fire</p>
+          <div className="w-24 h-px bg-amber-500/50 mx-auto mt-6"></div>
         </div>
         
-        <div className="grid gap-8">
+        <div className="grid gap-6 md:grid-cols-2">
           {relics.map((relic) => (
             <Link 
               key={relic.id} 
               href={`/relics/${relic.id}`}
-              className="block border border-zinc-800 rounded-lg overflow-hidden hover:border-amber-500 transition-colors group"
+              className="block bg-zinc-900/50 border border-zinc-800 rounded-lg overflow-hidden hover:border-amber-500 transition-all duration-300 hover:bg-zinc-900 group"
             >
               <div className="p-8">
-                <h2 className="text-3xl font-bold mb-2 group-hover:text-amber-500 transition-colors">
+                <h2 className="text-2xl font-bold mb-2 text-white group-hover:text-amber-500 transition-colors">
                   {relic.title}
                 </h2>
-                <p className="text-zinc-400">
+                <p className="text-zinc-400 text-sm">
                   {relic.subtitle}
                 </p>
               </div>
