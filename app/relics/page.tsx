@@ -1,14 +1,54 @@
 import Link from 'next/link'
 
 const relics = [
-  { id: 1, title: "HORN OF WAR", subtitle: "A BATTLE CRY. A LEGEND RISES." },
-  { id: 2, title: "HEAVEN CALLING", subtitle: "THE ASCENT BEGINS." },
-  { id: 3, title: "IRON COLLIDE", subtitle: "KINGDOMS CLASH." },
-  { id: 4, title: "SPIRITUAL JOURNEY", subtitle: "THE PATH HOME." },
-  { id: 5, title: "BLOOD OF THE CROSS", subtitle: "THE COVENANT SEALED." },
-  { id: 6, title: "I'M ON FIRE", subtitle: "WILDFIRE SPREADS." },
-  { id: 7, title: "LORD OF LORDS", subtitle: "THE KING RETURNS." },
-  { id: 8, title: "RESURRECTION POWER", subtitle: "DEATH DEFEATED." },
+  { 
+    id: 1, 
+    title: "HORN OF WAR", 
+    subtitle: "A BATTLE CRY. A LEGEND RISES.",
+    image: "/YOUR-HORN-OF-WAR-FILENAME.webp" // ← Replace with actual filename
+  },
+  { 
+    id: 2, 
+    title: "HEAVEN CALLING", 
+    subtitle: "THE ASCENT BEGINS.",
+    image: "/YOUR-HEAVEN-CALLING-FILENAME.webp" // ← Replace with actual filename
+  },
+  { 
+    id: 3, 
+    title: "IRON COLLIDE", 
+    subtitle: "KINGDOMS CLASH.",
+    image: "/YOUR-IRON-COLLIDE-FILENAME.webp" // ← Replace with actual filename
+  },
+  { 
+    id: 4, 
+    title: "SPIRITUAL JOURNEY", 
+    subtitle: "THE PATH HOME.",
+    image: "/YOUR-SPIRITUAL-JOURNEY-FILENAME.webp" // ← Replace with actual filename
+  },
+  { 
+    id: 5, 
+    title: "BLOOD OF CROSS", 
+    subtitle: "THE COVENANT SEALED.",
+    image: "/YOUR-BLOOD-OF-CROSS-FILENAME.webp" // ← Replace with actual filename
+  },
+  { 
+    id: 6, 
+    title: "I'M ON FIRE", 
+    subtitle: "WILDFIRE SPREADS.",
+    image: "/YOUR-IM-ON-FIRE-FILENAME.webp" // ← Replace with actual filename
+  },
+  { 
+    id: 7, 
+    title: "LORD OF LORDS", 
+    subtitle: "THE KING RETURNS.",
+    image: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp" // ← This one is done
+  },
+  { 
+    id: 8, 
+    title: "RESURRECTION POWER", 
+    subtitle: "DEATH DEFEATED.",
+    image: "/YOUR-RESURRECTION-POWER-FILENAME.webp" // ← Replace with actual filename
+  },
 ]
 
 export default function RelicsPage() {
@@ -32,9 +72,14 @@ export default function RelicsPage() {
             <Link 
               key={relic.id} 
               href={`/relics/${relic.id}`}
-              className="block bg-zinc-900/50 border border-zinc-800 rounded-lg overflow-hidden hover:border-amber-500 transition-all duration-300 hover:bg-zinc-900 group"
+              className="block bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden hover:border-amber-500 transition-all duration-300 group"
             >
-              <div className="p-8">
+              <img 
+                src={relic.image} 
+                alt={relic.title}
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
                 <h2 className="text-2xl font-bold mb-2 text-white group-hover:text-amber-500 transition-colors">
                   {relic.title}
                 </h2>
