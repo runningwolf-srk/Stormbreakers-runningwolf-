@@ -1,9 +1,6 @@
 'use client'
 import Link from 'next/link'
 
-// STORMBREAKERS RELICS - FIXED VERSION
-// No more broken imports. No more wrong clicks.
-
 const relics = [
   { id: 1, name: "The First Flame", desc: "The spark that started the storm" },
   { id: 2, name: "Wolf's Fang", desc: "Tooth of the alpha that guides" },
@@ -20,7 +17,7 @@ export default function RelicsPage() {
     <main className="min-h-screen bg-black text-white p-6">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-2 text-amber-400">The Relics</h1>
-        <p className="text-gray-400 mb-8">Eight sacred items. Eight powers. Choose wisely.</p>
+        <p className="text-gray-400 mb-8">Eight sacred items. Eight powers.</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {relics.map((relic) => (
@@ -37,9 +34,7 @@ export default function RelicsPage() {
         </div>
         
         <div className="mt-12 text-center">
-          <Link href="/" className="text-amber-400 hover:underline">
-            ← Return to Stormbreakers
-          </Link>
+          <Link href="/" className="text-amber-400 hover:underline">← Return to Stormbreakers</Link>
         </div>
       </div>
     </main>
