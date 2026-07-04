@@ -1,3 +1,7 @@
+'use client'
+import { useState } from 'react'
+import Link from 'next/link'
+
 const chapters = [
   {
     id: "prologue",
@@ -22,40 +26,7 @@ The silence is breaking.`,
   },
   {
     id: "chapter1",
-    title: "Chapter I: The First Flame",
-    subtitle: "JESUS IS AN HEALER",
-    image: "/729068345_1706992463868756_7233760520950384832_n~2.jpg",
-    text: `The call didn't come in a sanctuary. It came in a cell.
-
-Cinderblock walls. Steel toilet. A man with track marks on his arms and a death sentence on his record. His name was lost. The guards called him 847291.
-
-Taped to the concrete above his bunk was one verse, torn from a Gideon Bible: Isaiah 53:5.
-
-"But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed."
-
-No worship band. No fog machine. No altar call. Just pain and a promise.
-
-He didn't pray the sinner's prayer. He couldn't. His jaw was wired shut from the last beating. He just stared at those words until they stared back.
-
-The healing came before the sobriety. Before the church. Before the clean record. Before he even knew what repentance meant.
-
-One night the fire fell. Not on the building. In him.
-
-The heroin didn't leave his veins — his veins left the heroin. The shame didn't wash away — it burned.
-
-When they uncuffed him 18 months later, the guards asked his name for the paperwork.
-
-He said, "I don't know yet. But I know who healed me."
-
-The First Flame lit in the dark.
-
-That's where Stormbreakers are born — not in the light, but in the place where light breaks in.`,
-    verse: "Isaiah 53:5",
-    relicId: 1
-  },
-  {
-    id: "chapter2", 
-    title: "Chapter II: Horn of War",
+    title: "Chapter I: Horn of War",
     subtitle: "The Sound That Ended Peace",
     image: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp",
     text: `The snow fell sideways in the Valley of Bones.
@@ -183,357 +154,189 @@ It had invited itself.`,
     relicId: 2
   },
   {
-    id: "chapter3",
-    title: "Chapter III: Heaven Calling", 
-    subtitle: "Come Up Here",
-    image: "/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp",
-    text: `He was tired of begging God to come down.
-
-Three years of crying out in a prayer room. Three years of fasting. Three years of "God, if You're real, show up."
-
-The ceiling never opened. The carpet never burned. The fire never fell.
-
-Until he read Revelation 4:1.
-
-"After this I looked, and there before me was a door standing open in heaven. And the voice I had first heard speaking to me like a trumpet said, 'Come up here, and I will show you what must take place after this.'"
-
-Come up here.
-
-Not "I'm coming down." Not "I'll meet you where you're at."
-
-Come. Up. Here.
-
-The door wasn't locked. It was open. He'd been knocking on a door that was already open, begging God to come to his level.
-
-That night he stopped praying down. He prayed up.
-
-He didn't ask for a visitation. He accepted an invitation.
-
-The view from the throne room changed everything.
-
-His problems didn't shrink. His perspective grew.
-
-The enemy he thought was a giant looked like an ant from above. The mountain he thought was unmovable looked like a pebble.
-
-Stormbreakers don't fight FOR victory. They fight FROM it.
-
-Because they went up first.
-
-Heaven Calling isn't about escape. It's about sight.
-
-You can't cast out what you won't rise above.
-
-The door is still open.`,
-    verse: "Revelation 4:1",
-    relicId: 3
-  },
-  {
-    id: "chapter4",
-    title: "Chapter IV: Scars That Preach",
-    subtitle: "Born Through The Fire",
-    image: "/file_0000000065a071f5832301f52d11fb80.png",
-    text: `He hid them for years.
-
-The cigarette burns from his father — three dots on his left forearm. "That's for talking back."
-
-The track marks from the needle — constellations of shame on both arms. "That's for being weak."
-
-The knife scar across his ribs from the alley behind the liquor store. "That's for being in the wrong place."
-
-The tattoo of her name across his knuckles. "That's for believing love could save you."
-
-He wore long sleeves in summer. He never swam. He changed in bathroom stalls.
-
-Then he read Galatians 6:17.
-
-"From now on, let no one cause me trouble, for I bear on my body the marks of Jesus."
-
-Paul wasn't talking about nail scars. He was talking about the whips. The stones. The shipwrecks. The beatings.
-
-The scars weren't shame. They were scripture.
-
-The fire didn't take him — it authored him.
-
-Every mark was a sentence. Every scar was a sermon.
-
-He stopped covering them.
-
-At the men's meeting, he rolled up his sleeves for the first time.
-
-The room went quiet.
-
-Not the judgment quiet. The recognition quiet.
-
-One by one, other men rolled up theirs.
-
-Track marks. Bullet wounds. Surgery scars from suicide attempts. Burn marks from childhood.
-
-The church had been hiding its Bibles.
-
-Scars That Preach means you don't have to be healed to be holy. You just have to be honest.
-
-Your wounds are your witness.
-
-The marks prove the miracle.`,
-    verse: "Galatians 6:17",
-    relicId: 4
-  },
-  {
-    id: "chapter5",
-    title: "Chapter V: Spiritual Journey",
-    subtitle: "He Restores My Soul", 
-    image: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp",
-    text: `The path wasn't straight.
-
-Psalm 23 lied if you read it wrong.
-
-"He makes me lie down in green pastures" — yeah, after the valley.
-
-"He leads me beside still waters" — yeah, after the desert.
-
-"He restores my soul" — yeah, because it was broken first.
-
-His soul was in pieces.
-
-Piece in the bottle. Piece in the porn. Piece in the approval of men who didn't know his name. Piece in the church that loved his performance but not his pain.
-
-He thought restoration was self-improvement. More prayer. More Bible. More serving. More trying.
-
-He white-knuckled his way to religious.
-
-Still broken.
-
-Until he collapsed in the valley of the shadow.
-
-Not death. Death would have been easier.
-
-This was the shadow — where you know God is real but you can't feel Him. Where you know the verses but they taste like ash. Where you lead worship on Sunday and want to die on Monday.
-
-He stopped running.
-
-Stopped performing.
-
-Stopped pretending.
-
-He lay in the dirt and said, "If You're real, restore me. Because I can't."
-
-He didn't feel a wind. Didn't see a light. Didn't hear a voice.
-
-But the next morning, he woke up and the bottle didn't call his name.
-
-The next week, the websites didn't load. Not because of a filter. Because of freedom.
-
-The next month, he looked in the mirror and didn't hate the man looking back.
-
-Restoration is not self-improvement. It's resurrection.
-
-He doesn't restore your reputation. He restores your soul.
-
-And He does it for His name — not your platform.
-
-Not so you can have a testimony.
-
-So He can have a son.
-
-The journey isn't about finding yourself.
-
-It's about losing the fake you so the real one can rise.`,
-    verse: "Psalm 23:3",
-    relicId: 5
-  },
-  {
-    id: "chapter6",
-    title: "Chapter VI: Iron Collide",
-    subtitle: "Sharpened For War",
-    image: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp",
-    text: `They didn't meet at small group.
-
-They met in a fight.
-
-Marcus was a former Crip. Knuckles scarred. Neck tattoo. Did 8 years for armed robbery. Found Jesus in a cell when his cellmate died of an overdose next to him.
-
-David was a pastor's kid. Homeschooled. Worship leader. Never drank. Never smoked. Left the faith at 22 when his dad had an affair with the youth pastor's wife.
-
-Both broken. Both called.
-
-Marcus was at the gym. Bench pressing anger. David was there too, headphones in, trying to outrun the hypocrisy.
-
-Marcus dropped a 45-pound plate on David's foot.
-
-David cussed. First time in 10 years.
-
-Marcus laughed. First time since prison.
-
-They didn't agree. They collided.
-
-Proverbs 27:17: "As iron sharpens iron, so one person sharpens another."
-
-Iron doesn't sharpen iron in a display case. It sharpens in the strike. In the friction. In the sparks.
-
-David called Marcus out for his pride. Marcus called David out for his passivity.
-
-Sparks flew. Egos died.
-
-They started meeting at 5 AM. Not for coffee. For confrontation.
-
-"Why you still mad at God?" Marcus would ask.
-
-"Why you still trying to be hard?" David would fire back.
-
-No safe spaces. No "I feel statements." Just iron on iron.
-
-Six months later, Marcus was leading a prison ministry. David was leading worship again — this time for addicts, not audiences.
-
-A brotherhood was forged in the friction.
-
-Iron Collide is the death of comfortable Christianity.
-
-Stop looking for friends who agree with you. Find brothers who sharpen you.
-
-You don't get sharp in safety. You get sharp in the strike.
-
-If no one in your life makes you bleed, you're getting dull.`,
-    verse: "Proverbs 27:17",
-    relicId: 6
-  },
-  {
     id: "chapter7",
-    title: "Chapter VII: Blood of Cross",
-    subtitle: "Redemption Song",
-    image: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp",
-    text: `The debt was real.
+    title: "Chapter VII: The Naming",
+    subtitle: "How the Stormbreaker Was Named",
+    image: "/729068345_1706992463868756_7233760520950384832_n~2.jpg",
+    text: `The wind never stopped in Guymon, Oklahoma.
 
-Not metaphorical. Not theological. Real.
+Dust. Silence. Flat earth to the horizon.
 
-Three abortions. Two divorces. One daughter who won't speak to him. Countless women. Countless lies. Countless nights he can't remember and mornings he wishes he couldn't.
+A man named Jessy Marquez stood there, 39 years old, wondering if God had forgotten his name.
 
-The shame was real.
+He was not a pastor. Not a prophet. Not a king.
 
-It woke him up at 3 AM. It sat in the passenger seat on his drive to work. It stood behind him in the shower.
+He was a warrior without a war.
 
-He tried to pay it.
+Then the call came.
 
-AA. Therapy. Church. Serving. Giving. Apologizing.
+"RunningWolf."
 
-The debt got bigger.
+He didn't choose the name. The name chose him.
 
-Because you can't pay for blood with behavior.
+A wolf doesn't hunt for sport. It hunts because the pack is hungry. Because winter is coming. Because someone has to run ahead and howl when danger is near.
 
-Then he read Ephesians 1:7.
+Stormbreakers was born that night. Not as a band. As a warband.
 
-"In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God's grace."
+Cinematic worship. Viking spirit. Holy fire.
 
-Redemption through his blood.
+This is not his story.
 
-Not through his Bible reading. Not through his sobriety. Not through his tithe.
+This is the story that came through him.
 
-Through. His. Blood.
-
-It wasn't a metaphor. It was a transaction.
-
-"Paid in full" stamped across his record in red.
-
-Not "balance reduced." Not "payment plan available." Not "try harder next month."
-
-Paid. In. Full.
-
-The Blood of Cross ended the trial.
-
-Not with a better defense. With a substitute.
-
-The Judge didn't say "not guilty." He said "guilty — but punished."
-
-Punished on a different man.
-
-At the cross, Jesus wasn't just dying FOR sin. He was dying AS sin.
-
-He became the abortion. He became the divorce. He became the addiction. He became the lie.
-
-So the man didn't have to.
-
-Grace is not a second chance. It's a new creation.
-
-The old man died. The debt died with him.
-
-This relic draws the line: You're either covered by the blood or you're not.
-
-No halfway. No trying harder. No "I'm working on it."
-
-Just the cross.
-
-Just the blood.
-
-Just "It is finished."`,
-    verse: "Ephesians 1:7",
-    relicId: 7
-  },
-  {
-    id: "chapter8",
-    title: "Chapter VIII: Lord of Lords",
-    subtitle: "King of Kings",
-    image: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp",
-    text: `The end of the book isn't a vote.
-
-It's a coronation.
-
-He doesn't run for King. He returns as King.
-
-Revelation 19:16: "On his robe and on his thigh he has this name written: KING OF KINGS AND LORD OF LORDS."
-
-The tattoo is already on His thigh.
-
-Not "might be." Not "hopefully." Not "if we pray enough."
-
-Is.
-
-Present tense. Already written. Already settled. Already done.
-
-The throne is not empty.
-
-The war is already won.
-
-We don't fight FOR victory. We fight FROM it.
-
-That's the difference between Stormbreakers and every other army in history.
-
-They fight to take ground. We fight to take back ground.
-
-They fight hoping they win. We fight knowing He won.
-
-Every knee will bow. Every tongue will confess.
-
-Not to religion. Not to politics. Not to denomination. Not to doctrine.
-
-To Him.
-
-The tattoo says KING OF KINGS.
-
-Not King of Christians. Not King of Republicans. Not King of Americans.
-
-KING OF KINGS.
-
-Which means every other king — every president, every prime minister, every CEO, every influencer, every man who ever called himself boss — is under Him.
-
-The Stormbreakers don't enforce religion. They enforce reality.
-
-The reality that the King is coming.
-
-The Horn blew. The Sword was drawn. The Banner was lifted.
-
-Now the King rides.
-
-This isn't the end.
-
-This is the advance.
-
-The Long Peace is over.
-
-The Long War is won.
-
-The King is here.
-
-By His call we rise.`,
-    verse: "Revelation 19:16",
-    relicId: 8
+The songs. The relics. The saga.`,
+    verse: "Isaiah 42:9",
+    relicId: null
   }
 ]
+
+export default function SagaPage() {
+  const [page, setPage] = useState(0)
+  const [isFlipping, setIsFlipping] = useState(false)
+  const [showTOC, setShowTOC] = useState(false)
+
+  const nextPage = () => {
+    if (page < chapters.length - 1) {
+      setIsFlipping(true)
+      setTimeout(() => {
+        setPage(page + 1)
+        setIsFlipping(false)
+        window.scrollTo(0, 0)
+      }, 300)
+    }
+  }
+
+  const prevPage = () => {
+    if (page > 0) {
+      setIsFlipping(true)
+      setTimeout(() => {
+        setPage(page - 1)
+        setIsFlipping(false)
+        window.scrollTo(0, 0)
+      }, 300)
+    }
+  }
+
+  const goToChapter = (index: number) => {
+    setIsFlipping(true)
+    setTimeout(() => {
+      setPage(index)
+      setShowTOC(false)
+      setIsFlipping(false)
+      window.scrollTo(0, 0)
+    }, 300)
+  }
+
+  return (
+    <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <div className="sticky top-0 z-50 bg-black/90 backdrop-blur border-b border-amber-400/20">
+        <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+          <Link href="/" className="text-amber-400 font-bold text-xl font-serif">The Stormbreakers Saga</Link>
+          <div className="flex gap-4">
+            <button onClick={() => setShowTOC(!showTOC)} className="text-gray-400 hover:text-amber-400">
+              Chapters
+            </button>
+            <Link href="/relics" className="text-gray-400 hover:text-amber-400">Relics</Link>
+          </div>
+        </div>
+        
+        {showTOC && (
+          <div className="bg-zinc-900 border-t border-amber-400/20 max-h-96 overflow-y-auto">
+            <div className="max-w-4xl mx-auto px-4 py-4">
+              {chapters.map((ch, idx) => (
+                <button
+                  key={ch.id}
+                  onClick={() => goToChapter(idx)}
+                  className={`block w-full text-left py-2 px-4 rounded hover:bg-amber-400/10 transition ${page === idx? 'text-amber-400 font-bold' : 'text-gray-300'}`}
+                >
+                  {ch.title}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="max-w-3xl mx-auto px-4 py-8">
+        <div className={`bg-gradient-to-b from-[#1a1a1a] to-[#0f0f] rounded-lg border-2 border-amber-400/30 shadow-2xl shadow-amber-400/10 transition-all duration-300 ${isFlipping? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+          
+          {chapters.image && (
+            <div className="relative w-full aspect-video border-b-2 border-amber-400/20">
+              <img 
+                src={chapters.image} 
+                alt={chapters.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent"></div>
+            </div>
+          )}
+          
+          <div className="p-8 md:p-12">
+            <h1 className="text-3xl md:text-4xl font-bold mb-2 text-amber-400 font-serif">{chapters.title}</h1>
+            <p className="text-gray-500 mb-6 italic">{chapters.subtitle}</p>
+            <div className="w-24 h-0.5 bg-amber-400/50 mb-8"></div>
+            
+            <div className="text-lg text-gray-200 leading-relaxed font-serif whitespace-pre-line mb-8">
+              {chapters.text.split('\n').map((para, idx) => (
+                <p key={idx} className="mb-4 first-letter:text-5xl first-letter:text-amber-400 first-letter:font-bold first-letter:mr-2 first-letter:float-left">
+                  {para}
+                </p>
+              ))}
+            </div>
+            
+            {chapters.verse && (
+              <div className="mt-8 pt-6 border-t border-amber-400/20">
+                <p className="text-amber-400 italic text-right font-serif text-lg">— {chapters.verse}</p>
+              </div>
+            )}
+
+            {chapters.relicId && (
+              <Link 
+                href={`/relics/${chapters.relicId}`}
+                className="mt-8 inline-block bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 px-8 rounded-lg transition text-lg"
+              >
+                LISTEN TO THE RELIC →
+              </Link>
+            )}
+          </div>
+
+          <div className="px-8 pb-6 text-center text-gray-600 text-sm font-mono">
+            Page {String(page + 1).padStart(2, '0')} / {String(chapters.length).padStart(2, '0')}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-4 mt-8">
+          <button 
+            onClick={prevPage} 
+            disabled={page === 0}
+            className="bg-zinc-800 hover:bg-zinc-700 disabled:opacity-20 disabled:cursor-not-allowed text-white font-bold py-4 px-4 rounded-lg transition flex items-center justify-center gap-2"
+          >
+            ← PREVIOUS CHAPTER
+          </button>
+          
+          <Link 
+            href="/relics"
+            className="bg-amber-500 hover:bg-amber-600 text-black font-bold py-4 px-4 rounded-lg transition text-center flex items-center justify-center"
+          >
+            THE ARMORY
+          </Link>
+          
+          <button 
+            onClick={nextPage}
+            disabled={page === chapters.length - 1}
+            className="bg-zinc-800 hover:bg-zinc-700 disabled:opacity-20 disabled:cursor-not-allowed text-white font-bold py-4 px-4 rounded-lg transition flex items-center justify-center gap-2"
+          >
+            NEXT CHAPTER →
+          </button>
+        </div>
+
+        <div className="mt-6 bg-zinc-800 rounded-full h-2 overflow-hidden">
+          <div 
+            className="bg-amber-400 h-full transition-all duration-500"
+            style={{ width: `${((page + 1) / chapters.length) * 100}%` }}
+          ></div>
+        </div>
+      </div>
+    </main>
+  )
+}
