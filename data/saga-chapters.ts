@@ -400,4 +400,162 @@ They started meeting at 5 AM. Not for coffee. For confrontation.
 
 No safe spaces. No "I feel statements." Just iron on iron.
 
-Six months later, Marcus was leading a prison
+Six months later, Marcus was leading a prison ministry. David was leading worship again — this time for addicts, not audiences.
+
+A brotherhood was forged in the friction.
+
+Iron Collide is the death of comfortable Christianity.
+
+Stop looking for friends who agree with you. Find brothers who sharpen you.
+
+You don't get sharp in safety. You get sharp in the strike.
+
+If no one in your life makes you bleed, you're getting dull.`,
+    verse: "Proverbs 27:17",
+    relicId: 6
+  },
+  {
+    id: "chapter7",
+    slug: "blood-of-cross",
+    title: "Chapter VII: Blood of Cross",
+    subtitle: "Redemption Song",
+    image: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    text: `The debt was real.
+
+Not metaphorical. Not theological. Real.
+
+Three abortions. Two divorces. One daughter who won't speak to him. Countless women. Countless lies. Countless nights he can't remember and mornings he wishes he couldn't.
+
+The shame was real.
+
+It woke him up at 3 AM. It sat in the passenger seat on his drive to work. It stood behind him in the shower.
+
+He tried to pay it.
+
+AA. Therapy. Church. Serving. Giving. Apologizing.
+
+The debt got bigger.
+
+Because you can't pay for blood with behavior.
+
+Then he read Ephesians 1:7.
+
+"In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God's grace."
+
+Redemption through his blood.
+
+Not through his Bible reading. Not through his sobriety. Not through his tithe.
+
+Through. His. Blood.
+
+It wasn't a metaphor. It was a transaction.
+
+"Paid in full" stamped across his record in red.
+
+Not "balance reduced." Not "payment plan available." Not "try harder next month."
+
+Paid. In. Full.
+
+The Blood of Cross ended the trial.
+
+Not with a better defense. With a substitute.
+
+The Judge didn't say "not guilty." He said "guilty — but punished."
+
+Punished on a different man.
+
+At the cross, Jesus wasn't just dying FOR sin. He was dying AS sin.
+
+He became the abortion. He became the divorce. He became the addiction. He became the lie.
+
+So the man didn't have to.
+
+Grace is not a second chance. It's a new creation.
+
+The old man died. The debt died with him.
+
+This relic draws the line: You're either covered by the blood or you're not.
+
+No halfway. No trying harder. No "I'm working on it."
+
+Just the cross.
+
+Just the blood.
+
+Just "It is finished."`,
+    verse: "Ephesians 1:7",
+    relicId: 7
+  },
+  {
+    id: "chapter8",
+    slug: "lord-of-lords",
+    title: "Chapter VIII: Lord of Lords",
+    subtitle: "King of Kings",
+    image: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    text: `The end of the book isn't a vote.
+
+It's a coronation.
+
+He doesn't run for King. He returns as King.
+
+Revelation 19:16: "On his robe and on his thigh he has this name written: KING OF KINGS AND LORD OF LORDS."
+
+The tattoo is already on His thigh.
+
+Not "might be." Not "hopefully." Not "if we pray enough."
+
+Is.
+
+Present tense. Already written. Already settled. Already done.
+
+The throne is not empty.
+
+The war is already won.
+
+We don't fight FOR victory. We fight FROM it.
+
+That's the difference between Stormbreakers and every other army in history.
+
+They fight to take ground. We fight to take back ground.
+
+They fight hoping they win. We fight knowing He won.
+
+Every knee will bow. Every tongue will confess.
+
+Not to religion. Not to politics. Not to denomination. Not to doctrine.
+
+To Him.
+
+The tattoo says KING OF KINGS.
+
+Not King of Christians. Not King of Republicans. Not King of Americans.
+
+KING OF KINGS.
+
+Which means every other king — every president, every prime minister, every CEO, every influencer, every man who ever called himself boss — is under Him.
+
+The Stormbreakers don't enforce religion. They enforce reality.
+
+The reality that the King is coming.
+
+The Horn blew. The Sword was drawn. The Banner was lifted.
+
+Now the King rides.
+
+This isn't the end.
+
+This is the advance.
+
+The Long Peace is over.
+
+The Long War is won.
+
+The King is here.
+
+By His call we rise.`,
+    verse: "Revelation 19:16",
+    relicId: 8
+  },
+  {
+    id: "chapter9",
+    slug: "the-
