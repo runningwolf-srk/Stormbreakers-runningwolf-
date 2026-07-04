@@ -5,56 +5,56 @@ const tracks = [
   {
     id: 1,
     title: "Jesus Is An Healer",
-    image: "/relic-1-healer.png",
+    image: "/relic-1-healer.png", // You still need to upload this one
     relic: 1,
     youtubeId: "stsryByK5h8"
   },
   {
     id: 2,
     title: "Horn of War",
-    image: "/relic-2-horn.png",
+    image: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp",
     relic: 2,
     youtubeId: "M4wGCg5oCx0"
   },
   {
     id: 3,
     title: "Heaven Calling",
-    image: "/relic-3-heaven.png",
+    image: "/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp",
     relic: 3,
     youtubeId: "oxNauKuxg4Q"
   },
   {
     id: 4,
     title: "Born Through The Fire",
-    image: "/relic-4-scars.png",
+    image: "/file_0000000065a071f5832301f52d11fb80.png",
     relic: 4,
     youtubeId: "8XQUhWB_N5M"
   },
   {
     id: 5,
     title: "Spiritual Journey",
-    image: "/relic-5-journey.png",
+    image: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp",
     relic: 5,
     youtubeId: "umDFjJjh0_c"
   },
   {
     id: 6,
     title: "Iron Collide",
-    image: "/relic-6-iron.png",
+    image: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp",
     relic: 6,
     youtubeId: "odIsEMUtNJI"
   },
   {
     id: 7,
     title: "Blood of Cross",
-    image: "/relic-7-blood.png",
+    image: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp",
     relic: 7,
     youtubeId: "4lcbjsNLlzo"
   },
   {
     id: 8,
     title: "Lord of Lords",
-    image: "/relic-8-lord.png",
+    image: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp",
     relic: 8,
     youtubeId: "9vP0NPrEv9s"
   }
