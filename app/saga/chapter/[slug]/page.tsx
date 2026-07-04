@@ -27,7 +27,7 @@ export default function ChapterPage({ params }: { params: { slug: string } }) {
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-8">
-        <div className="bg-gradient-to-b from-[#1a1a] to-[#0f0f0f] rounded-lg border-2 border-amber-400/30 shadow-2xl shadow-amber-400/10">
+        <div className="bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f] rounded-lg border-2 border-amber-400/30 shadow-2xl shadow-amber-400/10">
           
           {chapter.image && (
             <div className="relative w-full aspect-video border-b-2 border-amber-400/20">
