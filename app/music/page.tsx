@@ -15,7 +15,13 @@ const tracks = [
   { id: 5, title: "Spiritual Journey", image: "/relic-5-journey.png", relic: 5, youtubeId: null },
   { id: 6, title: "Iron Collide", image: "/relic-6-iron.png", relic: 6, youtubeId: null },
   { id: 7, title: "Blood of Cross", image: "/relic-7-blood.png", relic: 7, youtubeId: null },
-  { id: 8, title: "Lord of Lords", image: "/relic-8-lord.png", relic: 8, youtubeId: null },
+  { 
+    id: 8, 
+    title: "Lord of Lords", 
+    image: "/relic-8-lord.png", 
+    relic: 8,
+    youtubeId: "9vP0NPrEv9s"
+  },
 ]
 
 export default function MusicPage() {
