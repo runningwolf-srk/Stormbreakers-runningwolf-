@@ -1,7 +1,7 @@
 // FIREWALL: SEAL DOCTRINE v1.0 ACTIVE
 // Every chapter MUST end with }, // FIREWALL: END OF CHAPTER SCOPE
 
-export const sagaChapters = [
+export const chapters = [  // <-- Changed from sagaChapters to chapters
   {
     id: "chapter1",
     slug: "the-unnamed",
@@ -13,7 +13,7 @@ export const sagaChapters = [
     relicId: 1
   }, // FIREWALL: END OF CHAPTER SCOPE
   {
-    id: "chapter2",
+    id: "chapter2", 
     slug: "the-call",
     title: "Chapter II: The Call",
     subtitle: "A Voice in the Wind",
@@ -26,7 +26,7 @@ export const sagaChapters = [
     id: "chapter3",
     slug: "the-storm",
     title: "Chapter III: The Storm",
-    subtitle: "Winds of War",
+    subtitle: "Winds of War", 
     image: "/images/chapter3.jpg",
     text: `Your Chapter III text goes here.`,
     verse: "Psalm 107:29",
@@ -37,7 +37,7 @@ export const sagaChapters = [
     slug: "the-sword",
     title: "Chapter IV: The Sword",
     subtitle: "Drawn in Fire",
-    image: "/images/chapter4.jpg",
+    image: "/images/chapter4.jpg", 
     text: `Your Chapter IV text goes here.`,
     verse: "Ephesians 6:17",
     relicId: 4
@@ -49,7 +49,7 @@ export const sagaChapters = [
     subtitle: "Lifted High",
     image: "/images/chapter5.jpg",
     text: `Your Chapter V text goes here.`,
-    verse: "Isaiah 13:2",
+    verse: "Isaiah 13:2", 
     relicId: 5
   }, // FIREWALL: END OF CHAPTER SCOPE
   {
@@ -64,7 +64,7 @@ export const sagaChapters = [
   }, // FIREWALL: END OF CHAPTER SCOPE
   {
     id: "chapter7",
-    slug: "the-horn",
+    slug: "the-horn", 
     title: "Chapter VII: The Horn",
     subtitle: "Sound the Alarm",
     image: "/images/chapter7.jpg",
@@ -75,7 +75,7 @@ export const sagaChapters = [
   {
     id: "chapter8",
     slug: "lord-of-lords",
-    title: "Chapter VIII: Lord of Lords",
+    title: "Chapter VIII: Lord of Lords", 
     subtitle: "King of Kings",
     image: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp",
     text: `The end of the book isn't a vote.
@@ -146,7 +146,7 @@ By His call we rise.`,
     id: "chapter9",
     slug: "the-naming",
     title: "Chapter IX: The Naming",
-    subtitle: "How the Stormbreaker Was Named",
+    subtitle: "How the Stormbreaker Was Named", 
     image: "/729068345_1706992463868756_7233760520950384832_n~2.jpg",
     text: `The wind never stopped in Guymon, Oklahoma.
 
