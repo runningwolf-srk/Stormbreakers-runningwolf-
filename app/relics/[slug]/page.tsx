@@ -1,13 +1,15 @@
-import { notFound } from 'next/navigation'
+import SoundGate from '../components/SoundGate'
 import { relics } from '@/data/relics'
-import SoundGate from './components/SoundGate'
+import { notFound } from 'next/navigation'
 
-export async function generateStaticParams() {
-  return relics.map(r => ({ slug: r.slug }))
+type Props = {
+  params: { slug: string }
 }
 
-export default function RelicPage({ params }: { params: { slug: string } }) {
+export default function RelicPage({ params }: Props) {
   const relic = relics.find(r => r.slug === params.slug)
+  
   if (!relic) return notFound()
+  
   return <SoundGate relic={relic} />
 }
