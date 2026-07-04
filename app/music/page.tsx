@@ -9,7 +9,13 @@ const tracks = [
     relic: 1,
     youtubeId: "stsryByK5h8"
   },
-  { id: 2, title: "Horn of War", image: "/relic-2-horn.png", relic: 2, youtubeId: null },
+  { 
+    id: 2, 
+    title: "Horn of War", 
+    image: "/relic-2-horn.png", 
+    relic: 2,
+    youtubeId: "M4wGCg5oCx0"
+  },
   { id: 3, title: "Heaven Calling", image: "/relic-3-heaven.png", relic: 3, youtubeId: null },
   { 
     id: 4, 
