@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 
 const chapters = [
@@ -196,7 +196,7 @@ export default function SagaPage() {
   const [showTOC, setShowTOC] = useState(false)
 
   const playPageSound = () => {
-    const audio = new Audio('/page-flip.mp3') // Upload this to /public
+    const audio = new Audio('/page-flip.mp3')
     audio.volume = 0.3
     audio.play().catch(() => {})
   }
@@ -238,7 +238,6 @@ export default function SagaPage() {
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white">
-      {/* HEADER */}
       <div className="sticky top-0 z-50 bg-black/90 backdrop-blur border-b border-amber-400/20">
         <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="text-amber-400 font-bold text-xl font-serif">The Stormbreakers Saga</Link>
@@ -250,7 +249,6 @@ export default function SagaPage() {
           </div>
         </div>
         
-        {/* TABLE OF CONTENTS */}
         {showTOC && (
           <div className="bg-zinc-900 border-t border-amber-400/20 max-h-96 overflow-y-auto">
             <div className="max-w-4xl mx-auto px-4 py-4">
@@ -258,7 +256,7 @@ export default function SagaPage() {
                 <button
                   key={ch.id}
                   onClick={() => goToChapter(idx)}
-                  className={`block w-full text-left py-2 px-4 rounded hover:bg-amber-400/10 transition ${page === idx ? 'text-amber-400 font-bold' : 'text-gray-300'}`}
+                  className={`block w-full text-left py-2 px-4 rounded hover:bg-amber-400/10 transition ${page === idx? 'text-amber-400 font-bold' : 'text-gray-300'}`}
                 >
                   {ch.title}
                 </button>
@@ -268,45 +266,42 @@ export default function SagaPage() {
         )}
       </div>
 
-      {/* BOOK */}
       <div className="max-w-3xl mx-auto px-4 py-8">
-        <div className={`bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f] rounded-lg border-2 border-amber-400/30 shadow-2xl shadow-amber-400/10 transition-all duration-300 ${isFlipping ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+        <div className={`bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f] rounded-lg border-2 border-amber-400/30 shadow-2xl shadow-amber-400/10 transition-all duration-300 ${isFlipping? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
           
-          {/* CHAPTER IMAGE */}
-          {chapters.image && (
+          {chapters[page].image && (
             <div className="relative w-full aspect-video border-b-2 border-amber-400/20">
               <img 
-                src={chapters.image} 
-                alt={chapters.title}
+                src={chapters[page].image} 
+                alt={chapters[page].title}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent"></div>
             </div>
           )}
           
-          {/* CONTENT */}
           <div className="p-8 md:p-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2 text-amber-400 font-serif">{chapters.title}</h1>
-            <p className="text-gray-500 mb-6 italic">{chapters.subtitle}</p>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2 text-amber-400 font-serif">{chapters[page].title}</h1>
+            <p className="text-gray-500 mb-6 italic">{chapters[page].subtitle}</p>
             <div className="w-24 h-0.5 bg-amber-400/50 mb-8"></div>
             
             <div className="text-lg text-gray-200 leading-relaxed font-serif whitespace-pre-line mb-8">
-              {chapters.text.split('\n').map((para, idx) => (
+              {chapters[page].text.split('\n').map((para, idx) => (
                 <p key={idx} className="mb-4 first-letter:text-5xl first-letter:text-amber-400 first-letter:font-bold first-letter:mr-2 first-letter:float-left">
                   {para}
                 </p>
               ))}
             </div>
             
-            {chapters.verse && (
+            {chapters[page].verse && (
               <div className="mt-8 pt-6 border-t border-amber-400/20">
-                <p className="text-amber-400 italic text-right font-serif text-lg">— {chapters.verse}</p>
+                <p className="text-amber-400 italic text-right font-serif text-lg">— {chapters[page].verse}</p>
               </div>
             )}
 
-            {chapters.relicId && (
+            {chapters[page].relicId && (
               <Link 
-                href={`/relics/${chapters.relicId}`}
+                href={`/relics/${chapters[page].relicId}`}
                 className="mt-8 inline-block bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 px-8 rounded-lg transition text-lg"
               >
                 LISTEN TO THE RELIC →
@@ -314,13 +309,11 @@ export default function SagaPage() {
             )}
           </div>
 
-          {/* PAGE NUMBER */}
           <div className="px-8 pb-6 text-center text-gray-600 text-sm font-mono">
             Page {String(page + 1).padStart(2, '0')} / {String(chapters.length).padStart(2, '0')}
           </div>
         </div>
 
-        {/* NAVIGATION */}
         <div className="grid grid-cols-3 gap-4 mt-8">
           <button 
             onClick={prevPage} 
@@ -346,7 +339,6 @@ export default function SagaPage() {
           </button>
         </div>
 
-        {/* PROGRESS BAR */}
         <div className="mt-6 bg-zinc-800 rounded-full h-2 overflow-hidden">
           <div 
             className="bg-amber-400 h-full transition-all duration-500"
@@ -356,4 +348,4 @@ export default function SagaPage() {
       </div>
     </main>
   )
-      }
+}
