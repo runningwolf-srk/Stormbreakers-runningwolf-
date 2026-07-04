@@ -166,4 +166,19 @@ export default function SagaPage() {
           <button 
             onClick={nextPage}
             disabled={page === chapters.length - 1}
-            className="bg-zinc-800 hover:bg-zinc-700 disabled:opacity-20 disabled:cursor-not-allowed text-white font-bold py-4 px-4 rounded
+            className="bg-zinc-800 hover:bg-zinc-700 disabled:opacity-20 disabled:cursor-not-allowed text-white font-bold py-4 px-4 rounded-lg transition flex items-center justify-center gap-2"
+          >
+            NEXT CHAPTER →
+          </button>
+        </div>
+
+        <div className="mt-6 bg-zinc-800 rounded-full h-2 overflow-hidden">
+          <div 
+            className="bg-amber-400 h-full transition-all duration-500"
+            style={{ width: `${((page + 1) / chapters.length) * 100}%` }}
+          ></div>
+        </div>
+      </div>
+    </main>
+  )
+}
