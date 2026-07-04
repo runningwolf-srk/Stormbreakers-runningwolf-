@@ -6,7 +6,7 @@ const relics = [
     id: 1,
     name: "The First Flame",
     title: "JESUS IS AN HEALER",
-    image: "/file_00000000fa471f882fd16e52afa59fd.png",
+    image: "/729068345_1706992463868756_7233760520950384832_n~2.jpg",
     scripture: "Isaiah 53:5",
     text: "Where the call first burned in the darkness. By His wounds we are healed.",
     youtubeId: "stsryByK5h8"
