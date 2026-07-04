@@ -1,58 +1,67 @@
 export type Relic = {
   slug: string
   title: string
+  image: string
   audioUrl: string
   ambientUrl?: string
   duration: number
-  scripture: { ref: string; text: string }
-  reflectionBlocks: string[]
 }
 
 export const relics: Relic[] = [
-  {
-    slug: "the-first-flame",
+  { 
+    slug: "first-flame", 
     title: "THE FIRST FLAME",
-    audioUrl: "/audio/relics/first-flame.mp3",
-    duration: 180,
-    scripture: {
-      ref: "Isaiah 53:5",
-      text: "But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed."
-    },
-    reflectionBlocks: ["This is where it started.", "Not in a church.", "In the dark."]
+    image: "/file_00000000fa471f882fd16e52afa59fd.png", // JESUS IS AN HEALER
+    audioUrl: "/audio/first-flame.mp3",
+    duration: 180 
   },
-  {
-    slug: "horn-of-war",
+  { 
+    slug: "horn-of-war", 
     title: "HORN OF WAR",
-    audioUrl: "/audio/relics/horn-of-war.mp3",
-    ambientUrl: "/audio/relics/storm-swell.mp3",
-    duration: 240,
-    scripture: {
-      ref: "Joel 2:1",
-      text: "Blow the trumpet in Zion; sound the alarm on my holy hill. Let all who live in the land tremble, for the day of the Lord is coming."
-    },
-    reflectionBlocks: [
-      "This ain't worship music for coffee shops.",
-      "This is the sound that wakes the camp.",
-      "The Horn of War is for the watchmen.",
-      "If you're comfortable, this track ain't for you.",
-      "If you're called, turn it up."
-    ]
+    image: "/file_00000000fa471f882fd16e52afa59fd.png", // TEMP: Reusing Healer image until you upload Horn image
+    audioUrl: "/audio/horn-of-war.mp3",
+    duration: 180 
   },
-  {
-    slug: "iron-collide",
+  { 
+    slug: "heaven-calling", 
+    title: "HEAVEN CALLING",
+    image: "/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    audioUrl: "/audio/heaven-calling.mp3",
+    duration: 180 
+  },
+  { 
+    slug: "scars-that-preach", 
+    title: "SCARS THAT PREACH",
+    image: "/file_0000000065a071f5832301f52d11fb80.png", // BORN THROUGH THE FIRE
+    audioUrl: "/audio/scars-that-preach.mp3",
+    duration: 180 
+  },
+  { 
+    slug: "spiritual-journey", 
+    title: "SPIRITUAL JOURNEY",
+    image: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp",
+    audioUrl: "/audio/spiritual-journey.mp3",
+    duration: 180 
+  },
+  { 
+    slug: "iron-collide", 
     title: "IRON COLLIDE",
-    audioUrl: "/audio/relics/iron-collide.mp3",
-    ambientUrl: "/audio/relics/storm-swell.mp3",
-    duration: 252,
-    scripture: {
-      ref: "Proverbs 27:17",
-      text: "As iron sharpens iron, so one person sharpens another."
-    },
-    reflectionBlocks: [
-      "Two blades meet.",
-      "Sparks are not violence.",
-      "They are refinement.",
-      "Strike until the edge sings."
-    ]
-  }
+    image: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    audioUrl: "/audio/iron-collide.mp3",
+    duration: 180 
+  },
+  { 
+    slug: "blood-of-cross", 
+    title: "BLOOD OF CROSS",
+    image: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    audioUrl: "/audio/blood-of-cross.mp3",
+    duration: 180 
+  },
+  { 
+    slug: "lord-of-lords", 
+    title: "LORD OF LORDS",
+    image: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    audioUrl: "/audio/lord-of-lords.mp3",
+    duration: 180 
+  },
 ]
