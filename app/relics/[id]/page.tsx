@@ -94,6 +94,7 @@ export default function RelicPage({ params }: { params: { id: string } }) {
             alt={relic.title}
             fill
             className="object-cover"
+            priority
           />
         </div>
 
