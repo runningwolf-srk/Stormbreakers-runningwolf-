@@ -12,7 +12,13 @@ const tracks = [
   { id: 2, title: "Horn of War", image: "/relic-2-horn.png", relic: 2, youtubeId: null },
   { id: 3, title: "Heaven Calling", image: "/relic-3-heaven.png", relic: 3, youtubeId: null },
   { id: 4, title: "Born Through The Fire", image: "/relic-4-scars.png", relic: 4, youtubeId: null },
-  { id: 5, title: "Spiritual Journey", image: "/relic-5-journey.png", relic: 5, youtubeId: null },
+  { 
+    id: 5, 
+    title: "Spiritual Journey", 
+    image: "/relic-5-journey.png", 
+    relic: 5,
+    youtubeId: "umDFjJjh0_c"
+  },
   { id: 6, title: "Iron Collide", image: "/relic-6-iron.png", relic: 6, youtubeId: null },
   { id: 7, title: "Blood of Cross", image: "/relic-7-blood.png", relic: 7, youtubeId: null },
   { 
