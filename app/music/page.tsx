@@ -5,7 +5,7 @@ const tracks = [
   {
     id: 1,
     title: "Jesus Is An Healer",
-    image: "/relic-1-healer.png", // You still need to upload this one
+    image: "/file_00000000fa471f882fd16e52afa59fd.png",
     relic: 1,
     youtubeId: "stsryByK5h8"
   },
