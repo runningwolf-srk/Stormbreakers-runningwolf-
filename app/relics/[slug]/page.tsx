@@ -9,6 +9,5 @@ export async function generateStaticParams() {
 export default function RelicPage({ params }: { params: { slug: string } }) {
   const relic = relics.find(r => r.slug === params.slug)
   if (!relic) return notFound()
-
   return <SoundGate relic={relic} />
 }
