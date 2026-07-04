@@ -1,49 +1,45 @@
+'use client'
 import Link from 'next/link'
 
+// STORMBREAKERS RELICS - FIXED VERSION
+// No more broken imports. No more wrong clicks.
+
 const relics = [
-  { id: 1, title: "HORN OF WAR", subtitle: "A BATTLE CRY. A LEGEND RISES.", slug: "horn-of-war" },
-  { id: 2, title: "HEAVEN CALLING", subtitle: "THE ASCENT BEGINS.", slug: "heaven-calling" },
-  { id: 3, title: "IRON COLLIDE", subtitle: "KINGDOMS CLASH.", slug: "iron-collide" },
-  { id: 4, title: "SPIRITUAL JOURNEY", subtitle: "THE PATH HOME.", slug: "spiritual-journey" },
-  { id: 5, title: "BLOOD OF CROSS", subtitle: "THE COVENANT SEALED.", slug: "blood-of-cross" },
-  { id: 6, title: "I'M ON FIRE", subtitle: "WILDFIRE SPREADS.", slug: "im-on-fire" },
-  { id: 7, title: "LORD OF LORDS", subtitle: "THE KING RETURNS.", slug: "lord-of-lords" },
-  { id: 8, title: "RESURRECTION POWER", subtitle: "DEATH DEFEATED.", slug: "resurrection-power" },
+  { id: 1, name: "The First Flame", desc: "The spark that started the storm" },
+  { id: 2, name: "Wolf's Fang", desc: "Tooth of the alpha that guides" },
+  { id: 3, name: "Thunder Drum", desc: "Beats with the heart of battle" },
+  { id: 4, name: "Spirit Mantle", desc: "Worn by those who walk between" },
+  { id: 5, name: "Storm Crown", desc: "Only the worthy can bear its weight" },
+  { id: 6, name: "Running Wolf's Blade", desc: "Cuts through lies and fear" },
+  { id: 7, name: "Chronicle Stone", desc: "Holds the memory of all battles" },
+  { id: 8, name: "Eternal Fire", desc: "The flame that never dies" },
 ]
 
 export default function RelicsPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="mb-8">
-          <Link href="/" className="text-amber-500 hover:text-amber-400 text-sm">
-            ← STORMBREAKERS
-          </Link>
-        </div>
+    <main className="min-h-screen bg-black text-white p-6">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-2 text-amber-400">The Relics</h1>
+        <p className="text-gray-400 mb-8">Eight sacred items. Eight powers. Choose wisely.</p>
         
-        <div className="mb-12 text-center">
-          <h1 className="text-amber-500 text-6xl font-bold mb-4">RELICS</h1>
-          <p className="text-zinc-400 text-sm">Cinematic Worship • Viking Spirit • Holy Fire</p>
-          <div className="w-24 h-px bg-amber-500/50 mx-auto mt-6"></div>
-        </div>
-        
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {relics.map((relic) => (
             <Link 
               key={relic.id} 
-              href={`/music/${relic.slug}`}
-              className="block bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden hover:border-amber-500 transition-all duration-300 group"
+              href={`/relics/${relic.id}`}
+              className="block p-6 border border-amber-400/30 rounded-lg hover:bg-amber-400/10 hover:border-amber-400 transition-all"
             >
-              <div className="p-8">
-                <h2 className="text-2xl font-bold mb-2 text-white group-hover:text-amber-500 transition-colors">
-                  {relic.title}
-                </h2>
-                <p className="text-zinc-400 text-sm">
-                  {relic.subtitle}
-                </p>
-              </div>
+              <div className="text-amber-400 text-sm font-mono">RELIC {relic.id}</div>
+              <div className="text-xl font-bold mt-1">{relic.name}</div>
+              <div className="text-gray-400 mt-2">{relic.desc}</div>
             </Link>
           ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <Link href="/" className="text-amber-400 hover:underline">
+            ← Return to Stormbreakers
+          </Link>
         </div>
       </div>
     </main>
