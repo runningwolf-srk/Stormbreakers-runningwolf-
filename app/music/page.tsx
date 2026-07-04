@@ -32,7 +32,13 @@ const tracks = [
     youtubeId: "umDFjJjh0_c"
   },
   { id: 6, title: "Iron Collide", image: "/relic-6-iron.png", relic: 6, youtubeId: null },
-  { id: 7, title: "Blood of Cross", image: "/relic-7-blood.png", relic: 7, youtubeId: null },
+  { 
+    id: 7, 
+    title: "Blood of Cross", 
+    image: "/relic-7-blood.png", 
+    relic: 7,
+    youtubeId: "4lcbjsNLlzo"
+  },
   { 
     id: 8, 
     title: "Lord of Lords", 
