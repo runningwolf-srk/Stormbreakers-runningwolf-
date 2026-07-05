@@ -9,5 +9,5 @@ export const SONGS: Song[] = [
   { id: 'the-first-flame', slug: 'the-first-flame', relicId: 'first-flame', 
     title: 'The First Flame', youtubeId: 'dQw4w9WgXcQ', duration: 240,
     scripture: { text: 'But he was pierced for our transgressions', ref: 'Isaiah 53:5' },
-    declaration: 'I was broken so you could be whole.', meaning: 'Healing through wounds.', hasAudio: true },
+    declaration: 'I was broken so you could be whole.', meaning: 'Healing.', hasAudio: true },
 ];
