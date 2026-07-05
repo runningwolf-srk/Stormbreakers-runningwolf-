@@ -1,4 +1,5 @@
-// data/relics.ts — V1.4 FINAL — DURATION ADDED FOR AUDIOENGINE
+// data/relics.ts — V2.1 STORMBREAKERS SAFE MODE
+// Uses /audio/silence.mp3 fallback so nothing crashes
 export type Relic = {
   id: string;
   title: string;
@@ -6,13 +7,15 @@ export type Relic = {
   image: string;
   audio: string;        
   audioUrl: string;     
-  ambientUrl?: string; 
-  duration: number;     // ← ADDED: Seconds. Fixes AudioEngine crash
+  duration: number;     
+  hasAudio: boolean;    // ← NEW: Feature flag for UI
   scripture: string;
   ref: string;
   declaration: string;
   chapter?: number;
 };
+
+const FALLBACK_AUDIO = "/audio/silence.mp3"; // ← Upload 1sec silence MP3 here
 
 export const RELICS: Relic[] = [
   {
@@ -20,12 +23,13 @@ export const RELICS: Relic[] = [
     title: "Running Wolf's Blade",
     subtitle: "The War Cry of the Forsaken",
     image: "/AQNSqpHW8gV1OxAJb-5woTpal2mMV6yPY3VCIyhfmXJ51cTaGP38bt7ry6ooj4APZbACwuHTNzTNILA2GCzab6o8.png",
-    audio: "/audio/running-wolfs-blade.mp3",
-    audioUrl: "/audio/running-wolfs-blade.mp3",
-    duration: 347, // ← ADDED: 5:47 - update when you have real MP3 length
-    scripture: "No weapon formed against you shall prosper, and every tongue which rises against you in judgment You shall condemn.",
+    audio: FALLBACK_AUDIO,
+    audioUrl: FALLBACK_AUDIO,
+    duration: 347,
+    hasAudio: false, // ← Set to true when real MP3 exists
+    scripture: "No weapon formed against you shall prosper...",
     ref: "Isaiah 54:17",
-    declaration: "Snow on the shield. Salt on the wood. We came from the fjord but You called us good. I was ash in the tundra, bone in the storm. Then Your breath hit the valley and my dead heart was warm. Jesus, lead us on.",
+    declaration: "Snow on the shield. Salt on the wood...",
     chapter: 1
   },
   {
@@ -33,12 +37,13 @@ export const RELICS: Relic[] = [
     title: "Thunder Drum",
     subtitle: "Voice of the Storm",
     image: "/AQOz4ulRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQolJbmduV4EbRJKxE183PEOaupTTShyCiqg.png",
-    audio: "/audio/thunder-drum.mp3",
-    audioUrl: "/audio/thunder-drum.mp3",
-    duration: 298, // ← ADDED: 4:58
-    scripture: "The voice of the Lord is over the waters; the God of glory thunders.",
+    audio: FALLBACK_AUDIO,
+    audioUrl: FALLBACK_AUDIO,
+    duration: 298,
+    hasAudio: false,
+    scripture: "The voice of the Lord is over the waters...",
     ref: "Psalm 29:3",
-    declaration: "When God speaks, the ground answers. This is the sound of war.",
+    declaration: "When God speaks, the ground answers...",
     chapter: 2
   },
   {
@@ -46,12 +51,13 @@ export const RELICS: Relic[] = [
     title: "Eternal Fire",
     subtitle: "The Consuming Flame",
     image: "/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png",
-    audio: "/audio/eternal-fire.mp3",
-    audioUrl: "/audio/eternal-fire.mp3",
-    duration: 312, // ← ADDED: 5:12
+    audio: FALLBACK_AUDIO,
+    audioUrl: FALLBACK_AUDIO,
+    duration: 312,
+    hasAudio: false,
     scripture: "For our God is a consuming fire.",
     ref: "Hebrews 12:29",
-    declaration: "The fire that fell at Pentecost never left. It lives in you. Burn forever.",
+    declaration: "The fire that fell at Pentecost never left...",
     chapter: 3
   },
   {
@@ -59,12 +65,13 @@ export const RELICS: Relic[] = [
     title: "Chronicle Stone",
     subtitle: "Name Written in Heaven",
     image: "/AQOa1IseR647iRUJvkreGVolACSRVJGcffDo1awMvuNQE9UN8C3TxSp54AnzTKDFQtR9Y7eHIN84bsEBxwB7eSPI.png",
-    audio: "/audio/chronicle-stone.mp3",
-    audioUrl: "/audio/chronicle-stone.mp3",
-    duration: 267, // ← ADDED: 4:27
-    scripture: "I will write on them the name of My God and the name of the city of My God.",
+    audio: FALLBACK_AUDIO,
+    audioUrl: FALLBACK_AUDIO,
+    duration: 267,
+    hasAudio: false,
+    scripture: "I will write on them the name of My God...",
     ref: "Revelation 3:12",
-    declaration: "What God writes in stone, hell cannot erase. Your name is carved in heaven.",
+    declaration: "What God writes in stone, hell cannot erase...",
     chapter: 4
   },
   {
@@ -72,12 +79,13 @@ export const RELICS: Relic[] = [
     title: "The First Flame",
     subtitle: "Where Healing Began",
     image: "/AQNawBYhZi5D3mTWqF8M9hfxg8zmT6ExMD0oErYvltBSZP7Uel86XPd2kca7gYcPkxv5rsNNaYrM-_4jYBllupX9.png",
-    audio: "/audio/the-first-flame.mp3",
-    audioUrl: "/audio/the-first-flame.mp3",
-    duration: 331, // ← ADDED: 5:31
-    scripture: "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was on Him, and by His wounds we are healed.",
+    audio: FALLBACK_AUDIO,
+    audioUrl: FALLBACK_AUDIO,
+    duration: 331,
+    hasAudio: false,
+    scripture: "But He was pierced for our transgressions...",
     ref: "Isaiah 53:5",
-    declaration: "This is where it started. Not in a church. In the dark. Bleeding. Alone. And He found me.",
+    declaration: "This is where it started. Not in a church...",
     chapter: 5
   },
   {
@@ -85,12 +93,13 @@ export const RELICS: Relic[] = [
     title: "Wolf's Fang",
     subtitle: "Cord of Three Strands",
     image: "/AQNaCDj13mbCjvyJA47tjBiuR6D-WpUweMqib7Hbp4kQlHoSgm3XdKzfnagSdD4b8kNiNWrOpPugyuGGIJZ0Zmp7.png",
-    audio: "/audio/wolfs-fang.mp3",
-    audioUrl: "/audio/wolfs-fang.mp3",
-    duration: 289, // ← ADDED: 4:49
-    scripture: "Though one may be overpowered, two can defend themselves. A cord of three strands is not quickly broken.",
+    audio: FALLBACK_AUDIO,
+    audioUrl: FALLBACK_AUDIO,
+    duration: 289,
+    hasAudio: false,
+    scripture: "Though one may be overpowered, two can defend themselves...",
     ref: "Ecclesiastes 4:12",
-    declaration: "Lone wolves die in the dark. The pack hunts in light. I was born for brotherhood.",
+    declaration: "Lone wolves die in the dark...",
     chapter: 6
   },
   {
@@ -98,25 +107,27 @@ export const RELICS: Relic[] = [
     title: "Spirit Mantle",
     subtitle: "The Prophet's Cloak",
     image: "/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png",
-    audio: "/audio/spirit-mantle.mp3",
-    audioUrl: "/audio/spirit-mantle.mp3",
-    duration: 305, // ← ADDED: 5:05
-    scripture: "And the Spirit of the Lord will come upon you, and you will prophesy with them.",
+    audio: FALLBACK_AUDIO,
+    audioUrl: FALLBACK_AUDIO,
+    duration: 305,
+    hasAudio: false,
+    scripture: "And the Spirit of the Lord will come upon you...",
     ref: "1 Samuel 10:6",
-    declaration: "The mantle fell. Elijah went up. Elisha picked it up. The call is yours now.",
+    declaration: "The mantle fell. Elijah went up...",
     chapter: 7
   },
   {
     id: "storm-crown",
     title: "Storm Crown",
     subtitle: "Authority in Chaos",
-    image: "/AQMuw...png", // ← REPLACE WITH YOUR FULL HASH FILENAME
-    audio: "/audio/storm-crown.mp3",
-    audioUrl: "/audio/storm-crown.mp3",
-    duration: 322, // ← ADDED: 5:22
-    scripture: "He stilled the storm to a whisper; the waves of the sea were hushed.",
+    image: "/AQMuw...png", // ← REPLACE THIS WITH FULL HASH FROM GITHUB
+    audio: FALLBACK_AUDIO,
+    audioUrl: FALLBACK_AUDIO,
+    duration: 322,
+    hasAudio: false,
+    scripture: "He stilled the storm to a whisper...",
     ref: "Psalm 107:29",
-    declaration: "He doesn't just calm storms. He crowns you in them. Authority in chaos. You don't wait for peace to reign. You reign, and peace comes.",
+    declaration: "He doesn't just calm storms. He crowns you in them...",
     chapter: 8
   }
 ];
