@@ -8,7 +8,8 @@ export type Relic = {
   verse: Verse; 
   meaning: string; 
   hasAudio: boolean;
-  ambientUrl?: string;  // ← ADD THIS LINE
+  ambientUrl?: string;  // ← ADD THIS
+  audioUrl?: string;    // ← ADD THIS
 };
 
 export const RELICS: Relic[] = [
@@ -19,8 +20,8 @@ export const RELICS: Relic[] = [
     image: '/relics/first-flame.jpg',
     verse: { text: 'But he was pierced for our transgressions', ref: 'Isaiah 53:5' },
     meaning: 'The origin.', 
-    hasAudio: false,
-    ambientUrl: '/audio/ambient/first-flame.mp3' // ← OPTIONAL: Add for relics that have ambient
+    hasAudio: true,
+    audioUrl: '/audio/main/first-flame.mp3',     // ← ADD IF YOU HAVE AUDIO
+    ambientUrl: '/audio/ambient/first-flame.mp3' // ← ADD IF YOU HAVE AMBIENT
   },
-  // ...rest of your relics
 ];
