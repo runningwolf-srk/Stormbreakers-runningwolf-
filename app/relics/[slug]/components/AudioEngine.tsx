@@ -8,9 +8,16 @@ import { Relic } from '@/data/relics'
 interface AudioEngineProps {
   relic: Relic
   autoPlay?: boolean
+  onProgress?: (percent: number) => void // ← ADDED
+  onLoaded?: () => void // ← ADDED
 }
 
-export default function AudioEngine({ relic, autoPlay = false }: AudioEngineProps) {
+export default function AudioEngine({ 
+  relic, 
+  autoPlay = false, 
+  onProgress, 
+  onLoaded 
+}: AudioEngineProps) {
   const ambientRef = useRef<Howl | null>(null)
   const mainRef = useRef<Howl | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -33,10 +40,14 @@ export default function AudioEngine({ relic, autoPlay = false }: AudioEngineProp
       src: [relic.audioUrl],
       volume: 0.8,
       html5: true,
+      onload: () => {
+        onLoaded?.() // ← Tell SoundGate we loaded
+      },
       onplay: () => setIsPlaying(true),
       onend: () => {
         setIsPlaying(false)
         setProgress(100)
+        onProgress?.(100) // ← Tell SoundGate we finished
       },
       onpause: () => setIsPlaying(false),
       onstop: () => setIsPlaying(false)
@@ -47,16 +58,18 @@ export default function AudioEngine({ relic, autoPlay = false }: AudioEngineProp
       if (mainRef.current?.playing()) {
         const seek = mainRef.current.seek() as number
         const duration = mainRef.current.duration()
-        setProgress((seek / duration) * 100)
+        const percent = (seek / duration) * 100
+        setProgress(percent)
+        onProgress?.(percent) // ← Send progress to SoundGate
       }
-    }, 1000)
+    }, 500)
 
     if (autoPlay) {
       setTimeout(() => {
         ambientRef.current?.play()
         setTimeout(() => {
           mainRef.current?.play()
-        }, 2500) // 2.5s ambient before main
+        }, 2500)
       }, 100)
     }
 
@@ -65,7 +78,7 @@ export default function AudioEngine({ relic, autoPlay = false }: AudioEngineProp
       ambientRef.current?.unload()
       mainRef.current?.unload()
     }
-  }, [relic, autoPlay])
+  }, [relic, autoPlay, onLoaded, onProgress])
 
   const togglePlay = () => {
     if (!mainRef.current) return
@@ -82,7 +95,7 @@ export default function AudioEngine({ relic, autoPlay = false }: AudioEngineProp
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur border-t border-yellow-600 p-4">
+    <div className="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur border-t border-yellow-600 p-4 z-50">
       <div className="max-w-2xl mx-auto">
         <div className="flex items-center gap-4">
           <button
