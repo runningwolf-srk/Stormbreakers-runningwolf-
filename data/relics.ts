@@ -7,6 +7,7 @@ export type Relic = {
   verse: { ref: string; text: string }
   declaration: string
   audioUrl: string
+  ambientUrl?: string // ← OPTIONAL. Fixes your build error
   duration: number
   chapter: number
 }
