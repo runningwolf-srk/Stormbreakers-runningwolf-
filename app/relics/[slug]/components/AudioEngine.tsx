@@ -1,137 +1,115 @@
-use client'
+"use client"
+
 import { useEffect, useRef, useState } from 'react'
 import { Howl } from 'howler'
 import { motion } from 'framer-motion'
 import { Relic } from '@/data/relics'
 
-type AudioEngineProps = {
+interface AudioEngineProps {
   relic: Relic
-  onProgress: (p: number) => void
-  onLoaded: () => void
-  onExit: () => void
-  children: React.ReactNode
+  autoPlay?: boolean
 }
 
-export default function AudioEngine({ 
-  relic, 
-  onProgress, 
-  onLoaded,
-  onExit,
-  children 
-}: AudioEngineProps) {
-  const soundRef = useRef<Howl | null>(null)
+export default function AudioEngine({ relic, autoPlay = false }: AudioEngineProps) {
   const ambientRef = useRef<Howl | null>(null)
-  const [progress, setProgress] = useState(0)
+  const mainRef = useRef<Howl | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-  // 1. AMBIENT SWELL - 2.5s before main track
-  if (relic.ambientUrl) { // ← This check prevents crash if ambientUrl is missing
-    ambientRef.current = new Howl({
-      src: [relic.ambientUrl],
-      volume: 0.4,
-      loop: true,
-      preload: true
-    })
-    ambientRef.current.play()
-  }
-
-  // 2. MAIN TRACK
-  mainRef.current = new Howl({
-    src: [relic.audioUrl],
-    volume: 0.8,
-    onend: () => setIsPlaying(false)
-  })
-
-  return () => {
-    ambientRef.current?.unload()
-    mainRef.current?.unload()
-  }
-}, [relic])
-        onload: () => {
-          ambientRef.current?.play()
-          // Start main track after 2500ms swell
-          setTimeout(() => {
-            soundRef.current?.play()
-            setIsPlaying(true)
-            onLoaded()
-          }, 2500)
-        }
+    // 1. AMBIENT SWELL - Only if ambientUrl exists
+    if (relic.ambientUrl) {
+      ambientRef.current = new Howl({
+        src: [relic.ambientUrl],
+        volume: 0.4,
+        loop: true,
+        preload: true,
+        html5: true
       })
-    } else {
-      // No ambient, play main immediately
-      soundRef.current?.play()
-      setIsPlaying(true)
-      onLoaded()
     }
 
     // 2. MAIN TRACK
-    soundRef.current = new Howl({
+    mainRef.current = new Howl({
       src: [relic.audioUrl],
+      volume: 0.8,
       html5: true,
-      onplay: () => {
-        requestAnimationFrame(updateProgress)
-      },
+      onplay: () => setIsPlaying(true),
       onend: () => {
         setIsPlaying(false)
-      }
+        setProgress(100)
+      },
+      onpause: () => setIsPlaying(false),
+      onstop: () => setIsPlaying(false)
     })
 
-    // 3. PROGRESS TRACKER
-    const updateProgress = () => {
-      if (soundRef.current?.playing()) {
-        const seek = soundRef.current.seek() as number
-        const currentProgress = (seek / relic.duration) * 100
-        setProgress(currentProgress)
-        onProgress(currentProgress)
-        requestAnimationFrame(updateProgress)
+    // Progress tracking
+    const interval = setInterval(() => {
+      if (mainRef.current?.playing()) {
+        const seek = mainRef.current.seek() as number
+        const duration = mainRef.current.duration()
+        setProgress((seek / duration) * 100)
       }
+    }, 1000)
+
+    if (autoPlay) {
+      setTimeout(() => {
+        ambientRef.current?.play()
+        setTimeout(() => {
+          mainRef.current?.play()
+        }, 2500) // 2.5s ambient before main
+      }, 100)
     }
 
-    // 4. ESC TO EXIT
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        handleExit()
-      }
-    }
-    window.addEventListener('keydown', handleKey)
-
-    // 5. CLEANUP
     return () => {
-      soundRef.current?.unload()
+      clearInterval(interval)
       ambientRef.current?.unload()
-      window.removeEventListener('keydown', handleKey)
+      mainRef.current?.unload()
     }
-  }, [relic])
+  }, [relic, autoPlay])
 
-  const handleExit = () => {
-    // Decay-based exit: fade out 400ms
-    soundRef.current?.fade(soundRef.current.volume(), 0, 400)
-    ambientRef.current?.fade(ambientRef.current.volume(), 0, 400)
-    setTimeout(onExit, 400)
+  const togglePlay = () => {
+    if (!mainRef.current) return
+    
+    if (isPlaying) {
+      mainRef.current.pause()
+      ambientRef.current?.pause()
+    } else {
+      if (!ambientRef.current?.playing() && relic.ambientUrl) {
+        ambientRef.current?.play()
+      }
+      mainRef.current.play()
+    }
   }
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: isPlaying? 1 : 0 }}
-      className="h-full w-full relative"
-    >
-      {/* MINIMAL PROGRESS BAR - DESIGN LAW: UI INVISIBLE UNTIL NEEDED */}
-      <div className="fixed top-0 left-0 right-0 z-50 px-8 py-4 flex justify-between text-white/50 text-xs tracking-widest">
-        <span>{relic.title}</span>
-        <span>You are {Math.floor(progress)}% through the echo</span>
+    <div className="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur border-t border-yellow-600 p-4">
+      <div className="max-w-2xl mx-auto">
+        <div className="flex items-center gap-4">
+          <button
+            onClick={togglePlay}
+            className="bg-yellow-500 text-black font-bold px-6 py-3 rounded-lg hover:bg-yellow-400 transition"
+          >
+            {isPlaying ? 'PAUSE' : 'ENTER SOUND'}
+          </button>
+          
+          <div className="flex-1">
+            <p className="text-white font-bold">{relic.title}</p>
+            <p className="text-yellow-500 text-sm">{relic.subtitle}</p>
+          </div>
+          
+          <div className="text-right text-gray-400 text-sm">
+            {Math.floor(relic.duration / 60)}:{(relic.duration % 60).toString().padStart(2, '0')}
+          </div>
+        </div>
+        
+        <div className="mt-3 h-1 bg-gray-800 rounded-full overflow-hidden">
+          <motion.div 
+            className="h-full bg-yellow-500"
+            style={{ width: `${progress}%` }}
+            transition={{ duration: 0.1 }}
+          />
+        </div>
       </div>
-      <div className="fixed top-12 left-0 right-0 h-[1px] bg-white/10 z-50">
-        <motion.div 
-          className="h-full bg-white/40"
-          style={{ width: `${progress}%` }}
-          transition={{ ease: "linear" }}
-        />
-      </div>
-
-      {/* SCROLL ECHO RENDERS HERE */}
-      {children}
-    </motion.div>
+    </div>
   )
-      }
+}
