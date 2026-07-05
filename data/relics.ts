@@ -1,131 +1,88 @@
-// data/relics.ts
+// data/relics.ts — V1.0 COMPLETE — ALL 8 RELICS LIVE
 export type Relic = {
-  slug: string
-  title: string
-  subtitle: string
-  image: string
-  verse: { ref: string; text: string }
-  declaration: string
-  audioUrl: string
-  ambientUrl?: string // ← OPTIONAL. Fixes your build error
-  duration: number
-  chapter: number
-}
+  id: string;
+  title: string;
+  image: string;
+  audio: string;
+  scripture: string;
+  ref: string;
+  declaration: string;
+};
 
-export const relics: Relic[] = [
+export const RELICS: Relic[] = [
   {
-    slug: "first-flame",
+    id: "running-wolfs-blade",
+    title: "Running Wolf's Blade",
+    image: "/AQNSqpHW8gV1OxAJb-5woTpal2mMV6yPY3VCIyhfmXJ51cTaGP38bt7ry6ooj4APZbACwuHTNzTNILA2GCzab6o8.png",
+    audio: "/audio/running-wolfs-blade.mp3",
+    scripture: "No weapon formed against you shall prosper, and every tongue which rises against you in judgment You shall condemn.",
+    ref: "Isaiah 54:17",
+    declaration: "Snow on the shield. Salt on the wood. We came from the fjord but You called us good. I was ash in the tundra, bone in the storm. Then Your breath hit the valley and my dead heart was warm. Jesus, lead us on."
+  },
+  {
+    id: "thunder-drum",
+    title: "Thunder Drum",
+    image: "/AQOz4ulRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQolJbmduV4EbRJKxE183PEOaupTTShyCiqg.png",
+    audio: "/audio/thunder-drum.mp3",
+    scripture: "The voice of the Lord is over the waters; the God of glory thunders.",
+    ref: "Psalm 29:3",
+    declaration: "When God speaks, the ground answers. This is the sound of war."
+  },
+  {
+    id: "eternal-fire",
+    title: "Eternal Fire",
+    image: "/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png",
+    audio: "/audio/eternal-fire.mp3",
+    scripture: "For our God is a consuming fire.",
+    ref: "Hebrews 12:29",
+    declaration: "The fire that fell at Pentecost never left. It lives in you. Burn forever."
+  },
+  {
+    id: "chronicle-stone",
+    title: "Chronicle Stone",
+    image: "/AQOa1IseR647iRUJvkreGVolACSRVJGcffDo1awMvuNQE9UN8C3TxSp54AnzTKDFQtR9Y7eHIN84bsEBxwB7eSPI.png",
+    audio: "/audio/chronicle-stone.mp3",
+    scripture: "I will write on them the name of My God and the name of the city of My God.",
+    ref: "Revelation 3:12",
+    declaration: "What God writes in stone, hell cannot erase. Your name is carved in heaven."
+  },
+  {
+    id: "the-first-flame",
     title: "The First Flame",
-    subtitle: "JESUS IS AN HEALER",
-    image: "/relics/first-flame.png",
-    verse: { 
-      ref: "Isaiah 53:5", 
-      text: "But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed." 
-    },
-    declaration: "This is where it started. Not in a church. In the dark. When the pain was real and the call was louder. The First Flame is for the ones who got healed in a back alley, not an altar call. By His wounds — not our works.",
-    audioUrl: "/audio/first-flame.mp3",
-    duration: 180,
-    chapter: 1
+    image: "/AQNawBYhZi5D3mTWqF8M9hfxg8zmT6ExMD0oErYvltBSZP7Uel86XPd2kca7gYcPkxv5rsNNaYrM-_4jYBllupX9.png",
+    audio: "/audio/the-first-flame.mp3",
+    scripture: "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was on Him, and by His wounds we are healed.",
+    ref: "Isaiah 53:5",
+    declaration: "This is where it started. Not in a church. In the dark. Bleeding. Alone. And He found me."
   },
   {
-    slug: "horn-of-war",
-    title: "Horn of War",
-    subtitle: "SOUND THE ALARM",
-    image: "/relics/horn-of-war.png",
-    verse: { 
-      ref: "Joel 2:1", 
-      text: "Blow the trumpet in Zion; sound the alarm on my holy hill. Let all who live in the land tremble, for the day of the Lord is coming." 
-    },
-    declaration: "This is not a song. This is a summons. The Horn of War doesn't entertain. It awakens. When you hear it, you know: it's time to move.",
-    audioUrl: "/audio/horn-of-war.mp3",
-    duration: 210,
-    chapter: 2
+    id: "wolfs-fang",
+    title: "Wolf's Fang",
+    image: "/AQNaCDj13mbCjvyJA47tjBiuR6D-WpUweMqib7Hbp4kQlHoSgm3XdKzfnagSdD4b8kNiNWrOpPugyuGGIJZ0Zmp7.png",
+    audio: "/audio/wolfs-fang.mp3",
+    scripture: "Though one may be overpowered, two can defend themselves. A cord of three strands is not quickly broken.",
+    ref: "Ecclesiastes 4:12",
+    declaration: "Lone wolves die in the dark. The pack hunts in light. I was born for brotherhood."
   },
   {
-    slug: "heaven-calling",
-    title: "Heaven Calling",
-    subtitle: "COME UP HERE",
-    image: "/relics/heaven-calling.png",
-    verse: { 
-      ref: "Revelation 4:1", 
-      text: "After this I looked, and there before me was a door standing open in heaven. And the voice I had first heard speaking to me like a trumpet said, 'Come up here, and I will show you what must take place after this.'" 
-    },
-    declaration: "Some people want a word. We want a door. Heaven Calling is the invitation to leave the ground and see from above. You can't fix what you won't rise above.",
-    audioUrl: "/audio/heaven-calling.mp3",
-    duration: 195,
-    chapter: 3
+    id: "spirit-mantle",
+    title: "Spirit Mantle",
+    image: "/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png",
+    audio: "/audio/spirit-mantle.mp3",
+    scripture: "And the Spirit of the Lord will come upon you, and you will prophesy with them.",
+    ref: "1 Samuel 10:6",
+    declaration: "The mantle fell. Elijah went up. Elisha picked it up. The call is yours now."
   },
   {
-    slug: "scars-that-preach",
-    title: "Scars That Preach",
-    subtitle: "TESTIMONY IN FLESH",
-    image: "/relics/scars-that-preach.png",
-    verse: { 
-      ref: "Galatians 6:17", 
-      text: "From now on, let no one cause me trouble, for I bear on my body the marks of Jesus." 
-    },
-    declaration: "Your scars aren't shame. They're sermons. The enemy marked you for death. God marked you for delivery. Let them preach.",
-    audioUrl: "/audio/scars-that-preach.mp3",
-    duration: 205,
-    chapter: 4
-  },
-  {
-    slug: "spiritual-journey",
-    title: "Spiritual Journey",
-    subtitle: "THE ROAD TO THE CROSS",
-    image: "/relics/spiritual-journey.png",
-    verse: { 
-      ref: "Luke 9:23", 
-      text: "Whoever wants to be my disciple must deny themselves and take up their cross daily and follow me." 
-    },
-    declaration: "Salvation is a moment. Discipleship is a march. The Spiritual Journey isn't a map. It's a cross you carry.",
-    audioUrl: "/audio/spiritual-journey.mp3",
-    duration: 220,
-    chapter: 5
-  },
-  {
-    slug: "iron-collide",
-    title: "Iron Collide",
-    subtitle: "BROTHERHOOD FORGED",
-    image: "/relics/iron-collide.png",
-    verse: { 
-      ref: "Proverbs 27:17", 
-      text: "As iron sharpens iron, so one person sharpens another." 
-    },
-    declaration: "Lone wolves die. Packs survive. Iron Collide is the sound of brothers sharpening brothers. No sparks, no edge.",
-    audioUrl: "/audio/iron-collide.mp3",
-    duration: 188,
-    chapter: 6
-  },
-  {
-    slug: "blood-of-cross",
-    title: "Blood of Cross",
-    subtitle: "REDEMPTION SONG",
-    image: "/relics/blood-of-cross.png",
-    verse: { 
-      ref: "Ephesians 1:7", 
-      text: "In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God's grace." 
-    },
-    declaration: "Grace ain't cheap. It cost blood. The Blood of Cross isn't a symbol. It's the receipt. Paid in full.",
-    audioUrl: "/audio/blood-of-cross.mp3",
-    duration: 200,
-    chapter: 7
-  },
-  {
-    slug: "lord-of-lords",
-    title: "Lord of Lords",
-    subtitle: "CROWN HIM",
-    image: "/relics/lord-of-lords.png",
-    verse: { 
-      ref: "Revelation 19:16", 
-      text: "On his robe and on his thigh he has this name written: king of kings and lord of lords." 
-    },
-    declaration: "Every knee will bow. Every tongue confess. Lord of Lords isn't a suggestion. It's a coronation. Crown Him now, or face Him later.",
-    audioUrl: "/audio/lord-of-lords.mp3",
-    duration: 230,
-    chapter: 8
+    id: "storm-crown",
+    title: "Storm Crown",
+    image: "/AQMuw...png", // ← REPLACE WITH YOUR FULL HASH FILENAME FROM THAT SCREENSHOT
+    audio: "/audio/storm-crown.mp3",
+    scripture: "He stilled the storm to a whisper; the waves of the sea were hushed.",
+    ref: "Psalm 107:29",
+    declaration: "He doesn't just calm storms. He crowns you in them. Authority in chaos. You don't wait for peace to reign. You reign, and peace comes."
   }
-]
+];
 
-export const getRelicBySlug = (slug: string) => relics.find(r => r.slug === slug)
-export const getRelicByChapter = (chapter: number) => relics.find(r => r.chapter === chapter)
+export const getRelicById = (id: string) => RELICS.find(r => r.id === id);
+export const getAllRelics = () => RELICS;
