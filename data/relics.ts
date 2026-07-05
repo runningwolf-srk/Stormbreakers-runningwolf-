@@ -1,4 +1,4 @@
-// data/relics.ts — V2.2 STORMBREAKERS SCHEMA LOCK
+// data/relics.ts — V2.4 AMBIENT LOCK — BUILD WILL PASS
 export type Relic = {
   id: string;
   title: string;
@@ -6,9 +6,10 @@ export type Relic = {
   image: string;
   audio: string;        
   audioUrl: string;     
+  ambientUrl?: string;  // ✅ TYPE NOW MATCHES AUDIOENGINE
   duration: number;     
   hasAudio: boolean;
-  verse: {              // ← ADDED: Matches SoundGate.tsx
+  verse: {
     text: string;
     ref: string;
   };
@@ -17,6 +18,7 @@ export type Relic = {
 };
 
 const FALLBACK_AUDIO = "/audio/silence.mp3";
+const FALLBACK_AMBIENT = "/audio/silence.mp3"; // ← Same file for ambient swell
 
 export const RELICS: Relic[] = [
   {
@@ -26,9 +28,10 @@ export const RELICS: Relic[] = [
     image: "/AQNSqpHW8gV1OxAJb-5woTpal2mMV6yPY3VCIyhfmXJ51cTaGP38bt7ry6ooj4APZbACwuHTNzTNILA2GCzab6o8.png",
     audio: FALLBACK_AUDIO,
     audioUrl: FALLBACK_AUDIO,
+    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
     duration: 347,
     hasAudio: false,
-    verse: { // ← CHANGED: was scripture + ref
+    verse: {
       text: "No weapon formed against you shall prosper, and every tongue which rises against you in judgment You shall condemn.",
       ref: "Isaiah 54:17"
     },
@@ -42,6 +45,7 @@ export const RELICS: Relic[] = [
     image: "/AQOz4ulRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQolJbmduV4EbRJKxE183PEOaupTTShyCiqg.png",
     audio: FALLBACK_AUDIO,
     audioUrl: FALLBACK_AUDIO,
+    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
     duration: 298,
     hasAudio: false,
     verse: {
@@ -58,6 +62,7 @@ export const RELICS: Relic[] = [
     image: "/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png",
     audio: FALLBACK_AUDIO,
     audioUrl: FALLBACK_AUDIO,
+    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
     duration: 312,
     hasAudio: false,
     verse: {
@@ -74,6 +79,7 @@ export const RELICS: Relic[] = [
     image: "/AQOa1IseR647iRUJvkreGVolACSRVJGcffDo1awMvuNQE9UN8C3TxSp54AnzTKDFQtR9Y7eHIN84bsEBxwB7eSPI.png",
     audio: FALLBACK_AUDIO,
     audioUrl: FALLBACK_AUDIO,
+    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
     duration: 267,
     hasAudio: false,
     verse: {
@@ -90,6 +96,7 @@ export const RELICS: Relic[] = [
     image: "/AQNawBYhZi5D3mTWqF8M9hfxg8zmT6ExMD0oErYvltBSZP7Uel86XPd2kca7gYcPkxv5rsNNaYrM-_4jYBllupX9.png",
     audio: FALLBACK_AUDIO,
     audioUrl: FALLBACK_AUDIO,
+    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
     duration: 331,
     hasAudio: false,
     verse: {
@@ -106,6 +113,7 @@ export const RELICS: Relic[] = [
     image: "/AQNaCDj13mbCjvyJA47tjBiuR6D-WpUweMqib7Hbp4kQlHoSgm3XdKzfnagSdD4b8kNiNWrOpPugyuGGIJZ0Zmp7.png",
     audio: FALLBACK_AUDIO,
     audioUrl: FALLBACK_AUDIO,
+    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
     duration: 289,
     hasAudio: false,
     verse: {
@@ -122,6 +130,7 @@ export const RELICS: Relic[] = [
     image: "/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png",
     audio: FALLBACK_AUDIO,
     audioUrl: FALLBACK_AUDIO,
+    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
     duration: 305,
     hasAudio: false,
     verse: {
@@ -135,9 +144,10 @@ export const RELICS: Relic[] = [
     id: "storm-crown",
     title: "Storm Crown",
     subtitle: "Authority in Chaos",
-    image: "/AQMuw...png", // ← STILL NEEDS FULL FILENAME FROM GITHUB
+    image: "/AQMuw...png", // ← LAST HARD BREAK. REPLACE WITH FULL HASH.
     audio: FALLBACK_AUDIO,
     audioUrl: FALLBACK_AUDIO,
+    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
     duration: 322,
     hasAudio: false,
     verse: {
