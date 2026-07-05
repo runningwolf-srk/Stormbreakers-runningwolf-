@@ -1,165 +1,90 @@
-// data/relics.ts — V2.4 AMBIENT LOCK — BUILD WILL PASS
-export type Relic = {
-  id: string;
-  title: string;
-  subtitle?: string;
-  image: string;
-  audio: string;        
-  audioUrl: string;     
-  ambientUrl?: string;  // ✅ TYPE NOW MATCHES AUDIOENGINE
-  duration: number;     
-  hasAudio: boolean;
-  verse: {
-    text: string;
-    ref: string;
-  };
-  declaration: string;
-  chapter?: number;
+// data/relics.ts
+export type Verse = {
+  text: string;
+  ref: string;
 };
 
-const FALLBACK_AUDIO = "/audio/silence.mp3";
-const FALLBACK_AMBIENT = "/audio/silence.mp3"; // ← Same file for ambient swell
+export type Relic = {
+  id: string;
+  slug: string;
+  title: string;
+  image: string;
+  verse: Verse;
+  meaning: string;
+  hasAudio: boolean;
+};
 
 export const RELICS: Relic[] = [
   {
-    id: "running-wolfs-blade",
-    title: "Running Wolf's Blade",
-    subtitle: "The War Cry of the Forsaken",
-    image: "/AQNSqpHW8gV1OxAJb-5woTpal2mMV6yPY3VCIyhfmXJ51cTaGP38bt7ry6ooj4APZbACwuHTNzTNILA2GCzab6o8.png",
-    audio: FALLBACK_AUDIO,
-    audioUrl: FALLBACK_AUDIO,
-    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
-    duration: 347,
+    id: 'first-flame',
+    slug: 'first-flame',
+    title: 'First Flame',
+    image: '/relics/first-flame.jpg',
+    verse: { text: 'But he was pierced for our transgressions', ref: 'Isaiah 53:5' },
+    meaning: 'The origin. Where healing began. The spark that refused to die.',
     hasAudio: false,
-    verse: {
-      text: "No weapon formed against you shall prosper, and every tongue which rises against you in judgment You shall condemn.",
-      ref: "Isaiah 54:17"
-    },
-    declaration: "Snow on the shield. Salt on the wood. We came from the fjord but You called us good. I was ash in the tundra, bone in the storm. Then Your breath hit the valley and my dead heart was warm. Jesus, lead us on.",
-    chapter: 1
   },
   {
-    id: "thunder-drum",
-    title: "Thunder Drum",
-    subtitle: "Voice of the Storm",
-    image: "/AQOz4ulRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQolJbmduV4EbRJKxE183PEOaupTTShyCiqg.png",
-    audio: FALLBACK_AUDIO,
-    audioUrl: FALLBACK_AUDIO,
-    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
-    duration: 298,
-    hasAudio: false,
-    verse: {
-      text: "The voice of the Lord is over the waters; the God of glory thunders.",
-      ref: "Psalm 29:3"
-    },
-    declaration: "When God speaks, the ground answers. This is the sound of war.",
-    chapter: 2
-  },
-  {
-    id: "eternal-fire",
-    title: "Eternal Fire",
-    subtitle: "The Consuming Flame",
-    image: "/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png",
-    audio: FALLBACK_AUDIO,
-    audioUrl: FALLBACK_AUDIO,
-    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
-    duration: 312,
-    hasAudio: false,
-    verse: {
-      text: "For our God is a consuming fire.",
-      ref: "Hebrews 12:29"
-    },
-    declaration: "The fire that fell at Pentecost never left. It lives in you. Burn forever.",
-    chapter: 3
-  },
-  {
-    id: "chronicle-stone",
-    title: "Chronicle Stone",
-    subtitle: "Name Written in Heaven",
-    image: "/AQOa1IseR647iRUJvkreGVolACSRVJGcffDo1awMvuNQE9UN8C3TxSp54AnzTKDFQtR9Y7eHIN84bsEBxwB7eSPI.png",
-    audio: FALLBACK_AUDIO,
-    audioUrl: FALLBACK_AUDIO,
-    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
-    duration: 267,
-    hasAudio: false,
-    verse: {
-      text: "I will write on them the name of My God and the name of the city of My God.",
-      ref: "Revelation 3:12"
-    },
-    declaration: "What God writes in stone, hell cannot erase. Your name is carved in heaven.",
-    chapter: 4
-  },
-  {
-    id: "the-first-flame",
-    title: "The First Flame",
-    subtitle: "Where Healing Began",
-    image: "/AQNawBYhZi5D3mTWqF8M9hfxg8zmT6ExMD0oErYvltBSZP7Uel86XPd2kca7gYcPkxv5rsNNaYrM-_4jYBllupX9.png",
-    audio: FALLBACK_AUDIO,
-    audioUrl: FALLBACK_AUDIO,
-    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
-    duration: 331,
-    hasAudio: false,
-    verse: {
-      text: "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was on Him, and by His wounds we are healed.",
-      ref: "Isaiah 53:5"
-    },
-    declaration: "This is where it started. Not in a church. In the dark. Bleeding. Alone. And He found me.",
-    chapter: 5
-  },
-  {
-    id: "wolfs-fang",
+    id: 'wolfs-fang',
+    slug: 'wolfs-fang',
     title: "Wolf's Fang",
-    subtitle: "Cord of Three Strands",
-    image: "/AQNaCDj13mbCjvyJA47tjBiuR6D-WpUweMqib7Hbp4kQlHoSgm3XdKzfnagSdD4b8kNiNWrOpPugyuGGIJZ0Zmp7.png",
-    audio: FALLBACK_AUDIO,
-    audioUrl: FALLBACK_AUDIO,
-    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
-    duration: 289,
+    image: '/relics/wolfs-fang.jpg',
+    verse: { text: 'A cord of three strands is not quickly broken', ref: 'Ecclesiastes 4:12' },
+    meaning: 'Brotherhood. The pack hunts as one. Loyalty carved in bone.',
     hasAudio: false,
-    verse: {
-      text: "Though one may be overpowered, two can defend themselves. A cord of three strands is not quickly broken.",
-      ref: "Ecclesiastes 4:12"
-    },
-    declaration: "Lone wolves die in the dark. The pack hunts in light. I was born for brotherhood.",
-    chapter: 6
   },
   {
-    id: "spirit-mantle",
-    title: "Spirit Mantle",
-    subtitle: "The Prophet's Cloak",
-    image: "/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png",
-    audio: FALLBACK_AUDIO,
-    audioUrl: FALLBACK_AUDIO,
-    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
-    duration: 305,
+    id: 'thunder-drum',
+    slug: 'thunder-drum',
+    title: 'Thunder Drum',
+    image: '/relics/thunder-drum.jpg',
+    verse: { text: 'The voice of the Lord is over the waters', ref: 'Psalm 29:3' },
+    meaning: "God's voice. The battle cry that shakes mountains.",
     hasAudio: false,
-    verse: {
-      text: "And the Spirit of the Lord will come upon you, and you will prophesy with them.",
-      ref: "1 Samuel 10:6"
-    },
-    declaration: "The mantle fell. Elijah went up. Elisha picked it up. The call is yours now.",
-    chapter: 7
   },
   {
-    id: "storm-crown",
-    title: "Storm Crown",
-    subtitle: "Authority in Chaos",
-    image: "/AQMuw...png", // ← LAST HARD BREAK. REPLACE WITH FULL HASH.
-    audio: FALLBACK_AUDIO,
-    audioUrl: FALLBACK_AUDIO,
-    ambientUrl: FALLBACK_AMBIENT, // ✅ ADDED
-    duration: 322,
+    id: 'spirit-mantle',
+    slug: 'spirit-mantle',
+    title: 'Spirit Mantle',
+    image: '/relics/spirit-mantle.jpg',
+    verse: { text: 'The Spirit of the Lord will come powerfully upon you', ref: '1 Samuel 10:6' },
+    meaning: "The prophet's cloak. The call answered. Authority worn.",
     hasAudio: false,
-    verse: {
-      text: "He stilled the storm to a whisper; the waves of the sea were hushed.",
-      ref: "Psalm 107:29"
-    },
-    declaration: "He doesn't just calm storms. He crowns you in them. Authority in chaos. You don't wait for peace to reign. You reign, and peace comes.",
-    chapter: 8
-  }
+  },
+  {
+    id: 'storm-crown',
+    slug: 'storm-crown',
+    title: 'Storm Crown',
+    image: '/relics/storm-crown.png', // REPLACE WITH REAL HASH FILENAME
+    verse: { text: 'He stilled the storm to a whisper', ref: 'Psalm 107:29' },
+    meaning: 'Authority in chaos. The king who reigns over wind and wave.',
+    hasAudio: false,
+  },
+  {
+    id: 'running-wolfs-blade',
+    slug: 'running-wolfs-blade',
+    title: "Running Wolf's Blade",
+    image: '/relics/running-wolfs-blade.jpg',
+    verse: { text: 'No weapon formed against you shall prosper', ref: 'Isaiah 54:17' },
+    meaning: 'Vengeance. The blade that cuts for the forsaken.',
+    hasAudio: false,
+  },
+  {
+    id: 'chronicle-stone',
+    slug: 'chronicle-stone',
+    title: 'Chronicle Stone',
+    image: '/relics/chronicle-stone.jpg',
+    verse: { text: 'I will write on them the name of my God', ref: 'Revelation 3:12' },
+    meaning: 'Identity carved in stone. Permanent. Claimed.',
+    hasAudio: false,
+  },
+  {
+    id: 'eternal-fire',
+    slug: 'eternal-fire',
+    title: 'Eternal Fire',
+    image: '/relics/eternal-fire.jpg',
+    verse: { text: 'For our God is a consuming fire', ref: 'Hebrews 12:29' },
+    meaning: 'Pentecost. The fire that never leaves. Burns in the bones.',
+    hasAudio: false,
+  },
 ];
-
-export const relics = RELICS;
-export const getRelicByChapter = (chapter: number) => RELICS.find(r => r.chapter === chapter);
-export const getRelicById = (id: string) => RELICS.find(r => r.id === id);
-export const getAllRelics = () => RELICS;
