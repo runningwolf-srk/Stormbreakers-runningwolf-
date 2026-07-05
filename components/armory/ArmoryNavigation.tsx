@@ -16,7 +16,6 @@ export function ArmoryNavigation() {
     const handleScroll = () => {
       const sections = navItems.map(item => document.querySelector(item.href));
       const scrollPos = window.scrollY + 200;
-      
       for (const section of sections) {
         if (section && section.offsetTop <= scrollPos && 
             section.offsetTop + section.offsetHeight > scrollPos) {
@@ -25,7 +24,6 @@ export function ArmoryNavigation() {
         }
       }
     };
-    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -41,9 +39,7 @@ export function ArmoryNavigation() {
                 key={item.name}
                 href={item.href}
                 className={`text-sm uppercase tracking-wider transition-colors ${
-                  active === item.href.slice(1) 
-                    ? 'text-amber-400' 
-                    : 'text-stone-400 hover:text-stone-200'
+                  active === item.href.slice(1) ? 'text-amber-400' : 'text-stone-400 hover:text-stone-200'
                 }`}
               >
                 {item.name}
