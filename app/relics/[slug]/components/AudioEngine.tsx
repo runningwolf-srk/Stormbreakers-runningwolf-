@@ -1,4 +1,4 @@
-'use client'
+use client'
 import { useEffect, useRef, useState } from 'react'
 import { Howl } from 'howler'
 import { motion } from 'framer-motion'
@@ -25,11 +25,29 @@ export default function AudioEngine({
   const [isPlaying, setIsPlaying] = useState(false)
 
   useEffect(() => {
-    // 1. AMBient SWELL - 2.5s before main track
-    if (relic.ambientUrl) {
-      ambientRef.current = new Howl({
-        src: [relic.ambientUrl],
-        volume: 0.4,
+  // 1. AMBIENT SWELL - 2.5s before main track
+  if (relic.ambientUrl) { // ← This check prevents crash if ambientUrl is missing
+    ambientRef.current = new Howl({
+      src: [relic.ambientUrl],
+      volume: 0.4,
+      loop: true,
+      preload: true
+    })
+    ambientRef.current.play()
+  }
+
+  // 2. MAIN TRACK
+  mainRef.current = new Howl({
+    src: [relic.audioUrl],
+    volume: 0.8,
+    onend: () => setIsPlaying(false)
+  })
+
+  return () => {
+    ambientRef.current?.unload()
+    mainRef.current?.unload()
+  }
+}, [relic])
         onload: () => {
           ambientRef.current?.play()
           // Start main track after 2500ms swell
