@@ -1,47 +1,43 @@
 'use client';
 
-import { RELICS } from '@/data/relics';
+// DELETE THIS:
+import { RELICS } from '@/data/armory';
+
+// USE THIS INSTEAD:
+import { RELICS } from '../../data/armory';
+
 import Link from 'next/link';
 
 export default function Armory() {
   return (
-    <main className="min-h-screen bg-black text-white p-8">
-      <Link href="/" className="text-amber-400 mb-8 block hover:text-amber-300 font-mono">
+    <main className="min-h-screen bg-black text-amber-400 p-8">
+      <Link href="/" className="text-amber-400 hover:text-amber-200 mb-8 inline-block">
         ← Back to Home
       </Link>
       
-      <h1 className="font-cinzel text-5xl mb-12 text-center">THE ARMORY</h1>
+      <h1 className="font-cinzel text-5xl mb-12 text-center">The Armory</h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-        {RELICS.map(relic => (
-          <div 
-            key={relic.id} 
-            className="border border-amber-600/30 p-4 hover:border-amber-600 transition-all duration-300 hover:shadow-lg hover:shadow-amber-600/20"
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {RELICS.map((relic) => (
+          <div
+            key={relic.id}
+            className="border border-amber-600/30 rounded-lg p-6 bg-zinc-900/50 hover:bg-zinc-900 transition-all"
           >
-            <img 
-              src={relic.image} 
-              alt={relic.imageAlt || relic.title} 
-              className="w-full h-64 object-cover mb-4 bg-gray-900 border border-gray-800"
-              onError={(e) => { 
-                e.currentTarget.src = '/runningwolf-avatar.jpg'; 
-              }}
+            <img
+              src={relic.image}
+              alt={relic.name}
+              className="w-full h-48 object-cover rounded-md mb-4"
             />
-            
-            <h2 className="font-cinzel text-xl mb-2 text-amber-400">
-              {relic.title}
-            </h2>
-            
-            <p className="text-sm text-gray-400 italic mb-1 font-mono">
-              "{relic.verse.text}"
-            </p>
-            
-            <p className="text-xs text-amber-600 mb-3 font-mono">
-              {relic.verse.ref}
-            </p>
-            
-            <p className="text-sm text-gray-300 font-mono">
-              {relic.declaration}
-            </p>
+            <h2 className="font-cinzel text-2xl mb-2">{relic.name}</h2>
+            <p className="text-amber-200/80 mb-4">{relic.songTitle}</p>
+            <a
+              href={relic.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-amber-600 text-black px-4 py-2 rounded hover:bg-amber-500 transition-colors"
+            >
+              Listen on YouTube
+            </a>
           </div>
         ))}
       </div>
