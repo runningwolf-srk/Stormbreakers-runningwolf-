@@ -24,7 +24,7 @@ export const RELICS: Relic[] = [
   {
     id: 2,
     title: "Wolf Fang",
-    image: "/AQNaCDj13mbCjvyJA47tjBiuR6D-WpUweMqib7Hbp4kQlHoSgm3XdKzfnagSdD4b8kNiNWrOpPugyuGGIJZ0Zmp7.png",
+    image: "/AQNaCDj13mbCjvyJA47tjBiuR6D-WpUweMqib7Hbp4kQlHoSgm3XdKzfnagSdD4b8kNiNWrOpPugyuGGlJZ0Zmp7.png",
     imageAlt: "Ancient wolf fang pendant glowing with gold runes",
     verse: { text: "The wolf will live with the lamb", ref: "Isaiah 11:6" },
     declaration: "I am the hunter turned guardian. I protect what I once stalked."
