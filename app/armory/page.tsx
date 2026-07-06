@@ -1,3 +1,5 @@
+'use client';
+
 import { RELICS } from '@/data/relics';
 import Link from 'next/link';
 
@@ -14,19 +16,12 @@ export default function Armory() {
         {RELICS.map(relic => (
           <div 
             key={relic.id} 
-            className="border border-amber-600/30 p-4 hover:border-amber-600 transition-all duration-300 hover:shadow-lg hover:shadow-amber-600/20"
+            className="border border-amber-600/30 p-4 hover:border-amber-600 transition-all duration-300"
           >
-            <p className="text-xs text-red-500 mb-2 break-all font-mono">
-              URL: {relic.image}
-            </p>
-            
             <img 
               src={relic.image} 
-              alt={relic.imageAlt || relic.title} 
+              alt={relic.title} 
               className="w-full h-64 object-cover mb-4 bg-gray-900 border border-gray-800"
-              onError={(e) => { 
-                e.currentTarget.src = '/runningwolf-avatar.jpg'; 
-              }}
             />
             
             <h2 className="font-cinzel text-xl mb-2 text-amber-400">
