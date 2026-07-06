@@ -1,11 +1,9 @@
-'use client'
+  'use client'
 import Link from 'next/link';
-import EmberBackground from '@/components/EmberBackground';
 
 export default function Home() {
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center bg-black text-white overflow-hidden">
-      <EmberBackground /> 
       
       <div className="z-10 text-center px-4">
         <h1 className="font-cinzel text-6xl md:text-8xl tracking-widest mb-4">
