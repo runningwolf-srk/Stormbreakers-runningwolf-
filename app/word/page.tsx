@@ -1,6 +1,6 @@
 'use client';
 
-import { RELICS } from '@/data/armory'; // ✅ FIXED IMPORT
+import { RELICS } from '../../data/armory'; // ✅ RELATIVE PATH - NO @/
 import Link from 'next/link';
 
 export default function Word() {
