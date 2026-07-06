@@ -1,80 +1,95 @@
-// Define the shape of a Relic
 export type Relic = {
   id: number;
+  world: "armory" | "valley"; // 2 worlds
   title: string;
-  image: string;
+  songTitle: string;
+  image: string; // Your uploaded files
   imageAlt: string;
-  verse: {
-    text: string;
-    ref: string;
-  };
+  verse: { text: string; ref: string };
   declaration: string;
 };
 
-// The actual relics data
 export const RELICS: Relic[] = [
+  // WORLD 1: THE ARMORY — Fire, Victory, Crown
   {
     id: 1,
+    world: "armory",
     title: "The First Flame",
-    image: "/AQNawBYhZi5D3mTWqF8M9hfxg8zmT6ExMD0oErYvItBSZP7UeI86XPd2kca7gYcPkxv5rsNNaYrM-_4jYBIIupX9.png",
-    imageAlt: "Golden pillar of fire rising from darkness",
-    verse: { text: "But he was pierced for our transgressions", ref: "Isaiah 53:5" },
+    songTitle: "Jesus Is An Healer",
+    image: "/file_00000000fa471f882fd16e52afa59fd.png",
+    imageAlt: "Jesus Is An Healer - By His wounds we are healed",
+    verse: { text: "By his wounds we are healed.", ref: "Isaiah 53:5" },
     declaration: "I was broken so you could be whole."
   },
   {
     id: 2,
+    world: "armory",
     title: "Wolf Fang",
-    image: "/AQNaCDj13mbCjvyJA47tjBiuR6D-WpUweMqib7Hbp4kQlHoSgm3XdKzfnagSdD4b8kNiNWrOpPugyuGGlJZ0Zmp7.png",
-    imageAlt: "Ancient wolf fang pendant glowing with gold runes",
-    verse: { text: "The wolf will live with the lamb", ref: "Isaiah 11:6" },
-    declaration: "I am the hunter turned guardian. I protect what I once stalked."
+    songTitle: "Scars That Preach",
+    image: "/file_0000000065a071f5832301f52d11fb80.png",
+    imageAlt: "Scars That Preach - Born Through The Fire",
+    verse: { text: "I bear on my body the marks of Jesus.", ref: "Galatians 6:17" },
+    declaration: "These scars are not wounds. They are medals."
   },
   {
     id: 3,
+    world: "armory",
     title: "Thunder Drums",
-    image: "/AQOz4uIRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQoIJbmduV4EbRJKxE183PEOaupTTShyCiqg.png",
-    imageAlt: "Stone drum suspended in storm clouds with lightning",
-    verse: { text: "The voice of the Lord strikes with flashes of lightning", ref: "Psalm 29:7" },
-    declaration: "When I speak, the heavens answer."
+    songTitle: "Horn of War",
+    image: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp",
+    imageAlt: "Horn of War - A Battle Cry, A Legend Rises",
+    verse: { text: "Blow the trumpet in Zion; sound the alarm.", ref: "Joel 2:1" },
+    declaration: "When God calls, we don't whisper. We sound the horn."
   },
   {
     id: 4,
+    world: "armory",
     title: "Spirit Mantle",
-    image: "/AQMILikpY_4YzpC0ogoZpZ-dI1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png",
-    imageAlt: "Tattered golden mantle dripping with fire",
-    verse: { text: "The Spirit of the Lord will rest on him", ref: "Isaiah 11:2" },
-    declaration: "I am clothed in fire. I carry His weight."
+    songTitle: "Heaven Calling",
+    image: "/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    imageAlt: "Heaven Calling - A Worship Anthem",
+    verse: { text: "Come up here, and I will show you what must take place.", ref: "Revelation 4:1" },
+    declaration: "The door is open. The invitation stands."
   },
   {
     id: 5,
+    world: "armory",
     title: "Runningwolf's Blade",
-    image: "/AQNSqpHW8gV1OxAJb-5woTpal2mMV6yPY3VCIyhfmXJ51cTaGP38bt7ry6ooj4APZbACwuHTNzTNlLA2GCzab6o8.png",
-    imageAlt: "Snow-covered wolf head with golden sword through ornate crest",
-    verse: { text: "The sword of the Spirit, which is the word of God", ref: "Ephesians 6:17" },
-    declaration: "I run with the pack. I strike with the Word."
+    songTitle: "Iron Collide",
+    image: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    imageAlt: "Iron Collide - An Epic Hard Rock Anthem",
+    verse: { text: "As iron sharpens iron, so one person sharpens another.", ref: "Proverbs 27:17" },
+    declaration: "We don't fight alone. We sharpen each other for war."
   },
   {
     id: 6,
+    world: "armory",
     title: "Eternal Fire",
-    image: "/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png",
-    imageAlt: "Diamond stone with cross of living flame burning inside",
-    verse: { text: "For our God is a consuming fire", ref: "Hebrews 12:29" },
-    declaration: "I burn but I'm not consumed. I carry what cannot die."
+    songTitle: "Blood of Cross",
+    image: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    imageAlt: "Blood of Cross - By His wounds we are healed",
+    verse: { text: "In him we have redemption through his blood.", ref: "Ephesians 1:7" },
+    declaration: "No blood, no redemption. No cross, no crown."
   },
   {
     id: 7,
+    world: "armory",
     title: "Storm Crown",
-    image: "/AQMuwnjDLB5qcpKNKR8cB7D1JCIwUVH55YwQ1CwxwBeVt1LFwoHctkJr4-EqxEcc7luealmOHzEm81t1QIngLRHX-i2YAtlixooMqpxK7lZSs-I4BxkQTPSu4Qr7nqFZLR9x4GlJp9KczAb7bDQYcukJc_-YWw.png",
-    imageAlt: "Golden crown suspended in the eye of a storm with lightning",
-    verse: { text: "The Lord reigns, let the earth be glad", ref: "Psalm 97:1" },
-    declaration: "I am crowned in the storm. I rule from the eye."
+    songTitle: "Lord of Lords",
+    image: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp",
+    imageAlt: "Lord of Lords - A Spiritual Anthem",
+    verse: { text: "KING OF KINGS AND LORD OF LORDS.", ref: "Revelation 19:16" },
+    declaration: "We don't reign — He does. We rule from the eye of HIS storm."
   },
-{
+  {
     id: 8,
+    world: "armory",
     title: "Chronicle Stone",
-    image: "/AQOa1lseR647iRUJvkreGVoIACSRVJGcffDo1awMvuNQE9UN8C3TxSp54AnzTKDFQtR9Y7eHlN84bsEBxwB7eSPl.png",
-    imageAlt: "Ancient stone tablet inscribed with glowing golden scripture",
-    verse: { text: "Write the vision; make it plain on tablets", ref: "Habakkuk 2:2" },
-    declaration: "I carry the Word carved in stone. What He writes cannot be erased."
+    songTitle: "Spiritual Journey",
+    image: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp",
+    imageAlt: "Spiritual Journey - A Journey to His Presence",
+    verse: { text: "Write the vision; make it plain on tablets.", ref: "Habakkuk 2:2" },
+    declaration: "God said WRITE. So I write. So you can run with it."
   }
+  // WORLD 2: THE VALLEY — 8 more relics come later
 ];
