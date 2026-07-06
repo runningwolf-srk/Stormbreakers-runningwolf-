@@ -32,7 +32,7 @@ export const RELICS: Relic[] = [
   {
     id: 3,
     title: "Thunder Drums",
-    image: "/AQOz4ulRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQolJbmduV4EbRJKxE183PEOaupTTShyCiqg.png",
+    image: "/AQOz4uIRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQoIJbmduV4EbRJKxE183PEOaupTTShyCiqg.png",
     imageAlt: "Stone drum suspended in storm clouds with lightning",
     verse: { text: "The voice of the Lord strikes with flashes of lightning", ref: "Psalm 29:7" },
     declaration: "When I speak, the heavens answer."
