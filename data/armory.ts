@@ -1,41 +1,75 @@
-'use client';
+export type Relic = {
+  id: string;
+  slug: string;
+  name: string;
+  image: string;
+  songTitle: string;
+  youtubeUrl: string;
+};
 
-import { RELICS } from '@/data/armory';
-import Link from 'next/link';
-
-export default function Armory() {
-  return (
-    <main className="min-h-screen bg-black text-amber-400 p-8">
-      <Link href="/" className="text-amber-400 hover:text-amber-200 mb-8 inline-block">
-        ← Back to Home
-      </Link>
-      
-      <h1 className="font-cinzel text-5xl mb-12 text-center">The Armory</h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {RELICS.map((relic) => (
-          <div
-            key={relic.id}
-            className="border border-amber-600/30 rounded-lg p-6 bg-zinc-900/50 hover:bg-zinc-900 transition-all"
-          >
-            <img
-              src={relic.image}
-              alt={relic.name}
-              className="w-full h-48 object-cover rounded-md mb-4"
-            />
-            <h2 className="font-cinzel text-2xl mb-2">{relic.name}</h2>
-            <p className="text-amber-200/80 mb-4">{relic.songTitle}</p>
-            <a
-              href={relic.youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-amber-600 text-black px-4 py-2 rounded hover:bg-amber-500 transition-colors"
-            >
-              Listen on YouTube
-            </a>
-          </div>
-        ))}
-      </div>
-    </main>
-  );
-                 }
+export const RELICS: Relic[] = [
+  {
+    id: "storm-crown",
+    slug: "storm-crown",
+    name: "Storm Crown",
+    image: "/relics/storm-crown.jpg",
+    songTitle: "Jesus is an healer",
+    youtubeUrl: "https://youtu.be/stsryByK5h8",
+  },
+  {
+    id: "eternal-fire",
+    slug: "eternal-fire", 
+    name: "Eternal Fire",
+    image: "/relics/eternal-fire.jpg",
+    songTitle: "Lord of Lords",
+    youtubeUrl: "https://youtu.be/9vP0NPrEv9s",
+  },
+  {
+    id: "first-flame",
+    slug: "first-flame",
+    name: "The First Flame", 
+    image: "/relics/first-flame.jpg",
+    songTitle: "Spiritual Journey",
+    youtubeUrl: "https://youtu.be/umDFjJjh0_c",
+  },
+  {
+    id: "wolf-fang",
+    slug: "wolf-fang",
+    name: "Wolf Fang",
+    image: "/relics/wolf-fang.jpg",
+    songTitle: "I'm on fire",
+    youtubeUrl: "https://youtu.be/8XQUhWB_N5M",
+  },
+  {
+    id: "thunder-drums",
+    slug: "thunder-drums",
+    name: "Thunder Drums",
+    image: "/relics/thunder-drums.jpg", 
+    songTitle: "Horn of War",
+    youtubeUrl: "https://youtu.be/M4wGCg5oCx0",
+  },
+  {
+    id: "spirit-mantle",
+    slug: "spirit-mantle",
+    name: "Spirit Mantle",
+    image: "/relics/spirit-mantle.jpg",
+    songTitle: "Iron Collide", 
+    youtubeUrl: "https://youtu.be/fIkUDO2emoc",
+  },
+  {
+    id: "chronicle-stone",
+    slug: "chronicle-stone",
+    name: "Chronicle Stone",
+    image: "/relics/chronicle-stone.jpg",
+    songTitle: "Heaven Calling",
+    youtubeUrl: "https://youtu.be/oxNauKuxg4Q",
+  },
+  {
+    id: "runningwolfs-blade",
+    slug: "runningwolfs-blade", 
+    name: "Runningwolf's Blade",
+    image: "/relics/runningwolfs-blade.jpg",
+    songTitle: "8TH OLD SONG - REPLACE ME", // ← REPLACE THIS
+    youtubeUrl: "", // ← REPLACE WITH YOUTUBE LINK
+  },
+];
