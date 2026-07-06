@@ -8,8 +8,10 @@ export type Relic = {
   verse: Verse; 
   meaning: string; 
   hasAudio: boolean;
-  ambientUrl?: string;  // ← ADD THIS
-  audioUrl?: string;    // ← ADD THIS
+  // B + 2 fields — add now so we don't refactor later
+  audioUrl?: string;    
+  ambientUrl?: string;  
+  chapter?: number;
 };
 
 export const RELICS: Relic[] = [
@@ -19,9 +21,25 @@ export const RELICS: Relic[] = [
     title: 'First Flame', 
     image: '/relics/first-flame.jpg',
     verse: { text: 'But he was pierced for our transgressions', ref: 'Isaiah 53:5' },
-    meaning: 'The origin.', 
+    meaning: 'The origin of the call.', 
     hasAudio: true,
-    audioUrl: '/audio/main/first-flame.mp3',     // ← ADD IF YOU HAVE AUDIO
-    ambientUrl: '/audio/ambient/first-flame.mp3' // ← ADD IF YOU HAVE AMBIENT
+    audioUrl: '/audio/main/first-flame.mp3',
+    ambientUrl: '/audio/ambient/first-flame.mp3',
+    chapter: 1
   },
+  { 
+    id: 'second-relic', 
+    slug: 'second-relic', 
+    title: 'Second Relic Name', 
+    image: '/relics/second-relic.jpg',
+    verse: { text: 'Your verse here', ref: 'Book 1:1' },
+    meaning: 'Your meaning here.', 
+    hasAudio: true,
+    audioUrl: '/audio/main/second-relic.mp3',
+    ambientUrl: '/audio/ambient/second-relic.mp3',
+    chapter: 1
+  },
+  // COPY/PASTE THIS BLOCK 14 MORE TIMES
+  // CHANGE id, slug, title, image, verse, audioUrl, ambientUrl
+  // KEEP THE STRUCTURE IDENTICAL
 ];
