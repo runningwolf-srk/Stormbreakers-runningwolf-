@@ -16,7 +16,7 @@ export const RELICS: Relic[] = [
   {
     id: 1,
     title: "The First Flame",
-    image: "/AQNawBYhZi5D3mTWqF8M9hfxg8zmT6ExMD0oErYvltBSZP7Uel86XPd2kca7gYcPkxv5rsNNaYrM-_4jYBIlupX9.png",
+    image: "/AQNawBYhZi5D3mTWqF8M9hfxg8zmT6ExMD0oErYvItBSZP7UeI86XPd2kca7gYcPkxv5rsNNaYrM-_4jYBIIupX9.png",
     imageAlt: "Golden pillar of fire rising from darkness",
     verse: { text: "But he was pierced for our transgressions", ref: "Isaiah 53:5" },
     declaration: "I was broken so you could be whole."
