@@ -72,7 +72,7 @@ export const RELICS: Relic[] = [
 {
     id: 8,
     title: "Chronicle Stone",
-    image: "/AQOa1IseR647iRUJvkreGVoIACSRVJGcffDo1awMvuNQE9UN8C3TxSp54AnzTKDFQtR9Y7eHIN84bsEBxwB7eSPI.png",
+    image: "/AQOa1lseR647iRUJvkreGVoIACSRVJGcffDo1awMvuNQE9UN8C3TxSp54AnzTKDFQtR9Y7eHlN84bsEBxwB7eSPl.png",
     imageAlt: "Ancient stone tablet inscribed with glowing golden scripture",
     verse: { text: "Write the vision; make it plain on tablets", ref: "Habakkuk 2:2" },
     declaration: "I carry the Word carved in stone. What He writes cannot be erased."
