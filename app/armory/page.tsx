@@ -1,11 +1,6 @@
 'use client';
 
-// DELETE THIS:
-import { RELICS } from '@/data/armory';
-
-// USE THIS INSTEAD:
-import { RELICS } from '../../data/armory';
-
+import { RELICS } from '../../data/armory'; // ✅ RELATIVE PATH - NO @/
 import Link from 'next/link';
 
 export default function Armory() {
