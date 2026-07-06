@@ -1,12 +1,12 @@
 // data/armory.ts
 export type Relic = {
-  relic: string;
+  relic: string; // This is the relic name
   song: string;
   image: string;
   youtube: string;
 };
 
-export const armory: Relic[] = [  // ← Must be 'armory' not 'RELICS'
+export const armory: Relic[] = [
   {
     relic: "Storm Crown",
     song: "Jesus is an healer",
