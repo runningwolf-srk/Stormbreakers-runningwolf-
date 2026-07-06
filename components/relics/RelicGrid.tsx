@@ -1,6 +1,6 @@
 'use client';
 
-import { RELICS } from '../../data/armory'; // ✅ FIXED - was '@/data/relics'
+import { RELICS } from '../../data/armory';
 import { RelicCard } from './RelicCard';
 
 export function RelicGrid() {
@@ -10,7 +10,6 @@ export function RelicGrid() {
         <RelicCard 
           key={relic.id} 
           relic={relic} 
-          onClick={() => console.log('Clicked', relic.name)}
         />
       ))}
     </div>
