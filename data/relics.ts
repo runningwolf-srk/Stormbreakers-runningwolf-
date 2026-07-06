@@ -1,111 +1,51 @@
-export interface Relic {
-  id: string;
-  slug: string;
-  title: string;
-  image: string;
-  imageAlt?: string;
-  verse: { text: string; ref: string };
-  declaration: string;
-  meaning: string;
-  hasAudio: boolean;
-  chapter: number;
-}
-
-export const RELICS: Relic[] = [
-  { 
-    id: 'first-flame', 
-    slug: 'first-flame', 
-    title: 'The First Flame', 
-    image: '/first-flame.jpg',
-    imageAlt: 'The First Flame burning in darkness',
-    verse: { text: 'But he was pierced for our transgressions', ref: 'Isaiah 53:5' },
-    declaration: 'I was broken so you could be whole.', 
-    meaning: 'Healing flows from His wounds.', 
-    hasAudio: false, 
-    chapter: 1
+export const RELICS = [
+  {
+    id: 1,
+    title: "The First Flame",
+    image: "/AQNawBYhZi5D3mTWqF8M9hfxg8zmT6ExMD0oErYvltBSZP7Uel86XPd2kca7gYcPkxv5rsNNaYrM-_4jYBIlupX9.png",
+    verse: { text: "But he was pierced for our transgressions", ref: "Isaiah 53:5" },
+    declaration: "I was broken so you could be whole."
   },
-  { 
-    id: 'pillar-fire', 
-    slug: 'pillar-fire', 
-    title: 'Pillar of Fire', 
-    image: '/runningwolf-avatar.jpg',
-    imageAlt: 'Placeholder for Pillar of Fire',
-    verse: { text: 'By night in a pillar of fire', ref: 'Exodus 13:21' },
-    declaration: 'I lead you through the darkness.', 
-    meaning: 'His presence never leaves.', 
-    hasAudio: false, 
-    chapter: 2
+  {
+    id: 2,
+    title: "Wolf Fang",
+    image: "/AQNaCDj13mbCjvyJA47tjBiuR6D-WpUweMqib7Hbp4kQlHoSgm3XdKzfnagSdD4b8kNiNWrOpPugyuGGIJZ0Zmp7.png",
+    verse: { text: "The wolf will live with the lamb", ref: "Isaiah 11:6" },
+    declaration: "I am the hunter turned guardian. I protect what I once stalked."
   },
-  { 
-    id: 'crown-storm', 
-    slug: 'crown-storm', 
-    title: 'Crown of the Storm', 
-    image: '/runningwolf-avatar.jpg',
-    imageAlt: 'Placeholder for Crown of the Storm',
-    verse: { text: 'The Lord reigns, let the earth be glad', ref: 'Psalm 97:1' },
-    declaration: 'The King rides the storm.', 
-    meaning: 'Authority above the chaos.', 
-    hasAudio: false, 
-    chapter: 3
+  {
+    id: 3,
+    title: "Thunder Drums",
+    image: "/AQOz4ulRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQolJbmduV4EbRJKxE183PEOaupTTShyCiqg.png",
+    verse: { text: "The voice of the Lord strikes with flashes of lightning", ref: "Psalm 29:7" },
+    declaration: "When I speak, the heavens answer."
   },
-  { 
-    id: 'amulet-wolf', 
-    slug: 'amulet-wolf', 
-    title: 'Wolf Amulet', 
-    image: '/runningwolf-avatar.jpg',
-    imageAlt: 'Placeholder for Wolf Amulet',
-    verse: { text: 'Iron sharpens iron', ref: 'Proverbs 27:17' },
-    declaration: 'The blade hidden in stone. The fang for the hunt.', 
-    meaning: 'Runningwolf. Two forms: sealed sword + hunter\'s tooth.', 
-    hasAudio: false, 
-    chapter: 4
+  {
+    id: 4,
+    title: "Spirit Mantle",
+    image: "/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png",
+    verse: { text: "The Spirit of the Lord will rest on him", ref: "Isaiah 11:2" },
+    declaration: "I am clothed in fire. I carry His weight."
   },
-  { 
-    id: 'stone-tablet', 
-    slug: 'stone-tablet', 
-    title: 'The Tablet', 
-    image: '/runningwolf-avatar.jpg',
-    imageAlt: 'Placeholder for The Tablet',
-    verse: { text: 'Write the vision; make it plain', ref: 'Habakkuk 2:2' },
-    declaration: 'The Word stands forever.', 
-    meaning: 'Testimony carved in stone.', 
-    hasAudio: false, 
-    chapter: 5
+  {
+    id: 5,
+    title: "Runningwolf's Blade",
+    image: "/AQNSqpHW8gV1OxAJb-5woTpal2mMV6yPY3VCIyhfmXJ51cTaGP38bt7ry6ooj4APZbACwuHTNzTNILA2GCzab6o8.png",
+    verse: { text: "The sword of the Spirit, which is the word of God", ref: "Ephesians 6:17" },
+    declaration: "I run with the pack. I strike with the Word."
   },
-  { 
-    id: 'mantle-fire', 
-    slug: 'mantle-fire', 
-    title: 'The Mantle', 
-    image: '/runningwolf-avatar.jpg',
-    imageAlt: 'Placeholder for The Mantle',
-    verse: { text: 'Elijah took his mantle and struck the water', ref: '2 Kings 2:8' },
-    declaration: 'The double portion falls.', 
-    meaning: 'Power transferred. Legacy received.', 
-    hasAudio: false, 
-    chapter: 6
+  {
+    id: 6,
+    title: "Eternal Fire",
+    image: "/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png",
+    verse: { text: "For our God is a consuming fire", ref: "Hebrews 12:29" },
+    declaration: "I burn but I'm not consumed. I carry what cannot die."
   },
-  { 
-    id: 'anvil-storm', 
-    slug: 'anvil-storm', 
-    title: 'The Anvil', 
-    image: '/runningwolf-avatar.jpg',
-    imageAlt: 'Placeholder for The Anvil',
-    verse: { text: 'He is like a refiner\'s fire', ref: 'Malachi 3:2' },
-    declaration: 'Strike until I shine.', 
-    meaning: 'Forged in fire. Shaped by the hammer.', 
-    hasAudio: false, 
-    chapter: 7
-  },
-  { 
-    id: 'flaming-cross', 
-    slug: 'flaming-cross', 
-    title: 'Cross of Fire', 
-    image: '/runningwolf-avatar.jpg',
-    imageAlt: 'Placeholder for Cross of Fire',
-    verse: { text: 'Take up your cross and follow me', ref: 'Matthew 16:24' },
-    declaration: 'The cross I bear burns but does not consume.', 
-    meaning: 'Sacrifice. Burden. Victory through surrender.', 
-    hasAudio: false, 
-    chapter: 8
-  },
+  {
+    id: 7,
+    title: "Storm Crown",
+    image: "/AQMuwnjDLB5qcpKNKR8cB7D1JCIwUVH55YwQ1CwxwBeVt1LFwoHctkJr4-EqxEcc7luealmOHzEm81t1QIngLRHX-i2YAtlixooMqpxK7IZSs-I4BxkQTPSu4Qr7nqFZLR9x4GlJp9KczAb7bDQYcukJc-_YWw.png",
+    verse: { text: "The Lord reigns, let the earth be glad", ref: "Psalm 97:1" },
+    declaration: "I am crowned in the storm. I rule from the eye."
+  }
 ];
