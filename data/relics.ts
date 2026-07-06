@@ -77,3 +77,4 @@ export const RELICS: Relic[] = [
     verse: { text: "Write the vision; make it plain on tablets", ref: "Habakkuk 2:2" },
     declaration: "I carry the Word carved in stone. What He writes cannot be erased."
   }
+];
