@@ -68,7 +68,7 @@ export const RELICS: Relic[] = [
     imageAlt: "Golden crown suspended in the eye of a storm with lightning",
     verse: { text: "The Lord reigns, let the earth be glad", ref: "Psalm 97:1" },
     declaration: "I am crowned in the storm. I rule from the eye."
-  }
+  },
 {
     id: 8,
     title: "Chronicle Stone",
