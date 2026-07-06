@@ -3,11 +3,25 @@
 @tailwind utilities;
 
 body {
-  background: #09090b;
-  color: #ffffff;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-mono);
 }
 
-html {
-  scroll-behavior: smooth;
+h1, h2, h3, .font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.door-btn {
+  background: rgba(255, 69, 0, 0.1);
+  border: 2px solid #ff4500;
+  padding: 1.5rem 2.5rem;
+  font-family: var(--font-cinzel);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+.door-btn:hover {
+  background: rgba(255, 69, 0, 0.3);
+  box-shadow: 0 0 20px #ff4500;
+  transform: translateY(-4px);
 }
