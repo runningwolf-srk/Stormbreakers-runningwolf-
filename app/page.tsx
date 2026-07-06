@@ -1,30 +1,39 @@
-// app/page.tsx
-import { ArmoryNavigation } from '@/components/armory/ArmoryNavigation';
-import { ProphecySection } from '@/components/saga/ProphecySection';
-import { RelicGrid } from '@/components/relics/RelicGrid';
-import { SoundGrid } from '@/components/sound/SoundGrid';
-import { ChapterNavigator } from '@/components/saga/ChapterNavigator';
-import { Footer } from '@/components/shared/Footer';
+'use client'
+import Link from 'next/link';
+import EmberBackground from '@/components/EmberBackground';
 
-export default function ArmoryHome() {
+export default function Home() {
   return (
-    <main className="bg-stone-950 text-stone-100 min-h-screen">
-      <ArmoryNavigation />
-      <section id="prophecy"><ProphecySection /></section>
-      <section id="relics" className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 font-norse tracking-wider">⚔️ THE RELICS</h2>
-          <RelicGrid />
+    <main className="relative min-h-screen flex flex-col items-center justify-center bg-black text-white overflow-hidden">
+      <EmberBackground /> 
+      
+      <div className="z-10 text-center px-4">
+        <h1 className="font-cinzel text-6xl md:text-8xl tracking-widest mb-4">
+          STORMBREAKERS
+        </h1>
+        <p className="font-mono text-lg md:text-xl text-amber-400 mb-16">
+          Eight Relics. Eight Declarations. One Call.
+        </p>
+        
+        <div className="flex flex-col md:flex-row gap-6 justify-center">
+          <Link href="/armory" className="door-btn">
+            ⚔️ Enter the Armory
+          </Link>
+          <Link href="/sound" className="door-btn">
+            🎧 Hear the Sound
+          </Link>
+          <Link href="/saga" className="door-btn">
+            📜 Read the Saga
+          </Link>
         </div>
-      </section>
-      <section id="sound" className="py-24 px-6 bg-stone-900/50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 font-norse tracking-wider">🎧 THE SOUND</h2>
-          <SoundGrid />
-        </div>
-      </section>
-      <section id="saga"><ChapterNavigator /></section>
-      <Footer />
+      </div>
+
+      <Link 
+        href="/about" 
+        className="absolute bottom-8 text-gray-500 hover:text-white text-sm z-10"
+      >
+        About RunningWolf
+      </Link>
     </main>
   );
 }
