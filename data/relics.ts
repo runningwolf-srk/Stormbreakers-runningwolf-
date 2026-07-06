@@ -48,7 +48,7 @@ export const RELICS: Relic[] = [
   {
     id: 5,
     title: "Runningwolf's Blade",
-    image: "/AQNSqpHW8gV1OxAJb-5woTpal2mMV6yPY3VCIyhfmXJ51cTaGP38bt7ry6ooj4APZbACwuHTNzTNILA2GCzab6o8.png",
+    image: "/AQNSqpHW8gV1OxAJb-5woTpal2mMV6yPY3VCIyhfmXJ51cTaGP38bt7ry6ooj4APZbACwuHTNzTNlLA2GCzab6o8.png",
     imageAlt: "Snow-covered wolf head with golden sword through ornate crest",
     verse: { text: "The sword of the Spirit, which is the word of God", ref: "Ephesians 6:17" },
     declaration: "I run with the pack. I strike with the Word."
