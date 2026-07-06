@@ -69,8 +69,7 @@ export const RELICS: Relic[] = [
     verse: { text: "The Lord reigns, let the earth be glad", ref: "Psalm 97:1" },
     declaration: "I am crowned in the storm. I rule from the eye."
   }
-];
-  {
+{
     id: 8,
     title: "Chronicle Stone",
     image: "/AQOa1IseR647iRUJvkreGVoIACSRVJGcffDo1awMvuNQE9UN8C3TxSp54AnzTKDFQtR9Y7eHIN84bsEBxwB7eSPI.png",
