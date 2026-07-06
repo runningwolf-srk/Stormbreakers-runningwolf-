@@ -13,6 +13,7 @@ export default function Armory() {
             <h2 className="font-cinzel text-xl mb-2">{relic.title}</h2>
             <p className="text-sm text-gray-400 italic">"{relic.verse.text}"</p>
             <p className="text-xs text-amber-600">{relic.verse.ref}</p>
+            <p className="text-sm text-gray-300 mt-2">{relic.declaration}</p>
           </div>
         ))}
       </div>
