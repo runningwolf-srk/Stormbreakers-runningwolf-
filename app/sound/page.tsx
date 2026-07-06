@@ -16,10 +16,12 @@ export default function Sound() {
           <div key={song.id} className="border border-gray-800 p-4">
             <h3 className="font-cinzel text-xl">{song.title}</h3>
             <p className="text-sm text-gray-400">{song.scripture.ref}</p>
+            <p className="text-xs text-gray-500 mt-2">{song.declaration}</p>
             {song.youtubeId && (
               <iframe 
                 className="w-full aspect-video mt-4"
                 src={`https://www.youtube.com/embed/${song.youtubeId}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               />
             )}
           </div>
@@ -30,9 +32,16 @@ export default function Sound() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {stormbreakerSongs.map(song => (
           <div key={song.id} className="border border-gray-800 p-4">
-            <img src={song.coverImage} alt={song.title} className="w-full mb-4" />
+            {song.coverImage && <img src={song.coverImage} alt={song.title} className="w-full mb-4" />}
             <h3 className="font-cinzel text-xl">{song.title}</h3>
             <p className="text-sm text-gray-400">{song.declaration}</p>
+            {song.youtubeId && (
+              <iframe 
+                className="w-full aspect-video mt-4"
+                src={`https://www.youtube.com/embed/${song.youtubeId}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              />
+            )}
           </div>
         ))}
       </div>
