@@ -3,7 +3,7 @@ export interface Relic {
   slug: string;
   title: string;
   image: string;
-  imageAlt?: string; // ← Secondary image for multi-form relics
+  imageAlt?: string; // ← For Wolf Amulet dual forms
   verse: { text: string; ref: string };
   declaration: string;
   meaning: string;
@@ -35,18 +35,6 @@ export const RELICS: Relic[] = [
     chapter: 2
   },
   { 
-    id: 'amulet-wolf', 
-    slug: 'amulet-wolf', 
-    title: 'Wolf Amulet', 
-    image: '/runningwolfs-blade.png', // ← Primary: Blade in Stone
-    imageAlt: '/wolf-fang.png', // ← Secondary: The Fang
-    verse: { text: 'Iron sharpens iron', ref: 'Proverbs 27:17' },
-    declaration: 'The blade hidden in stone. The fang for the hunt.', 
-    meaning: 'Runningwolf. Two forms: sealed sword + hunter\'s tooth.', 
-    hasAudio: false,
-    chapter: 4
-  },
-  { 
     id: 'crown-storm', 
     slug: 'crown-storm', 
     title: 'Crown of the Storm', 
@@ -56,6 +44,18 @@ export const RELICS: Relic[] = [
     meaning: 'Authority above the chaos.', 
     hasAudio: false,
     chapter: 3
+  },
+  { 
+    id: 'amulet-wolf', 
+    slug: 'amulet-wolf', 
+    title: 'Wolf Amulet', 
+    image: '/runningwolfs-blade.png',
+    imageAlt: '/wolf-fang.png',
+    verse: { text: 'Iron sharpens iron', ref: 'Proverbs 27:17' },
+    declaration: 'The blade hidden in stone. The fang for the hunt.', 
+    meaning: 'Runningwolf. Two forms: sealed sword + hunter\'s tooth.', 
+    hasAudio: false,
+    chapter: 4
   },
   { 
     id: 'stone-tablet', 
@@ -94,10 +94,10 @@ export const RELICS: Relic[] = [
     id: 'flaming-cross', 
     slug: 'flaming-cross', 
     title: 'Cross of Fire', 
-    image: '/flaming-cross.png',
-    verse: { text: 'TBD', ref: 'TBD' },
-    declaration: 'TBD', 
-    meaning: 'TBD', 
+    image: '/runningwolf-avatar.jpg',
+    verse: { text: 'Take up your cross and follow me', ref: 'Matthew 16:24' },
+    declaration: 'The cross I bear burns but does not consume.', 
+    meaning: 'Sacrifice. Burden. Victory through surrender.', 
     hasAudio: false,
     chapter: 8
   },
