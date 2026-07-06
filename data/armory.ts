@@ -1,3 +1,12 @@
+export type Relic = {  // ✅ MUST HAVE 'export' HERE
+  id: string;
+  slug: string;
+  name: string;
+  image: string;
+  songTitle: string;
+  youtubeUrl: string;
+};
+
 export const RELICS: Relic[] = [
   {
     id: "storm-crown",
@@ -5,7 +14,7 @@ export const RELICS: Relic[] = [
     name: "Storm Crown",
     image: "/relics/storm-crown.jpg",
     songTitle: "Jesus is an healer",
-    youtubeUrl: "https://youtu.be/stsryByK5h8", // ← REPLACE WITH YOUR REAL LINK
+    youtubeUrl: "https://youtu.be/stsryByK5h8", // REPLACE WITH YOUR LINK
   },
   {
     id: "eternal-fire",
@@ -13,7 +22,7 @@ export const RELICS: Relic[] = [
     name: "Eternal Fire",
     image: "/relics/eternal-fire.jpg",
     songTitle: "Lord of Lords",
-    youtubeUrl: "https://youtu.be/9vP0NPrEv9s", // ← REPLACE WITH YOUR REAL LINK
+    youtubeUrl: "https://youtu.be/9vP0NPrEv9s", // REPLACE WITH YOUR LINK
   },
   {
     id: "first-flame",
@@ -21,7 +30,7 @@ export const RELICS: Relic[] = [
     name: "The First Flame", 
     image: "/relics/first-flame.jpg",
     songTitle: "Spiritual Journey",
-    youtubeUrl: "https://youtu.be/umDFjJjh0_c", // ← REPLACE WITH YOUR REAL LINK
+    youtubeUrl: "https://youtu.be/umDFjJjh0_c", // REPLACE WITH YOUR LINK
   },
   {
     id: "wolf-fang",
@@ -29,7 +38,7 @@ export const RELICS: Relic[] = [
     name: "Wolf Fang",
     image: "/relics/wolf-fang.jpg",
     songTitle: "I'm on fire",
-    youtubeUrl: "https://youtu.be/8XQUhWB_N5M", // ← REPLACE WITH YOUR REAL LINK
+    youtubeUrl: "https://youtu.be/8XQUhWB_N5M", // REPLACE WITH YOUR LINK
   },
   {
     id: "thunder-drums",
@@ -37,7 +46,7 @@ export const RELICS: Relic[] = [
     name: "Thunder Drums",
     image: "/relics/thunder-drums.jpg", 
     songTitle: "Horn of War",
-    youtubeUrl: "https://youtu.be/M4wGCg5oCx0", // ← REPLACE WITH YOUR REAL LINK
+    youtubeUrl: "https://youtu.be/M4wGCg5oCx0", // REPLACE WITH YOUR LINK
   },
   {
     id: "spirit-mantle",
@@ -45,7 +54,7 @@ export const RELICS: Relic[] = [
     name: "Spirit Mantle",
     image: "/relics/spirit-mantle.jpg",
     songTitle: "Iron Collide", 
-    youtubeUrl: "https://youtu.be/fIkUDO2emoc", // ← REPLACE WITH YOUR REAL LINK
+    youtubeUrl: "https://youtu.be/fIkUDO2emoc", // REPLACE WITH YOUR LINK
   },
   {
     id: "chronicle-stone",
@@ -53,14 +62,14 @@ export const RELICS: Relic[] = [
     name: "Chronicle Stone",
     image: "/relics/chronicle-stone.jpg",
     songTitle: "Heaven Calling",
-    youtubeUrl: "https://youtu.be/oxNauKuxg4Q", // ← REPLACE WITH YOUR REAL LINK
+    youtubeUrl: "https://youtu.be/oxNauKuxg4Q", // REPLACE WITH YOUR LINK
   },
   {
     id: "runningwolfs-blade",
     slug: "runningwolfs-blade", 
     name: "Runningwolf's Blade",
     image: "/relics/runningwolfs-blade.jpg",
-    songTitle: "YOUR 8TH SONG TITLE HERE", // ← REPLACE ME
-    youtubeUrl: "YOUR YOUTUBE LINK HERE", // ← REPLACE ME
+    songTitle: "8TH SONG TITLE HERE", // ← REPLACE ME
+    youtubeUrl: "8TH YOUTUBE LINK HERE", // ← REPLACE ME
   },
 ];
