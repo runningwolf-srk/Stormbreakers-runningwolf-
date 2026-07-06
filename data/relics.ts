@@ -64,7 +64,7 @@ export const RELICS: Relic[] = [
   {
     id: 7,
     title: "Storm Crown",
-    image: "/AQMuwnjDLB5qcpKNKR8cB7D1JCIwUVH55YwQ1CwxwBeVt1LFwoHctkJr4-EqxEcc7luealmOHzEm81t1QIngLRHX-i2YAtlixooMqpxK7IZSs-I4BxkQTPSu4Qr7nqFZLR9x4GlJp9KczAb7bDQYcukJc-_YWw.png",
+    image: "/AQMuwnjDLB5qcpKNKR8cB7D1JCIwUVH55YwQ1CwxwBeVt1LFwoHctkJr4-EqxEcc7luealmOHzEm81t1QIngLRHX-i2YAtlixooMqpxK7lZSs-I4BxkQTPSu4Qr7nqFZLR9x4GlJp9KczAb7bDQYcukJc_-YWw.png",
     imageAlt: "Golden crown suspended in the eye of a storm with lightning",
     verse: { text: "The Lord reigns, let the earth be glad", ref: "Psalm 97:1" },
     declaration: "I am crowned in the storm. I rule from the eye."
