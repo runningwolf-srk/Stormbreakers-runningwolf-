@@ -6,7 +6,7 @@ export type Relic = {
   youtube: string;
 };
 
-export const armory: Relic[] = [
+export const armory: Relic[] = [  // ← Must be 'armory' not 'RELICS'
   {
     relic: "Storm Crown",
     song: "Jesus is an healer",
