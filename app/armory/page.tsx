@@ -1,41 +1,32 @@
 'use client';
 
-import { RELICS } from '../../data/armory'; // ✅ RELATIVE PATH - NO @/
-import Link from 'next/link';
+import { armory } from '../../data/armory'; // ✅ Fixed import
 
 export default function Armory() {
   return (
-    <main className="min-h-screen bg-black text-amber-400 p-8">
-      <Link href="/" className="text-amber-400 hover:text-amber-200 mb-8 inline-block">
-        ← Back to Home
-      </Link>
-      
-      <h1 className="font-cinzel text-5xl mb-12 text-center">The Armory</h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {RELICS.map((relic) => (
-          <div
-            key={relic.id}
-            className="border border-amber-600/30 rounded-lg p-6 bg-zinc-900/50 hover:bg-zinc-900 transition-all"
-          >
-            <img
-              src={relic.image}
-              alt={relic.name}
-              className="w-full h-48 object-cover rounded-md mb-4"
-            />
-            <h2 className="font-cinzel text-2xl mb-2">{relic.name}</h2>
-            <p className="text-amber-200/80 mb-4">{relic.songTitle}</p>
-            <a
-              href={relic.youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-amber-600 text-black px-4 py-2 rounded hover:bg-amber-500 transition-colors"
-            >
-              Listen on YouTube
-            </a>
-          </div>
-        ))}
-      </div>
+    <main className="bg-black min-h-screen">
+      <h1 className="text-4xl font-bold text-amber-400 text-center py-12">The Armory</h1>
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 max-w-7xl mx-auto">
+        {armory.map((item) => {
+          const videoId = item.youtube.split('/').pop()?.split('?')[0];
+          return (
+            <div key={item.relic} className="rounded-xl bg-zinc-900 border border-zinc-800 overflow-hidden">
+              <img src={item.image} alt={item.relic} className="w-full h-48 object-cover" />
+              <div className="p-4">
+                <h3 className="text-amber-400 font-bold text-xl mb-1">{item.relic}</h3>
+                <p className="text-zinc-400 text-sm mb-4">{item.song}</p>
+                <iframe
+                  className="w-full aspect-video rounded-lg"
+                  src={`https://www.youtube.com/embed/${videoId}`}
+                  title={item.song}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          );
+        })}
+      </section>
     </main>
   );
 }
