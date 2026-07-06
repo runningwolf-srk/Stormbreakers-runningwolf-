@@ -1,4 +1,18 @@
-export const RELICS = [
+// Define the shape of a Relic
+export type Relic = {
+  id: number;
+  title: string;
+  image: string;
+  imageAlt: string;
+  verse: {
+    text: string;
+    ref: string;
+  };
+  declaration: string;
+};
+
+// The actual relics data
+export const RELICS: Relic[] = [
   {
     id: 1,
     title: "The First Flame",
