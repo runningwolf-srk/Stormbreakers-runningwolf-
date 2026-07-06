@@ -40,7 +40,7 @@ export const RELICS: Relic[] = [
   {
     id: 4,
     title: "Spirit Mantle",
-    image: "/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png",
+    image: "/AQMILikpY_4YzpC0ogoZpZ-dI1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png",
     imageAlt: "Tattered golden mantle dripping with fire",
     verse: { text: "The Spirit of the Lord will rest on him", ref: "Isaiah 11:2" },
     declaration: "I am clothed in fire. I carry His weight."
