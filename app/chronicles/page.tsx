@@ -117,4 +117,4 @@ export default function Chronicles() {
       </section>
     </main>
   )
-                  }
+}
