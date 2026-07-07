@@ -15,14 +15,14 @@ export default function HomePage() {
           <div className="mb-8 flex flex-col items-center">
             <img
               src="/729068345_1706992463868756_7233760520950384832_n~2.jpg"
-              alt="Jessy Marquez - Stormbreaker"
+              alt="Jessy Marquez - RunningWolf"
               className="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-amber-500/50 mb-4 object-cover shadow-lg shadow-amber-500/20"
             />
             <h2 className="text-amber-400 text-xl font-bold tracking-widest">
               JESSY MARQUEZ
             </h2>
             <p className="text-amber-500/70 text-sm uppercase tracking-widest">
-              STORMBREAKER
+              RUNNINGWOLF
             </p>
           </div>
 
