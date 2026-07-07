@@ -1,32 +1,22 @@
-'use client';
+// app/armory/page.tsx
+import { armory } from '@/data/armory'
+import RelicCard from '@/components/RelicCard'
 
-import { armory } from '../../data/armory'; // ✅ Fixed import
-
-export default function Armory() {
+export default function ArmoryPage() {
   return (
-    <main className="bg-black min-h-screen">
-      <h1 className="text-4xl font-bold text-amber-400 text-center py-12">The Armory</h1>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 max-w-7xl mx-auto">
-        {armory.map((item) => {
-          const videoId = item.youtube.split('/').pop()?.split('?')[0];
-          return (
-            <div key={item.relic} className="rounded-xl bg-zinc-900 border border-zinc-800 overflow-hidden">
-              <img src={item.image} alt={item.relic} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-amber-400 font-bold text-xl mb-1">{item.relic}</h3>
-                <p className="text-zinc-400 text-sm mb-4">{item.song}</p>
-                <iframe
-                  className="w-full aspect-video rounded-lg"
-                  src={`https://www.youtube.com/embed/${videoId}`}
-                  title={item.song}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          );
-        })}
-      </section>
+    <main className="min-h-screen bg-black text-amber-100 py-12">
+      <div className="max-w-7xl mx-auto px-4">
+        <header className="text-center mb-12">
+          <h1 className="text-5xl font-bold text-amber-400 tracking-widest mb-4">THE ARMORY</h1>
+          <p className="text-amber-200/70">16 RELICS • 16 SONGS • ONE KING</p>
+        </header>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {armory.map((relic) => (
+            <RelicCard key={relic.slug} relic={relic} />
+          ))}
+        </div>
+      </div>
     </main>
-  );
+  )
 }
