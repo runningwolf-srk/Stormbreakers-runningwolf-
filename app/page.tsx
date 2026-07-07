@@ -4,7 +4,6 @@ import { armory } from '../data/armory'
 
 export default function HomePage() {
   const featuredRelic = armory[0]
-  const relicCount = armory.length
 
   return (
     <main className="min-h-screen bg-black text-amber-100">
@@ -31,10 +30,7 @@ export default function HomePage() {
             Begin with a song. Follow the story. Stand on the Word.
           </p>
           <p className="text-amber-100/60 max-w-2xl mx-auto mb-12">
-            {relicCount > 0
-             ? `${relicCount} ${relicCount === 1? 'Relic' : 'Relics'} • One Mission. Every song anchored in Scripture, every testimony forged in fire, every act of worship for Jesus Christ.`
-              : `One Mission. Every song anchored in Scripture, every testimony forged in fire, every act of worship for Jesus Christ.`
-            }
+            One Mission. Every song anchored in Scripture, every testimony forged in fire, every act of worship for Jesus Christ.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
