@@ -1,6 +1,6 @@
 // app/armory/page.tsx
-import { armory } from '@/data/armory'
-import RelicCard from '@/components/RelicCard'
+import { armory } from '../../data/armory'
+import RelicCard from '../../components/relics/RelicCard'
 
 export default function ArmoryPage() {
   return (
