@@ -42,13 +42,13 @@ export default function HomePage() {
               href="/armory"
               className="bg-amber-600 hover:bg-amber-500 text-black px-8 py-3 rounded font-bold text-lg transition"
             >
-              🎵 Enter The Armory
+              Enter The Armory
             </Link>
             <Link
               href="/word"
               className="border border-amber-600 hover:bg-amber-600/20 text-amber-400 px-8 py-3 rounded font-bold text-lg transition"
             >
-              ✝️ Read The Word
+              Read The Word
             </Link>
           </div>
         </div>
