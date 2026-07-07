@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { armory } from '../data/armory'
 
 export default function HomePage() {
-  const featuredRelic = armory[0] // Could be undefined if array is empty
+  const featuredRelic = armory[0]
+  const relicCount = armory.length
 
   return (
     <main className="min-h-screen bg-black text-amber-100">
@@ -30,8 +31,10 @@ export default function HomePage() {
             Begin with a song. Follow the story. Stand on the Word.
           </p>
           <p className="text-amber-100/60 max-w-2xl mx-auto mb-12">
-            {armory.length} relics. One mission. Every song anchored in Scripture,
-            every testimony forged in fire, every act of worship for Jesus Christ.
+            {relicCount > 0
+             ? `${relicCount} ${relicCount === 1? 'Relic' : 'Relics'} • One Mission. Every song anchored in Scripture, every testimony forged in fire, every act of worship for Jesus Christ.`
+              : `One Mission. Every song anchored in Scripture, every testimony forged in fire, every act of worship for Jesus Christ.`
+            }
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -51,7 +54,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED RELIC - ONLY RENDER IF IT EXISTS */}
       {featuredRelic && (
         <section className="py-16 px-4 bg-gradient-to-b from-black to-amber-950/20">
           <div className="max-w-4xl mx-auto">
@@ -86,7 +88,6 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* THREE PILLARS - CORRECT JOURNEY ORDER */}
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center">
           <div>
