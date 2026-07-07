@@ -1,72 +1,106 @@
-import { notFound } from 'next/navigation';
-import { chronicles } from '@/data/chronicles';
-import { armory } from '@/data/armory';
-import Link from 'next/link';
+// app/chronicles/[slug]/page.tsx
+import { armory } from '../../../data/armory'
+import { notFound } from 'next/navigation'
+import Link from 'next/link'
+import type { Metadata } from 'next'
 
-export async function generateStaticParams() {
-  return chronicles.map((chapter) => ({
-    slug: chapter.slug,
-  }));
+type Props = {
+  params: { slug: string }
 }
 
-export default function ChapterPage({ params }: { params: { slug: string } }) {
-  const chapter = chronicles.find((c) => c.slug === params.slug);
-  if (!chapter) notFound();
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const relic = armory.find(r => r.slug === params.slug)
+  return {
+    title: `${relic?.relic} | Stormbreakers Chronicles`,
+    description: relic?.subtitle || relic?.declaration
+  }
+}
 
-  const relatedRelic = armory.find((r) => r.slug === chapter.relic);
+export default function ChroniclePage({ params }: Props) {
+  const relic = armory.find(r => r.slug === params.slug)
+  
+  if (!relic) {
+    notFound()
+  }
+
+  const relatedRelics = armory.filter(r => r.slug !== relic.slug).slice(0, 3)
 
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-20">
-      <article className="max-w-3xl mx-auto">
+    <main className="min-h-screen bg-black text-amber-100 py-12">
+      <div className="max-w-3xl mx-auto px-4">
+        
+        {/* BACK LINK */}
         <Link 
-          href="/chronicles" 
-          className="text-amber-500 hover:text-amber-400 text-sm mb-8 inline-block"
+          href="/armory" 
+          className="text-amber-500 hover:text-amber-300 text-sm mb-8 inline-block"
         >
-          ← Back to The Chronicles
+          ← Back to The Armory
         </Link>
 
-        <div className="text-amber-500 text-sm font-bold mb-4 tracking-widest">
-          CHAPTER {chapter.num}
-        </div>
-        
-        <h1 className="text-4xl md:text-5xl font-bold mb-8">{chapter.title}</h1>
+        {/* HEADER */}
+        <header className="mb-12 text-center">
+          {relic.image && (
+            <img 
+              src={relic.image} 
+              alt={relic.relic}
+              className="w-full h-80 object-cover rounded-lg mb-8"
+            />
+          )}
+          <h1 className="text-4xl md:text-5xl font-bold text-amber-400 mb-4">
+            {relic.relic}
+          </h1>
+          {relic.subtitle && (
+            <p className="text-xl text-amber-200/70">{relic.subtitle}</p>
+          )}
+        </header>
 
-        <blockquote className="border-l-4 border-amber-500 pl-6 py-2 mb-12 bg-zinc-900/50">
-          <p className="text-xl italic text-zinc-300 mb-2">"{chapter.verse}"</p>
-          <cite className="text-zinc-500 not-italic">— {chapter.ref}</cite>
-        </blockquote>
+        {/* SCRIPTURE */}
+        <section className="mb-12">
+          <blockquote className="text-xl text-amber-100 leading-relaxed border-l-2 border-amber-600/50 pl-6 italic">
+            "{relic.scripture}"
+          </blockquote>
+          <cite className="text-amber-400 block mt-3">— {relic.reference}</cite>
+        </section>
 
-        <div className="prose prose-invert prose-lg max-w-none">
-          {chapter.content.map((paragraph, idx) => (
-            <p key={idx} className="text-zinc-300 leading-relaxed mb-6 text-lg">
-              {paragraph}
-            </p>
-          ))}
-        </div>
+        {/* DECLARATION */}
+        <section className="bg-gradient-to-r from-amber-600/20 to-amber-600/5 border-l-4 border-amber-500 p-6 my-12 rounded-r">
+          <p className="text-xs text-amber-500/70 uppercase tracking-widest mb-2">Declaration</p>
+          <p className="text-2xl font-bold text-amber-300">{relic.declaration}</p>
+        </section>
 
-        {relatedRelic && (
-          <div className="mt-16 pt-8 border-t border-zinc-800">
-            <p className="text-zinc-500 text-sm mb-4">This chapter points to:</p>
-            <Link 
-              href={`/armory/${relatedRelic.slug}`}
-              className="group bg-zinc-900 border border-zinc-800 hover:border-amber-500 p-6 flex items-center gap-6 transition"
-            >
-              <img 
-                src={relatedRelic.image} 
-                alt={relatedRelic.relic}
-                className="w-20 h-20 object-cover"
-              />
-              <div>
-                <div className="text-amber-500 text-xs font-bold mb-1">RELIC</div>
-                <h3 className="text-xl font-bold group-hover:text-amber-500 transition">
-                  {relatedRelic.relic}
-                </h3>
-                <p className="text-zinc-400 text-sm">{relatedRelic.subtitle}</p>
-              </div>
-            </Link>
+        {/* REFLECTION / CHAPTER */}
+        <article className="prose prose-invert prose-amber max-w-none">
+          <p className="text-amber-100/90 leading-loose text-lg whitespace-pre-line">
+            {relic.reflection}
+          </p>
+        </article>
+
+        {/* RELATED RELICS - FIXED */}
+        <section className="mt-20 pt-12 border-t border-amber-600/20">
+          <h2 className="text-2xl font-bold text-amber-400 mb-8">Continue The Journey</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {relatedRelics.map((relatedRelic) => (
+              <Link 
+                key={relatedRelic.slug} 
+                href={`/chronicles/${relatedRelic.slug}`}
+                className="bg-black/50 border border-amber-600/30 rounded-lg p-4 hover:border-amber-500 transition"
+              >
+                <h3 className="text-amber-400 font-bold mb-2">{relatedRelic.relic}</h3>
+                {relatedRelic.subtitle && (
+                  <p className="text-zinc-400 text-sm">{relatedRelic.subtitle}</p>
+                )}
+              </Link>
+            ))}
           </div>
-        )}
-      </article>
+        </section>
+      </div>
     </main>
   )
 }
+
+// Generate static paths for all relics
+export async function generateStaticParams() {
+  return armory.map((relic) => ({
+    slug: relic.slug,
+  }))
+          }
