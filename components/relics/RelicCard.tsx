@@ -6,7 +6,6 @@ import { Relic } from '@/data/armory'
 export default function RelicCard({ relic }: { relic: Relic }) {
   return (
     <article className="relic-card border border-amber-600/30 bg-black/60 backdrop-blur-sm">
-      {/* 1. 🎨 HERO ARTWORK */}
       <div className="relative h-64 w-full overflow-hidden">
         <Image 
           src={relic.image} 
@@ -23,7 +22,6 @@ export default function RelicCard({ relic }: { relic: Relic }) {
       </div>
 
       <div className="p-6 space-y-6">
-        {/* 2. 🎵 SONG + 6. ▶️ LISTEN */}
         <div className="flex items-center justify-between border-b border-amber-600/20 pb-4">
           <div>
             <p className="text-xs text-amber-500/70 uppercase tracking-widest">Song</p>
@@ -41,7 +39,6 @@ export default function RelicCard({ relic }: { relic: Relic }) {
           )}
         </div>
 
-        {/* 3. ✝️ BIBLE PASSAGE */}
         <div>
           <p className="text-xs text-amber-500/70 uppercase tracking-widest mb-2">Scripture</p>
           <blockquote className="border-l-2 border-amber-600 pl-4 italic text-amber-100/90">
@@ -56,19 +53,16 @@ export default function RelicCard({ relic }: { relic: Relic }) {
           )}
         </div>
 
-        {/* 4. 📜 DECLARATION */}
         <div>
           <p className="text-xs text-amber-500/70 uppercase tracking-widest mb-2">Declaration</p>
           <p className="text-lg font-bold text-amber-300">{relic.declaration}</p>
         </div>
 
-        {/* 5. 📖 REFLECTION */}
         <div>
           <p className="text-xs text-amber-500/70 uppercase tracking-widest mb-2">Reflection</p>
           <p className="text-amber-100/80 text-sm whitespace-pre-line">{relic.reflection}</p>
         </div>
 
-        {/* Link to Chronicles */}
         <Link 
           href={`/chronicles/${relic.slug}`}
           className="block w-full text-center border border-amber-600/50 hover:bg-amber-600/10 text-amber-300 py-3 rounded transition"
