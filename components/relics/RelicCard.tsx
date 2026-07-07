@@ -14,7 +14,7 @@ export default function RelicCard({ relic }: RelicCardProps) {
   return (
     <article 
       id={relic.slug}
-      className="bg-black border border-amber-600/30 rounded-lg overflow-hidden scroll-mt-24"
+      className="bg-black border border-amber-600/30 rounded-lg overflow-hidden scroll-mt-24 mx-2 md:mx-0"
     >
       {/* PROGRESS INDICATOR */}
       <div className="px-6 pt-4 text-xs text-amber-500/50 uppercase tracking-widest">
@@ -45,7 +45,7 @@ export default function RelicCard({ relic }: RelicCardProps) {
                 <div className="mt-4 aspect-video w-full bg-black rounded overflow-hidden border border-amber-600/30">
                   <iframe
                     className="w-full h-full"
-                    src={relic.youtube.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/') + '?rel=0&modestbranding=1'}
+                    src={relic.youtube.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/') + '?rel=0&modestbranding=1&controls=1&showinfo=0&iv_load_policy=3'}
                     title={relic.song}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -59,7 +59,7 @@ export default function RelicCard({ relic }: RelicCardProps) {
         {/* 3. 📜 SCRIPTURE */}
         <div>
           <p className="text-xs text-amber-500/70 uppercase tracking-widest mb-2">Scripture</p>
-          <blockquote className="text-lg text-amber-100 leading-relaxed border-l-2 border-amber-600/50 pl-4 italic">
+          <blockquote className="scripture-quote border-l-2 border-amber-600/50 pl-4 italic">
             "{relic.scripture}"
           </blockquote>
           <cite className="text-amber-400 text-sm block mt-2">— {relic.reference}</cite>
@@ -81,7 +81,7 @@ export default function RelicCard({ relic }: RelicCardProps) {
         {/* 5. 💬 REFLECTION */}
         <div>
           <p className="text-xs text-amber-500/70 uppercase tracking-widest mb-2">Reflection</p>
-          <p className="text-amber-100/90 leading-relaxed">{relic.reflection}</p>
+          <p className="reflection-text">{relic.reflection}</p>
         </div>
 
         {/* 6. 📖 NEXT STEP */}
