@@ -73,7 +73,7 @@ export const armory: Relic[] = [
     relic: "Scars That Preach",
     slug: "scars-that-preach",
     song: "Scars That Preach",
-    subtitle: "Wounds Turned to Witness",
+    subtitle: "Born Through The Fire",
     scripture: "But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.' Therefore I will boast all the more gladly about my weaknesses, so that Christ's power may rest on me.",
     reference: "2 Corinthians 12:9",
     supportingScripture: {
@@ -83,9 +83,9 @@ export const armory: Relic[] = [
     declaration: "My scars preach louder than my sermons.",
     meaning: "God doesn't hide your scars. He hallows them. Every wound becomes a weapon. Every mark becomes a message. The enemy meant to shame you. God uses it to save others.",
     reflection: "THE MARKS\nI used to hide my scars. The addiction. The shame. The nights I thought I'd never see morning. Then God said, 'Show them. That's where My power lives.' 2 Corinthians 12:9 became my anthem. His strength is made perfect in my weakness. Now my scars preach the gospel better than my words ever could.",
-    youtube: "", // ← ADD YOUTUBE LINK WHEN READY
-    image: "/scars-that-preach.webp", // ← ADD TO /public
-    tags: ["TESTIMONY", "WORSHIP", "GRACE", "WEAKNESS"],
+    youtube: "",
+    image: "/file_0000000065a071f5832301f52d11fb80.png",
+    tags: ["TESTIMONY", "WORSHIP", "GRACE", "WEAKNESS", "CHRISTIAN ROCK"],
     relatedRelics: ["horn-of-war", "lion-and-lamb"]
   },
   {
@@ -103,7 +103,7 @@ export const armory: Relic[] = [
     meaning: "He didn't come to dominate. He came to be slaughtered. Weakness was the weapon. The cross looked like defeat, but it was the throne room of heaven breaking into earth.",
     reflection: "THE LAMB\nRevelation 5 wrecked me. John weeps because no one is worthy. Then an elder says 'Do not weep. The Lion has triumphed.' John looks for a Lion... and sees a Lamb, slain. That's the paradox of the Kingdom. God conquers by being crushed. He rules by being slaughtered. My strength had to die so His could live in me.",
     youtube: "https://youtu.be/17bwrxNCCBs",
-    image: "/lion-and-lamb.webp", // ← ADD TO /public
+    image: "/AQMD_81y8KYxQT01wEtDigzM9YS3l862OtP...", // ← PASTE FULL FILENAME HERE
     tags: ["CINEMATIC WORSHIP", "REVELATION 5", "VIKING", "ORCHESTRAL"],
     relatedRelics: ["scars-that-preach", "spiritual-journey"]
   },
@@ -156,7 +156,7 @@ export const armory: Relic[] = [
     relic: "Lord of Lords",
     slug: "lord-of-lords",
     song: "Lord of Lords",
-    subtitle: "The Final Authority",
+    subtitle: "A Spiritual Anthem",
     scripture: "On his robe and on his thigh he has this name written: KING OF KINGS AND LORD OF LORDS.",
     reference: "Revelation 19:16",
     supportingScripture: {
@@ -166,8 +166,8 @@ export const armory: Relic[] = [
     declaration: "Jesus is Lord of my storm, my scars, and my story.",
     meaning: "The Armory ends where it must — at His feet. Every relic points here. Every scar, every battle, every song bows to one name. He is not one option. He is the Lord of Lords.",
     reflection: "THE THRONE\nThis is where the Armory ends and worship begins. After the healing, the calling, the war, the scars, the Lamb, the journey, the sharpening, the cross — there is only one response. He is Lord. Not just of heaven. Lord of my storm. Lord of my scars. Lord of my story. Every relic in this Armory bows to Him. King of Kings. Lord of Lords.",
-    youtube: "", // ← ADD YOUTUBE LINK WHEN READY
-    image: "/lord-of-lords.webp", // ← ADD TO /public
+    youtube: "",
+    image: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp",
     tags: ["WORSHIP", "VICTORY", "KINGSHIP", "REVELATION 19"],
     relatedRelics: ["blood-of-the-cross", "jesus-is-an-healer"]
   }
