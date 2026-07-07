@@ -35,7 +35,7 @@ export const armory: Relic[] = [
     meaning: "The Storm Crown is not earned in calm waters. It is placed on those who have stood in the downpour and not drowned. It marks warriors who carry healing not as a theory, but as a scar.",
     reflection: "I wrote this after a season where the storm didn't let up. I kept asking God to stop the rain. He didn't. Instead He showed me He was in the rain with me. Isaiah 53:5 became my anchor — 'by His wounds we are healed.' Not 'we might be' or 'we could be.' We ARE. The crown comes after the crushing, and the healing flows from His wounds, not our strength.",
     youtube: "https://youtu.be/stsryByK5h8",
-    image: "/jesus-is-an-healer.png",
+    image: "/0aa5b830-631d-11f1-94f7-f3f3b6c0f03c.webp",
     tags: ["HEALING", "WORSHIP", "ISAIAH 53", "STORM"],
     relatedRelics: ["heaven-calling", "scars-that-preach"]
   },
@@ -50,7 +50,7 @@ export const armory: Relic[] = [
     meaning: "Heaven doesn't whisper suggestions. It calls names. When God speaks your name, the valley ends and the ascent begins.",
     reflection: "THE CALL\nHeaven doesn't whisper suggestions. It calls names. When God speaks your name, the valley ends and the ascent begins. I was in the valley when He called. Not ready. Not clean. But He called anyway.",
     youtube: "https://youtu.be/oxNauKuxg4Q",
-    image: "/heaven-calling.webp",
+    image: "/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp",
     tags: ["CINEMATIC WORSHIP", "VIKING", "ORCHESTRAL", "CHORAL"],
     relatedRelics: ["jesus-is-an-healer", "horn-of-war"]
   },
@@ -65,7 +65,7 @@ export const armory: Relic[] = [
     meaning: "The Horn of War isn't just noise. It's a call to stand. A call to remember who you are and whose you are. The trumpet in Zion was never meant for comfort — it was meant for courage.",
     reflection: "THE SILENCE\nBefore the horn, there is silence. Not peace — silence. The moment before war breaks. God uses silence to prepare warriors. He called me, then He armed me.",
     youtube: "https://youtu.be/M4wGCg5oCx0",
-    image: "/horn-of-war.webp",
+    image: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp",
     tags: ["CINEMATIC WORSHIP", "VIKING WAR HYMN", "ORCHESTRAL"],
     relatedRelics: ["heaven-calling", "scars-that-preach"]
   },
@@ -103,7 +103,7 @@ export const armory: Relic[] = [
     meaning: "He didn't come to dominate. He came to be slaughtered. Weakness was the weapon. The cross looked like defeat, but it was the throne room of heaven breaking into earth.",
     reflection: "THE LAMB\nRevelation 5 wrecked me. John weeps because no one is worthy. Then an elder says 'Do not weep. The Lion has triumphed.' John looks for a Lion... and sees a Lamb, slain. That's the paradox of the Kingdom. God conquers by being crushed. He rules by being slaughtered. My strength had to die so His could live in me.",
     youtube: "https://youtu.be/17bwrxNCCBs",
-    image: "/AQMD_81y8KYxQT01wEtDigzM9YS3l862OtP...", // ← PASTE FULL FILENAME HERE
+    image: "/AQMD_81y8KYxQT01wEtDigzM9YS3l862OtPv5NI1QlgdfAnOR1t1VNlvwOAzU5ZjySzHJixWWpJzctzObN4JM2wd.png",
     tags: ["CINEMATIC WORSHIP", "REVELATION 5", "VIKING", "ORCHESTRAL"],
     relatedRelics: ["scars-that-preach", "spiritual-journey"]
   },
@@ -118,7 +118,7 @@ export const armory: Relic[] = [
     meaning: "God doesn't just heal the wound. He redeems the time. Every year the enemy stole, every season wasted in the valley — He restores it in the ascent.",
     reflection: "THE RESTORATION\nYou thought you were too far gone. Too broken. Too late. But God kept you alive for a reason. Your story isn't over. The same God who called Samuel calls you. The Lion and Lamb showed me the path. Now I walk it.",
     youtube: "https://youtu.be/umDFjJjh0_c",
-    image: "/spiritual-journey.webp",
+    image: "/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp",
     tags: ["CINEMATIC WORSHIP", "TESTIMONY"],
     relatedRelics: ["lion-and-lamb", "iron-collide"]
   },
@@ -133,7 +133,7 @@ export const armory: Relic[] = [
     meaning: "Iron doesn't sharpen iron by accident. It takes heat. Pressure. Friction. God will put people in your life that scrape against your pride until Christ is formed.",
     reflection: "THE FORGE\nThe journey wasn't solo. God put brothers in my path who scraped against my pride. Pastors who corrected me. Friends who called out my sin. It hurt. But iron doesn't sharpen iron by accident. It takes heat. Pressure. Friction. That's how He forms Christ in us.",
     youtube: "https://youtu.be/fIkUDO2emoc",
-    image: "/iron-collide.webp",
+    image: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp",
     tags: ["CINEMATIC WORSHIP", "VIKING WAR HYMN", "ORCHESTRAL"],
     relatedRelics: ["spiritual-journey", "blood-of-the-cross"]
   },
@@ -148,7 +148,7 @@ export const armory: Relic[] = [
     meaning: "Viking blood oaths bound men to vengeance. Christ's blood binds us to victory. Your sin for His righteousness. Your death for His life.",
     reflection: "THE PRICE\nAfter the sharpening came the cross. I realized all the war, all the scars, all the journey — it only matters because of His blood. Viking blood oaths bound men to vengeance. Christ's blood binds us to victory. My sin for His righteousness. My death for His life.",
     youtube: "https://youtu.be/4lcbjsNLlzo",
-    image: "/blood-of-cross.webp",
+    image: "/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp",
     tags: ["CINEMATIC WORSHIP", "ORCHESTRAL", "CHORAL", "SACRED"],
     relatedRelics: ["iron-collide", "lord-of-lords"]
   },
