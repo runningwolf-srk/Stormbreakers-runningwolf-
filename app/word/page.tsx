@@ -101,16 +101,27 @@ export default function WordPage() {
           ))}
         </div>
 
-        {/* CLOSING REMINDER */}
-        <footer className="mt-20 pt-12 border-t border-amber-600/20 text-center">
-          <div className="space-y-2 text-amber-200/70">
+        {/* CLOSING: CHRIST + SCRIPTURE FOCUS */}
+        <footer className="mt-20 pt-12 border-t border-amber-600/20 text-center space-y-8">
+          <div className="max-w-2xl mx-auto">
+            <p className="text-amber-100/90 italic text-lg leading-relaxed mb-6">
+              Every song begins with Scripture. Every testimony points back to Scripture. 
+              Every relic exists to glorify Jesus Christ.
+            </p>
+            <blockquote className="text-amber-400 text-xl mb-2">
+              "For no one can lay any foundation other than the one already laid, which is Jesus Christ."
+            </blockquote>
+            <cite className="text-amber-400/70 text-sm">— 1 Corinthians 3:11</cite>
+          </div>
+
+          <div className="pt-8 space-y-2 text-amber-200/70">
             <p className="font-bold text-amber-400">The Word is the foundation.</p>
             <p>The Chronicles are the testimony.</p>
             <p>The Armory is the worship.</p>
-            <p className="text-amber-400 font-bold mt-4 text-lg">Jesus Christ is the center of them all.</p>
+            <p className="text-amber-400 font-bold mt-4 text-xl">Jesus Christ is the center of them all.</p>
           </div>
         </footer>
       </div>
     </main>
   )
-          }
+}
