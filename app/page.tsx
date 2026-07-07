@@ -1,44 +1,34 @@
-export default function Home() {
+// app/page.tsx
+import Link from 'next/link'
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <section className="px-6 py-20 text-center">
-        <h1 className="text-6xl font-bold tracking-wider mb-6">STORMBREAKERS</h1>
-        
-        <p className="text-xl text-zinc-300 max-w-2xl mx-auto mb-4">
-          A cinematic Christian worship universe where every song, Scripture, and story points to Jesus Christ.
-        </p>
-        
-        <blockquote className="border-l-4 border-amber-500 pl-4 italic text-zinc-400 max-w-xl mx-auto">
-          "Write the vision; make it plain on tablets, so he may run who reads it."
-          <cite className="block mt-2 not-italic text-sm">— Habakkuk 2:2</cite>
-        </blockquote>
-      </section>
+    <main className="min-h-screen bg-black text-amber-100 flex flex-col items-center justify-center text-center px-4">
+      <h1 className="text-6xl md:text-8xl font-bold text-amber-400 tracking-widest mb-6">STORMBREAKERS</h1>
+      <p className="max-w-2xl text-lg text-amber-200/80 mb-8">
+        A cinematic Christian worship universe where every song, Scripture, and story points to Jesus Christ.
+      </p>
+      <div className="text-xl text-amber-300 tracking-widest mb-12">
+        16 RELICS • 16 SONGS • ONE KING
+      </div>
+      
+      <nav className="flex flex-col sm:flex-row gap-4 mb-16">
+        <Link href="/armory" className="bg-amber-600 hover:bg-amber-500 text-black px-8 py-4 rounded font-bold text-lg transition">
+          🎵 Songs
+        </Link>
+        <Link href="/chronicles" className="border border-amber-600 hover:bg-amber-600/10 text-amber-300 px-8 py-4 rounded font-bold text-lg transition">
+          📖 Story
+        </Link>
+        <Link href="/word" className="border border-amber-600 hover:bg-amber-600/10 text-amber-300 px-8 py-4 rounded font-bold text-lg transition">
+          ✝️ Scripture
+        </Link>
+      </nav>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-1 px-6 max-w-6xl mx-auto">
-        <a href="/armory" className="group bg-zinc-900 p-12 border border-zinc-800 hover:border-amber-500 transition">
-          <div className="text-4xl mb-4">🛡️</div>
-          <h2 className="text-3xl font-bold mb-2">THE ARMORY</h2>
-          <p className="text-zinc-400">8 Relics of Victory</p>
-        </a>
-
-        <a href="/valley" className="group bg-zinc-900 p-12 border border-zinc-800 hover:border-amber-500 transition">
-          <div className="text-4xl mb-4">⚔️</div>
-          <h2 className="text-3xl font-bold mb-2">THE VALLEY</h2>
-          <p className="text-zinc-400">8 Relics of Warfare</p>
-        </a>
-
-        <a href="/chronicles" className="group bg-zinc-900 p-12 border border-zinc-800 hover:border-amber-500 transition">
-          <div className="text-4xl mb-4">📖</div>
-          <h2 className="text-3xl font-bold mb-2">THE CHRONICLES</h2>
-          <p className="text-zinc-400">The Testimony of RunningWolf</p>
-        </a>
-
-        <a href="/word" className="group bg-zinc-900 p-12 border border-zinc-800 hover:border-amber-500 transition">
-          <div className="text-4xl mb-4">✝️</div>
-          <h2 className="text-3xl font-bold mb-2">THE WORD</h2>
-          <p className="text-zinc-400">Scripture that anchors every relic</p>
-        </a>
-      </section>
+      <footer>
+        <Link href="/valley" className="text-amber-500/60 hover:text-amber-400 transition">
+          ⚔️ The Valley — Coming Soon
+        </Link>
+      </footer>
     </main>
   )
 }
