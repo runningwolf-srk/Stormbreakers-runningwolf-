@@ -52,7 +52,7 @@ export default function WordPage() {
       <div className="max-w-4xl mx-auto px-4">
         <header className="text-center mb-16">
           <h1 className="text-5xl font-bold text-amber-400 tracking-widest mb-4">THE WORD</h1>
-          <p className="text-amber-200/70 mb-6">Every Scripture that anchors the 16 Relics</p>
+          <p className="text-amber-200/70 mb-6">The Scriptures that form the foundation of every Stormbreakers relic</p>
           
           <div className="bg-amber-600/10 border border-amber-600/30 p-6 rounded text-left max-w-2xl mx-auto">
             <p className="text-amber-100/90 italic leading-relaxed">
@@ -100,7 +100,17 @@ export default function WordPage() {
             </section>
           ))}
         </div>
+
+        {/* CLOSING REMINDER */}
+        <footer className="mt-20 pt-12 border-t border-amber-600/20 text-center">
+          <div className="space-y-2 text-amber-200/70">
+            <p className="font-bold text-amber-400">The Word is the foundation.</p>
+            <p>The Chronicles are the testimony.</p>
+            <p>The Armory is the worship.</p>
+            <p className="text-amber-400 font-bold mt-4 text-lg">Jesus Christ is the center of them all.</p>
+          </div>
+        </footer>
       </div>
     </main>
   )
-}
+          }
