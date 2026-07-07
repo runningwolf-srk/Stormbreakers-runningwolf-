@@ -35,7 +35,7 @@ export const armory: Relic[] = [
     meaning: "The Storm Crown is not earned in calm waters. It is placed on those who have stood in the downpour and not drowned. It marks warriors who carry healing not as a theory, but as a scar.",
     reflection: "I wrote this after a season where the storm didn't let up. I kept asking God to stop the rain. He didn't. Instead He showed me He was in the rain with me. Isaiah 53:5 became my anchor — 'by His wounds we are healed.' Not 'we might be' or 'we could be.' We ARE. The crown comes after the crushing, and the healing flows from His wounds, not our strength.",
     youtube: "https://youtu.be/stsryByK5h8",
-    image: "/0aa5b830-631d-11f1-94f7-f3f3b6c0f03c.webp",
+    image: "/file_000000000fa471f882fd16e52afa59fd.png",
     tags: ["HEALING", "WORSHIP", "ISAIAH 53", "STORM"],
     relatedRelics: ["heaven-calling", "scars-that-preach"]
   },
@@ -103,7 +103,7 @@ export const armory: Relic[] = [
     meaning: "He didn't come to dominate. He came to be slaughtered. Weakness was the weapon. The cross looked like defeat, but it was the throne room of heaven breaking into earth.",
     reflection: "THE LAMB\nRevelation 5 wrecked me. John weeps because no one is worthy. Then an elder says 'Do not weep. The Lion has triumphed.' John looks for a Lion... and sees a Lamb, slain. That's the paradox of the Kingdom. God conquers by being crushed. He rules by being slaughtered. My strength had to die so His could live in me.",
     youtube: "https://youtu.be/17bwrxNCCBs",
-    image: "/AQMD_81y8KYxQT01wEtDigzM9YS3l862OtPv5NI1QlgdfAnOR1t1VNlvwOAzU5ZjySzHJixWWpJzctzObN4JM2wd.png",
+    image: "/AQMD_81y8KYxQT01wEtDigzM9YS3l862OtPv5Nl1QlgdfAnOR1t1VNIvwOAzU5ZjySzHJixWWpJzctzObN4JM2wd.png",
     tags: ["CINEMATIC WORSHIP", "REVELATION 5", "VIKING", "ORCHESTRAL"],
     relatedRelics: ["scars-that-preach", "spiritual-journey"]
   },
