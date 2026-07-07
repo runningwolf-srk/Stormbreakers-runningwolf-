@@ -26,12 +26,16 @@ export default function HomePage() {
           <h1 className="text-5xl md:text-7xl font-bold text-amber-400 tracking-widest mb-6">
             STORMBREAKERS
           </h1>
-          <p className="text-xl md:text-2xl text-amber-200/80 mb-4">
+          <p className="text-xl md:text-2xl text-amber-200/80 mb-8">
             Begin with a song. Follow the story. Stand on the Word.
           </p>
-          <p className="text-amber-100/60 max-w-2xl mx-auto mb-12">
-            One Mission. Every song anchored in Scripture, every testimony forged in fire, every act of worship for Jesus Christ.
-          </p>
+
+          <div className="text-amber-100/60 max-w-2xl mx-auto mb-12 space-y-2">
+            <p className="text-amber-400 font-bold text-lg">One Mission.</p>
+            <p>Every song anchored in Scripture.</p>
+            <p>Every testimony forged in fire.</p>
+            <p>Every act of worship for Jesus Christ.</p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Link
