@@ -72,7 +72,7 @@ export const armory: Relic[] = [
   {
     relic: "Scars That Preach",
     slug: "scars-that-preach",
-    song: "Scars That Preach",
+    song: "im on fire",
     subtitle: "Born Through The Fire",
     scripture: "But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.' Therefore I will boast all the more gladly about my weaknesses, so that Christ's power may rest on me.",
     reference: "2 Corinthians 12:9",
@@ -83,7 +83,7 @@ export const armory: Relic[] = [
     declaration: "My scars preach louder than my sermons.",
     meaning: "God doesn't hide your scars. He hallows them. Every wound becomes a weapon. Every mark becomes a message. The enemy meant to shame you. God uses it to save others.",
     reflection: "THE MARKS\nI used to hide my scars. The addiction. The shame. The nights I thought I'd never see morning. Then God said, 'Show them. That's where My power lives.' 2 Corinthians 12:9 became my anthem. His strength is made perfect in my weakness. Now my scars preach the gospel better than my words ever could.",
-    youtube: "",
+    youtube: "https://youtu.be/8XQUhWB_N5M",
     image: "/file_0000000065a071f5832301f52d11fb80.png",
     tags: ["TESTIMONY", "WORSHIP", "GRACE", "WEAKNESS", "CHRISTIAN ROCK"],
     relatedRelics: ["horn-of-war", "lion-and-lamb"]
@@ -166,7 +166,7 @@ export const armory: Relic[] = [
     declaration: "Jesus is Lord of my storm, my scars, and my story.",
     meaning: "The Armory ends where it must — at His feet. Every relic points here. Every scar, every battle, every song bows to one name. He is not one option. He is the Lord of Lords.",
     reflection: "THE THRONE\nThis is where the Armory ends and worship begins. After the healing, the calling, the war, the scars, the Lamb, the journey, the sharpening, the cross — there is only one response. He is Lord. Not just of heaven. Lord of my storm. Lord of my scars. Lord of my story. Every relic in this Armory bows to Him. King of Kings. Lord of Lords.",
-    youtube: "",
+    youtube: "https://youtu.be/9vP0NPrEv9s",
     image: "/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp",
     tags: ["WORSHIP", "VICTORY", "KINGSHIP", "REVELATION 19"],
     relatedRelics: ["blood-of-the-cross", "jesus-is-an-healer"]
