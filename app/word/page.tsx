@@ -69,7 +69,7 @@ export default function WordPage() {
           <div className="bg-amber-600/10 border border-amber-600/30 p-6 rounded text-left max-w-2xl mx-auto">
             <p className="text-amber-100/90 italic leading-relaxed">
               Every relic begins with God's Word. Before there was a song, there was Scripture.
-              Every declaration, testimony, and act of worship within Stormbreakers is built upon it.
+              Every declaration, testimony, and act of worship in Stormbreakers is built upon this foundation.
             </p>
             <p className="text-amber-400 text-sm mt-4 font-bold">
               This is Scripture. The final authority. The sword of the Spirit.
@@ -134,6 +134,13 @@ export default function WordPage() {
               </details>
             )
           })}
+        </div>
+
+        {/* YOUR SUGGESTED LINE ADDED */}
+        <div className="mt-12 text-center max-w-2xl mx-auto">
+          <p className="text-amber-100/70 italic">
+            Explore the Scriptures that shape each relic and reveal the truth behind every declaration.
+          </p>
         </div>
 
         <footer className="mt-20 pt-12 border-t border-amber-600/20 text-center space-y-8">
