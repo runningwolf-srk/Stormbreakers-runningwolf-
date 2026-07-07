@@ -1,31 +1,81 @@
-import { Relic } from '@/data/armory';
+// components/RelicCard.tsx
+import Image from 'next/image'
+import Link from 'next/link'
+import { Relic } from '@/data/armory'
 
-type Props = {
-  relic: Relic;
-};
-
-export default function RelicCard({ relic }: Props) {
-  const videoId = relic.youtube.split('/').pop()?.split('?')[0];
-
+export default function RelicCard({ relic }: { relic: Relic }) {
   return (
-    <div className="group relative overflow-hidden rounded-xl bg-zinc-900 border border-zinc-800">
-      <img
-        src={relic.image}
-        alt={relic.relic} // ✅ FIXED: was relic.name
-        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-      <div className="p-4">
-        <h3 className="text-amber-400 font-bold text-xl mb-1">{relic.relic}</h3> {/* ✅ FIXED */}
-        <p className="text-zinc-400 text-sm mb-4">{relic.song}</p>
-        <iframe
-          className="w-full aspect-video rounded-lg"
-          src={`https://www.youtube.com/embed/${videoId}`}
-          title={relic.song}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
+    <article className="relic-card border border-amber-600/30 bg-black/60 backdrop-blur-sm">
+      {/* 1. 🎨 HERO ARTWORK */}
+      <div className="relative h-64 w-full overflow-hidden">
+        <Image 
+          src={relic.image} 
+          alt={relic.relic} 
+          fill 
+          className="object-cover" 
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+        <div className="absolute bottom-4 left-4 right-4">
+          <h2 className="text-2xl font-bold text-amber-400 tracking-wider">{relic.relic.toUpperCase()}</h2>
+          <p className="text-sm text-amber-200/80">{relic.subtitle}</p>
+        </div>
       </div>
-    </div>
-  );
+
+      <div className="p-6 space-y-6">
+        {/* 2. 🎵 SONG + 6. ▶️ LISTEN */}
+        <div className="flex items-center justify-between border-b border-amber-600/20 pb-4">
+          <div>
+            <p className="text-xs text-amber-500/70 uppercase tracking-widest">Song</p>
+            <p className="text-lg text-amber-100">🎵 {relic.song}</p>
+          </div>
+          {relic.youtube && (
+            <a 
+              href={relic.youtube} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-amber-600 hover:bg-amber-500 text-black px-4 py-2 rounded font-bold text-sm transition"
+            >
+              ▶️ Enter Sound
+            </a>
+          )}
+        </div>
+
+        {/* 3. ✝️ BIBLE PASSAGE */}
+        <div>
+          <p className="text-xs text-amber-500/70 uppercase tracking-widest mb-2">Scripture</p>
+          <blockquote className="border-l-2 border-amber-600 pl-4 italic text-amber-100/90">
+            "{relic.scripture}"
+          </blockquote>
+          <cite className="text-amber-400/80 text-sm block mt-2">— {relic.reference}</cite>
+          {relic.supportingScripture && (
+            <div className="mt-4 text-sm">
+              <p className="text-amber-100/70">"{relic.supportingScripture.verse}"</p>
+              <cite className="text-amber-400/60">— {relic.supportingScripture.reference}</cite>
+            </div>
+          )}
+        </div>
+
+        {/* 4. 📜 DECLARATION */}
+        <div>
+          <p className="text-xs text-amber-500/70 uppercase tracking-widest mb-2">Declaration</p>
+          <p className="text-lg font-bold text-amber-300">{relic.declaration}</p>
+        </div>
+
+        {/* 5. 📖 REFLECTION */}
+        <div>
+          <p className="text-xs text-amber-500/70 uppercase tracking-widest mb-2">Reflection</p>
+          <p className="text-amber-100/80 text-sm whitespace-pre-line">{relic.reflection}</p>
+        </div>
+
+        {/* Link to Chronicles */}
+        <Link 
+          href={`/chronicles/${relic.slug}`}
+          className="block w-full text-center border border-amber-600/50 hover:bg-amber-600/10 text-amber-300 py-3 rounded transition"
+        >
+          📖 Read The Full Chapter
+        </Link>
+      </div>
+    </article>
+  )
 }
