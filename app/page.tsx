@@ -11,18 +11,18 @@ export default function HomePage() {
       <section className="relative py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
 
-          {/* AVATAR + NAME BLOCK - ADD THIS */}
+          {/* AVATAR + NAME BLOCK */}
           <div className="mb-8 flex flex-col items-center">
             <img
-              src="/jessy-avatar.jpg" // Upload your image to /public/jessy-avatar.jpg
+              src="/729068345_1706992463868756_7233760520950384832_n~2.jpg"
               alt="Jessy Marquez - Stormbreaker"
-              className="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-amber-500/50 mb-4 object-cover"
+              className="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-amber-500/50 mb-4 object-cover shadow-lg shadow-amber-500/20"
             />
             <h2 className="text-amber-400 text-xl font-bold tracking-widest">
               JESSY MARQUEZ
             </h2>
             <p className="text-amber-500/70 text-sm uppercase tracking-widest">
-              Stormbreaker
+              STORMBREAKER
             </p>
           </div>
 
