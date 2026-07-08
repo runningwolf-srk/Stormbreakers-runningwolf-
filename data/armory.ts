@@ -11,7 +11,7 @@ export type Relic = {
   declaration: string
   reflection: string
   testimony?: string
-  subtitle?: string  // ← ADD THIS LINE
+  subtitle?: string
   supportingScripture?: {
     verse: string
     reference: string
@@ -28,8 +28,19 @@ export const armory: Relic[] = [
     reference: "1 Peter 2:24",
     youtube: "",
     declaration: "I am healed by His wounds",
-    reflection: "Add your testimony for this song here.",
+    reflection: "Add your testimony for this song here. This is where you tell the story of how this Scripture became real in your life.",
     testimony: "2023 — ICU. Flatlined. Jesus.",
-    subtitle: "The healing anthem"  // ← ADD THIS TO EACH RELIC
+    subtitle: "The healing anthem"
+  },
+  {
+    slug: "war-cry",
+    relic: "War Cry",
+    song: "War Cry",
+    scripture: "The Lord your God is in your midst, a mighty one who will save; he will rejoice over you with gladness; he will quiet you by his love; he will exult over you with loud singing.",
+    reference: "Zephaniah 3:17",
+    youtube: "",
+    declaration: "The Lord fights for me",
+    reflection: "Write your war cry story here.",
+    subtitle: "Battle anthem"
   }
 ]
