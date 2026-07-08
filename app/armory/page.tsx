@@ -1,35 +1,33 @@
-// app/armory/page.tsx
-import { armory } from '../../data/armory'
-import { RelicCard } from '../../components/relics/RelicCard'  // ← This line is the fix
-
-export default function ArmoryPage() {
-  return (
-    <main className="min-h-screen bg-black text-amber-100 py-12">
-      <div className="max-w-4xl mx-auto px-4">
-        <header className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-amber-400 tracking-widest mb-4">THE ARMORY</h1>
-          <p className="text-amber-200/70">The expression of worship. Every song anchored in Scripture.</p>
-        </header>
-
-        {armory.length === 0? (
-          <div className="text-center py-20">
-            <p className="text-amber-100/60 text-lg">The Armory is being forged.</p>
-            <p className="text-amber-500/70 text-sm mt-2">First relic coming soon.</p>
-          </div>
-        ) : (
-          <div className="space-y-12">
-            {armory.map((relic) => (
-              <RelicCard key={relic.slug} relic={relic} />
-            ))}
-          </div>
-        )}
-
-        <footer className="mt-20 pt-12 border-t border-amber-600/20 text-center">
-          <p className="text-amber-400 font-bold text-lg">
-            Jesus Christ is the center of them all.
-          </p>
-        </footer>
-      </div>
-    </main>
-  )
+// data/armory.ts
+export type Relic = {
+  slug: string
+  relic: string
+  song: string
+  scripture: string
+  reference: string
+  youtube?: string
+  spotify?: string
+  appleMusic?: string
+  declaration: string
+  reflection: string
+  testimony?: string
+  supportingScripture?: {
+    verse: string
+    reference: string
+  }
+  image?: string
 }
+
+export const armory: Relic[] = [
+  {
+    slug: "jesus-is-an-healer",
+    relic: "Jesus Is An Healer",
+    song: "Jesus Is An Healer",
+    scripture: "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness. By his wounds you have been healed.",
+    reference: "1 Peter 2:24",
+    youtube: "",
+    declaration: "I am healed by His wounds",
+    reflection: "Add your testimony for this song here. This is where you tell the story of how this Scripture became real in your life.",
+    testimony: "2023 — ICU. Flatlined. Jesus."
+  }
+]
