@@ -1,24 +1,23 @@
+// app/layout.tsx
 import './globals.css'
-import { Cinzel, Source_Code_Pro } from 'next/font/google'
-
-const cinzel = Cinzel({ 
-  subsets: ['latin'], 
-  variable: '--font-cinzel' 
-})
-const mono = Source_Code_Pro({ 
-  subsets: ['latin'], 
-  variable: '--font-mono' 
-})
+import { NavBar } from '../components/NavBar'
 
 export const metadata = {
-  title: 'Stormbreakers | RunningWolf',
-  description: 'Eight Relics. Eight Declarations. One Call.',
+  title: 'Stormbreakers',
+  description: 'Every song anchored in Scripture. Every testimony forged in fire.',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" className={`${cinzel.variable} ${mono.variable}`}>
-      <body className="bg-black text-white">{children}</body>
+    <html lang="en">
+      <body className="bg-black">
+        <NavBar />
+        {children}
+      </body>
     </html>
   )
 }
