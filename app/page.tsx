@@ -12,7 +12,7 @@ export default function HomePage() {
         </p>
         
         <p className="text-lg text-amber-100/70 mb-12 max-w-2xl mx-auto leading-relaxed">
-          One Mission. Every song anchored in Scripture, every testimony forged in fire, every act of worship for Jesus Christ.
+          Stormbreakers is a cinematic Christian worship project where every song is anchored in Scripture, every testimony points to Jesus Christ, and every story invites others to stand on God's Word.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
