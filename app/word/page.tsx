@@ -46,8 +46,8 @@ export default function WordPage() {
         </header>
 
         {themes.map((theme) => {
-          const relicsInTheme = armory.filter(r => r.themes.includes(theme))
-          if (relicsInTheme.length === 0) return null
+          // FILTER BY PRIMARY THEME ONLY — NO DUPLICATION
+          const relicsInTheme = armory.filter(r => r.primaryTheme === theme)
 
           return (
             <section key={theme} className="mb-16">
@@ -60,26 +60,30 @@ export default function WordPage() {
                 </p>
               </div>
 
-              <div className="space-y-4">
-                {relicsInTheme.map((relic) => (
-                  <Link
-                    key={relic.slug}
-                    href={`/armory#${relic.slug}`}
-                    className="block border border-amber-600/20 rounded-lg p-4 hover:bg-amber-600/5 transition"
-                  >
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h3 className="text-xl text-amber-300 font-bold mb-1">{relic.song}</h3>
-                        <blockquote className="text-amber-100/80 italic text-sm mb-2">
-                          "{relic.scripture}"
-                        </blockquote>
-                        <cite className="text-amber-400 text-xs">— {relic.reference}</cite>
+              {relicsInTheme.length === 0? (
+                <p className="text-amber-100/40 text-sm italic pl-6">More relics for this theme coming soon.</p>
+              ) : (
+                <div className="space-y-4">
+                  {relicsInTheme.map((relic) => (
+                    <Link
+                      key={relic.slug}
+                      href={`/armory#${relic.slug}`}
+                      className="block border border-amber-600/20 rounded-lg p-4 hover:bg-amber-600/5 transition"
+                    >
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h3 className="text-xl text-amber-300 font-bold mb-1">{relic.song}</h3>
+                          <blockquote className="text-amber-100/80 italic text-sm mb-2">
+                            "{relic.scripture}"
+                          </blockquote>
+                          <cite className="text-amber-400 text-xs">— {relic.reference}</cite>
+                        </div>
+                        <span className="text-amber-600 text-sm">→</span>
                       </div>
-                      <span className="text-amber-600 text-sm">→</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </section>
           )
         })}
