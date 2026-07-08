@@ -21,7 +21,6 @@ export function RelicCard({ relic }: RelicCardProps) {
 
   return (
     <article id={relic.slug} className="border border-amber-600/30 rounded-lg overflow-hidden bg-black/50 scroll-mt-20 mb-12">
-      {/* THUMBNAIL HEADER */}
       <div className="relative h-48 bg-gradient-to-br from-amber-900/20 to-black">
         {relic.image? (
           <img
