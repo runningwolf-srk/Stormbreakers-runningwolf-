@@ -1,4 +1,4 @@
-// app/chronicles/[slug]/page.tsx
+// app/chronicles//page.tsx
 import { armory } from '../../../data/armory'
 import { notFound } from 'next/navigation'
 import { RelicCard } from '../../../components/relics/RelicCard'
