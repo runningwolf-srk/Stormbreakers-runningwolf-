@@ -22,7 +22,7 @@ export default function ArmoryPage() {
 
         <footer className="mt-20 pt-12 border-t border-amber-600/20 text-center">
           <p className="text-amber-400 font-bold text-lg">
-            Jesus Christ is the center of them all.
+            Every song is an offering of worship to Christ.
           </p>
         </footer>
       </div>
