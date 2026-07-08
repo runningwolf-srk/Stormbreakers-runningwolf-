@@ -6,11 +6,11 @@ export default function HomePage() {
     <main className="min-h-screen bg-black text-amber-100">
       <div className="max-w-4xl mx-auto px-4 py-20 text-center">
         <h1 className="text-6xl font-bold text-amber-400 tracking-widest mb-8">STORMBREAKERS</h1>
-        
+
         <p className="text-2xl text-amber-200/80 mb-4">
           Begin with a song. Follow the story. Stand on the Word.
         </p>
-        
+
         <p className="text-lg text-amber-100/70 mb-12 max-w-2xl mx-auto leading-relaxed">
           Stormbreakers is a cinematic Christian worship project where every song is anchored in Scripture, every testimony points to Jesus Christ, and every story invites others to stand on God's Word.
         </p>
