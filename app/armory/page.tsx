@@ -1,6 +1,6 @@
 // app/armory/page.tsx
 import { armory } from '../../data/armory'
-import { RelicCard } from '../../components/relics/RelicCard'
+import { RelicGrid } from '../../components/relics/RelicGrid'
 
 export default function ArmoryPage() {
   return (
@@ -17,11 +17,7 @@ export default function ArmoryPage() {
             <p className="text-amber-500/70 text-sm mt-2">First relic coming soon.</p>
           </div>
         ) : (
-          <div className="space-y-12">
-            {armory.map((relic) => (
-              <RelicCard key={relic.slug} relic={relic} />
-            ))}
-          </div>
+          <RelicGrid relics={armory} />
         )}
 
         <footer className="mt-20 pt-12 border-t border-amber-600/20 text-center">
