@@ -32,6 +32,14 @@ export function RelicCard({ relic }: RelicCardProps) {
           )}
 
           <div className="flex-1">
+            <div className="flex flex-wrap gap-2 mb-3">
+              {relic.themes.map((theme) => (
+                <span key={theme} className="text-xs bg-amber-600/20 text-amber-300 px-2 py-1 rounded">
+                  {theme}
+                </span>
+              ))}
+            </div>
+
             <h3 className="text-2xl font-bold text-amber-400 mb-2">{relic.song}</h3>
             <p className="text-amber-200/60 text-sm mb-3 uppercase tracking-widest">{relic.relic}</p>
 
