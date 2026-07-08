@@ -1,6 +1,6 @@
 // app/armory/page.tsx
 import { armory } from '../../data/armory'
-import { RelicCard } from '../../components/RelicCard'
+import { RelicCard } from '../../components/relics/RelicCard'  // ← This line is the fix
 
 export default function ArmoryPage() {
   return (
@@ -11,7 +11,7 @@ export default function ArmoryPage() {
           <p className="text-amber-200/70">The expression of worship. Every song anchored in Scripture.</p>
         </header>
 
-        {armory.length === 0 ? (
+        {armory.length === 0? (
           <div className="text-center py-20">
             <p className="text-amber-100/60 text-lg">The Armory is being forged.</p>
             <p className="text-amber-500/70 text-sm mt-2">First relic coming soon.</p>
