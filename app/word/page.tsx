@@ -31,6 +31,10 @@ const THEME_DATA = {
   'Christ the King': {
     icon: '🦁',
     description: "Jesus reigning as Lord over all creation.",
+  },
+  'Restoration': {
+    icon: '🌱',
+    description: "God making all things new.",
   }
 }
 
@@ -46,7 +50,6 @@ export default function WordPage() {
         </header>
 
         {themes.map((theme) => {
-          // FILTER BY PRIMARY THEME ONLY — NO DUPLICATION
           const relicsInTheme = armory.filter(r => r.primaryTheme === theme)
 
           return (
