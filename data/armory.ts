@@ -1,26 +1,33 @@
 // data/armory.ts
-export type Relic = { // <-- MUST HAVE "export" HERE
+export type Relic = {
   slug: string
   relic: string
   song: string
-  subtitle?: string
-  image?: string
-  youtube?: string
   scripture: string
   reference: string
+  youtube?: string
+  spotify?: string
+  appleMusic?: string
+  declaration: string
+  reflection: string
+  testimony?: string
   supportingScripture?: {
     verse: string
     reference: string
   }
-  relatedScriptures?: {
-    verse: string
-    reference: string
-  }[]
-  declaration: string
-  reflection: string
-  readingTime?: string
+  image?: string
 }
 
-export const armory: Relic[] = [ // <-- AND "export" HERE
-  //... your relics
+export const armory: Relic[] = [
+  {
+    slug: "jesus-is-an-healer",
+    relic: "Jesus Is An Healer",
+    song: "Jesus Is An Healer",
+    scripture: "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness. By his wounds you have been healed.",
+    reference: "1 Peter 2:24",
+    youtube: "",
+    declaration: "I am healed by His wounds",
+    reflection: "Add your testimony for this song here. This is where you tell the story of how this Scripture became real in your life.",
+    testimony: "2023 — ICU. Flatlined. Jesus."
+  }
 ]
