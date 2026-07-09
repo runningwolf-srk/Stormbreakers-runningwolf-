@@ -2,23 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Your existing styles... */
-
-/* Stormbreakers Typography */
-.scripture-quote {
-  @apply text-xl leading-relaxed tracking-wide text-amber-100;
-}
-
-.reflection-text {
-  @apply text-amber-100/90 leading-loose;
-}
-
-/* Smooth scroll for /armory#relic anchors */
 html {
   scroll-behavior: smooth;
 }
 
-/* Hide details marker on Safari */
-details > summary::-webkit-details-marker {
-  display: none;
+body {
+  background: #000;
+  color: #f5deb3;
 }
