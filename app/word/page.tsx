@@ -45,4 +45,24 @@ export default function WordPage() {
                               return (
                                 <Link
                                   key={relicSlug}
-                                 
+                                  href={`/armory#${relicSlug}`}
+                                  className="px-3 py-1 bg-amber-400/10 border border-amber-400/30 text-amber-200 text-sm hover:bg-amber-400/20"
+                                >
+                                  {relic.title}
+                                </Link>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </main>
+  )
+}
