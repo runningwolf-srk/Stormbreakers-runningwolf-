@@ -1,34 +1,53 @@
-// app/chronicles//page.tsx
-import { armory } from '../../../data/armory'
+import { chapters } from '../../../data/chronicles'
 import { notFound } from 'next/navigation'
-import { RelicCard } from '../../../components/relics/RelicCard'
+import Link from 'next/link'
 
-export async function generateStaticParams() {
-  return armory.map((relic) => ({
-    slug: relic.slug,
+type Props = {
+  params: { slug: string }
+}
+
+export function generateStaticParams() {
+  return chapters.map((chapter) => ({
+    slug: chapter.slug,
   }))
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const relic = armory.find((r) => r.slug === params.slug)
+export default function ChapterPage({ params }: Props) {
+  const index = chapters.findIndex((c) => c.slug === params.slug)
+  const chapter = chapters[index]
 
-  if (!relic) return {}
+  if (!chapter) return notFound()
 
-  return {
-    title: `${relic.relic} | Stormbreakers Chronicles`,
-    description: relic.declaration || relic.scripture
-  }
-}
-
-export default function ChroniclePage({ params }: { params: { slug: string } }) {
-  const relic = armory.find((r) => r.slug === params.slug)
-
-  if (!relic) notFound()
+  const prev = chapters[index - 1]
+  const next = chapters[index + 1]
 
   return (
-    <main className="min-h-screen bg-black text-amber-100 py-12">
-      <div className="max-w-4xl mx-auto px-4">
-        <RelicCard relic={relic} />
+    <main className="min-h-screen bg-black text-white">
+      <div className="max-w-3xl mx-auto px-4 py-20">
+        <Link href="/chronicles" className="text-amber-400 hover:text-amber-300 mb-8 block">
+          ← Return to Table of Contents
+        </Link>
+
+        <h1 className="text-4xl font-bold text-amber-400 mb-2">{chapter.title}</h1>
+        <p className="text-amber-200/60 mb-12">Chapter {index + 1} of {chapters.length}</p>
+
+        <article className="prose prose-invert prose-lg whitespace-pre-wrap">
+          {chapter.content}
+        </article>
+
+        <nav className="flex justify-between mt-16 pt-8 border-t border-amber-400/20">
+          {prev ? (
+            <Link href={`/chronicles/${prev.slug}`} className="text-amber-400 hover:text-amber-300">
+              ← {prev.title}
+            </Link>
+          ) : <div />}
+          
+          {next ? (
+            <Link href={`/chronicles/${next.slug}`} className="text-amber-400 hover:text-amber-300">
+              {next.title} →
+            </Link>
+          ) : <div />}
+        </nav>
       </div>
     </main>
   )
