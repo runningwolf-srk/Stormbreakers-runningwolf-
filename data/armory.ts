@@ -1,4 +1,3 @@
-// data/armory.ts
 export type Relic = {
   slug: string
   relic: string
@@ -27,10 +26,10 @@ export const armory: Relic[] = [
     primaryTheme: "Healing",
     themes: ["Redemption", "Grace"],
     declaration: "I am healed by His wounds",
-    reflection: "", // ← ADD YOUR 300-500 WORD TESTIMONY HERE
-    testimony: "", // ← DELETE THIS LINE IF ICU STORY IS FICTION
+    reflection: "",
+    testimony: "", // DELETE THIS LINE IF ICU STORY IS FICTION
     subtitle: "The healing anthem",
-    youtube: "", // ← ADD YOUTUBE ID: abc123xyz
+    youtube: "",
     image: "/images/relics/healer.jpg"
   },
   {
@@ -42,9 +41,9 @@ export const armory: Relic[] = [
     primaryTheme: "Spiritual Warfare",
     themes: ["Calling", "Christ the King"],
     declaration: "The Lord fights for me",
-    reflection: "", // ← ADD YOUR 300-500 WORD TESTIMONY HERE
+    reflection: "",
     subtitle: "Battle anthem",
-    youtube: "", // ← ADD YOUTUBE ID
+    youtube: "",
     image: "/images/relics/war-cry.jpg"
   }
 ]
