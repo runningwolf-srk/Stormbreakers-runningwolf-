@@ -1,4 +1,3 @@
-// app/word/page.tsx
 import { armory } from '../../data/armory'
 import Link from 'next/link'
 
@@ -46,6 +45,7 @@ export default function WordPage() {
       <div className="max-w-4xl mx-auto px-4">
         <header className="text-center mb-16">
           <h1 className="text-5xl font-bold text-amber-400 tracking-widest mb-4">THE WORD</h1>
+          <p className="text-amber-400 font-bold text-lg mb-2">God speaks.</p>
           <p className="text-amber-200/70">Every song anchored in Scripture. Browse by theme.</p>
         </header>
 
