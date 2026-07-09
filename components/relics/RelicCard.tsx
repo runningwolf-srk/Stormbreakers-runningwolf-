@@ -1,4 +1,3 @@
-// components/relics/RelicCard.tsx
 "use client"
 
 import { useState } from 'react'
