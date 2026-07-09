@@ -1,10 +1,9 @@
-// app/layout.tsx
+import type { Metadata } from 'next'
 import './globals.css'
-import { NavBar } from '../components/NavBar'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Stormbreakers',
-  description: 'Every song anchored in Scripture. Every testimony forged in fire.',
+  description: 'Cinematic Christian worship. Every song anchored in Scripture.',
 }
 
 export default function RootLayout({
@@ -14,10 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black">
-        <NavBar />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
