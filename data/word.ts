@@ -2,11 +2,13 @@ export type Scripture = {
   ref: string
   text: string
   relics: string[] // slugs from data/armory.ts
+  chapters: string[] // slugs from data/chronicles.ts
 }
 
 export type Theme = {
   slug: string
   title: string
+  icon: string
   scriptures: Scripture[]
 }
 
@@ -14,53 +16,63 @@ export const themes: Theme[] = [
   {
     slug: 'healing',
     title: 'Healing',
+    icon: '❤️',
     scriptures: [
       {
         ref: 'Isaiah 53:5',
         text: 'But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.',
-        relics: ['jesus-is-an-healer']
+        relics: ['jesus-is-an-healer'],
+        chapters: ['the-valley']
       },
       {
-        ref: 'Psalm 103:2-3',
-        text: 'Praise the Lord, my soul, and forget not all his benefits— who forgives all your sins and heals all your diseases',
-        relics: ['jesus-is-an-healer']
+        ref: 'Psalm 147:3',
+        text: 'He heals the brokenhearted and binds up their wounds.',
+        relics: ['jesus-is-an-healer'],
+        chapters: ['the-valley']
       },
       {
-        ref: 'James 5:14-15',
-        text: 'Is anyone among you sick? Let them call the elders of the church to pray over them... And the prayer offered in faith will make the sick person well',
-        relics: ['jesus-is-an-healer']
+        ref: 'Jeremiah 17:14',
+        text: 'Heal me, O Lord, and I will be healed; save me and I will be saved, for you are the one I praise.',
+        relics: [],
+        chapters: ['the-valley', 'the-journey']
       }
     ]
   },
   {
     slug: 'calling',
     title: 'Calling',
+    icon: '📣',
     scriptures: [
       {
-        ref: 'Jeremiah 1:5',
-        text: 'Before I formed you in the womb I knew you, before you were born I set you apart; I appointed you as a prophet to the nations.',
-        relics: ['running-wolf']
+        ref: 'Romans 11:29',
+        text: 'For the gifts and the calling of God are irrevocable.',
+        relics: ['running-wolf'],
+        chapters: ['the-encounter']
       },
       {
-        ref: 'Ephesians 2:10',
-        text: 'For we are God’s handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.',
-        relics: ['running-wolf']
+        ref: 'Jeremiah 1:5',
+        text: 'Before I formed you in the womb I knew you, before you were born I set you apart.',
+        relics: ['running-wolf'],
+        chapters: ['the-encounter']
       }
     ]
   },
   {
     slug: 'spiritual-warfare',
     title: 'Spiritual Warfare',
+    icon: '⚔️',
     scriptures: [
+      {
+        ref: 'Joel 2:1',
+        text: 'Blow the trumpet in Zion; sound the alarm on my holy hill. Let all who live in the land tremble.',
+        relics: [],
+        chapters: ['the-armory', 'the-battle']
+      },
       {
         ref: 'Ephesians 6:11',
         text: 'Put on the full armor of God, so that you can take your stand against the devil’s schemes.',
-        relics: ['armor-of-god']
-      },
-      {
-        ref: '2 Corinthians 10:4',
-        text: 'The weapons we fight with are not the weapons of the world. On the contrary, they have divine power to demolish strongholds.',
-        relics: ['armor-of-god']
+        relics: [],
+        chapters: ['the-armory']
       }
     ]
   }
