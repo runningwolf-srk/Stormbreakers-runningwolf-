@@ -304,15 +304,15 @@ export const armory: Relic[] = [
     youtube: "https://youtu.be/BCKoGjYJZdg",
     spotify: "",
     appleMusic: "",
-    image: "/AQOz4uIRTYBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQoIJbmduV4EbRJKxE183PEOaupTTShyCiqg.png"
+    image: "/AQOz4ulRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQolJbmduV4EbRJKxE183PEOaupTTShyCiqg.png"
   },
   {
     slug: "wolf-fang",
     relic: "Wolf Fang",
     song: "Wolf Fang",
-    scripture: "Like a lion I will roar; like a young lion I will growl... I will make your forehead like the hardest stone, harder than flint",
+    scripture: "Like the hardest stone, harder than flint, I have made your forehead... The lion has roared; who will not fear?",
     reference: "Ezekiel 3:9, Amos 3:8 ESV",
     primaryTheme: "Calling",
     themes: ["Calling", "Spiritual Warfare", "Identity", "Authority"],
     declaration: "The tooth of the sent one. Hard as flint. Sharp as heaven. The mark of RunningWolf.",
-    reflection: "Carved fang. Gold rune cap. Braided leather. Ezekiel 3:9 — forehead like flint. Amos 3:8 — the Lion has roared. This is the mark of the sent one. No
+    reflection: "Carved fang. Gold rune cap. Braided leather. Ezekiel 3:9 — forehead like flint. Amos 3:8 — the Lion has roared. This is the mark of the sent one. Not jewelry. A we
