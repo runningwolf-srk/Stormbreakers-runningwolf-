@@ -1,8 +1,8 @@
 export type Scripture = {
   ref: string
   text: string
-  relics: string[] // slugs from data/armory.ts
-  chapters: string[] // slugs from data/chronicles.ts
+  relics: string[]
+  chapters: string[]
 }
 
 export type Theme = {
@@ -65,14 +65,20 @@ export const themes: Theme[] = [
       {
         ref: 'Joel 2:1',
         text: 'Blow the trumpet in Zion; sound the alarm on my holy hill. Let all who live in the land tremble.',
-        relics: [],
+        relics: ['war-cry'],
         chapters: ['the-armory', 'the-battle']
       },
       {
         ref: 'Ephesians 6:11',
         text: 'Put on the full armor of God, so that you can take your stand against the devil’s schemes.',
-        relics: [],
+        relics: ['war-cry'],
         chapters: ['the-armory']
+      },
+      {
+        ref: '2 Corinthians 10:4',
+        text: 'The weapons we fight with are not the weapons of the world. On the contrary, they have divine power to demolish strongholds.',
+        relics: ['war-cry'],
+        chapters: ['the-battle']
       }
     ]
   }
