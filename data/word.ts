@@ -215,6 +215,18 @@ export const themes: Theme[] = [
         text: 'Look! I see four men walking around in the fire, unbound and unharmed, and the fourth looks like a son of the gods.',
         relics: ['im-on-fire'],
         chapters: ['the-battle']
+      },
+      {
+        ref: 'Hebrews 12:29',
+        text: 'For our God is a consuming fire.',
+        relics: ['eternal-fire'],
+        chapters: ['the-battle', 'the-witness']
+      },
+      {
+        ref: 'Leviticus 6:13',
+        text: 'The fire on the altar must be kept burning; it must not go out.',
+        relics: ['eternal-fire'],
+        chapters: ['the-commission', 'the-witness']
       }
     ]
   }
