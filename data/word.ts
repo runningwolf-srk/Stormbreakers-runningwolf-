@@ -118,6 +118,12 @@ export const themes: Theme[] = [
         chapters: ['the-commission', 'the-hope']
       },
       {
+        ref: 'Revelation 5:5-6',
+        text: 'Behold, the Lion of the tribe of Judah, the Root of David, has conquered... Then I saw a Lamb standing, as though it had been slain.',
+        relics: ['lion-and-lamb'],
+        chapters: ['the-commission', 'the-witness']
+      },
+      {
         ref: 'Philippians 2:10-11',
         text: 'At the name of Jesus every knee should bow... and every tongue confess that Jesus Christ is Lord.',
         relics: ['lord-of-lords'],
@@ -161,6 +167,12 @@ export const themes: Theme[] = [
     title: 'Redemption',
     icon: '✨',
     scriptures: [
+      {
+        ref: 'Jeremiah 29:11',
+        text: 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.',
+        relics: ['heaven-calling'],
+        chapters: ['the-journey', 'the-hope']
+      },
       {
         ref: 'Ephesians 1:7',
         text: 'In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God’s grace.',
