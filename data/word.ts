@@ -183,6 +183,12 @@ export const themes: Theme[] = [
         text: 'God is spirit, and those who worship him must worship in spirit and truth.',
         relics: ['spiritual-journey'],
         chapters: ['the-journey']
+      },
+      {
+        ref: 'Isaiah 61:1',
+        text: 'The Spirit of the Lord God is upon me, because the Lord has anointed me to bring good news to the poor.',
+        relics: ['spirit-mantle'],
+        chapters: ['the-commission', 'the-witness']
       }
     ]
   },
@@ -263,6 +269,12 @@ export const themes: Theme[] = [
         text: 'The fire on the altar must be kept burning; it must not go out.',
         relics: ['eternal-fire'],
         chapters: ['the-commission', 'the-witness']
+      },
+      {
+        ref: '2 Kings 2:13-14',
+        text: 'Elisha picked up the cloak that had fallen from Elijah... he struck the water with it.',
+        relics: ['spirit-mantle'],
+        chapters: ['the-commission', 'the-battle']
       }
     ]
   }
