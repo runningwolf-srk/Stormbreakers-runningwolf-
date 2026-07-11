@@ -87,6 +87,12 @@ export const themes: Theme[] = [
     icon: '⚔️',
     scriptures: [
       {
+        ref: '1 Samuel 7:10',
+        text: 'Then the Lord thundered with a mighty sound that day against the Philistines and threw them into confusion.',
+        relics: ['thunder-drums'],
+        chapters: ['the-battle']
+      },
+      {
         ref: 'Joel 2:1',
         text: 'Blow the trumpet in Zion; sound the alarm on my holy hill.',
         relics: ['war-cry', 'horn-of-war'],
@@ -167,115 +173,13 @@ export const themes: Theme[] = [
     icon: '🙌',
     scriptures: [
       {
+        ref: 'Psalm 29:3-4',
+        text: 'The voice of the Lord is over the waters; the God of glory thunders... The voice of the Lord is powerful; the voice of the Lord is full of majesty.',
+        relics: ['thunder-drums'],
+        chapters: ['the-battle', 'the-witness']
+      },
+      {
         ref: 'James 4:8',
         text: 'Draw near to God, and he will draw near to you.',
         relics: ['spiritual-journey'],
         chapters: ['the-journey']
-      },
-      {
-        ref: 'Psalm 95:6',
-        text: 'Oh come, let us worship and bow down; let us kneel before the Lord, our Maker!',
-        relics: ['spiritual-journey'],
-        chapters: ['the-journey', 'the-hope']
-      },
-      {
-        ref: 'John 4:24',
-        text: 'God is spirit, and those who worship him must worship in spirit and truth.',
-        relics: ['spiritual-journey'],
-        chapters: ['the-journey']
-      },
-      {
-        ref: 'Isaiah 61:1',
-        text: 'The Spirit of the Lord God is upon me, because the Lord has anointed me to bring good news to the poor.',
-        relics: ['spirit-mantle'],
-        chapters: ['the-commission', 'the-witness']
-      }
-    ]
-  },
-  {
-    slug: 'redemption',
-    title: 'Redemption',
-    icon: '✨',
-    scriptures: [
-      {
-        ref: 'Jeremiah 31:33',
-        text: 'I will put my law within them, and I will write it on their hearts. And I will be their God, and they shall be my people.',
-        relics: ['chronicle-stone'],
-        chapters: ['the-commission', 'the-witness']
-      },
-      {
-        ref: 'Exodus 31:18',
-        text: 'And he gave to Moses... the two tablets of the testimony, tablets of stone, written with the finger of God.',
-        relics: ['chronicle-stone'],
-        chapters: ['the-commission']
-      },
-      {
-        ref: 'Jeremiah 29:11',
-        text: 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.',
-        relics: ['heaven-calling'],
-        chapters: ['the-journey', 'the-hope']
-      },
-      {
-        ref: 'Ephesians 1:7',
-        text: 'In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God’s grace.',
-        relics: ['blood-of-cross'],
-        chapters: ['the-journey']
-      },
-      {
-        ref: 'Colossians 1:13-14',
-        text: 'For he has rescued us from the dominion of darkness and brought us into the kingdom of the Son he loves, in whom we have redemption.',
-        relics: ['blood-of-cross'],
-        chapters: ['the-encounter', 'the-journey']
-      },
-      {
-        ref: 'Isaiah 53:5',
-        text: 'But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.',
-        relics: ['blood-of-cross', 'jesus-is-an-healer'],
-        chapters: ['the-valley', 'the-witness']
-      }
-    ]
-  },
-  {
-    slug: 'fire',
-    title: 'Fire',
-    icon: '🔥',
-    scriptures: [
-      {
-        ref: 'Galatians 2:20',
-        text: 'I have been crucified with Christ. It is no longer I who live, but Christ who lives in me.',
-        relics: ['im-on-fire'],
-        chapters: ['the-battle', 'the-witness']
-      },
-      {
-        ref: 'Isaiah 43:2',
-        text: 'When you walk through the fire, you will not be burned; the flames will not set you ablaze.',
-        relics: ['im-on-fire'],
-        chapters: ['the-valley', 'the-battle']
-      },
-      {
-        ref: 'Daniel 3:25',
-        text: 'Look! I see four men walking around in the fire, unbound and unharmed, and the fourth looks like a son of the gods.',
-        relics: ['im-on-fire'],
-        chapters: ['the-battle']
-      },
-      {
-        ref: 'Hebrews 12:29',
-        text: 'For our God is a consuming fire.',
-        relics: ['eternal-fire'],
-        chapters: ['the-battle', 'the-witness']
-      },
-      {
-        ref: 'Leviticus 6:13',
-        text: 'The fire on the altar must be kept burning; it must not go out.',
-        relics: ['eternal-fire'],
-        chapters: ['the-commission', 'the-witness']
-      },
-      {
-        ref: '2 Kings 2:13-14',
-        text: 'Elisha picked up the cloak that had fallen from Elijah... he struck the water with it.',
-        relics: ['spirit-mantle'],
-        chapters: ['the-commission', 'the-battle']
-      }
-    ]
-  }
-]
