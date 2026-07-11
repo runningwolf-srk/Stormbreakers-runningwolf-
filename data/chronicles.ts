@@ -15,19 +15,19 @@ export const chapters: Chapter[] = [
     slug: 'the-valley',
     title: 'The Valley',
     subtitle: 'Brokenness. The storm. The beginning.',
-    content: `I woke up to machines. Tubes in my throat. My chest felt like concrete. 
+    content: `I woke up to machines. Tubes in my throat. My chest felt like concrete.
 
-The doctor said "massive heart attack." I was 39. Flatlined. 
+The doctor said "massive heart attack." I was 39. Flatlined.
 
-They gave up. Jesus didn't. 
+They gave up. Jesus didn't.
 
-That's where God found me. Not in a church. In ICU. Psalm 23 wasn't poetry anymore. It was a map. 
+That's where God found me. Not in a church. In ICU. Psalm 23 wasn't poetry anymore. It was a map.
 
-"Even though I walk through the valley of the shadow of death..." 
+"Even though I walk through the valley of the shadow of death..."
 
-I wasn't walking. I was flat on my back. But He was with me. 
+I wasn't walking. I was flat on my back. But He was with me.
 
-By His wounds, I was healed. 
+By His wounds, I was healed.
 
 This isn't theology. This is my biography.`,
     scripture: {
@@ -40,23 +40,23 @@ This isn't theology. This is my biography.`,
     slug: 'the-encounter',
     title: 'The Encounter',
     subtitle: 'The moment God calls.',
-    content: `They pronounced me dead. 
+    content: `They pronounced me dead.
 
-Then I heard my name. Not from the doctors. From Him. 
+Then I heard my name. Not from the doctors. From Him.
 
-"Get up." 
+"Get up."
 
-I came back with lungs that work and a name I didn't choose. Running Wolf. 
+I came back with lungs that work and a name I didn't choose. Running Wolf.
 
-The wolf runs alone, but not without the Shepherd. I died in the valley. I came back for the storm. 
+The wolf runs alone, but not without the Shepherd. I died in the valley. I came back for the storm.
 
-Jeremiah 1:5 wasn't written about someone else. "Before I formed you in the womb I knew you. Before you were born I set you apart." 
+Jeremiah 1:5 wasn't written about someone else. "Before I formed you in the womb I knew you. Before you were born I set you apart."
 
-He set me apart in ICU. 
+He set me apart in ICU.
 
-He didn't save me to sit. He saved me to run. Into the storm. With a war cry. 
+He didn't save me to sit. He saved me to run. Into the storm. With a war cry.
 
-Mahalla of the Storm — that's the pack. That's the mission. 
+Mahalla of the Storm — that's the pack. That's the mission.
 
 But I know my Savior will never die.`,
     scripture: {
@@ -85,34 +85,50 @@ But I know my Savior will never die.`,
       ref: 'Isaiah 6:8',
       text: 'Then I heard the voice of the Lord saying, "Whom shall I send?" And I said, "Here am I. Send me!"'
     },
-    relicSlug: null
+    relicSlug: 'lord-of-lords'
   },
   {
     slug: 'the-journey',
     title: 'The Journey',
     subtitle: 'Restoration and purpose.',
-    content: `Chapter coming soon.`,
+    content: `Heaven called me.
+
+Not to take me home. To send me back.
+
+I stood on that mountain — not in body, but in spirit. Cross of light. Storm below. Guitar in hand.
+
+He said "You have work to do."
+
+ICU was the valley. The encounter was the call. This is the road.
+
+Jeremiah 29:11 hits different when you’ve been dead. "Plans to prosper you. Plans to give you hope and a future."
+
+I had no future. Flatlined. Then He wrote one.
+
+Heaven Calling isn’t about escape. It’s about assignment.
+
+I’m not running from the storm. I’m running in it. Because He sent me.`,
     scripture: {
       ref: 'Jeremiah 29:11',
       text: 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you'
     },
-    relicSlug: null
+    relicSlug: 'heaven-calling'
   },
   {
     slug: 'the-battle',
     title: 'The Battle',
     subtitle: 'Scars, sacrifice, and redemption.',
-    content: `This is where the war cry rises. 
+    content: `This is where the war cry rises.
 
-The enemy wants silence in the valley. God commands a sound. 
+The enemy wants silence in the valley. God commands a sound.
 
-Joel 2:1 says blow the trumpet. Sound the alarm. 
+Joel 2:1 says blow the trumpet. Sound the alarm.
 
-This isn't worship for the church stage. This is warfare. Drums. Steel. A cry that makes hell flinch. 
+This isn't worship for the church stage. This is warfare. Drums. Steel. A cry that makes hell flinch.
 
-The weapons we fight with are not the weapons of the world. 
+The weapons we fight with are not the weapons of the world.
 
-We don't swing swords. We declare Scripture. We sing until strongholds break. 
+We don't swing swords. We declare Scripture. We sing until strongholds break.
 
 War Cry was forged here.`,
     scripture: {
