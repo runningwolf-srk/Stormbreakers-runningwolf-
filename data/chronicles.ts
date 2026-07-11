@@ -7,7 +7,7 @@ export type Chapter = {
     ref: string
     text: string
   }
-  relicSlug: string | null // links to data/armory.ts
+  relicSlug: string | null
 }
 
 export const chapters: Chapter[] = [
@@ -50,7 +50,7 @@ I wasn't walking. I was flat on my back. But He was with me.`,
       ref: 'Ephesians 6:11',
       text: 'Put on the full armor of God, so that you can take your stand against the devil’s schemes'
     },
-    relicSlug: null
+    relicSlug: 'war-cry'
   },
   {
     slug: 'the-commission',
@@ -78,12 +78,24 @@ I wasn't walking. I was flat on my back. But He was with me.`,
     slug: 'the-battle',
     title: 'The Battle',
     subtitle: 'Scars, sacrifice, and redemption.',
-    content: `Chapter coming soon.`,
+    content: `This is where the war cry rises. 
+
+The enemy wants silence in the valley. God commands a sound. 
+
+Joel 2:1 says blow the trumpet. Sound the alarm. 
+
+This isn't worship for the church stage. This is warfare. Drums. Steel. A cry that makes hell flinch. 
+
+The weapons we fight with are not the weapons of the world. 
+
+We don't swing swords. We declare Scripture. We sing until strongholds break. 
+
+War Cry was forged here.`,
     scripture: {
       ref: '2 Corinthians 10:4',
-      text: 'The weapons we fight with are not the weapons of the world. On the contrary, they have divine power'
+      text: 'The weapons we fight with are not the weapons of the world. On the contrary, they have divine power to demolish strongholds'
     },
-    relicSlug: null
+    relicSlug: 'war-cry'
   },
   {
     slug: 'the-witness',
