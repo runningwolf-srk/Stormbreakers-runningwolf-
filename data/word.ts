@@ -118,5 +118,30 @@ export const themes: Theme[] = [
         chapters: ['the-battle']
       }
     ]
+  },
+  {
+    slug: 'redemption',
+    title: 'Redemption',
+    icon: '✨',
+    scriptures: [
+      {
+        ref: 'Jeremiah 29:11',
+        text: 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.',
+        relics: ['heaven-calling'],
+        chapters: ['the-journey', 'the-hope']
+      },
+      {
+        ref: 'Ephesians 1:7',
+        text: 'In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God’s grace.',
+        relics: ['heaven-calling'],
+        chapters: ['the-journey']
+      },
+      {
+        ref: 'Colossians 1:13-14',
+        text: 'For he has rescued us from the dominion of darkness and brought us into the kingdom of the Son he loves, in whom we have redemption.',
+        relics: ['heaven-calling'],
+        chapters: ['the-encounter', 'the-journey']
+      }
+    ]
   }
 ]
