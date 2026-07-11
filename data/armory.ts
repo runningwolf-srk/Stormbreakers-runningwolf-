@@ -238,4 +238,21 @@ export const armory: Relic[] = [
     appleMusic: '',
     image: '/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png'
   },
+  {
+    slug: 'storm-crown',
+    relic: 'Storm Crown',
+    song: 'Storm Crown',
+    scripture: 'The Lord sits enthroned over the flood; the Lord sits enthroned as king forever',
+    reference: 'Psalm 29:10 ESV',
+    primaryTheme: 'Kingship',
+    themes: ['Kingship', 'Worship', 'Authority', 'Storm'],
+    declaration: 'The storm does not dethrone Him. It reveals Him. He reigns in the thunder. He rules the flood.',
+    reflection: 'Crown in the vortex. Lightning. Gold breaking through chaos. Psalm 29:10 — He sits enthroned over the flood. Revelation 4:10 — they cast their crowns before the throne. This is the storm I died in. This is the crown I saw. Not mine. His. Reigning in the chaos.',
+    testimony: 'Flatlined at 39. The storm hit. Machines, tubes, monitors screaming. Death was the flood. Then I saw the crown. Not on my head. On His. In the middle of the vortex. Thunder didn’t shake Him. It worshipped Him. He reigns over the storm that tried to take me. Still does.',
+    subtitle: 'The King Reigns in the Storm',
+    youtube: 'https://youtu.be/MWHp_CRrKC8',
+    spotify: '',
+    appleMusic: '',
+    image: '/AQMuwnjDLB5qcpKNKR8cB7D1JCIwUVH55YwQ1CwxwBeVt1LFwoHctkJr4-EqxEcc7luealmOHzEm81t1QIngLRHX-i2YAtlixooMqpxK7IZSs-I4BxkQTPSu4Qr7nqFZLR9x4GlJp9KczAb7bDQYcukJc_-YWw.png'
+  },
 ]
