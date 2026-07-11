@@ -142,16 +142,4 @@ export const themes: Theme[] = [
       },
       {
         ref: `Amos 3:8`,
-        text: `The lion has roared; who will not fear? The Lord God has spoken; who can but prophesy?`,
-        relics: [`wolf-fang`],
-        chapters: [`the-commission`]
-      }
-    ]
-  },
-  {
-    slug: `redemption`,
-    title: `Redemption`,
-    icon: `✝️`,
-    scriptures: [
-      {
-        ref: `Isaiah
+        text: `The lion has roared; who will not fear?
