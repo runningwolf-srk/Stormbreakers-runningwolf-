@@ -147,14 +147,4 @@ export const themes: Theme[] = [
     title: `Kingship`,
     icon: `👑`,
     scriptures: [
-      {
-        ref: `Psalm 29:10`,
-        text: `The Lord sits enthroned over the flood; the Lord sits enthroned as king forever.`,
-        relics: [`storm-crown`],
-        chapters: [`the-commission`, `the-witness`]
-      },
-      {
-        ref: `Revelation 19:16`,
-        text: `On his robe and on his thigh he has a name written, King of kings and Lord of lords.`,
-        relics: [`lord-of-lords`],
-        chapters: [`the-commission`, `
+     
