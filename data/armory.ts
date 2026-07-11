@@ -103,6 +103,23 @@ export const armory: Relic[] = [
     image: '/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp'
   },
   {
+    slug: 'heaven-calling',
+    relic: 'Heaven Calling',
+    song: 'Heaven Calling',
+    scripture: 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you',
+    reference: 'Jeremiah 29:11 ESV',
+    primaryTheme: 'Redemption',
+    themes: ['Redemption', 'Purpose', 'Calling', 'Hope'],
+    declaration: 'Heaven is calling me home, but sending me back with purpose.',
+    reflection: 'This is the sound after ICU. After the valley. After the encounter. Heaven called me — not to take me home yet, but to send me back. This is the journey anthem. The assignment. The "not yet" turned into "go."',
+    testimony: 'I died. I heard heaven. Then He said "not yet." Heaven called my name, then sent me running. This anthem is for the ones who came back with orders.',
+    subtitle: 'The assignment anthem',
+    youtube: 'https://youtu.be/oxNauKuxg4Q',
+    spotify: '',
+    appleMusic: '',
+    image: '/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp'
+  },
+  {
     slug: 'im-on-fire',
     relic: "I'm On Fire",
     song: "I'm On Fire",
