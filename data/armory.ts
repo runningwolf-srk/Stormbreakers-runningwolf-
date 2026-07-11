@@ -11,7 +11,7 @@ export type Relic = {
   reflection: string
   testimony?: string
   subtitle?: string
-  primaryTheme: 'Healing' | 'Calling' | 'Spiritual Warfare' | 'Redemption' | 'Worship'
+  primaryTheme: 'Healing' | 'Calling' | 'Spiritual Warfare' | 'Redemption' | 'Worship' | 'Kingship'
   themes: string[]
   image?: string
 }
@@ -67,5 +67,22 @@ export const armory: Relic[] = [
     spotify: '',
     appleMusic: '',
     image: '/742511209_1767694164584264_3575760936981026908_n.webp'
+  },
+  {
+    slug: 'lord-of-lords',
+    relic: 'Lord of Lords',
+    song: 'Lord of Lords',
+    scripture: 'On his robe and on his thigh he has a name written, King of kings and Lord of lords',
+    reference: 'Revelation 19:16 ESV',
+    primaryTheme: 'Kingship',
+    themes: ['Kingship', 'Worship', 'Authority', 'Victory'],
+    declaration: 'He reigns forever. Every knee will bow. Every tongue confess. He is Lord of Lords.',
+    reflection: 'This is the throne room anthem. Not a worship set opener — a declaration of final authority. The ICU gave me a glimpse of the King. The cross behind the throne. The crown of light. This is who saved me.',
+    testimony: 'When they said I was dead, I met the King. Not a story. Not a metaphor. The Lord of Lords spoke, and I lived. This song is my witness to His throne.',
+    subtitle: 'A spiritual anthem',
+    youtube: 'https://youtu.be/9vP0NPrEv9s',
+    spotify: '',
+    appleMusic: '',
+    image: '/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp'
   },
 ]
