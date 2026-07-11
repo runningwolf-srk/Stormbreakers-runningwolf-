@@ -90,29 +90,29 @@ But I know my Savior will never die.`,
   {
     slug: 'the-journey',
     title: 'The Journey',
-    subtitle: 'Restoration and purpose.',
-    content: `Heaven called me.
+    subtitle: 'A Journey To His Presence.',
+    content: `This is not religion. This is presence.
 
-Not to take me home. To send me back.
+A WORSHIP ALBUM. A JOURNEY TO HIS PRESENCE.
 
-I stood on that mountain — not in body, but in spirit. Cross of light. Storm below. Guitar in hand.
+I stood at the portal — not in body, but in spirit. Cross of light. Eclipse of red and blue. Wrath and mercy colliding.
 
-He said "You have work to do."
+He said "Draw near."
 
 ICU was the valley. The encounter was the call. This is the road.
 
-Jeremiah 29:11 hits different when you’ve been dead. "Plans to prosper you. Plans to give you hope and a future."
+James 4:8 hits different when you’ve been dead. "Draw near to God, and he will draw near to you."
 
-I had no future. Flatlined. Then He wrote one.
+I had no way. Flatlined. Then He made one.
 
-Heaven Calling isn’t about escape. It’s about assignment.
+Spiritual Journey isn’t about escape. It’s about abiding.
 
-I’m not running from the storm. I’m running in it. Because He sent me.`,
+I’m not running from the storm. I’m walking into glory. Because He’s there.`,
     scripture: {
-      ref: 'Jeremiah 29:11',
-      text: 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you'
+      ref: 'James 4:8',
+      text: 'Draw near to God, and he will draw near to you'
     },
-    relicSlug: 'heaven-calling'
+    relicSlug: 'spiritual-journey'
   },
   {
     slug: 'the-battle',
