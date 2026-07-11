@@ -204,4 +204,21 @@ export const armory: Relic[] = [
     appleMusic: '',
     image: '/AQMD_81y8KYxQT01wEtDigzM9YS3l862OtPv5NI1QlgdfAnOR1t1VNIvwOAzU5ZjySzHJixWWpJzctzObN4JM2wd.png'
   },
+  {
+    slug: 'eternal-fire',
+    relic: 'Eternal Fire',
+    song: 'Eternal Fire',
+    scripture: 'For our God is a consuming fire... The fire on the altar must be kept burning; it must not go out',
+    reference: 'Hebrews 12:29, Leviticus 6:13 ESV',
+    primaryTheme: 'Fire',
+    themes: ['Fire', 'Worship', 'Presence', 'Holiness'],
+    declaration: 'The fire that refined me in ICU never goes out. It burns on the altar of my life. Consuming. Eternal. Holy.',
+    reflection: 'Burning cross. Molten diamond. Embers in the void. This is Leviticus 6:13 — the fire on the altar must not go out. Hebrews 12:29 — our God is a consuming fire. ICU was the altar. The heart attack was the sacrifice. He lit a fire that death couldn’t kill.',
+    testimony: 'Flatlined at 39. The fire should have ended me. Instead it started me. Not a spark. An eternal flame. Not mine. His. It burns through the valley. Through the battle. Through the worship. It will never go out. Because He never does.',
+    subtitle: 'The Fire That Never Goes Out',
+    youtube: 'https://youtu.be/maI6giUcYYk',
+    spotify: '',
+    appleMusic: '',
+    image: '/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png'
+  },
 ]
