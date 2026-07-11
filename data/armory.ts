@@ -187,4 +187,21 @@ export const armory: Relic[] = [
     appleMusic: '',
     image: '/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp'
   },
+  {
+    slug: 'lion-and-lamb',
+    relic: 'Lion and Lamb',
+    song: 'Lion and Lamb',
+    scripture: 'Behold, the Lion of the tribe of Judah, the Root of David, has conquered... Then I saw a Lamb standing, as though it had been slain',
+    reference: 'Revelation 5:5-6 ESV',
+    primaryTheme: 'Kingship',
+    themes: ['Kingship', 'Redemption', 'Worship', 'Victory'],
+    declaration: 'The Lion reigns in power. The Lamb reigns in mercy. One throne. One King. One victory.',
+    reflection: 'Crowned lion. The Lamb before Him. Revelation 5 — the paradox of heaven. The Lion conquered. The Lamb was slain. Both are Jesus. ICU showed me both. The roar that woke me. The blood that saved me. He is fierce and He is gentle. King and sacrifice.',
+    testimony: 'I saw Him. Not one or the other. Both. The Lion that devours death. The Lamb that takes away sin. When they said I was dead, the Lion roared me back. When they said I was guilty, the Lamb bled for me. This is the throne I serve.',
+    subtitle: 'The Lion Reigns. The Lamb Was Slain.',
+    youtube: 'https://youtu.be/17bwrxNCCBs',
+    spotify: '',
+    appleMusic: '',
+    image: '/AQMD_81y8KYxQT01wEtDigzM9YS3l862OtPv5NI1QlgdfAnOR1t1VNIvwOAzU5ZjySzHJixWWpJzctzObN4JM2wd.png'
+  },
 ]
