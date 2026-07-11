@@ -272,4 +272,38 @@ export const armory: Relic[] = [
     appleMusic: '',
     image: '/AQOa1lseR647iRUJvkreGVoIACSRVJGcffDo1awMvuNQE9UN8C3TxSp54AnzTKDFQtR9Y7eHlN84bsEBxwB7eSPI.png'
   },
+  {
+    slug: 'spirit-mantle',
+    relic: 'Spirit Mantle',
+    song: 'Spirit Mantle',
+    scripture: 'The Spirit of the Lord God is upon me, because the Lord has anointed me to bring good news... Elisha picked up the cloak that had fallen from Elijah',
+    reference: 'Isaiah 61:1, 2 Kings 2:13-14 ESV',
+    primaryTheme: 'Fire',
+    themes: ['Fire', 'Calling', 'Worship', 'Anointing'],
+    declaration: 'The anointing you can’t take off. The Spirit wears you. Fire from heaven, not from earth.',
+    reflection: 'Burning cloak. Molten fire. No body beneath it. 2 Kings 2:13-14 — Elisha picked up the mantle of Elijah and struck the water. Isaiah 61:1 — The Spirit of the Lord is upon me. ICU stripped me of everything. Then the mantle fell. Not earned. Received. Not mine. His. It burns.',
+    testimony: 'Flatlined at 39. They took my clothes. They took my name. They took my breath. Then He dropped the mantle. Not fabric. Fire. Not for me to wear — for Him to wear me. The Spirit Mantle is the sound of a dead man walking in another man’s power. Elijah’s cloak. Jesus’ fire.',
+    subtitle: 'The Anointing You Can’t Take Off',
+    youtube: 'https://youtu.be/BCKoGjYJZdg',
+    spotify: '',
+    appleMusic: '',
+    image: '/AQOz4ulRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQolJbmduV4EbRJKxE183PEOaupTTShyCiqg.png'
+  },
+  {
+    slug: 'thunder-drums',
+    relic: 'Thunder Drums',
+    song: 'Thunder Drums',
+    scripture: 'Then the Lord thundered from heaven, and the Most High uttered his voice... The voice of the Lord is over the waters; the God of glory thunders',
+    reference: '1 Samuel 7:10, Psalm 29:3-4 ESV',
+    primaryTheme: 'Spiritual Warfare',
+    themes: ['Spiritual Warfare', 'Worship', 'Fire', 'Authority'],
+    declaration: 'When heaven thunders, the drum answers. When God speaks, the earth shakes. This is the sound before the storm.',
+    reflection: 'Ancient drum suspended in the storm. Lightning striking. Clouds parting. 1 Samuel 7:10 — The Lord thundered from heaven. Psalm 29:3-4 — The God of glory thunders. ICU was silence. Then came the thunder. Then came the drum. Not played by hands. Played by heaven.',
+    testimony: 'Flatlined at 39. The monitors went flat. Silence. Then — thunder. Not from the room. From the throne. The drum beat in my chest wasn’t mine. It was His. Every heartbeat since is thunder. Every breath is war. Thunder Drums is the sound of God speaking in the storm.',
+    subtitle: 'When Heaven Thunders, The Drum Answers',
+    youtube: 'https://youtu.be/BCKoGjYJZdg',
+    spotify: '',
+    appleMusic: '',
+    image: '/AQOz4ulRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQolJbmduV4EbRJKxE183PEOaupTTShyCiqg.png'
+  },
 ]
