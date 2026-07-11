@@ -47,18 +47,9 @@ export const fireRelics: Relic[] = [
     image: `/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png`
   },
   {
-    slug: `spirit-mantle`,
-    relic: `Spirit Mantle`,
-    song: `Spirit Mantle`,
-    scripture: `Elisha picked up the cloak that had fallen from Elijah... The Spirit of the Lord God is upon me, because the Lord has anointed me`,
-    reference: `2 Kings 2:13-14, Isaiah 61:1 ESV`,
-    primaryTheme: `Fire`,
-    themes: [`Fire`, `Calling`, `Worship`, `Anointing`],
-    declaration: `The anointing you can't take off. The Spirit wears you. Fire from heaven, not from earth.`,
-    reflection: `Burning cloak. Molten fire. No body beneath it — because the Spirit wears you. 2 Kings 2:13-14 — Elijah's mantle falling. Isaiah 61:1 — the Spirit of the Lord anointing. ICU was the Jordan. The heart attack was the whirlwind. He dropped the mantle. I picked it up.`,
-    testimony: `Flatlined at 39. When I came back, I wasn't empty. I was covered. Not with my strength. With His Spirit. The mantle doesn't make you powerful — it makes you His. It burns. It anoints. It sends. You can't take it off. You can only walk in it.`,
-    subtitle: `The Anointing You Can't Take Off`,
-    youtube: `https://youtu.be/LSmQtFkHGjE`,
-    image: `/AQMILikpY_4YzpC0ogoZpZ-dI1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png
-  }
-]
+  slug: 'spirit-mantle',
+  relic: 'Spirit Mantle',
+  // ... other fields ...
+  youtube: `https://youtu.be/LSmQtFkHGjE`,
+  image: `/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png`
+} //
