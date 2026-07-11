@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import { armory } from '@/data/armory'
 
-// Define type to match your data - themes: string[] not readonly
 type Relic = {
   slug: string;
   relic: string;
@@ -17,6 +16,28 @@ type Relic = {
   subtitle: string;
   youtube: string;
   image: string;
+}
+
+// Helper to convert ANY YouTube URL to embed format
+function getYouTubeEmbed(url: string) {
+  if (!url) return '';
+
+  // Handle youtu.be/ID
+  if (url.includes('youtu.be/')) {
+    const id = url.split('youtu.be/')[1].split('?')[0];
+    return `https://www.youtube.com/embed/${id}`;
+  }
+
+  // Handle youtube.com/watch?v=ID
+  if (url.includes('watch?v=')) {
+    const id = url.split('watch?v=')[1].split('&')[0];
+    return `https://www.youtube.com/embed/${id}`;
+  }
+
+  // Already embed format
+  if (url.includes('/embed/')) return url;
+
+  return url;
 }
 
 export default function ArmoryPage() {
@@ -35,6 +56,10 @@ export default function ArmoryPage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
+                  onError={(e) => {
+                    // Hide broken images instead of showing icon
+                    e.currentTarget.style.display = 'none';
+                  }}
                 />
               </div>
             )}
@@ -44,11 +69,11 @@ export default function ArmoryPage() {
               <p className="text-yellow-500 mb-4">{relic.subtitle}</p>
               <p className="text-sm mb-4 italic">{relic.declaration}</p>
 
-              {/* YouTube Embed - Plays on your site */}
+              {/* YouTube Embed - This fixes the "Watch on YouTube" issue */}
               {relic.youtube && (
                 <div className="relative w-full aspect-video mt-4 rounded-lg overflow-hidden">
                   <iframe
-                    src={relic.youtube.replace('youtu.be/', 'youtube.com/embed/')}
+                    src={getYouTubeEmbed(relic.youtube)}
                     className="absolute top-0 left-0 w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
