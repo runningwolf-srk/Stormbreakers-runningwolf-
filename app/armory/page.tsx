@@ -23,13 +23,13 @@ export default function ArmoryPage() {
             <div
               key={relic.slug}
               id={relic.slug}
-              className="border border-amber-400/20 p-6 hover:border-amber-400/60 hover:bg-amber-400/5 transition"
+              className="border border-amber-400/20 p-6 hover:border-amber-400/60 hover:bg-amber-400/5 transition flex flex-col"
             >
               <h2 className="text-2xl font-bold text-amber-200 mb-2">{relic.song}</h2>
               <p className="text-amber-400 text-sm mb-4">{relic.scripture}</p>
               
               {relic.reflection? (
-                <>
+                <div className="flex-1">
                   <p className="text-amber-100/80 mb-4">{relic.reflection}</p>
                   
                   {relic.testimony && (
@@ -51,11 +51,18 @@ export default function ArmoryPage() {
                       </Link>
                     )}
                   </div>
-                </>
+                </div>
               ) : (
-                <div className="text-amber-200/60 italic">
-                  <p className="mb-2">This relic is being forged.</p>
-                  <p className="text-sm">Music and testimony coming soon.</p>
+                <div className="flex-1 flex flex-col justify-between text-amber-200/60">
+                  <div>
+                    <p className="italic mb-4">This relic is being forged.</p>
+                  </div>
+                  <div className="border-t border-amber-400/20 pt-4 mt-auto">
+                    <p className="text-sm text-amber-400/80 font-semibold">
+                      Forged in Scripture. Revealed in worship.
+                    </p>
+                    <p className="text-xs mt-1">Coming soon.</p>
+                  </div>
                 </div>
               )}
             </div>
