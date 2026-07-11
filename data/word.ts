@@ -142,4 +142,4 @@ export const themes: Theme[] = [
       },
       {
         ref: `Amos 3:8`,
-        text: `The lion has roared; who will not fear?
+        text:
