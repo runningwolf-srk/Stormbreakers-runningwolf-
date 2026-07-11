@@ -11,7 +11,7 @@ export type Relic = {
   reflection: string
   testimony?: string
   subtitle?: string
-  primaryTheme: 'Healing' | 'Calling' | 'Spiritual Warfare' | 'Redemption' | 'Worship' | 'Kingship'
+  primaryTheme: 'Healing' | 'Calling' | 'Spiritual Warfare' | 'Redemption' | 'Worship' | 'Kingship' | 'Fire'
   themes: string[]
   image?: string
 }
@@ -101,5 +101,22 @@ export const armory: Relic[] = [
     spotify: '',
     appleMusic: '',
     image: '/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp'
+  },
+  {
+    slug: 'im-on-fire',
+    relic: "I'm On Fire",
+    song: "I'm On Fire",
+    scripture: 'I have been crucified with Christ. It is no longer I who live, but Christ who lives in me',
+    reference: 'Galatians 2:20 ESV',
+    primaryTheme: 'Fire',
+    themes: ['Fire', 'Spiritual Warfare', 'Testimony', 'Redemption'],
+    declaration: 'I walked through the fire and it did not burn me. I came out refined, not consumed.',
+    reflection: 'Born Through The Fire. Scars That Preach. This is the furnace testimony. Shadrach, Meshach, Abednego walked with the fourth man in the fire. ICU was my furnace. I saw Him there. Came out smelling like smoke but not burned.',
+    testimony: 'Flatlined. Massive heart attack. The fire should have killed me. Instead it baptized me. The scars preach louder than my words. I am on fire — Holy Spirit fire. Not destroyed. Commissioned.',
+    subtitle: 'Scars That Preach — Born Through The Fire',
+    youtube: 'https://youtu.be/8XQUhWB_N5M',
+    spotify: '',
+    appleMusic: '',
+    image: '/file_0000000065a071f5832301f52d11fb80.png'
   },
 ]
