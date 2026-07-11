@@ -28,7 +28,7 @@ export const armory: Relic[] = [
     testimony: `Massive heart attack. Flatlined. The doctors gave up. Jesus didn't. I woke up to machines, tubes, and His presence. "By His wounds we are healed" isn't theology — it's my biography.`,
     subtitle: `The healing anthem`,
     youtube: `https://youtu.be/stsryByK5h8`,
-    image: `/file_000000000fa471f882fd16e52afa59fd.png`
+    image: `/file_000000fa471f882fd16e52afa59fd.png`
   },
   {
     slug: `running-wolf`,
