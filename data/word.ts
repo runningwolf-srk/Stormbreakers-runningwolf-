@@ -142,4 +142,23 @@ export const themes: Theme[] = [
       },
       {
         ref: `Amos 3:8`,
+        text: `The lion has roared; who will not fear? The Lord God has spoken; who can but prophesy?`,
+        relics: [`wolf-fang`],
+        chapters: [`the-commission`]
+      }
+    ]
+  },
+  {
+    slug: `redemption`,
+    title: `Redemption`,
+    icon: `✝️`,
+    scriptures: [
+      {
+        ref: `Isaiah 53:5`,
+        text: `But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.`,
+        relics: [`blood-of-cross`, `jesus-is-an-healer`],
+        chapters: [`the-valley`]
+      },
+      {
+        ref: `Ephesians 1:7`,
         text:
