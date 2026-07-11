@@ -1,32 +1,66 @@
 import { armory } from '../../data/armory'
-import { RelicCard } from '../../components/relics/RelicCard'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'The Armory | Stormbreakers',
-  description: 'Worship relics. Each song anchored in The Word.',
+  description: 'Our worship declares. Every song is a weapon. Every weapon is forged in The Word.',
 }
 
 export default function ArmoryPage() {
   return (
     <main className="min-h-screen bg-black text-white">
-      <div className="max-w-4xl mx-auto px-4 py-20">
+      <div className="max-w-6xl mx-auto px-4 py-20">
         <header className="text-center mb-16">
           <h1 className="text-5xl font-bold text-amber-400 tracking-widest mb-4">THE ARMORY</h1>
-          <p className="text-amber-400 font-bold text-lg mb-2">Our worship declares.</p>
-          <p className="text-amber-200/70">Every song is a weapon. Every weapon is forged in The Word.</p>
+          <p className="text-xl text-amber-200 mb-2">Our worship declares.</p>
+          <p className="text-amber-200/70 italic">
+            Every song is a weapon. Every weapon is forged in The Word.
+          </p>
         </header>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {armory.map((relic) => (
-            <RelicCard key={relic.slug} relic={relic} />
+            <div
+              key={relic.slug}
+              id={relic.slug}
+              className="border border-amber-400/20 p-6 hover:border-amber-400/60 hover:bg-amber-400/5 transition"
+            >
+              <h2 className="text-2xl font-bold text-amber-200 mb-2">{relic.song}</h2>
+              <p className="text-amber-400 text-sm mb-4">{relic.scripture}</p>
+              
+              {relic.reflection? (
+                <>
+                  <p className="text-amber-100/80 mb-4">{relic.reflection}</p>
+                  
+                  {relic.testimony && (
+                    <div className="mb-4">
+                      <h3 className="text-amber-400 font-semibold text-sm mb-1">Testimony</h3>
+                      <p className="text-amber-200/70 text-sm italic">{relic.testimony}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-4 mt-6">
+                    {relic.youtube && (
+                      <Link href={relic.youtube} target="_blank" className="text-amber-400 hover:text-amber-300 text-sm">
+                        YouTube
+                      </Link>
+                    )}
+                    {relic.spotify && (
+                      <Link href={relic.spotify} target="_blank" className="text-amber-400 hover:text-amber-300 text-sm">
+                        Spotify
+                      </Link>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <div className="text-amber-200/60 italic">
+                  <p className="mb-2">This relic is being forged.</p>
+                  <p className="text-sm">Music and testimony coming soon.</p>
+                </div>
+              )}
+            </div>
           ))}
         </div>
-
-        <footer className="mt-20 pt-12 border-t border-amber-400/20 text-center">
-          <p className="text-amber-400 font-semibold">
-            Jesus Christ is the center of the Armory.
-          </p>
-        </footer>
       </div>
     </main>
   )
