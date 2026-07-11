@@ -9,10 +9,10 @@ export const fireRelics = [
     reference: '2 Kings 2:13-14, Isaiah 61:1 ESV',
     primaryTheme: 'Fire',
     themes: ['Fire', 'Calling', 'Worship', 'Anointing'],
-    declaration: 'The anointing you can\'t take off. The fire that marks you forever.',
-    reflection: 'Burning cloak. Molten fire. This mantle doesn\'t come off when you leave the service.',
+    declaration: "The anointing you can't take off. The fire that marks you forever.",
+    reflection: "Burning cloak. Molten fire. This mantle doesn't come off when you leave the service.",
     testimony: 'Flatlined at 39. Doctors said no hope. But the fire of God brought me back with a mantle.',
-    subtitle: 'The Anointing You Can\'t Take Off',
+    subtitle: "The Anointing You Can't Take Off",
     youtube: 'https://youtu.be/LSmQtFkHGjE',
     image: '/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png'
   },
@@ -39,11 +39,11 @@ export const fireRelics = [
     reference: 'Romans 12:11 NIV',
     primaryTheme: 'Fire',
     themes: ['Fire', 'Passion', 'Worship', 'Zeal'],
-    declaration: 'This is not hype. This is holy fire. I\'m burning for Jesus and I won\'t cool down.',
-    reflection: 'Zeal that doesn\'t quit. Passion that doesn\'t burn out. Fire that doesn\'t fade.',
+    declaration: "This is not hype. This is holy fire. I'm burning for Jesus and I won't cool down.",
+    reflection: "Zeal that doesn't quit. Passion that doesn't burn out. Fire that doesn't fade.",
     testimony: 'Add your testimony here',
-    subtitle: 'Holy Zeal That Doesn\'t Quit',
+    subtitle: "Holy Zeal That Doesn't Quit",
     youtube: 'https://youtu.be/8XQUhWB_N5M',
     image: '/im-on-fire.png'
   }
-];
+] as const; // ← THIS FIXES THE TYPESCRIPT ERROR
