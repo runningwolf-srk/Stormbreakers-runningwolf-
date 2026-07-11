@@ -5,8 +5,6 @@ export type Relic = {
   scripture: string
   reference: string
   youtube?: string
-  spotify?: string
-  appleMusic?: string
   declaration: string
   reflection: string
   testimony?: string
@@ -30,8 +28,6 @@ export const armory: Relic[] = [
     testimony: `Massive heart attack. Flatlined. The doctors gave up. Jesus didn't. I woke up to machines, tubes, and His presence. "By His wounds we are healed" isn't theology — it's my biography.`,
     subtitle: `The healing anthem`,
     youtube: `https://youtu.be/stsryByK5h8`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/file_000000000fa471f882fd16e52afa59fd.png`
   },
   {
@@ -47,8 +43,6 @@ export const armory: Relic[] = [
     testimony: `They called the time of death. Then He called my name. Running Wolf isn't who I was. It's who He made me when He pulled me out of the valley. Mahalla of the Storm — we run where He sends.`,
     subtitle: `The calling anthem`,
     youtube: `https://youtu.be/GVCZZIcFP0I`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/745908406_27930426146575546_5158448896416347127_n.webp`
   },
   {
@@ -64,8 +58,6 @@ export const armory: Relic[] = [
     testimony: `He didn't just wake me up in ICU. He forged me there. Anvil. Hammer. Fire. Then He hid me in His hand until the appointed time. Now the blade is drawn. The wolf runs with a sword. The name is His.`,
     subtitle: `The Sword of the Sent One`,
     youtube: `https://youtu.be/CZ6tylWuerQ`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/AQNSqpHW8gV1OxAJb-5woTpal2mMV6yPY3VCIyhfmXJ51cTaGP38bt7ry6ooj4APZbACwuHTNzTNlLA2GCzab6o8.png`
   },
   {
@@ -81,8 +73,6 @@ export const armory: Relic[] = [
     testimony: ``,
     subtitle: `The battle anthem`,
     youtube: `https://youtu.be/hdB50mxVNtA`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/742511209_1767694164584264_3575760936981026908_n.webp`
   },
   {
@@ -98,8 +88,6 @@ export const armory: Relic[] = [
     testimony: `When they said I was dead, I met the King. Not a story. Not a metaphor. The Lord of Lords spoke, and I lived. This song is my witness to His throne.`,
     subtitle: `A spiritual anthem`,
     youtube: `https://youtu.be/9vP0NPrEv9s`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/060a2ef0-6320-11f1-94f7-f3f3b6c0f03c.webp`
   },
   {
@@ -115,8 +103,6 @@ export const armory: Relic[] = [
     testimony: `I died. Then I walked. Through the portal. Through the fire. Toward the cross. Spiritual Journey is the sound of every step back to Him. Not to escape — to abide.`,
     subtitle: `A Worship Album — A Journey To His Presence`,
     youtube: `https://youtu.be/umDFjJjh0_c`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/e8a21b70-631f-11f1-94f7-f3f3b6c0f03c.webp`
   },
   {
@@ -132,8 +118,6 @@ export const armory: Relic[] = [
     testimony: `I died. I heard heaven. Then He said "not yet." Heaven called my name, then sent me running. This anthem is for the ones who came back with orders.`,
     subtitle: `The assignment anthem`,
     youtube: `https://youtu.be/oxNauKuxg4Q`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/29ed31f0-6320-11f1-94f7-f3f3b6c0f03c.webp`
   },
   {
@@ -149,8 +133,6 @@ export const armory: Relic[] = [
     testimony: `Flatlined. Massive heart attack. The fire should have killed me. Instead it baptized me. The scars preach louder than my words. I am on fire — Holy Spirit fire. Not destroyed. Commissioned.`,
     subtitle: `Scars That Preach — Born Through The Fire`,
     youtube: `https://youtu.be/8XQUhWB_N5M`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/file_0000000065a071f5832301f52d11fb80.png`
   },
   {
@@ -166,8 +148,6 @@ export const armory: Relic[] = [
     testimony: `ICU was the valley. Running Wolf was the call. War Cry was the sound. Horn of War is the signal. The legend rises — not me. The King in me. Every scar is a battle honor. Every breath is a war drum.`,
     subtitle: `A Battle Cry. A Legend Rises.`,
     youtube: `https://youtu.be/M4wGCg5oCx0`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp`
   },
   {
@@ -183,8 +163,6 @@ export const armory: Relic[] = [
     testimony: `Flatlined at 39. The blood spoke a better word than death. "By His wounds we are healed" was written on that cross in red. I walked out of ICU carrying that blood. Not my own. His. It preaches. It heals. It wins.`,
     subtitle: `By His Wounds We Are Healed`,
     youtube: `https://youtu.be/4lcbjsNLlzo`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/148e9d30-6320-11f1-94f7-f3f3b6c0f03c.webp`
   },
   {
@@ -200,8 +178,6 @@ export const armory: Relic[] = [
     testimony: `ICU was the anvil. The heart attack was the hammer. Jesus was the fire. I didn't come out soft. I came out sharpened. Iron Collide is for the saints who know comfort kills but conflict forges. We run together. We fight together. We sharpen together.`,
     subtitle: `An Epic Hard Rock Anthem`,
     youtube: `https://youtu.be/fIkUDO2emoc`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp`
   },
   {
@@ -217,8 +193,6 @@ export const armory: Relic[] = [
     testimony: `I saw Him. Not one or the other. Both. The Lion that devours death. The Lamb that takes away sin. When they said I was dead, the Lion roared me back. When they said I was guilty, the Lamb bled for me. This is the throne I serve.`,
     subtitle: `The Lion Reigns. The Lamb Was Slain.`,
     youtube: `https://youtu.be/17bwrxNCCBs`,
-    spotify: ``,
-    appleMusic: ``,
     image: `/AQMD_81y8KYxQT01wEtDigzM9YS3l862OtPv5NI1QlgdfAnOR1t1VNIvwOAzU5ZjySzHJixWWpJzctzObN4JM2wd.png`
   },
   {
@@ -234,6 +208,81 @@ export const armory: Relic[] = [
     testimony: `Flatlined at 39. The fire should have ended me. Instead it started me. Not a spark. An eternal flame. Not mine. His. It burns through the valley. Through the battle. Through the worship. It will never go out. Because He never does.`,
     subtitle: `The Fire That Never Goes Out`,
     youtube: `https://youtu.be/maI6giUcYYk`,
-    spotify: ``,
-    appleMusic: ``,
-    image: `/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS
+    image: `/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png`
+  },
+  {
+    slug: `storm-crown`,
+    relic: `Storm Crown`,
+    song: `Storm Crown`,
+    scripture: `The Lord sits enthroned over the flood; the Lord sits enthroned as king forever`,
+    reference: `Psalm 29:10 ESV`,
+    primaryTheme: `Kingship`,
+    themes: [`Kingship`, `Worship`, `Authority`, `Storm`],
+    declaration: `The storm does not dethrone Him. It reveals Him. He reigns in the thunder. He rules the flood.`,
+    reflection: `Crown in the vortex. Lightning. Gold breaking through chaos. Psalm 29:10 — He sits enthroned over the flood. Revelation 4:10 — they cast their crowns before the throne. This is the storm I died in. This is the crown I saw. Not mine. His. Reigning in the chaos.`,
+    testimony: `Flatlined at 39. The storm hit. Machines, tubes, monitors screaming. Death was the flood. Then I saw the crown. Not on my head. On His. In the middle of the vortex. Thunder didn't shake Him. It worshipped Him. He reigns over the storm that tried to take me. Still does.`,
+    subtitle: `The King Reigns in the Storm`,
+    youtube: `https://youtu.be/MWHp_CRrKC8`,
+    image: `/AQMuwnjDLB5qcpKNKR8cB7D1JCIwUVH55YwQ1CwxwBeVt1LFwoHctkJr4-EqxEcc7luealmOHzEm81t1QIngLRHX-i2YAtlixooMqpxK7IZSs-I4BxkQTPSu4Qr7nqFZLR9x4GlJp9KczAb7bDQYcukJc_-YWw.png`
+  },
+  {
+    slug: `chronicle-stone`,
+    relic: `Chronicle Stone`,
+    song: `Chronicle Stone`,
+    scripture: `I will put my law within them, and I will write it on their hearts... He wrote on the tablets the words of the covenant`,
+    reference: `Jeremiah 31:33, Exodus 31:18 ESV`,
+    primaryTheme: `Redemption`,
+    themes: [`Redemption`, `Worship`, `Testimony`, `Covenant`],
+    declaration: `My story is not written in ink. It's carved in stone. His Word on my heart. His testimony in my scars.`,
+    reflection: `Stone monolith. Golden inscription. Light pouring from heaven. Jeremiah 31:33 — I will write it on their hearts. Exodus 31:18 — written with the finger of God. ICU was Sinai. The heart attack was the finger. He carved His Word into me. Not with pen. With fire.`,
+    testimony: `They said I was dead. He said "not yet" and wrote a new chapter. Not on paper. On stone. On my heart. Chronicle Stone is the sound of permanent redemption. The covenant can't be erased. The testimony can't be burned. It's carved. Forever.`,
+    subtitle: `The Word Carved in Fire`,
+    youtube: `https://youtu.be/YQZS2X1GZHE`,
+    image: `/AQOa1lseR647iRUJvkreGVoIACSRVJGcffDo1awMvuNQE9UN8C3TxSp54AnzTKDFQtR9Y7eHlN84bsEBxwB7eSPI.png`
+  },
+  {
+    slug: `spirit-mantle`,
+    relic: `Spirit Mantle`,
+    song: `Spirit Mantle`,
+    scripture: `Elisha picked up the cloak that had fallen from Elijah... The Spirit of the Lord God is upon me, because the Lord has anointed me`,
+    reference: `2 Kings 2:13-14, Isaiah 61:1 ESV`,
+    primaryTheme: `Fire`,
+    themes: [`Fire`, `Calling`, `Worship`, `Anointing`],
+    declaration: `The anointing you can't take off. The Spirit wears you. Fire from heaven, not from earth.`,
+    reflection: `Burning cloak. Molten fire. No body beneath it — because the Spirit wears you. 2 Kings 2:13-14 — Elijah's mantle falling. Isaiah 61:1 — the Spirit of the Lord anointing. ICU was the Jordan. The heart attack was the whirlwind. He dropped the mantle. I picked it up.`,
+    testimony: `Flatlined at 39. When I came back, I wasn't empty. I was covered. Not with my strength. With His Spirit. The mantle doesn't make you powerful — it makes you His. It burns. It anoints. It sends. You can't take it off. You can only walk in it.`,
+    subtitle: `The Anointing You Can't Take Off`,
+    youtube: `https://youtu.be/LSmQtFkHGjE`,
+    image: `/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png`
+  },
+  {
+    slug: `thunder-drums`,
+    relic: `Thunder Drums`,
+    song: `Thunder Drums`,
+    scripture: `The voice of the Lord is over the waters; the God of glory thunders, the Lord, over many waters`,
+    reference: `Psalm 29:3 ESV`,
+    primaryTheme: `Worship`,
+    themes: [`Worship`, `Spiritual Warfare`, `Presence`, `Power`],
+    declaration: `When heaven speaks, it thunders. When the saints worship, the drums answer.`,
+    reflection: `Thunder drum suspended in storm clouds. Lightning striking. Psalm 29:3 — the God of glory thunders. This is not music. This is war worship. The drum of heaven. ICU was silent until He spoke. Then the thunder hit. The drum beats in the spirit realm when a worshiper rises.`,
+    testimony: `Flatlined at 39. The room was silent. Then I heard it — thunder. Not from the storm outside. From the throne. The voice of the Lord is a drum. It shakes the earth. It raises the dead. Thunder Drums is the sound of heaven answering my war cry.`,
+    subtitle: `When Heaven Speaks, It Thunders`,
+    youtube: `https://youtu.be/BCKoGjYJZdg`,
+    image: `/AQOz4ulRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQolJbmduV4EbRJKxE183PEOaupTTShyCiqg.png`
+  },
+  {
+    slug: `wolf-fang`,
+    relic: `Wolf Fang`,
+    song: `Wolf Fang`,
+    scripture: `Like the hardest stone, harder than flint, I have made your forehead... The lion has roared; who will not fear?`,
+    reference: `Ezekiel 3:9, Amos 3:8 ESV`,
+    primaryTheme: `Calling`,
+    themes: [`Calling`, `Spiritual Warfare`, `Identity`, `Authority`],
+    declaration: `The tooth of the sent one. Hard as flint. Sharp as heaven. The mark of RunningWolf.`,
+    reflection: `Carved fang. Gold rune cap. Braided leather. Ezekiel 3:9 — forehead like flint. Amos 3:8 — the Lion has roared. This is the mark of the sent one. Not jewelry. A weapon. A covenant. RunningWolf isn't a name — it's a nature. The fang proves it.`,
+    testimony: `He didn't just give me a name in ICU. He gave me a nature. Wolf. Hunter. Sent one. The fang is the seal. Hard as flint — I won't break. Sharp as heaven — I will pierce. This relic is my identity made visible. The tooth of the one He sent back.`,
+    subtitle: `The Tooth of the Sent One`,
+    youtube: `https://youtu.be/dHz0D3QblpQ`,
+    image: `/AQNaCDj13mbCjvyJA47tjBiuR6D-WpUweMqib7Hbp4kQlHoSgm3XdKzfnagSdD4b8kNiNWrOpPugyuGGIJZ0Zmp7.png`
+  }
+]
