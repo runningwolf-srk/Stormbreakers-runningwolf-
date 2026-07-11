@@ -118,7 +118,7 @@ export const themes: Theme[] = [
       },
       {
         ref: `Ephesians 6:11`,
-        text: `Put on the full armor of God, so that you can take your stand against the devil’s schemes.`,
+        text: `Put on the full armor of God, so that you can take your stand against the devil's schemes.`,
         relics: [`war-cry`],
         chapters: [`the-armory`, `the-battle`]
       },
@@ -149,4 +149,12 @@ export const themes: Theme[] = [
     scriptures: [
       {
         ref: `Psalm 29:10`,
-        text: `The Lord sits enthroned over
+        text: `The Lord sits enthroned over the flood; the Lord sits enthroned as king forever.`,
+        relics: [`storm-crown`],
+        chapters: [`the-commission`, `the-witness`]
+      },
+      {
+        ref: `Revelation 19:16`,
+        text: `On his robe and on his thigh he has a name written, King of kings and Lord of lords.`,
+        relics: [`lord-of-lords`],
+        chapters: [`the-commission`, `
