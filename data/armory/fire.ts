@@ -1,55 +1,49 @@
-import { Relic } from './types'
+// data/armory/fire.ts
 
-export const fireRelics: Relic[] = [
+export const fireRelics = [
   {
-    slug: `the-first-flame`,
-    relic: `The First Flame`,
-    song: `The First Flame`,
-    scripture: `He makes his ministers a flame of fire`,
-    reference: `Hebrews 1:7 ESV`,
-    primaryTheme: `Fire`,
-    themes: [`Fire`, `Calling`, `Worship`, `Anointing`],
-    declaration: `I am the first flame — ignited in ICU, sent to ignite others. The fire starts here.`,
-    reflection: `The moment it all began. Flatlined at 39. Darkness. Silence. Then — flame. Not mine. His. Hebrews 1:7 — He makes His ministers a flame of fire. ICU was the altar where He struck the match. This is the first spark of RunningWolf. The fire that started the storm.`,
-    testimony: `I didn't light myself on fire. I was lit. By the hand that pulled me out of death. The First Flame isn't about me being on fire — it's about me BEING the fire He started. The first one. Sent to light the next.`,
-    subtitle: `The Spark That Started The Storm`,
-    youtube: ``,
-    image: ``
+    slug: 'spirit-mantle',
+    relic: 'Spirit Mantle',
+    song: 'Spirit Mantle',
+    scripture: 'Elisha picked up the cloak that had fallen from Elijah and went back and stood on the bank of the Jordan.',
+    reference: '2 Kings 2:13-14, Isaiah 61:1 ESV',
+    primaryTheme: 'Fire',
+    themes: ['Fire', 'Calling', 'Worship', 'Anointing'],
+    declaration: 'The anointing you can\'t take off. The fire that marks you forever.',
+    reflection: 'Burning cloak. Molten fire. This mantle doesn\'t come off when you leave the service.',
+    testimony: 'Flatlined at 39. Doctors said no hope. But the fire of God brought me back with a mantle.',
+    subtitle: 'The Anointing You Can\'t Take Off',
+    youtube: 'https://youtu.be/LSmQtFkHGjE',
+    image: '/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png'
   },
   {
-    slug: `im-on-fire`,
-    relic: `I'm On Fire`,
-    song: `I'm On Fire`,
-    scripture: `I have been crucified with Christ. It is no longer I who live, but Christ who lives in me`,
-    reference: `Galatians 2:20 ESV`,
-    primaryTheme: `Fire`,
-    themes: [`Fire`, `Spiritual Warfare`, `Testimony`, `Redemption`],
-    declaration: `I walked through the fire and it did not burn me. I came out refined, not consumed.`,
-    reflection: `Born Through The Fire. Scars That Preach. This is the furnace testimony. Shadrach, Meshach, Abednego walked with the fourth man in the fire. ICU was my furnace. I saw Him there. Came out smelling like smoke but not burned.`,
-    testimony: `Flatlined. Massive heart attack. The fire should have killed me. Instead it baptized me. The scars preach louder than my words. I am on fire — Holy Spirit fire. Not destroyed. Commissioned.`,
-    subtitle: `Scars That Preach — Born Through The Fire`,
-    youtube: `https://youtu.be/8XQUhWB_N5M`,
-    image: `/file_0000000065a071f5832301f52d11fb80.png`
+    slug: 'the-first-flame',
+    relic: 'The First Flame',
+    song: 'The First Flame',
+    scripture: 'Then he said to me, "Prophesy to these bones and say to them, Dry bones, hear the word of the Lord!"',
+    reference: 'Ezekiel 37:4 ESV',
+    primaryTheme: 'Fire',
+    themes: ['Fire', 'Resurrection', 'Revival', 'Prophetic'],
+    declaration: 'When God breathes, dead things live. This is the spark that starts revivals.',
+    reflection: 'Before the fire spreads, there must be the first flame. One ember from heaven changes everything.',
+    testimony: 'Add your testimony here',
+    subtitle: 'The Spark That Starts Revivals',
+    youtube: 'https://youtu.be/example1',
+    image: '/the-first-flame.png'
   },
   {
-    slug: `eternal-fire`,
-    relic: `Eternal Fire`,
-    song: `Eternal Fire`,
-    scripture: `For our God is a consuming fire... The fire on the altar must be kept burning; it must not go out`,
-    reference: `Hebrews 12:29, Leviticus 6:13 ESV`,
-    primaryTheme: `Fire`,
-    themes: [`Fire`, `Worship`, `Presence`, `Holiness`],
-    declaration: `The fire that refined me in ICU never goes out. It burns on the altar of my life. Consuming. Eternal. Holy.`,
-    reflection: `Burning cross. Molten diamond. Embers in the void. This is Leviticus 6:13 — the fire on the altar must not go out. Hebrews 12:29 — our God is a consuming fire. ICU was the altar. The heart attack was the sacrifice. He lit a fire that death couldn't kill.`,
-    testimony: `Flatlined at 39. The fire should have ended me. Instead it started me. Not a spark. An eternal flame. Not mine. His. It burns through the valley. Through the battle. Through the worship. It will never go out. Because He never does.`,
-    subtitle: `The Fire That Never Goes Out`,
-    youtube: `https://youtu.be/maI6giUcYYk`,
-    image: `/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png`
-  },
-  {
-  slug: 'spirit-mantle',
-  relic: 'Spirit Mantle',
-  // ... other fields ...
-  youtube: `https://youtu.be/LSmQtFkHGjE`,
-  image: `/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png`
-}, //
+    slug: 'im-on-fire',
+    relic: "I'm On Fire",
+    song: "I'm On Fire",
+    scripture: 'Never be lacking in zeal, but keep your spiritual fervor, serving the Lord.',
+    reference: 'Romans 12:11 NIV',
+    primaryTheme: 'Fire',
+    themes: ['Fire', 'Passion', 'Worship', 'Zeal'],
+    declaration: 'This is not hype. This is holy fire. I\'m burning for Jesus and I won\'t cool down.',
+    reflection: 'Zeal that doesn\'t quit. Passion that doesn\'t burn out. Fire that doesn\'t fade.',
+    testimony: 'Add your testimony here',
+    subtitle: 'Holy Zeal That Doesn\'t Quit',
+    youtube: 'https://youtu.be/8XQUhWB_N5M',
+    image: '/im-on-fire.png'
+  }
+];
