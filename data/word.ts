@@ -33,7 +33,7 @@ export const themes: Theme[] = [
       {
         ref: 'Isaiah 53:5',
         text: 'But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.',
-        relics: ['jesus-is-an-healer'],
+        relics: ['jesus-is-an-healer', 'blood-of-cross'],
         chapters: ['the-valley']
       },
       {
@@ -97,6 +97,12 @@ export const themes: Theme[] = [
         text: 'When you go into battle in your own land against an enemy who is oppressing you, sound a blast on the trumpets.',
         relics: ['horn-of-war'],
         chapters: ['the-battle']
+      },
+      {
+        ref: 'Proverbs 27:17',
+        text: 'As iron sharpens iron, so one person sharpens another.',
+        relics: ['iron-collide'],
+        chapters: ['the-commission', 'the-battle']
       }
     ]
   },
@@ -126,27 +132,52 @@ export const themes: Theme[] = [
     ]
   },
   {
+    slug: 'worship',
+    title: 'Worship',
+    icon: '🙌',
+    scriptures: [
+      {
+        ref: 'James 4:8',
+        text: 'Draw near to God, and he will draw near to you.',
+        relics: ['spiritual-journey'],
+        chapters: ['the-journey']
+      },
+      {
+        ref: 'Psalm 95:6',
+        text: 'Oh come, let us worship and bow down; let us kneel before the Lord, our Maker!',
+        relics: ['spiritual-journey'],
+        chapters: ['the-journey', 'the-hope']
+      },
+      {
+        ref: 'John 4:24',
+        text: 'God is spirit, and those who worship him must worship in spirit and truth.',
+        relics: ['spiritual-journey'],
+        chapters: ['the-journey']
+      }
+    ]
+  },
+  {
     slug: 'redemption',
     title: 'Redemption',
     icon: '✨',
     scriptures: [
       {
-        ref: 'Jeremiah 29:11',
-        text: 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.',
-        relics: ['heaven-calling'],
-        chapters: ['the-journey', 'the-hope']
-      },
-      {
         ref: 'Ephesians 1:7',
         text: 'In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God’s grace.',
-        relics: ['heaven-calling'],
+        relics: ['blood-of-cross'],
         chapters: ['the-journey']
       },
       {
         ref: 'Colossians 1:13-14',
         text: 'For he has rescued us from the dominion of darkness and brought us into the kingdom of the Son he loves, in whom we have redemption.',
-        relics: ['heaven-calling'],
+        relics: ['blood-of-cross'],
         chapters: ['the-encounter', 'the-journey']
+      },
+      {
+        ref: 'Isaiah 53:5',
+        text: 'But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.',
+        relics: ['blood-of-cross', 'jesus-is-an-healer'],
+        chapters: ['the-valley', 'the-witness']
       }
     ]
   },
