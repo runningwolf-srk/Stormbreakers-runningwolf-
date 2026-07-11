@@ -143,5 +143,30 @@ export const themes: Theme[] = [
         chapters: ['the-encounter', 'the-journey']
       }
     ]
+  },
+  {
+    slug: 'fire',
+    title: 'Fire',
+    icon: '🔥',
+    scriptures: [
+      {
+        ref: 'Galatians 2:20',
+        text: 'I have been crucified with Christ. It is no longer I who live, but Christ who lives in me.',
+        relics: ['im-on-fire'],
+        chapters: ['the-battle', 'the-witness']
+      },
+      {
+        ref: 'Isaiah 43:2',
+        text: 'When you walk through the fire, you will not be burned; the flames will not set you ablaze.',
+        relics: ['im-on-fire'],
+        chapters: ['the-valley', 'the-battle']
+      },
+      {
+        ref: 'Daniel 3:25',
+        text: 'Look! I see four men walking around in the fire, unbound and unharmed, and the fourth looks like a son of the gods.',
+        relics: ['im-on-fire'],
+        chapters: ['the-battle']
+      }
+    ]
   }
 ]
