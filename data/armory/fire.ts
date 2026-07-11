@@ -52,4 +52,4 @@ export const fireRelics: Relic[] = [
   // ... other fields ...
   youtube: `https://youtu.be/LSmQtFkHGjE`,
   image: `/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png`
-}//
+}, //
