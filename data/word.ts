@@ -160,5 +160,4 @@ export const themes: Theme[] = [
         chapters: [`the-valley`]
       },
       {
-        ref: `Ephesians 1:7`,
-        text:
+        ref
