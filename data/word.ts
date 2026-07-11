@@ -160,4 +160,116 @@ export const themes: Theme[] = [
         chapters: [`the-valley`]
       },
       {
-        ref
+        ref: `Ephesians 1:7`,
+        text: `In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God's grace.`,
+        relics: [`blood-of-cross`],
+        chapters: [`the-redemption`]
+      },
+      {
+        ref: `Colossians 1:13-14`,
+        text: `For he has rescued us from the dominion of darkness and brought us into the kingdom of the Son he loves, in whom we have redemption, the forgiveness of sins.`,
+        relics: [`blood-of-cross`],
+        chapters: [`the-redemption`, `the-kingdom`]
+      },
+      {
+        ref: `Titus 2:14`,
+        text: `Who gave himself for us to redeem us from all wickedness and to purify for himself a people that are his very own, eager to do what is good.`,
+        relics: [`blood-of-cross`],
+        chapters: [`the-redemption`, `the-commission`]
+      }
+    ]
+  },
+  {
+    slug: `worship`,
+    title: `Worship`,
+    icon: `🙌`,
+    scriptures: [
+      {
+        ref: `Psalm 29:3`,
+        text: `The voice of the Lord is over the waters; the God of glory thunders, the Lord, over many waters.`,
+        relics: [`thunder-drums`],
+        chapters: [`the-battle`, `the-throne`]
+      },
+      {
+        ref: `Revelation 19:16`,
+        text: `On his robe and on his thigh he has a name written, King of kings and Lord of lords.`,
+        relics: [`lord-of-lords`],
+        chapters: [`the-throne`]
+      },
+      {
+        ref: `James 4:8`,
+        text: `Draw near to God, and he will draw near to you.`,
+        relics: [`spiritual-journey`],
+        chapters: [`the-journey`, `the-throne`]
+      },
+      {
+        ref: `Psalm 29:10`,
+        text: `The Lord sits enthroned over the flood; the Lord sits enthroned as king forever.`,
+        relics: [`storm-crown`],
+        chapters: [`the-storm`, `the-throne`]
+      }
+    ]
+  },
+  {
+    slug: `kingship`,
+    title: `Kingship`,
+    icon: `👑`,
+    scriptures: [
+      {
+        ref: `Revelation 19:16`,
+        text: `On his robe and on his thigh he has a name written, King of kings and Lord of lords.`,
+        relics: [`lord-of-lords`],
+        chapters: [`the-throne`]
+      },
+      {
+        ref: `Revelation 5:5-6`,
+        text: `Behold, the Lion of the tribe of Judah, the Root of David, has conquered... Then I saw a Lamb standing, as though it had been slain.`,
+        relics: [`lion-and-lamb`],
+        chapters: [`the-throne`]
+      },
+      {
+        ref: `Psalm 29:10`,
+        text: `The Lord sits enthroned over the flood; the Lord sits enthroned as king forever.`,
+        relics: [`storm-crown`],
+        chapters: [`the-storm`, `the-throne`]
+      }
+    ]
+  },
+  {
+    slug: `fire`,
+    title: `Fire`,
+    icon: `🔥`,
+    scriptures: [
+      {
+        ref: `Galatians 2:20`,
+        text: `I have been crucified with Christ. It is no longer I who live, but Christ who lives in me.`,
+        relics: [`im-on-fire`],
+        chapters: [`the-fire`, `the-valley`]
+      },
+      {
+        ref: `Hebrews 12:29`,
+        text: `For our God is a consuming fire.`,
+        relics: [`eternal-fire`],
+        chapters: [`the-fire`, `the-throne`]
+      },
+      {
+        ref: `Leviticus 6:13`,
+        text: `The fire on the altar must be kept burning; it must not go out.`,
+        relics: [`eternal-fire`],
+        chapters: [`the-fire`]
+      },
+      {
+        ref: `2 Kings 2:13-14`,
+        text: `Elisha picked up the cloak that had fallen from Elijah. The Spirit of the Lord God is upon me, because the Lord has anointed me.`,
+        relics: [`spirit-mantle`],
+        chapters: [`the-commission`, `the-fire`]
+      },
+      {
+        ref: `Isaiah 61:1`,
+        text: `The Spirit of the Sovereign Lord is on me, because the Lord has anointed me to proclaim good news to the poor.`,
+        relics: [`spirit-mantle`],
+        chapters: [`the-commission`]
+      }
+    ]
+  }
+]
