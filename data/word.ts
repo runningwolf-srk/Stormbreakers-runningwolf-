@@ -56,6 +56,18 @@ export const themes: Theme[] = [
         chapters: ['the-encounter']
       },
       {
+        ref: 'Isaiah 49:2',
+        text: 'He made my mouth like a sharp sword; in the shadow of his hand he hid me; he made me a polished arrow.',
+        relics: ['running-wolf-blade'],
+        chapters: ['the-commission', 'the-battle']
+      },
+      {
+        ref: 'Hebrews 4:12',
+        text: 'For the word of God is living and active, sharper than any two-edged sword.',
+        relics: ['running-wolf-blade'],
+        chapters: ['the-battle']
+      },
+      {
         ref: 'Isaiah 6:8',
         text: 'Then I heard the voice of the Lord saying, "Whom shall I send?" And I said, "Here am I. Send me!"',
         relics: ['running-wolf'],
