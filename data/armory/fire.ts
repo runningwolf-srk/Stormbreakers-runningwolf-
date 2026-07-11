@@ -2,6 +2,21 @@ import { Relic } from './types'
 
 export const fireRelics: Relic[] = [
   {
+    slug: `the-first-flame`,
+    relic: `The First Flame`,
+    song: `The First Flame`,
+    scripture: `He makes his ministers a flame of fire`,
+    reference: `Hebrews 1:7 ESV`,
+    primaryTheme: `Fire`,
+    themes: [`Fire`, `Calling`, `Worship`, `Anointing`],
+    declaration: `I am the first flame — ignited in ICU, sent to ignite others. The fire starts here.`,
+    reflection: `The moment it all began. Flatlined at 39. Darkness. Silence. Then — flame. Not mine. His. Hebrews 1:7 — He makes His ministers a flame of fire. ICU was the altar where He struck the match. This is the first spark of RunningWolf. The fire that started the storm.`,
+    testimony: `I didn't light myself on fire. I was lit. By the hand that pulled me out of death. The First Flame isn't about me being on fire — it's about me BEING the fire He started. The first one. Sent to light the next.`,
+    subtitle: `The Spark That Started The Storm`,
+    youtube: ``,
+    image: ``
+  },
+  {
     slug: `im-on-fire`,
     relic: `I'm On Fire`,
     song: `I'm On Fire`,
