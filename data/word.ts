@@ -77,7 +77,7 @@ export const themes: Theme[] = [
       {
         ref: 'Joel 2:1',
         text: 'Blow the trumpet in Zion; sound the alarm on my holy hill.',
-        relics: ['war-cry'],
+        relics: ['war-cry', 'horn-of-war'],
         chapters: ['the-battle']
       },
       {
@@ -91,6 +91,12 @@ export const themes: Theme[] = [
         text: 'Put on the full armor of God, so that you can take your stand against the devil’s schemes.',
         relics: ['war-cry'],
         chapters: ['the-armory', 'the-battle']
+      },
+      {
+        ref: 'Numbers 10:9',
+        text: 'When you go into battle in your own land against an enemy who is oppressing you, sound a blast on the trumpets.',
+        relics: ['horn-of-war'],
+        chapters: ['the-battle']
       }
     ]
   },
