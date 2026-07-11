@@ -138,13 +138,4 @@ export const themes: Theme[] = [
         ref: `Ezekiel 3:9`,
         text: `Like the hardest stone, harder than flint, I have made your forehead.`,
         relics: [`wolf-fang`],
-        chapters: [`the-battle`]
-      }
-    ]
-  },
-  {
-    slug: `kingship`,
-    title: `Kingship`,
-    icon: `👑`,
-    scriptures: [
-     
+       
