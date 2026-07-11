@@ -1,257 +1,79 @@
-export type Scripture = {
-  ref: string
-  text: string
-  relics: string[]
-  chapters: string[]
-}
-
-export type Theme = {
+export type Relic = {
   slug: string
-  title: string
-  icon: string
-  scriptures: Scripture[]
+  relic: string
+  song: string
+  scripture: string
+  reference: string
+  youtube?: string
+  spotify?: string
+  appleMusic?: string
+  declaration: string
+  reflection: string
+  testimony?: string
+  subtitle?: string
+  primaryTheme: 'Healing' | 'Calling' | 'Spiritual Warfare' | 'Redemption' | 'Worship' | 'Kingship' | 'Fire'
+  themes: string[]
+  image?: string
 }
 
-export const themes: Theme[] = [
+export const armory: Relic[] = [
   {
-    slug: 'healing',
-    title: 'Healing',
-    icon: '💧',
-    scriptures: [
-      {
-        ref: 'Psalm 23:4',
-        text: 'Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me.',
-        relics: ['jesus-is-an-healer'],
-        chapters: ['the-valley']
-      },
-      {
-        ref: '1 Peter 2:24',
-        text: 'He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness. By his wounds you have been healed.',
-        relics: ['jesus-is-an-healer'],
-        chapters: ['the-valley', 'the-journey']
-      },
-      {
-        ref: 'Isaiah 53:5',
-        text: 'But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.',
-        relics: ['jesus-is-an-healer', 'blood-of-cross'],
-        chapters: ['the-valley']
-      },
-      {
-        ref: 'Psalm 147:3',
-        text: 'He heals the brokenhearted and binds up their wounds.',
-        relics: ['jesus-is-an-healer'],
-        chapters: ['the-valley', 'the-hope']
-      }
-    ]
+    slug: 'jesus-is-an-healer',
+    relic: 'Jesus Is An Healer',
+    song: 'Jesus Is An Healer',
+    scripture: 'He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness. By his wounds you have been healed.',
+    reference: '1 Peter 2:24 ESV',
+    primaryTheme: 'Healing',
+    themes: ['Redemption', 'Grace', 'Healing'],
+    declaration: 'I am healed by His wounds',
+    reflection: 'Born in the valley. ICU at 39. Machines breathing for me. Psalm 23 became a map, not poetry. He healed me when doctors said it was over. This song is my testimony that He still heals today.',
+    testimony: 'Massive heart attack. Flatlined. The doctors gave up. Jesus didn’t. I woke up to machines, tubes, and His presence. "By His wounds we are healed" isn’t theology — it’s my biography.',
+    subtitle: 'The healing anthem',
+    youtube: 'https://youtu.be/stsryByK5h8',
+    spotify: '',
+    appleMusic: '',
+    image: '/file_000000000fa471f882fd16e52afa59fd.png'
   },
   {
-    slug: 'calling',
-    title: 'Calling',
-    icon: '🔥',
-    scriptures: [
-      {
-        ref: 'Jeremiah 1:5',
-        text: 'Before I formed you in the womb I knew you, before you were born I set you apart.',
-        relics: ['running-wolf'],
-        chapters: ['the-encounter']
-      },
-      {
-        ref: 'Isaiah 49:2',
-        text: 'He made my mouth like a sharp sword; in the shadow of his hand he hid me; he made me a polished arrow.',
-        relics: ['running-wolf-blade'],
-        chapters: ['the-commission', 'the-battle']
-      },
-      {
-        ref: 'Hebrews 4:12',
-        text: 'For the word of God is living and active, sharper than any two-edged sword.',
-        relics: ['running-wolf-blade'],
-        chapters: ['the-battle']
-      },
-      {
-        ref: 'Isaiah 6:8',
-        text: 'Then I heard the voice of the Lord saying, "Whom shall I send?" And I said, "Here am I. Send me!"',
-        relics: ['running-wolf'],
-        chapters: ['the-commission']
-      },
-      {
-        ref: 'Romans 8:28',
-        text: 'And we know that in all things God works for the good of those who love him, who have been called according to his purpose.',
-        relics: ['running-wolf'],
-        chapters: ['the-encounter', 'the-journey']
-      }
-    ]
+    slug: 'running-wolf',
+    relic: 'Running Wolf',
+    song: 'Running Wolf',
+    scripture: 'Before I formed you in the womb I knew you, before you were born I set you apart',
+    reference: 'Jeremiah 1:5 ESV',
+    primaryTheme: 'Calling',
+    themes: ['Identity', 'Calling', 'Warfare'],
+    declaration: 'I am called, chosen, and set apart for the storm',
+    reflection: 'The name came after ICU. I was dead, then I was running. Not away from the storm — into it. The wolf runs with the pack but hears the Shepherd. This is the sound of a man who died and was sent back with orders.',
+    testimony: 'They called the time of death. Then He called my name. Running Wolf isn’t who I was. It’s who He made me when He pulled me out of the valley. Mahalla of the Storm — we run where He sends.',
+    subtitle: 'The calling anthem',
+    youtube: 'https://youtu.be/GVCZZIcFP0I',
+    spotify: '',
+    appleMusic: '',
+    image: '/745908406_27930426146575546_5158448896416347127_n.webp'
   },
   {
-    slug: 'spiritual-warfare',
-    title: 'Spiritual Warfare',
-    icon: '⚔️',
-    scriptures: [
-      {
-        ref: 'Joel 2:1',
-        text: 'Blow the trumpet in Zion; sound the alarm on my holy hill.',
-        relics: ['war-cry', 'horn-of-war'],
-        chapters: ['the-battle']
-      },
-      {
-        ref: '2 Corinthians 10:4',
-        text: 'The weapons we fight with are not the weapons of the world. On the contrary, they have divine power to demolish strongholds.',
-        relics: ['war-cry'],
-        chapters: ['the-battle']
-      },
-      {
-        ref: 'Ephesians 6:11',
-        text: 'Put on the full armor of God, so that you can take your stand against the devil’s schemes.',
-        relics: ['war-cry'],
-        chapters: ['the-armory', 'the-battle']
-      },
-      {
-        ref: 'Numbers 10:9',
-        text: 'When you go into battle in your own land against an enemy who is oppressing you, sound a blast on the trumpets.',
-        relics: ['horn-of-war'],
-        chapters: ['the-battle']
-      },
-      {
-        ref: 'Proverbs 27:17',
-        text: 'As iron sharpens iron, so one person sharpens another.',
-        relics: ['iron-collide'],
-        chapters: ['the-commission', 'the-battle']
-      }
-    ]
+    slug: 'running-wolf-blade',
+    relic: 'Running Wolf Blade',
+    song: 'Running Wolf Blade',
+    scripture: 'He made my mouth like a sharp sword; in the shadow of his hand he hid me; he made me a polished arrow',
+    reference: 'Isaiah 49:2 ESV',
+    primaryTheme: 'Calling',
+    themes: ['Calling', 'Spiritual Warfare', 'Authority', 'Commission'],
+    declaration: 'I am not just sent — I am sharpened. A sword in His hand. A name on His blade.',
+    reflection: 'Wolf forged in gold. Snow falling. Runes carved. The blade runs through him. Isaiah 49:2 — made my mouth like a sharp sword. Hebrews 4:12 — living and active, sharper than any two-edged sword. This is the next revelation: Running Wolf wasn’t just the call. It’s the weapon.',
+    testimony: 'He didn’t just wake me up in ICU. He forged me there. Anvil. Hammer. Fire. Then He hid me in His hand until the appointed time. Now the blade is drawn. The wolf runs with a sword. The name is His.',
+    subtitle: 'The Sword of the Sent One',
+    youtube: 'https://youtu.be/CZ6tylWuerQ',
+    spotify: '',
+    appleMusic: '',
+    image: '/AQNSqpHW8gV1OxAJb-5woTpal2mMV6yPY3VCIyhfmXJ51cTaGP38bt7ry6ooj4APZbACwuHTNzTNlLA2GCzab6o8.png'
   },
   {
-    slug: 'kingship',
-    title: 'Kingship',
-    icon: '👑',
-    scriptures: [
-      {
-        ref: 'Psalm 29:10',
-        text: 'The Lord sits enthroned over the flood; the Lord sits enthroned as king forever.',
-        relics: ['storm-crown'],
-        chapters: ['the-commission', 'the-witness']
-      },
-      {
-        ref: 'Revelation 19:16',
-        text: 'On his robe and on his thigh he has a name written, King of kings and Lord of lords.',
-        relics: ['lord-of-lords'],
-        chapters: ['the-commission', 'the-hope']
-      },
-      {
-        ref: 'Revelation 5:5-6',
-        text: 'Behold, the Lion of the tribe of Judah, the Root of David, has conquered... Then I saw a Lamb standing, as though it had been slain.',
-        relics: ['lion-and-lamb'],
-        chapters: ['the-commission', 'the-witness']
-      },
-      {
-        ref: 'Revelation 4:10',
-        text: 'The twenty-four elders fall down before him who is seated on the throne and worship him... they cast their crowns before the throne.',
-        relics: ['storm-crown'],
-        chapters: ['the-hope']
-      },
-      {
-        ref: 'Philippians 2:10-11',
-        text: 'At the name of Jesus every knee should bow... and every tongue confess that Jesus Christ is Lord.',
-        relics: ['lord-of-lords'],
-        chapters: ['the-witness']
-      },
-      {
-        ref: 'Psalm 24:10',
-        text: 'Who is this King of glory? The Lord of hosts, he is the King of glory!',
-        relics: ['lord-of-lords'],
-        chapters: ['the-battle']
-      }
-    ]
-  },
-  {
-    slug: 'worship',
-    title: 'Worship',
-    icon: '🙌',
-    scriptures: [
-      {
-        ref: 'James 4:8',
-        text: 'Draw near to God, and he will draw near to you.',
-        relics: ['spiritual-journey'],
-        chapters: ['the-journey']
-      },
-      {
-        ref: 'Psalm 95:6',
-        text: 'Oh come, let us worship and bow down; let us kneel before the Lord, our Maker!',
-        relics: ['spiritual-journey'],
-        chapters: ['the-journey', 'the-hope']
-      },
-      {
-        ref: 'John 4:24',
-        text: 'God is spirit, and those who worship him must worship in spirit and truth.',
-        relics: ['spiritual-journey'],
-        chapters: ['the-journey']
-      }
-    ]
-  },
-  {
-    slug: 'redemption',
-    title: 'Redemption',
-    icon: '✨',
-    scriptures: [
-      {
-        ref: 'Jeremiah 29:11',
-        text: 'For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.',
-        relics: ['heaven-calling'],
-        chapters: ['the-journey', 'the-hope']
-      },
-      {
-        ref: 'Ephesians 1:7',
-        text: 'In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God’s grace.',
-        relics: ['blood-of-cross'],
-        chapters: ['the-journey']
-      },
-      {
-        ref: 'Colossians 1:13-14',
-        text: 'For he has rescued us from the dominion of darkness and brought us into the kingdom of the Son he loves, in whom we have redemption.',
-        relics: ['blood-of-cross'],
-        chapters: ['the-encounter', 'the-journey']
-      },
-      {
-        ref: 'Isaiah 53:5',
-        text: 'But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.',
-        relics: ['blood-of-cross', 'jesus-is-an-healer'],
-        chapters: ['the-valley', 'the-witness']
-      }
-    ]
-  },
-  {
-    slug: 'fire',
-    title: 'Fire',
-    icon: '🔥',
-    scriptures: [
-      {
-        ref: 'Galatians 2:20',
-        text: 'I have been crucified with Christ. It is no longer I who live, but Christ who lives in me.',
-        relics: ['im-on-fire'],
-        chapters: ['the-battle', 'the-witness']
-      },
-      {
-        ref: 'Isaiah 43:2',
-        text: 'When you walk through the fire, you will not be burned; the flames will not set you ablaze.',
-        relics: ['im-on-fire'],
-        chapters: ['the-valley', 'the-battle']
-      },
-      {
-        ref: 'Daniel 3:25',
-        text: 'Look! I see four men walking around in the fire, unbound and unharmed, and the fourth looks like a son of the gods.',
-        relics: ['im-on-fire'],
-        chapters: ['the-battle']
-      },
-      {
-        ref: 'Hebrews 12:29',
-        text: 'For our God is a consuming fire.',
-        relics: ['eternal-fire'],
-        chapters: ['the-battle', 'the-witness']
-      },
-      {
-        ref: 'Leviticus 6:13',
-        text: 'The fire on the altar must be kept burning; it must not go out.',
-        relics: ['eternal-fire'],
-        chapters: ['the-commission', 'the-witness']
-      }
-    ]
-  }
-]
+    slug: 'war-cry',
+    relic: 'War Cry',
+    song: 'War Cry',
+    scripture: 'Blow the trumpet in Zion; sound the alarm on my holy hill',
+    reference: 'Joel 2:1 ESV',
+    primaryTheme: 'Spiritual Warfare',
+    themes: ['Spiritual Warfare', 'Calling', 'Battle'],
+    declaration: 'We
