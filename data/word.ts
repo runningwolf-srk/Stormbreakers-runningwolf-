@@ -124,6 +124,12 @@ export const themes: Theme[] = [
     icon: '👑',
     scriptures: [
       {
+        ref: 'Psalm 29:10',
+        text: 'The Lord sits enthroned over the flood; the Lord sits enthroned as king forever.',
+        relics: ['storm-crown'],
+        chapters: ['the-commission', 'the-witness']
+      },
+      {
         ref: 'Revelation 19:16',
         text: 'On his robe and on his thigh he has a name written, King of kings and Lord of lords.',
         relics: ['lord-of-lords'],
@@ -134,6 +140,12 @@ export const themes: Theme[] = [
         text: 'Behold, the Lion of the tribe of Judah, the Root of David, has conquered... Then I saw a Lamb standing, as though it had been slain.',
         relics: ['lion-and-lamb'],
         chapters: ['the-commission', 'the-witness']
+      },
+      {
+        ref: 'Revelation 4:10',
+        text: 'The twenty-four elders fall down before him who is seated on the throne and worship him... they cast their crowns before the throne.',
+        relics: ['storm-crown'],
+        chapters: ['the-hope']
       },
       {
         ref: 'Philippians 2:10-11',
