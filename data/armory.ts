@@ -119,4 +119,21 @@ export const armory: Relic[] = [
     appleMusic: '',
     image: '/file_0000000065a071f5832301f52d11fb80.png'
   },
+  {
+    slug: 'horn-of-war',
+    relic: 'Horn of War',
+    song: 'Horn of War',
+    scripture: 'Blow the trumpet in Zion; sound the alarm on my holy hill',
+    reference: 'Joel 2:1 ESV',
+    primaryTheme: 'Spiritual Warfare',
+    themes: ['Spiritual Warfare', 'Battle', 'Calling', 'Victory'],
+    declaration: 'When the horn sounds, the battle belongs to the Lord. A legend rises when the saints declare war on hell.',
+    reflection: 'This is the sound before the charge. Spartan. Horn. Runes. Army at the gates. Joel 2:1 — sound the alarm. This isn’t music. It’s mobilization. When the horn blows, demons tremble. When the saints roar, heaven moves.',
+    testimony: 'ICU was the valley. Running Wolf was the call. War Cry was the sound. Horn of War is the signal. The legend rises — not me. The King in me. Every scar is a battle honor. Every breath is a war drum.',
+    subtitle: 'A Battle Cry. A Legend Rises.',
+    youtube: 'https://youtu.be/M4wGCg5oCx0',
+    spotify: '',
+    appleMusic: '',
+    image: '/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp'
+  },
 ]
