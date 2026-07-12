@@ -46,4 +46,4 @@ export const fireRelics = [
     youtube: 'https://youtu.be/8XQUhWB_N5M',
     image: '/im-on-fire.png'
   }
-]; // ← NO 'as const' HERE
+];
