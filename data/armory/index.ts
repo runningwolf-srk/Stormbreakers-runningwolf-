@@ -18,9 +18,10 @@ export type Relic = {
   image: string;
 }
 
-// Only import files that exist. Comment out the rest for now.
+// Only import files that exist. Comment out the rest.
 export const armory: Relic[] = [
- ...fireRelics,
+...fireRelics,
   //...callingRelics,
   //...healingRelics,
+  //...worshipRelics,
 ];
