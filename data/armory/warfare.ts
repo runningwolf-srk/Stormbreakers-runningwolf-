@@ -15,8 +15,6 @@ export const warfareRelics: Relic[] = [
     testimony: "",
     subtitle: "The battle anthem",
     youtube: "https://youtu.be/hdB50mxVNtA",
-    spotify: "",
-    appleMusic: "",
     image: "/742511209_1767694164584264_3575760936981026908_n.webp"
   },
   {
@@ -32,8 +30,6 @@ export const warfareRelics: Relic[] = [
     testimony: `ICU was the valley. Running Wolf was the call. War Cry was the sound. Horn of War is the signal. The legend rises — not me. The King in me. Every scar is a battle honor. Every breath is a war drum.`,
     subtitle: "A Battle Cry. A Legend Rises.",
     youtube: "https://youtu.be/M4wGCg5oCx0",
-    spotify: "",
-    appleMusic: "",
     image: "/f9a9d930-631f-11f1-94f7-f3f3b6c0f03c.webp"
   },
   {
@@ -49,8 +45,6 @@ export const warfareRelics: Relic[] = [
     testimony: `ICU was the anvil. The heart attack was the hammer. Jesus was the fire. I didn't come out soft. I came out sharpened. Iron Collide is for the saints who know comfort kills but conflict forges. We run together. We fight together. We sharpen together.`,
     subtitle: "An Epic Hard Rock Anthem",
     youtube: "https://youtu.be/fIkUDO2emoc",
-    spotify: "",
-    appleMusic: "",
     image: "/1fe52410-6320-11f1-94f7-f3f3b6c0f03c.webp"
   }
 ];
