@@ -15,8 +15,6 @@ export const callingRelics: Relic[] = [
     testimony: `They called the time of death. Then He called my name. Running Wolf isn't who I was. It's who He made me when He pulled me out of the valley. Mahalla of the Storm — we run where He sends.`,
     subtitle: "The calling anthem",
     youtube: "https://youtu.be/GVCZZIcFP0I",
-    spotify: "",
-    appleMusic: "",
     image: "/745908406_27930426146575546_5158448896416347127_n.webp"
   },
   {
@@ -32,8 +30,6 @@ export const callingRelics: Relic[] = [
     testimony: `He didn't just wake me up in ICU. He forged me there. Anvil. Hammer. Fire. Then He hid me in His hand until the appointed time. Now the blade is drawn. The wolf runs with a sword. The name is His.`,
     subtitle: "The Sword of the Sent One",
     youtube: "https://youtu.be/CZ6tylWuerQ",
-    spotify: "",
-    appleMusic: "",
     image: "/AQNSqpHW8gV1OxAJb-5woTpal2mMV6yPY3VCIyhfmXJ51cTaGP38bt7ry6ooj4APZbACwuHTNzTNlLA2GCzab6o8.png"
   },
   {
@@ -49,8 +45,6 @@ export const callingRelics: Relic[] = [
     testimony: `He called me Running Wolf. Then He gave me the fang. Not to fight like the world. To stand like heaven. Hard as flint. Set apart. When the enemy sees the fang, he knows — this one has been with the Lion. This one carries authority. This one doesn't back down.`,
     subtitle: "The Tooth of the Sent One",
     youtube: "https://youtu.be/yH5WjF8x7vE",
-    spotify: "",
-    appleMusic: "",
     image: "/wolf-fang.png"
   }
 ];
