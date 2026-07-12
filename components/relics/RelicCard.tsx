@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Relic } from '../data/armory' // ← This will work now
+import { Relic } from '../../data/armory' // ←../../ because this file is in components/relics/
 
 export function RelicCard({ relic }: { relic: Relic }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,6 +17,7 @@ export function RelicCard({ relic }: { relic: Relic }) {
       const id = url.split('watch?v=')[1].split('&')[0];
       return `https://www.youtube.com/embed/${id}`;
     }
+    if (url.includes('/embed/')) return url;
     return url;
   }
 
@@ -40,6 +41,21 @@ export function RelicCard({ relic }: { relic: Relic }) {
         <h2 className="text-2xl font-bold mb-2 text-white">{relic.relic}</h2>
         <p className="text-yellow-500 mb-4">{relic.subtitle}</p>
         <p className="text-sm mb-4 italic text-gray-300">{relic.declaration}</p>
+
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-blue-400 hover:text-blue-300 mb-4"
+        >
+          {isOpen? 'Hide Details' : 'Read More'}
+        </button>
+
+        {isOpen && (
+          <div className="mb-4 text-gray-300">
+            <p className="mb-2"><strong>Scripture:</strong> {relic.scripture}</p>
+            <p className="text-sm text-gray-400">{relic.reference}</p>
+          </div>
+        )}
+
         {relic.youtube && (
           <div className="relative w-full aspect-video mt-4 rounded-lg overflow-hidden">
             <iframe
