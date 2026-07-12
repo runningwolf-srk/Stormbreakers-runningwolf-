@@ -14,7 +14,7 @@ export const kingshipRelics: Relic[] = [
     reflection: `Gold crown. Molten runes. Diamonds in the void. This is 1 Peter 2:9 — royal priesthood. ICU stripped every title from me. Then He crowned me with His own. Not because I earned it. Because He bought it.`,
     testimony: `Flatlined at 39. Came back with nothing. Left with a crown. Not on my head — in my spirit. The world calls me survivor. Heaven calls me royal. The relic isn't gold. It's me. Redeemed. Restored. Reigning with Him.`,
     subtitle: "The Crown of the Chosen",
-    youtube: "https://youtu.be/0mWnZ6kHv4E",
+    youtube: "https://youtu.be/utUnOBCp7GY", // ← Updated with your real link
     image: "/royal-relic.png"
   }
 ];
