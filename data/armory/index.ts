@@ -1,19 +1,15 @@
-import { healingRelics } from './healing'
-import { callingRelics } from './calling'
-import { warfareRelics } from './warfare'
-import { redemptionRelics } from './redemption'
-import { worshipRelics } from './worship'
-import { kingshipRelics } from './kingship'
+// data/armory/index.ts
 import { fireRelics } from './fire'
 
-export const armory = [
-  ...healingRelics,
-  ...callingRelics,
-  ...warfareRelics,
-  ...redemptionRelics,
-  ...worshipRelics,
-  ...kingshipRelics,
-  ...fireRelics
-]
+// Only import files that actually exist in /data/armory/
+// Comment these out until you create the files:
+// import { callingRelics } from './calling'
+// import { healingRelics } from './healing'
+// import { worshipRelics } from './worship'
 
-export type { Relic } from './types'
+export const armory = [
+ ...fireRelics,
+  //...callingRelics,
+  //...healingRelics,
+  //...worshipRelics,
+];
