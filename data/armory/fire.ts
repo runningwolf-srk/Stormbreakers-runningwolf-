@@ -45,6 +45,6 @@ export const fireRelics: Relic[] = [
     testimony: `Flatlined at 39. When I came back, I wasn't empty. I was covered. Not with my strength. With His Spirit. The mantle doesn't make you powerful — it makes you His. It burns. It anoints. It sends. You can't take it off. You can only walk in it.`,
     subtitle: "The Anointing You Can't Take Off",
     youtube: "https://youtu.be/LSmQtFkHGjE",
-    image: "/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png"
+    image: "/AQMILikpY_4YzpC0ogoZpZ-dl1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhIBu2e5g6eNQCVPKEViBhWOME3B.png",
   }
 ];
