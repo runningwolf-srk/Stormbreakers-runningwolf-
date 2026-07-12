@@ -1,3 +1,4 @@
+// data/armory/index.ts
 export * from './redemption'
 export * from './kingship'
 export * from './warfare'
@@ -19,4 +20,14 @@ export const allRelics = [
 ];
 
 export const armory = allRelics; // ← The Word imports this
-export { Relic } from './types'; // if you have a types file
+
+export type Relic = {
+  slug: string;
+  relic: string;
+  song: string;
+  theme: string;
+  scripture: string;
+  declaration: string;
+  reflection: string;
+  image: string;
+}
