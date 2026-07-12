@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Relic } from '../../data/armory' // ←../../ because this file is in components/relics/
+import { Relic } from '../../data/armory' // ←../../ because file is in components/relics/
 
 export function RelicCard({ relic }: { relic: Relic }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -50,9 +50,10 @@ export function RelicCard({ relic }: { relic: Relic }) {
         </button>
 
         {isOpen && (
-          <div className="mb-4 text-gray-300">
-            <p className="mb-2"><strong>Scripture:</strong> {relic.scripture}</p>
+          <div className="mb-4 text-gray-300 space-y-2">
+            <p><strong>Scripture:</strong> {relic.scripture}</p>
             <p className="text-sm text-gray-400">{relic.reference}</p>
+            <p className="text-sm"><strong>Reflection:</strong> {relic.reflection}</p>
           </div>
         )}
 
