@@ -15,6 +15,6 @@ export const redemptionRelics: Relic[] = [
     testimony: `Addiction. Failure. Heart attack. Death. The enemy had a list. Jesus had a cross. He traded His life for mine. I don't wear shame anymore. I wear redemption. Every scar preaches it. Every breath declares it. I am redeemed.`,
     subtitle: "The Exchange",
     youtube: "https://youtu.be/91hM7gCQzaI", // ← Updated with your real link
-    image: "/redeemed.png"
+    image: "/745084838_1001219686021311_1916790631197181053_n.webp",
   }
 ];
