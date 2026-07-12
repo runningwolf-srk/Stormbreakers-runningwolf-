@@ -2,7 +2,7 @@
 import { callingRelics } from './calling'
 import { fireRelics } from './fire'
 import { redemptionRelics } from './redemption'
-import { kingshipRelics } from './kingship' // ← Added missing }
+import { kingshipRelics } from './kingship'
 import { worshipRelics } from './worship'
 import { warfareRelics } from './warfare'
 
@@ -31,6 +31,14 @@ export const allRelics: Relic[] = [
   ...warfareRelics,
 ]
 
+export const armory = allRelics // ← This line fixes your build error
+
 export const getRelicBySlug = (slug: string): Relic | undefined => {
   return allRelics.find(relic => relic.slug === slug)
+}
+
+export const getRelicsByTheme = (theme: string): Relic[] => {
+  return allRelics.filter(relic => 
+    relic.primaryTheme === theme || relic.themes.includes(theme)
+  )
 }
