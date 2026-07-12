@@ -1,15 +1,23 @@
 // data/armory/index.ts
 import { fireRelics } from './fire'
 
-// Only import files that actually exist in /data/armory/
-// Comment these out until you create the files:
-// import { callingRelics } from './calling'
-// import { healingRelics } from './healing'
-// import { worshipRelics } from './worship'
+// Add this type export - this fixes the build
+export type Relic = {
+  slug: string;
+  relic: string;
+  song: string;
+  scripture: string;
+  reference: string;
+  primaryTheme: string;
+  themes: string[];
+  declaration: string;
+  reflection: string;
+  testimony: string;
+  subtitle: string;
+  youtube: string;
+  image: string;
+}
 
-export const armory = [
+export const armory: Relic[] = [
  ...fireRelics,
-  //...callingRelics,
-  //...healingRelics,
-  //...worshipRelics,
 ];
