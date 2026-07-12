@@ -2,9 +2,9 @@
 import { callingRelics } from './calling'
 import { fireRelics } from './fire'
 import { redemptionRelics } from './redemption'
-import { kingshipRelics from './kingship'
+import { kingshipRelics } from './kingship' // ← Added missing }
 import { worshipRelics } from './worship'
-import { warfareRelics } from './warfare' // ← Add this import
+import { warfareRelics } from './warfare'
 
 export interface Relic {
   slug: string
@@ -18,7 +18,7 @@ export interface Relic {
   reflection: string
   testimony: string
   subtitle: string
-  youtube?: string // ← Make sure this is optional
+  youtube?: string
   image: string
 }
 
@@ -28,7 +28,7 @@ export const allRelics: Relic[] = [
   ...redemptionRelics,
   ...kingshipRelics,
   ...worshipRelics,
-  ...warfareRelics, // ← Add this spread
+  ...warfareRelics,
 ]
 
 export const getRelicBySlug = (slug: string): Relic | undefined => {
