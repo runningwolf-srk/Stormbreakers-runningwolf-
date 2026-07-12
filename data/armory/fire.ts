@@ -30,7 +30,7 @@ export const fireRelics: Relic[] = [
     testimony: `Flatlined at 39. The fire should have ended me. Instead it started me. Not a spark. An eternal flame. Not mine. His. It burns through the valley. Through the battle. Through the worship. It will never go out. Because He never does.`,
     subtitle: "The Fire That Never Goes Out",
     youtube: "https://youtu.be/maI6giUcYYk",
-    image: "/AQNv1x8JFS1A0AB4rym1t36t9z9Ah7gwaP2Vr3PS3hhoCAOZs5UhX4LeEiGXg2acWrcSt1iyqKQrCPhuA6O9d5My.png"
+    image: "/AQMILikpY_4YzpC0ogoZpZ-dI1kxVJiVzqbyR-nBMd64rS--eSuhxWQnpBDaKhlBu2e5g6eNQCVPKEViBhWOME3B.png",
   },
   {
     slug: "spirit-mantle",
