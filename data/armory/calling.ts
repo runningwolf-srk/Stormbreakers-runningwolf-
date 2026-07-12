@@ -44,7 +44,7 @@ export const callingRelics: Relic[] = [
     reflection: `Carved fang. Gold rune cap. Braided leather. Ezekiel 3:9 — forehead like flint. Amos 3:8 — the Lion has roared. This is the mark of the sent one. Not jewelry. A weapon. A reminder. The wolf doesn't bite to kill. He bites to carry. To protect. To warn.`,
     testimony: `He called me Running Wolf. Then He gave me the fang. Not to fight like the world. To stand like heaven. Hard as flint. Set apart. When the enemy sees the fang, he knows — this one has been with the Lion. This one carries authority. This one doesn't back down.`,
     subtitle: "The Tooth of the Sent One",
-    youtube: "https://youtu.be/BCKoGjYJZdg", // ← Updated with your real link
-    image: "/wolf-fang.png"
+    youtube: "https://youtu.be/BCKoGjYJZdg",
+    image: "/AQNaCDj13mbCjvyJA47tjBiuR6D-WpUweMqib7Hbp4kQlHoSgm3XdKzfnagSdD4b8kNiNWrOpPugyuGGlJZ0Zmp7.png"
   }
 ];
