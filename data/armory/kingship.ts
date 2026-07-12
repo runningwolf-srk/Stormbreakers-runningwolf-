@@ -15,6 +15,6 @@ export const kingshipRelics: Relic[] = [
     testimony: `Flatlined at 39. Came back with nothing. Left with a crown. Not on my head — in my spirit. The world calls me survivor. Heaven calls me royal. The relic isn't gold. It's me. Redeemed. Restored. Reigning with Him.`,
     subtitle: "The Crown of the Chosen",
     youtube: "https://youtu.be/utUnOBCp7GY", // ← Updated with your real link
-    image: "/royal-relic.png"
+    image: "/745907814_1021584980459385_6615157561819576353_n.webp",
   }
 ];
