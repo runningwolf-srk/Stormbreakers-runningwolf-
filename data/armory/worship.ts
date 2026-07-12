@@ -14,7 +14,7 @@ export const worshipRelics: Relic[] = [
     reflection: `ICU was my valley of the shadow. Machines beeping. Tubes breathing for me. Psalm 23 wasn't poetry — it was a map. He walked me through. He restored my soul. Green pastures came after the flatline.`,
     testimony: `Massive heart attack at 39. Doctors said it was over. Psalm 23 said it was just the valley. He led me beside still waters. He prepared a table before me in the presence of my enemies — death, fear, doubt. My cup overflows.`,
     subtitle: "The Valley Song",
-    youtube: "https://youtu.be/3z5h5Qq5J5Q",
+    youtube: "https://youtu.be/fE-qtN6cPxI", // ← Updated with your real link
     image: "/psalm-23.png"
   }
 ];
