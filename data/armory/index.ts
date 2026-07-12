@@ -14,8 +14,6 @@ export type Relic = {
   scripture: string
   reference: string
   youtube?: string
-  spotify?: string
-  appleMusic?: string
   declaration: string
   reflection: string
   testimony?: string
