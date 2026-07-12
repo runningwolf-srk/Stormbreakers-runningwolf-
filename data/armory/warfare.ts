@@ -15,6 +15,6 @@ export const warfareRelics: Relic[] = [
     testimony: `ICU was silent. Machines beeping. Death whispering. Then He brought me back and gave me a sound. Not my heartbeat — His war drum. Thunder Drums is the beat I came back with. When the enemy hears it, he knows: the storm is here. The sent one is marching.`,
     subtitle: "The Sound of the Storm",
     youtube: "https://youtu.be/BCKoGjYJZdg", // ← Live link
-    image: "/AQOz4ulRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQolJbmduV4EbRJKxE183PEOaupTTShyCiqg.png"
+    image: "/AQOz4uIRTVBY1w495PKpiAaJkqdN0z3TUXi6XBCq3BTu5pojjvcJeQoIJbmduV4EbRJKxE183PEOaupTTShyCiqg.png
   }
 ];
