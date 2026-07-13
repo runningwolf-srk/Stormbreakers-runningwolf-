@@ -1,4 +1,5 @@
-import { armory } from '@/data/armory'  // <- now this works
+// app/armory/page.tsx
+import { armory } from '@/data/armory'
 import { RelicCard } from '@/components/relics/RelicCard'
 
 export const dynamic = 'force-dynamic'
