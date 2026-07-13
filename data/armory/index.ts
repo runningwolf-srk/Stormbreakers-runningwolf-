@@ -3,7 +3,7 @@
 
 export interface Relic {
   slug: string
-  title: string        // fixes 'title' error
+  title: string
   image: string
   theme: string
   description: string
@@ -18,7 +18,7 @@ import { healingRelics } from './healing'
 import { fireRelics } from './fire'
 import { callingRelics } from './calling'
 
-// Combine into one array for The Word page + Armory page
+// Combine into one array
 export const allRelics: Relic[] = [
   ...kingshipRelics,
   ...redemptionRelics,
@@ -27,5 +27,6 @@ export const allRelics: Relic[] = [
   ...callingRelics,
 ]
 
-export const armory = allRelics // <- THIS LINE fixes your import error
+// This line fixes ALL your import errors
+export const armory = allRelics
 export default allRelics
