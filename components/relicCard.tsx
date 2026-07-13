@@ -1,68 +1,74 @@
-// components/RelicCard.tsx
-"use client"
+// components/relicCard.tsx
+import Image from 'next/image'
+import Link from 'next/link'
+import { Relic } from '@/data/armory'
 
-import { useState } from 'react'
-import { Relic } from '../data/armory'
+type Props = {
+  relic: Relic
+}
 
-export function RelicCard({ relic }: { relic: Relic }) {
-  const [isOpen, setIsOpen] = useState(false)
+function getYouTubeId(url?: string): string | null {
+  if (!url) return null
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
+  const match = url.match(regExp)
+  return match && match[2].length === 11? match[2] : null
+}
 
-  const getYouTubeId = (url?: string) => {
-    if (!url) return null
-    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?\/\s]{11})/)
-    return match? match[1] : null
-  }
-
-  const youtubeId = getYouTubeId(relic.youtube)
+export function RelicCard({ relic }: Props) {
+  const videoId = getYouTubeId(relic.youtube)
 
   return (
-    <article id={relic.slug} className="border border-amber-600/30 rounded-lg overflow-hidden bg-black/50 scroll-mt-20">
+    <article id={relic.slug} className="bg-stone-900 border border-amber-600/30 rounded-lg overflow-hidden hover:border-amber-400/50 transition-all">
+      <div className="relative w-full h-56">
+        <Image
+          src={relic.image}
+          alt={relic.title}
+          fill
+          className="object-cover"
+        />
+      </div>
+      
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-amber-400 mb-2">{relic.song}</h3>
-        <p className="text-amber-200/60 text-sm mb-3 uppercase tracking-widest">{relic.relic}</p>
+        <span className="inline-block px-2 py-1 text-xs font-bold uppercase bg-amber-400/10 text-amber-400 rounded mb-3">
+          {relic.theme}
+        </span>
+        
+        <h3 className="text-2xl font-bold text-amber-100 mb-2">
+          {relic.title}
+        </h3>
+        
+        <p className="text-amber-200/70 text-sm mb-3">
+          {relic.description}
+        </p>
 
-        <blockquote className="text-amber-100/80 italic mb-3 border-l-2 border-amber-600/50 pl-4">
-          "{relic.scripture}"
-        </blockquote>
-        <cite className="text-amber-400 text-sm block mb-4">— {relic.reference}</cite>
+        <div className="text-xs text-amber-300/60 space-y-1 mb-4">
+          {relic.lyrics && (
+            <p className="font-semibold">Song: {relic.lyrics}</p>
+          )}
+          {relic.scriptureRef && (
+            <p>Scripture: {relic.scriptureRef}</p>
+          )}
+        </div>
 
-        <p className="text-amber-500 font-bold mb-4">{relic.declaration}</p>
-
-        {!isOpen? (
-          <button
-            onClick={() => setIsOpen(true)}
-            className="bg-amber-600 hover:bg-amber-500 text-black px-6 py-2 rounded font-bold transition"
-          >
-            ▶️ Enter Sound
-          </button>
-        ) : (
-          <div className="space-y-4">
-            {youtubeId && (
-              <div className="aspect-video">
-                <iframe
-                  src={`https://www.youtube.com/embed/${youtubeId}`}
-                  className="w-full h-full rounded"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            )}
-            <p className="text-amber-100/90 leading-relaxed whitespace-pre-line">
-              {relic.reflection}
-            </p>
-            {relic.testimony && (
-              <p className="text-amber-400/70 text-sm mt-4 italic">
-                {relic.testimony}
-              </p>
-            )}
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-amber-500 hover:text-amber-300 text-sm"
-            >
-              Close
-            </button>
+        {videoId && (
+          <div className="relative w-full aspect-video rounded-md overflow-hidden bg-black mb-4">
+            <iframe
+              src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
+              title={`${relic.title} - ${relic.lyrics || 'Music'}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+              className="absolute top-0 left-0 w-full h-full"
+            />
           </div>
         )}
+        
+        <Link 
+          href={`/chronicles/${relic.slug}`}
+          className="inline-block text-amber-400 hover:text-amber-300 text-sm font-semibold transition"
+        >
+          View Chronicle →
+        </Link>
       </div>
     </article>
   )
