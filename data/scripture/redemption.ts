@@ -3,30 +3,21 @@ import { Scripture } from './index'
 
 export const redemptionScriptures: Scripture[] = [
   {
-    slug: "galatians-2-20",
-    reference: "Galatians 2:20",
+    slug: "galatians-5-1",
+    reference: "Galatians 5:1",
     theme: "Redemption",
-    text: "I have been crucified with Christ. It is no longer I who live, but Christ who lives in me.",
-    context: "Paul's declaration of new identity in Christ.",
-    connectedRelics: ["redeemed"],
-    connectedChapters: [1]
+    text: "It is for freedom that Christ has set us free. Stand firm, then, and do not let yourselves be burdened again by a yoke of slavery.",
+    context: "Paul's declaration of the believer's freedom in Christ.",
+    relatedRelics: ["redeemed"],
+    relatedChapters: [4]
   },
   {
-    slug: "psalm-23-1",
-    reference: "Psalm 23:1",
+    slug: "ephesians-1-7",
+    reference: "Ephesians 1:7", 
     theme: "Redemption",
-    text: "The Lord is my shepherd; I shall not want.",
-    context: "David's song of trust in God's provision and protection.",
-    connectedRelics: ["psalm-23"],
-    connectedChapters: [1]
-  },
-  {
-    slug: "romans-8-1",
-    reference: "Romans 8:1",
-    theme: "Redemption",
-    text: "There is therefore now no condemnation for those who are in Christ Jesus.",
-    context: "The verdict of grace for the redeemed.",
-    connectedRelics: ["redeemed"],
-    connectedChapters: [1, 2]
+    text: "In him we have redemption through his blood, the forgiveness of sins, in accordance with the riches of God's grace.",
+    context: "The cost and source of our redemption.",
+    relatedRelics: ["redeemed"],
+    relatedChapters: [4]
   }
 ];
