@@ -8,8 +8,8 @@ export const fireScriptures: Scripture[] = [
     theme: "Fire",
     text: "But if I say, 'I will not mention his word or speak anymore in his name,' his word is in my heart like a fire, a fire shut up in my bones.",
     context: "Jeremiah describes the consuming fire of God's Word that cannot be contained.",
-    connectedRelics: ["fire-of-god"], // update slug to match your relic
-    connectedChapters: [5] // update to match your chapter
+    relatedRelics: ["eternal-fire"],
+    relatedChapters: [2]
   },
   {
     slug: "acts-2-3",
@@ -17,8 +17,8 @@ export const fireScriptures: Scripture[] = [
     theme: "Fire", 
     text: "They saw what seemed to be tongues of fire that separated and came to rest on each of them.",
     context: "Pentecost — the Holy Spirit came as fire.",
-    connectedRelics: ["fire-of-god"],
-    connectedChapters: [6]
+    relatedRelics: ["eternal-fire", "spirit-mantle"],
+    relatedChapters: [2]
   },
   {
     slug: "hebrews-12-29",
@@ -26,7 +26,7 @@ export const fireScriptures: Scripture[] = [
     theme: "Fire",
     text: "For our God is a consuming fire.",
     context: "A reminder of God's holy presence and refining power.",
-    connectedRelics: ["fire-of-god"],
-    connectedChapters: [5]
+    relatedRelics: ["eternal-fire"],
+    relatedChapters: [2]
   }
 ];
