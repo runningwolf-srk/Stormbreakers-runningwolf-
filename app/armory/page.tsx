@@ -1,23 +1,18 @@
 // app/armory/page.tsx
-export const dynamic = 'force-dynamic'
-
 import { allRelics } from '@/data/armory'
 import { RelicCard } from '@/components/relics/RelicCard'
 
+export const dynamic = 'force-dynamic'
+
 export default function ArmoryPage() {
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-center text-white">The Armory</h1>
-
-      {!armory || armory.length === 0? (
-        <p className="text-center text-red-500">No relics found. Check data/armory/index.ts</p>
-      ) : (
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {armory.map((relic) => (
-            <RelicCard key={relic.slug} relic={relic} />
-          ))}
-        </div>
-      )}
-    </main>
+    <div className="container mx-auto px-4 py-12">
+      <h1 className="text-4xl font-bold mb-8 text-amber-100">The Armory</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {allRelics.map((relic) => (
+          <RelicCard key={relic.slug} relic={relic} />
+        ))}
+      </div>
+    </div>
   )
 }
