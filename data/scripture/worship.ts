@@ -8,8 +8,8 @@ export const worshipScriptures: Scripture[] = [
     theme: "Worship",
     text: "Come, let us bow down in worship, let us kneel before the Lord our Maker.",
     context: "A call to humble worship before God.",
-    connectedRelics: ["psalm-23"], // update slug to match your relic
-    connectedChapters: [1]
+    relatedRelics: ["shepherd-king"],
+    relatedChapters: [1]
   },
   {
     slug: "john-4-24",
@@ -17,8 +17,8 @@ export const worshipScriptures: Scripture[] = [
     theme: "Worship",
     text: "God is spirit, and his worshipers must worship in the Spirit and in truth.",
     context: "Jesus defining true worship to the Samaritan woman.",
-    connectedRelics: ["redeemed"],
-    connectedChapters: [2]
+    relatedRelics: ["redeemed"],
+    relatedChapters: [2]
   },
   {
     slug: "romans-12-1",
@@ -26,7 +26,7 @@ export const worshipScriptures: Scripture[] = [
     theme: "Worship",
     text: "Offer your bodies as a living sacrifice, holy and pleasing to God—this is your true and proper worship.",
     context: "Paul defines worship as whole-life surrender.",
-    connectedRelics: ["redeemed"],
-    connectedChapters: [1, 7]
+    relatedRelics: ["redeemed"],
+    relatedChapters: [1, 4]
   }
 ];
