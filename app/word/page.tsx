@@ -1,5 +1,4 @@
 // app/word/page.tsx
-
 import Image from 'next/image'
 import Link from 'next/link'
 
