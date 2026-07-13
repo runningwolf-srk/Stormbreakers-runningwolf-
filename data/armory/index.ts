@@ -1,33 +1,31 @@
 // data/armory/index.ts
-export * from './redemption'
-export * from './kingship'
-export * from './warfare'
-export * from './fire'
-export * from './calling'
+// Central export for all Relic themes
 
-import { redemptionRelics } from './redemption'
+export interface Relic {
+  slug: string
+  title: string        // <- add this line - fixes the build error
+  image: string
+  theme: string
+  description: string
+  scriptureRef?: string
+  lyrics?: string
+}
+
+// Import all theme files
 import { kingshipRelics } from './kingship'
-import { warfareRelics } from './warfare'
+import { redemptionRelics } from './redemption'
+import { healingRelics } from './healing'
 import { fireRelics } from './fire'
 import { callingRelics } from './calling'
+// import other themes as you add them
 
-export const allRelics = [
-  ...redemptionRelics,
+// Combine into one array for The Word page + Armory page
+export const allRelics: Relic[] = [
   ...kingshipRelics,
-  ...warfareRelics,
+  ...redemptionRelics,
+  ...healingRelics,
   ...fireRelics,
   ...callingRelics,
-];
+]
 
-export const armory = allRelics; // ← The Word imports this
-
-export type Relic = {
-  slug: string;
-  relic: string;
-  song: string;
-  theme: string;
-  scripture: string;
-  declaration: string;
-  reflection: string;
-  image: string;
-}
+export default allRelics
