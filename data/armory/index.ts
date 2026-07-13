@@ -27,4 +27,5 @@ export const allRelics: Relic[] = [
   ...callingRelics,
 ]
 
+export const armory = allRelics // <- this fixes your import error
 export default allRelics
