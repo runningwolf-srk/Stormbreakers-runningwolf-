@@ -50,4 +50,6 @@ export const chronicles: Chronicle[] = [
   },
 ]
 
+// Export as both names so all imports work
+export const chapters = chronicles
 export default chronicles
