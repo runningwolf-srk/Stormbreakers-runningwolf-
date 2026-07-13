@@ -1,16 +1,22 @@
 // data/chronicles.ts
 // Chronicles = your testimony chapters. Each chapter links to Scriptures + Relics.
 
+export interface ScriptureRef {
+  ref: string
+  text: string
+}
+
 export interface Chronicle {
   id: number
   title: string
   slug: string
   subtitle: string
   summary: string
-  content: string        // <- add this line for the full chapter text
+  content: string
   percentComplete: number
   relicSlug: string
-  relatedScriptures: string[] 
+  scripture: ScriptureRef      // <- add this for the Chronicles page
+  relatedScriptures: string[] // <- keep this for The Word page
   relatedRelics: string[]
 }
 
@@ -37,9 +43,13 @@ I sat down. I ate.
 Goodness and mercy didn’t follow at a distance. They chased me down.
 
 That’s when I understood: David wasn’t writing a psalm. He was writing a field manual for surviving the night.
-    `, // <- add your full chapter text here
+    `,
     percentComplete: 100,
     relicSlug: "shepherd-king",
+    scripture: {                                    // <- add this object
+      ref: "Psalm 23",
+      text: "The Lord is my shepherd; I shall not want. He maketh me to lie down in green pastures: he leadeth me beside the still waters."
+    },
     relatedScriptures: ["psalm-23"],
     relatedRelics: ["shepherd-king", "royal-relic"],
   },
@@ -63,6 +73,10 @@ Keep the fire burning. Not the hype. The altar.
     `,
     percentComplete: 50,
     relicSlug: "eternal-fire",
+    scripture: {                                    // <- add this object
+      ref: "Leviticus 6:13",
+      text: "The fire shall ever be burning upon the altar; it shall never go out."
+    },
     relatedScriptures: ["leviticus-6-13"],
     relatedRelics: ["eternal-fire", "spirit-mantle"],
   },
@@ -86,6 +100,10 @@ Thunder Drums isn't a band name. It's what happens when heaven invades through s
     `,
     percentComplete: 25,
     relicSlug: "thunder-drums",
+    scripture: {                                    // <- add this object
+      ref: "2 Corinthians 10:4",
+      text: "For the weapons of our warfare are not carnal, but mighty through God to the pulling down of strong holds"
+    },
     relatedScriptures: ["2-corinthians-10-4"],
     relatedRelics: ["thunder-drums"],
   },
@@ -113,6 +131,10 @@ That’s why I raise my hands. Not because I’m good. Because He is.
     `,
     percentComplete: 25,
     relicSlug: "redeemed",
+    scripture: {                                    // <- add this object
+      ref: "Galatians 5:1",
+      text: "Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage."
+    },
     relatedScriptures: ["galatians-5-1"],
     relatedRelics: ["redeemed"],
   },
