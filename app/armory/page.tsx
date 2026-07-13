@@ -1,7 +1,7 @@
 // app/armory/page.tsx
 export const dynamic = 'force-dynamic'
 
-import { armory } from '@/data/armory'
+import { allRelics } from '@/data/armory'
 import { RelicCard } from '@/components/relics/RelicCard'
 
 export default function ArmoryPage() {
