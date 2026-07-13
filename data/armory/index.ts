@@ -1,6 +1,4 @@
 // data/armory/index.ts
-// Central export for all Relic themes
-
 export interface Relic {
   slug: string
   title: string
@@ -12,22 +10,21 @@ export interface Relic {
   youtube?: string
 }
 
-// Import all theme files
 import { kingshipRelics } from './kingship'
 import { redemptionRelics } from './redemption'
 import { healingRelics } from './healing'
 import { fireRelics } from './fire'
 import { callingRelics } from './calling'
+import { warfareRelics } from './warfare' // <- ADD THIS
 
-// Combine into one array
 export const allRelics: Relic[] = [
- ...kingshipRelics,
- ...redemptionRelics,
- ...healingRelics,
- ...fireRelics,
- ...callingRelics,
+...kingshipRelics,
+...redemptionRelics,
+...healingRelics,
+...fireRelics,
+...callingRelics,
+...warfareRelics, // <- ADD THIS
 ]
 
-// This line fixes ALL your import errors
 export const armory = allRelics
 export default allRelics
