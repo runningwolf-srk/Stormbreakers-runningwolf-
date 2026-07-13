@@ -1,48 +1,30 @@
 // data/chronicles/index.ts
-export type Chapter = {
-  chapter: number;
-  title: string;
-  slug: string;
-  content: string;
-  excerpt?: string;
-}
+// LEGACY FILE - Only use if you have content that isn't in data/armory
+import { Relic } from '../armory'
 
-export const chronicles: Chapter[] = [
+// If this file had old chapters, convert them to Relic format:
+export const chapters: Relic[] = [
   {
-    chapter: 1,
-    title: "The Valley",
-    slug: "chapter-1",
-    excerpt: "Psalm 23 wasn't poetry anymore. It was a map.",
-    content: `
-This is not Scripture. This is my story.
-
-Psalm 23 wasn't poetry anymore. It was a map.
-
-When I flatlined at 39...
-[put your full Chapter 1 content here]
-`
+    slug: 'old-chapter-1',
+    title: 'Old Chapter Title', // was: relic:
+    image: '/relics/old-chapter-1.jpg',
+    theme: 'Old Theme', // was: primaryTheme:
+    description: 'Your old description here',
+    scriptureRef: 'John 3:16', // was: scripture: or reference:
+    lyrics: 'Old Song Name', // was: song:
+    youtube: 'https://www.youtube.com/watch?v=OLD_VIDEO'
   },
   {
-    chapter: 2,
-    title: "The Breaking",
-    slug: "chapter-2",
-    excerpt: "God breaks what He’s building.",
-    content: `
-This is not Scripture. This is my story.
-
-[Chapter 2 content here]
-`
-  },
-  {
-    chapter: 3,
-    title: "The Armor",
-    slug: "chapter-3", 
-    excerpt: "Spirit Mantle was forged in warfare.",
-    content: `
-This is not Scripture. This is my story.
-
-[Chapter 3 content here]
-`
+    slug: 'old-chapter-2', 
+    title: 'Another Old Chapter',
+    image: '/relics/old-chapter-2.jpg',
+    theme: 'Another Theme',
+    description: 'Another description',
+    scriptureRef: 'Psalm 23:1',
+    lyrics: 'Another Song',
+    youtube: 'https://www.youtube.com/watch?v=ANOTHER_OLD_VIDEO'
   }
-  // Add chapters 4-7 as you write them
-];
+]
+
+// Export default for backward compatibility
+export default chapters
