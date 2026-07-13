@@ -1,11 +1,12 @@
+// data/scripture/index.ts
 export type Scripture = {
   reference: string;
   theme: string;
   text: string;
   context?: string;
   slug: string;
-  connectedRelics?: string[];
-  connectedChapters?: number[];
+  relatedRelics?: string[];
+  relatedChapters?: number[];
 }
 
 export * from './healing'
