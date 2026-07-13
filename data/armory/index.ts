@@ -9,6 +9,7 @@ export interface Relic {
   description: string
   scriptureRef?: string
   lyrics?: string
+  youtube?: string
 }
 
 // Import all theme files
@@ -20,11 +21,11 @@ import { callingRelics } from './calling'
 
 // Combine into one array
 export const allRelics: Relic[] = [
-  ...kingshipRelics,
-  ...redemptionRelics,
-  ...healingRelics,
-  ...fireRelics,
-  ...callingRelics,
+ ...kingshipRelics,
+ ...redemptionRelics,
+ ...healingRelics,
+ ...fireRelics,
+ ...callingRelics,
 ]
 
 // This line fixes ALL your import errors
