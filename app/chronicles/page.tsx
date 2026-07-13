@@ -1,36 +1,36 @@
-import { chapters } from '../../data/chronicles'
-import Link from 'next/link'
+// app/chronicles/page.tsx
+import { armory } from '@/data/armory'
+import { WordCard } from '@/components/word/WordCard'
+
+export const dynamic = 'force-dynamic'
 
 export const metadata = {
   title: 'The Chronicles | Stormbreakers',
-  description: 'The Testimony of RunningWolf. Written in Ash and Fire.',
+  description: 'The Testimony of RunningWolf. Music. Scripture. Book to book.',
 }
 
 export default function ChroniclesPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="max-w-3xl mx-auto px-4 py-20">
+    <main className="min-h-screen bg-stone-950 text-amber-50">
+      <div className="max-w-7xl mx-auto px-4 py-16">
         <header className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-amber-400 tracking-widest mb-4">THE CHRONICLES</h1>
-          <p className="text-xl text-amber-200 mb-2">The Testimony of RunningWolf</p>
-          <p className="text-amber-200/60 italic mb-6">Written in Ash and Fire</p>
-          <p className="text-amber-200/70 italic border-t border-amber-400/20 pt-6">
-            This is not Scripture. This is my story. Every chapter points back to The Word that saved me.
+          <h1 className="text-5xl md:text-6xl font-black mb-4 text-amber-100">
+            The Chronicles
+          </h1>
+          <p className="text-xl text-amber-200/80 max-w-2xl mx-auto mb-2">
+            The Testimony of RunningWolf
+          </p>
+          <p className="text-amber-200/60 italic mb-2">
+            Music. Scripture. Book to book.
+          </p>
+          <p className="text-amber-200/70 italic max-w-xl mx-auto">
+            This is not Scripture. This is my song with Scripture.
           </p>
         </header>
 
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-amber-400 mb-6">Table of Contents</h2>
-          {chapters.map((chapter, i) => (
-            <Link
-              key={chapter.slug}
-              href={`/chronicles/${chapter.slug}`}
-              className="block p-6 border border-amber-400/20 hover:border-amber-400/60 hover:bg-amber-400/5 transition"
-            >
-              <span className="text-amber-400/60 text-sm">Chapter {i + 1}</span>
-              <h3 className="text-2xl font-bold text-amber-200">{chapter.title}</h3>
-              <p className="text-amber-200/60 text-sm mt-1">{chapter.subtitle}</p>
-            </Link>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {armory.map((relic) => (
+            <WordCard key={relic.slug} relic={relic} />
           ))}
         </div>
       </div>
