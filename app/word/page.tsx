@@ -1,5 +1,5 @@
 // app/word/page.tsx
-import { armory } from '@/data/armory'
+
 import Image from 'next/image'
 import Link from 'next/link'
 
