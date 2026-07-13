@@ -1,36 +1,32 @@
 // data/scripture/index.ts
-export type Scripture = {
-  reference: string;
-  theme: string;
-  text: string;
-  context?: string;
-  slug: string;
-  relatedRelics?: string[];
-  relatedChapters?: number[];
+// Central export for all Scripture themes
+
+export interface Scripture {
+  slug: string
+  reference: string
+  theme: string
+  text: string
+  context: string
+  relatedRelics?: string[] // <- add this line
+  relatedChapters?: number[] // <- add this line
 }
 
-export * from './healing'
-export * from './redemption'
-export * from './kingship'
-export * from './warfare'
-export * from './calling'
-export * from './fire'
-export * from './worship'
-
+// Import all theme files
 import { healingScriptures } from './healing'
-import { redemptionScriptures } from './redemption'
+import { redemptionScriptures } from './redemption' 
 import { kingshipScriptures } from './kingship'
-import { warfareScriptures } from './warfare'
 import { callingScriptures } from './calling'
 import { fireScriptures } from './fire'
-import { worshipScriptures } from './worship'
+// import { worshipScriptures } from './worship' // add when ready
+// import { warfareScriptures } from './warfare' // add when ready
 
+// Combine into one array for The Word page
 export const allScriptures: Scripture[] = [
  ...healingScriptures,
  ...redemptionScriptures,
  ...kingshipScriptures,
- ...warfareScriptures,
  ...callingScriptures,
  ...fireScriptures,
- ...worshipScriptures,
-];
+]
+
+export default allScriptures
