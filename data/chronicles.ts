@@ -15,8 +15,8 @@ export interface Chronicle {
   content: string
   percentComplete: number
   relicSlug: string
-  scripture: ScriptureRef      // <- add this for the Chronicles page
-  relatedScriptures: string[] // <- keep this for The Word page
+  scripture: ScriptureRef
+  relatedScriptures: string[]
   relatedRelics: string[]
 }
 
@@ -46,7 +46,7 @@ That’s when I understood: David wasn’t writing a psalm. He was writing a fie
     `,
     percentComplete: 100,
     relicSlug: "shepherd-king",
-    scripture: {                                    // <- add this object
+    scripture: {
       ref: "Psalm 23",
       text: "The Lord is my shepherd; I shall not want. He maketh me to lie down in green pastures: he leadeth me beside the still waters."
     },
@@ -73,7 +73,7 @@ Keep the fire burning. Not the hype. The altar.
     `,
     percentComplete: 50,
     relicSlug: "eternal-fire",
-    scripture: {                                    // <- add this object
+    scripture: {
       ref: "Leviticus 6:13",
       text: "The fire shall ever be burning upon the altar; it shall never go out."
     },
@@ -100,7 +100,7 @@ Thunder Drums isn't a band name. It's what happens when heaven invades through s
     `,
     percentComplete: 25,
     relicSlug: "thunder-drums",
-    scripture: {                                    // <- add this object
+    scripture: {
       ref: "2 Corinthians 10:4",
       text: "For the weapons of our warfare are not carnal, but mighty through God to the pulling down of strong holds"
     },
@@ -131,7 +131,7 @@ That’s why I raise my hands. Not because I’m good. Because He is.
     `,
     percentComplete: 25,
     relicSlug: "redeemed",
-    scripture: {                                    // <- add this object
+    scripture: {
       ref: "Galatians 5:1",
       text: "Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage."
     },
@@ -140,5 +140,6 @@ That’s why I raise my hands. Not because I’m good. Because He is.
   },
 ]
 
+// Export as both names so all imports work
 export const chapters = chronicles
 export default chronicles
