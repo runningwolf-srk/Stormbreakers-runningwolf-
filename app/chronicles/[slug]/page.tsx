@@ -3,6 +3,8 @@ import { armory } from '@/data/armory'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+export const dynamic = 'force-dynamic'
+
 export default function ChroniclePage({ params }: { params: { slug: string } }) {
   const relic = armory.find((r) => r.slug === params.slug)
   
