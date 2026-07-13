@@ -3,7 +3,7 @@
 
 export interface Relic {
   slug: string
-  title: string
+  title: string        // fixes 'title' error
   image: string
   theme: string
   description: string
@@ -27,5 +27,5 @@ export const allRelics: Relic[] = [
   ...callingRelics,
 ]
 
-export const armory = allRelics // <- this fixes your import error
+export const armory = allRelics // <- THIS LINE fixes your import error
 export default allRelics
