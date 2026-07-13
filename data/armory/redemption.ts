@@ -3,21 +3,23 @@ import { Relic } from './index'
 
 export const redemptionRelics: Relic[] = [
   {
-    slug: "redeemed",
-    title: "REDEEMED",
-    image: "/745084838_1001219686021311_1916319848324847956_n.webp",
-    theme: "Redemption",
-    description: "I am not who I was. I am redeemed. Chains broken. Shame gone.",
-    scriptureRef: "Galatians 2:20",
-    lyrics: "Redeemed"
+    slug: 'redeemed',
+    title: 'Redeemed',
+    image: '/relics/redeemed.jpg',
+    theme: 'The Exchange',
+    description: 'I am not who I was. I am redeemed. Bought with blood. Raised with Christ.',
+    scriptureRef: 'Ephesians 1:7',
+    lyrics: 'Redeemed - Big Daddy Weave Cover',
+    youtube: 'https://www.youtube.com/watch?v=REPLACE_ME'
   },
   {
-    slug: "psalm-23",
-    title: "Psalm 23",
-    image: "/746041529_1537131647892441_8063471234567890123_n.webp",
-    theme: "Shepherd", 
-    description: "I shall not want. I fear no evil. The Shepherd King walks with me.",
-    scriptureRef: "Psalm 23:1",
-    lyrics: "Psalm 23"
+    slug: 'wolf-fang',
+    title: 'Wolf Fang',
+    image: '/relics/wolf-fang.jpg',
+    theme: 'The Tooth of the Sent One',
+    description: 'The tooth of the sent one. Hard as flint. Sharp as heaven. The mark of RunningWolf.',
+    scriptureRef: 'Isaiah 50:7',
+    lyrics: 'Wolf Fang - War Cry',
+    youtube: 'https://www.youtube.com/watch?v=REPLACE_ME'
   }
-];
+]
