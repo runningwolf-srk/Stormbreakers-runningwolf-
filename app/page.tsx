@@ -1,34 +1,22 @@
-import Link from 'next/link'
+import Image from 'next/image' // make sure this is at the top of the file
 
-export default function HomePage() {
-  return (
-    <main className="min-h-screen bg-black text-amber-100">
-      <div className="max-w-4xl mx-auto px-4 py-20 text-center">
-        <h1 className="text-6xl font-bold text-amber-400 tracking-widest mb-8">STORMBREAKERS</h1>
-
-        <p className="text-2xl text-amber-200/80 mb-4">
-          Begin with a song. Follow the story. Stand on the Word.
-        </p>
-
-        <p className="text-lg text-amber-100/70 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Stormbreakers is a cinematic Christian worship project where every song is anchored in Scripture, every testimony points to Jesus Christ, and every story invites others to stand on God's Word.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/armory" className="bg-amber-600 hover:bg-amber-500 text-black px-8 py-3 rounded font-bold transition">
-            Enter The Armory
-          </Link>
-          <Link href="/chronicles" className="border border-amber-600 hover:bg-amber-600/10 text-amber-400 px-8 py-3 rounded font-bold transition">
-            Read The Chronicles
-          </Link>
-        </div>
-
-        <footer className="mt-32 pt-12 border-t border-amber-600/20 text-center">
-          <p className="text-amber-400 font-bold text-lg">
-            Jesus Christ is the center of them all.
-          </p>
-        </footer>
-      </div>
-    </main>
-  )
-}
+{/* Avatar + Name - paste this right after <main> opens */}
+<div className="flex flex-col items-center mb-8">
+  <div className="relative w-24 h-24 mb-4">
+    <div className="absolute inset-0 rounded-full bg-amber-400/20 blur-lg"></div>
+    <Image
+      src="/729068345_1706992463868756_7233760520950384832_n~2.jpg"
+      alt="Jessy Marquez - Running Wolf"
+      fill
+      className="rounded-full object-cover border-2 border-amber-400/40 relative z-10"
+      priority
+    />
+  </div>
+  
+  <h1 className="text-amber-400 text-xl font-bold tracking-[0.3em]">
+    JESSY MARQUEZ
+  </h1>
+  <p className="text-amber-200/50 text-xs uppercase tracking-widest mt-1">
+    RUNNINGWOLF
+  </p>
+</div>
