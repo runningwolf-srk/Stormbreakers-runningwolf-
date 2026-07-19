@@ -1,25 +1,24 @@
 // data/armory/redemption.ts
-import { Relic } from './index'
+import { Relic } from './types'
 
 export const redemptionRelics: Relic[] = [
   {
     slug: 'redeemed',
     title: 'Redeemed',
+    relic: 'Redeemed',
+    song: 'Redeemed',
+    songTitle: 'Redeemed - Big Daddy Weave Cover',
+    lyrics: 'Redeemed - Big Daddy Weave Cover',
     image: '/relics/redeemed.jpg',
     theme: 'The Exchange',
-    description: 'I am not who I was. I am redeemed. Bought with blood. Raised with Christ.',
+    primaryTheme: 'Redemption',
+    themes: ['Redemption', 'Grace'],
+    description: 'I am not who I was. I am redeemed by the blood of the Lamb.',
+    declaration: 'I am redeemed, forgiven, restored.',
+    reflection: 'Ephesians 1:7 - Redemption through His blood.',
+    scripture: 'In him we have redemption through his blood.',
     scriptureRef: 'Ephesians 1:7',
-    lyrics: 'Redeemed - Big Daddy Weave Cover',
-    youtube: 'https://www.youtube.com/watch?v=REPLACE_ME'
+    reference: 'Ephesians 1:7 ESV',
+    youtube: 'https://www.youtube.com/watch?v=',
   },
-  {
-    slug: 'wolf-fang',
-    title: 'Wolf Fang',
-    image: '/relics/wolf-fang.jpg',
-    theme: 'The Tooth of the Sent One',
-    description: 'The tooth of the sent one. Hard as flint. Sharp as heaven. The mark of RunningWolf.',
-    scriptureRef: 'Isaiah 50:7',
-    lyrics: 'Wolf Fang - War Cry',
-    youtube: 'https://www.youtube.com/watch?v=REPLACE_ME'
-  }
 ]
