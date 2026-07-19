@@ -1,25 +1,43 @@
 // data/armory/kingship.ts
-import { Relic } from './index'
+import { Relic } from './types'
 
 export const kingshipRelics: Relic[] = [
   {
     slug: 'running-wolf',
     title: 'Running Wolf',
+    relic: 'Running Wolf',
+    song: 'Running Wolf',
+    songTitle: 'Running Wolf - The Calling Anthem',
+    lyrics: 'Running Wolf - The Calling Anthem',
     image: '/relics/running-wolf.jpg',
     theme: 'The calling anthem',
-    description: 'I am called, chosen, and set apart for the storm',
+    primaryTheme: 'Kingship',
+    themes: ['Kingship', 'Calling'],
+    description: 'I am called, chosen, and sent. The wolf runs for the King.',
+    declaration: 'I am RunningWolf, sent by the King.',
+    reflection: 'Isaiah 6:8 - Here am I, send me.',
+    scripture: 'Then I heard the voice of the Lord saying, Whom shall I send?',
     scriptureRef: 'Isaiah 6:8',
-    lyrics: 'Running Wolf - The Calling Anthem',
-    youtube: 'https://www.youtube.com/watch?v=REPLACE_ME'
+    reference: 'Isaiah 6:8 ESV',
+    youtube: 'https://www.youtube.com/watch?v=',
   },
   {
     slug: 'royal-relic',
     title: 'Royal Relic',
+    relic: 'Royal Relic',
+    song: 'Royal Relic',
+    songTitle: 'Royal Relic',
+    lyrics: 'Royal Relic',
     image: '/relics/royal-relic.jpg',
     theme: 'The Crown of the Chosen',
-    description: 'I am royalty. Not by blood, but by Blood. Chosen. Holy. Set apart for His possession.',
+    primaryTheme: 'Kingship',
+    themes: ['Kingship', 'Identity'],
+    description: 'I am royalty. Not by bloodline, but by the blood of the Lamb.',
+    declaration: 'I am royalty in Christ.',
+    reflection: '1 Peter 2:9 - A royal priesthood.',
+    scripture: 'You are a chosen race, a royal priesthood.',
     scriptureRef: '1 Peter 2:9',
-    lyrics: 'Royal Blood - RunningWolf',
-    youtube: 'https://www.youtube.com/watch?v=REPLACE_ME'
-  }
+    reference: '1 Peter 2:9 ESV',
+    youtube: 'https://www.youtube.com/watch?v=',
+  },
 ]
