@@ -1,41 +1,24 @@
-// app/chronicles/page.tsx - FINAL
 import Link from 'next/link'
-
-const chapters = [
-  { id: 1, label: "CHAPTER 01 — WORSHIP BEGINS", title: "The Map", ref: "Psalm 40:3", relic: "Relic 01 — The First Song", song: "A New Song", reflection: "Psalm 23 wasn't poetry anymore. It was a map." },
-  { id: 2, label: "CHAPTER 02 — COURAGE RISES", title: "The Valley", ref: "Joshua 1:9", relic: "Relic 02 — Battle Cry", song: "Warrior's Anthem", reflection: "The moment fear left and the warrior rose." },
-  { id: 3, label: "CHAPTER 03 — REFINING FIRE", title: "The Fire", ref: "Isaiah 43:2", relic: "Relic 03 — Fire Forged", song: "Through The Fire", reflection: "The flames tested my faith, but God was already waiting on the other side." },
-  { id: 4, label: "CHAPTER 04 — THE BREAKING", title: "Jesus Is The Healer", ref: "Jeremiah 30:17", relic: "Relic 04 — Jesus Is The Healer", song: "Healer's Cry", reflection: "He heals wounds no human hands can reach." },
-  { id: 5, label: "CHAPTER 05 — SCARS THAT SPEAK", title: "The Testimony", ref: "2 Corinthians 12:9", relic: "Relic 05 — Scars That Preach", song: "I'm On Fire", reflection: "The scars I wanted hidden became the testimony God used to speak." },
-  { id: 6, label: "CHAPTER 06 — THE ALTAR", title: "The Fire That Never Goes Out", ref: "Leviticus 6:13", relic: "Relic 06 — Eternal Fire", song: "Eternal Fire", reflection: "The fire that tested me in the darkest valley never went out." },
-]
+import { CANON, STYLE } from '@/lib/constants'
 
 export default function ChroniclesPage() {
   return (
     <main className="min-h-screen bg-stone-950 text-amber-50 px-4 py-16">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-black tracking-tighter text-amber-100">THE CHRONICLES</h1>
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-black text-amber-100">THE CHRONICLES</h1>
           <p className="text-amber-400 font-black tracking-[0.3em] text-sm mt-2">The Testimony of RunningWolf</p>
-          <p className="text-amber-200/30 text-xs tracking-[0.4em] font-bold mt-2">MUSIC. SCRIPTURE. BOOK TO BOOK.</p>
-          <div className="mt-6 space-y-1">
-            <p className="text-amber-100/60 text-sm italic">This is my story — anchored in Scripture.</p>
-            <p className="text-amber-100/60 text-sm italic">These are my songs — rooted in the Word.</p>
-          </div>
+          <p className="text-amber-400/30 text-xs tracking-[0.3em] mt-2">{STYLE.FLOW}</p>
         </div>
-        <div className="space-y-6">
-          {chapters.map((c) => (
+        <div className="space-y-4">
+          {CANON.map(c => (
             <Link key={c.id} href={`/chronicles/${c.id}`} className="block p-6 bg-stone-900/50 border border-amber-400/10 rounded-xl hover:border-amber-400/30 transition">
-              <p className="text-amber-400/50 text-xs tracking-[0.25em] font-black">{c.label}</p>
-              <h3 className="text-amber-100 font-black text-lg mt-1">{c.title}</h3>
-              <p className="text-amber-200/30 text-xs mt-2">Scripture: {c.ref}</p>
-              <p className="text-amber-200/30 text-xs">Relic: {c.relic}</p>
-              <p className="text-amber-200/30 text-xs">Song: {c.song}</p>
-              <p className="text-stone-300 text-sm italic mt-3">"{c.reflection}"</p>
+              <p className="text-amber-400/50 text-xs font-black tracking-[0.25em]">{c.chapterCaps}</p>
+              <h3 className="text-amber-100 font-black text-lg mt-1">{c.title} — {c.ref} — {c.relicShort}</h3>
+              <p className="text-stone-300 text-sm italic mt-2">"{c.reflection}"</p>
             </Link>
           ))}
         </div>
-        <p className="text-center mt-16 text-amber-400 font-black tracking-[0.3em] text-xs">THE WORD IS AUTHORITY. MY STORY IS TESTIMONY.</p>
       </div>
     </main>
   )
