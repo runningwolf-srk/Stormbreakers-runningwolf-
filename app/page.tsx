@@ -1,96 +1,77 @@
-// app/page.tsx - FINAL PERFECT - Build Safe
-import Image from 'next/image'
+// app/page.tsx
 import Link from 'next/link'
-
-const relicsPreview = [
-  { num: "I", title: "The First Song", scripture: "Psalm 40:3", moment: "When God gives a new song after the storm." },
-  { num: "II", title: "Battle Cry", scripture: "Joshua 1:9", moment: "When fear breaks and courage rises." },
-  { num: "III", title: "Fire Forged", scripture: "Isaiah 43:2", moment: "When the fire refines instead of consuming." },
-  { num: "IV", title: "Shield of Faith", scripture: "Ephesians 6:16", moment: "When faith becomes your defense." },
-]
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-amber-50 flex flex-col items-center px-5 pt-12 pb-12 overflow-x-hidden">
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-amber-500/10 blur-[100px] rounded-full"></div>
-      </div>
-
-      <div className="relative z-10 w-full max-w-5xl flex flex-col items-center text-center">
-        <div className="relative w-28 h-28 sm:w-32 sm:h-32 mb-5">
-          <div className="absolute inset-0 rounded-full bg-amber-500/30 blur-xl"></div>
-          <Image src="/729068345_1706992463868756_7233760520950384832_n~2.jpg" alt="Jessy Marquez - Running Wolf" fill className="rounded-full object-cover border border-amber-400/50 relative z-10" priority />
-        </div>
-
-        <p className="text-amber-400 font-black tracking-[0.35em] text-sm mb-1">JESSY MARQUEZ</p>
-        <p className="text-amber-200/50 tracking-[0.5em] text-xs font-bold mb-3">RUNNING WOLF</p>
-        <p className="text-amber-500/40 text- tracking-[0.25em] font-bold uppercase mb-10">WORSHIP ANTHEMS • TESTIMONY • BOOK TO BOOK</p>
-
-        <h1 className="w-full text-center font-black tracking-tighter leading-none mb-6 text-4xl sm:text-7xl md:text-8xl bg-gradient-to-b from-amber-100 to-amber-400 bg-clip-text text-transparent">
-          STORMBREAKERS
+    <main className="min-h-screen bg-black text-white flex flex-col">
+      {/* HERO */}
+      <section className="flex-1 flex flex-col items-center justify-center px-6 py-24 text-center">
+        <h2 className="text-amber-400 text-sm tracking-[0.3em] uppercase mb-6">
+          Stormbreakers
+        </h2>
+        <h1 className="text-5xl md:text-7xl font-bold leading-tight max-w-3xl">
+          Begin with a song.<br/>
+          Follow the story.<br/>
+          Stand on the Word.
         </h1>
-
-        <p className="text-amber-100/90 text-lg sm:text-xl font-bold mb-6 max-w-2xl leading-snug">
-          Begin with a song. Follow the story. Stand on the Word.
+        <p className="mt-8 text-xl text-zinc-400 max-w-2xl">
+          Sixteen songs forged in warfare. Sixteen testimonies anchored in Scripture.
         </p>
+      </section>
 
-        <p className="text-amber-400 font-black tracking-[0.3em] text-xs mb-3">16 RELICS. ONE MISSION.</p>
-        <p className="text-amber-200/50 text-sm max-w-2xl leading-relaxed mb-10">
-          Every song anchored in Scripture, every testimony forged in fire, every act of worship for Jesus Christ.
+      {/* SIGNATURE STATEMENT - ONCE */}
+      <section className="py-16 border-y border-zinc-800 bg-zinc-900/50">
+        <p className="text-center text-2xl md:text-3xl font-bold tracking-widest text-amber-400">
+          THE WORD IS AUTHORITY. MY STORY IS TESTIMONY.
         </p>
+      </section>
 
-        <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm sm:max-w-none justify-center mb-16">
-          <Link href="/armory" className="px-8 py-3.5 bg-amber-500 text-stone-950 font-black rounded-xl hover:bg-amber-400 transition text-center">Enter The Armory</Link>
-          <Link href="/word" className="px-8 py-3.5 bg-stone-900 border border-amber-400/20 text-amber-400 font-black rounded-xl text-center">Read The Word</Link>
+      {/* THREE PATHS */}
+      <section className="grid md:grid-cols-3 gap-8 px-6 md:px-12 py-20 max-w-7xl mx-auto w-full">
+        <div className="bg-zinc-900 p-8 rounded-xl border border-zinc-800 hover:border-amber-600/50 transition">
+          <h3 className="text-2xl font-bold mb-3">The Armory</h3>
+          <p className="text-zinc-400 mb-6">
+            Worship songs and declarations. Each Relic carries a theme, Scripture, and battle declaration.
+          </p>
+          <Link 
+            href="/armory" 
+            className="inline-block px-6 py-3 bg-amber-600 text-black font-bold rounded-lg hover:bg-amber-500 transition"
+          >
+            Enter the Armory — Explore the songs
+          </Link>
         </div>
 
-        <div className="w-full text-left mb-16">
-          <h2 className="text-center text-xl font-black text-amber-100 mb-1">THE RELICS</h2>
-          <p className="text-center text-amber-200/30 text- tracking-[0.3em] font-black mb-6">16 TESTIMONIES FORGED IN FIRE</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {relicsPreview.map((r) => (
-              <Link key={r.num} href="/armory" className="group">
-                <div className="p-5 rounded-xl bg-stone-900/60 border border-amber-400/10 group-hover:border-amber-400/20 transition">
-                  <p className="text-amber-400/60 text- tracking-widest font-black mb-2">RELIC {r.num} — {r.title.toUpperCase()}</p>
-                  <p className="text-amber-200/50 text-xs">Scripture: {r.scripture}</p>
-                  <p className="text-stone-300 text-sm italic mt-2">{r.moment}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+        <div className="bg-zinc-900 p-8 rounded-xl border border-zinc-800 hover:border-amber-600/50 transition">
+          <h3 className="text-2xl font-bold mb-3">The Chronicles</h3>
+          <p className="text-zinc-400 mb-6">
+            The testimony behind those songs. Not polished stories, but battle reports from the valley.
+          </p>
+          <Link 
+            href="/chronicles" 
+            className="inline-block px-6 py-3 bg-zinc-800 text-white font-bold rounded-lg hover:bg-zinc-700 transition"
+          >
+            Read the Chronicles — Discover the testimony
+          </Link>
         </div>
 
-        <div className="w-full p-6 rounded-xl bg-stone-900/50 border border-amber-400/10 mb-16 text-center">
-          <p className="text-amber-400/50 text- tracking-[0.3em] font-black mb-4">THE WORD</p>
-          <blockquote className="text-xl sm:text-2xl font-black text-amber-100 mb-2">He put a new song in my mouth, a hymn of praise to our God.</blockquote>
-          <p className="text-amber-200/40 text-xs">Psalm 40:3 — The anthem of STORMBREAKERS</p>
-          <p className="text-amber-200/20 text- tracking-widest font-bold mt-4 pt-4 border-t border-amber-400/10">THE WORD IS AUTHORITY. MY STORY IS TESTIMONY.</p>
+        <div className="bg-zinc-900 p-8 rounded-xl border border-zinc-800 hover:border-amber-600/50 transition">
+          <h3 className="text-2xl font-bold mb-3">The Word</h3>
+          <p className="text-zinc-400 mb-6">
+            The biblical foundation. Every song and story connects back to Scripture.
+          </p>
+          <Link 
+            href="/the-word" 
+            className="inline-block px-6 py-3 bg-zinc-800 text-white font-bold rounded-lg hover:bg-zinc-700 transition"
+          >
+            Study the Word — Explore the Scripture
+          </Link>
         </div>
+      </section>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 text-left">
-          <div className="p-6 rounded-xl bg-stone-900/60 border border-amber-400/10">
-            <p className="text-amber-400 font-black tracking-widest text-sm mb-2">THE ARMORY</p>
-            <p className="text-amber-200/50 text-sm">Songs forged through testimony.</p>
-          </div>
-          <div className="p-6 rounded-xl bg-stone-900/60 border border-amber-400/10">
-            <p className="text-amber-400 font-black tracking-widest text-sm mb-2">THE CHRONICLES</p>
-            <p className="text-amber-200/50 text-sm">The story behind the songs.</p>
-          </div>
-          <div className="p-6 rounded-xl bg-stone-900/60 border border-amber-400/10">
-            <p className="text-amber-400 font-black tracking-widest text-sm mb-2">THE WORD</p>
-            <p className="text-amber-200/50 text-sm">The Scripture that anchors everything.</p>
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-3 justify-center w-full max-w-2xl mb-8">
-          <Link href="/armory" className="px-8 py-3 bg-amber-500 text-stone-950 font-black rounded-xl text-center">Enter The Armory</Link>
-          <Link href="/chronicles" className="px-8 py-3 bg-stone-900 border border-amber-400/20 text-amber-400 font-black rounded-xl text-center">Read The Chronicles</Link>
-          <Link href="/word" className="px-8 py-3 bg-transparent border border-amber-400/10 text-amber-200/60 font-black rounded-xl text-center">Study The Word</Link>
-        </div>
-
-        <p className="text-amber-400 font-black tracking-[0.3em] text-xs">THE WORD IS AUTHORITY. MY STORY IS TESTIMONY.</p>
-        <p className="text-amber-200/20 text- mt-10">© 2026 Stormbreakers — Running Wolf</p>
-      </div>
+      {/* FOOTER - Removed duplicate tagline */}
+      <footer className="py-12 text-center text-zinc-600 text-sm border-t border-zinc-800">
+        <p>© {new Date().getFullYear()} Stormbreakers. Forged in fire. Anchored in the Word.</p>
+      </footer>
     </main>
   )
 }
