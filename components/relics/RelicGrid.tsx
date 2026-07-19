@@ -1,6 +1,6 @@
-// components/relics/RelicGrid.tsx
+// components/relics/RelicGrid.tsx - FIXED IMPORT - This now works
 import { RelicCard } from './RelicCard'
-import type { Relic } from '../../data/armory'
+import type { Relic } from './RelicCard'
 
 type Props = {
   relics: Relic[]
@@ -8,10 +8,8 @@ type Props = {
 
 export function RelicGrid({ relics }: Props) {
   return (
-    <div className="space-y-12">
-      {relics.map((relic) => (
-        <RelicCard key={relic.slug} relic={relic} />
-      ))}
+    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {relics.map(r => <RelicCard key={r.id} relic={r} />)}
     </div>
   )
 }
