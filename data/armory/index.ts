@@ -6,14 +6,5 @@ import { fireRelics } from './fire'
 import { callingRelics } from './calling'
 import { warfareRelics } from './warfare'
 import { worshipRelics } from './worship'
-
-export const allRelics = [
-  ...kingshipRelics,
-  ...redemptionRelics,
-  ...healingRelics,
-  ...fireRelics,
-  ...callingRelics,
-  ...warfareRelics,
-  ...worshipRelics,
-]
+export const allRelics = [...kingshipRelics,...redemptionRelics,...healingRelics,...fireRelics,...callingRelics,...warfareRelics,...worshipRelics]
 export default allRelics
