@@ -1,52 +1,8 @@
-export const BIBLE = {
-  TRANSLATION: "ESV",
-  COPYRIGHT: "Scripture from ESV® Bible, © 2001 by Crossway. Used by permission.",
-  NOTE: "19 verses used"
-}
-export const STYLE = {
-  FLOW: "SCRIPTURE → TESTIMONY → RELIC → SONG",
-  FOOTER: "THE WORD IS AUTHORITY. MY STORY IS TESTIMONY. JESUS CHRIST IS THE CENTER OF THEM ALL.",
-  DESCRIPTION: "A cinematic worship universe where every song is a relic, every relic carries a testimony, and every testimony points back to Jesus Christ."
-}
+// Add to CanonRelic type:
+musicalIdentity: string
+scene: string
 
-export type CanonRelic = {
-  id: number
-  act: string
-  relicLabel: string
-  relicShort: string
-  chapterLabel: string
-  title: string
-  ref: string
-  verse: string
-  verse2?: string
-  verse3?: string
-  verse4?: string
-  song: string
-  theme: string
-  symbol: string
-  reflection: string
-  story: string
-  behind: string
-  declaration: string
-  prayer: string
-  lyrics: string
-}
-
-export const CANON: CanonRelic[] = [
-  { id: 1, act: "ACT I — THE AWAKENING", relicLabel: "RELIC 01 — THE FIRST SONG", relicShort: "Relic 01", chapterLabel: "Chapter 01 — Worship Begins", title: "The Map", ref: "Psalm 40:3 (ESV)", verse: "He put a new song in my mouth, a song of praise to our God.", song: "A New Song", theme: "WORSHIP", symbol: "map-scroll", reflection: "Psalm 23 wasn't poetry anymore. It was a map.", story: "When the storm came, the Shepherd's voice became my direction.", behind: "Written in the valley.", declaration: "God gives songs before He gives solutions.", prayer: "Father, give me a new song.", lyrics: "You put a new song in my mouth" },
-  { id: 2, act: "ACT I — THE AWAKENING", relicLabel: "RELIC 02 — BATTLE CRY", relicShort: "Relic 02", chapterLabel: "Chapter 02 — Courage Rises", title: "The Valley", ref: "Joshua 1:9 (ESV)", verse: "Be strong and courageous. Do not be frightened, for the LORD your God will be with you wherever you go.", song: "Warrior's Anthem", theme: "WARFARE", symbol: "crossed-swords", reflection: "The moment fear left and the warrior rose.", story: "God does not call the qualified.", behind: "Born the night fear broke.", declaration: "I will not bow to fear.", prayer: "Make me brave.", lyrics: "The moment fear left" },
-  { id: 3, act: "ACT I — THE AWAKENING", relicLabel: "RELIC 03 — FIRE FORGED", relicShort: "Relic 03", chapterLabel: "Chapter 03 — Refining Fire", title: "The Fire", ref: "Isaiah 43:2 (ESV)", verse: "When you walk through fire you shall not be burned, and the flame shall not consume you.", song: "Through The Fire", theme: "REFINING FIRE", symbol: "forged-blade", reflection: "The flames tested my faith.", story: "The fire did not come to destroy me.", behind: "Forged blade.", declaration: "The flames refined me.", prayer: "Refine me.", lyrics: "Through the fire" },
-  { id: 4, act: "ACT I — THE AWAKENING", relicLabel: "RELIC 04 — JESUS IS THE HEALER", relicShort: "Relic 04", chapterLabel: "Chapter 04 — The Breaking", title: "Jesus Is The Healer", ref: "Jeremiah 30:17 (ESV)", verse: "But I will restore you to health and heal your wounds, declares the LORD.", song: "Healer's Cry", theme: "HEALING", symbol: "healing-cross", reflection: "He heals wounds no human hands can reach.", story: "Some wounds cannot be seen.", behind: "Written when healing felt impossible.", declaration: "Jesus heals.", prayer: "Heal what I hide.", lyrics: "You heal wounds" },
-  { id: 5, act: "ACT II — THE TRANSFORMATION", relicLabel: "RELIC 05 — SCARS THAT PREACH", relicShort: "Relic 05", chapterLabel: "Chapter 05 — Scars That Speak", title: "The Testimony", ref: "2 Cor 12:9 (ESV)", verse: "My grace is sufficient for you, for my power is made perfect in weakness.", song: "I'm On Fire", theme: "TESTIMONY", symbol: "warrior-standing", reflection: "The scars I wanted hidden became the testimony God used.", story: "Grace revealed.", behind: "The scar is the sermon.", declaration: "My weakness became His strength.", prayer: "Let my scars preach.", lyrics: "These scars that I hid" },
-  { id: 6, act: "ACT II — THE TRANSFORMATION", relicLabel: "RELIC 06 — THE FIRE THAT NEVER GOES OUT", relicShort: "Relic 06", chapterLabel: "Chapter 06 — The Altar", title: "The Fire That Never Goes Out", ref: "Lev 6:13 (ESV)", verse: "Fire shall be kept burning on the altar continually; it shall not go out.", song: "Eternal Fire", theme: "ALTAR", symbol: "eternal-altar", reflection: "The fire that tested me never went out.", story: "The flame remains.", behind: "Devotion after deliverance.", declaration: "The fire fuels my worship.", prayer: "Keep the altar burning.", lyrics: "From valley fire" },
-  { id: 7, act: "ACT II — THE TRANSFORMATION", relicLabel: "RELIC 07 — ROYAL BLOOD", relicShort: "Relic 07", chapterLabel: "Chapter 07 — Identity Restored", title: "Royal Blood", ref: "1 Peter 2:9 (ESV)", verse: "You are a chosen race, a royal priesthood, a holy nation.", song: "Royal Blood", theme: "IDENTITY", symbol: "crown", reflection: "I stopped fighting for a seat and realized Blood bought my place.", story: "Orphan to heir.", behind: "Identity after fire.", declaration: "I am who the Blood says I am.", prayer: "Remind me who I am.", lyrics: "Royal blood runs" },
-  { id: 8, act: "ACT II — THE TRANSFORMATION", relicLabel: "RELIC 08 — THE COVENANT", relicShort: "Relic 08", chapterLabel: "Chapter 08 — Covenant Keeper", title: "The Covenant", ref: "Deut 7:9 (ESV)", verse: "The faithful God who keeps covenant and steadfast love.", song: "Covenant Keeper", theme: "COVENANT", symbol: "scroll", reflection: "His promise outlived my failure.", story: "Covenant held.", behind: "God proved faithful.", declaration: "His promise outlives failure.", prayer: "Trust Your covenant.", lyrics: "You keep covenant" },
-  { id: 9, act: "ACT III — THE WARFARE", relicLabel: "RELIC 09 — BREAKER", relicShort: "Relic 09", chapterLabel: "Chapter 09 — Breakthrough Comes", title: "The Breaker", ref: "Micah 2:13 (ESV)", verse: "He who opens the breach goes up before them.", song: "Breaker", theme: "BREAKTHROUGH", symbol: "hammer", reflection: "The wall didn't fall because I pushed harder. It fell because the Breaker went first.", story: "Breaker goes before.", behind: "Gates opening.", declaration: "The Breaker has gone before me.", prayer: "Go before me.", lyrics: "You go before me" },
-  { id: 10, act: "ACT III — THE WARFARE", relicLabel: "RELIC 10 — LION'S ROAR", relicShort: "Relic 10", chapterLabel: "Chapter 10 — Authority Returns", title: "Lion's Roar", ref: "Rev 5:5 (ESV)", verse: "Behold, the Lion of the tribe of Judah has conquered.", song: "Lion's Roar", theme: "AUTHORITY", symbol: "lion", reflection: "The Lamb was slain, but the Lion roars still.", story: "Fear left when authority returned.", behind: "Authority from victory.", declaration: "The Lion roars, enemy flees.", prayer: "Roar with authority.", lyrics: "The Lion roars" },
-  { id: 11, act: "ACT III — THE WARFARE", relicLabel: "RELIC 11 — AFTER THE BATTLE", relicShort: "Relic 11", chapterLabel: "Chapter 11 — Restoration Begins", title: "After The Battle", ref: "Joel 2:25 (ESV)", verse: "I will restore to you the years that the locust has eaten.", song: "After The Battle", theme: "RESTORATION", symbol: "wheat", reflection: "God doesn't just win battles. He restores.", story: "What locusts ate, God restores.", behind: "After loss.", declaration: "God restores what battle stole.", prayer: "Restore the years.", lyrics: "After the battle" },
-  { id: 12, act: "ACT III — THE WARFARE", relicLabel: "RELIC 12 — THE OATH", relicShort: "Relic 12", chapterLabel: "Chapter 12 — Consecration", title: "The Oath", ref: "Psalm 116:14 (ESV)", verse: "I will pay my vows to the LORD.", song: "The Oath", theme: "CONSECRATION", symbol: "altar-2", reflection: "I stopped making promises to God and started living His.", story: "Consecration after restoration.", behind: "Vow after victory.", declaration: "I will fulfill my vows.", prayer: "Bind me to altar.", lyrics: "I will pay my vows" },
-  { id: 13, act: "ACT IV — THE CALLING", relicLabel: "RELIC 13 — STORMBORN", relicShort: "Relic 13", chapterLabel: "Chapter 13 — Born For This", title: "Stormborn", ref: "Jer 1:5 (ESV)", verse: "Before I formed you in the womb I knew you.", song: "Stormborn", theme: "CALLING", symbol: "storm", reflection: "I wasn't born in spite of the storm. I was born for it.", story: "Calling confirmed.", behind: "Running Wolf identity.", declaration: "Born for such a time.", prayer: "Show me why storm.", lyrics: "Before I was formed" },
-  { id: 14, act: "ACT IV — THE CALLING", relicLabel: "RELIC 14 — UNBROKEN", relicShort: "Relic 14", chapterLabel: "Chapter 14 — Perseverance", title: "Unbroken", ref: "James 1:12 (ESV)", verse: "Blessed is the man who remains steadfast under trial.", song: "Unbroken", theme: "PERSEVERANCE", symbol: "anchor", reflection: "Unbroken doesn't mean undamaged. It means not abandoned.", story: "Staying power.", behind: "For ones who stayed.", declaration: "Blessed is one who remains.", prayer: "Grace to remain.", lyrics: "Steadfast under trial" },
-  { id: 15, act: "ACT IV — THE CALLING — KINGDOM BRIDGE", relicLabel: "RELIC 15 — TOWER OF ONE", relicShort: "Relic 15", chapterLabel: "Chapter 15 — Kingdom Advance", title: "Tower of One", ref: "Gen 11:4, 11:9 — Acts 2:11, 2:21 (ESV)", verse: "Come, let us build ourselves a city and a tower with its top in the heavens, and let us make a name for ourselves.", verse2: "Therefore its name was called Babel, because there the LORD confused the language. — Gen 11:9", verse3: "We hear them telling in our own tongues the mighty works of God. — Acts 2:11", verse4: "Everyone who calls upon the name of the Lord shall be saved. — Acts 2:21", song: "TOWER OF ONE", theme: "KINGDOM — BABEL TO PENTECOST", symbol: "tower-babel", reflection: "I spent years building something to prove I mattered. God showed me legacy isn't a tower for myself — it's a life surrendered to the King.", story: "Babel built upward. Cross brought God downward. Pentecost sent Gospel outward. Tower of man falls, Kingdom of God stands.", behind: "Bridge between Warfare and Calling. Genesis 11 → Acts 2.", declaration: "The tower of man will fall. The Kingdom of God will stand.", prayer: "Tear down my tower of one.", lyrics: "WE BUILT A TOWER OF ONE\nWITH HANDS OF DUST AND HEARTS UNDONE\nWE CHASED THE SKY, WE CHASED A NAME\nBUT ONLY JESUS WILL REMAIN" },
-  { id: 16, act: "ACT IV — THE CALLING — LEGACY", relicLabel: "RELIC 16 — LEGACY", relicShort: "Relic 16", chapterLabel: "Chapter 16 — Generations", title: "Legacy", ref: "Psalm 145:4 (ESV)", verse: "One generation shall commend your works to another, and shall declare your mighty acts.", song: "Legacy", theme: "LEGACY", symbol: "torch", reflection: "The legacy is not the tower we build; it is the Kingdom we carry.", story: "After Babel falls and Pentecost comes, what remains is not my name, but His Kingdom.", behind: "Final relic — legacy is Kingdom, not tower.", declaration: "The legacy is Kingdom, not tower.", prayer: "Let what burned in me light next generation.", lyrics: "One generation declares\nYour mighty acts" },
-]
+// Example for first 3 — apply pattern to all 16:
+{ id: 1, musicalIdentity: "WORSHIP ANTHEM — intimate → epic", scene: "Midnight in Guymon, Oklahoma — headphones on, Psalm 23 open, first chords that became a map", ... }
+{ id: 2, musicalIdentity: "BATTLE ANTHEM — war drums", scene: "Valley moment — fear leaving, warrior rising", ... }
+{ id: 15, musicalIdentity: "CINEMATIC FINALE — Babel drums → Pentecost fire → Kingdom choir", scene: "Years building a name — God showing tower must fall so Kingdom can stand", ... }
