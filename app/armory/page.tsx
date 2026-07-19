@@ -1,4 +1,4 @@
-// app/armory/page.tsx - FINAL LOCKED 01-06 - Perfect Reflections
+// app/armory/page.tsx - FINAL PERFECT - Build Safe
 import Link from 'next/link'
 import TestimonyDisclaimer from '@/components/Disclaimer'
 
@@ -64,17 +64,15 @@ export default function ArmoryPage() {
                 <span className="text-amber-400/60 text- tracking-[0.3em] font-black">RELIC {String(relic.id).padStart(2, '0')} — {relic.relicTitle.toUpperCase()}</span>
                 <span className="text-amber-200/30 text-xs font-mono border border-amber-400/10 px-2 py-1 rounded">{relic.total}</span>
               </div>
-
               <div className="space-y-4 flex-1">
                 <div><p className="text-amber-400/40 text- tracking-widest font-black">SONG TITLE</p><p className="text-amber-100 font-bold italic">{relic.songTitle}</p></div>
                 <div><p className="text-amber-400/40 text- tracking-widest font-black">THEME</p><p className="text-amber-300 text-sm">{relic.theme}</p></div>
                 <div><p className="text-amber-400/40 text- tracking-widest font-black">SCRIPTURE</p><p className="text-amber-300 text-sm font-bold">{relic.scripture}</p></div>
-                <div><p className="text-amber-400/40 text- tracking-widest font-black">DECLARATION</p><p className="text-amber-100/80 text-sm">"{relic.declaration}"</p></div>
-                <div><p className="text-amber-400/40 text- tracking-widest font-black">REFLECTION</p><p className="text-amber-200/60 text-sm italic">"{relic.reflection}"</p></div>
+                <div><p className="text-amber-400/40 text- tracking-widest font-black">DECLARATION</p><p className="text-amber-100/80 text-sm">{relic.declaration}</p></div>
+                <div><p className="text-amber-400/40 text- tracking-widest font-black">REFLECTION</p><p className="text-amber-200/60 text-sm italic">{relic.reflection}</p></div>
               </div>
-
               <Link href={`/armory/${relic.slug}`} className="mt-6 w-full py-3 bg-amber-500/10 border border-amber-400/20 text-amber-400 font-black text-sm rounded-lg hover:bg-amber-500 hover:text-stone-950 transition text-center tracking-widest">
-                ♫ LISTEN
+                LISTEN
               </Link>
             </div>
           ))}
