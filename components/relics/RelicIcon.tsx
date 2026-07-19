@@ -1,5 +1,5 @@
 export function RelicIcon({ symbol, className = "w-8 h-8" }: { symbol: string, className?: string }) {
-  const icons: any = {
+  const map: any = {
     "map-scroll": (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className}><path d="M6 3h9l3 3v15H6z"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>),
     "crossed-swords": (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className}><path d="M14.5 17.5L3 6V3h3l11.5 11.5-3 3z"/><path d="M9.5 17.5L21 6V3h-3L6.5 14.5l3 3z"/></svg>),
     "forged-blade": (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className}><path d="M12 2v20"/></svg>),
@@ -17,5 +17,5 @@ export function RelicIcon({ symbol, className = "w-8 h-8" }: { symbol: string, c
     "kingdom-crown": (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className}><path d="M2 20h20M5 16l2-6 3 3 3-5 3 5 3-3 2 6H5z"/></svg>),
     "torch": (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className}><path d="M12 2c0 2-2 3-2 5a2 2 0 004 0c0-2-2-3-2-5z"/><path d="M10 7v6l2 9 2-9V7"/></svg>),
   }
-  return icons[symbol] || icons["map-scroll"]
+  return map[symbol] || map["map-scroll"]
 }
