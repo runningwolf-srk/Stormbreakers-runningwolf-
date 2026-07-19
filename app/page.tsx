@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { STYLE } from '@/lib/constants'
+import { BibleFooter } from '@/components/BibleFooter'
 
 export default function HomePage() {
   return (
@@ -11,7 +12,7 @@ export default function HomePage() {
         <div className="mt-10 space-y-1"><p className="text-amber-100 text-lg tracking-widest font-bold">Begin with a song.</p><p className="text-amber-100 text-lg tracking-widest font-bold">Follow the story.</p><p className="text-amber-100 text-lg tracking-widest font-bold">Stand on the Word.</p></div>
         <p className="text-amber-400/30 text-xs tracking-[0.3em] mt-6">{STYLE.FLOW}</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10"><Link href="/armory" className="px-8 py-3 bg-amber-400 text-stone-950 font-black text-xs rounded-full">Enter The Armory</Link><Link href="/chronicles" className="px-8 py-3 bg-stone-900 border border-amber-400/20 text-amber-300 font-black text-xs rounded-full">Read The Chronicles</Link><Link href="/word" className="px-8 py-3 bg-stone-900 border border-amber-400/20 text-amber-300 font-black text-xs rounded-full">Study The Word</Link></div>
-        <p className="text-amber-400 font-black tracking-[0.3em] text-xs mt-16">JESUS CHRIST IS THE CENTER OF THEM ALL</p>
+        <BibleFooter />
       </div>
     </main>
   )
