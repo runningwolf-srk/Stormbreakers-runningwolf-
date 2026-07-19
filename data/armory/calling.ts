@@ -1,16 +1,24 @@
-// data/armory/calling.ts
-import { Relic } from './index'
-
+import { Relic } from './types'
 export const callingRelics: Relic[] = [
   {
-    slug: 'running-wolf-blade',
-    title: 'Running Wolf Blade',
-    image: '/relics/wolf-blade.jpg',
-    theme: 'The Sword of the Sent One',
-    description: 'I am not just sent — I am sharpened. A sword in His hand. A name on His blade.',
-    scriptureRef: 'Ephesians 6:17',
-    lyrics: 'Sword of the Spirit - RunningWolf',
-    youtube: 'https://www.youtube.com/watch?v=REPLACE_ME'
-  }
-  // DELETE thunder-drums from this file - it lives in warfare.ts now
+    slug: 'wolf-fang',
+    title: 'Wolf Fang',
+    relic: 'Wolf Fang',
+    song: 'Wolf Fang',
+    songTitle: 'Wolf Fang',
+    lyrics: 'Wolf Fang',
+    image: '/relics/wolf-fang.jpg',
+    theme: 'The Tooth of the Sent One',
+    primaryTheme: 'Calling',
+    themes: ['Calling', 'Warfare', 'Identity'],
+    description: 'The tooth of the sent one. Hard as flint. Sharp as heaven.',
+    declaration: 'The tooth of the sent one. Hard as flint.',
+    reflection: 'Ezekiel 3:9 - Like the hardest stone, harder than flint, I have made your forehead. Amos 3:8 - the Lion has roared.',
+    testimony: 'RunningWolf is not a name, it is a nature.',
+    subtitle: 'The Tooth of the Sent One',
+    scripture: 'Like the hardest stone, harder than flint, I have made your forehead.',
+    scriptureRef: 'Ezekiel 3:9',
+    reference: 'Ezekiel 3:9 ESV',
+    youtube: 'https://youtu.be/dHz0D3QblpQ',
+  },
 ]
