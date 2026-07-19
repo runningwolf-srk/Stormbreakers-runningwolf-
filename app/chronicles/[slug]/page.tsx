@@ -1,45 +1,8 @@
-// app/chronicles//page.tsx
-import { notFound } from 'next/navigation'
-import { armory } from '@/data/armory'
-import { ChroniclePage } from '@/components/ChroniclePage'
-import type { Metadata } from 'next'
+import TestimonyDisclaimer from '@/components/Disclaimer'
 
-type Props = {
-  params: { slug: string }
-}
+// Inside your Chapter component, right after the title:
+<h1 className="text-4xl font-black">Chapter 1: The Map</h1>
+<TestimonyDisclaimer />
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const relic = armory.find((r) => r.slug === params.slug)
-  
-  if (!relic) {
-    return {
-      title: 'Relic Not Found | Stormbreakers'
-    }
-  }
-
-  return {
-    title: `${relic.title} | Stormbreakers`,
-    description: relic.description,
-    openGraph: {
-      title: relic.title,
-      description: relic.description,
-      images: [relic.image],
-    },
-  }
-}
-
-export async function generateStaticParams() {
-  return armory.map((relic) => ({
-    slug: relic.slug,
-  }))
-}
-
-export default function Page({ params }: Props) {
-  const relic = armory.find((r) => r.slug === params.slug)
-
-  if (!relic) {
-    notFound()
-  }
-
-  return <ChroniclePage relic={relic} />
-}
+<p>Psalm 23 wasn't poetry anymore. It was a map.</p>
+// ... rest of testimony
