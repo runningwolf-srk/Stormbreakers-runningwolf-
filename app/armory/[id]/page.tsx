@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { CANON } from '@/lib/constants'
 import { RelicIcon } from '@/components/relics/RelicIcon'
-import { BibleFooter } from '@/components/BibleFooter'
 
 export default function RelicPage({ params }: { params: { id: string } }) {
   const r = CANON.find(x => x.id === Number(params.id)) || CANON[0]
@@ -17,8 +16,6 @@ export default function RelicPage({ params }: { params: { id: string } }) {
         <div className="p-6 bg-stone-900/40 border border-amber-400/10 rounded-xl mb-6"><p className="text-amber-400/50 text-xs tracking-[0.3em] font-black">BEHIND THE SONG</p><p className="text-stone-300 text-sm mt-3">{r.behind}</p></div>
         <div className="p-6 bg-stone-900/40 border border-amber-400/10 rounded-xl mb-6"><p className="text-amber-400/50 text-xs tracking-[0.3em] font-black">LYRICS</p><p className="text-stone-300 text-sm italic mt-3 whitespace-pre-line">{r.lyrics}</p></div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8"><div className="p-5 bg-stone-900 border border-amber-400/20 rounded-xl"><p className="text-amber-400 text-xs tracking-[0.3em] font-black">DECLARATION</p><p className="text-amber-100 font-bold mt-3">"{r.declaration}"</p></div><div className="p-5 bg-amber-500/5 border border-amber-400/20 rounded-xl"><p className="text-amber-400 text-xs tracking-[0.3em] font-black">PRAYER</p><p className="text-amber-100/80 italic text-sm mt-3">"{r.prayer}"</p></div></div>
-        <p className="text-center text-amber-100/50 text-xs italic">This is my story — anchored in Scripture.<br/>These are my songs — rooted in the Word.</p>
-        <BibleFooter />
       </div>
     </main>
   )
