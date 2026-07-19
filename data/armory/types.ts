@@ -1,5 +1,5 @@
-// data/armory/types.ts
 export type Relic = {
+  id?: number
   slug: string
   title: string
   image: string
@@ -8,4 +8,7 @@ export type Relic = {
   scriptureRef: string
   lyrics: string
   youtube: string
+  symbol?: string
+  relic?: string
+  song?: string
 }
