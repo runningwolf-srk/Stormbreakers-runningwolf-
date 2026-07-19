@@ -1,3 +1,12 @@
-import { RelicGrid } from '@/components/relics/RelicGrid'
-import { STYLE } from '@/lib/constants'
-export default function ArmoryPage() { return (<main className="px-4 py-12"><div className="max-w-6xl mx-auto text-center mb-12"><h1 className="text-5xl font-black text-amber-100">THE ARMORY</h1><p className="text-amber-400/30 text-xs tracking-[0.3em] mt-3">{STYLE.FLOW}</p></div><RelicGrid /></main>) }
+import { CANON, STYLE } from '@/lib/constants'
+import Link from 'next/link'
+export default function ArmoryPage() {
+  return (
+    <main className={STYLE.FLOW + " px-4 py-12"}>
+      <h1 className={STYLE.TITLE}>The Armory</h1>
+      <div className={STYLE.GRID}>
+        {CANON.map((r: any) => (<Link key={r.slug} href={`/armory/${r.slug}`} className={STYLE.CARD}>{r.title}</Link>))}
+      </div>
+    </main>
+  )
+}
