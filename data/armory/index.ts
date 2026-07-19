@@ -1,6 +1,4 @@
-// data/armory/index.ts
 export type { Relic } from './types'
-
 import { kingshipRelics } from './kingship'
 import { redemptionRelics } from './redemption'
 import { healingRelics } from './healing'
@@ -18,6 +16,4 @@ export const allRelics = [
   ...warfareRelics,
   ...worshipRelics,
 ]
-
-export const armory = allRelics
 export default allRelics
