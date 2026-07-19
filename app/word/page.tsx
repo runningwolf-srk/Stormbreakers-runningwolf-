@@ -1,12 +1,5 @@
 import Link from 'next/link'
 import { CANON, STYLE } from '@/lib/constants'
 export default function WordPage() {
-  return (
-    <main className="min-h-screen bg-stone-950 text-amber-50 px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12"><h1 className="text-5xl font-black text-amber-100">THE WORD</h1><p className="text-amber-400/30 text-xs tracking-[0.3em] mt-3">{STYLE.FLOW}</p><p className="text-amber-100 text-sm mt-6 max-w-2xl mx-auto">Every theme begins with Scripture. Songs point back to Word, not replace it.</p></div>
-        <div className="space-y-4">{CANON.map(w => (<div key={w.id} className="p-6 bg-stone-900/40 border border-amber-400/10 rounded-2xl"><p className="text-amber-400 text-xs font-black">{w.act} • {w.theme}</p><h3 className="font-black text-amber-100 mt-1">{w.ref} — {w.chapterLabel}</h3><div className="mt-3 p-4 bg-stone-950 border border-amber-400/10 rounded-xl"><p className="text-amber-100 text-sm italic">"{w.verse}"</p></div><p className="text-stone-400 text-xs italic mt-3">"{w.reflection}"</p><Link href={`/armory/${w.id}`} className="inline-block mt-3 px-3 py-1 bg-amber-500/10 border border-amber-400/20 rounded-full text-xs text-amber-300">{w.relicLabel}</Link></div>))}</div>
-      </div>
-    </main>
-  )
+  return (<main className="px-4 py-16"><div className="max-w-4xl mx-auto"><div className="text-center mb-12"><h1 className="text-5xl font-black text-amber-100">THE WORD</h1><p className="text-amber-400/30 text-xs tracking-[0.3em] mt-3">{STYLE.FLOW}</p></div><div className="space-y-4">{CANON.map(w => (<div key={w.id} className="p-6 bg-stone-900/40 border border-amber-400/10 rounded-2xl"><p className="text-amber-400 text-xs font-black">{w.act} • {w.theme}</p><h3 className="font-black text-amber-100 mt-1">{w.ref}</h3><div className="mt-3 p-4 bg-stone-950 border border-amber-400/10 rounded-xl"><p className="text-amber-100 text-sm italic">"{w.verse}"</p>{w.verse2 && <p className="text-amber-200/60 text-xs italic mt-2">"{w.verse2}"</p>}{w.verse3 && <p className="text-amber-100 text-xs italic mt-2">"{w.verse3}"</p>}{w.verse4 && <p className="text-amber-300 text-xs font-bold mt-2">"{w.verse4}"</p>}</div><p className="text-stone-400 text-xs italic mt-3">"{w.reflection}"</p><Link href={`/armory/${w.id}`} className="inline-block mt-3 px-3 py-1 bg-amber-500/10 border border-amber-400/20 rounded-full text-xs text-amber-300">{w.relicLabel}</Link></div>))}</div></div></main>)
 }
