@@ -1,119 +1,111 @@
-// app/word/page.tsx
+// app/word/page.tsx - FINAL with Intro + Consistent Wording
 import Link from 'next/link'
 
-type RelicLink = { id: number; slug: string; title: string; theme: string }
-type ChapterLink = { id: number; slug: string; number: number; title: string; progress: number }
-type Verse = { ref: string; text: string }
-
-type Theme = {
-  name: string
-  color: string
-  verses: Verse[]
-  connectedRelics: RelicLink[]
-  connectedChapters: ChapterLink[]
-}
-
-const themes: Theme[] = [
-  {
-    name: "Healing",
-    color: "from-emerald-500/20 to-teal-500/20",
-    verses: [
-      { ref: "Jeremiah 30:17", text: "I will restore health to you and heal your wounds." },
-      { ref: "Psalm 147:3", text: "He heals the brokenhearted and binds up their wounds." },
-    ],
-    connectedRelics: [{ id: 4, slug: "healer", title: "Jesus Is The Healer", theme: "Healing" }],
-    connectedChapters: [{ id: 3, slug: "chapter-3-the-breaking", number: 3, title: "The Breaking", progress: 100 }],
+const scriptures = [
+  { 
+    ref: "Psalm 40:3", 
+    theme: "Worship", 
+    text: "He put a new song in my mouth, a hymn of praise to our God.",
+    relics: ["The First Song"],
+    chapters: ["Chapter 1: The Map"]
   },
-  {
-    name: "Calling",
-    color: "from-amber-500/20 to-orange-500/20",
-    verses: [
-      { ref: "Isaiah 6:8", text: "Here I am. Send me." },
-      { ref: "Ephesians 2:10", text: "We are His workmanship, created for good works." },
-    ],
-    connectedRelics: [{ id: 1, slug: "first-song", title: "The First Song", theme: "Worship" }],
-    connectedChapters: [{ id: 1, slug: "running-wolf", number: 1, title: "The Map", progress: 100 }],
+  { 
+    ref: "Joshua 1:9", 
+    theme: "Spiritual Warfare", 
+    text: "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+    relics: ["Battle Cry"],
+    chapters: ["Chapter 2: The Valley"]
   },
-  {
-    name: "Spiritual Warfare",
-    color: "from-red-500/20 to-orange-500/20",
-    verses: [
-      { ref: "Ephesians 6:12", text: "We wrestle not against flesh and blood." },
-    ],
-    connectedRelics: [{ id: 2, slug: "battle-cry", title: "Battle Cry", theme: "Spiritual Warfare" }],
-    connectedChapters: [{ id: 2, slug: "chapter-2-the-valley", number: 2, title: "The Valley", progress: 80 }],
+  { 
+    ref: "Isaiah 43:2", 
+    theme: "Refining Fire / Testimony", 
+    text: "When you walk through fire, you shall not be burned; the flames will not set you ablaze.",
+    relics: ["Fire Forged", "Scars That Preach"],
+    chapters: ["Chapter 3: The Fire"]
+  },
+  { 
+    ref: "Jeremiah 30:17", 
+    theme: "Healing", 
+    text: "I will restore health to you and heal your wounds, declares the Lord.",
+    relics: ["Jesus Is The Healer"],
+    chapters: ["Chapter 3: The Breaking"]
+  },
+  { 
+    ref: "2 Corinthians 12:9", 
+    theme: "Grace", 
+    text: "My grace is sufficient for you, for my power is made perfect in weakness.",
+    relics: ["Scars That Preach"],
+    chapters: ["Chapter 4: The Scars"]
+  },
+  { 
+    ref: "Leviticus 6:13", 
+    theme: "Altar", 
+    text: "The fire must be kept burning on the altar continuously; it must not go out.",
+    relics: ["The Fire That Never Goes Out"],
+    chapters: ["Chapter 5: The Altar"]
   },
 ]
 
 export default function WordPage() {
   return (
     <main className="min-h-screen bg-stone-950 text-amber-50 px-4 py-12">
-      <div className="max-w-5xl mx-auto">
-        
-        <div className="text-center mb-16">
-          <h1 className="text-5xl sm:text-6xl font-black tracking-tighter text-amber-100 mb-4">THE WORD</h1>
-          <p className="text-amber-200/60 max-w-2xl mx-auto mb-8">
-            Every relic is anchored in Scripture. Every song is rooted in the Word.
-          </p>
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-black tracking-tighter text-amber-100 mb-6">THE WORD</h1>
           
-          {/* SINGLE WORD SECTION - NO DUPLICATE */}
-          <div className="p-8 rounded-2xl bg-stone-900/50 border border-amber-400/10">
-            <blockquote className="text-2xl sm:text-3xl font-black text-amber-100 leading-tight mb-4">
-              &ldquo;He put a new song in my mouth, a hymn of praise to our God.&rdquo;
-            </blockquote>
-            <p className="text-amber-200/50 text-sm mb-6">Psalm 40:3 — The anthem of STORMBREAKERS</p>
-            <p className="text-amber-200/30 text-xs uppercase tracking-widest font-bold border-t border-amber-400/10 pt-4">
-              The Word is authority. My story is testimony.
+          {/* NEW INTRO - Reinforces relationship */}
+          <div className="max-w-2xl mx-auto p-6 rounded-xl bg-stone-900/60 border border-amber-400/10 mb-8">
+            <p className="text-amber-100/80 text-sm leading-relaxed">
+              Every theme in Stormbreakers begins with Scripture. The songs and testimonies are meant to point back to God's Word, not replace it.
             </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto p-4 rounded-lg bg-amber-500/5 border border-amber-400/10">
+            <p className="text-amber-200/50 text-xs italic">This is not Scripture. These are my songs, anchored in Scripture.</p>
           </div>
         </div>
 
-        <div className="space-y-12">
-          {themes.map((theme) => (
-            <section key={theme.name} className={`p-8 rounded-2xl bg-gradient-to-br ${theme.color} border border-amber-400/10 bg-stone-900/50`}>
-              <h2 className="text-3xl font-black text-amber-100 mb-6 tracking-tight">{theme.name}</h2>
+        <div className="space-y-6">
+          {scriptures.map((s) => (
+            <div key={s.ref} className="p-6 bg-stone-900/40 border border-amber-400/10 rounded-xl">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
+                <h3 className="text-amber-300 font-black text-lg">{s.ref}</h3>
+                <span className="text-amber-400/50 text-xs tracking-widest font-black border border-amber-400/10 px-2 py-1 rounded self-start">{s.theme.toUpperCase()}</span>
+              </div>
               
-              <div className="grid gap-4 mb-10">
-                {theme.verses.map((verse) => (
-                  <div key={verse.ref} className="p-4 bg-stone-950/50 rounded-xl border border-amber-400/5">
-                    <p className="text-amber-100 italic mb-2">&quot;{verse.text}&quot;</p>
-                    <p className="text-amber-400 text-sm font-black">{verse.ref}</p>
-                  </div>
-                ))}
-              </div>
+              <p className="text-amber-100/80 italic mb-6 leading-relaxed">"{s.text}"</p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-amber-400/10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                 <div>
-                  <h3 className="text-amber-400 text-xs tracking-[0.3em] font-black mb-4">CONNECTED RELICS</h3>
-                  <div className="space-y-2">
-                    {theme.connectedRelics.map((relic) => (
-                      <Link key={relic.id} href={`/armory/${relic.slug}`} className="block p-3 bg-stone-950 border border-amber-400/10 rounded-lg hover:border-amber-400/30 transition">
-                        <p className="text-amber-100 text-sm font-bold">{relic.title}</p>
-                        <p className="text-amber-200/50 text-xs">{relic.theme}</p>
+                  <p className="text-amber-400/40 tracking-widest font-black mb-2">CONNECTED RELICS</p>
+                  <div className="flex flex-wrap gap-2">
+                    {s.relics.map(r => (
+                      <Link key={r} href="/armory" className="px-3 py-1 bg-amber-500/10 border border-amber-400/20 rounded-full text-amber-300 hover:bg-amber-500 hover:text-stone-950 transition">
+                        {r}
                       </Link>
                     ))}
                   </div>
                 </div>
-
                 <div>
-                  <h3 className="text-amber-400 text-xs tracking-[0.3em] font-black mb-4">CONNECTED CHAPTERS</h3>
-                  <div className="space-y-2">
-                    {theme.connectedChapters.map((ch) => (
-                      <Link key={ch.id} href={`/chronicles/${ch.slug}`} className="block p-3 bg-stone-950 border border-amber-400/10 rounded-lg hover:border-amber-400/30 transition">
-                        <p className="text-amber-100 text-sm font-bold">Chapter {ch.number}: {ch.title}</p>
-                        <div className="w-full bg-stone-800 h-1 rounded-full mt-2 overflow-hidden">
-                          <div className="h-full bg-amber-500" style={{ width: `${ch.progress}%` }}></div>
-                        </div>
+                  <p className="text-amber-400/40 tracking-widest font-black mb-2">CONNECTED CHAPTERS</p>
+                  <div className="flex flex-wrap gap-2">
+                    {s.chapters.map(ch => (
+                      <Link key={ch} href="/chronicles" className="px-3 py-1 bg-stone-800 border border-amber-400/10 rounded-full text-amber-200/60 hover:border-amber-400/30 transition">
+                        {ch}
                       </Link>
                     ))}
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
           ))}
         </div>
 
+        <div className="text-center mt-16 p-6 border-t border-amber-400/10">
+          <p className="text-amber-400 font-black tracking-[0.3em] text-sm">THE WORD IS AUTHORITY. MY STORY IS TESTIMONY.</p>
+          <p className="text-amber-200/30 text-xs mt-4 max-w-xl mx-auto">JESUS CHRIST IS THE CENTER OF THEM ALL</p>
+        </div>
       </div>
     </main>
   )
-          }
+}
