@@ -1,61 +1,24 @@
-import Link from 'next/link'
 import { CANON } from '@/lib/constants'
-import { RelicIcon } from '@/components/relics/RelicIcon'
+import { RelicIcon } from '@/components/RelicIcon'
 
 export default function RelicPage({ params }: { params: { id: string } }) {
-  const relic = CANON.find((x) => x.id === Number(params.id)) || CANON[0]
+  const relic = CANON.find((x) => x.slug === params.id || x.id.toString() === params.id)
+
+  if (!relic) {
+    return <main className="px-4 py-12 text-center">Relic not found: {params.id}</main>
+  }
 
   return (
     <main className="px-4 py-12">
-      <div className="max-w-3xl mx-auto">
-        <Link href="/armory" className="text-amber-400/40 text-xs mb-8 inline-block">← BACK TO ARMORY</Link>
-
-        <div className="text-center mb-8">
-          <div className="w-20 h-20 mx-auto rounded-full bg-amber-500/10 border border-amber-400/20 flex items-center justify-center text-amber-400 mb-4">
-            <RelicIcon symbol={relic.symbol} className="w-10 h-10" />
-          </div>
-          <p className="text-amber-400/40 text-xs font-black">{relic.act}</p>
-          <h1 className="text-4xl font-black text-amber-100 mt-2">{relic.title}</h1>
-          <p className="text-amber-100 font-bold mt-1">{relic.song}</p>
+      <div className="text-center">
+        <div className="w-20 h-20 mx-auto mb-4">
+          <RelicIcon symbol={relic.symbol} />
         </div>
-
-        <div className="p-5 bg-stone-900/60 border border-amber-400/10 rounded-xl mb-6">
-          <p className="text-amber-400/40 text-xs font-black">SONG {String(relic.id).padStart(2,'0')}/16</p>
-          <audio controls className="w-full mt-3">
-            <source src={`/audio/${String(relic.id).padStart(2,'0')}-preview.mp3`} />
-          </audio>
-        </div>
-
-        <div className="p-6 bg-amber-500/5 border border-amber-400/20 rounded-xl mb-6">
-          <p className="text-amber-400/50 text-xs font-black">SCRIPTURE — {relic.ref}</p>
-          <p className="text-amber-100 italic mt-3 text-lg">"{relic.verse}"</p>
-          {relic.verse2 && <p className="text-amber-200/60 italic mt-4 text-sm">"{relic.verse2}"</p>}
-          {relic.verse3 && <p className="text-amber-100 italic mt-4">"{relic.verse3}"</p>}
-          {relic.verse4 && <p className="text-amber-300 font-bold mt-4">"{relic.verse4}"</p>}
-        </div>
-
-        <div className="p-6 bg-stone-900/40 border border-amber-400/10 rounded-xl mb-6">
-          <p className="text-amber-400/50 text-xs font-black">TESTIMONY</p>
-          <p className="text-amber-100/80 italic mt-3">"{relic.reflection}"</p>
-          <p className="text-stone-300 text-sm mt-4">{relic.story}</p>
-        </div>
-
-        <div className="p-6 bg-stone-900 border border-amber-400/20 rounded-xl mb-6">
-          <p className="text-amber-400 text-xs font-black">LYRICS — {relic.song}</p>
-          <p className="text-amber-100 font-bold text-sm mt-4 whitespace-pre-line">{relic.lyrics}</p>
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <div className="p-5 bg-stone-900 border border-amber-400/20 rounded-xl">
-            <p className="text-amber-400 text-xs font-black">DECLARATION</p>
-            <p className="text-amber-100 font-bold mt-3">"{relic.declaration}"</p>
-          </div>
-          <div className="p-5 bg-amber-500/5 border border-amber-400/20 rounded-xl">
-            <p className="text-amber-400 text-xs font-black">PRAYER</p>
-            <p className="text-amber-100/80 italic text-sm mt-3">"{relic.prayer}"</p>
-          </div>
-        </div>
+        <p className="text-amber-400 text-sm tracking-widest">{relic.theme}</p>
+        <h1 className="text-4xl font-bold mt-2">{relic.title}</h1>
+        <p className="text-zinc-400 mt-2">{relic.scriptureRef}</p>
+        <p className="mt-6 max-w-xl mx-auto">{relic.description}</p>
       </div>
     </main>
   )
-            }
+}
