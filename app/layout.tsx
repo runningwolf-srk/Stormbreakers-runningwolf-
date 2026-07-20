@@ -1,6 +1,20 @@
-import './globals.css'
-import { BIBLE, STYLE } from '@/lib/constants'
-import { Nav } from '@/components/Nav'
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (<html lang="en"><body className="bg-stone-950 text-amber-50 min-h-screen"><Nav />{children}<footer className="border-t border-amber-400/10 py-10 mt-20"><div className="max-w-4xl mx-auto px-6 text-center"><p className="text-amber-400 font-black text-xs tracking-[0.3em]">{STYLE.FOOTER}</p><p className="text-amber-200/20 text-xs mt-6">{BIBLE.COPYRIGHT}</p></div></footer></body></html>)
+// @ts-nocheck
+// Add to Header / Layout - Top banner everywhere
+const NAV = [
+  { href: '/armory', label: '⚔️ Armory', sub: 'Hear' },
+  { href: '/chronicles', label: '📖 Chronicles', sub: 'Understand' },
+  { href: '/word', label: '✝️ Word', sub: 'Root' },
+  { href: '/book', label: '📚 Books', sub: 'Live' },
+]
+
+export function TopNav() {
+  return (
+    <nav className="flex gap-2 text-xs uppercase tracking-widest justify-center py-4 border-b border-zinc-900">
+      {NAV.map(n=>(
+        <a key={n.href} href={n.href} className="px-3 py-2 rounded-full bg-zinc-900 border border-zinc-800 hover:border-white/20">
+          {n.label} <span className="opacity-50">— {n.sub}</span>
+        </a>
+      ))}
+    </nav>
+  )
 }
