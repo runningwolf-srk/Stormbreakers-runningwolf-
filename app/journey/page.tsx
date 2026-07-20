@@ -1,20 +1,24 @@
 // @ts-nocheck
 import { CANON } from '@/lib/constants'
-
+import Link from 'next/link'
 export default function JourneyPage() {
-  const list = CANON || []
+  const acts = [
+    { num: 1, name: 'AWAKENING — The encounter', color: '#38BDF8' },
+    { num: 2, name: 'TRANSFORMATION — The rebuilding', color: '#10B981' },
+    { num: 3, name: 'WARFARE — Walking in authority', color: '#EF4444' },
+    { num: 4, name: 'CALLING — Carrying the Kingdom', color: '#F59E0B' },
+  ]
   return (
-    <main className="px-4 py-12">
-      <h1 className="text-4xl font-bold">The Journey</h1>
-      <div className="mt-8 space-y-4">
-        {list.map((r: any) => (
-          <div key={r.slug} className="bg-zinc-900 border border-zinc-800 p-4 rounded-xl">
-            <p className="text-amber-400 text-xs uppercase">{r.relicLabel || r.theme}</p>
-            <h2 className="text-xl font-bold">{r.title}</h2>
-            <p className="text-zinc-400 text-sm">{r.description || ''}</p>
-          </div>
-        ))}
-      </div>
+    <main className="px-4 py-12 max-w-5xl mx-auto">
+      <h1 className="text-5xl font-black">THE JOURNEY</h1>
+      <p className="text-zinc-400 mt-2">Storm → Awakening → Fire → Healing → Identity → Warfare → Calling → Legacy</p>
+      {acts.map(a => (
+        <div key={a.num} className="mt-12"><h2 className="text-2xl font-bold flex items-center gap-3"><span className="w-2 h-8 rounded" style={{background: a.color}}></span>ACT {a.num} — {a.name}</h2>
+          <div className="grid md:grid-cols-2 gap-4 mt-4">{(CANON || []).filter((r: any) => r.act === a.num).map((r: any) => (
+            <Link key={r.slug} href={`/chronicles/${r.slug}`}><div className="bg-zinc-900 border border-zinc-800 rounded-xl p-4"><span className="text-lg">{r.symbol}</span><span className="ml-2 font-bold">{r.title}</span><p className="text-xs text-zinc-500 mt-1">{r.testimonyMoment}</p></div></Link>
+          ))}</div>
+        </div>
+      ))}
     </main>
   )
 }
