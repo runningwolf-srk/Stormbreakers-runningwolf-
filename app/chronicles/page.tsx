@@ -2,30 +2,17 @@
 export const dynamic = 'force-dynamic'
 import { CANON } from '@/lib/constants'
 import Link from 'next/link'
-export default function ChroniclesPage() {
-  const acts = [
-    { id: 1, name: 'AWAKENING', desc: 'Encounter God in the storm.' },
-    { id: 2, name: 'TRANSFORMATION', desc: 'Identity rebuilt.' },
-    { id: 3, name: 'WARFARE', desc: 'Walking in authority.' },
-    { id: 4, name: 'CALLING', desc: 'Carrying Kingdom forward.' }
-  ]
+export default function ChroniclesIndex() {
+  const acts = [1,2,3,4]
   return (
     <main className="px-4 py-12 max-w-5xl mx-auto">
-      <h1 className="text-6xl font-black">CHRONICLES</h1>
-      <p className="text-zinc-500 text-sm mt-2 uppercase tracking-widest">Understand • 16 Chapters • Cinematic Testimony</p>
+      <h1 className="text-6xl font-black">CHRONICLES</h1><p className="text-xs uppercase tracking-widest text-zinc-500 mt-2">Understand • 16 Chapters • Testimony</p>
       {acts.map(act=>(
-        <div key={act.id} className="mt-12">
-          <h2 className="font-black text-sm tracking-[0.3em] text-zinc-400">ACT {act.id} — {act.name}</h2>
-          <p className="text-xs text-zinc-600">{act.desc}</p>
-          <div className="grid md:grid-cols-2 gap-4 mt-4">
-            {CANON.filter((r:any)=>r.act===act.id).map((r:any)=>(
-              <Link key={r.slug} href={`/chronicles/${r.slug}`}>
-                <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/30">
-                  <p className="text-xs uppercase" style={{color:r.color}}>{r.symbol} {r.title} • {r.scriptureRef}</p>
-                  <p className="mt-2">"{r.hook}"</p>
-                  <p className="text-xs text-zinc-500 mt-2 italic">"{r.testimonyMoment}"</p>
-                </div>
-              </Link>
+        <div key={act} className="mt-10">
+          <h2 className="text-xs uppercase tracking-[0.4em] text-zinc-600">ACT {act} — {act===1?'AWAKENING':act===2?'TRANSFORMATION':act===3?'WARFARE':'CALLING'}</h2>
+          <div className="mt-4 space-y-3">
+            {CANON.filter((r:any)=>r.act===act).map((r:any)=>(
+              <Link key={r.slug} href={`/chronicles/${r.slug}`}><div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex justify-between"><div><p className="text-xs uppercase tracking-widest" style={{color:r.color}}>{r.symbol} {r.title} • {r.scriptureRef}</p><p className="text-sm italic text-zinc-400">"{r.hook}"</p><p className="text-xs text-zinc-500 mt-1">"{r.testimonyMoment}"</p></div><span className="text-xs text-zinc-600">→</span></div></Link>
             ))}
           </div>
         </div>
