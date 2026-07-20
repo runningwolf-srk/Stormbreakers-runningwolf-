@@ -1,7 +1,18 @@
-// app/scripture-policy/page.tsx
-import { BIBLE, STYLE } from '@/lib/constants'
+// @ts-nocheck
+export const dynamic = 'force-dynamic'
 export default function ScripturePolicy() {
   return (
-    <main className="px-6 py-16"><div className="max-w-2xl mx-auto"><h1 className="text-3xl font-black text-amber-100">SCRIPTURE POLICY</h1><p className="text-amber-400/60 text-xs font-black mt-2">{STYLE.FLOW}</p><div className="mt-8 space-y-4 text-sm text-stone-300"><p><strong className="text-amber-100">Copyright:</strong> {BIBLE.COPYRIGHT}</p><p><strong className="text-amber-100">Note:</strong> {BIBLE.NOTE}</p></div></div></main>
+    <main className="px-4 py-12 max-w-3xl mx-auto">
+      <h1 className="text-5xl font-black">SCRIPTURE POLICY</h1>
+      <p className="text-xs uppercase tracking-widest text-zinc-500 mt-2">✝️ The Word is Authority</p>
+      <div className="mt-8 space-y-4 text-zinc-300 text-sm leading-relaxed">
+        <p>⚔️ The Songs are Relics.</p>
+        <p>📖 The Chronicles are Testimony.</p>
+        <p>✝️ The Word is Authority — Scripture is foundation, testimony is witness.</p>
+        <p>📚 The Books are Transformation.</p>
+        <p className="mt-6">Hear → Understand → Root → Live = Worship → Story → Foundation → Application</p>
+        <p className="mt-6 text-xs uppercase tracking-[0.4em] text-zinc-600">ONE CANON • FOUR EXPERIENCES • SIXTEEN RELICS • ONE KING</p>
+      </div>
+    </main>
   )
 }
