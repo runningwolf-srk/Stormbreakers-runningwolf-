@@ -1,69 +1,25 @@
-// app/the-word/page.tsx
-import { allScriptures } from '@/data/scripture'
-import { allRelics } from '@/data/armory'
-import { chapters } from '@/data/chronicles'
+// @ts-nocheck
+export const dynamic = 'force-dynamic'
+import { CANON } from '@/lib/constants'
 import Link from 'next/link'
 
-export default function TheWordPage() {
+export default function WordIndex() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-amber-100">The Word</h1>
-      
-      {allScriptures.map((scripture) => {
-        const connectedRelics = allRelics.filter(relic => 
-          scripture.relatedRelics?.includes(relic.slug)
-        )
-        
-        const connectedChapters = chapters.filter(chapter =>
-          scripture.relatedChapters?.includes(chapter.id)
-        )
+    <main className="px-4 py-12 max-w-5xl mx-auto">
+      <h1 className="text-6xl font-black">THE WORD</h1>
+      <p className="text-zinc-500 uppercase tracking-widest text-sm mt-2">Root • Scripture is Authority • Testimony Points to Christ</p>
 
-        return (
-          <div key={scripture.slug} className="mb-12 border-b border-zinc-800 pb-8">
-            <h2 className="text-2xl font-bold mb-2 text-amber-300">{scripture.reference}</h2>
-            <p className="text-lg mb-2 italic text-amber-100">"{scripture.text}"</p>
-            <p className="text-sm mb-4 text-zinc-400">{scripture.context}</p>
-            
-            <div className="mb-4">
-              <h3 className="font-semibold text-sm uppercase mb-2 text-zinc-300">Connected Relics:</h3>
-              {connectedRelics.length > 0 ? (
-                <div className="flex gap-2 flex-wrap">
-                  {connectedRelics.map(relic => (
-                    <Link 
-                      key={relic.slug} 
-                      href={`/armory/${relic.slug}`}
-                      className="px-3 py-1 bg-zinc-800 rounded text-sm hover:bg-zinc-700 text-amber-200"
-                    >
-                      {relic.title}
-                    </Link>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-zinc-500 text-sm">No relics connected yet.</p>
-              )}
+      <div className="mt-12 grid md:grid-cols-2 gap-4">
+        {CANON.map((r:any)=>(
+          <Link key={r.slug} href={`/the-word/${r.slug}`}>
+            <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/30">
+              <p className="text-xs uppercase tracking-widest" style={{color:r.color}}>{r.scriptureRef} • {r.title}</p>
+              <p className="mt-2 text-sm italic text-zinc-300">"{r.scriptureText}"</p>
+              <p className="mt-2 text-xs text-zinc-500">{r.purpose}</p>
             </div>
-
-            <div>
-              <h3 className="font-semibold text-sm uppercase mb-2 text-zinc-300">Connected Chapters:</h3>
-              {connectedChapters.length > 0 ? (
-                <div className="flex gap-2 flex-wrap">
-                  {connectedChapters.map(chapter => (
-                    <Link 
-                      key={chapter.slug}
-                      href={`/chronicles/${chapter.slug}`}
-                      className="px-3 py-1 bg-zinc-800 rounded text-sm hover:bg-zinc-700 text-amber-200"
-                    >
-                      {chapter.title}
-                    </Link>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-zinc-500 text-sm">No chapters connected yet.</p>
-              )}
-            </div>
-          </div>
-        )
-      })}
-    </div>
+          </Link>
+        ))}
+      </div>
+    </main>
   )
 }
