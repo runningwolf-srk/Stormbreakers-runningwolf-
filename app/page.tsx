@@ -1,22 +1,20 @@
 // @ts-nocheck
-export const dynamic = 'force-dynamic'
 import { CANON } from '@/lib/constants'
 import Link from 'next/link'
-export default function HomePage() {
+export const dynamic = 'force-dynamic'
+export default function Home() {
   return (
-    <main className="px-4 py-16 max-w-6xl mx-auto">
-      <div className="text-center">
-        <p className="uppercase tracking-[0.4em] text-xs text-zinc-500">Running Wolf Stormbreakers</p>
-        <h1 className="text-6xl md:text-8xl font-black tracking-tighter mt-4">STORM<br/>BREAKERS</h1>
-        <p className="mt-4 text-zinc-400 tracking-widest">16 SONGS • 16 BATTLES • ONE TESTIMONY • ONE KING</p>
-        <div className="flex gap-3 justify-center mt-8 flex-wrap">
-          <Link href="/armory" className="px-6 py-3 bg-white text-black rounded-full font-bold">⚔️ Hear — Armory</Link>
-          <Link href="/chronicles" className="px-6 py-3 bg-zinc-900 border border-zinc-800 rounded-full font-bold">📖 Understand — Chronicles</Link>
-          <Link href="/word" className="px-6 py-3 bg-zinc-900 border border-zinc-800 rounded-full font-bold">✝️ Root — Word</Link>
-          <Link href="/book" className="px-6 py-3 bg-amber-500 text-black rounded-full font-black">📚 Live — Books</Link>
-        </div>
+    <main className="px-4 py-16 max-w-6xl mx-auto text-center">
+      <h1 className="text-7xl font-black tracking-tighter">STORM<br/>BREAKERS</h1>
+      <p className="mt-4 text-xs uppercase tracking-[0.4em] text-zinc-500">16 Songs • 16 Battles • One Testimony • One King</p>
+      <p className="mt-3 text-[11px] uppercase tracking-widest text-zinc-600">Hear → Understand → Root → Live</p>
+      <div className="mt-10 grid md:grid-cols-4 gap-4 text-left">
+        <Link href="/armory"><div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-white/20"><p className="text-xs uppercase tracking-widest">⚔️ Hear</p><h2 className="text-2xl font-black mt-1">Armory</h2><p className="text-xs text-zinc-500 mt-1">The Songs become Relics</p></div></Link>
+        <Link href="/chronicles"><div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-white/20"><p className="text-xs uppercase tracking-widest">📖 Understand</p><h2 className="text-2xl font-black mt-1">Chronicles</h2><p className="text-xs text-zinc-500 mt-1">The Relics become Testimony</p></div></Link>
+        <Link href="/word"><div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-white/20"><p className="text-xs uppercase tracking-widest">✝️ Root</p><h2 className="text-2xl font-black mt-1">The Word</h2><p className="text-xs text-zinc-500 mt-1">Testimony returns to Scripture</p></div></Link>
+        <Link href="/book"><div className="bg-white text-black rounded-2xl p-6"><p className="text-xs uppercase tracking-widest opacity-60">📚 Live</p><h2 className="text-2xl font-black mt-1">Books</h2><p className="text-xs opacity-60 mt-1">Scripture becomes Practice</p></div></Link>
       </div>
-      <div className="mt-12 text-center text-xs text-zinc-600">Hear → Understand → Root → Live = Worship → Story → Foundation → Application</div>
+      <p className="mt-12 text-xs text-zinc-600">Wolf Blade — Orchestral metal worship — Blade forged on night I wanted to quit — Hebrews 4:12 — Learn to fight with truth instead of fear.</p>
     </main>
   )
 }
