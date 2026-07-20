@@ -1,26 +1,36 @@
 // @ts-nocheck
 export const dynamic = 'force-dynamic'
 import { CANON } from '@/lib/constants'
+import Link from 'next/link'
 
-export function generateStaticParams() {
-  return (CANON || []).map((r: any) => ({ slug: r.slug }))
-}
-
-export default function Page({ params }: any) {
-  const r = (CANON || []).find((x: any) => x.slug === params.slug)
-  if (!r) return <div className="p-12 text-white">Not found: {params.slug}</div>
+export default function ChroniclesIndex() {
   return (
-    <main className="px-6 py-16 max-w-3xl mx-auto text-center">
-      <div className="w-20 h-20 mx-auto rounded-full flex items-center justify-center text-xl font-black mb-6" style={{background: r.color+'20', border: `2px solid ${r.color}`, color: r.color}}>{r.symbol}</div>
-      <p className="uppercase tracking-[0.3em] text-xs" style={{color: r.color}}>{r.relicLabel} • ACT {r.act} • {r.weapon}</p>
-      <h1 className="text-5xl font-black mt-3">{r.title}</h1>
-      <p className="text-amber-400 mt-3 font-mono text-sm">{r.scriptureRef} — {r.sound}</p>
-      <p className="text-zinc-300 mt-8 text-lg leading-relaxed">{r.description}</p>
-      <div className="mt-10 p-6 bg-zinc-900 border border-zinc-800 rounded-2xl text-left space-y-6">
-        <div><p className="text-xs uppercase text-zinc-500 tracking-widest">Testimony Moment</p><p className="mt-2 text-zinc-200">{r.testimonyMoment}</p></div>
-        <div><p className="text-xs uppercase text-zinc-500 tracking-widest">Cinematic Scene</p><p className="mt-2 text-zinc-400">{r.cinematicScene}</p></div>
-        <div><p className="text-xs uppercase text-zinc-500 tracking-widest">Sound Identity</p><p className="mt-2 text-zinc-400">{r.sound}</p></div>
-      </div>
+    <main className="px-4 py-12 max-w-5xl mx-auto">
+      <h1 className="text-6xl font-black">CHRONICLES</h1>
+      <p className="text-zinc-500 uppercase tracking-widest text-sm mt-2">Read the Story • 16 Chapters • Like a Novel</p>
+      <p className="text-zinc-600 text-xs mt-1">Purpose: Follow testimony from silence to legacy. Read beginning to end.</p>
+
+      {[1,2,3,4].map(act=>{
+        const acts = {1:{name:'AWAKENING', desc:'The encounter. God in the storm.'},2:{name:'TRANSFORMATION', desc:'Rebuilding identity.'},3:{name:'WARFARE', desc:'Walking in authority.'},4:{name:'CALLING', desc:'Carrying Kingdom forward.'}}
+        return (
+          <div key={act} className="mt-12">
+            <h2 className="font-black text-sm uppercase tracking-[0.3em] text-zinc-400">ACT {act} — {acts[act].name}</h2>
+            <p className="text-xs text-zinc-600 mt-1">{acts[act].desc}</p>
+            <div className="grid md:grid-cols-2 gap-4 mt-4">
+              {CANON.filter((r:any)=>r.act===act).map((r:any)=>(
+                <Link key={r.slug} href={`/chronicles/${r.slug}`}>
+                  <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 hover:border-amber-500/30 h-full">
+                    <p className="text-xs uppercase tracking-widest" style={{color:r.color}}>{r.symbol} • {r.title} • {r.scriptureRef}</p>
+                    <p className="text-white mt-2 font-medium">"{r.hook}"</p>
+                    <p className="text-zinc-500 text-xs mt-2 italic">"{r.testimonyMoment}"</p>
+                    <p className="text-zinc-600 text-xs mt-3">{r.cinematicScene}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )
+      })}
     </main>
   )
 }
