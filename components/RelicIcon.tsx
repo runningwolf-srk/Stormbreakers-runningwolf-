@@ -1,7 +1,4 @@
 // @ts-nocheck
-import { CANON } from '@/lib/constants'
-
-export default function RelicIcon({ id, size = 24 }: { id?: string; size?: number }) {
-  const relic = (CANON as any).RELIC_MAP?.[id] || { symbol: '⚔️' }
-  return <span style={{ fontSize: size }}>{relic.symbol || '⚔️'}</span>
+export default function RelicIcon({ id, size = 32 }: { id?: string; size?: number }) {
+  return <span style={{ fontSize: size, lineHeight: 1 }}>⚔️</span>
 }
