@@ -1,4 +1,6 @@
 // @ts-nocheck
-export default function RelicIcon({ id, size = 32 }: { id?: string; size?: number }) {
-  return <span style={{ fontSize: size, lineHeight: 1 }}>⚔️</span>
+import { getRelic } from '@/lib/constants'
+export default function RelicIcon({ id = 'default', size = 32 }: { id?: string; size?: number }) {
+  const relic = getRelic(id)
+  return <span style={{ fontSize: size }}>{relic?.symbol || '⚔️'}</span>
 }
