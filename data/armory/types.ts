@@ -1,15 +1,12 @@
 export type Relic = {
-  id?: number
   slug: string
   title: string
   image: string
-  theme: string
-  description: string
-  scriptureRef: string
-  lyrics: string
-  youtube: string
-  symbol?: string
-  act?: any
-  chapter?: any
-  [key: string]: any
+  num?: string
+  sound?: string
+  scripture?: string
+  hook?: string
+  practice?: string
+  status?: 'forged' | 'unrevealed'
+  category?: 'calling' | 'fire' | 'healing' | 'kingship' | 'redemption' | 'warfare' | 'worship'
 }
