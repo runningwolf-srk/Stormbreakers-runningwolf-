@@ -1,10 +1,28 @@
-export type { Relic } from './types'
+import { callingRelics } from './calling'
+import { fireRelics } from './fire'
+import { healingRelics } from './healing'
 import { kingshipRelics } from './kingship'
 import { redemptionRelics } from './redemption'
-import { healingRelics } from './healing'
-import { fireRelics } from './fire'
-import { callingRelics } from './calling'
 import { warfareRelics } from './warfare'
 import { worshipRelics } from './worship'
-export const allRelics = [...kingshipRelics,...redemptionRelics,...healingRelics,...fireRelics,...callingRelics,...warfareRelics,...worshipRelics]
-export default allRelics
+
+export const ALL_RELICS = [
+  ...callingRelics,
+  ...warfareRelics,
+  ...fireRelics,
+  ...worshipRelics,
+  ...healingRelics,
+  ...kingshipRelics,
+  ...redemptionRelics,
+].sort((a,b) => (a.num||'').localeCompare(b.num||''))
+
+export const CANON_META = {
+  identity: "ONE CANON • FOUR EXPERIENCES • SIXTEEN RELICS • ONE KING",
+  mission: [
+    "⚔️ The Songs are Relics.",
+    "📖 The Chronicles are Testimony.",
+    "✝️ The Word is Authority.",
+    "📚 The Books are Transformation.",
+  ],
+  flow: "Hear → Understand → Root → Live = Worship → Story → Foundation → Application"
+}
