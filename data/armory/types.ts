@@ -8,5 +8,9 @@ export type Relic = {
   hook?: string
   practice?: string
   status?: 'forged' | 'unrevealed'
-  category?: 'calling' | 'fire' | 'healing' | 'kingship' | 'redemption' | 'warfare' | 'worship'
+  category?: string
+  lyrics?: string
+  story?: string
+  scriptureText?: string
+  walk?: string
 }
