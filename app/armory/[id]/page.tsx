@@ -1,47 +1,60 @@
-// @ts-nocheck
 import { ALL_RELICS } from '@/data/armory'
 import Link from 'next/link'
 
-export default function RelicPage({ params }: any) {
-  const key = params.slug || params.id
-  const relic = ALL_RELICS.find((r:any) => r.slug === key || r.id === key)
+export default function Page({ params }: any) {
+  const relic: any = ALL_RELICS.find((r: any) => r.slug === params.id)
 
   if (!relic) {
     return (
-      <main style={{minHeight:'100vh',background:'#0a0a0a',color:'#f5f5dc',display:'flex',alignItems:'center',justifyContent:'center',padding:40,textAlign:'center',fontFamily:'serif'}}>
+      <main style={{ minHeight: '100vh', background: '#0a0a0a', color: '#f5f5dc', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 40, textAlign: 'center', fontFamily: 'serif' }}>
         <div>
-          <h1 style={{fontSize:26,letterSpacing:5}}>THE RELIC HAS NOT BEEN REVEALED</h1>
-          <p style={{marginTop:18,opacity:0.65}}>This path is still being forged.<br/>The song is not written. The chapter is not opened.<br/>The walk is waiting.</p>
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10,marginTop:32}}>
-            <Link href="/armory" style={{padding:'16px',background:'#f5f5dc',color:'#0a0a0a',textDecoration:'none',fontWeight:800}}>⚔️ HEAR — ARMORY</Link>
-            <Link href="/chronicles" style={{padding:'16px',border:'1px solid #333',color:'#f5f5dc',textDecoration:'none'}}>📖 Understand — Chronicles</Link>
-            <Link href="/word" style={{padding:'16px',border:'1px solid #333',color:'#f5f5dc',textDecoration:'none'}}>✝️ Root — The Word</Link>
-            <Link href="/books" style={{padding:'16px',border:'1px solid #333',color:'#f5f5dc',textDecoration:'none'}}>📚 Live — Books</Link>
-          </div>
-          <p style={{marginTop:24,opacity:0.3,fontSize:11}}>ONE CANON • FOUR EXPERIENCES • SIXTEEN RELICS • ONE KING</p>
+          <h1 style={{ fontSize: 26, letterSpacing: 5 }}>THE RELIC HAS NOT BEEN REVEALED</h1>
+          <p style={{ marginTop: 18, opacity: 0.6 }}>This path is still being forged.<br />The song is not written. The chapter is not opened.<br />The walk is waiting.</p>
+          <Link href="/armory" style={{ display: 'block', marginTop: 30, padding: 18, background: '#f5f5dc', color: '#0a0a0a', textDecoration: 'none', fontWeight: 800 }}>⚔️ HEAR — ARMORY</Link>
+          <p style={{ marginTop: 20, opacity: 0.3, fontSize: 11 }}>ONE CANON • FOUR EXPERIENCES • SIXTEEN RELICS • ONE KING</p>
         </div>
       </main>
     )
   }
 
+  const isForged = relic.status === 'forged'
+
   return (
-    <main style={{minHeight:'100vh',background:'#0a0a0a',color:'#f5f5dc',padding:60,fontFamily:'serif'}}>
-      <Link href="/armory" style={{color:'#888',textDecoration:'none'}}>← Armory</Link>
-      <div style={{marginTop:30}}>
-        <div style={{fontSize:12,opacity:0.5}}>{relic.num} • {relic.status?.toUpperCase()} • {relic.scripture}</div>
-        <h1 style={{fontSize:42,marginTop:10,letterSpacing:6}}>{relic.title.toUpperCase()}</h1>
-        <p style={{opacity:0.6,marginTop:12}}>{relic.sound} — {relic.hook}</p>
+    <main style={{ minHeight: '100vh', background: '#0a0a0a', color: '#f5f5dc', padding: 60, fontFamily: 'serif' }}>
+      <Link href="/armory" style={{ color: '#888', textDecoration: 'none' }}>← Armory</Link>
+      <div style={{ marginTop: 30 }}>
+        <div style={{ fontSize: 12, opacity: 0.5 }}>{relic.num} • {relic.category} • {relic.status} • {relic.scripture}</div>
+        <h1 style={{ fontSize: 40, marginTop: 12, letterSpacing: 6 }}>{relic.title.toUpperCase()}</h1>
+        <p style={{ marginTop: 12, opacity: 0.7 }}>{relic.sound}</p>
+        <p style={{ marginTop: 8, opacity: 0.6 }}>{relic.hook}</p>
       </div>
 
-      {relic.status === 'unrevealed' ? (
-        <div style={{marginTop:70,border:'1px solid #222',padding:50,textAlign:'center',background:'#111'}}>
-          <h2 style={{letterSpacing:5}}>THE RELIC HAS NOT BEEN REVEALED</h2>
-          <p style={{opacity:0.6,marginTop:20,lineHeight:1.8}}>This path is still being forged.<br/>The song is not written.<br/>The chapter is not opened.<br/>The walk is waiting.</p>
-          <p style={{marginTop:30,fontSize:13,opacity:0.5}}>Practice seed: {relic.practice}</p>
+      {isForged ? (
+        <div style={{ marginTop: 50, display: 'grid', gap: 16 }}>
+          <div style={{ border: '1px solid #222', padding: 24, background: '#111' }}>
+            <h3>⚔️ SONG — The Relic</h3>
+            <p style={{ marginTop: 10, opacity: 0.6 }}>Sound: {relic.sound} / Scripture: {relic.scripture} / Lyrics being forged for {relic.title}</p>
+          </div>
+          <div style={{ border: '1px solid #222', padding: 24, background: '#111' }}>
+            <h3>📖 CHRONICLE — Testimony</h3>
+            <p style={{ marginTop: 10, opacity: 0.6 }}>{relic.hook} — Full testimony next forge.</p>
+          </div>
+          <div style={{ border: '1px solid #222', padding: 24, background: '#111' }}>
+            <h3>✝️ WORD — {relic.scripture}</h3>
+            <p style={{ marginTop: 10, opacity: 0.6 }}>Scripture study — What God reveals — How it points to Christ — Application today</p>
+          </div>
+          <div style={{ border: '1px solid #222', padding: 24, background: '#111' }}>
+            <h3>📚 WALK — Practice</h3>
+            <p style={{ marginTop: 10, opacity: 0.6 }}>{relic.practice}</p>
+          </div>
         </div>
       ) : (
-        <div style={{marginTop:60,display:'grid',gap:16}}>
-          <div style={{border:'1px solid #333',padding:24,background:'#111'}}><h3>⚔️ SONG</h3><p style={{opacity:0.6,marginTop:8}}>{relic.title} — {relic.sound} — {relic.scripture}</p></div>
-          <div style={{border:'1px solid #333',padding:24,background:'#111'}}><h3>📖 CHRONICLE</h3><p style={{opacity:0.6,marginTop:8}}>{relic.hook}</p></div>
-          <div style={{border:'1px solid #333',padding:24,background:'#111'}}><h3>✝️ WORD — {relic.scripture}</h3></div>
-          <div style={{border:'1px solid #333',padding:24,background:'#111'}}><h3>📚 WALK</h3><p style={{opacity:0.6,
+        <div style={{ marginTop: 50, border: '1px solid #222', padding: 40, background: '#111', textAlign: 'center' }}>
+          <h2 style={{ letterSpacing: 4 }}>THE RELIC HAS NOT BEEN REVEALED</h2>
+          <p style={{ marginTop: 16, opacity: 0.6 }}>The song is not written.<br />The chapter is not opened.<br />The walk is waiting.</p>
+          <p style={{ marginTop: 20, fontSize: 13, opacity: 0.5 }}>Seed: {relic.practice}</p>
+        </div>
+      )}
+    </main>
+  )
+}
