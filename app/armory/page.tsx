@@ -1,22 +1,21 @@
 // @ts-nocheck
-export const dynamic = 'force-dynamic'
-import { CANON } from '@/lib/constants'
 import Link from 'next/link'
+import { ALL_RELICS } from '@/data/armory'
+
 export default function Armory() {
   return (
-    <main className="px-4 py-12 max-w-6xl mx-auto">
-      <h1 className="text-6xl font-black">ARMORY</h1><p className="text-xs uppercase tracking-widest text-zinc-500 mt-2">Hear the Story • 16 Relics</p>
-      <div className="mt-10 grid md:grid-cols-2 gap-4">
-        {CANON.map((r:any)=>(
-          <div key={r.slug} className="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
-            <p className="text-xs uppercase tracking-widest" style={{color:r.color}}>{r.symbol} — {r.title} • {r.weapon} • {r.sound}</p>
-            <p className="text-sm italic text-zinc-400 mt-1">"{r.hook}"</p>
-            <div className="flex gap-2 mt-4">
-              <Link href={`/chronicles/${r.slug}`} className="text-xs px-3 py-2 bg-black border border-zinc-800 rounded-full">Read Story →</Link>
-              <Link href={`/word/${r.slug}`} className="text-xs px-3 py-2 bg-black border border-zinc-800 rounded-full">Study Word →</Link>
-              <Link href={`/book/walk/${r.slug}`} className="text-xs px-3 py-2 bg-white text-black rounded-full font-bold">Live →</Link>
-            </div>
-          </div>
+    <main style={{minHeight:'100vh',background:'#0a0a0a',color:'#f5f5dc',padding:60,fontFamily:'serif'}}>
+      <h1 style={{letterSpacing:5}}>⚔️ ARMORY — SIXTEEN RELICS</h1>
+      <p style={{opacity:0.6,marginTop:10}}>The Songs are Relics. Hear → Understand → Root → Live</p>
+      
+      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',gap:16,marginTop:40}}>
+        {ALL_RELICS.map((r:any) => (
+          <Link key={r.slug} href={`/armory/${r.slug}`} style={{border:'1px solid #222',padding:20,background:'#111',textDecoration:'none',color:'#f5f5dc',display:'block'}}>
+            <div style={{fontSize:11,opacity:0.4}}>{r.num} • {r.status}</div>
+            <div style={{fontSize:18,marginTop:6,fontWeight:700}}>{r.title}</div>
+            <div style={{fontSize:12,opacity:0.6,marginTop:6}}>{r.sound}</div>
+            <div style={{fontSize:12,opacity:0.5,marginTop:6}}>{r.scripture}</div>
+          </Link>
         ))}
       </div>
     </main>
