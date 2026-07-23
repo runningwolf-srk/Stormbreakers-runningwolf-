@@ -7,7 +7,7 @@ export type Relic = {
   scripture?: string
   hook?: string
   practice?: string
-  status?: 'forged' | 'unrevealed'
+  status?: "forged" | "unrevealed"
   category?: string
   lyrics?: string
   story?: string
