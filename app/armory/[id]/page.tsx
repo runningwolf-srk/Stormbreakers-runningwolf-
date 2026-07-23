@@ -1,55 +1,69 @@
 import { ALL_RELICS } from "@/data/armory"
 import Link from "next/link"
 
+function StatusBlock({ status, practice }: any) {
+  if (status === "forged") return null
+  if (status === "in_progress") {
+    return (
+      <div style={{marginTop:48,border:"1px solid #3a2a00",padding:50,textAlign:"center",background:"#171400"}}>
+        <h2 style={{letterSpacing:5}}>🔥 SEED</h2>
+        <p style={{marginTop:12,opacity:0.8}}>The first spark has been found.</p>
+        <p style={{marginTop:20,fontSize:13,opacity:0.5}}>Practice seed: {practice}</p>
+      </div>
+    )
+  }
+  return (
+    <div style={{marginTop:48,border:"1px solid #222",padding:50,textAlign:"center",background:"#111"}}>
+      <h2 style={{letterSpacing:5}}>🔒 UNREVEALED</h2>
+      <p style={{marginTop:12,opacity:0.6}}>The path has not opened.</p>
+    </div>
+  )
+}
+
 export default function Page({ params }: any) {
   const relic: any = ALL_RELICS.find((r: any) => r.slug === params.id)
   if (!relic) {
     return (
       <main style={{minHeight:"100vh",background:"#0a0a0a",color:"#f5f5dc",display:"flex",alignItems:"center",justifyContent:"center",padding:40,textAlign:"center",fontFamily:"serif"}}>
-        <div><h1 style={{letterSpacing:5}}>THE RELIC HAS NOT BEEN REVEALED</h1><Link href="/armory" style={{display:"block",marginTop:30,padding:16,background:"#f5f5dc",color:"#000",textDecoration:"none"}}>ARMORY</Link></div>
+        <div><h1 style={{letterSpacing:5}}>🔒 THE PATH HAS NOT OPENED</h1><Link href="/armory" style={{display:"block",marginTop:30,padding:16,background:"#f5f5dc",color:"#000",textDecoration:"none"}}>ARMORY</Link></div>
       </main>
     )
   }
-  const getYtId = (url: string) => {
-    if (!url) return null
-    const m = url.match(/(?:youtu\.be\/|v=)([^?&]+)/)
-    return m? m[1] : null
-  }
-  const ytId = relic.youtube? getYtId(relic.youtube) : null
+
+  const ytId = relic.youtube? relic.youtube.match(/(?:youtu\.be\/|v=)([^?&]+)/)?.[1] : null
 
   return (
     <main style={{minHeight:"100vh",background:"#0a0a0a",color:"#f5f5dc",padding:40,fontFamily:"serif"}}>
       <Link href="/armory" style={{color:"#888",textDecoration:"none"}}>← Armory</Link>
       <div style={{maxWidth:800,marginTop:30}}>
-        <div style={{fontSize:11,opacity:0.5}}>{relic.num} • {relic.category} • {relic.status} • {relic.scripture}</div>
+        <div style={{fontSize:11,opacity:0.5}}>{relic.num} • {relic.category} • {relic.status.toUpperCase()} • {relic.scripture}</div>
         <h1 style={{fontSize:42,marginTop:10,letterSpacing:8}}>{relic.title.toUpperCase()}</h1>
         <p style={{marginTop:10,opacity:0.6}}>{relic.sound}</p>
         <p style={{marginTop:6,opacity:0.5,fontStyle:"italic"}}>{relic.hook}</p>
-        {relic.image && (
-          <div style={{marginTop:24,border:"1px solid #222",background:"#050505"}}>
-            <img src={relic.image} alt={relic.title} style={{width:"100%",maxHeight:600,objectFit:"cover",display:"block"}} />
-          </div>
-        )}
-        {ytId && (
+
+        {relic.image && <div style={{marginTop:24,border:"1px solid #222",background:"#050505"}}><img src={relic.image} alt={relic.title} style={{width:"100%",maxHeight:600,objectFit:"cover",display:"block"}} /></div>}
+
+        {ytId && relic.status === "forged" && (
           <div style={{marginTop:16,border:"1px solid #222",background:"#111",padding:8}}>
             <div style={{position:"relative",paddingBottom:"56.25%",height:0}}>
-              <iframe src={`https://www.youtube.com/embed/${ytId}`} title={relic.title} style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",border:0}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              <iframe src={`https://www.youtube.com/embed/${ytId}`} title={relic.title} style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",border:0}} allowFullScreen />
             </div>
           </div>
         )}
       </div>
+
       {relic.status === "forged"? (
         <div style={{marginTop:36,maxWidth:800,display:"grid",gap:18}}>
-          <div style={{border:"1px solid #222",padding:24,background:"#111"}}><h3>⚔️ SONG — The Relic</h3><pre style={{whiteSpace:"pre-wrap",marginTop:14,opacity:0.8,lineHeight:1.7}}>{relic.lyrics}</pre></div>
-          <div style={{border:"1px solid #222",padding:24,background:"#111"}}><h3>📖 CHRONICLE — Testimony</h3><p style={{marginTop:14,opacity:0.75,lineHeight:1.8}}>{relic.story}</p></div>
+          <div style={{border:"1px solid #222",padding:24,background:"#111"}}><h3>⚔️ THE RELIC HAS BEEN REVEALED</h3><pre style={{whiteSpace:"pre-wrap",marginTop:14,opacity:0.8,lineHeight:1.7}}>{relic.lyrics}</pre></div>
+          <div style={{border:"1px solid #222",padding:24,background:"#111"}}><h3>📖 CHRONICLE — {relic.title}</h3><p style={{marginTop:14,opacity:0.75,lineHeight:1.8}}>{relic.story}</p></div>
           <div style={{border:"1px solid #222",padding:24,background:"#111"}}><h3>✝️ WORD — {relic.scripture}</h3><p style={{marginTop:14,opacity:0.75,lineHeight:1.8}}>{relic.scriptureText}</p></div>
-          <div style={{border:"1px solid #333",padding:24,background:"#1a1a0a"}}><h3>📚 WALK — Practice</h3><p style={{marginTop:14,opacity:0.9,lineHeight:1.8,fontWeight:600}}>{relic.walk || relic.practice}</p></div>
+          <div style={{border:"1px solid #333",padding:24,background:"#1a1a0a"}}><h3>📚 WALK</h3><p style={{marginTop:14,opacity:0.9,lineHeight:1.8,fontWeight:600}}>{relic.walk}</p></div>
+          {relic.soundNotes && <div style={{border:"1px solid #222",padding:24,background:"#0f0f0f"}}><h3>🎧 SOUND</h3><p style={{marginTop:14,opacity:0.6,lineHeight:1.8}}>{relic.soundNotes}</p></div>}
         </div>
       ) : (
-        <div style={{marginTop:48,maxWidth:600,border:"1px solid #222",padding:50,textAlign:"center",background:"#111"}}>
-          <h2 style={{letterSpacing:5}}>THE RELIC HAS NOT BEEN REVEALED</h2><p style={{marginTop:18,opacity:0.6}}>The song is not written.<br/>The chapter is not opened.<br/>The walk is waiting.</p><p style={{marginTop:20,fontSize:13,opacity:0.5}}>Seed: {relic.practice}</p>
-        </div>
+        <StatusBlock status={relic.status} practice={relic.practice} />
       )}
+
       <div style={{marginTop:60,opacity:0.3,fontSize:11,letterSpacing:3}}>ONE CANON • FOUR EXPERIENCES • SIXTEEN RELICS • ONE KING</div>
     </main>
   )
