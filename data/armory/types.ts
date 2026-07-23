@@ -1,21 +1,20 @@
-export type Relic = {
+export interface Relic {
   slug: string
   title: string
-  num?: string
-  image?: string
-  sound?: string
-  soundNotes?: string
-  scripture?: string
-  hook?: string
-  practice?: string
-  status: "forged" | "in_progress" | "unrevealed"
+  num: string
   category: string
-  lyrics?: string
+  status: "forged" | "in_progress" | "seed" | "unrevealed"
+  scripture: string
+  sound: string
+  soundNotes?: string
+  hook: string
+  lyrics: string
+  chronicle: string
+  wordStudy: string
+  walk: string
+  practice: string
+  image: string
   artwork?: string
-  banner?: string
-  youtube?: string
   audio?: string
-  chronicle?: string
-  wordStudy?: string
-  walk?: string
+  youtube?: string
 }
