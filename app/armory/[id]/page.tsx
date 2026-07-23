@@ -8,7 +8,7 @@ function StatusBlock({ status, practice }: any) {
       <div style={{marginTop:48,border:"1px solid #3a2a00",padding:50,textAlign:"center",background:"#171400"}}>
         <h2 style={{letterSpacing:5}}>🔥 SEED</h2>
         <p style={{marginTop:12,opacity:0.8}}>The first spark has been found.</p>
-        <p style={{marginTop:20,fontSize:13,opacity:0.5}}>Practice seed: {practice}</p>
+        <p style={{marginTop:20,fontSize:13,opacity:0.5}}>Seed: {practice}</p>
       </div>
     )
   }
@@ -29,17 +29,17 @@ export default function Page({ params }: any) {
       </main>
     )
   }
-
   const ytId = relic.youtube? relic.youtube.match(/(?:youtu\.be\/|v=)([^?&]+)/)?.[1] : null
 
   return (
     <main style={{minHeight:"100vh",background:"#0a0a0a",color:"#f5f5dc",padding:40,fontFamily:"serif"}}>
       <Link href="/armory" style={{color:"#888",textDecoration:"none"}}>← Armory</Link>
+
       <div style={{maxWidth:800,marginTop:30}}>
-        <div style={{fontSize:11,opacity:0.5}}>{relic.num} • {relic.category} • {relic.status.toUpperCase()} • {relic.scripture}</div>
+        <div style={{fontSize:11,opacity:0.5,letterSpacing:2}}>{relic.num} • {relic.category?.toUpperCase()} • {relic.status?.toUpperCase()} • {relic.scripture}</div>
         <h1 style={{fontSize:42,marginTop:10,letterSpacing:8}}>{relic.title.toUpperCase()}</h1>
-        <p style={{marginTop:10,opacity:0.6}}>{relic.sound}</p>
-        <p style={{marginTop:6,opacity:0.5,fontStyle:"italic"}}>{relic.hook}</p>
+        <div style={{marginTop:6,fontSize:13,opacity:0.6}}>{relic.sound}</div>
+        <p style={{marginTop:12,opacity:0.7,fontStyle:"italic",lineHeight:1.6}}>{relic.hook}</p>
 
         {relic.image && <div style={{marginTop:24,border:"1px solid #222",background:"#050505"}}><img src={relic.image} alt={relic.title} style={{width:"100%",maxHeight:600,objectFit:"cover",display:"block"}} /></div>}
 
@@ -54,17 +54,18 @@ export default function Page({ params }: any) {
 
       {relic.status === "forged"? (
         <div style={{marginTop:36,maxWidth:800,display:"grid",gap:18}}>
-          <div style={{border:"1px solid #222",padding:24,background:"#111"}}><h3>⚔️ THE RELIC HAS BEEN REVEALED</h3><pre style={{whiteSpace:"pre-wrap",marginTop:14,opacity:0.8,lineHeight:1.7}}>{relic.lyrics}</pre></div>
-          <div style={{border:"1px solid #222",padding:24,background:"#111"}}><h3>📖 CHRONICLE — {relic.title}</h3><p style={{marginTop:14,opacity:0.75,lineHeight:1.8}}>{relic.story}</p></div>
-          <div style={{border:"1px solid #222",padding:24,background:"#111"}}><h3>✝️ WORD — {relic.scripture}</h3><p style={{marginTop:14,opacity:0.75,lineHeight:1.8}}>{relic.scriptureText}</p></div>
-          <div style={{border:"1px solid #333",padding:24,background:"#1a1a0a"}}><h3>📚 WALK</h3><p style={{marginTop:14,opacity:0.9,lineHeight:1.8,fontWeight:600}}>{relic.walk}</p></div>
-          {relic.soundNotes && <div style={{border:"1px solid #222",padding:24,background:"#0f0f0f"}}><h3>🎧 SOUND</h3><p style={{marginTop:14,opacity:0.6,lineHeight:1.8}}>{relic.soundNotes}</p></div>}
+          <div style={{border:"1px solid #222",padding:24,background:"#111"}}><h3>⚔️ THE RELIC — SONG</h3><pre style={{whiteSpace:"pre-wrap",marginTop:14,opacity:0.8,lineHeight:1.7,fontFamily:"serif"}}>{relic.lyrics}</pre></div>
+          <div style={{border:"1px solid #222",padding:24,background:"#111"}}><h3>📖 CHRONICLE — TESTIMONY</h3><p style={{marginTop:14,opacity:0.75,lineHeight:1.8}}>{relic.chronicle}</p></div>
+          <div style={{border:"1px solid #222",padding:24,background:"#111"}}><h3>✝️ WORD — {relic.scripture}</h3><p style={{marginTop:14,opacity:0.75,lineHeight:1.8}}>{relic.wordStudy}</p></div>
+          <div style={{border:"1px solid #333",padding:24,background:"#1a1a0a"}}><h3>📚 WALK — PRACTICE</h3><p style={{marginTop:14,opacity:0.9,lineHeight:1.8,fontWeight:600}}>{relic.walk}</p></div>
+          <div style={{border:"1px solid #222",padding:24,background:"#0f0f0f"}}><h3>🎧 SOUND</h3><p style={{marginTop:14,opacity:0.6,lineHeight:1.8,fontSize:13}}>{relic.soundNotes}</p></div>
         </div>
       ) : (
         <StatusBlock status={relic.status} practice={relic.practice} />
       )}
 
-      <div style={{marginTop:60,opacity:0.3,fontSize:11,letterSpacing:3}}>ONE CANON • FOUR EXPERIENCES • SIXTEEN RELICS • ONE KING</div>
+      {/* SINGLE FOOTER - ONLY ONCE */}
+      <div style={{marginTop:80,paddingTop:24,borderTop:"1px solid #1a1a1a",opacity:0.3,fontSize:11,letterSpacing:3,textAlign:"center"}}>ONE CANON • FOUR EXPERIENCES • SIXTEEN RELICS • ONE KING</div>
     </main>
   )
 }
