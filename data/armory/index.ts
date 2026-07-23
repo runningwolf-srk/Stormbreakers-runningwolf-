@@ -1,23 +1,19 @@
 import { callingRelics } from "./calling"
 import { warfareRelics } from "./warfare"
 
-// Safe fallback for files that may not exist yet
-let worshipRelics: any[] = []
-let legacyRelics: any[] = []
-try { 
-  // @ts-ignore
-  worshipRelics = require("./worship").worshipRelics || [] 
-} catch {}
-try { 
-  // @ts-ignore
-  legacyRelics = require("./legacy").legacyRelics || [] 
-} catch {}
-
 export const ALL_RELICS = [
   ...(callingRelics || []),
-  ...(warfareRelics || []),
-  ...(worshipRelics || []),
-  ...(legacyRelics || [])
+  ...(warfareRelics || [])
 ].filter(Boolean)
 
-export { callingRelics, warfareRelics, worshipRelics, legacyRelics }
+// Permanent ledger — no relic ever overwrites forged
+export const FORGED = ["wolf-fang","wolf-blade"]
+export const ACTIVE_FORGE = "thunder-drums"
+export const SEEDS_ASSIGNED = {
+  psalm23: "VI - psalm-23-rebuild - Worship - NOT X",
+  emberPrayer: "XIII - ember-prayer - Worship - NOT VII"
+}
+
+export const worshipRelics: any[] = []
+export const legacyRelics: any[] = []
+export { callingRelics, warfareRelics }
