@@ -1,7 +1,7 @@
 export type Relic = {
   slug: string
   title: string
-  image: string
+  image?: string
   num?: string
   sound?: string
   scripture?: string
@@ -13,4 +13,5 @@ export type Relic = {
   story?: string
   scriptureText?: string
   walk?: string
+  youtube?: string
 }
