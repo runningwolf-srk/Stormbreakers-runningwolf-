@@ -1,21 +1,14 @@
-import CanonFooter from "./components/CanonFooter"
+import "./globals.css"
+import Link from "next/link"
 
-export default function RootLayout({children}){
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html>
-      <body className="bg-black text-white">
-        <header className="py-6 px-8 border-b border-zinc-900 flex justify-between">
-          <span className="tracking-widest font-bold">RUNNING WOLF • STORMBREAKERS</span>
-          <nav className="flex gap-6 text-sm text-zinc-400">
-            <a href="/armory">Armory</a>
-            <a href="/chronicles">Chronicles</a>
-            <a href="/word">Word</a>
-            <a href="/books">Books</a>
-          </nav>
-        </header>
-        <main className="min-h-screen">{children}</main>
-        <CanonFooter />
-      </body>
-    </html>
-  )
-}
+    <html lang="en">
+      <body className="bg-black text-zinc-100 antialiased">
+        <header className="sticky top-0 z-50 bg-black/90 backdrop-blur border-b border-zinc-900">
+          <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <Link href="/" className="font-black tracking-[0.25em] text-sm">
+              RUNNING WOLF • STORMBREAKERS
+            </Link>
+            <nav className="flex gap-8">
+              <Link href="/armory
