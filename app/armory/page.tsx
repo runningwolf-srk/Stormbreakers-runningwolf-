@@ -1,28 +1,28 @@
-import { ALL_RELICS } from "@/data/armory"
 import Link from "next/link"
+import { ALL_RELICS, CANON_PROGRESS } from "@/data/armory"
 
 export default function ArmoryPage() {
   return (
-    <main style={{minHeight:"100vh",background:"#0a0a0a",color:"#f5f5dc",padding:40,fontFamily:"serif"}}>
-      {/* TOP IDENTITY - ONCE */}
-      <div style={{textAlign:"center",opacity:0.4,fontSize:11,letterSpacing:4}}>ONE CANON • FOUR EXPERIENCES • SIXTEEN RELICS • ONE KING</div>
+    <div className="px-6 py-12">
+      <div className="max-w-3xl mx-auto border border-zinc-800 rounded-xl p-8 mb-12 text-center">
+        <p className="text-xs tracking-[0.3em] text-zinc-400">
+          ⚔️ FORGED: {CANON_PROGRESS.forged}/16 • 🔥 IN PROGRESS: {CANON_PROGRESS.inProgress}/16 • 🔒 UNREVEALED: {CANON_PROGRESS.unrevealed}/16
+        </p>
+        <div className="w-full h-1 bg-zinc-900 mt-4 rounded overflow-hidden">
+          <div className="h-1 bg-white rounded" style={{ width: `${(CANON_PROGRESS.forged / 16) * 100}%` }} />
+        </div>
+      </div>
 
-      <h1 style={{textAlign:"center",fontSize:48,letterSpacing:10,marginTop:20}}>ARMORY</h1>
-      <p style={{textAlign:"center",opacity:0.5,marginTop:8,letterSpacing:2}}>The Songs are Relics. The Chronicles are Testimony. The Word is Authority. The Books are Transformation.</p>
-
-      <div style={{maxWidth:1000,margin:"40px auto",display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",gap:16}}>
-        {ALL_RELICS.map((r:any)=>(
-          <Link key={r.slug} href={`/armory/${r.slug}`} style={{textDecoration:"none",border: r.status==="forged"? "1px solid #c9a227" : r.status==="in_progress"? "1px solid #3a2a00" : "1px solid #222",padding:20,background: r.status==="forged"? "#171400" : "#111",display:"block"}}>
-            <div style={{fontSize:10,opacity:0.5}}>{r.num} • {r.status?.toUpperCase()}</div>
-            <div style={{marginTop:8,fontSize:16,letterSpacing:2,color: r.status==="forged"? "#f5f5dc" : "#888"}}>{r.title.toUpperCase()}</div>
-            <div style={{marginTop:6,fontSize:10,opacity:0.4}}>{r.scripture}</div>
-            <div style={{marginTop:10,fontSize:11}}>{r.status==="forged"? "⚔️ FORGED" : r.status==="in_progress"? "🔥 SEED" : "🔒 UNREVEALED"}</div>
+      <div className="grid gap-6 max-w-3xl mx-auto">
+        {ALL_RELICS.map((relic) => (
+          <Link key={relic.slug} href={`/armory/${relic.slug}`} className="border border-zinc-800 rounded-xl p-8 hover:border-zinc-600 transition">
+            <p className="text-xs tracking-[0.2em] text-zinc-500">{relic.num} • {relic.category.toUpperCase()} • {relic.status.toUpperCase()}</p>
+            <h2 className="text-2xl font-black tracking-widest mt-2">{relic.title.toUpperCase()}</h2>
+            <p className="text-sm text-zinc-400 mt-2 italic">{relic.scripture}</p>
+            <p className="text-sm text-zinc-300 mt-3">{relic.hook}</p>
           </Link>
         ))}
       </div>
-
-      {/* BOTTOM SEAL - ONCE - NOTHING IN MIDDLE */}
-      <div style={{marginTop:80,paddingTop:24,borderTop:"1px solid #1a1a1a",opacity:0.3,fontSize:11,letterSpacing:3,textAlign:"center"}}>ONE CANON • FOUR EXPERIENCES • SIXTEEN RELICS • ONE KING</div>
-    </main>
+    </div>
   )
 }
