@@ -1,8 +1,8 @@
-import { callingRelics } from './calling'
-import { warfareRelics } from './warfare'
-import { healingRelics } from './healing'
-import { kingshipRelics } from './kingship'
-import { redemptionRelics } from './redemption'
+import { callingRelics } from "./calling"
+import { warfareRelics } from "./warfare"
+import { healingRelics } from "./healing"
+import { kingshipRelics } from "./kingship"
+import { redemptionRelics } from "./redemption"
 
 export const CANON_ORDER = [
   { num:"I", slug:"first-song", title:"The First Song", scripture:"Genesis 1:2", sound:"Breath drone", hook:"The breath came before the song", status:"unrevealed" as const, category:"genesis", practice:"Breathe 4-4-4" },
@@ -20,12 +20,12 @@ export const CANON_ORDER = [
   { num:"XIII", slug:"spirit-mantle", title:"Spirit Mantle", scripture:"Matthew 27:51", sound:"Veil tear", hook:"Veil tore you came in", status:"unrevealed" as const, category:"kingship", practice:"Enter bold" },
   { num:"XIV", slug:"tower-of-one", title:"Tower of One", scripture:"Psalm 61:3", sound:"Tower anthem", hook:"Tower not tent", status:"unrevealed" as const, category:"kingship", practice:"Stand tall" },
   { num:"XV", slug:"running-wolf", title:"Running Wolf", scripture:"Isaiah 40:31", sound:"Pack anthem", hook:"Run not weary", status:"unrevealed" as const, category:"kingship", practice:"Run with pack" },
-  { num:"XVI", slug:"legacy", title:"Legacy", scripture:"Psalm 78:4", sound:"Legacy choir", hook:"Tell next generation", status:"unrevealed" as const, category:"redemption", practice:"Write legacy line" },
+  { num:"XVI", slug:"legacy", title:"Legacy", scripture:"Psalm 78:4", sound:"Legacy choir", hook:"Tell next generation", status:"unrevealed" as const, category:"redemption", practice:"Write legacy line" }
 ]
 
 const EXTRA = [...callingRelics,...warfareRelics,...healingRelics,...kingshipRelics,...redemptionRelics]
 
 export const ALL_RELICS = CANON_ORDER.map(c => {
   const full = EXTRA.find(e => e.slug === c.slug) as any
-  return full? {...c,...full, num: c.num, status: full.status, title: c.title } : c
+  return full? {...c,...full, num: c.num, title: c.title } : c
 })
