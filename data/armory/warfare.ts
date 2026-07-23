@@ -1,24 +1,72 @@
-import { Relic } from "./types"
+chronicle: `
+⚡ XI — THUNDER DRUMS — CHRONICLE
 
-export const warfareRelics: Relic[] = [
-  {
-    slug:"thunder-drums",
-    title:"Thunder Drums",
-    num:"XI",
-    category:"warfare",
-    status:"in_progress",
-    scripture:"James 1:2-4",
-    sound:"Industrial Trial Anthem - 88 BPM - E minor - Faith Through Fire",
-    soundNotes:"Thunder Drums: Industrial trial anthem, 88 BPM, E minor, war drums, hammer anvil, electric guitars, endurance choir, battle chant. Pressure intro -> explosive victory chorus. Identity: Endurance. Weapon: Perseverance. Battle: Moment you want to quit",
-    hook:"The trial did not break you. It revealed what was unbreakable",
-    lyrics:"[Verse 1]\nFire around me, pressure within\nThe weight of the battle is testing my skin\nI thought the furnace was the end of my road\nBut You were building strength I never knew I could hold\n\n[Pre-Chorus]\nCount it joy when the storm arrives\nFaith is forged when the weak survives\n\n[Chorus]\nLet the thunder drums roll\nLet the fire reveal my soul\nWhat tried to break me made me stand\nI am forged by the Makers hand\nThrough the trial, through the flame\nI will rise and praise Your name\n\n[Verse 2]\nNot punishment, refinement\nNot abandonment, Your design\nHammer falling, anvil ringing\nYou are shaping this heart of mine\n\n[Bridge]\nI will not quit in the fire\nI will endure, I will endure\nTen minutes longer, one more step\nEndurance till the end",
-    chronicle:"CHRONICLE - Thunder Drums - Setting: Season where everything feels like pressure. After Wolf Blade surrendered control, testing came immediately. Not relief, refinement. Bills, mind battles, old habits returning, voice saying quit. Struggle: Question was not Can I fight? Question was Will I stay faithful when fighting gets hard? Every part wanted escape, not endurance. Encounter: James 1:2-4 - Consider it pure joy when you face trials, because testing of faith produces perseverance. Realized fire was not punishment; fire was proving ground. God was not trying to break me; He was revealing what was unbreakable. Transformation: Goal changed from escaping trial to becoming stronger through it. From why is this happening to what is this building. Thunder drums changed from sound of defeat to sound of war returning.",
-    wordStudy:"WORD - James 1:2-4 - Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds, because you know that the testing of your faith produces perseverance. Let perseverance finish its work so that you may be mature and complete, not lacking anything. Study: 1) Joy not because trial is fun, but because trial has purpose. 2) Testing proves faith is real, like fire proves gold. 3) Perseverance is endurance with purpose - staying when you want to quit. 4) Fire reveals, not destroys - God uses furnace to remove what would break you later. The blade for lies (VII), the voice that shatters (X), now endurance that outlasts (XI). Root: Faith tested -> perseverance -> maturity -> complete.",
-    walk:"WALK - Books - Practice - Thunder Drums 10-Minute Endurance: When you want to stop: 1) Name trial - write one sentence. 2) Speak James 1:2-4 aloud. 3) Declare: Count it joy. This is not breaking me, this is building me. 4) Stay 10 minutes longer - pray, worship, work, obey - 10 more minutes than quitting wants. 5) Finish next step only. Not whole mountain, next step. Live: When pressure rises, do not escape. Endure. Let thunder drums call you back into fight.",
-    practice:"Count it joy. This is not breaking me, this is building me. Endure 10 minutes longer. Finish next step.",
-    image:"/artwork/thunder-drums-seed.jpg",
-    artwork:"/artwork/thunder-drums-seed.jpg",
-    audio:"/audio/thunder-drums-seed.mp3",
-    youtube:""
-  }
-]
+Relic Core: 
+Battle: The urge to quit
+Weapon: Endurance
+Truth: Trials produce perseverance
+Transformation: Pressure reveals what God has built inside
+
+SETTING:
+The season where everything feels like pressure.
+Wolf Fang had taught truth over lies.
+Wolf Blade had taught surrender over control.
+I thought surrender would bring relief.
+Instead, testing came.
+
+Work pressing, mind looping, old battles returning.
+Not one big storm — a hundred small pressures.
+The kind that whispers: quit would be easier.
+
+STRUGGLE:
+The question was not "Can I fight?"
+I knew how to fight.
+
+The question was "Will I stay faithful when fighting gets hard?"
+Will I pray when prayer feels dry?
+Will I worship when worship feels heavy?
+Will I obey when obedience costs ten more minutes?
+
+Every part of me wanted escape, not endurance.
+Every part wanted shortcut, not perseverance.
+
+ENCOUNTER:
+James 1:2-4
+"Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds, because you know that the testing of your faith produces perseverance. Let perseverance finish its work so that you may be mature and complete, not lacking anything."
+
+It was not punishment. It was production.
+
+The fire was not proof I was forgotten.
+The fire was the place endurance was formed.
+
+God was not trying to break me.
+God was revealing what was unbreakable.
+God was not removing me from furnace.
+God was removing furnace from me.
+
+TRANSFORMATION:
+The goal changed.
+
+Before: Escape the trial.
+After: Become stronger through the trial.
+
+Before: Why is this happening to me?
+After: What is this building in me?
+
+The thunder drums changed.
+Before they were sound of defeat approaching.
+Now they are sound of war returning.
+Now they call me forward when fight gets heavy.
+
+SEED LOCKED:
+Count it joy.
+This is not breaking me, this is building me.
+Endure 10 minutes longer.
+Finish the next step.
+
+Four Experience Path:
+⚔️ Hear — Armory — drums call you forward when fight gets heavy
+📖 Understand — Chronicles — fire was not forgotten, fire formed endurance
+✝️ Root — Word — James 1:2-4 — trials test faith, produce perseverance, make mature and complete
+📚 Live — Books — When you want to stop: Endure 10 more minutes. Finish next step. Refuse surrender to pressure.
+`
