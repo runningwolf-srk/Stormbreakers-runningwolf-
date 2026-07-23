@@ -1,19 +1,15 @@
 import { callingRelics } from "./calling"
 import { warfareRelics } from "./warfare"
+import { worshipRelics } from "./worship"
+import { legacyRelics } from "./legacy"
 
-export const ALL_RELICS = [
-  ...(callingRelics || []),
-  ...(warfareRelics || [])
-].filter(Boolean)
+export const ALL_RELICS = [...callingRelics, ...warfareRelics, ...worshipRelics, ...legacyRelics].filter(Boolean)
 
-// Permanent ledger — no relic ever overwrites forged
-export const FORGED = ["wolf-fang","wolf-blade"]
-export const ACTIVE_FORGE = "thunder-drums"
-export const SEEDS_ASSIGNED = {
-  psalm23: "VI - psalm-23-rebuild - Worship - NOT X",
-  emberPrayer: "XIII - ember-prayer - Worship - NOT VII"
+export const CANON_PROGRESS = {
+  forged: 2,
+  inProgress: 1,
+  unrevealed: 13,
+  total: 16
 }
 
-export const worshipRelics: any[] = []
-export const legacyRelics: any[] = []
-export { callingRelics, warfareRelics }
+export { callingRelics, warfareRelics, worshipRelics, legacyRelics }
