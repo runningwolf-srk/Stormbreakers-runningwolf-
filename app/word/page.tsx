@@ -1,8 +1,15 @@
-// app/word/page.tsx
-// @ts-nocheck
-export const dynamic = 'force-dynamic'
-import { CANON } from '@/lib/constants'
-import Link from 'next/link'
-export default function WordIndex() {
-  return (<main className="px-4 py-12 max-w-5xl mx-auto"><h1 className="text-6xl font-black">THE WORD</h1><p className="text-xs uppercase tracking-widest text-zinc-500 mt-2">Root • Scripture is Authority</p><div className="mt-12 grid md:grid-cols-2 gap-4">{CANON.map((r:any)=>(<Link key={r.slug} href={`/word/${r.slug}`}><div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5"><p className="text-xs uppercase tracking-widest" style={{color:r.color}}>{r.scriptureRef} • {r.title}</p><p className="mt-2 text-sm italic">"{r.scriptureText}"</p></div></Link>))}</div></main>)
+import { ALL_RELICS } from "@/data/armory"
+export default function WordPage(){
+  return (
+    <div className="px-6 py-12 max-w-3xl mx-auto space-y-12">
+      <h1 className="text-3xl font-black tracking-widest text-center">✝️ WORD</h1>
+      <p className="text-center text-zinc-400 text-sm">Root — Authority</p>
+      {ALL_RELICS.map(r=>(
+        <div key={r.slug} className="border border-zinc-800 rounded-xl p-8 space-y-4">
+          <p className="text-xs text-zinc-500">{r.num} • {r.title.toUpperCase()} • {r.scripture}</p>
+          <p className="text-zinc-300 leading-7 whitespace-pre-wrap">{r.wordStudy}</p>
+        </div>
+      ))}
+    </div>
+  )
 }
