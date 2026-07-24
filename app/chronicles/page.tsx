@@ -1,22 +1,16 @@
-// @ts-nocheck
-export const dynamic = 'force-dynamic'
-import { CANON } from '@/lib/constants'
-import Link from 'next/link'
-export default function ChroniclesIndex() {
-  const acts = [1,2,3,4]
+import Link from "next/link"
+import { ALL_RELICS } from "@/data/armory"
+export default function ChroniclesPage(){
   return (
-    <main className="px-4 py-12 max-w-5xl mx-auto">
-      <h1 className="text-6xl font-black">CHRONICLES</h1><p className="text-xs uppercase tracking-widest text-zinc-500 mt-2">Understand • 16 Chapters • Testimony</p>
-      {acts.map(act=>(
-        <div key={act} className="mt-10">
-          <h2 className="text-xs uppercase tracking-[0.4em] text-zinc-600">ACT {act} — {act===1?'AWAKENING':act===2?'TRANSFORMATION':act===3?'WARFARE':'CALLING'}</h2>
-          <div className="mt-4 space-y-3">
-            {CANON.filter((r:any)=>r.act===act).map((r:any)=>(
-              <Link key={r.slug} href={`/chronicles/${r.slug}`}><div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex justify-between"><div><p className="text-xs uppercase tracking-widest" style={{color:r.color}}>{r.symbol} {r.title} • {r.scriptureRef}</p><p className="text-sm italic text-zinc-400">"{r.hook}"</p><p className="text-xs text-zinc-500 mt-1">"{r.testimonyMoment}"</p></div><span className="text-xs text-zinc-600">→</span></div></Link>
-            ))}
-          </div>
-        </div>
+    <div className="px-6 py-12 max-w-3xl mx-auto space-y-12">
+      <h1 className="text-3xl font-black tracking-widest text-center">📖 CHRONICLES</h1>
+      <p className="text-center text-zinc-400 text-sm">Understand — Testimony behind each relic</p>
+      {ALL_RELICS.map(r=>(
+        <Link key={r.slug} href={`/armory/${r.slug}`} className="block border border-zinc-800 rounded-xl p-8 hover:border-zinc-600">
+          <p className="text-xs text-zinc-500">{r.num} • {r.title.toUpperCase()}</p>
+          <p className="text-zinc-300 mt-4 leading-7 whitespace-pre-wrap">{r.chronicle}</p>
+        </Link>
       ))}
-    </main>
+    </div>
   )
 }
