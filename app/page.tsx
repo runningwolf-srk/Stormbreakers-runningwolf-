@@ -1,35 +1,17 @@
-// @ts-nocheck
-import Link from 'next/link'
-
-export default function Home() {
+import Link from "next/link"
+import { CANON_PROGRESS } from "@/data/armory"
+export default function Home(){
   return (
-    <main style={{minHeight:'100vh',background:'#0a0a0a',color:'#f5f5dc',padding:60,fontFamily:'serif'}}>
-      <h1 style={{letterSpacing:6,fontSize:28}}>RUNNING WOLF STORMBREAKERS</h1>
-      <p style={{marginTop:12,letterSpacing:4,opacity:0.6,fontSize:12}}>ONE CANON • FOUR EXPERIENCES • SIXTEEN RELICS • ONE KING</p>
-
-      <div style={{display:'flex',gap:20,marginTop:30}}>
-        <Link href="/armory" style={{color:'#f5f5dc',textDecoration:'none'}}>⚔️ Armory</Link>
-        <Link href="/chronicles" style={{color:'#f5f5dc',textDecoration:'none'}}>📖 Chronicles</Link>
-        <Link href="/word" style={{color:'#f5f5dc',textDecoration:'none'}}>✝️ Word</Link>
-        <Link href="/books" style={{color:'#f5f5dc',textDecoration:'none'}}>📚 Books</Link>
+    <div className="px-6 py-20 max-w-3xl mx-auto text-center space-y-12">
+      <h1 className="text-6xl font-black tracking-[0.2em]">RUNNING WOLF</h1>
+      <p className="text-xl tracking-[0.4em] text-zinc-500">STORMBREAKERS</p>
+      <p className="text-xs tracking-[0.3em] text-zinc-400">⚔️ FORGED: {CANON_PROGRESS.forged}/16 • 🔥 IN PROGRESS: {CANON_PROGRESS.inProgress}/16 • 🔒 UNREVEALED: {CANON_PROGRESS.unrevealed}/16</p>
+      <div className="grid grid-cols-2 gap-4 pt-12">
+        <Link href="/armory" className="border border-zinc-800 p-8 rounded-xl hover:border-white transition"><span className="text-xs tracking-widest">⚔️ ARMORY</span><p className="text-xs text-zinc-500 mt-2">Hear</p></Link>
+        <Link href="/chronicles" className="border border-zinc-800 p-8 rounded-xl hover:border-white transition"><span className="text-xs tracking-widest">📖 CHRONICLES</span><p className="text-xs text-zinc-500 mt-2">Understand</p></Link>
+        <Link href="/word" className="border border-zinc-800 p-8 rounded-xl hover:border-white transition"><span className="text-xs tracking-widest">✝️ WORD</span><p className="text-xs text-zinc-500 mt-2">Root</p></Link>
+        <Link href="/books" className="border border-zinc-800 p-8 rounded-xl hover:border-white transition"><span className="text-xs tracking-widest">📚 BOOKS</span><p className="text-xs text-zinc-500 mt-2">Live</p></Link>
       </div>
-
-      <div style={{marginTop:80,maxWidth:600,lineHeight:1.8}}>
-        <p>⚔️ The Songs are Relics.</p>
-        <p>📖 The Chronicles are Testimony.</p>
-        <p>✝️ The Word is Authority.</p>
-        <p>📚 The Books are Transformation.</p>
-      </div>
-
-      <p style={{marginTop:30,letterSpacing:2}}>Hear → Understand → Root → Live</p>
-      <p style={{opacity:0.5,fontSize:12,marginTop:6}}>Worship → Story → Foundation → Application</p>
-
-      <div style={{marginTop:50,display:'grid',gridTemplateColumns:'1fr 1fr',gap:12,maxWidth:500}}>
-        <Link href="/armory" style={{border:'1px solid #222',padding:16,background:'#f5f5dc',color:'#0a0a0a',textDecoration:'none',fontWeight:800}}>⚔️ Hear — Armory</Link>
-        <Link href="/chronicles" style={{border:'1px solid #222',padding:16,background:'#111',color:'#f5f5dc',textDecoration:'none'}}>📖 Understand — Chronicles</Link>
-        <Link href="/word" style={{border:'1px solid #222',padding:16,background:'#111',color:'#f5f5dc',textDecoration:'none'}}>✝️ Root — The Word</Link>
-        <Link href="/books" style={{border:'1px solid #222',padding:16,background:'#111',color:'#f5f5dc',textDecoration:'none'}}>📚 Live — Books</Link>
-      </div>
-    </main>
+    </div>
   )
 }
