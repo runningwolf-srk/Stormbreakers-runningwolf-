@@ -1,8 +1,16 @@
-// app/book/page.tsx
-// @ts-nocheck
-export const dynamic = 'force-dynamic'
-import { CANON } from '@/lib/constants'
-import Link from 'next/link'
-export default function Books() {
-  return (<main className="px-4 py-16 max-w-6xl mx-auto"><h1 className="text-6xl font-black">BOOKS</h1><p className="text-xs uppercase tracking-widest text-zinc-500 mt-2">Live the Transformation — Reflection • Prayer • Application</p><div className="mt-12 grid gap-6"><div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8"><p className="text-xs uppercase tracking-[0.3em] text-zinc-500">BOOK I</p><h2 className="text-3xl font-black">THE CHRONICLES</h2><p className="text-sm text-zinc-400">The Story</p><Link href="/chronicles" className="inline-block mt-4 px-5 py-3 bg-white text-black rounded-full text-sm font-bold">Read →</Link></div><div className="bg-amber-950/10 border border-amber-900/20 rounded-2xl p-8"><p className="text-xs uppercase tracking-[0.3em] text-amber-500">BOOK II</p><h2 className="text-3xl font-black">THE WORD</h2><p className="text-sm text-zinc-400">The Foundation</p><Link href="/word" className="inline-block mt-4 px-5 py-3 bg-amber-500 text-black rounded-full text-sm font-bold">Study →</Link></div><div className="bg-white text-black rounded-2xl p-8"><p className="text-xs uppercase tracking-[0.3em] opacity-60">BOOK III</p><h2 className="text-3xl font-black">THE WALK</h2><p className="text-sm opacity-70">The Application — 16 Practices</p><Link href="/book/walk" className="inline-block mt-4 px-5 py-3 bg-black text-white rounded-full text-sm font-bold">Live →</Link></div></div></main>)
+import { ALL_RELICS } from "@/data/armory"
+export default function BooksPage(){
+  return (
+    <div className="px-6 py-12 max-w-3xl mx-auto space-y-12">
+      <h1 className="text-3xl font-black tracking-widest text-center">📚 BOOKS</h1>
+      <p className="text-center text-zinc-400 text-sm">Live — Walk and Practice</p>
+      {ALL_RELICS.map(r=>(
+        <div key={r.slug} className="border border-zinc-800 rounded-xl p-8 space-y-4">
+          <p className="text-xs text-zinc-500">{r.num} • {r.title.toUpperCase()}</p>
+          <p className="text-zinc-300 leading-7 whitespace-pre-wrap">{r.walk}</p>
+          <p className="text-xs text-zinc-500 mt-4">Practice: {r.practice}</p>
+        </div>
+      ))}
+    </div>
+  )
 }
