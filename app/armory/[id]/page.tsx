@@ -10,8 +10,18 @@ export default function RelicPage({ params }: { params: { id: string } }) {
         <p className="text-sm text-zinc-400 italic">{relic.scripture}</p>
         <p className="text-zinc-300 max-w-xl mx-auto leading-7 pt-4">{relic.hook}</p>
       </div>
-      {relic.artwork && <img src={relic.artwork} alt={relic.title} className="w-full rounded-xl" />}
-      {relic.youtube && <div className="aspect-video rounded-xl overflow-hidden border border-zinc-800"><iframe src={relic.youtube.replace("youtu.be","www.youtube.com/embed")} className="w-full h-full" allowFullScreen /></div>}
+
+      {relic.artwork && (
+        <section className="space-y-3"><h2 className="text-xs tracking-[0.3em] text-zinc-500">🖼️ ARTWORK</h2><img src={relic.artwork} alt={relic.title} className="w-full rounded-xl" /></section>
+      )}
+
+      {relic.youtube && (
+        <section className="space-y-3">
+          <h2 className="text-xs tracking-[0.3em] text-zinc-500">▶️ WATCH • ▶️ LISTEN</h2>
+          <div className="aspect-video rounded-xl overflow-hidden border border-zinc-800"><iframe src={relic.youtube.replace("youtu.be","www.youtube.com/embed")} className="w-full h-full" allowFullScreen /></div>
+        </section>
+      )}
+
       <section className="space-y-6"><h2 className="text-xl font-bold tracking-[0.2em]">⚔️ SONG</h2><pre className="whitespace-pre-wrap font-sans text-zinc-300 leading-8">{relic.lyrics}</pre></section>
       <section className="space-y-6"><h2 className="text-xl font-bold tracking-[0.2em]">📖 CHRONICLE</h2><p className="whitespace-pre-wrap text-zinc-300 leading-8">{relic.chronicle}</p></section>
       <section className="space-y-6"><h2 className="text-xl font-bold tracking-[0.2em]">✝️ WORD — {relic.scripture}</h2><p className="whitespace-pre-wrap text-zinc-300 leading-8">{relic.wordStudy}</p></section>
