@@ -1,2 +1,1 @@
-import { Relic } from "./types"
-export const legacyRelics: Relic[] = []
+import {Relic} from "./types";export const legacyRelics:Relic[]=[]
