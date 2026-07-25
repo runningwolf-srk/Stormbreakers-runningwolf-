@@ -1,0 +1,7 @@
+import {ALL_RELICS} from "@/data/armory"; import Link from "next/link";
+export default function ChroniclesPage(){
+return(<div className="px-6 py-16 max-w-3xl mx-auto space-y-12">
+<h1 className="text-3xl font-black tracking-widest">📖 CHRONICLES</h1>
+{ALL_RELICS.map(r=><Link key={r.slug} href={`/armory/${r.slug}`} className="block border border-zinc-800 p-6 rounded-xl">
+<p className="text-xs text-zinc-500">{r.num} {r.title}</p><p className="text-sm text-zinc-300 mt-2">{r.chronicle.slice(0,120)}...</p></Link>)}
+</div>)}
