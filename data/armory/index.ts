@@ -1,11 +1,31 @@
-export type Relic = { slug: string; num: string; title: string; chronicle: string; verse: string }
+export type Relic = {
+  slug:string; num:string; title:string; chronicle:string;
+  verse:string; icon:string; color:string; accent:string;
+  glow:string; power:string; image:string
+}
 
-export const ALL_RELICS: Relic[] = [
-  { slug: "helm-salvation", num: "01", title: "HELM OF SALVATION", chronicle: "The mind covered by Christ. The enemy cannot sow doubt where salvation is sealed.", verse: "Eph 6:17" },
-  { slug: "breastplate-righteousness", num: "02", title: "BREASTPLATE OF RIGHTEOUSNESS", chronicle: "Guard your heart. Righteousness not earned but imputed.", verse: "Eph 6:14" },
-  { slug: "sword-word", num: "03", title: "SWORD OF THE WORD", chronicle: "The only offensive weapon. The Word cuts, heals, and divides.", verse: "Heb 4:12" },
-  { slug: "shield-faith", num: "04", title: "SHIELD OF FAITH", chronicle: "Quenches every fiery dart. Faith is not feeling, it's holding.", verse: "Eph 6:16" },
+const RAW_RELICS: Relic[] = [
+  { slug:"runningwolf-blade", num:"01", title:"RUNNINGWOLF BLADE", image:"/relics/runningwolf-blade.png", icon:"⚔️", color:"from-zinc-800 to-white/10", accent:"border-white/30", glow:"shadow-white/10", power:"Alpha Edge", verse:"Hebrews 4:12", chronicle:"The only offensive weapon. Sharper than any double-edged sword." },
+  { slug:"lord-of-lords", num:"02", title:"LORD OF LORDS", image:"/relics/lord-of-lords.webp", icon:"👑", color:"from-amber-900 to-yellow-700", accent:"border-yellow-500/30", glow:"shadow-yellow-500/20", power:"King of Kings", verse:"Revelation 19:16", chronicle:"KING OF KINGS AND LORD OF LORDS." },
+  { slug:"blood-of-cross", num:"03", title:"BLOOD OF CROSS", image:"/relics/blood-of-cross.webp", icon:"🩸", color:"from-zinc-900 to-red-950", accent:"border-red-500/40", glow:"shadow-red-500/20", power:"Crimson Covenant", verse:"Colossians 1:20", chronicle:"Through the blood of His cross, peace was made." },
+  { slug:"iron-collide", num:"04", title:"IRON COLLIDE", image:"/relics/iron-collide.webp", icon:"⚒️", color:"from-zinc-800 to-slate-700", accent:"border-slate-500/30", glow:"shadow-slate-500/20", power:"Unbreakable Impact", verse:"Proverbs 27:17", chronicle:"Iron sharpens iron. Clash that forges warriors." },
+  { slug:"heaven-calling", num:"05", title:"HEAVEN CALLING", image:"/relics/heaven-calling.webp", icon:"📯", color:"from-indigo-950 to-blue-900", accent:"border-blue-500/30", glow:"shadow-blue-500/20", power:"Divine Summons", verse:"Philippians 3:14", chronicle:"Press toward the mark for the high calling." },
+  { slug:"war-cry", num:"06", title:"WAR CRY", image:"/relics/war-cry.webp", icon:"📢", color:"from-red-950 to-orange-900", accent:"border-orange-500/30", glow:"shadow-orange-500/20", power:"Battle Roar", verse:"Joel 3:9", chronicle:"Prepare for war! Wake up the mighty men." },
+  { slug:"redeemed", num:"07", title:"REDEEMED", image:"/relics/redeemed.webp", icon:"✝️", color:"from-emerald-950 to-teal-900", accent:"border-emerald-500/30", glow:"shadow-emerald-500/20", power:"Bought Back", verse:"Ephesians 1:7", chronicle:"In Him we have redemption through His blood." },
+  { slug:"royal-relic", num:"08", title:"ROYAL RELIC", image:"/relics/royal-relic.webp", icon:"💎", color:"from-violet-950 to-purple-900", accent:"border-purple-500/30", glow:"shadow-purple-500/20", power:"Royal Bloodline", verse:"1 Peter 2:9", chronicle:"A chosen generation, a royal priesthood." },
+  { slug:"runningwolf", num:"09", title:"RUNNINGWOLF", image:"/relics/runningwolf.webp", icon:"🐺", color:"from-zinc-900 to-stone-800", accent:"border-stone-500/30", glow:"shadow-stone-500/20", power:"Alpha Unleashed", verse:"Isaiah 40:31", chronicle:"They shall run and not be weary. Alpha leads the pack." },
+  { slug:"psalm-23", num:"10", title:"PSALM 23", image:"/relics/psalm-23.webp", icon:"🐑", color:"from-green-950 to-emerald-900", accent:"border-green-500/30", glow:"shadow-green-500/20", power:"Shepherd's Rest", verse:"Psalm 23:1", chronicle:"The Lord is my shepherd; I shall not want." },
+  { slug:"lion-and-lamb", num:"11", title:"LION AND LAMB", image:"/relics/lion-and-lamb.png", icon:"🦁", color:"from-amber-950 to-orange-900", accent:"border-amber-500/30", glow:"shadow-amber-500/20", power:"Majesty & Meekness", verse:"Isaiah 11:6", chronicle:"The wolf shall dwell with the lamb. Power under perfect peace." },
+  { slug:"spiritual-mantle", num:"12", title:"SPIRITUAL MANTLE", image:"/relics/spiritual-mantle.png", icon:"🧥", color:"from-indigo-900 to-violet-900", accent:"border-indigo-500/30", glow:"shadow-indigo-500/20", power:"Heaven's Covering", verse:"Isaiah 61:1", chronicle:"The Spirit of the Lord is upon me. Mantle of authority." },
+  { slug:"storm-crown", num:"13", title:"STORM CROWN", image:"/relics/storm-crown.png", icon:"🌩️", color:"from-slate-900 to-zinc-800", accent:"border-cyan-500/30", glow:"shadow-cyan-500/20", power:"Tempest Authority", verse:"Psalm 29:3", chronicle:"The voice of the Lord is upon the waters: the God of glory thundereth." },
+  { slug:"god-kept-me-alive", num:"14", title:"GOD KEPT ME ALIVE", image:"/relics/god-kept-me-alive.png", icon:"❤️‍🔥", color:"from-red-950 to-zinc-900", accent:"border-red-500/40", glow:"shadow-red-500/30", power:"Undying Witness", verse:"Psalm 118:17", chronicle:"I shall not die, but live, and declare the works of the Lord." },
+  { slug:"through-the-storm-i-rise", num:"15", title:"THROUGH THE STORM I RISE", image:"/relics/through-the-storm-i-rise.png", icon:"🌊", color:"from-blue-950 to-slate-900", accent:"border-blue-500/30", glow:"shadow-blue-500/20", power:"Storm Walker", verse:"Isaiah 43:2", chronicle:"When thou passest through the waters, I will be with thee." },
+  { slug:"the-fire", num:"16", title:"THE FIRE", image:"/relics/the-fire.png", icon:"🔥", color:"from-red-950 to-orange-950", accent:"border-orange-500/40", glow:"shadow-orange-500/30", power:"Refiner's Fire", verse:"Malachi 3:2", chronicle:"He is like a refiner's fire. Tested, not consumed." },
+  { slug:"jesus-is-a-healer", num:"17", title:"JESUS IS A HEALER", image:"/relics/jesus-is-a-healer.png", icon:"🩹", color:"from-teal-950 to-cyan-900", accent:"border-teal-500/30", glow:"shadow-teal-500/20", power:"Jehovah Rapha", verse:"Exodus 15:26", chronicle:"I am the Lord that healeth thee." },
+  { slug:"chronicle-stone", num:"18", title:"CHRONICLE STONE", image:"/relics/chronicle-stone.png", icon:"🪨", color:"from-stone-900 to-zinc-800", accent:"border-stone-500/30", glow:"shadow-stone-500/20", power:"Living Record", verse:"Joshua 4:7", chronicle:"These stones shall be for a memorial. What God did, engraved forever." },
+  { slug:"horn-of-war", num:"19", title:"HORN OF WAR", image:"/relics/horn-of-war.webp", icon:"📯", color:"from-amber-950 to-yellow-900", accent:"border-amber-500/30", glow:"shadow-amber-500/20", power:"Shofar Blast", verse:"Joshua 6:20", chronicle:"When the people heard the sound of the trumpet, the wall fell down flat." },
 ]
 
-export const CANON_ORDER = ALL_RELICS.map(r => r.slug)
+export const ALL_RELICS = Array.from(new Map(RAW_RELICS.map(r=>[r.slug,r])).values())
+export const CANON_ORDER = ALL_RELICS.map(r=>r.slug)
 export const CANON_PROGRESS = { total: ALL_RELICS.length, unlocked: ALL_RELICS.length }
