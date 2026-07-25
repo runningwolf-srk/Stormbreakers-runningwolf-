@@ -1,21 +1,43 @@
-import { ALL_RELICS, CANON_PROGRESS } from "../data/armory"
-import Link from "next/link"
+import { ALL_RELICS } from "@/data/armory"
+
 export default function Home(){
- return(
-  <div className="p-8 md:p-16 max-w-6xl mx-auto">
-   <div className="flex flex-col md:flex-row gap-12 items-start">
-    <img src="/avatar.jpg" alt="Running Wolf" className="w-[320px] h-[320px] object-cover rounded-[32px] border border-zinc-800 shadow-2xl" />
-    <div>
-     <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none">STORM<br/>BREAKERS</h1>
-     <p className="text-zinc-400 mt-6 max-w-md">Running Wolf — {CANON_PROGRESS.total} relics forged. Armor live.</p>
-     <div className="mt-8 flex gap-4">
-      <Link href="/armory" className="bg-white text-black px-8 py-3 text-xs tracking-[0.3em] font-bold">ENTER ARMORY — {CANON_PROGRESS.total}</Link>
-     </div>
-     <div className="mt-8 grid grid-cols-5 gap-2 max-w-[240px]">
-      {ALL_RELICS.map(r=><img key={r.slug} src={r.image} className="w-10 h-10 rounded-lg object-cover border border-white/10" />)}
-     </div>
-    </div>
-   </div>
-  </div>
- )
+  return (
+    <main className="min-h-screen bg-black text-white">
+      <nav className="flex gap-6 p-6 text-sm tracking-widest text-white/60">
+        <span className="text-white font-bold">STORMBREAKERS</span>
+        <a href="/armory">ARMORY</a>
+        <a href="/books">BOOKS</a>
+        <a href="/chronicles">CHRONICLES</a>
+        <a href="/word">WORD</a>
+      </nav>
+
+      <div className="max-w-6xl mx-auto px-6 pt-16 flex flex-col items-center text-center">
+        
+        {/* ONLY AVATAR ON MAIN */}
+        <img 
+          src="/images/avatar.png" 
+          alt="RUNNINGWOLF"
+          className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white/10 object-cover shadow-2xl shadow-white/10"
+        />
+
+        <h1 className="text-6xl md:text-8xl font-black tracking-tighter mt-8 leading-none">
+          RUNNINGWOLF
+        </h1>
+        
+        <p className="text-white/50 mt-3 tracking-widest text-sm">
+          {ALL_RELICS.length} RELICS UNLOCKED • STORMBREAKER
+        </p>
+
+        <div className="flex gap-4 mt-10">
+          <a href="/armory" className="bg-white text-black px-8 py-4 rounded-full font-black hover:bg-zinc-200 transition">
+            ENTER ARMORY →
+          </a>
+          <a href="/books" className="border border-white/20 px-8 py-4 rounded-full font-bold hover:bg-white/10 transition">
+            BOOKS
+          </a>
+        </div>
+
+      </div>
+    </main>
+  )
 }
