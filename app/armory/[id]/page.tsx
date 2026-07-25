@@ -1,16 +1,20 @@
-import Link from "next/link";import {ALL_RELICS,CANON_ORDER} from "@/data/armory";
-export default function RelicPage({params}:{params:{id:string}}){
-const relic=ALL_RELICS.find(r=>r.slug===params.id);if(!relic)return<div className="p-12 text-center text-zinc-500">Relic Unrevealed 🔒</div>;
-const idx=CANON_ORDER.indexOf(relic.slug);const prev=idx>0?ALL_RELICS.find(r=>r.slug===CANON_ORDER[idx-1]):null;const next=idx<CANON_ORDER.length-1?ALL_RELICS.find(r=>r.slug===CANON_ORDER[idx+1]):null;
-return(<article className="max-w-3xl mx-auto px-6 py-24 space-y-28">
-<Link href="/armory" className="inline-block text-xs tracking-[0.2em] text-zinc-500 hover:text-white border border-zinc-800 rounded-full px-5 py-3">← BACK TO ARMORY</Link>
-<div className="text-center space-y-8"><p className="text-xs tracking-[0.3em] text-zinc-500">{relic.num} • {relic.category.toUpperCase()} • {relic.status.toUpperCase()}</p><h1 className="text-6xl font-black tracking-[0.15em] leading-none">{relic.title.toUpperCase()}</h1><p className="text-sm text-zinc-400 italic">{relic.scripture}</p><p className="text-zinc-300 max-w-xl mx-auto leading-8 pt-6 text-lg">{relic.hook}</p></div>
-{relic.artwork&&<section className="space-y-4"><h2 className="text-xs tracking-[0.3em] text-zinc-500">🖼️ ARTWORK</h2><div className="aspect-[16/9] overflow-hidden rounded-xl bg-zinc-900"><img src={relic.artwork} alt={relic.title} className="w-full h-full object-cover"/></div></section>}
-{relic.youtube&&<section className="space-y-4"><h2 className="text-xs tracking-[0.3em] text-zinc-500">▶️ WATCH • ▶️ LISTEN</h2><div className="aspect-video rounded-xl overflow-hidden border border-zinc-800"><iframe src={relic.youtube.replace("youtu.be","www.youtube.com/embed")} className="w-full h-full" allowFullScreen/></div></section>}
-<section className="space-y-8 pt-8"><h2 className="text-xl font-bold tracking-[0.25em]">⚔️ SONG</h2><pre className="whitespace-pre-wrap font-sans text-zinc-300 leading-10 text-[15px]">{relic.lyrics}</pre></section>
-<section className="space-y-8 pt-8"><h2 className="text-xl font-bold tracking-[0.25em]">📖 CHRONICLE</h2><p className="whitespace-pre-wrap text-zinc-300 leading-10 text-[15px]">{relic.chronicle}</p></section>
-<section className="space-y-8 pt-8"><h2 className="text-xl font-bold tracking-[0.25em]">✝️ WORD — {relic.scripture}</h2><p className="whitespace-pre-wrap text-zinc-300 leading-10 text-[15px]">{relic.wordStudy}</p></section>
-<section className="space-y-8 pt-8"><h2 className="text-xl font-bold tracking-[0.25em]">📚 WALK</h2><p className="whitespace-pre-wrap text-zinc-300 leading-10 text-[15px]">{relic.walk}</p></section>
-<section className="border border-amber-900/30 bg-zinc-900/50 rounded-xl p-8 space-y-4"><h2 className="text-sm font-bold tracking-[0.2em] text-amber-200">TODAY'S WALK — DAILY PRACTICE CARD</h2><p className="text-xs tracking-widest text-zinc-500">CHALLENGE: {relic.practice}</p><p className="text-xs tracking-widest text-zinc-500">SCRIPTURE: {relic.scripture}</p><p className="text-sm font-bold text-white mt-4 leading-7">DECLARATION: {relic.declaration}</p></section>
-<section className="border border-zinc-800 rounded-xl p-8 space-y-4"><h2 className="text-xl font-bold tracking-[0.2em]">🎧 SOUND</h2><p className="text-sm text-zinc-400 leading-7">{relic.sound}</p><p className="text-xs text-zinc-500 leading-6">{relic.soundNotes}</p></section>
-<div className="flex justify-between border-t border-zinc-900 pt-10 text-xs tracking-widest">{prev?<Link href={`/armory/${prev.slug}`} className="text-zinc-400 hover:text-white">← {prev.num} {prev.title.toUpperCase()}</Link>:<span/>}{next?<Link href={`/armory/${next.slug}`} className="text-zinc-400 hover:text-white">{next.num} {next.title.toUpperCase()} →</Link>:<span/>}</div></article>)}
+"use client"
+import "./globals.css";import Link from "next/link";import {usePathname} from "next/navigation";
+export default function RootLayout({children}:{children:React.ReactNode}){
+const pathname=usePathname();
+const active=(p:string)=> pathname?.startsWith(p) ? "text-white border-b border-white" : "text-zinc-400 hover:text-white border-b border-transparent";
+return(<html lang="en"><body className="bg-black text-zinc-100 antialiased tracking-wide">
+<header className="sticky top-0 z-50 bg-black/90 backdrop-blur border-b border-zinc-900">
+<div className="max-w-6xl mx-auto px-6 md:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+<Link href="/" className="font-black tracking-[0.3em] text-sm">RUNNING WOLF • STORMBREAKERS</Link>
+<nav className="flex items-center gap-6 md:gap-10">
+<Link href="/armory" className={`text-xs tracking-[0.25em] py-2 transition ${active("/armory")}`}>ARMORY</Link>
+<Link href="/chronicles" className={`text-xs tracking-[0.25em] py-2 transition ${active("/chronicles")}`}>CHRONICLES</Link>
+<Link href="/word" className={`text-xs tracking-[0.25em] py-2 transition ${active("/word")}`}>WORD</Link>
+<Link href="/books" className={`text-xs tracking-[0.25em] py-2 transition ${active("/books")}`}>BOOKS</Link>
+</nav></div></header>
+<main className="max-w-6xl mx-auto pb-24">{children}</main>
+<footer className="border-t border-zinc-900 py-16 text-center px-6">
+<p className="text-xs tracking-[0.4em] text-zinc-500">ONE CANON • FOUR EXPERIENCES • SIXTEEN RELICS • ONE KING</p>
+<p className="text-xs tracking-[0.25em] text-zinc-600 mt-4">Hear → Understand → Root → Live</p>
+</footer></body></html>)}
