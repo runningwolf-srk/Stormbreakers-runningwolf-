@@ -32,4 +32,12 @@ export default function Home(){
           <a href="/armory" className="bg-white text-black px-8 py-4 rounded-full font-black hover:bg-zinc-200 transition">
             ENTER ARMORY →
           </a>
-          <a href="/books" className="border border-white/20 px-8 py-4 rounded-full font-bold hover:bg-white/10 transition
+          <a href="/books" className="border border-white/20 px-8 py-4 rounded-full font-bold hover:bg-white/10 transition">
+            BOOKS
+          </a>
+        </div>
+
+      </div>
+    </main>
+  )
+}
