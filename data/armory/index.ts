@@ -1,6 +1,11 @@
-import {callingRelics} from "./calling";import {warfareRelics} from "./warfare";import {worshipRelics} from "./worship";import {legacyRelics} from "./legacy";
-export const CANON_ORDER=["wolf-fang","wolf-blade","thunder-drums"];
-export const CANON_LEDGER:Record<string,{num:string}>={"wolf-fang":{num:"VII"},"wolf-blade":{num:"X"},"thunder-drums":{num:"XI"}};
-export const ALL_RELICS=[...callingRelics,...warfareRelics,...worshipRelics,...legacyRelics].filter(Boolean).map(r=>({...r,num:CANON_LEDGER[r.slug]?.num||r.num})).filter(r=>CANON_ORDER.includes(r.slug)).sort((a,b)=>CANON_ORDER.indexOf(a.slug)-CANON_ORDER.indexOf(b.slug));
-export const CANON_PROGRESS={forged:3,inProgress:0,unrevealed:13,total:16};
-export {callingRelics,warfareRelics,worshipRelics,legacyRelics};
+export type Relic = { slug: string; num: string; title: string; chronicle: string; verse: string }
+
+export const ALL_RELICS: Relic[] = [
+  { slug: "helm-salvation", num: "01", title: "HELM OF SALVATION", chronicle: "The mind covered by Christ. The enemy cannot sow doubt where salvation is sealed.", verse: "Eph 6:17" },
+  { slug: "breastplate-righteousness", num: "02", title: "BREASTPLATE OF RIGHTEOUSNESS", chronicle: "Guard your heart. Righteousness not earned but imputed.", verse: "Eph 6:14" },
+  { slug: "sword-word", num: "03", title: "SWORD OF THE WORD", chronicle: "The only offensive weapon. The Word cuts, heals, and divides.", verse: "Heb 4:12" },
+  { slug: "shield-faith", num: "04", title: "SHIELD OF FAITH", chronicle: "Quenches every fiery dart. Faith is not feeling, it's holding.", verse: "Eph 6:16" },
+]
+
+export const CANON_ORDER = ALL_RELICS.map(r => r.slug)
+export const CANON_PROGRESS = { total: ALL_RELICS.length, unlocked: ALL_RELICS.length }
