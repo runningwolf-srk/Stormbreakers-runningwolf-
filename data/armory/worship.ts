@@ -1,2 +1,1 @@
-import { Relic } from "./types"
-export const worshipRelics: Relic[] = []
+import {Relic} from "./types";export const worshipRelics:Relic[]=[]
