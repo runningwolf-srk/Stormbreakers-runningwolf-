@@ -1,2 +1,0 @@
-// chronicles/page.tsx
-import {ALL_RELICS} from "@/data/armory";export default function ChroniclesPage(){return<div className="px-6 py-24 max-w-3xl mx-auto space-y-16"><h1 className="text-3xl font-black tracking-widest text-center">📖 CHRONICLES</h1>{ALL_RELICS.map(r=><div key={r.slug} className="border border-zinc-800 p-8 rounded-xl space-y-4"><p className="text-xs text-zinc-500">{r.num} {r.title.toUpperCase()}</p><p className="whitespace-pre-wrap leading-9 text-zinc-300">{r.chronicle}</p></div>)}</div>}
