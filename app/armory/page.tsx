@@ -1,21 +1,35 @@
 import { ALL_RELICS } from "@/data/armory"
 
-export default function ArmoryPage(){
+export default function Home(){
   return (
-    <main className="min-h-screen bg-black text-white p-6">
-      <h1 className="text-4xl font-black mb-2">ARMORY</h1>
-      <p className="text-white/50 mb-6">{ALL_RELICS.length} RELICS • WITH FILENAMES</p>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        {ALL_RELICS.map(r=>(
-          <a key={r.slug} href={`/armory/${r.slug}`} className="border border-white/10 rounded-xl overflow-hidden bg-zinc-900">
-            <img src={r.image} alt={r.title} className="w-full aspect-square object-cover" />
-            <div className="p-2">
-              <div className="font-bold text-xs truncate">{r.title}</div>
-              <div className="text-[10px] text-white/50 font-mono">{r.image.replace('/relics/','')}</div>
-            </div>
+    <main className="min-h-screen bg-black text-white">
+      <nav className="flex gap-6 p-6 text-sm tracking-widest text-white/60">
+        <span className="text-white font-bold">STORMBREAKERS</span>
+        <a href="/armory">ARMORY</a>
+        <a href="/books">BOOKS</a>
+        <a href="/chronicles">CHRONICLES</a>
+        <a href="/word">WORD</a>
+      </nav>
+
+      <div className="max-w-6xl mx-auto px-6 pt-16 flex flex-col items-center text-center">
+        
+        {/* ONLY AVATAR ON MAIN */}
+        <img 
+          src="/images/avatar.png" 
+          alt="RUNNINGWOLF"
+          className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white/10 object-cover shadow-2xl shadow-white/10"
+        />
+
+        <h1 className="text-6xl md:text-8xl font-black tracking-tighter mt-8 leading-none">
+          RUNNINGWOLF
+        </h1>
+        
+        <p className="text-white/50 mt-3 tracking-widest text-sm">
+          {ALL_RELICS.length} RELICS UNLOCKED • STORMBREAKER
+        </p>
+
+        <div className="flex gap-4 mt-10">
+          <a href="/armory" className="bg-white text-black px-8 py-4 rounded-full font-black hover:bg-zinc-200 transition">
+            ENTER ARMORY →
           </a>
-        ))}
-      </div>
-    </main>
-  )
-}
+          <a href="/books" className="border border-white/20 px-8 py-4 rounded-full font-bold hover:bg-white/10 transition
