@@ -1,2 +1,13 @@
-// word/page.tsx
-import {ALL_RELICS} from "@/data/armory";export default function WordPage(){return<div className="px-6 py-24 max-w-3xl mx-auto space-y-16"><h1 className="text-3xl font-black tracking-widest text-center">✝️ WORD</h1>{ALL_RELICS.map(r=><div key={r.slug} className="border border-zinc-800 p-8 rounded-xl space-y-4"><p className="text-xs text-zinc-500">{r.num} {r.title.toUpperCase()} • {r.scripture}</p><p className="whitespace-pre-wrap leading-9 text-zinc-300">{r.wordStudy}</p></div>)}</div>}
+import { ALL_RELICS } from "../../data/armory"
+export default function Word(){
+ return(
+  <div className="p-12 max-w-2xl">
+   <h1 className="text-3xl font-black tracking-widest">⚔️ WORD</h1>
+   <div className="mt-8 space-y-8">
+    {ALL_RELICS.map(r=><div key={r.slug} className="border-b border-zinc-800 pb-6">
+     <p className="text-xs text-zinc-500">{r.verse}</p><h3 className="font-bold mt-2">{r.title}</h3><p className="text-zinc-300 mt-2">{r.chronicle}</p>
+    </div>)}
+   </div>
+  </div>
+ )
+}
