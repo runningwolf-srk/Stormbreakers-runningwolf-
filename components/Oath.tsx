@@ -1,12 +1,14 @@
-import { OATH } from "@/data/oath"
 export default function Oath(){
   return (
-    <section className="border border-white/10 rounded-3xl p-8 md:p-12 bg-zinc-900/30 text-center mt-12">
-      <h2 className="font-black tracking-widest text-sm">{OATH.title}</h2>
-      <div className="mt-6 space-y-2 font-mono text-sm md:text-base text-white/80">
-        {OATH.lines.map((l,i)=>(<div key={i}>{l}</div>))}
+    <div className="border border-white/10 rounded-3xl p-8 bg-zinc-900/30 text-center">
+      <div className="text-[10px] font-mono tracking-widest text-white/30">THE STORMBREAKERS OATH</div>
+      <div className="mt-6 space-y-2 text-lg font-light leading-relaxed">
+        <div>We do not fight people.</div><div className="font-black">We fight darkness.</div>
+        <div className="mt-4">We do not carry pride.</div><div className="font-black">We carry truth.</div>
+        <div className="mt-4">We do not run from storms.</div><div className="font-black">We run with the King.</div>
+        <div className="mt-4">We are not victims.</div><div className="font-black">We are witnesses.</div>
+        <div className="mt-4">We are not forgotten.</div><div className="font-black text-[#D4AF37]">We are FORGED.</div>
       </div>
-      <div className="mt-8 text-[10px] font-mono text-white/30 tracking-widest">{OATH.footer}</div>
-    </section>
+    </div>
   )
 }
