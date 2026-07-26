@@ -1,31 +1,14 @@
 import { ALL_RELICS, BRAND, TOTAL } from "@/data/armory"
 import { notFound } from "next/navigation"
-
 export default function WordDetail({ params }: { params:{ slug:string } }){
   const relic = ALL_RELICS.find(r=>r.slug===params.slug)
   if(!relic) return notFound()
-
   return (
     <div className="max-w-3xl mx-auto px-6 py-10">
       <div className="text-[10px] font-mono text-white/30 tracking-widest">{BRAND} • {relic.num} / {TOTAL}</div>
       <h1 className="text-4xl font-black mt-3 tracking-tighter">{relic.title}</h1>
       <div className="mt-3 inline-block bg-white/10 px-3 py-1 rounded-full text-[11px] font-mono">{relic.verse}</div>
-
-      <div className="mt-8 border border-white/10 rounded-2xl p-6 bg-zinc-900/50">
-        <h2 className="font-black text-xs tracking-widest">📖 WORD</h2>
-        <p className="mt-3 text-white/60 text-sm">Full passage for {relic.verse} will be loaded here.</p>
-      </div>
-
-      <div className="mt-4 grid md:grid-cols-2 gap-4">
-        <div className="border border-white/10 rounded-2xl p-6 bg-zinc-900/30">
-          <h3 className="font-bold text-xs tracking-widest">STUDY</h3>
-          <p className="mt-2 text-white/60 text-sm">{relic.short}</p>
-        </div>
-        <div className="border border-white/10 rounded-2xl p-6 bg-zinc-900/30">
-          <h3 className="font-bold text-xs tracking-widest">LIVE IT</h3>
-          <p className="mt-2 text-white/60 text-sm">How does {relic.title} change how you fight today?</p>
-        </div>
-      </div>
+      <div className="mt-8 border border-white/10 rounded-2xl p-6 bg-zinc-900/50"><h2 className="font-black text-xs tracking-widest">📖 WORD</h2><p className="mt-3 text-white/60 text-sm">{relic.short}</p></div>
     </div>
   )
 }
