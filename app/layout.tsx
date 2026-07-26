@@ -1,8 +1,7 @@
-import "./globals.css"
-import Header from "@/components/Header"
-import Footer from "@/components/Footer"
-import { BRAND } from "@/data/armory"
-export const metadata = { title:"RUNNINGWOLF • STORMBREAKERS", description: BRAND }
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (<html lang="en"><body className="bg-black text-white antialiased min-h-screen flex flex-col"><Header /><main className="flex-1">{children}</main><Footer /></body></html>)
+// In Header.tsx — add this class logic
+const sectionStyles: any = {
+  "/armory": "bg-[radial-gradient(ellipse_at_top,_#1a1a1a_0%,_#000_60%)]", // steel, sparks, anvils
+  "/chronicles": "bg-[radial-gradient(ellipse_at_top,_#1a140a_0%,_#000_60%)]", // parchment, journals
+  "/word": "bg-[radial-gradient(ellipse_at_top,_#1a1600_0%,_#000_60%)]", // light, gold
+  "/books": "bg-[radial-gradient(ellipse_at_top,_#120a0a_0%,_#000_60%)]" // leather-bound
 }
