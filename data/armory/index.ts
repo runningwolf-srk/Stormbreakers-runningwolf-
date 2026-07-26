@@ -1,28 +1,30 @@
-export type Relic = { slug:string; num:string; title:string; filename:string; image:string; verse:string; icon:string; color:string; accent:string; glow:string; power:string; chronicle:string }
+export const BRAND = "ONE CANON • FOUR EXPERIENCES • NINETEEN RELICS • ONE KING"
+export const TOTAL = 19
+
+export type Relic = {
+  slug:string; num:string; title:string; short:string;
+  filename:string; image:string; verse:string;
+  status:"FORGED"|"IN PROGRESS"|"UNREVEALED"
+}
 
 export const ALL_RELICS: Relic[] = [
-  { slug:"runningwolf-blade", num:"01", title:"RUNNINGWOLF BLADE", filename:"runningwolf-blade.png", image:"/relics/runningwolf-blade.png", verse:"Hebrews 4:12", icon:"⚔️", color:"from-zinc-800 to-white/10", accent:"border-white/30", glow:"shadow-white/10", power:"Alpha Edge", chronicle:"Offensive weapon." },
-  { slug:"lord-of-lords", num:"02", title:"LORD OF LORDS", filename:"lord-of-lords.webp", image:"/relics/lord-of-lords.webp", verse:"Rev 19:16", icon:"👑", color:"from-amber-900 to-yellow-700", accent:"border-yellow-500/30", glow:"shadow-yellow-500/20", power:"King", chronicle:"KING OF KINGS" },
-  { slug:"blood-of-cross", num:"03", title:"BLOOD OF CROSS", filename:"blood-of-cross.webp", image:"/relics/blood-of-cross.webp", verse:"Col 1:20", icon:"🩸", color:"from-zinc-900 to-red-950", accent:"border-red-500/40", glow:"shadow-red-500/20", power:"Covenant", chronicle:"Through blood" },
-  { slug:"iron-collide", num:"04", title:"IRON COLLIDE", filename:"iron-collide.webp", image:"/relics/iron-collide.webp", verse:"Prov 27:17", icon:"⚒️", color:"from-zinc-800 to-slate-700", accent:"border-slate-500/30", glow:"shadow-slate-500/20", power:"Impact", chronicle:"Iron sharpens" },
-  { slug:"heaven-calling", num:"05", title:"HEAVEN CALLING", filename:"heaven-calling.webp", image:"/relics/heaven-calling.webp", verse:"Phil 3:14", icon:"📯", color:"from-indigo-950 to-blue-900", accent:"border-blue-500/30", glow:"shadow-blue-500/20", power:"Summons", chronicle:"High calling" },
-  { slug:"war-cry", num:"06", title:"WAR CRY", filename:"war-cry.webp", image:"/relics/war-cry.webp", verse:"Joel 3:9", icon:"📢", color:"from-red-950 to-orange-900", accent:"border-orange-500/30", glow:"shadow-orange-500/20", power:"Roar", chronicle:"Prepare for war" },
-  { slug:"redeemed", num:"07", title:"REDEEMED", filename:"redeemed.webp", image:"/relics/redeemed.webp", verse:"Eph 1:7", icon:"✝️", color:"from-emerald-950 to-teal-900", accent:"border-emerald-500/30", glow:"shadow-emerald-500/20", power:"Redeemed", chronicle:"Bought back" },
-  { slug:"royal-relic", num:"08", title:"ROYAL RELIC", filename:"royal-relic.webp", image:"/relics/royal-relic.webp", verse:"1 Pet 2:9", icon:"💎", color:"from-violet-950 to-purple-900", accent:"border-purple-500/30", glow:"shadow-purple-500/20", power:"Royal", chronicle:"Royal priesthood" },
-  { slug:"runningwolf", num:"09", title:"RUNNINGWOLF", filename:"runningwolf.webp", image:"/relics/runningwolf.webp", verse:"Isa 40:31", icon:"🐺", color:"from-zinc-900 to-stone-800", accent:"border-stone-500/30", glow:"shadow-stone-500/20", power:"Alpha", chronicle:"Run not weary" },
-  { slug:"psalm-23", num:"10", title:"PSALM 23", filename:"psalm-23.webp", image:"/relics/psalm-23.webp", verse:"Psalm 23:1", icon:"🐑", color:"from-green-950 to-emerald-900", accent:"border-green-500/30", glow:"shadow-green-500/20", power:"Shepherd", chronicle:"My shepherd" },
-
-  // YOUR NEW FILES - WITH YOUR ORIGINAL UGLY NAMES
-  { slug:"lion-and-lamb", num:"11", title:"LION AND LAMB", filename:"lion-and-lamb.png", image:"/relics/lion-and-lamb.png", verse:"Isa 11:6", icon:"🦁", color:"from-amber-950 to-orange-900", accent:"border-amber-500/30", glow:"shadow-amber-500/20", power:"Majesty", chronicle:"Wolf dwells with lamb" },
-  { slug:"spiritual-mantle", num:"12", title:"SPIRITUAL MANTLE", filename:"AQMILikpY_4YzpC0.png", image:"/relics/AQMILikpY_4YzpC0.png", verse:"Isa 61:1", icon:"🧥", color:"from-indigo-900 to-violet-900", accent:"border-indigo-500/30", glow:"shadow-indigo-500/20", power:"Mantle", chronicle:"Spirit upon me" },
-  { slug:"storm-crown", num:"13", title:"STORM CROWN", filename:"AQMuwnjDLB.png", image:"/relics/AQMuwnjDLB.png", verse:"Psalm 29:3", icon:"🌩️", color:"from-slate-900 to-zinc-800", accent:"border-cyan-500/30", glow:"shadow-cyan-500/20", power:"Storm", chronicle:"God thundereth" },
-  { slug:"god-kept-me-alive", num:"14", title:"GOD KEPT ME ALIVE", filename:"file_00000000fe20a0b.png", image:"/relics/file_00000000fe20a0b.png", verse:"Psalm 118:17", icon:"❤️‍🔥", color:"from-red-950 to-zinc-900", accent:"border-red-500/40", glow:"shadow-red-500/30", power:"Undying", chronicle:"I shall not die" },
-  { slug:"through-the-storm-i-rise", num:"15", title:"THROUGH THE STORM I RISE", filename:"file_0000000065a071f.png", image:"/relics/file_0000000065a071f.png", verse:"Isa 43:2", icon:"🌊", color:"from-blue-950 to-slate-900", accent:"border-blue-500/30", glow:"shadow-blue-500/20", power:"Rise", chronicle:"Through waters" },
-  { slug:"the-fire", num:"16", title:"THE FIRE", filename:"file_000000000fa471f.png", image:"/relics/file_000000000fa471f.png", verse:"Mal 3:2", icon:"🔥", color:"from-red-950 to-orange-950", accent:"border-orange-500/40", glow:"shadow-orange-500/30", power:"Fire", chronicle:"Refiner's fire" },
-  { slug:"jesus-is-a-healer", num:"17", title:"JESUS IS A HEALER", filename:"AQOa1lseR647i.png", image:"/relics/AQOa1lseR647i.png", verse:"Exo 15:26", icon:"🩹", color:"from-teal-950 to-cyan-900", accent:"border-teal-500/30", glow:"shadow-teal-500/20", power:"Healer", chronicle:"He healeth" },
-  { slug:"chronicle-stone", num:"18", title:"CHRONICLE STONE", filename:"AQMiH8J1qJvZf.png", image:"/relics/AQMiH8J1qJvZf.png", verse:"Josh 4:7", icon:"🪨", color:"from-stone-900 to-zinc-800", accent:"border-stone-500/30", glow:"shadow-stone-500/20", power:"Stone", chronicle:"Memorial" },
-  { slug:"horn-of-war", num:"19", title:"HORN OF WAR", filename:"horn-of-war.webp", image:"/relics/horn-of-war.webp", verse:"Josh 6:20", icon:"📯", color:"from-amber-950 to-yellow-900", accent:"border-amber-500/30", glow:"shadow-amber-500/20", power:"Shofar", chronicle:"Wall fell" },
+  { slug:"runningwolf-blade", num:"01", title:"RUNNINGWOLF BLADE", short:"The first edge. Word made weapon.", filename:"runningwolf-blade.png", image:"/relics/runningwolf-blade.png", verse:"Hebrews 4:12", status:"FORGED" },
+  { slug:"lord-of-lords", num:"02", title:"LORD OF LORDS", short:"King of kings.", filename:"lord-of-lords.webp", image:"/relics/lord-of-lords.webp", verse:"Revelation 19:16", status:"FORGED" },
+  { slug:"blood-of-cross", num:"03", title:"BLOOD OF CROSS", short:"Covenant sealed in crimson.", filename:"blood-of-cross.webp", image:"/relics/blood-of-cross.webp", verse:"Colossians 1:20", status:"IN PROGRESS" },
+  { slug:"iron-collide", num:"04", title:"IRON COLLIDE", short:"Iron sharpens iron.", filename:"iron-collide.webp", image:"/relics/iron-collide.webp", verse:"Proverbs 27:17", status:"UNREVEALED" },
+  { slug:"heaven-calling", num:"05", title:"HEAVEN CALLING", short:"Summons from above.", filename:"heaven-calling.webp", image:"/relics/heaven-calling.webp", verse:"Philippians 3:14", status:"UNREVEALED" },
+  { slug:"war-cry", num:"06", title:"WAR CRY", short:"Wake the warriors.", filename:"war-cry.webp", image:"/relics/war-cry.webp", verse:"Joel 3:9", status:"UNREVEALED" },
+  { slug:"redeemed", num:"07", title:"REDEEMED", short:"Bought back.", filename:"redeemed.webp", image:"/relics/redeemed.webp", verse:"Ephesians 1:7", status:"UNREVEALED" },
+  { slug:"royal-relic", num:"08", title:"ROYAL RELIC", short:"Royal priesthood.", filename:"royal-relic.webp", image:"/relics/royal-relic.webp", verse:"1 Peter 2:9", status:"UNREVEALED" },
+  { slug:"runningwolf", num:"09", title:"RUNNINGWOLF", short:"The man who runs.", filename:"runningwolf.webp", image:"/relics/runningwolf.webp", verse:"Isaiah 40:31", status:"UNREVEALED" },
+  { slug:"psalm-23", num:"10", title:"PSALM 23", short:"The Shepherd leads.", filename:"psalm-23.webp", image:"/relics/psalm-23.webp", verse:"Psalm 23:1", status:"UNREVEALED" },
+  { slug:"lion-and-lamb", num:"11", title:"LION AND LAMB", short:"Majesty and meekness.", filename:"lion-and-lamb.png", image:"/relics/lion-and-lamb.png", verse:"Isaiah 11:6", status:"UNREVEALED" },
+  { slug:"spiritual-mantle", num:"12", title:"SPIRITUAL MANTLE", short:"Spirit upon me.", filename:"spiritual-mantle.png", image:"/relics/spiritual-mantle.png", verse:"Isaiah 61:1", status:"UNREVEALED" },
+  { slug:"storm-crown", num:"13", title:"STORM CROWN", short:"God thundereth.", filename:"storm-crown.png", image:"/relics/storm-crown.png", verse:"Psalm 29:3", status:"UNREVEALED" },
+  { slug:"god-kept-me-alive", num:"14", title:"GOD KEPT ME ALIVE", short:"I shall not die but live.", filename:"god-kept-me-alive.png", image:"/relics/god-kept-me-alive.png", verse:"Psalm 118:17", status:"UNREVEALED" },
+  { slug:"through-the-storm-i-rise", num:"15", title:"THROUGH THE STORM I RISE", short:"Through waters I rise.", filename:"through-the-storm-i-rise.png", image:"/relics/through-the-storm-i-rise.png", verse:"Isaiah 43:2", status:"UNREVEALED" },
+  { slug:"the-fire", num:"16", title:"THE FIRE", short:"Refiner's fire.", filename:"the-fire.png", image:"/relics/the-fire.png", verse:"Malachi 3:2", status:"UNREVEALED" },
+  { slug:"jesus-is-a-healer", num:"17", title:"JESUS IS A HEALER", short:"Jehovah Rapha.", filename:"jesus-is-a-healer.png", image:"/relics/jesus-is-a-healer.png", verse:"Exodus 15:26", status:"UNREVEALED" },
+  { slug:"chronicle-stone", num:"18", title:"CHRONICLE STONE", short:"Stones of remembrance.", filename:"chronicle-stone.png", image:"/relics/chronicle-stone.png", verse:"Joshua 4:7", status:"UNREVEALED" },
+  { slug:"horn-of-war", num:"19", title:"HORN OF WAR", short:"Shofar blast.", filename:"horn-of-war.webp", image:"/relics/horn-of-war.webp", verse:"Joshua 6:20", status:"UNREVEALED" },
 ]
-
-export const CANON_ORDER = ALL_RELICS.map(r=>r.slug)
-export const CANON_PROGRESS = { total: 19, unlocked: 19 }
