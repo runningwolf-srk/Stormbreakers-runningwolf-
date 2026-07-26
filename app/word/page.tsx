@@ -1,13 +1,23 @@
-import { ALL_RELICS } from "../../data/armory"
-export default function Word(){
- return(
-  <div className="p-12 max-w-2xl">
-   <h1 className="text-3xl font-black tracking-widest">⚔️ WORD</h1>
-   <div className="mt-8 space-y-8">
-    {ALL_RELICS.map(r=><div key={r.slug} className="border-b border-zinc-800 pb-6">
-     <p className="text-xs text-zinc-500">{r.verse}</p><h3 className="font-bold mt-2">{r.title}</h3><p className="text-zinc-300 mt-2">{r.chronicle}</p>
-    </div>)}
-   </div>
-  </div>
- )
+import { ALL_RELICS, BRAND } from "@/data/armory"
+
+export default function WordPage(){
+  return (
+    <div className="max-w-7xl mx-auto px-6 py-8">
+      <h1 className="text-4xl font-black tracking-tighter">WORD</h1>
+      <p className="text-white/40 font-mono text-[11px] mt-2 tracking-widest">{BRAND}</p>
+      <p className="text-white/30 text-xs mt-2">Hear → Understand → Root → Live</p>
+
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-3">
+        {ALL_RELICS.map(r=>(
+          <a key={r.slug} href={`/word/${r.slug}`} className="flex justify-between items-center border border-white/10 rounded-xl p-4 bg-zinc-900/30 hover:bg-zinc-900 hover:border-white/20 transition">
+            <div>
+              <div className="font-bold text-xs">{r.title}</div>
+              <div className="text-[11px] text-white/40 mt-1">{r.short}</div>
+            </div>
+            <div className="text-[10px] font-mono text-white/50 bg-white/10 px-2 py-1 rounded-full">{r.verse}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  )
 }
