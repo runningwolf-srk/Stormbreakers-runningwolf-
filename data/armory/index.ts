@@ -1,24 +1,32 @@
 export const BRAND = "ONE CANON • FOUR EXPERIENCES • NINETEEN RELICS • ONE KING"
 export const TOTAL = 19
-export type Relic = { slug:string; num:string; title:string; short:string; image:string; verse:string; status:"FORGED"|"IN PROGRESS"|"UNREVEALED" }
+
+export type Relic = {
+  slug:string; num:string; title:string;
+  purpose:string; // NEW: PURPOSE line
+  short:string; image:string; verse:string;
+  status:"FORGED"|"BURNING IN THE FORGE"|"AWAITING REVELATION";
+  symbol:string;
+}
+
 export const ALL_RELICS: Relic[] = [
-  { slug:"runningwolf-blade", num:"01", title:"RUNNINGWOLF BLADE", short:"The first edge. Word made weapon.", image:"/relics/runningwolf-blade.png", verse:"Hebrews 4:12", status:"FORGED" },
-  { slug:"lord-of-lords", num:"02", title:"LORD OF LORDS", short:"King of kings. Crown above every crown.", image:"/relics/lord-of-lords.webp", verse:"Revelation 19:16", status:"FORGED" },
-  { slug:"blood-of-cross", num:"03", title:"BLOOD OF CROSS", short:"Covenant sealed in crimson.", image:"/relics/blood-of-cross.webp", verse:"Colossians 1:20", status:"IN PROGRESS" },
-  { slug:"iron-collide", num:"04", title:"IRON COLLIDE", short:"Iron sharpens iron. Brothers forge brothers.", image:"/relics/iron-collide.webp", verse:"Proverbs 27:17", status:"UNREVEALED" },
-  { slug:"heaven-calling", num:"05", title:"HEAVEN CALLING", short:"Summons from above. Press toward the mark.", image:"/relics/heaven-calling.webp", verse:"Philippians 3:14", status:"UNREVEALED" },
-  { slug:"war-cry", num:"06", title:"WAR CRY", short:"Wake the warriors. Sound the alarm.", image:"/relics/war-cry.webp", verse:"Joel 3:9", status:"UNREVEALED" },
-  { slug:"redeemed", num:"07", title:"REDEEMED", short:"Bought back. Price paid in full.", image:"/relics/redeemed.webp", verse:"Ephesians 1:7", status:"UNREVEALED" },
-  { slug:"royal-relic", num:"08", title:"ROYAL RELIC", short:"Royal priesthood. Chosen generation.", image:"/relics/royal-relic.webp", verse:"1 Peter 2:9", status:"UNREVEALED" },
-  { slug:"runningwolf", num:"09", title:"RUNNINGWOLF", short:"The man who runs and does not grow weary.", image:"/relics/runningwolf.webp", verse:"Isaiah 40:31", status:"UNREVEALED" },
-  { slug:"psalm-23", num:"10", title:"PSALM 23", short:"The Shepherd leads. I shall not want.", image:"/relics/psalm-23.webp", verse:"Psalm 23:1", status:"UNREVEALED" },
-  { slug:"lion-and-lamb", num:"11", title:"LION AND LAMB", short:"Majesty and meekness dwell together.", image:"/relics/lion-and-lamb.png", verse:"Isaiah 11:6", status:"UNREVEALED" },
-  { slug:"spiritual-mantle", num:"12", title:"SPIRITUAL MANTLE", short:"The covering. The anointing.", image:"/relics/spiritual-mantle.png", verse:"Isaiah 61:1", status:"UNREVEALED" },
-  { slug:"storm-crown", num:"13", title:"STORM CROWN", short:"God thundereth marvellously with His voice.", image:"/relics/storm-crown.png", verse:"Psalm 29:3", status:"UNREVEALED" },
-  { slug:"god-kept-me-alive", num:"14", title:"GOD KEPT ME ALIVE", short:"I shall not die, but live and declare His works.", image:"/relics/god-kept-me-alive.png", verse:"Psalm 118:17", status:"UNREVEALED" },
-  { slug:"through-the-storm-i-rise", num:"15", title:"THROUGH THE STORM I RISE", short:"When waters rise, faith lifts higher.", image:"/relics/through-the-storm-i-rise.png", verse:"Isaiah 43:2", status:"UNREVEALED" },
-  { slug:"the-fire", num:"16", title:"THE FIRE", short:"Refiner's fire. Purified as gold.", image:"/relics/the-fire.png", verse:"Malachi 3:2", status:"UNREVEALED" },
-  { slug:"jesus-is-a-healer", num:"17", title:"JESUS IS A HEALER", short:"Jehovah Rapha. By His stripes.", image:"/relics/jesus-is-a-healer.png", verse:"Exodus 15:26", status:"UNREVEALED" },
-  { slug:"chronicle-stone", num:"18", title:"CHRONICLE STONE", short:"Stones of remembrance. What God has done.", image:"/relics/chronicle-stone.png", verse:"Joshua 4:7", status:"UNREVEALED" },
-  { slug:"horn-of-war", num:"19", title:"HORN OF WAR", short:"Shofar blast. Walls fall.", image:"/relics/horn-of-war.webp", verse:"Joshua 6:20", status:"UNREVEALED" },
+  { slug:"runningwolf-blade", num:"I", title:"RUNNINGWOLF BLADE", purpose:"The Word becomes the weapon.", short:"The first edge. Word made weapon.", image:"/relics/runningwolf-blade.png", verse:"Hebrews 4:12", status:"FORGED", symbol:"⚔️" },
+  { slug:"lord-of-lords", num:"II", title:"LORD OF LORDS", purpose:"Jesus crowned King above every king.", short:"King of kings. Crown above every crown.", image:"/relics/lord-of-lords.webp", verse:"Revelation 19:16", status:"FORGED", symbol:"👑" },
+  { slug:"blood-of-cross", num:"III", title:"BLOOD OF CROSS", purpose:"Redemption through sacrifice.", short:"Covenant sealed in crimson.", image:"/relics/blood-of-cross.webp", verse:"Colossians 1:20", status:"BURNING IN THE FORGE", symbol:"✝️" },
+  { slug:"iron-collide", num:"IV", title:"IRON COLLIDE", purpose:"Brothers forge brothers.", short:"Iron sharpens iron.", image:"/relics/iron-collide.webp", verse:"Proverbs 27:17", status:"AWAITING REVELATION", symbol:"🛡️" },
+  { slug:"heaven-calling", num:"V", title:"HEAVEN CALLING", purpose:"Summons from above.", short:"Press toward the mark.", image:"/relics/heaven-calling.webp", verse:"Philippians 3:14", status:"AWAITING REVELATION", symbol:"📯" },
+  { slug:"war-cry", num:"VI", title:"WAR CRY", purpose:"Wake the warriors.", short:"Sound the alarm.", image:"/relics/war-cry.webp", verse:"Joel 3:9", status:"AWAITING REVELATION", symbol:"📣" },
+  { slug:"redeemed", num:"VII", title:"REDEEMED", purpose:"Bought back by blood.", short:"Bought back. Price paid in full.", image:"/relics/redeemed.webp", verse:"Ephesians 1:7", status:"AWAITING REVELATION", symbol:"🩸" },
+  { slug:"royal-relic", num:"VIII", title:"ROYAL RELIC", purpose:"Chosen generation.", short:"Royal priesthood.", image:"/relics/royal-relic.webp", verse:"1 Peter 2:9", status:"AWAITING REVELATION", symbol:"💎" },
+  { slug:"runningwolf", num:"IX", title:"RUNNINGWOLF", purpose:"The one who runs with endurance and does not grow weary.", short:"The one who runs with endurance and does not grow weary.", image:"/relics/runningwolf.webp", verse:"Isaiah 40:31", status:"AWAITING REVELATION", symbol:"🐺" },
+  { slug:"psalm-23", num:"X", title:"PSALM 23", purpose:"The Shepherd leads.", short:"I shall not want.", image:"/relics/psalm-23.webp", verse:"Psalm 23:1", status:"AWAITING REVELATION", symbol:"🐑" },
+  { slug:"lion-and-lamb", num:"XI", title:"LION AND LAMB", purpose:"Majesty and meekness in one King.", short:"Majesty and meekness dwell together.", image:"/relics/lion-and-lamb.png", verse:"Isaiah 11:6", status:"AWAITING REVELATION", symbol:"🦁" },
+  { slug:"spiritual-mantle", num:"XII", title:"SPIRITUAL MANTLE", purpose:"The anointing.", short:"The covering.", image:"/relics/spiritual-mantle.png", verse:"Isaiah 61:1", status:"AWAITING REVELATION", symbol:"🧥" },
+  { slug:"storm-crown", num:"XIII", title:"STORM CROWN", purpose:"God thunders marvellously.", short:"Voice in the storm.", image:"/relics/storm-crown.png", verse:"Psalm 29:3", status:"AWAITING REVELATION", symbol:"⛈️" },
+  { slug:"god-kept-me-alive", num:"XIV", title:"GOD KEPT ME ALIVE", purpose:"I shall live and declare His works.", short:"Kept alive to testify.", image:"/relics/god-kept-me-alive.png", verse:"Psalm 118:17", status:"AWAITING REVELATION", symbol:"✊" },
+  { slug:"through-the-storm-i-rise", num:"XV", title:"THROUGH THE STORM I RISE", purpose:"When waters rise, faith lifts higher.", short:"Faith lifts higher.", image:"/relics/through-the-storm-i-rise.png", verse:"Isaiah 43:2", status:"AWAITING REVELATION", symbol:"🌊" },
+  { slug:"the-fire", num:"XVI", title:"THE FIRE", purpose:"Refiner's fire.", short:"Purified as gold.", image:"/relics/the-fire.png", verse:"Malachi 3:2", status:"AWAITING REVELATION", symbol:"🔥" },
+  { slug:"jesus-is-a-healer", num:"XVII", title:"JESUS IS A HEALER", purpose:"Jehovah Rapha.", short:"By His stripes we are healed.", image:"/relics/jesus-is-a-healer.png", verse:"Exodus 15:26", status:"AWAITING REVELATION", symbol:"🩹" },
+  { slug:"chronicle-stone", num:"XVIII", title:"CHRONICLE STONE", purpose:"Stones of remembrance.", short:"What God has done.", image:"/relics/chronicle-stone.png", verse:"Joshua 4:7", status:"AWAITING REVELATION", symbol:"🪨" },
+  { slug:"horn-of-war", num:"XIX", title:"HORN OF WAR", purpose:"Obedience before breakthrough.", short:"Shofar blast. Walls fall.", image:"/relics/horn-of-war.webp", verse:"Joshua 6:20", status:"AWAITING REVELATION", symbol:"📯" },
 ]
