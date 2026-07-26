@@ -1,10 +1,4 @@
 import { BRAND } from "@/data/armory"
 export default function Page(){
-  return (
-    <div className="max-w-7xl mx-auto px-6 py-8">
-      <h1 className="text-4xl font-black tracking-tighter">CHRONICLES</h1>
-      <p className="text-white/40 font-mono text-[11px] mt-2 tracking-widest">{BRAND}</p>
-      <p className="mt-6 text-white/50 text-sm">Testimonies behind the relics. 19 stories, one journey.</p>
-    </div>
-  )
+  return (<div className="max-w-7xl mx-auto px-6 py-8"><h1 className="text-4xl font-black">CHRONICLES</h1><p className="text-white/40 font-mono text-[11px] mt-2 tracking-widest">{BRAND}</p><p className="mt-6 text-white/50 text-sm">Testimonies behind the relics. 19 stories, one journey.</p></div>)
 }
