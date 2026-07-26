@@ -1,4 +1,16 @@
-import { BRAND } from "@/data/armory"
-export default function Page(){
-  return (<div className="max-w-7xl mx-auto px-6 py-8"><h1 className="text-4xl font-black">CHRONICLES</h1><p className="text-white/40 font-mono text-[11px] mt-2 tracking-widest">{BRAND}</p><p className="mt-6 text-white/50 text-sm">Testimonies behind the relics. 19 stories, one journey.</p></div>)
+import { CANON } from "@/data/constants"
+export default function Chronicles(){
+  return (
+    <div className="max-w-5xl mx-auto px-6 py-10">
+      <h1 className="text-4xl font-black tracking-tighter">📖 CHRONICLES — UNDERSTAND</h1>
+      <p className="text-[11px] font-mono text-white/30 mt-2 tracking-widest">{CANON.TAGLINE}</p>
+      <p className="mt-6 text-white/60 max-w-2xl">Every relic has a battle behind it. Every battle has a testimony. This is the emotional heart.</p>
+
+      <div className="mt-10 grid gap-4">
+        <div className="border border-white/10 rounded-2xl p-6 bg-zinc-900/30"><div className="font-black text-xs tracking-widest">CHRONICLE I — BEFORE THE FORGE</div><div className="text-sm text-white/50 mt-2">"The blade was not born polished. It was broken, heated, and shaped. Wilderness seasons, battles fought, moments God carried me."</div></div>
+        <div className="border border-white/10 rounded-2xl p-6 bg-zinc-900/30"><div className="font-black text-xs tracking-widest">CHRONICLE II — THE VALLEY OF FIRE</div><div className="text-sm text-white/50 mt-2">Trials, refining, God thundering in storm. Storm Crown, Through The Storm I Rise, The Fire.</div></div>
+        <div className="border border-white/10 rounded-2xl p-6 bg-zinc-900/30"><div className="font-black text-xs tracking-widest">CHRONICLE III — THE STORMBREAKERS</div><div className="text-sm text-white/50 mt-2">Walking in purpose — Redeemed, Royal Relic, RunningWolf — no longer victim, now witness. FORGED.</div></div>
+      </div>
+    </div>
+  )
 }
