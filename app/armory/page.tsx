@@ -1,18 +1,14 @@
 import { ALL_RELICS, BRAND } from "@/data/armory"
 import ProgressBar from "@/components/ProgressBar"
-
 export default function ArmoryPage(){
   return (
     <div className="max-w-7xl mx-auto px-6 py-8">
       <h1 className="text-4xl font-black tracking-tighter">ARMORY</h1>
       <p className="text-white/40 font-mono text-[11px] mt-2 tracking-widest">{BRAND}</p>
-
       <div className="mt-6"><ProgressBar /></div>
-
-      {/* More vertical spacing on mobile */}
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-4">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {ALL_RELICS.map(r=>(
-          <a key={r.slug} href={`/armory/${r.slug}`} className="flex gap-4 border border-white/10 rounded-2xl p-5 md:p-4 bg-zinc-900/50 hover:bg-zinc-900 hover:border-white/20 transition">
+          <a key={r.slug} href={`/armory/${r.slug}`} className="flex gap-4 border border-white/10 rounded-2xl p-5 bg-zinc-900/50 hover:bg-zinc-900 hover:border-white/20 transition">
             <img src={r.image} alt={r.title} className="w-20 h-20 rounded-xl object-cover bg-zinc-800 flex-shrink-0" />
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
