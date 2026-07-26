@@ -1,26 +1,33 @@
-// @ts-nocheck
-export const dynamic = 'force-dynamic'
-import { CANON } from '@/lib/constants'
-import Link from 'next/link'
+import { ALL_RELICS, BRAND, TOTAL } from "@/data/armory"
+import { notFound } from "next/navigation"
 
-export default function WordDetail({params}:{params:{slug:string}}) {
-  const r = CANON.find((x:any)=>x.slug===params.slug)
-  if (!r) {
-    return (
-      <main className="px-4 py-24 text-center">
-        <p className="text-6xl">⚔️</p>
-        <h1 className="text-4xl font-black mt-6">THE RELIC HAS NOT BEEN REVEALED</h1>
-        <Link href="/word" className="inline-block mt-6 px-5 py-3 bg-white text-black rounded-full font-bold">← Back</Link>
-      </main>
-    )
-  }
+export default function WordDetail({ params }: { params:{ slug:string } }){
+  const relic = ALL_RELICS.find(r=>r.slug===params.slug)
+  if(!relic) return notFound()
   return (
-    <main className="px-4 py-12 max-w-3xl mx-auto">
-      <Link href="/word" className="text-xs uppercase tracking-widest text-zinc-500">← Back to Word</Link>
-      <p className="mt-6 text-xs uppercase tracking-[0.3em] text-zinc-500">BOOK II — THE WORD</p>
-      <h1 className="text-5xl font-black mt-2">{r.scriptureRef}</h1>
-      <p className="mt-2 text-xl font-bold" style={{color:r.color}}>{r.title}</p>
-      <p className="mt-4 italic text-zinc-300">"{r.scriptureText}"</p>
-    </main>
+    <div className="max-w-3xl mx-auto px-6 py-10">
+      <div className="text-[10px] font-mono text-white/30 tracking-widest">{BRAND} • {relic.num} / {TOTAL}</div>
+      <h1 className="text-4xl font-black mt-3">{relic.title}</h1>
+      <div className="mt-2 inline-block bg-white/10 px-3 py-1 rounded-full text-[11px] font-mono">{relic.verse}</div>
+
+      <div className="mt-8 border border-white/10 rounded-2xl p-6 bg-zinc-900/50">
+        <h2 className="font-black text-xs tracking-widest">📖 THE WORD</h2>
+        <p className="mt-3 text-white/70 text-sm leading-relaxed">Full passage for {relic.verse} will be loaded here. This relic is anchored in Scripture, not just inspired by it.</p>
+        <p className="mt-4 text-[12px] font-mono text-white/30">Add your study notes in data/word/{relic.slug}.ts</p>
+      </div>
+
+      <div className="mt-4 grid md:grid-cols-2 gap-4">
+        <div className="border border-white/10 rounded-2xl p-6 bg-zinc-900/30">
+          <h3 className="font-bold text-xs">🔍 SHORT STUDY</h3>
+          <p className="mt-2 text-white/60 text-sm">{relic.short}</p>
+        </div>
+        <div className="border border-white/10 rounded-2xl p-6 bg-zinc-900/30">
+          <h3 className="font-bold text-xs">⚔️ APPLICATION — LIVE IT</h3>
+          <p className="mt-2 text-white/60 text-sm">How does {relic.title} change how you fight today?</p>
+        </div>
+      </div>
+
+      <a href="/word" className="inline-block mt-8 text-xs text-white/40 hover:text-white">← BACK TO WORD</a>
+    </div>
   )
 }
