@@ -1,15 +1,60 @@
 import { CANON } from "@/data/constants"
-export default function Chronicles(){
-  return (
-    <div className="max-w-5xl mx-auto px-6 py-10">
-      <h1 className="text-4xl font-black tracking-tighter">📖 CHRONICLES — UNDERSTAND</h1>
-      <p className="text-[11px] font-mono text-white/30 mt-2 tracking-widest">{CANON.TAGLINE}</p>
-      <p className="mt-6 text-white/60 max-w-2xl">Every relic has a battle behind it. Every battle has a testimony. This is the emotional heart.</p>
+import { ALL_RELICS } from "@/data/armory"
 
-      <div className="mt-10 grid gap-4">
-        <div className="border border-white/10 rounded-2xl p-6 bg-zinc-900/30"><div className="font-black text-xs tracking-widest">CHRONICLE I — BEFORE THE FORGE</div><div className="text-sm text-white/50 mt-2">"The blade was not born polished. It was broken, heated, and shaped. Wilderness seasons, battles fought, moments God carried me."</div></div>
-        <div className="border border-white/10 rounded-2xl p-6 bg-zinc-900/30"><div className="font-black text-xs tracking-widest">CHRONICLE II — THE VALLEY OF FIRE</div><div className="text-sm text-white/50 mt-2">Trials, refining, God thundering in storm. Storm Crown, Through The Storm I Rise, The Fire.</div></div>
-        <div className="border border-white/10 rounded-2xl p-6 bg-zinc-900/30"><div className="font-black text-xs tracking-widest">CHRONICLE III — THE STORMBREAKERS</div><div className="text-sm text-white/50 mt-2">Walking in purpose — Redeemed, Royal Relic, RunningWolf — no longer victim, now witness. FORGED.</div></div>
+export default function ChroniclesPage(){
+  return (
+    <div className="max-w-6xl mx-auto px-6 py-10">
+      <h1 className="text-5xl font-black tracking-tighter">📖 CHRONICLES — UNDERSTAND</h1>
+      <p className="text-[11px] font-mono text-white/30 mt-2 tracking-widest">{CANON.TAGLINE}</p>
+      <p className="mt-4 text-white/50 max-w-2xl text-sm leading-relaxed">{CANON.MISSION} Every relic has a battle behind it. Every battle has a testimony.</p>
+
+      {/* THE THREE CHAPTERS */}
+      <div className="mt-12 space-y-8">
+        <div className="border border-[#D4AF37]/20 bg-[#D4AF37]/5 rounded-[2rem] p-8">
+          <div className="text-[10px] font-black tracking-[0.3em] text-[#D4AF37]">CHRONICLE I — THE WOLF BEFORE THE FORGE</div>
+          <h2 className="text-3xl font-black mt-3 tracking-tighter">BEFORE THE BLADE</h2>
+          <div className="mt-4 grid md:grid-cols-3 gap-6 text-sm">
+            <div><div className="font-bold text-xs tracking-widest">THE BATTLES</div><div className="text-white/50 mt-2 leading-relaxed">Broken seasons, wilderness, battles fought in silence. Mind wars, fear louder than faith.</div></div>
+            <div><div className="font-bold text-xs tracking-widest">THE WOUNDS</div><div className="text-white/50 mt-2 leading-relaxed">Lies believed, identity lost, serving lesser kings, trying to earn what was already paid.</div></div>
+            <div><div className="font-bold text-xs tracking-widest">CARRIED BY GOD</div><div className="text-white/50 mt-2 leading-relaxed">Psalm 23 — The Shepherd never left. Even when I didn't feel Him, He kept me alive.</div></div>
+          </div>
+          <div className="mt-6 text-[11px] font-mono text-white/30">Relics: RUNNINGWOLF BLADE • LORD OF LORDS • GOD KEPT ME ALIVE</div>
+        </div>
+
+        <div className="border border-orange-500/20 bg-orange-500/5 rounded-[2rem] p-8">
+          <div className="text-[10px] font-black tracking-[0.3em] text-orange-300">CHRONICLE II — THE VALLEY OF FIRE</div>
+          <h2 className="text-3xl font-black mt-3 tracking-tighter">THE FORGING</h2>
+          <div className="mt-4 grid md:grid-cols-3 gap-6 text-sm">
+            <div><div className="font-bold text-xs tracking-widest">THE FIRE</div><div className="text-white/50 mt-2 leading-relaxed">Malachi 3:2 — Refiner's fire. Not to destroy, to purify. Gold revealed through heat.</div></div>
+            <div><div className="font-bold text-xs tracking-widest">THE LESSONS</div><div className="text-white/50 mt-2 leading-relaxed">Iron sharpens iron. Heaven calling. War cry raised. Faith over fear.</div></div>
+            <div><div className="font-bold text-xs tracking-widest">THE REFINING</div><div className="text-white/50 mt-2 leading-relaxed">Through the storm I rise. Storm Crown. God thundering marvellously.</div></div>
+          </div>
+          <div className="mt-6 text-[11px] font-mono text-white/30">Relics: IRON COLLIDE • HEAVEN CALLING • WAR CRY • THE FIRE • THROUGH THE STORM I RISE</div>
+        </div>
+
+        <div className="border border-white/10 bg-white/[0.03] rounded-[2rem] p-8">
+          <div className="text-[10px] font-black tracking-[0.3em] text-white/50">CHRONICLE III — THE STORMBREAKERS</div>
+          <h2 className="text-3xl font-black mt-3 tracking-tighter">THE CROWN & THE WITNESS</h2>
+          <div className="mt-4 grid md:grid-cols-3 gap-6 text-sm">
+            <div><div className="font-bold text-xs tracking-widest">REDEMPTION</div><div className="text-white/50 mt-2 leading-relaxed">Blood of Cross, Redeemed, Royal Relic — bought back, chosen, royal priesthood.</div></div>
+            <div><div className="font-bold text-xs tracking-widest">PURPOSE</div><div className="text-white/50 mt-2 leading-relaxed">RunningWolf — the one who runs with endurance and does not grow weary. Isaiah 40:31</div></div>
+            <div><div className="font-bold text-xs tracking-widest">TESTIMONY</div><div className="text-white/50 mt-2 leading-relaxed">Chronicle Stone, Horn of War, Jesus Is A Healer — stones of remembrance. Walls fall. He heals.</div></div>
+          </div>
+          <div className="mt-6 text-[11px] font-mono text-white/30">Relics: REDEEMED • ROYAL RELIC • RUNNINGWOLF • CHRONICLE STONE • HORN OF WAR • JESUS IS A HEALER</div>
+        </div>
+      </div>
+
+      {/* RELIC LIST WITH CHRONICLE LINKS */}
+      <div className="mt-16">
+        <h3 className="font-black text-sm tracking-widest">ALL CHRONICLES</h3>
+        <div className="mt-6 grid md:grid-cols-2 gap-3">
+          {ALL_RELICS.map(r=>(
+            <a key={r.slug} href={`/chronicles/${r.slug}`} className="flex justify-between items-center border border-white/10 rounded-xl p-4 bg-zinc-900/20 hover:bg-zinc-900/50 hover:border-white/20 transition">
+              <div className="flex gap-3 items-center"><span className="text-lg">{r.symbol}</span><span className="text-xs font-bold">{r.title}</span></div>
+              <span className="text-[10px] font-mono text-white/30">READ →</span>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   )
