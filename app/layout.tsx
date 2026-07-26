@@ -1,9 +1,11 @@
 import "./globals.css"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
-import { BRAND } from "@/data/armory"
 
-export const metadata = { title:"RUNNINGWOLF • STORMBREAKERS", description: BRAND }
+export const metadata = {
+  title: "RUNNINGWOLF • STORMBREAKERS",
+  description: "ONE CANON • FOUR EXPERIENCES • NINETEEN RELICS • ONE KING"
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
