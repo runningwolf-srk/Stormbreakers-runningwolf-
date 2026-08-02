@@ -1,54 +1,23 @@
-import { ALL_RELICS } from "@/data/armory"
-import { CANON } from "@/data/constants"
-
-export default function Page({ params }: { params: { slug: string } }) {
-  const r = ALL_RELICS.find((x) => x.slug === params.slug)
-
-  if (!r || r.status === "AWAITING REVELATION") {
-    return (
-      <div className="max-w-2xl mx-auto px-6 py-24 text-center">
-        <div className="text-5xl">🔒</div>
-        <h1 className="text-4xl font-black mt-6 tracking-tighter">THIS RELIC AWAITS REVELATION</h1>
-        <p className="mt-4 text-white/50 text-sm leading-relaxed">
-          This relic has not yet been revealed. Every relic is forged in its appointed time.
-        </p>
-        <p className="mt-4 text-[10px] font-mono text-white/20">{CANON.STATUS}</p>
-        <a href="/armory" className="inline-block mt-8 bg-white text-black px-8 py-3 rounded-full text-xs font-black tracking-widest">
-          ← RETURN TO FORGE
-        </a>
-      </div>
-    )
-  }
-
+"use client"
+import {useParams} from "next/navigation"
+const DATA:any = {
+  "runningwolf-blade":{title:"RUNNINGWOLF BLADE", yt:"YOUR_YT_ID_1", verse:"Hebrews 4:12"},
+  "lord-of-lords":{title:"LORD OF LORDS", yt:"YOUR_YT_ID_2", verse:"Revelation 19:16"},
+  "blood-of-cross":{title:"BLOOD OF CROSS", yt:"", verse:"Colossians 1:20"}
+}
+export default function RelicPage(){
+  const {slug} = useParams()
+  const relic = DATA[slug as string]
+  if(!relic) return <div className="min-h-screen bg-black text-white p-10">🔒 RELIC {slug} — THE NEXT CHAPTER HAS NOT BEEN FORGED</div>
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10">
-      <div className="text-[10px] font-mono text-white/30 tracking-widest">
-        {CANON.TAGLINE} • Season 1: The Word → The King → The Cross
+    <div className="min-h-screen bg-black text-white max-w-4xl mx-auto px-6 py-16">
+      <h1 className="text-5xl font-black">{relic.title}</h1>
+      <div className="mt-6 aspect-video bg-zinc-900 rounded-2xl overflow-hidden border border-white/10">
+        {relic.yt? <iframe className="w-full h-full" src={`https://www.youtube.com/embed/${relic.yt}`} allowFullScreen/> : <div className="flex items-center justify-center h-full text-white/20">🔥 FORGING — VIDEO COMING SOON</div>}
       </div>
-      <div className="grid md:grid-cols-2 gap-10 mt-8">
-        <img src={r.img} alt={r.title} className="w-full aspect-square object-cover rounded-3xl border border-white/10" />
-        <div>
-          <div className="text-3xl">{r.icon}</div>
-          <h1 className="text-5xl font-black mt-2 tracking-tighter">{r.title}</h1>
-          <p className="mt-2 text-sm text-white/50">
-            {r.theme} — {r.verse} — {r.msg}
-          </p>
-          <div className="mt-6 text-[11px] font-mono border border-white/10 rounded-xl p-3 inline-block">
-            {CANON.STATUS}
-          </div>
-          <div className="mt-6 space-y-3">
-            <div className="border border-white/10 rounded-2xl p-5 bg-zinc-900/20">
-              <div className="text-[10px] font-black tracking-widest">MEANING</div>
-              <p className="text-sm text-white/60 mt-2">
-                {r.msg} Foundation: {r.verse}
-              </p>
-            </div>
-            <div className="border border-[#D4AF37]/20 bg-[#D4AF37]/5 rounded-2xl p-5">
-              <div className="text-[10px] font-black tracking-widest text-[#D4AF37]">KEY SCRIPTURE</div>
-              <p className="font-bold mt-2">{r.verse}</p>
-            </div>
-          </div>
-        </div>
+      <div className="mt-8 grid md:grid-cols-2 gap-4">
+        <div className="border border-white/10 rounded-xl p-5"><div className="text-[10px] font-mono text-white/30">SCRIPTURE</div><div className="mt-2">{relic.verse}</div></div>
+        <div className="border border-white/10 rounded-xl p-5"><div className="text-[10px] font-mono text-white/30">TESTIMONY / BEHIND-THE-SCENES</div><div className="mt-2 text-sm text-white/60">Add your story here — this is what Supporters get expanded.</div></div>
       </div>
     </div>
   )
