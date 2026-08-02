@@ -1,9 +1,9 @@
+cat > app/page.tsx << 'EOF'
 "use client"
 
 const CANON = {
   TAGLINE: "ONE CANON • FOUR EXPERIENCES • NINETEEN RELICS • ONE KING",
   STATUS: "FORGED 2/19 • 🔥 1 CURRENTLY BEING FORGED • 🔒 16 AWAITING REVELATION",
-  FOOTER: "ONE CANON • FOUR EXPERIENCES • NINETEEN RELICS • ONE KING",
   CLOSING: "Every relic tells one story. Every story points to one King."
 }
 
@@ -20,9 +20,15 @@ export default function Home(){
     <div className="min-h-screen bg-black text-white">
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-24">
         <div className="text-center">
-          <div className="inline-block border border-yellow-500/20 bg-yellow-500/5 rounded-full px-5 py-1.5 text-[10px] font-mono tracking-[0.35em] text-yellow-500/70">{CANON.TAGLINE}</div>
-          <h1 className="text-7xl font-black tracking-tighter mt-8">RUNNINGWOLF<br/><span className="text-white/20">STORMBREAKERS</span></h1>
-          <p className="mt-4 text-white/50 text-sm">A cinematic Christian saga — Season 1 is being forged.</p>
+          <div className="inline-block border border-yellow-500/20 bg-yellow-500/5 rounded-full px-5 py-1.5 text-[10px] font-mono tracking-[0.35em] text-yellow-500/70">
+            {CANON.TAGLINE}
+          </div>
+          <h1 className="text-7xl font-black tracking-tighter mt-8">
+            RUNNINGWOLF<br/><span className="text-white/20">STORMBREAKERS</span>
+          </h1>
+          <p className="mt-4 text-white/50 text-sm">
+            A cinematic Christian saga — Season 1 is being forged.
+          </p>
           <div className="mt-5 inline-block border border-white/10 rounded-2xl px-6 py-3 bg-zinc-900/40">
             <div className="text-2xl font-black">FORGED 2/19 • 11%</div>
             <div className="text-[10px] font-mono text-white/40 mt-1">{CANON.STATUS}</div>
@@ -51,15 +57,13 @@ export default function Home(){
         <div className="mt-16">
           <div className="text-[11px] font-mono tracking-widest text-white/30">🔒 FUTURE RELICS — AWAITING REVELATION</div>
           <div className="mt-4 grid md:grid-cols-4 gap-3">
-            {LOCKS.map(n=><div key={n} className="border border-white/5 bg-white/[0.02] rounded-xl p-4 opacity-40"><div className="text-[10px] font-mono">RELIC {n} 🔒</div><div className="text-[11px] font-bold mt-1">RELIC {n}</div></div>)}
+            {LOCKS.map(n=>(
+              <div key={n} className="border border-white/5 bg-white/[0.02] rounded-xl p-4 opacity-40">
+                <div className="text-[10px] font-mono">RELIC {n} 🔒</div>
+                <div className="text-[11px] font-bold mt-1">RELIC {n}</div>
+              </div>
+            ))}
           </div>
-        </div>
-
-        <div className="mt-16 grid md:grid-cols-4 gap-4">
-          <div className="border border-white/10 rounded-2xl p-5"><div className="font-black text-xs">⚔️ ARMORY</div><div className="text-[11px] text-white/40 mt-1">Hear the relics.</div></div>
-          <div className="border border-white/10 rounded-2xl p-5"><div className="font-black text-xs">📖 CHRONICLES</div><div className="text-[11px] text-white/40 mt-1">Walk the testimony.</div></div>
-          <div className="border border-white/10 rounded-2xl p-5"><div className="font-black text-xs">✝️ WORD</div><div className="text-[11px] text-white/40 mt-1">Stand on Scripture.</div></div>
-          <div className="border border-white/10 rounded-2xl p-5"><div className="font-black text-xs">📚 BOOKS</div><div className="text-[11px] text-white/40 mt-1">Live the truth.</div></div>
         </div>
 
         <div className="mt-16 border border-yellow-500/20 rounded-3xl p-8 bg-zinc-900/20">
@@ -71,4 +75,25 @@ export default function Home(){
             <div className="border border-white/10 rounded-2xl p-6 bg-black/40">
               <div className="text-xs font-black tracking-widest">🐺 PATH 1 — LISTENER</div>
               <div className="text-[11px] font-mono text-white/30 mt-1">Enter the Forge</div>
-              <div className="mt-4 text-[11px] text-white/50 space-y-1">
+            </div>
+            <div className="border border-yellow-500/30 bg-yellow-500/5 rounded-2xl p-6">
+              <div className="text-xs font-black tracking-widest text-yellow-500">⚔️ PATH 2 — FORGED SUPPORTER</div>
+              <div className="text-[11px] font-mono text-yellow-500/60 mt-1">Help Forge the Relics</div>
+            </div>
+            <div className="border border-white/10 rounded-2xl p-6 bg-black">
+              <div className="text-xs font-black tracking-widest">👑 PATH 3 — STORMBREAKERS ARCHIVE</div>
+              <div className="text-[11px] font-mono text-white/30 mt-1">Enter the Complete Forge</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 text-center">
+          <a href="/armory" className="inline-block bg-white text-black px-12 py-5 rounded-full font-black text-sm tracking-widest">
+            ⚔️ ENTER THE ARMORY →
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
+EOF
