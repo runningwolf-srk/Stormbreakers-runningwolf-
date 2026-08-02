@@ -39,14 +39,12 @@ return(
 <div className="mt-3 text-[10px] font-mono text-[#D4AF37] text-center">⚔️ RELIC I — FORGED • 👑 RELIC II — FORGED • ✝️ RELIC III — BLOOD OF CROSS — FORGED — CHAPTER I COMPLETE</div>
 </div>
 </div>
-
 <div className="mt-14 grid md:grid-cols-4 gap-3">
 <div className="border border-white/10 rounded-2xl p-5 bg-zinc-900/20"><div className="text-lg">⚔️</div><div className="mt-2 font-black text-xs tracking-widest">ARMORY</div><div className="mt-1 text-[11px] text-white/50">Hear the relics. Every song is a chapter forged in battle.</div></div>
 <div className="border border-white/10 rounded-2xl p-5 bg-zinc-900/20"><div className="text-lg">📖</div><div className="mt-2 font-black text-xs tracking-widest">CHRONICLES</div><div className="mt-1 text-[11px] text-white/50">Discover the battles behind the songs. Testimony becomes weapon.</div></div>
 <div className="border border-white/10 rounded-2xl p-5 bg-zinc-900/20"><div className="text-lg">✝️</div><div className="mt-2 font-black text-xs tracking-widest">WORD</div><div className="mt-1 text-[11px] text-white/50">Study the Scripture that forged the warrior. Foundation is truth.</div></div>
 <div className="border border-white/10 rounded-2xl p-5 bg-zinc-900/20"><div className="text-lg">📚</div><div className="mt-2 font-black text-xs tracking-widest">BOOKS</div><div className="mt-1 text-[11px] text-white/50">Enter the complete mythology. Lore, devotionals, and the full canon.</div></div>
 </div>
-
 <div className="mt-12">
 <div className="border border-[#D4AF37]/20 bg-[#D4AF37]/5 rounded-2xl p-7 text-center"><div className="text-[12px] font-black tracking-[0.35em] text-[#D4AF37]">CHAPTER I — THE FORGING OF THE WARRIOR — COMPLETE</div><div className="mt-2 text-sm text-white/60">The Word awakened. The King was revealed. The Cross redeemed.</div></div>
 <div className="mt-6 grid md:grid-cols-3 gap-4">
@@ -61,7 +59,6 @@ return(
 ))}
 </div>
 </div>
-
 <div className="mt-10 border border-white/10 rounded-3xl p-8 bg-gradient-to-br from-zinc-900/40 via-black to-[#D4AF37]/5 text-center">
 <div className="text-[10px] font-mono tracking-[0.35em] text-[#D4AF37]/70">⚔️ CHAPTER I — COMPLETE</div>
 <div className="mt-5 text-[14px] text-white/70">The warrior has received:<br/><span className="text-white font-black">The Word. The Crown. The Cross.</span></div>
@@ -76,21 +73,17 @@ return(
 <div className="mt-4 text-[10px] font-mono text-[#D4AF37]/50">CHAPTER II — AWAITS REVELATION — THE NEXT RELIC WILL BE REVEALED IN ITS TIME</div>
 </div>
 </div>
-
 <div className="mt-12"><div className="text-[11px] font-mono tracking-[0.35em] text-white/30">🔒 THE SEALED RELICS — PROPHECIES OF CHAPTER II & BEYOND</div><div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">{SEALED.map(s=>(<div key={s.num} className={`border rounded-xl p-5 ${s.prophecy?"border-[#D4AF37]/20 bg-[#D4AF37]/5":"border-white/5 bg-white/[0.02] opacity-60"}`}><div className="text-[10px] font-mono">🔒 RELIC {s.num}</div>{s.prophecy && (<div className="mt-3 text-[10px] font-black tracking-widest text-[#D4AF37]/70">{s.prophecy}</div>)}<div className="mt-2 text-[9px] text-white/20 tracking-widest">{s.sym}</div><div className="mt-2 text-[9px] text-white/30 leading-relaxed italic">{s.hint}</div></div>))}</div></div>
-
 <div id="archive" className="mt-14 grid md:grid-cols-3 gap-4">
 <div className="border border-white/10 rounded-2xl p-6 bg-white/[0.02] text-center"><div>🐺</div><div className="mt-2 font-black text-xs tracking-widest">THE PATH OF THE WITNESS</div><div className="mt-1 text-[9px] font-mono text-white/30">🐺 LISTENER — FREE</div><div className="mt-2 text-[11px] text-white/50">Songs • Story • Scripture</div><div className="mt-3 text-[9px] font-mono text-white/20">THE WORD IS FREE</div></div>
 <div className="border border-[#D4AF37]/20 rounded-2xl p-6 bg-[#D4AF37]/5 text-center"><div>⚔️</div><div className="mt-2 font-black text-xs tracking-widest text-[#D4AF37]">THE PATH OF THE FORGED</div><div className="mt-1 text-[9px] font-mono text-[#D4AF37]/50">⚔️ FORGED SUPPORTER</div><div className="mt-2 text-[11px] text-white/50">Behind scenes • Early access • Artwork</div><div className="mt-3 text-[9px] font-mono text-[#D4AF37]/40">WITNESS THE FORGING</div></div>
 <div className="border border-white/10 rounded-2xl p-6 bg-white/[0.02] text-center"><div>👑</div><div className="mt-2 font-black text-xs tracking-widest">THE PATH OF THE ARCHIVE</div><div className="mt-1 text-[9px] font-mono text-white/30">👑 STORMBREAKERS ARCHIVE</div><div className="mt-2 text-[11px] text-white/50">Instrumentals • Books • Devotionals • Full lore</div><div className="mt-3 text-[9px] font-mono text-white/20">DEPTH IS FORGED</div></div>
 </div>
-
 <div className="mt-14 border border-[#D4AF37]/20 rounded-3xl p-8 bg-zinc-900/20 text-center">
 <div className="text-[10px] font-mono text-white/30">THE OATH OF THE STORMBREAKERS</div>
 <div className="mt-4 text-lg"><span className="text-white/60">We do not fight people.</span> <span className="font-black">We fight darkness.</span></div>
 <div className="mt-3 text-[11px] font-mono text-[#D4AF37]/40">✝️ RELIC III — BLOOD OF CROSS — FORGED — CHAPTER I COMPLETE — Songs are free. Depth is forged.</div>
 </div>
-
 </div>
 </div>
 )
