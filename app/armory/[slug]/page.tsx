@@ -1,20 +1,6 @@
-"use client"
-import { useState } from "react"
-const CHAPTERS = [
-  {id:"before",label:"Before Christ",text:"Broken seasons. The wound before the weapon."},
-  {id:"valley",label:"Valley",text:"Refining fire. Where God strips what cannot stay."},
-  {id:"calling",label:"Calling",text:"Heaven calling. When you hear your name from the King."},
-  {id:"forge",label:"Forge",text:"Truth becomes weapon. Scripture becomes sword."},
-  {id:"mission",label:"Mission",text:"Not victim — witness. Not forgotten — FORGED."},
-]
-export function ChronicleTabs({slug}:{slug:string}){
-  const [a,setA]=useState("forge")
-  return (
-    <div className="border border-white/10 rounded-2xl bg-zinc-900/30 overflow-hidden">
-      <div className="flex gap-1 p-2 bg-black/40 border-b border-white/5">
-        {CHAPTERS.map(c=><button key={c.id} onClick={()=>setA(c.id)} className={`px-3 py-1.5 rounded-full text-[10px] font-mono tracking-widest border ${a===c.id?"bg-white text-black":"bg-white/5 text-white/40 border-white/10"}`}>{c.label}</button>)}
-      </div>
-      <div className="p-5"><div className="text-[10px] font-black text-[#D4AF37]">{CHAPTERS.find(c=>c.id===a)?.label}</div><p className="mt-2 text-sm text-white/60">{CHAPTERS.find(c=>c.id===a)?.text}</p><a href={`/chronicles/${slug}#${a}`} className="inline-block mt-4 text-[11px] underline text-white/30">→ Read full chapter</a></div>
-    </div>
-  )
-}
+import {ALL_RELICS} from "@/data/armory"; import {CANON} from "@/data/constants"
+export default function Page({params}:{params:{slug:string}}){
+  const r = ALL_RELICS.find(x=>x.slug===params.slug)
+  if(!r || r.status==="AWAITING REVELATION") return <div className="max-w-2xl mx-auto px-6 py-24 text-center"><div className="text-5xl">🔒</div><h1 className="text-4xl font-black mt-6">THIS RELIC AWAITS REVELATION</h1><p className="mt-4 text-white/50 text-sm">This relic has not yet been revealed. Every relic is forged in its appointed time.</p><p className="mt-4 text-[10px] font-mono text-white/20">{CANON.STATUS}</p><a href="/armory" className="inline-block mt-8 bg-white text-black px-8 py-3 rounded-full text-xs font-black">← RETURN TO FORGE</a></div>
+  return <div className="max-w-6xl mx-auto px-6 py-10"><div className="text-[10px] font-mono text-white/30">{CANON.TAGLINE} • {CANON.SEASON1}</div><div className="grid md:grid-cols-2 gap-10 mt-8"><img src={r.img} className="w-full aspect-square object-cover rounded-3xl border border-white/10"/><div><div className="text-3xl">{r.icon}</div><h1 className="text-5xl font-black mt-2">{r.title}</h1><p className="mt-2 text-sm text-white/50">{r.theme} — {r.verse} — {r.msg}</p><div className="mt-6 text-[11px] font-mono border border-white/10 rounded-xl p-3 inline-block">{CANON.STATUS}</div><div className="mt-6 space-y-3"><div className="border border-white/10 rounded-2xl p-5 bg-zinc-900/20"><div className="text-[10px] font-black">MEANING</div><p className="text-sm text-white/60 mt-2">{r.msg} Foundation: {r.verse}</p></div><div className="border border-[#D4AF37]/20 bg-[#D4AF37]/5 rounded-2xl p-5"><div className="text-[10px] font-black text-[#D4AF37]">KEY SCRIPTURE</div><p className="font-bold mt-2">{r.verse}</p></div></div></div>
+    }
