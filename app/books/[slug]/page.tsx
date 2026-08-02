@@ -1,20 +1,2 @@
-import { ALL_RELICS } from "@/data/armory"
-import { notFound } from "next/navigation"
-
-export default function BookPage({ params }: { params:{ slug:string } }){
-  const relic = ALL_RELICS.find(r=>r.slug===params.slug)
-  if(!relic) return notFound()
-  return (
-    <div className="max-w-3xl mx-auto px-6 py-10">
-      <div className="text-[10px] font-mono text-white/30 tracking-widest">ONE CANON • FOUR EXPERIENCES • NINETEEN RELICS • ONE KING</div>
-      <h1 className="text-4xl font-black mt-3 tracking-tighter">{relic.title} — BOOK</h1>
-      <p className="mt-2 text-white/40 font-mono text-[11px]">{relic.verse}</p>
-      <p className="mt-4 text-white/60 text-sm">Every relic expands into devotional, reflection, and application.</p>
-      <div className="mt-6 grid gap-4">
-        <div className="border border-white/10 rounded-xl p-5 bg-zinc-900/30"><div className="text-xs font-bold">DEVOTIONAL</div><div className="text-sm text-white/60 mt-2">{relic.short}</div></div>
-        <div className="border border-white/10 rounded-xl p-5 bg-zinc-900/30"><div className="text-xs font-bold">REFLECTION</div><div className="text-sm text-white/60 mt-2">What does {relic.title} mean for you today?</div></div>
-        <div className="border border-white/10 rounded-xl p-5 bg-zinc-900/30"><div className="text-xs font-bold">DECLARATION</div><div className="text-sm text-white/60 mt-2">I am FORGED.</div></div>
-      </div>
-    </div>
-  )
-}
+import {ALL_RELICS} from "@/data/armory"; import {CANON} from "@/data/constants"
+export default function Books(){ return <div className="max-w-6xl mx-auto px-6 py-10"><h1 className="text-4xl font-black">📚 BOOKS — Live the Truth</h1><p className="text-[11px] font-mono text-white/30 mt-2">{CANON.TAGLINE}</p><p className="text-[11px] font-mono text-white/30">{CANON.STATUS_LINE}</p><div className="mt-8 grid md:grid-cols-3 gap-4">{ALL_RELICS.map(r=><div key={r.slug} className="border border-white/10 rounded-2xl p-5 bg-zinc-900/30"><div className="flex justify-between"><div className="text-xs font-black">{r.symbol} BOOK OF {r.title}</div><span className="text-[8px] font-mono px-2 py-1 rounded-full bg-white/5">{r.status}</span></div><div className="text-[11px] text-white/40 mt-2">{r.verse} — {r.purpose}</div></div>)}</div></div> }
