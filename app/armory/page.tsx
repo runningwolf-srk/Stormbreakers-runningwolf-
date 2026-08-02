@@ -1,2 +1,4 @@
-import {ALL_RELICS} from "@/data/armory"; import {CANON} from "@/data/constants"
-export default function Armory(){ return <div className="max-w-7xl mx-auto px-6 py-10"><h1 className="text-4xl font-black">⚔️ ARMORY — Hear the Relics</h1><p className="text-[11px] font-mono text-white/30 mt-2">{CANON.STATUS}</p><div className="mt-8 grid md:grid-cols-3 gap-4">{ALL_RELICS.map(r=><a key={r.slug} href={r.status==="AWAITING REVELATION"?"/armory":`/armory/${r.slug}`} className={`border rounded-2xl p-6 ${r.status==="AWAITING REVELATION"?"border-white/5 bg-white/[0.02] opacity-50":"border-white/10 bg-zinc-900/30 hover:border-[#D4AF37]/30"}`}><div className="flex justify-between"><span className="text-2xl">{r.icon}</span><span className="text-[8px] font-mono px-2 py-1 rounded-full bg-white/10">{r.status}</span></div><div className="mt-4 text-[10px] font-mono text-white/30">RELIC {r.num} • {r.verse}</div><div className="font-black text-xs mt-1">{r.title}</div><div className="text-[11px] text-white/40 mt-1">{r.theme}</div></a>)}</div></div> }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{background:black;color:white}
