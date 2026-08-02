@@ -1,2 +1,1 @@
-import "./globals.css"; import Header from "@/components/Header"; import {CANON} from "@/data/constants"
-export default function RootLayout({children}:{children:React.ReactNode}){ return <html><body className="bg-black text-white antialiased"><Header/><main>{children}</main><footer className="border-t border-white/10 mt-24 py-6 text-center text-[10px] font-mono text-white/30">{CANON.TAGLINE} • {CANON.STATUS}</footer></body></html> }
+<footer className="border-t border-white/10 mt-24 py-6 text-center text-[10px] font-mono text-white/20">{CANON.FOOTER}</footer>
