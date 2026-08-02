@@ -1,14 +1,1 @@
-export default function Oath(){
-  return (
-    <div className="border border-white/10 rounded-3xl p-8 bg-zinc-900/30 text-center">
-      <div className="text-[10px] font-mono tracking-widest text-white/30">THE STORMBREAKERS OATH</div>
-      <div className="mt-6 space-y-2 text-lg font-light leading-relaxed">
-        <div>We do not fight people.</div><div className="font-black">We fight darkness.</div>
-        <div className="mt-4">We do not carry pride.</div><div className="font-black">We carry truth.</div>
-        <div className="mt-4">We do not run from storms.</div><div className="font-black">We run with the King.</div>
-        <div className="mt-4">We are not victims.</div><div className="font-black">We are witnesses.</div>
-        <div className="mt-4">We are not forgotten.</div><div className="font-black text-[#D4AF37]">We are FORGED.</div>
-      </div>
-    </div>
-  )
-}
+export default function Oath(){ return <div className="border border-white/10 rounded-3xl p-8 bg-zinc-900/30 text-center"><div className="text-[10px] font-mono text-white/30 tracking-widest">THE STORMBREAKERS OATH</div><div className="mt-6 space-y-2 text-lg font-light"><div>We do not fight people.</div><div className="font-black">We fight darkness.</div><div className="mt-4">We do not carry pride.</div><div className="font-black">We carry truth.</div><div className="mt-4">We do not run from storms.</div><div className="font-black">We run with the King.</div><div className="mt-4">We are not victims.</div><div className="font-black">We are witnesses.</div><div className="mt-4">We are not forgotten.</div><div className="font-black text-[#D4AF37]">We are FORGED.</div></div></div> }
