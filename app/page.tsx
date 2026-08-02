@@ -1,9 +1,9 @@
 "use client"
 export default function Home(){
 const RELICS=[
-{slug:"runningwolf-blade",num:"I",title:"RUNNINGWOLF BLADE",icon:"⚔️",label:"The Word → The Awakening",symbol:"Blade engraved with Hebrews 4:12",status:"FORGED"},
-{slug:"lord-of-lords",num:"II",title:"LORD OF LORDS",icon:"👑",label:"The King → The Revelation",symbol:"Crown above every crown",status:"FORGED"},
-{slug:"blood-of-cross",num:"III",title:"BLOOD OF CROSS",icon:"✝️",label:"The Cross → The Redemption",symbol:"Cross marked by sacrifice",status:"FORGED"}
+{slug:"runningwolf-blade",num:"I",title:"RUNNINGWOLF BLADE",icon:"⚔️",label:"The Word → The Awakening",symbol:"Blade engraved with Hebrews 4:12",status:"⚔️ RELIC I — FORGED"},
+{slug:"lord-of-lords",num:"II",title:"LORD OF LORDS",icon:"👑",label:"The King → The Revelation",symbol:"Crown above every crown",status:"👑 RELIC II — FORGED"},
+{slug:"blood-of-cross",num:"III",title:"BLOOD OF CROSS",icon:"✝️",label:"The Cross → The Redemption",symbol:"Cross marked by sacrifice",status:"✝️ RELIC III — BLOOD OF CROSS — FORGED"}
 ]
 const SEALED=[
 {num:"IV",prophecy:"THE RELIC OF THE WILDERNESS",hint:"Forged where the warrior learns endurance.",sym:"🏜️ Cracked stone beneath rising sun"},
@@ -36,7 +36,7 @@ return(
 <div className="mt-8 mx-auto max-w-xl border border-[#D4AF37]/20 rounded-2xl p-6 bg-gradient-to-b from-[#D4AF37]/10 to-zinc-900/40">
 <div className="flex justify-between text-[10px] font-mono"><span className="text-white/50">FORGE PROGRESS</span><span className="text-[#D4AF37]">FORGED 3/19 • 16%</span></div>
 <div className="mt-3 h-2 w-full bg-white/5 rounded-full overflow-hidden"><div className="h-full bg-gradient-to-r from-[#D4AF37] to-yellow-200" style={{width:"16%"}}></div></div>
-<div className="mt-3 text-[10px] font-mono text-[#D4AF37] text-center">⚔️ 3 FORGED — RELIC III FORGED — CHAPTER I COMPLETE • 🔒 16 SEALED</div>
+<div className="mt-3 text-[10px] font-mono text-[#D4AF37] text-center">⚔️ RELIC I — FORGED • 👑 RELIC II — FORGED • ✝️ RELIC III — BLOOD OF CROSS — FORGED — CHAPTER I COMPLETE</div>
 </div>
 </div>
 
@@ -53,7 +53,7 @@ return(
 {RELICS.map(r=>(
 <a key={r.slug} href={`/armory/${r.slug}`} className="border border-[#D4AF37]/20 rounded-2xl p-6 bg-zinc-900/40 hover:bg-zinc-900/60 transition text-left block">
 <div className="flex justify-between"><span className="text-2xl">{r.icon}</span><span className="text-[8px] font-mono px-2.5 py-1 rounded-full bg-[#D4AF37]/20 text-[#D4AF37]">FORGED</span></div>
-<div className="mt-4 text-[10px] font-mono text-white/30">RELIC {r.num} — FORGED</div>
+<div className="mt-4 text-[10px] font-mono text-white/30">{r.status}</div>
 <div className="font-black text-sm">{r.title}</div>
 <div className="text-[11px] text-[#D4AF37]/60 mt-1">{r.label}</div>
 <div className="mt-3 pt-3 border-t border-white/5"><div className="text-[9px] font-mono text-white/20">SYMBOL</div><div className="text-[11px] text-white/50 mt-1 italic">{r.symbol}</div></div>
@@ -65,10 +65,19 @@ return(
 <div className="mt-10 border border-white/10 rounded-3xl p-8 bg-gradient-to-br from-zinc-900/40 via-black to-[#D4AF37]/5 text-center">
 <div className="text-[10px] font-mono tracking-[0.35em] text-[#D4AF37]/70">⚔️ CHAPTER I — COMPLETE</div>
 <div className="mt-5 text-[14px] text-white/70">The warrior has received:<br/><span className="text-white font-black">The Word. The Crown. The Cross.</span></div>
-<div className="mt-6 pt-6 border-t border-white/5"><div className="text-[11px] font-mono tracking-[0.3em] text-white/30">CHAPTER II — AWAITS REVELATION</div><div className="mt-2 text-[12px] text-white/40">THE NEXT RELIC WILL BE REVEALED IN ITS TIME.</div></div>
+<div className="mt-8 pt-6 border-t border-white/5">
+<div className="text-[12px] font-black tracking-[0.35em] text-white/80">CHAPTER II — THE TRIAL OF THE WARRIOR</div>
+<div className="mt-3 text-[11px] text-white/40">After awakening, revelation, and redemption, the warrior must be tested.</div>
+<div className="mt-4 flex flex-wrap justify-center gap-2 text-[9px] font-mono">
+<span className="border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-3 py-1.5 rounded-full text-[#D4AF37]">🏜️ IV — WILDERNESS — Endurance</span>
+<span className="border border-white/10 bg-white/5 px-3 py-1.5 rounded-full text-white/50">🏮 V — SHADOW — Faith in darkness</span>
+<span className="border border-white/10 bg-white/5 px-3 py-1.5 rounded-full text-white/50">🤝 VI — OATH — Covenant</span>
+</div>
+<div className="mt-4 text-[10px] font-mono text-[#D4AF37]/50">CHAPTER II — AWAITS REVELATION — THE NEXT RELIC WILL BE REVEALED IN ITS TIME</div>
+</div>
 </div>
 
-<div className="mt-12"><div className="text-[11px] font-mono tracking-[0.35em] text-white/30">🔒 THE SEALED RELICS — PROPHECIES</div><div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">{SEALED.map(s=>(<div key={s.num} className="border border-white/5 bg-white/[0.02] rounded-xl p-5"><div className="text-[10px] font-mono">🔒 RELIC {s.num}</div>{s.prophecy && (<div className="mt-3 text-[10px] font-black tracking-widest text-[#D4AF37]/70">{s.prophecy}</div>)}<div className="mt-2 text-[9px] text-white/20 tracking-widest">{s.sym}</div><div className="mt-2 text-[9px] text-white/30 leading-relaxed italic">{s.hint}</div></div>))}</div></div>
+<div className="mt-12"><div className="text-[11px] font-mono tracking-[0.35em] text-white/30">🔒 THE SEALED RELICS — PROPHECIES OF CHAPTER II & BEYOND</div><div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">{SEALED.map(s=>(<div key={s.num} className={`border rounded-xl p-5 ${s.prophecy?"border-[#D4AF37]/20 bg-[#D4AF37]/5":"border-white/5 bg-white/[0.02] opacity-60"}`}><div className="text-[10px] font-mono">🔒 RELIC {s.num}</div>{s.prophecy && (<div className="mt-3 text-[10px] font-black tracking-widest text-[#D4AF37]/70">{s.prophecy}</div>)}<div className="mt-2 text-[9px] text-white/20 tracking-widest">{s.sym}</div><div className="mt-2 text-[9px] text-white/30 leading-relaxed italic">{s.hint}</div></div>))}</div></div>
 
 <div id="archive" className="mt-14 grid md:grid-cols-3 gap-4">
 <div className="border border-white/10 rounded-2xl p-6 bg-white/[0.02] text-center"><div>🐺</div><div className="mt-2 font-black text-xs tracking-widest">THE PATH OF THE WITNESS</div><div className="mt-1 text-[9px] font-mono text-white/30">🐺 LISTENER — FREE</div><div className="mt-2 text-[11px] text-white/50">Songs • Story • Scripture</div><div className="mt-3 text-[9px] font-mono text-white/20">THE WORD IS FREE</div></div>
@@ -79,8 +88,9 @@ return(
 <div className="mt-14 border border-[#D4AF37]/20 rounded-3xl p-8 bg-zinc-900/20 text-center">
 <div className="text-[10px] font-mono text-white/30">THE OATH OF THE STORMBREAKERS</div>
 <div className="mt-4 text-lg"><span className="text-white/60">We do not fight people.</span> <span className="font-black">We fight darkness.</span></div>
-<div className="mt-3 text-[11px] font-mono text-[#D4AF37]/40">Songs are free. Depth is forged. — RELIC III FORGED — CHAPTER I COMPLETE</div>
+<div className="mt-3 text-[11px] font-mono text-[#D4AF37]/40">✝️ RELIC III — BLOOD OF CROSS — FORGED — CHAPTER I COMPLETE — Songs are free. Depth is forged.</div>
 </div>
+
 </div>
 </div>
 )
