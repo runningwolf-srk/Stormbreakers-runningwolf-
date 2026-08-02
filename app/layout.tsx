@@ -1,3 +1,2 @@
-import "./globals.css"; import Header from "@/components/Header"; import Footer from "@/components/Footer"
-export const metadata={title:"RUNNINGWOLF • STORMBREAKERS", description:"ONE CANON • FOUR EXPERIENCES • NINETEEN RELICS • ONE KING"}
-export default function RootLayout({children}:{children:React.ReactNode}){ return <html lang="en"><body className="bg-black text-white antialiased min-h-screen flex flex-col"><Header/><main className="flex-1">{children}</main><Footer/></body></html> }
+import "./globals.css"; import Header from "@/components/Header"; import {CANON} from "@/data/constants"
+export default function RootLayout({children}:{children:React.ReactNode}){ return <html><body className="bg-black text-white antialiased"><Header/><main>{children}</main><footer className="border-t border-white/10 mt-24 py-6 text-center text-[10px] font-mono text-white/30">{CANON.TAGLINE} • {CANON.STATUS}</footer></body></html> }
