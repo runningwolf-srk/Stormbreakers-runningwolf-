@@ -35,7 +35,7 @@ if(!r) return(
 <div className="text-5xl">🔒</div>
 <div className="mt-6 font-black tracking-widest">RELIC {String(slug).toUpperCase()}</div>
 <div className="mt-2 text-white/40 text-sm">THE NEXT CHAPTER HAS NOT BEEN FORGED</div>
-<div className="mt-3 text-[10px] font-mono text-white/20">🔒 SYMBOL NOT YET REVEALED</div>
+<div className="mt-3 text-[10px] font-mono text-white/20">🔒 SYMBOL NOT YET REVEALED — SEALED RELIC — PROPHECY AWAITS</div>
 <a href="/" className="mt-8 inline-block border border-white/10 rounded-full px-6 py-3 text-xs">← RETURN TO FORGE</a>
 </div>
 </div>
@@ -45,7 +45,7 @@ return(
 <div className="border border-white/10 rounded-[28px] overflow-hidden bg-gradient-to-b from-zinc-900/40 to-black">
 <div className="p-8 sm:p-10">
 <div className="flex justify-between items-center">
-<div className="text-[10px] font-mono text-white/30">RELIC {r.num} • CHAPTER I • ⚔️ FORGED</div>
+<div className="text-[10px] font-mono text-white/30">RELIC {r.num} • CHAPTER I — THE FORGING OF THE WARRIOR • ⚔️ {r.status}</div>
 <div className="text-[9px] font-mono px-3 py-1 rounded-full bg-[#D4AF37]/20 text-[#D4AF37]">FORGED</div>
 </div>
 <h1 className="text-[36px] sm:text-6xl font-black mt-6 leading-[0.9]"><span className="mr-3">{r.icon}</span>{r.title}</h1>
@@ -62,7 +62,7 @@ return(
 <div className="border border-white/10 rounded-2xl p-6 bg-black"><div className="text-[10px] font-mono text-white/30 tracking-widest">MEANING</div><div className="mt-3 text-[13px] text-white/70 leading-relaxed">{r.meaning}</div></div>
 <div className="border border-[#D4AF37]/20 rounded-2xl p-6 bg-[#D4AF37]/5"><div className="text-[10px] font-mono text-[#D4AF37]/60 tracking-widest">TESTIMONY</div><div className="mt-3 text-[13px] text-white/60 leading-relaxed">{r.testimony}</div></div>
 </div>
-<div className="mt-10 text-center"><a href="/" className="bg-white text-black px-10 py-4 rounded-full font-black text-xs tracking-widest inline-block">← RETURN TO FORGE</a></div>
+<div className="mt-10 text-center"><a href="/" className="bg-white text-black px-10 py-4 rounded-full font-black text-xs tracking-widest inline-block">← RETURN TO FORGE — ✝️ RELIC III — BLOOD OF CROSS — FORGED</a></div>
 </div>
 )
 }
