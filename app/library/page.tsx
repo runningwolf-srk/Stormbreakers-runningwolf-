@@ -6,9 +6,12 @@ export default function Page() {
         <Link href="/" className="text-[11px] tracking-widest text-zinc-500 hover:text-zinc-300">← Cover</Link>
         <p className="mt-8 text-[11px] tracking-[0.5em] text-amber-700/60">📚 THE LIBRARY</p>
         <h1 className="text-3xl font-black mt-2">Books give depth</h1>
-        <div className="mt-10 grid gap-4">
-          <div className="bg-[#0a0a0a] border border-zinc-800 p-6"><p className="font-bold text-sm">Books</p><p className="text-[11px] text-zinc-600 mt-1">Chronicle volumes</p></div>
-          <div className="bg-[#0a0a0a] border border-zinc-800 p-6"><p className="font-bold text-sm">Devotionals • Study Guides • Artwork • Maps • Canon Timeline</p><p className="text-[11px] text-zinc-600 mt-1">Future expansion — same archive format</p></div>
+        <div className="mt-10 space-y-4">
+          <div className="bg-[#0a0a0a] border border-zinc-800 p-6"><p className="font-bold text-sm">📖 Chronicle Volumes</p><p className="text-[11px] text-zinc-600 mt-1">The complete written saga</p></div>
+          <div className="bg-[#0a0a0a] border border-zinc-800 p-6"><p className="font-bold text-sm">🔥 Devotionals</p><p className="text-[11px] text-zinc-600 mt-1">Lessons from each relic</p></div>
+          <div className="bg-[#0a0a0a] border border-zinc-800 p-6"><p className="font-bold text-sm">✝️ Study Guides</p><p className="text-[11px] text-zinc-600 mt-1">Scripture deep dives</p></div>
+          <div className="bg-[#0a0a0a] border border-zinc-800 p-6"><p className="font-bold text-sm">🎨 Artwork Archive</p><p className="text-[11px] text-zinc-600 mt-1">Relic art, symbols, seals</p></div>
+          <div className="bg-[#0a0a0a] border border-zinc-800 p-6"><p className="font-bold text-sm">🗺️ Canon Timeline</p><p className="text-[11px] text-zinc-600 mt-1">The journey from Chapter I to XIX</p></div>
         </div>
       </div>
     </main>
