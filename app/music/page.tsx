@@ -10,36 +10,36 @@ export default function Page() {
       <div className="max-w-5xl mx-auto">
         <Link href="/" className="text-[11px] tracking-widest text-zinc-500 hover:text-zinc-300">← Cover</Link>
         <p className="mt-8 text-[11px] tracking-[0.5em] text-amber-700/60">⚔️ HALL OF RELICS</p>
-        <h1 className="text-3xl font-black mt-2">Songs are the artifacts.</h1>
-        <p className="text-[11px] text-zinc-600 mt-2">Each song becomes a relic — a page from the archive</p>
+        <h1 className="text-3xl font-black mt-2">Songs become artifacts</h1>
+        <p className="text-[11px] text-zinc-600 mt-2">Artifact → Scripture → Story → Song → Video → Reflection</p>
 
         <div className="mt-10 space-y-10">
           {vids.map(r=>(
             <div key={r.n} className="bg-[#0a0a0a] border border-amber-900/20">
-              <div className="p-4 flex justify-between items-center border-b border-zinc-800/50">
+              <div className="p-6">
                 <p className="text-[10px] tracking-widest text-zinc-600">RELIC {r.n}</p>
-                <p className="text-[10px] text-zinc-500">Artifact ↓ Scripture ↓ Story ↓ Song ↓ Video ↓ Reflection</p>
+                <h3 className="font-bold text-xl mt-2">{r.icon} {r.t}</h3>
+                <p className="text-[11px] text-amber-700/60 mt-1">{r.v}</p>
               </div>
-              <div className="grid md:grid-cols-2">
-                <div className="relative aspect-video bg-black">
-                  <iframe className="absolute inset-0 w-full h-full" src={`https://www.youtube.com/embed/${r.id}`} title={r.t} frameBorder="0" allowFullScreen />
-                </div>
-                <div className="p-6 flex flex-col justify-center">
-                  <p className="text-lg">{r.icon}</p>
-                  <h3 className="font-bold text-xl mt-2">{r.t}</h3>
-                  <p className="text-[11px] text-amber-700/60 mt-1">{r.v}</p>
-                  <div className="mt-6 text-[11px] leading-6 text-zinc-500">
-                    <p>Artifact</p><p className="text-zinc-700">↓</p>
-                    <p>Scripture</p><p className="text-zinc-700">↓</p>
-                    <p>Story</p><p className="text-zinc-700">↓</p>
-                    <p>Song</p><p className="text-zinc-700">↓</p>
-                    <p>Video</p><p className="text-zinc-700">↓</p>
-                    <p>Reflection</p>
-                  </div>
+              <div className="relative aspect-video bg-black">
+                <iframe className="absolute inset-0 w-full h-full" src={`https://www.youtube.com/embed/${r.id}`} title={r.t} frameBorder="0" allowFullScreen />
+              </div>
+              <div className="p-6 text-center">
+                <div className="text-[11px] leading-6 tracking-widest text-zinc-500">
+                  <p>Artifact</p><p className="text-zinc-800">↓</p>
+                  <p>Scripture</p><p className="text-zinc-800">↓</p>
+                  <p>Story</p><p className="text-zinc-800">↓</p>
+                  <p>Song</p><p className="text-zinc-800">↓</p>
+                  <p>Video</p><p className="text-zinc-800">↓</p>
+                  <p>Reflection</p>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-[10px] tracking-widest text-zinc-700">19 relics — 3 revealed — 16 sealed — Mystery preserved</p>
         </div>
       </div>
     </main>
