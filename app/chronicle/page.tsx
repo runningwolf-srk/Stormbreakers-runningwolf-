@@ -13,8 +13,9 @@ export default function Chronicle() {
           <h2 className="text-2xl font-bold mt-4">The Keeper&apos;s Oath</h2>
           <div className="mt-6 space-y-4 text-zinc-300 text-sm leading-relaxed">
             <p>RunningWolf is not the center.<br/>He is the guide who carries the pages.</p>
+            <p>Not the king. Not the savior. Not the hero above the story.</p>
             <p className="text-lg font-semibold text-white">Not the hero above the story —<br/>the witness inside it.</p>
-            <p className="text-amber-200/80 font-semibold">The power comes from the King, not the warrior.</p>
+            <p className="text-amber-200/80 font-semibold">The Keeper preserves, records, and points back to the King.<br/>The power comes from the King, not the warrior.</p>
           </div>
           <div className="mt-10 flex flex-col items-center gap-1 text-[11px] tracking-widest text-zinc-600">
             <span className="text-amber-500 font-bold">The King</span><span>↓</span><span>The Word</span><span>↓</span><span>The Chronicle</span><span>↓</span><span>The Keeper</span><span>↓</span><span>The Relics</span>
