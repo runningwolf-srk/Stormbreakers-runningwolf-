@@ -5,27 +5,21 @@ import { useEffect, useState } from "react";
 export default function HomePage() {
   const avatarFile = "/763847743_1664822977910376_5098702148838621819_n-1.webp";
   const [lightning, setLightning] = useState(false);
-
   useEffect(() => {
     const interval = setInterval(() => {
-      if (Math.random() > 0.75) {
-        setLightning(true);
-        setTimeout(() => setLightning(false), 100);
-      }
+      if (Math.random() > 0.75) { setLightning(true); setTimeout(()=>setLightning(false),100); }
     }, 7000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <main className="relative min-h-screen bg-[#040404] text-zinc-100 overflow-hidden">
-      {/* Background */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[#060606]"></div>
         <div className="absolute bottom-0 left-0 right-0 h-[60vh] bg-gradient-to-t from-black to-transparent"></div>
         <div className={`absolute inset-0 bg-blue-100/5 transition-opacity duration-100 ${lightning? "opacity-100" : "opacity-0"}`}></div>
       </div>
 
-      {/* COVER */}
       <section className="relative z-10 min-h-[85vh] flex items-center justify-center px-6 md:px-12">
         <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-center">
@@ -34,62 +28,34 @@ export default function HomePage() {
             </div>
             <p className="mt-6 text-[10px] tracking-[0.4em] text-zinc-600">RUNNINGWOLF — KEEPER OF THE CHRONICLE</p>
             <p className="text-[11px] italic text-zinc-700 mt-1">Guide • Witness • Storyteller • Keeper of Pages</p>
-            <p className="text-[10px] text-zinc-700 mt-3 max-w-[340px] text-center">Not the hero above the story. The power comes from the King, not the warrior.</p>
           </div>
-
           <div className="text-center lg:text-left">
             <h1 className="font-black leading-[0.9]">
               <span className="block text-6xl md:text-7xl tracking-tight">STORMBREAKERS</span>
               <span className="block text-xl tracking-[0.4em] text-amber-600/70 mt-3">THE OPEN CHRONICLE</span>
             </h1>
-
             <div className="mt-8 border-l-2 border-amber-900/30 pl-6">
               <p className="text-lg text-zinc-200">Viking is the binding. Scripture is the pages. The King is the center.</p>
               <p className="text-sm text-amber-600/60 mt-2">The Word guides the blade.</p>
             </div>
-
-            <div className="mt-8">
-              <p className="text-[11px] tracking-[0.4em] text-zinc-500">One Canon • Nineteen Relics • One King</p>
-              <p className="text-[10px] text-zinc-700 mt-2">The King → The Word → The Chronicle → The Keeper → The Relics</p>
-            </div>
+            <p className="mt-6 text-[11px] tracking-[0.4em] text-zinc-500">One Canon • Nineteen Relics • One King</p>
+            <p className="text-[10px] text-zinc-700 mt-2">The King → The Word → The Chronicle → The Keeper → The Relics</p>
           </div>
         </div>
       </section>
 
-      {/* FOUR DOORS */}
       <section className="relative z-10 px-6 md:px-12 pb-16">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-6">
-            <p className="text-[11px] tracking-[0.5em] text-zinc-600">CHOOSE A DOOR</p>
-          </div>
-
+          <p className="text-center mb-6 text-[11px] tracking-[0.5em] text-zinc-600">CHOOSE A DOOR</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link href="/music" className="bg-[#0a0a0a] border border-zinc-800 hover:border-zinc-700 p-6 text-center transition-all hover:-translate-y-0.5">
-              <p className="text-xl">⚔️</p>
-              <h4 className="font-bold mt-2 text-sm tracking-wide">Hall of Relics</h4>
-              <p className="text-[10px] text-zinc-600 mt-1">Music is the artifact</p>
+            <Link href="/music" className="bg-[#0a0a0a] border border-amber-900/40 p-6 text-center shadow-[0_0_20px_rgba(120,80,20,0.1)]">
+              <p>⚔️</p><h4 className="font-bold mt-2 text-sm">Hall of Relics</h4><p className="text-[10px] text-zinc-600 mt-1">Music is the artifact</p>
+              <p className="text-[9px] text-amber-600/50 mt-2">3 RELICS REVEALED — ENTER</p>
             </Link>
-
-            <Link href="/chronicle" className="bg-[#0a0a0a] border border-zinc-800 hover:border-zinc-700 p-6 text-center transition-all hover:-translate-y-0.5">
-              <p className="text-xl">📖</p>
-              <h4 className="font-bold mt-2 text-sm tracking-wide">The Chronicle</h4>
-              <p className="text-[10px] text-zinc-600 mt-1">Story gives meaning</p>
-            </Link>
-
-            <Link href="/word" className="bg-[#0a0a0a] border border-amber-900/40 hover:border-amber-700/50 p-6 text-center shadow-[0_0_20px_rgba(120,80,20,0.1)] transition-all hover:-translate-y-0.5">
-              <p className="text-xl">✝️</p>
-              <h4 className="font-bold mt-2 text-sm tracking-wide">The Word</h4>
-              <p className="text-[10px] text-zinc-600 mt-1">Scripture gives foundation</p>
-              <p className="text-[10px] text-amber-600/60 mt-3 tracking-widest">✝️ OPEN THE WORD → THE RELICS AWAIT</p>
-            </Link>
-
-            <Link href="/library" className="bg-[#0a0a0a] border border-zinc-800 hover:border-zinc-700 p-6 text-center transition-all hover:-translate-y-0.5">
-              <p className="text-xl">📚</p>
-              <h4 className="font-bold mt-2 text-sm tracking-wide">The Library</h4>
-              <p className="text-[10px] text-zinc-600 mt-1">Books give depth</p>
-            </Link>
+            <Link href="/chronicle" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-center"><p>📖</p><h4 className="font-bold mt-2 text-sm">The Chronicle</h4><p className="text-[10px] text-zinc-600 mt-1">Story gives meaning</p></Link>
+            <Link href="/word" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-center"><p>✝️</p><h4 className="font-bold mt-2 text-sm">The Word</h4><p className="text-[10px] text-zinc-600 mt-1">Scripture gives foundation</p><p className="text-[10px] text-amber-600/60 mt-3 tracking-widest">✝️ OPEN THE WORD → THE RELICS AWAIT</p></Link>
+            <Link href="/library" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-center"><p>📚</p><h4 className="font-bold mt-2 text-sm">The Library</h4><p className="text-[10px] text-zinc-600 mt-1">Books give depth</p></Link>
           </div>
-
           <div className="mt-16 text-center border-t border-amber-900/10 pt-8">
             <p className="font-black tracking-[0.5em] text-amber-700/50 text-sm">THE CHRONICLE IS OPEN</p>
             <p className="text-[11px] text-zinc-600 mt-4">Chapter I — Foundation Complete • Chapter II — Testing Awaits</p>
