@@ -1,2 +1,0 @@
-import Link from "next/link"
-export default function Header(){ return <header className="sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-white/10"><div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between"><Link href="/" className="font-black text-xs tracking-widest">RUNNINGWOLF • STORMBREAKERS</Link><Link href="/armory" className="text-[11px] tracking-widest text-white/60">⚔️ ARMORY</Link></div></header> }
