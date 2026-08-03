@@ -39,14 +39,7 @@ export default function HomePage() {
 
             <div className="mt-10 text-center">
               <p className="text-[10px] tracking-[0.4em] text-zinc-600">RUNNINGWOLF — KEEPER OF THE CHRONICLE</p>
-              <p className="text-[11px] italic text-zinc-600 mt-2 max-w-[340px]">The guide, the witness, the storyteller, the keeper of the pages. Not the hero above the story. The power comes from the King, not the warrior.</p>
-              <div className="mt-4 text-[10px] text-zinc-700 space-y-1">
-                <p>Wolf-fur → endurance, wilderness, identity</p>
-                <p>Leather & iron → craftsmanship, forging, battle</p>
-                <p>Open Bible → foundation</p>
-                <p>Blade beside Bible → Word guides weapon</p>
-                <p>Storm/lightning → trials, transformation</p>
-              </div>
+              <p className="text-[11px] italic text-zinc-600 mt-2 max-w-[340px]">Not the hero above the story. The power comes from the King, not the warrior.</p>
             </div>
           </div>
 
@@ -62,62 +55,55 @@ export default function HomePage() {
             </div>
 
             <p className="mt-6 text-xs tracking-[0.3em] text-zinc-500">One Canon • Nineteen Relics • One King</p>
+            <p className="mt-2 text-[11px] italic text-zinc-700">A book still being written — curiosity, return visits, anticipation, room for growth.</p>
           </div>
         </div>
       </section>
 
       <section className="relative z-10 px-6 md:px-12 pb-8">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-6">
-            <p className="text-[11px] tracking-[0.5em] text-zinc-600">FOUR DOORS • ILLUMINATED ARCHIVE</p>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link href="/music" className="bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all">
-              <p>⚔️</p><h4 className="font-bold mt-2">Hall of Relics</h4><p className="text-[11px] text-zinc-600 mt-1">Music • Songs become discoveries</p>
+            <Link href="/music" className="bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all hover:-translate-y-0.5">
+              <p>⚔️</p><h4 className="font-bold mt-2">Hall of Relics</h4><p className="text-[11px] text-zinc-600 mt-1">Music is the artifact</p>
             </Link>
-            <Link href="/chronicle" className="bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all">
-              <p>📖</p><h4 className="font-bold mt-2">The Chronicle</h4><p className="text-[11px] text-zinc-600 mt-1">Testimony • Stories give meaning</p>
+            <Link href="/chronicle" className="bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all hover:-translate-y-0.5">
+              <p>📖</p><h4 className="font-bold mt-2">The Chronicle</h4><p className="text-[11px] text-zinc-600 mt-1">Story gives meaning</p>
             </Link>
-            <Link href="/word" className="bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all">
-              <p>✝️</p><h4 className="font-bold mt-2">The Word</h4><p className="text-[11px] text-zinc-600 mt-1">Scripture • Foundation</p>
+            <Link href="/word" className="bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all hover:-translate-y-0.5">
+              <p>✝️</p><h4 className="font-bold mt-2">The Word</h4><p className="text-[11px] text-zinc-600 mt-1">Scripture gives foundation</p>
             </Link>
-            <Link href="/library" className="bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all">
-              <p>📚</p><h4 className="font-bold mt-2">The Library</h4><p className="text-[11px] text-zinc-600 mt-1">Books • Depth</p>
+            <Link href="/library" className="bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all hover:-translate-y-0.5">
+              <p>📚</p><h4 className="font-bold mt-2">The Library</h4><p className="text-[11px] text-zinc-600 mt-1">Books give depth</p>
             </Link>
           </div>
 
-          {/* MYSTERY CHAPTERS - NOT ALL 19 */}
           <div className="mt-12 max-w-3xl mx-auto">
-            <p className="text-center text-[10px] tracking-[0.4em] text-zinc-700 mb-4">A BOOK STILL BEING WRITTEN</p>
             <div className="grid md:grid-cols-3 gap-3">
               <div className="bg-black border border-amber-900/20 p-4">
                 <p className="text-[10px] tracking-widest text-amber-700/60">CHAPTER I — FOUNDATION ✓</p>
-                <div className="mt-2 space-y-1 text-[11px] text-zinc-400">
-                  <p>✓ Blade</p><p>✓ Lord of Lords</p><p>✓ Blood of Cross</p>
-                </div>
+                <div className="mt-2 space-y-1 text-[11px] text-zinc-400"><p>✓ Blade</p><p>✓ Lord of Lords</p><p>✓ Blood of Cross</p></div>
               </div>
               <div className="bg-black border border-zinc-800 p-4 opacity-80">
                 <p className="text-[10px] tracking-widest text-zinc-600">CHAPTER II — TESTING</p>
-                <div className="mt-2 space-y-1 text-[11px] text-zinc-600">
-                  <p>🔒 Wilderness</p><p>🔒 Shadow</p><p>🔒 Oath</p>
-                </div>
+                <div className="mt-2 space-y-1 text-[11px] text-zinc-600"><p>🔒 Wilderness</p><p>🔒 Shadow</p><p>🔒 Oath</p></div>
               </div>
               <div className="bg-black border border-zinc-900 p-4 opacity-40">
                 <p className="text-[10px] tracking-widest text-zinc-700">CHAPTER III — SEALED</p>
-                <div className="mt-2 text-[11px] text-zinc-700">Sealed until revealed • Mystery keeps visitors returning</div>
+                <p className="text-[11px] text-zinc-700 mt-2">Sealed until revealed</p>
               </div>
             </div>
 
             <div className="mt-6 bg-[#0a0a0a] border border-zinc-800 p-4 text-center">
-              <p className="text-[10px] tracking-[0.3em] text-zinc-600">RELIC FORMULA — ENDLESS FORMAT FOR 19 RELEASES</p>
-              <p className="text-[11px] text-zinc-500 mt-2">Image ↓ Scripture ↓ Story ↓ Song ↓ Video ↓ Reflection = Each song becomes a page</p>
+              <p className="text-[10px] tracking-[0.3em] text-zinc-600">RELIC ENGINE — Image → Scripture → Story → Song → Video → Reflection</p>
             </div>
           </div>
 
-          <div className="mt-10 text-center border-t border-amber-900/10 pt-6">
-            <p className="italic text-zinc-500 text-sm">Viking is the binding. Scripture is the pages. The King is the center.</p>
-            <p className="text-[10px] tracking-[0.4em] text-zinc-700 mt-2">FINAL 100/100 • CONCEPT 10 • CHARACTER 10 • STORY 10 • FOUNDATION 10 • VISUAL 10 • WORLD 10 • UX 10</p>
+          {/* IN-UNIVERSE SEAL - NO SCORE */}
+          <div className="mt-12 text-center border-t border-amber-900/10 pt-8">
+            <p className="font-black tracking-[0.4em] text-amber-700/60 text-sm">THE CHRONICLE IS OPEN</p>
+            <p className="tracking-[0.3em] text-zinc-600 text-xs mt-2">THE FORGE CONTINUES • THE STORY IS STILL BEING WRITTEN</p>
+            <p className="italic text-zinc-600 text-sm mt-4">Viking is the binding. Scripture is the pages. The King is the center.</p>
+            <p className="text-[10px] tracking-[0.4em] text-zinc-800 mt-3">ONE CANON • NINETEEN RELICS • ONE KING • KEEPER OF PAGES</p>
           </div>
         </div>
       </section>
