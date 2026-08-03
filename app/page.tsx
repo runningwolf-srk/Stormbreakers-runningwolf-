@@ -42,6 +42,7 @@ export default function HomePage() {
               <p className="text-sm text-amber-600/60 mt-2">The Word guides the blade.</p>
             </div>
             <p className="mt-6 text-[11px] tracking-[0.4em] text-zinc-500">One Canon • Nineteen Relics • One King</p>
+            <p className="text-[10px] text-zinc-700 mt-2">The King → The Word → The Chronicle → The Keeper → The Relics</p>
           </div>
         </div>
       </section>
@@ -52,10 +53,13 @@ export default function HomePage() {
             <p className="text-[11px] tracking-[0.5em] text-zinc-600">CHOOSE A DOOR</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link href="/music" className="bg-[#0a0a0a] border border-zinc-800 hover:border-amber-900/30 p-6 text-center"><p>⚔️</p><h4 className="font-bold mt-2 text-sm">Hall of Relics</h4><p className="text-[10px] text-zinc-600 mt-1">Music is the artifact</p></Link>
-            <Link href="/chronicle" className="bg-[#0a0a0a] border border-zinc-800 hover:border-amber-900/30 p-6 text-center"><p>📖</p><h4 className="font-bold mt-2 text-sm">The Chronicle</h4><p className="text-[10px] text-zinc-600 mt-1">Story gives meaning</p></Link>
-            <Link href="/word" className="bg-[#0a0a0a] border border-amber-900/40 hover:border-amber-700/50 p-6 text-center shadow-lg"><p>✝️</p><h4 className="font-bold mt-2 text-sm">The Word</h4><p className="text-[10px] text-amber-700/60 mt-1">Scripture gives foundation</p><p className="text-[9px] text-zinc-700 mt-2">ENTER → RELIC ARCHIVE INSIDE</p></Link>
-            <Link href="/library" className="bg-[#0a0a0a] border border-zinc-800 hover:border-amber-900/30 p-6 text-center"><p>📚</p><h4 className="font-bold mt-2 text-sm">The Library</h4><p className="text-[10px] text-zinc-600 mt-1">Books give depth</p></Link>
+            <Link href="/music" className="bg-[#0a0a0a] border border-zinc-800 hover:border-zinc-700 p-6 text-center transition-all"><p>⚔️</p><h4 className="font-bold mt-2 text-sm">Hall of Relics</h4><p className="text-[10px] text-zinc-600 mt-1">Music is the artifact</p></Link>
+            <Link href="/chronicle" className="bg-[#0a0a0a] border border-zinc-800 hover:border-zinc-700 p-6 text-center transition-all"><p>📖</p><h4 className="font-bold mt-2 text-sm">The Chronicle</h4><p className="text-[10px] text-zinc-600 mt-1">Story gives meaning</p></Link>
+            <Link href="/word" className="bg-[#0a0a0a] border border-amber-900/40 hover:border-amber-700/50 p-6 text-center shadow-[0_0_20px_rgba(120,80,20,0.1)] transition-all">
+              <p>✝️</p><h4 className="font-bold mt-2 text-sm">The Word</h4><p className="text-[10px] text-zinc-600 mt-1">Scripture gives foundation</p>
+              <p className="text-[10px] text-amber-600/60 mt-3 tracking-widest">✝️ OPEN THE WORD → THE RELICS AWAIT</p>
+            </Link>
+            <Link href="/library" className="bg-[#0a0a0a] border border-zinc-800 hover:border-zinc-700 p-6 text-center transition-all"><p>📚</p><h4 className="font-bold mt-2 text-sm">The Library</h4><p className="text-[10px] text-zinc-600 mt-1">Books give depth</p></Link>
           </div>
 
           <div className="mt-16 text-center border-t border-amber-900/10 pt-8">
