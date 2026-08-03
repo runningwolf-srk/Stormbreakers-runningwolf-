@@ -5,9 +5,8 @@ export default function Page() {
       <div className="max-w-3xl mx-auto">
         <Link href="/" className="text-[11px] tracking-widest text-zinc-500 hover:text-zinc-300">← Cover</Link>
         <p className="mt-8 text-[11px] tracking-[0.5em] text-amber-700/60">📖 THE CHRONICLE</p>
-        <h1 className="text-3xl font-black mt-2">Story gives meaning</h1>
-        <p className="text-sm text-zinc-500 mt-4 leading-relaxed">Testimony behind each relic. Why each had to be forged. This is narrative, not repeat of music page.</p>
-        <div className="mt-10 bg-[#0a0a0a] border border-zinc-800 p-8"><p className="text-[12px] text-zinc-600 leading-relaxed">Chapter I — Three relics revealed. Keeper steps forward as witness, not hero. Word guides blade.</p></div>
+        <h1 className="text-3xl font-black mt-2">Stories give meaning</h1>
+        <p className="text-sm text-zinc-500 mt-4">Long-form narrative — why each relic had to be forged.</p>
       </div>
     </main>
   );
