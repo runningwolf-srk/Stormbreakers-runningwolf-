@@ -13,9 +13,9 @@ export default function Hall() {
         </div>
 
         <div className="mt-10 grid md:grid-cols-3 gap-4 text-left">
-          <div className="border border-amber-900/20 bg-zinc-900/30 p-7 rounded-xl"><p className="text-[9px] text-zinc-600">RELIC I</p><p className="font-bold mt-2">⚔️ RunningWolf Blade</p><p className="text-xs text-amber-700/60">Hebrews 4:12</p></div>
-          <div className="border border-amber-900/20 bg-zinc-900/30 p-7 rounded-xl"><p className="text-[9px] text-zinc-600">RELIC II</p><p className="font-bold mt-2">👑 Lord of Lords</p><p className="text-xs text-amber-700/60">Revelation 19:16</p></div>
-          <div className="border border-amber-900/20 bg-zinc-900/30 p-7 rounded-xl"><p className="text-[9px] text-zinc-600">RELIC III</p><p className="font-bold mt-2">✝️ Blood of Cross</p><p className="text-xs text-amber-700/60">Colossians 1:20</p></div>
+          <div className="border border-amber-900/20 bg-zinc-900/30 p-7 rounded-xl"><p className="text-[9px] text-zinc-600">RELIC I</p><p className="font-bold mt-2">⚔️ RunningWolf Blade</p><p className="text-xs text-amber-700/60 mt-1">Hebrews 4:12</p></div>
+          <div className="border border-amber-900/20 bg-zinc-900/30 p-7 rounded-xl"><p className="text-[9px] text-zinc-600">RELIC II</p><p className="font-bold mt-2">👑 Lord of Lords</p><p className="text-xs text-amber-700/60 mt-1">Revelation 19:16</p></div>
+          <div className="border border-amber-900/20 bg-zinc-900/30 p-7 rounded-xl"><p className="text-[9px] text-zinc-600">RELIC III</p><p className="font-bold mt-2">✝️ Blood of Cross</p><p className="text-xs text-amber-700/60 mt-1">Colossians 1:20</p></div>
         </div>
 
         <div className="mt-16 border border-dashed border-amber-900/20 rounded-xl p-12 bg-zinc-900/10">
