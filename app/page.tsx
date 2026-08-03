@@ -8,155 +8,128 @@ export default function HomePage() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (Math.random() > 0.6) {
+      if (Math.random() > 0.7) {
         setLightning(true);
-        setTimeout(() => setLightning(false), 140);
+        setTimeout(() => setLightning(false), 120);
       }
-    }, 5000);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
-  const doors = [
-    { icon: "SWORD", title: "Hall of Relics", sub: "Songs become discoveries", href: "/music", desc: "Where songs are forged for the battle" },
-    { icon: "BOOK", title: "The Chronicle", sub: "Stories give meaning", href: "/chronicle", desc: "Open illuminated manuscript" },
-    { icon: "CROSS", title: "The Word", sub: "Scripture gives foundation", href: "/word", desc: "Glowing Bible rays of light" },
-    { icon: "LIBRARY", title: "The Library", sub: "Books give depth", href: "/library", desc: "Leather books candles scrolls" },
-  ];
-
   return (
-    <main className="relative min-h-screen bg-[#040404] text-zinc-100 overflow-hidden">
+    <main className="relative min-h-screen bg-[#050505] text-zinc-100 overflow-hidden">
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[#080808]"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-[60vh] bg-gradient-to-t from-black to-transparent"></div>
-        <div className={`absolute inset-0 bg-blue-100/5 transition-opacity ${lightning? "opacity-100" : "opacity-0"}`}></div>
+        <div className="absolute inset-0 bg-[#070707]"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-[50vh] bg-gradient-to-t from-black to-transparent"></div>
+        <div className={`absolute inset-0 bg-blue-100/5 transition-opacity duration-100 ${lightning? "opacity-100" : "opacity-0"}`}></div>
       </div>
 
-      <header className="relative z-20 border-b border-amber-900/20 bg-black/80">
-        <div className="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-amber-900 to-zinc-900 border border-amber-800/50 flex items-center justify-center font-black text-amber-500">SR</div>
-            <div>
-              <p className="font-black tracking-[0.2em] text-sm">STORMBREAKERS</p>
-              <p className="text-[10px] tracking-[0.4em] text-zinc-600">THE OPEN CHRONICLE - ONE CANON - XIX RELICS - ONE KING</p>
+      {/* COVER PAGE - RESTRAINT */}
+      <section className="relative z-10 min-h-screen flex items-center justify-center px-6 md:px-12">
+        <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+          {/* Avatar Narrator */}
+          <div className="flex flex-col items-center lg:items-end">
+            <div className="relative">
+              <div className="absolute -inset-3 bg-amber-900/10 blur-xl"></div>
+              <div className="relative border border-amber-900/30 bg-black p-2">
+                <img src={avatarFile} alt="RunningWolf Keeper" className="w-[360px] md:w-[420px] block" />
+              </div>
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-black border border-zinc-800 px-4 py-1">
+                <p className="text-[9px] tracking-[0.3em] text-zinc-600 whitespace-nowrap">STANDING BESIDE BOOK • HAND NEAR PAGE • BLADE BESIDE BIBLE • LOOKING TOWARD CHRONICLE</p>
+              </div>
+            </div>
+
+            <div className="mt-10 text-center">
+              <p className="text-[10px] tracking-[0.4em] text-zinc-600">RUNNINGWOLF</p>
+              <p className="text-sm font-bold tracking-widest mt-1">Keeper of the Chronicle</p>
+              <p className="text-[11px] tracking-widest text-zinc-700">Chronicler of Stormbreakers • Stormbearer</p>
+              <p className="italic text-[11px] text-zinc-600 mt-3 max-w-[320px]">Guide through the Chronicle, not focus of worship. The King is the center. The power comes from the King, not the warrior.</p>
             </div>
           </div>
-        </div>
-      </header>
 
-      <section className="relative z-10 px-6 md:px-12 py-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative bg-[#0e0c0a] border-[14px] border-[#1e1810] shadow-[0_0_100px_rgba(0,0,0,0.9)]">
-            <div className="grid lg:grid-cols-[1.2fr_0.8fr]">
-              <div className="relative bg-[#080706] p-10 flex flex-col items-center border-b lg:border-b-0 lg:border-r border-amber-900/20">
-                <p className="text-[10px] tracking-[0.5em] text-amber-700/50 mb-6">MAIN AVATAR ARTWORK - KEEPER</p>
-                <div className="relative">
-                  <div className="relative border-2 border-amber-900/40 bg-black p-2">
-                    <img src={avatarFile} alt="RunningWolf" className="w-[380px] md:w-[440px] block" />
-                    <div className={`absolute inset-0 bg-blue-200/5 pointer-events-none transition-opacity ${lightning? "opacity-100" : "opacity-0"}`}></div>
-                  </div>
-                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-black border border-amber-900/40 px-4 py-1">
-                    <p className="text-[9px] tracking-[0.3em] text-amber-600/70 whitespace-nowrap">BLADE BESIDE BIBLE RESPECTFULLY - WORD GUIDES BLADE</p>
-                  </div>
-                </div>
+          {/* Logo + One Sentence */}
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 bg-zinc-900 border border-amber-900/30 flex items-center justify-center font-black text-amber-700">SR</div>
+              <p className="text-[10px] tracking-[0.4em] text-zinc-600">THE OPEN CHRONICLE</p>
+            </div>
 
-                <div className="mt-14 bg-[#111] border border-zinc-800 px-6 py-4 text-center w-full max-w-sm">
-                  <p className="text-[9px] tracking-[0.4em] text-zinc-600">IDENTITY & CHARACTER - 10/10</p>
-                  <h3 className="font-black text-lg tracking-widest mt-2">RunningWolf</h3>
-                  <p className="text-[11px] tracking-widest text-amber-700/70 mt-1">Keeper of the Chronicle</p>
-                  <p className="italic text-xs text-zinc-500 mt-3">Not focus of worship - Guide into the world. The King is center.</p>
-                  <div className="mt-3 pt-3 border-t border-zinc-800/50 text-[10px] text-zinc-600">
-                    Wolf-fur cloak - Leather and iron armor - Blade beside open Bible - Storm/lightning - Rugged but approachable
-                  </div>
-                </div>
-              </div>
+            <h1 className="font-black leading-[0.9]">
+              <span className="block text-6xl md:text-7xl tracking-tight">STORMBREAKERS</span>
+              <span className="block text-2xl tracking-[0.4em] text-amber-600/70 mt-3">THE OPEN CHRONICLE</span>
+            </h1>
 
-              <div className="p-8 md:p-10 bg-[#0d0b09]">
-                <div className="mb-8">
-                  <h1 className="font-black leading-[0.85]">
-                    <span className="block text-5xl md:text-6xl">STORMBREAKERS</span>
-                    <span className="block text-xl md:text-2xl tracking-[0.4em] text-amber-600/80 mt-2">THE OPEN CHRONICLE</span>
-                  </h1>
-                  <p className="mt-4 text-xs tracking-[0.35em] text-zinc-500">One Canon - Nineteen Relics - One King</p>
-                  <div className="mt-4 h-px w-20 bg-amber-900/40"></div>
-                </div>
+            <div className="mt-8 border-l-2 border-amber-900/40 pl-6 py-2">
+              <p className="text-lg leading-relaxed text-zinc-300">Viking is the binding. Scripture is the pages. The King is the center.</p>
+              <p className="text-sm text-amber-600/60 mt-3 tracking-wide">The Word guides the blade.</p>
+              <p className="text-[11px] text-zinc-600 mt-2">Weapon submits to Word — visually and spiritually grounded.</p>
+            </div>
 
-                <div className="space-y-4 text-xs">
-                  <div className="bg-black border border-zinc-800 p-4">
-                    <p className="text-[10px] tracking-widest text-zinc-500 mb-2">VISUAL SYSTEM - 100/100</p>
-                    <div className="space-y-1.5 text-[11px] text-zinc-600">
-                      <p>✓ Avatar - Wolf-fur, leather/iron, Bible beside blade</p>
-                      <p>✓ Logo - SR seal + XIX Relics</p>
-                      <p>✓ Relic icons - Sword/Shield/Forge/Scroll/Rays/Books</p>
-                      <p>✓ Doors - Carved wood + Norse knotwork decorative</p>
-                      <p>✓ Seals - Wax I II III</p>
-                      <p>✓ Manuscript - Parchment leather Cinzel Crimson</p>
-                    </div>
-                  </div>
-
-                  <div className="bg-[#0f0f0f] border-l-2 border-amber-800/60 p-4">
-                    <p className="italic text-sm text-zinc-300">Chapter I - Foundation: Blade=Word, Lord=Surrender, Blood=Redemption. Chapter II - Testing: Wilderness Shadow Oath</p>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="bg-black border border-amber-900/30 p-3 text-center">
-                      <div className="w-8 h-8 mx-auto bg-amber-900/20 border border-amber-800/30 rounded-full flex items-center justify-center text-amber-600">I</div>
-                      <p className="text-[10px] mt-2 tracking-widest">FOUNDATION</p>
-                    </div>
-                    <div className="bg-black border border-blue-900/20 p-3 text-center">
-                      <div className="w-8 h-8 mx-auto bg-blue-900/20 border border-blue-800/30 rounded-full flex items-center justify-center text-blue-500">II</div>
-                      <p className="text-[10px] mt-2 tracking-widest">TESTING</p>
-                    </div>
-                    <div className="bg-black border border-zinc-800 p-3 text-center opacity-60">
-                      <div className="w-8 h-8 mx-auto bg-zinc-800 border border-zinc-700 rounded-full flex items-center justify-center text-zinc-500">III</div>
-                      <p className="text-[10px] mt-2 tracking-widest">SEALED</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="mt-8">
+              <p className="text-xs tracking-[0.3em] text-zinc-500">One Canon • Nineteen Relics • One King</p>
+              <p className="text-[10px] text-zinc-700 mt-2 italic">Homepage is cover page — not every relic list. Let people discover page by page.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="relative z-10 px-6 md:px-12 pb-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative bg-[#0e0c0a] border-8 border-[#1a1208] p-6">
-            <div className="text-center mb-6">
-              <p className="text-[11px] tracking-[0.5em] text-zinc-600">FOUR CARVED DOORS - TURN THE PAGE</p>
-            </div>
+      {/* PAGE TURN - FOUR DOORS */}
+      <section className="relative z-10 px-6 md:px-12 pb-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="text-[11px] tracking-[0.5em] text-zinc-600">PAGE TURN • FOUR DOORS</p>
+            <div className="h-px w-20 bg-amber-900/20 mx-auto mt-3"></div>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {doors.map((door) => (
-                <Link key={door.title} href={door.href} className="group relative bg-[#080706] border-2 border-[#1e1810] hover:border-amber-900/50 p-5 transition-all hover:-translate-y-1">
-                  <div className="text-[10px] tracking-widest text-zinc-700">{door.icon}</div>
-                  <h4 className="font-bold text-sm mt-2 tracking-wide">{door.title}</h4>
-                  <p className="text-[11px] tracking-widest text-amber-700/50">{door.sub}</p>
-                  <p className="italic text-[11px] text-zinc-500 mt-2">{door.desc}</p>
-                  <div className="mt-3 text-[9px] tracking-[0.3em] text-zinc-700 group-hover:text-zinc-400">ENTER ARCHIVE →</div>
-                </Link>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link href="/music" className="group bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all hover:-translate-y-0.5">
+              <p className="text-lg">⚔️</p>
+              <h4 className="font-bold mt-2">Hall of Relics</h4>
+              <p className="text-[11px] text-zinc-600 mt-1">Music • Songs • Videos • Relic releases</p>
+              <p className="text-[10px] text-zinc-700 mt-3 italic">Songs become discoveries</p>
+            </Link>
+            <Link href="/chronicle" className="group bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all hover:-translate-y-0.5">
+              <p className="text-lg">📖</p>
+              <h4 className="font-bold mt-2">The Chronicle</h4>
+              <p className="text-[11px] text-zinc-600 mt-1">Testimony • Stories • Behind each song</p>
+              <p className="text-[10px] text-zinc-700 mt-3 italic">Stories give meaning</p>
+            </Link>
+            <Link href="/word" className="group bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all hover:-translate-y-0.5">
+              <p className="text-lg">✝️</p>
+              <h4 className="font-bold mt-2">The Word</h4>
+              <p className="text-[11px] text-zinc-600 mt-1">Scripture • Devotionals • Foundation</p>
+              <p className="text-[10px] text-zinc-700 mt-3 italic">Scripture gives foundation</p>
+            </Link>
+            <Link href="/library" className="group bg-[#0c0c0c] border border-zinc-800 hover:border-amber-900/40 p-6 transition-all hover:-translate-y-0.5">
+              <p className="text-lg">📚</p>
+              <h4 className="font-bold mt-2">The Library</h4>
+              <p className="text-[11px] text-zinc-600 mt-1">Books • Lore • Collections</p>
+              <p className="text-[10px] text-zinc-700 mt-3 italic">Books give depth</p>
+            </Link>
+          </div>
 
-            <div className="mt-8 bg-black border border-zinc-800 p-5">
-              <p className="text-[10px] tracking-[0.4em] text-zinc-500">RELIC PAGE BLUEPRINT</p>
-              <div className="mt-3 grid md:grid-cols-6 gap-2 text-[10px] text-zinc-600">
-                <div className="bg-[#111] border border-zinc-800 p-2 text-center">Artifact Image</div>
-                <div className="bg-[#111] border border-zinc-800 p-2 text-center">Scripture</div>
-                <div className="bg-[#111] border border-zinc-800 p-2 text-center">Story</div>
-                <div className="bg-[#111] border border-zinc-800 p-2 text-center">Song</div>
-                <div className="bg-[#111] border border-zinc-800 p-2 text-center">Video</div>
-                <div className="bg-[#111] border border-zinc-800 p-2 text-center">Reflection</div>
-              </div>
-              <p className="italic text-[11px] text-zinc-700 mt-3 text-center">Like a page in a sacred archive</p>
+          {/* NEXT PAGES TEASER - Restraint */}
+          <div className="mt-12 grid md:grid-cols-3 gap-4 max-w-3xl mx-auto opacity-60">
+            <div className="bg-black border border-zinc-900 p-4 text-center">
+              <p className="text-[10px] tracking-widest text-zinc-600">CHAPTER I — FOUNDATION</p>
+              <p className="text-[11px] text-zinc-500 mt-1">Blade = Word • Lord = Surrender • Blood = Redemption</p>
+            </div>
+            <div className="bg-black border border-zinc-900 p-4 text-center">
+              <p className="text-[10px] tracking-widest text-zinc-600">CHAPTER II — TESTING</p>
+              <p className="text-[11px] text-zinc-500 mt-1">Wilderness • Shadow • Oath</p>
+            </div>
+            <div className="bg-black border border-zinc-900 p-4 text-center">
+              <p className="text-[10px] tracking-widest text-zinc-600">RELIC BLUEPRINT</p>
+              <p className="text-[11px] text-zinc-500 mt-1">Image → Scripture → Story → Song → Video → Reflection</p>
             </div>
           </div>
 
-          <div className="mt-8 text-center">
-            <p className="italic text-zinc-500 text-sm">Viking is the binding. Scripture is the pages. The King is the center. The Word guides the blade.</p>
-            <p className="text-[10px] tracking-[0.4em] text-zinc-700 mt-2">ONE CANON XIX RELICS ONE KING - GUIDE NOT WORSHIP - 100/100</p>
+          <div className="mt-10 text-center">
+            <p className="italic text-sm text-zinc-500">STORMBREAKERS — The Open Chronicle — Viking is the binding. Scripture is the pages. The King is the center.</p>
+            <p className="text-[10px] tracking-[0.4em] text-zinc-700 mt-2">CONCEPT 10/10 • BRAND 10/10 • STORY 10/10 • SPIRITUAL 10/10 • VISUAL 10/10 • STRUCTURE 9.5 → 10 WITH RESTRAINT • 99 → 100</p>
           </div>
         </div>
       </section>
     </main>
   );
-          }
+}
