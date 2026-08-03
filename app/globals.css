@@ -1,5 +1,4 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html { background: black; }
-body { background: black; color: white; }
+html{background:#050505}
