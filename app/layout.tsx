@@ -1,12 +1,8 @@
 import "./globals.css";
 export const metadata = {
   title: "Stormbreakers - The Open Chronicle",
-  description: "The King gives the Word. The Word creates the Chronicle. The Chronicle is carried by the Keeper. The Keeper reveals the Relics.",
+  description: "The King gives the Word. The Word writes the Chronicle. The Chronicle is carried by the Keeper. The Keeper unveils the Relics.",
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body className="bg-[#040404] text-zinc-100 antialiased">{children}</body>
-    </html>
-  );
+  return (<html lang="en"><body className="bg-[#040404] text-zinc-100 antialiased">{children}</body></html>);
 }
