@@ -35,7 +35,7 @@ if(!r) return(
 <div className="text-5xl">🔒</div>
 <div className="mt-6 font-black tracking-widest">RELIC {String(slug).toUpperCase()}</div>
 <div className="mt-2 text-white/40 text-sm">THE NEXT CHAPTER HAS NOT BEEN FORGED</div>
-<div className="mt-3 text-[10px] font-mono text-white/20">🔒 SYMBOL NOT YET REVEALED — SEALED RELIC — PROPHECY AWAITS</div>
+<div className="mt-3 text-[10px] font-mono text-white/20">🔒 Symbol not yet revealed — SEALED RELIC — PROPHECY AWAITS</div>
 <a href="/" className="mt-8 inline-block border border-white/10 rounded-full px-6 py-3 text-xs">← RETURN TO FORGE</a>
 </div>
 </div>
@@ -61,6 +61,11 @@ return(
 <div className="mt-6 grid md:grid-cols-2 gap-4">
 <div className="border border-white/10 rounded-2xl p-6 bg-black"><div className="text-[10px] font-mono text-white/30 tracking-widest">MEANING</div><div className="mt-3 text-[13px] text-white/70 leading-relaxed">{r.meaning}</div></div>
 <div className="border border-[#D4AF37]/20 rounded-2xl p-6 bg-[#D4AF37]/5"><div className="text-[10px] font-mono text-[#D4AF37]/60 tracking-widest">TESTIMONY</div><div className="mt-3 text-[13px] text-white/60 leading-relaxed">{r.testimony}</div></div>
+</div>
+<div className="mt-10 border border-white/5 rounded-2xl p-6 bg-white/[0.02] text-center">
+<div className="text-[9px] font-mono text-white/20">RELIC CARD — TEMPLATE 100/100</div>
+<div className="mt-2 text-[10px] font-mono text-white/30">SYMBOL → SCRIPTURE → MEANING → TESTIMONY → SONG → VIDEO</div>
+<div className="mt-2 text-[9px] font-mono text-[#D4AF37]/30">Every relic tells one story. Every story points to one King.</div>
 </div>
 <div className="mt-10 text-center"><a href="/" className="bg-white text-black px-10 py-4 rounded-full font-black text-xs tracking-widest inline-block">← RETURN TO FORGE — ✝️ RELIC III — BLOOD OF CROSS — FORGED</a></div>
 </div>
