@@ -9,7 +9,7 @@ export default function Library() {
           <div className="border border-zinc-800 p-6 rounded-xl bg-zinc-900/20"><p className="font-bold text-sm">🔥 Devotionals</p><p className="text-xs text-zinc-500 mt-1">Lessons from each relic</p></div>
           <div className="border border-zinc-800 p-6 rounded-xl bg-zinc-900/20"><p className="font-bold text-sm">✝️ Study Guides</p><p className="text-xs text-zinc-500 mt-1">Scripture deep dives</p></div>
           <div className="border border-zinc-800 p-6 rounded-xl bg-zinc-900/20"><p className="font-bold text-sm">🎨 Artwork Archive</p><p className="text-xs text-zinc-500 mt-1">Relic symbols, seals, illustrations</p></div>
-          <div className="border border-zinc-800 p-6 rounded-xl bg-zinc-900/20 md:col-span-2"><p className="font-bold text-sm">🗺️ Canon Timeline</p><p className="text-xs text-zinc-500 mt-1">Chapter I → Chapter XIX</p></div>
+          <div className="border border-zinc-800 p-6 rounded-xl bg-zinc-900/20 md:col-span-2"><p className="font-bold text-sm">🗺️ Canon Timeline</p><p className="text-xs text-zinc-500 mt-1">Chapter I → Chapter XIX</p><p className="text-[10px] tracking-widest text-amber-700/40 mt-2">The Open Chronicle continues.</p></div>
         </div>
         <div className="mt-12"><a href="/" className="text-[10px] tracking-[0.5em] text-zinc-600 hover:text-zinc-300">← RETURN TO COVER</a></div>
       </div>
