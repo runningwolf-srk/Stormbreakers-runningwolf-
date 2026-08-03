@@ -24,7 +24,6 @@ export default function HomePage() {
         <div className={`absolute inset-0 bg-blue-100/5 transition-opacity ${lightning? "opacity-100" : "opacity-0"}`}></div>
       </div>
 
-      {/* COVER OF THE BOOK */}
       <section className="relative z-10 min-h-[90vh] flex items-center justify-center px-6 md:px-12">
         <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-center">
@@ -33,6 +32,7 @@ export default function HomePage() {
             </div>
             <p className="mt-6 text-[10px] tracking-[0.4em] text-zinc-600">RUNNINGWOLF — KEEPER OF THE CHRONICLE</p>
             <p className="text-[11px] italic text-zinc-700 mt-1">Guide • Witness • Storyteller • Keeper of Pages</p>
+            <p className="text-[10px] text-zinc-700 mt-3 max-w-[340px] text-center">Not the hero above the story. The power comes from the King, not the warrior.</p>
           </div>
 
           <div className="text-center lg:text-left">
@@ -54,34 +54,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FOUR DOORS - COVER ONLY */}
-      <section className="relative z-10 px-6 md:px-12 pb-12">
+      <section className="relative z-10 px-6 md:px-12 pb-16">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link href="/music" className="bg-[#0a0a0a] border border-zinc-800 hover:border-amber-900/30 p-6 transition-all text-center">
-              <p>⚔️</p><h4 className="font-bold mt-2 text-sm">Hall of Relics</h4><p className="text-[10px] text-zinc-600 mt-1">Music is the artifact</p>
+            <Link href="/music" className="bg-[#0a0a0a] border border-zinc-800 hover:border-amber-900/30 p-6 transition-all text-center group">
+              <p className="text-xl group-hover:scale-110 transition-transform">⚔️</p>
+              <h4 className="font-bold mt-2 text-sm tracking-wide">Hall of Relics</h4>
+              <p className="text-[10px] text-zinc-600 mt-1">Music is the artifact</p>
             </Link>
-            <Link href="/chronicle" className="bg-[#0a0a0a] border border-zinc-800 hover:border-amber-900/30 p-6 transition-all text-center">
-              <p>📖</p><h4 className="font-bold mt-2 text-sm">The Chronicle</h4><p className="text-[10px] text-zinc-600 mt-1">Story gives meaning</p>
+            <Link href="/chronicle" className="bg-[#0a0a0a] border border-zinc-800 hover:border-amber-900/30 p-6 transition-all text-center group">
+              <p className="text-xl group-hover:scale-110 transition-transform">📖</p>
+              <h4 className="font-bold mt-2 text-sm tracking-wide">The Chronicle</h4>
+              <p className="text-[10px] text-zinc-600 mt-1">Story gives meaning</p>
             </Link>
-            <Link href="/word" className="bg-[#0a0a0a] border border-zinc-800 hover:border-amber-900/30 p-6 transition-all text-center">
-              <p>✝️</p><h4 className="font-bold mt-2 text-sm">The Word</h4><p className="text-[10px] text-zinc-600 mt-1">Scripture gives foundation</p>
+            <Link href="/word" className="bg-[#0a0a0a] border border-zinc-800 hover:border-amber-900/30 p-6 transition-all text-center group">
+              <p className="text-xl group-hover:scale-110 transition-transform">✝️</p>
+              <h4 className="font-bold mt-2 text-sm tracking-wide">The Word</h4>
+              <p className="text-[10px] text-zinc-600 mt-1">Scripture gives foundation</p>
             </Link>
-            <Link href="/library" className="bg-[#0a0a0a] border border-zinc-800 hover:border-amber-900/30 p-6 transition-all text-center">
-              <p>📚</p><h4 className="font-bold mt-2 text-sm">The Library</h4><p className="text-[10px] text-zinc-600 mt-1">Books give depth</p>
+            <Link href="/library" className="bg-[#0a0a0a] border border-zinc-800 hover:border-amber-900/30 p-6 transition-all text-center group">
+              <p className="text-xl group-hover:scale-110 transition-transform">📚</p>
+              <h4 className="font-bold mt-2 text-sm tracking-wide">The Library</h4>
+              <p className="text-[10px] text-zinc-600 mt-1">Books give depth</p>
             </Link>
           </div>
 
-          {/* FINAL POLISH - MYSTERY ONLY */}
-          <div className="mt-16 text-center border-t border-amber-900/10 pt-10 pb-6">
-            <p className="font-black tracking-[0.5em] text-amber-700/60 text-sm">THE CHRONICLE IS OPEN</p>
-            <div className="mt-6 space-y-2 text-sm text-zinc-500">
+          <div className="mt-20 text-center border-t border-amber-900/10 pt-10">
+            <p className="font-black tracking-[0.5em] text-amber-700/50 text-sm">THE CHRONICLE IS OPEN</p>
+            <div className="mt-6 space-y-1 text-sm text-zinc-500">
               <p>Chapter I — Foundation Complete</p>
               <p>Chapter II — Testing Awaits</p>
-              <p className="italic text-zinc-600">The next page has not yet been written.</p>
+              <p className="italic text-zinc-600 mt-3">The next page has not yet been written.</p>
             </div>
-            <p className="mt-8 italic text-zinc-600 text-sm">Viking is the binding. Scripture is the pages. The King is the center.</p>
-            <p className="text-[9px] tracking-[0.4em] text-zinc-800 mt-4">NEXT: Keeper portrait • Stormbreakers seal • Four carved doors • Chapter seals • Relic artwork • Manuscript background</p>
+            <p className="italic text-zinc-700 text-xs mt-10">Viking is the binding. Scripture is the pages. The King is the center.</p>
           </div>
         </div>
       </section>
