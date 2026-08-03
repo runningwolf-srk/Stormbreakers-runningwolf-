@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function WordPage() {
   const relics = [
-    { num: "I", title: "RunningWolf Blade", verse: "Hebrews 4:12", status: "revealed", icon: "⚔️" },
-    { num: "II", title: "Lord of Lords", verse: "Revelation 19:16", status: "revealed", icon: "👑" },
-    { num: "III", title: "Blood of Cross", verse: "Colossians 1:20", status: "revealed", icon: "✝️" },
+    { num: "I", title: "RunningWolf Blade", verse: "Hebrews 4:12", icon: "⚔️" },
+    { num: "II", title: "Lord of Lords", verse: "Revelation 19:16", icon: "👑" },
+    { num: "III", title: "Blood of Cross", verse: "Colossians 1:20", icon: "✝️" },
   ];
 
   const sealed = [
@@ -31,7 +31,7 @@ export default function WordPage() {
 
           <div className="grid md:grid-cols-3 gap-4">
             {relics.map((r) => (
-              <div key={r.num} className="bg-[#111] border border-amber-900/30 p-5">
+              <div key={r.num} className="bg-[#111] border border-amber-900/30 p-5 hover:border-amber-800/50 transition-colors">
                 <div className="flex items-center justify-between">
                   <p className="text-[10px] tracking-widest text-zinc-600">RELIC {r.num}</p>
                   <p>{r.icon}</p>
