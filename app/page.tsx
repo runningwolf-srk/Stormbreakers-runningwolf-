@@ -6,17 +6,22 @@ export default function HomePage() {
   const avatarFile = "/763847743_1664822977910376_5098702148838621819_n-1.webp";
   const [lightning, setLightning] = useState(false);
   useEffect(() => {
-    const i = setInterval(() => { if(Math.random()>0.75){ setLightning(true); setTimeout(()=>setLightning(false),100); } },7000);
-    return ()=>clearInterval(i);
+    const i = setInterval(() => {
+      if (Math.random() > 0.75) {
+        setLightning(true);
+        setTimeout(() => setLightning(false), 100);
+      }
+    }, 7000);
+    return () => clearInterval(i);
   }, []);
+
   return (
     <main className="relative min-h-screen bg-[#040404] text-zinc-100 overflow-hidden">
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[#060606]" />
-        <div className={`absolute inset-0 bg-blue-100/5 transition-opacity duration-100 ${lightning?"opacity-100":"opacity-0"}`} />
+        <div className={`absolute inset-0 bg-blue-100/5 transition-opacity duration-100 ${lightning? "opacity-100" : "opacity-0"}`} />
       </div>
 
-      {/* MANUSCRIPT OPENING — EXACT FORMAT YOU WANTED */}
       <section className="relative z-10 min-h-[88vh] flex flex-col items-center justify-center px-6 text-center">
         <div className="border border-amber-900/20 bg-black p-2 shadow-[0_0_50px_rgba(0,0,0,0.9)]">
           <img src={avatarFile} alt="RunningWolf" className="w-[280px] md:w-[320px] block object-cover" />
@@ -53,14 +58,13 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto">
           <p className="text-center text-[11px] tracking-[0.5em] text-zinc-600 mb-6">CHOOSE A DOOR</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <Link href="/music" className="bg-[#0a0a0a] border border-amber-900/30 p-6 text-left hover:border-amber-700/50 transition-all group">
-              <p className="text-sm">⚔️ HALL OF RELICS</p><p className="text-[11px] text-zinc-500 mt-1 group-hover:text-zinc-400">Songs become artifacts</p>
+            <Link href="/music" className="bg-[#0a0a0a] border border-amber-900/30 p-6 text-left hover:border-amber-700/50">
+              <p className="text-sm">⚔️ HALL OF RELICS</p><p className="text-[11px] text-zinc-500 mt-1">Songs become artifacts</p>
             </Link>
             <Link href="/chronicle" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-left hover:border-zinc-700"><p className="text-sm">📖 THE CHRONICLE</p><p className="text-[11px] text-zinc-500 mt-1">Stories reveal meaning</p></Link>
             <Link href="/word" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-left hover:border-zinc-700"><p className="text-sm">✝️ THE WORD</p><p className="text-[11px] text-zinc-500 mt-1">Scripture gives foundation</p></Link>
             <Link href="/library" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-left hover:border-zinc-700"><p className="text-sm">📚 THE LIBRARY</p><p className="text-[11px] text-zinc-500 mt-1">Knowledge gives depth</p></Link>
           </div>
-
           <div className="mt-20 text-center border-t border-amber-900/10 pt-8">
             <p className="text-[10px] tracking-[0.3em] text-zinc-600">Cover → Choose Door → Hear Relic → Understand Chronicle → Root in Word → Go Deeper Library</p>
             <p className="text-[10px] tracking-[0.4em] text-zinc-700 mt-6">Chapter I — Foundation Complete • Chapter II — Testing Awaits</p>
