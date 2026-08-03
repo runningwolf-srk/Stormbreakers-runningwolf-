@@ -17,7 +17,7 @@ export default function Page() {
               <p className="text-[10px] text-zinc-600">RELIC {s.r} — {s.t}</p>
               <p className="text-amber-600/70 text-sm font-bold mt-2">{s.v}</p>
               <p className="text-zinc-300 text-[13px] mt-3 italic">“{s.txt}”</p>
-              <p className="text-[10px] text-zinc-600 mt-4">Artifact ↓ Scripture ↓ Story ↓ Song ↓ Video ↓ Reflection</p>
+              <p className="text-[10px] text-zinc-600 mt-4">Artifact → Scripture → Story → Song → Video → Reflection</p>
             </div>
           ))}
         </div>
