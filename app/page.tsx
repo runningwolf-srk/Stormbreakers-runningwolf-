@@ -23,7 +23,7 @@ export default function HomePage() {
       <section className="relative z-10 min-h-[85vh] flex items-center justify-center px-6 md:px-12">
         <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-center">
-            <div className="relative border border-amber-900/20 bg-black p-2">
+            <div className="border border-amber-900/20 bg-black p-2">
               <img src={avatarFile} alt="RunningWolf Keeper" className="w-[380px] md:w-[440px] block object-cover" />
             </div>
             <p className="mt-6 text-[10px] tracking-[0.4em] text-zinc-600">RUNNINGWOLF — KEEPER OF THE CHRONICLE</p>
@@ -44,22 +44,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative z-10 px-6 md:px-12 pb-16">
+      <section className="relative z-10 px-6 md:px-12 pb-8">
         <div className="max-w-5xl mx-auto">
           <p className="text-center mb-6 text-[11px] tracking-[0.5em] text-zinc-600">CHOOSE A DOOR</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link href="/music" className="bg-[#0a0a0a] border border-amber-900/40 p-6 text-center shadow-[0_0_20px_rgba(120,80,20,0.1)]">
-              <p>⚔️</p><h4 className="font-bold mt-2 text-sm">Hall of Relics</h4><p className="text-[10px] text-zinc-600 mt-1">Music is the artifact</p>
-              <p className="text-[9px] text-amber-600/50 mt-2">3 RELICS REVEALED — ENTER</p>
+            <Link href="/music" className="bg-[#0a0a0a] border border-amber-900/40 p-6 text-center shadow-[0_0_20px_rgba(120,80,20,0.1)] hover:-translate-y-0.5 transition-all">
+              <p>⚔️</p><h4 className="font-bold mt-2 text-sm">Hall of Relics</h4><p className="text-[10px] text-zinc-600 mt-1">Music is the artifact</p><p className="text-[9px] text-amber-600/50 mt-2">3 RELICS REVEALED — ENTER</p>
             </Link>
-            <Link href="/chronicle" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-center"><p>📖</p><h4 className="font-bold mt-2 text-sm">The Chronicle</h4><p className="text-[10px] text-zinc-600 mt-1">Story gives meaning</p></Link>
-            <Link href="/word" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-center"><p>✝️</p><h4 className="font-bold mt-2 text-sm">The Word</h4><p className="text-[10px] text-zinc-600 mt-1">Scripture gives foundation</p><p className="text-[10px] text-amber-600/60 mt-3 tracking-widest">✝️ OPEN THE WORD → THE RELICS AWAIT</p></Link>
-            <Link href="/library" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-center"><p>📚</p><h4 className="font-bold mt-2 text-sm">The Library</h4><p className="text-[10px] text-zinc-600 mt-1">Books give depth</p></Link>
+            <Link href="/chronicle" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-center hover:border-zinc-700"><p>📖</p><h4 className="font-bold mt-2 text-sm">The Chronicle</h4><p className="text-[10px] text-zinc-600 mt-1">Story gives meaning</p></Link>
+            <Link href="/word" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-center hover:border-zinc-700"><p>✝️</p><h4 className="font-bold mt-2 text-sm">The Word</h4><p className="text-[10px] text-zinc-600 mt-1">Scripture gives foundation</p><p className="text-[10px] text-amber-600/60 mt-3 tracking-widest">✝️ OPEN THE WORD → THE RELICS AWAIT</p></Link>
+            <Link href="/library" className="bg-[#0a0a0a] border border-zinc-800 p-6 text-center hover:border-zinc-700"><p>📚</p><h4 className="font-bold mt-2 text-sm">The Library</h4><p className="text-[10px] text-zinc-600 mt-1">Books give depth</p></Link>
           </div>
-          <div className="mt-16 text-center border-t border-amber-900/10 pt-8">
-            <p className="font-black tracking-[0.5em] text-amber-700/50 text-sm">THE CHRONICLE IS OPEN</p>
-            <p className="text-[11px] text-zinc-600 mt-4">Chapter I — Foundation Complete • Chapter II — Testing Awaits</p>
-            <p className="italic text-zinc-700 text-xs mt-2">The next page has not yet been written.</p>
+
+          {/* NAVIGATION SCRIPTURE — FOOTER MOTO ONLY ON HOMEPAGE */}
+          <div className="mt-20 text-center border-t border-amber-900/10 pt-8">
+            <p className="font-black tracking-[0.5em] text-amber-700/40 text-[11px]">THE CHRONICLE IS OPEN</p>
+            <p className="text-[10px] tracking-[0.3em] text-zinc-600 mt-3">Cover → Choose Door → Hear Relic → Understand Chronicle → Root in Word → Go Deeper Library</p>
+            <p className="text-[11px] text-zinc-700 mt-4">Chapter I — Foundation Complete • Chapter II — Testing Awaits</p>
+            <p className="italic text-zinc-700 text-[11px] mt-1">The next page has not yet been written.</p>
           </div>
         </div>
       </section>
