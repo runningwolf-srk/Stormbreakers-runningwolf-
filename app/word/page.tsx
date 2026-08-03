@@ -1,5 +1,10 @@
 import Link from "next/link";
 export default function Page() {
+  const studies = [
+    { r: "I", t: "RunningWolf Blade", v: "Hebrews 4:12", txt: "For the word of God is alive and active. Sharper than any double-edged sword..." },
+    { r: "II", t: "Lord of Lords", v: "Revelation 19:16", txt: "On his robe and on his thigh he has this name written: KING OF KINGS AND LORD OF LORDS." },
+    { r: "III", t: "Blood of Cross", v: "Colossians 1:20", txt: "And through him to reconcile to himself all things... by making peace through his blood, shed on the cross." },
+  ];
   return (
     <main className="min-h-screen bg-[#040404] text-zinc-100 px-6 md:px-12 py-12">
       <div className="max-w-4xl mx-auto">
@@ -8,11 +13,7 @@ export default function Page() {
         <h1 className="text-3xl font-black mt-2">Scripture gives foundation</h1>
         <p className="text-[13px] italic text-zinc-400 mt-3">Relics become discoveries, not lists. Each relic is built on a passage, not around it.</p>
         <div className="mt-10 space-y-6">
-          {[
-            { r:"I", t:"RunningWolf Blade", v:"Hebrews 4:12", txt:"For the word of God is alive and active. Sharper than any double-edged sword..." },
-            { r:"II", t:"Lord of Lords", v:"Revelation 19:16", txt:"KING OF KINGS AND LORD OF LORDS." },
-            { r:"III", t:"Blood of Cross", v:"Colossians 1:20", txt:"Making peace through his blood, shed on the cross." },
-          ].map(s=>(
+          {studies.map((s) => (
             <div key={s.r} className="bg-[#0a0a0a] border border-amber-900/20 p-6">
               <p className="text-[10px] text-zinc-600">RELIC {s.r} — {s.t}</p>
               <p className="text-amber-600/70 text-sm font-bold mt-2">{s.v}</p>
