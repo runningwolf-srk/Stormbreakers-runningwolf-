@@ -5,8 +5,8 @@ export default function Page() {
       <div className="max-w-3xl mx-auto">
         <Link href="/" className="text-[11px] tracking-widest text-zinc-500 hover:text-zinc-300">← Cover</Link>
         <p className="mt-8 text-[11px] tracking-[0.5em] text-amber-700/60">📖 THE CHRONICLE</p>
-        <h1 className="text-3xl font-black mt-2">Stories give meaning</h1>
-        <p className="text-sm text-zinc-500 mt-4">Long-form narrative — why each relic had to be forged.</p>
+        <h1 className="text-3xl font-black mt-2">Stories reveal meaning</h1>
+        <p className="text-sm text-zinc-500 mt-4">Narrative behind each relic — why it had to be forged.</p>
       </div>
     </main>
   );
