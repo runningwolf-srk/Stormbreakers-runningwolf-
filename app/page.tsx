@@ -5,7 +5,7 @@ export default function Cover() {
         <p className="text-[11px] tracking-[0.6em] text-zinc-600">RUNNINGWOLF</p>
         <p className="text-[10px] tracking-[0.5em] text-amber-700/50 mt-2">KEEPER OF THE CHRONICLE</p>
         <p className="text-[9px] tracking-[0.35em] text-zinc-700 mt-3">Guide • Witness • Storyteller • Keeper of Pages</p>
-        <p className="text-zinc-400 text-sm mt-8 max-w-md leading-relaxed">Not the hero above the story.<br/>The power comes from the King, not the warrior.</p>
+        <p className="text-zinc-400 text-sm mt-8 max-w-md leading-relaxed">Not the king. Not the savior. Not the hero above the story.<br/><span className="text-white font-semibold">The witness inside it.</span><br/><span className="text-zinc-500 text-xs mt-2 block">The power comes from the King, not the warrior.</span></p>
 
         <div className="mt-14">
           <h1 className="text-4xl font-black tracking-tight">STORMBREAKERS</h1>
@@ -16,6 +16,7 @@ export default function Cover() {
         <div className="mt-12 flex flex-col items-center gap-1 text-[11px] tracking-widest text-zinc-600">
           <span className="text-amber-500 font-bold">The King</span><span>↓</span><span>The Word</span><span>↓</span><span>The Chronicle</span><span>↓</span><span>The Keeper</span><span>↓</span><span>The Relics</span>
         </div>
+        <p className="text-[9px] tracking-[0.35em] text-zinc-700 mt-6 max-w-sm leading-relaxed">The King gives the Word.<br/>The Word writes the Chronicle.<br/>The Chronicle is carried by the Keeper.<br/>The Keeper unveils the Relics.</p>
       </div>
 
       <div className="w-full border-t border-amber-900/10 px-6 py-10">
@@ -27,7 +28,6 @@ export default function Cover() {
             <a href="/word" className="border border-zinc-800 p-6 rounded-xl text-center bg-zinc-900/20 hover:border-amber-900/30 transition"><p className="text-2xl">✝️</p><p className="text-xs font-bold mt-3 tracking-widest">THE WORD</p><p className="text-[9px] text-zinc-500 mt-1">What is its foundation?</p></a>
             <a href="/library" className="border border-zinc-800 p-6 rounded-xl text-center bg-zinc-900/20 hover:border-amber-900/30 transition"><p className="text-2xl">📚</p><p className="text-xs font-bold mt-3 tracking-widest">THE LIBRARY</p><p className="text-[9px] text-zinc-500 mt-1">How do I go deeper?</p></a>
           </div>
-          <p className="text-center text-[9px] tracking-[0.3em] text-zinc-700 mt-8">The King gives the Word. The Word creates the Chronicle. The Chronicle is carried by the Keeper. The Keeper reveals the Relics.</p>
         </div>
       </div>
     </div>
