@@ -40,7 +40,8 @@ export default function HallOfRelicsPage() {
               <div className="p-3">
                 <h4 className="font-bold">{v.title}</h4>
                 <p className="text-[11px] text-amber-700/50 mt-1">{v.verse}</p>
-                <p className="text-[10px] text-zinc-600 mt-2">Image → Scripture → Story → Song → Video → Reflection</p>
+                {/* POLISHED WORDING — ARTIFACT FITS HALL OF RELICS */}
+                <p className="text-[10px] text-zinc-500 mt-2">Artifact → Scripture → Story → Song → Video → Reflection</p>
               </div>
             </div>
           ))}
@@ -67,7 +68,7 @@ export default function HallOfRelicsPage() {
         <div className="mt-12 text-center">
           <p className="font-black tracking-[0.4em] text-amber-700/50 text-sm">THE WORD GUIDES THE BLADE</p>
           <p className="text-[11px] text-zinc-700 mt-2">Viking is the binding. Scripture is the pages. The King is the center.</p>
-          <p className="text-[10px] text-zinc-600 mt-4">Hear it (Relics) → Understand it (Chronicle) → Root it (Word) → Go deeper (Library)</p>
+          <p className="text-[10px] text-zinc-600 mt-4">Cover → Choose Door → Hear Relic → Understand Chronicle → Root in Word → Go Deeper Library</p>
         </div>
       </div>
     </main>
