@@ -5,9 +5,12 @@ export default function WordPage() {
     { num: "I", title: "RunningWolf Blade", verse: "Hebrews 4:12", status: "revealed", icon: "⚔️" },
     { num: "II", title: "Lord of Lords", verse: "Revelation 19:16", status: "revealed", icon: "👑" },
     { num: "III", title: "Blood of Cross", verse: "Colossians 1:20", status: "revealed", icon: "✝️" },
-    { num: "IV", title: "Wilderness", verse: "Sealed until the next page is revealed", status: "sealed", icon: "🔒" },
-    { num: "V", title: "Shadow", verse: "Sealed until the next page is revealed", status: "sealed", icon: "🔒" },
-    { num: "VI", title: "Oath", verse: "Sealed until the next page is revealed", status: "sealed", icon: "🔒" },
+  ];
+
+  const sealed = [
+    { num: "IV", title: "WILDERNESS" },
+    { num: "V", title: "SHADOW" },
+    { num: "VI", title: "OATH" },
   ];
 
   return (
@@ -28,15 +31,27 @@ export default function WordPage() {
 
           <div className="grid md:grid-cols-3 gap-4">
             {relics.map((r) => (
-              <div key={r.num} className={`border p-5 ${r.status==="revealed"? "bg-[#111] border-amber-900/30" : "bg-black border-zinc-800 opacity-60"}`}>
+              <div key={r.num} className="bg-[#111] border border-amber-900/30 p-5">
                 <div className="flex items-center justify-between">
                   <p className="text-[10px] tracking-widest text-zinc-600">RELIC {r.num}</p>
                   <p>{r.icon}</p>
                 </div>
                 <h4 className="font-bold mt-2">{r.title}</h4>
                 <p className="text-[11px] text-amber-700/50 mt-1">{r.verse}</p>
-                {r.status==="revealed" && <p className="text-[10px] text-zinc-600 mt-3">Image → Scripture → Story → Song → Video → Reflection</p>}
-                {r.status==="sealed" && <p className="text-[10px] text-zinc-600 mt-3 italic">🔒 Sealed until the next page is revealed.</p>}
+                <p className="text-[10px] text-zinc-600 mt-3">Image → Scripture → Story → Song → Video → Reflection</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 grid md:grid-cols-3 gap-4">
+            {sealed.map((r) => (
+              <div key={r.num} className="bg-black border border-zinc-800 p-5 opacity-60">
+                <p className="text-[10px] tracking-widest text-zinc-600">RELIC {r.num}</p>
+                <div className="flex items-center gap-2 mt-2">
+                  <span className="text-xs">🔒</span>
+                  <h4 className="font-bold text-sm tracking-wide">{r.title}</h4>
+                </div>
+                <p className="text-[11px] text-zinc-600 mt-3 italic">Sealed until the next page is revealed.</p>
               </div>
             ))}
           </div>
