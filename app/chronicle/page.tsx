@@ -5,21 +5,32 @@ export default function Chronicle() {
         <div className="text-center mb-14">
           <p className="text-[10px] tracking-[0.6em] text-amber-700/60">📖 THE CHRONICLE</p>
           <h1 className="text-3xl md:text-4xl font-black mt-4">Stories reveal meaning</h1>
-          <p className="text-zinc-400 text-sm mt-4 max-w-xl mx-auto leading-relaxed">This is where the battles, scars, victories, failures, and testimonies behind each relic are preserved.<br/><span className="text-zinc-200 font-semibold">Not another music page. This is the story behind the artifact.</span></p>
+          <p className="text-zinc-400 text-sm mt-4 max-w-xl mx-auto leading-relaxed">
+            This is where the battles, scars, victories, failures, and testimonies behind each relic are preserved.<br/>
+            <span className="text-zinc-200 font-semibold">Not another music page. This is the story behind the artifact.</span>
+          </p>
         </div>
 
         <div className="border border-amber-900/20 rounded-xl p-8 md:p-10 bg-zinc-900/20">
           <p className="text-[10px] tracking-[0.4em] text-amber-700/60">CHAPTER I — FOUNDATION</p>
           <h2 className="text-2xl font-bold mt-4">The Keeper&apos;s Oath</h2>
+
           <div className="mt-6 space-y-4 text-zinc-300 text-sm leading-relaxed">
-            <p>RunningWolf is not the center.<br/>He is the guide who carries the pages.</p>
-            <p>Not the king. Not the savior. Not the hero above the story.</p>
-            <p className="text-lg font-semibold text-white">Not the hero above the story —<br/>the witness inside it.</p>
-            <p className="text-amber-200/80 font-semibold">The Keeper preserves, records, and points back to the King.<br/>The power comes from the King, not the warrior.</p>
+            <p className="text-zinc-100">Not the King. Not the Savior. Not the hero above the story.</p>
+            <p className="text-lg font-semibold text-white">The witness inside it.</p>
+            <p className="text-zinc-400 text-xs mt-2">The Keeper preserves, records, and points back to the King.</p>
+            <p className="text-amber-200/80 font-semibold mt-6">The power comes from the King, not the warrior.</p>
           </div>
+
+          <div className="mt-10 border-t border-amber-900/10 pt-8">
+            <p className="text-[9px] tracking-[0.4em] text-zinc-600 text-center mb-3">SIGNATURE OATH</p>
+            <p className="text-center text-zinc-200 text-sm italic">Not the hero above the story —<br/>the witness inside it.</p>
+          </div>
+
           <div className="mt-10 flex flex-col items-center gap-1 text-[11px] tracking-widest text-zinc-600">
             <span className="text-amber-500 font-bold">The King</span><span>↓</span><span>The Word</span><span>↓</span><span>The Chronicle</span><span>↓</span><span>The Keeper</span><span>↓</span><span>The Relics</span>
           </div>
+          <p className="text-[9px] tracking-[0.35em] text-zinc-700 mt-6 text-center leading-relaxed">The King gives the Word.<br/>The Word writes the Chronicle.<br/>The Chronicle is carried by the Keeper.<br/>The Keeper unveils the Relics.</p>
         </div>
 
         <div className="mt-10 grid gap-4">
