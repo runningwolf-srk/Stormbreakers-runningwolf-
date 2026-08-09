@@ -40,11 +40,11 @@ export default function Home(){
         <div style={{marginTop:22, display:'grid', gap:10, width:'100%'}}>
           <a href="/hall" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>Hall of Relics — 3 Revealed</a>
           <a href="/word" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>The Word — Scripture Live</a>
-          <a href="/chronicle" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>Chapter I — The Keepers Oath</a>
+          <a href="/chronicle" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>Chapter I — The Keeper&apos;s Oath</a>
           <a href="/library" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>The Library — Expanding</a>
         </div>
         <p style={{fontSize:9, marginTop:22, color:'#6a5a42', letterSpacing:3}}>THE KING → THE WORD → THE CHRONICLE → THE KEEPER → THE RELICS</p>
       </div>
     </div>
   )
-            }
+}
