@@ -1,4 +1,3 @@
-File app/page.tsx
 export default function Home(){
   return(
     <div style={{background:'#050507', color:'#e8e0c8', minHeight:'100vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', textAlign:'center', padding:24}}>
