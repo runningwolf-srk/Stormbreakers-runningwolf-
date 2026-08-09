@@ -10,29 +10,39 @@ export default function HallPage(){
           <p style={{fontSize:13, lineHeight:1.6, color:'#c8b896'}}>The songs of Stormbreakers become artifacts. Each relic is a piece of the journey—music created from Scripture, story, and reflection.</p>
         </div>
         <div style={{marginTop:32}}>
-          <p style={{fontSize:11, letterSpacing:4, color:'#7a6a4e'}}>3 REVEALED</p>
-          <div style={{marginTop:14, display:'grid', gap:12}}>
+          <p style={{fontSize:11, letterSpacing:4, color:'#7a6a4e'}}>3 REVEALED — PRESS PLAY, SOUND IS ON</p>
+          <div style={{marginTop:14, display:'grid', gap:20}}>
             <div style={{background:'#0e0c0a', border:'1px solid #2a2318', borderRadius:12, padding:'16px'}}>
-              <div style={{fontSize:13, fontWeight:800}}>⚔️ RunningWolf Blade</div>
-              <div style={{fontSize:11, color:'#8a7a62', marginTop:6}}>Hebrews 4:12 — The Word guides the blade.</div>
+              <div style={{fontSize:13, fontWeight:800}}>⚔️ RunningWolf Blade — Hebrews 4:12</div>
+              <div style={{position:'relative', paddingTop:'56.25%', borderRadius:8, overflow:'hidden', marginTop:12, background:'#000'}}>
+                <iframe style={{position:'absolute', top:0, left:0, width:'100%', height:'100%', border:0}} src="https://www.youtube-nocookie.com/embed/CZ6tylWuerQ?rel=0&modestbranding=1" title="RunningWolf Blade" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              </div>
+              <div style={{fontSize:11, color:'#8a7a62', marginTop:8}}>The Word guides the blade.</div>
             </div>
             <div style={{background:'#0e0c0a', border:'1px solid #2a2318', borderRadius:12, padding:'16px'}}>
-              <div style={{fontSize:13, fontWeight:800}}>👑 Lord of Lords</div>
-              <div style={{fontSize:11, color:'#8a7a62', marginTop:6}}>Revelation 19:16 — When the Keeper kneels, the King stands.</div>
+              <div style={{fontSize:13, fontWeight:800}}>👑 Lord of Lords — Revelation 19:16</div>
+              <div style={{position:'relative', paddingTop:'56.25%', borderRadius:8, overflow:'hidden', marginTop:12, background:'#000'}}>
+                <iframe style={{position:'absolute', top:0, left:0, width:'100%', height:'100%', border:0}} src="https://www.youtube-nocookie.com/embed/9vP0NPrEv9s?rel=0&modestbranding=1" title="Lord of Lords" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              </div>
+              <div style={{fontSize:11, color:'#8a7a62', marginTop:8}}>When the Keeper kneels, the King stands.</div>
             </div>
             <div style={{background:'#0e0c0a', border:'1px solid #2a2318', borderRadius:12, padding:'16px'}}>
-              <div style={{fontSize:13, fontWeight:800}}>✝️ Blood of Cross</div>
-              <div style={{fontSize:11, color:'#8a7a62', marginTop:6}}>Colossians 1:20 — Peace was bought by blood.</div>
+              <div style={{fontSize:13, fontWeight:800}}>✝️ Blood of Cross — Colossians 1:20</div>
+              <div style={{position:'relative', paddingTop:'56.25%', borderRadius:8, overflow:'hidden', marginTop:12, background:'#000'}}>
+                <iframe style={{position:'absolute', top:0, left:0, width:'100%', height:'100%', border:0}} src="https://www.youtube-nocookie.com/embed/4lcbjsNLlzo?rel=0&modestbranding=1" title="Blood of Cross" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              </div>
+              <div style={{fontSize:11, color:'#8a7a62', marginTop:8}}>Peace was bought by blood.</div>
             </div>
           </div>
         </div>
         <div style={{marginTop:36, borderTop:'1px solid #1a1610', paddingTop:16}}>
           <p style={{fontSize:11, letterSpacing:4, color:'#5a4a32'}}>16 SEALED</p>
-          <p style={{fontSize:11, color:'#6a5a42', marginTop:10, lineHeight:1.6}}>The remaining relics remain completely unnamed and sealed. They will be revealed only as their songs and stories are completed. No future names are revealed here.</p>
+          <p style={{fontSize:11, color:'#6a5a42', marginTop:10, lineHeight:1.6}}>The remaining relics remain completely unnamed and sealed. They will be revealed only as their songs and stories are completed.</p>
           <div style={{marginTop:14, display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, opacity:0.35}}>
             {Array.from({length:16}).map((_,i)=>(<div key={i} style={{border:'1px solid #1e1a14', borderRadius:8, padding:'10px', textAlign:'center', fontSize:10, color:'#5a4a32'}}>SEALED {String(i+4).padStart(2,'0')}</div>))}
           </div>
         </div>
+        <a href="/" style={{marginTop:32, display:'inline-block', fontSize:11, color:'#6a5a42', textDecoration:'none', border:'1px solid #1e1a14', borderRadius:20, padding:'8px 16px'}}>← RETURN TO COVER</a>
       </div>
     </div>
   )
