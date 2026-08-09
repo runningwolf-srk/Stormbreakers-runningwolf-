@@ -2,7 +2,7 @@ export default function Home(){
   return(
     <div style={{background:'#050507', color:'#e8e0c8', minHeight:'100vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', textAlign:'center', padding:24}}>
       <div style={{width:140, height:140, borderRadius:'50%', overflow:'hidden', border:'2px solid #b88a3a', marginBottom:16, boxShadow:'0 0 30px rgba(184,138,58,0.3)'}}>
-        <img src="/avatar.jpg" alt="RunningWolf" style={{width:'100%', height:'100%', objectFit:'cover'}} />
+        <img src="/763847743_1664822977910376_5098702148838621819_n-1.webp" alt="RunningWolf" style={{width:'100%', height:'100%', objectFit:'cover'}} />
       </div>
       <p style={{fontSize:10, letterSpacing:6, color:'#9a8a6e'}}>STORMBREAKERS</p>
       <p style={{fontSize:12, letterSpacing:3, color:'#b88a3a', marginTop:8, fontWeight:700}}>RUNNINGWOLF</p>
