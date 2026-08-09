@@ -9,7 +9,6 @@ export default function WordPage(){
         <div style={{marginTop:18, borderLeft:'2px solid #2a2318', paddingLeft:14}}>
           <p style={{fontSize:13, lineHeight:1.6, color:'#c8b896'}}>Scripture gives every artifact its foundation. The music may be cinematic. The imagery may be Viking. But the foundation is the Word.</p>
         </div>
-
         <div style={{marginTop:32, display:'grid', gap:28}}>
           <div style={{background:'#0e0c0a', border:'1px solid #1e1a14', borderRadius:12, padding:'18px'}}>
             <p style={{fontSize:11, letterSpacing:3, color:'#b88a3a'}}>📖 RUNNINGWOLF BLADE</p>
@@ -32,7 +31,7 @@ export default function WordPage(){
             <p style={{fontSize:11, color:'#b88a3a', marginTop:12, fontStyle:'italic'}}>Peace was bought by blood.</p>
           </div>
         </div>
-        <p style={{fontSize:10, color:'#5a4a32', marginTop:32, textAlign:'center', lineHeight:1.5}}>This is an open-Bible experience, designed to be read easily on a phone, especially at church.</p>
+        <a href="/" style={{marginTop:32, display:'inline-block', fontSize:11, color:'#6a5a42', textDecoration:'none', border:'1px solid #1e1a14', borderRadius:20, padding:'8px 16px'}}>← RETURN TO COVER</a>
       </div>
     </div>
   )
