@@ -1,32 +1,20 @@
 export default function Hall() {
   return (
     <div className="min-h-screen bg-[#040404] text-zinc-100 px-6 py-20">
-      <div className="max-w-4xl mx-auto text-center">
-        <p className="text-[10px] tracking-[0.6em] text-amber-700/60">⚔️ HALL OF RELICS — THE ARTIFACT</p>
-        <h1 className="text-3xl md:text-4xl font-black mt-4">Songs become artifacts.</h1>
-        <p className="text-zinc-500 text-sm mt-2">The creation sparks curiosity.</p>
-        <p className="text-[10px] tracking-[0.4em] text-zinc-600 mt-8">19 Relics • 3 Revealed • 16 Sealed • The Chronicle Continues</p>
-
-        <div className="mt-10 border border-amber-900/15 rounded-xl p-5 bg-zinc-900/20 max-w-lg mx-auto">
-          <p className="text-[9px] tracking-[0.4em] text-zinc-500 mb-2">CREATION JOURNEY — How a song is forged</p>
-          <p className="text-[10px] tracking-widest text-zinc-500">Artifact → Scripture → Story → Song → Video → Reflection</p>
+      <div className="max-w-5xl mx-auto">
+        <p className="text-[10px] tracking-[0.6em] text-amber-700/60 text-center">⚔️ HALL OF RELICS</p>
+        <h1 className="text-3xl font-black text-center mt-4">What was created?</h1>
+        <p className="text-center text-zinc-500 text-xs mt-3">The creation sparks curiosity.</p>
+        <p className="text-center text-[10px] tracking-[0.3em] text-amber-700/30 mt-6">19 Relics • 3 Revealed • 16 Sealed • The Chronicle Continues</p>
+        <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <div className="border border-amber-900/20 p-6 rounded-xl bg-zinc-900/20"><p className="text-[9px] text-amber-700/50 tracking-widest">RELIC I — REVEALED</p><h3 className="font-bold mt-3">⚔️ RunningWolf Blade</h3><p className="text-[10px] text-zinc-500 mt-1">Hebrews 4:12</p><p className="text-xs text-zinc-400 mt-3">For the word of God is alive and active. Sharper than any double-edged sword.</p></div>
+          <div className="border border-amber-900/20 p-6 rounded-xl bg-zinc-900/20"><p className="text-[9px] text-amber-700/50 tracking-widest">RELIC II — REVEALED</p><h3 className="font-bold mt-3">👑 Lord of Lords</h3><p className="text-[10px] text-zinc-500 mt-1">Revelation 19:16</p><p className="text-xs text-zinc-400 mt-3">KING OF KINGS AND LORD OF LORDS.</p></div>
+          <div className="border border-amber-900/20 p-6 rounded-xl bg-zinc-900/20"><p className="text-[9px] text-amber-700/50 tracking-widest">RELIC III — REVEALED</p><h3 className="font-bold mt-3">✝️ Blood of Cross</h3><p className="text-[10px] text-zinc-500 mt-1">Colossians 1:20</p><p className="text-xs text-zinc-400 mt-3">Peace was not won by the blade. It was bought by blood.</p></div>
         </div>
-
-        <div className="mt-10 grid md:grid-cols-3 gap-4 text-left">
-          <div className="border border-amber-900/20 bg-zinc-900/30 p-7 rounded-xl"><p className="text-[9px] text-zinc-600">RELIC I</p><p className="font-bold mt-2">⚔️ RunningWolf Blade</p><p className="text-xs text-amber-700/60 mt-1">Hebrews 4:12</p></div>
-          <div className="border border-amber-900/20 bg-zinc-900/30 p-7 rounded-xl"><p className="text-[9px] text-zinc-600">RELIC II</p><p className="font-bold mt-2">👑 Lord of Lords</p><p className="text-xs text-amber-700/60 mt-1">Revelation 19:16</p></div>
-          <div className="border border-amber-900/20 bg-zinc-900/30 p-7 rounded-xl"><p className="text-[9px] text-zinc-600">RELIC III</p><p className="font-bold mt-2">✝️ Blood of Cross</p><p className="text-xs text-amber-700/60 mt-1">Colossians 1:20</p></div>
+        <div className="grid md:grid-cols-4 gap-4 mt-8 opacity-40">
+          {Array.from({ length: 16 }).map((_, i) => (<div key={i} className="border border-zinc-800 p-4 rounded-xl text-center"><p className="text-[8px] text-zinc-600 tracking-widest">RELIC {String(i + 4).padStart(2, '0')} — SEALED</p><p className="text-[16px] mt-2">🔒</p><p className="text-[8px] text-zinc-700 mt-2">The Chronicle Continues</p></div>))}
         </div>
-
-        <div className="mt-16 border border-dashed border-amber-900/20 rounded-xl p-12 bg-zinc-900/10">
-          <p className="text-2xl">🔒</p>
-          <p className="text-[11px] tracking-[0.5em] text-zinc-500 mt-4 font-bold">SEALED PAGES</p>
-          <p className="text-sm text-zinc-500 mt-3">16 relics remain sealed.</p>
-          <p className="text-xs text-zinc-600 mt-1">The next chapters have not yet been revealed.</p>
-          <p className="text-[10px] tracking-[0.4em] text-amber-700/30 mt-8">The Chronicle continues.</p>
-        </div>
-
-        <div className="mt-12"><a href="/" className="text-[10px] tracking-[0.5em] text-zinc-600 hover:text-zinc-300">← RETURN TO COVER</a></div>
+        <div className="text-center mt-16"><a href="/" className="text-[10px] tracking-[0.5em] text-zinc-600 hover:text-zinc-300">← RETURN TO COVER</a></div>
       </div>
     </div>
   );
