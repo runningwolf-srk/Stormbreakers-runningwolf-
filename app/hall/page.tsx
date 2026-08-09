@@ -35,11 +35,13 @@ export default function HallPage(){
             </div>
           </div>
         </div>
-        <div style={{marginTop:36, borderTop:'1px solid #1a1610', paddingTop:16}}>
+        <div style={{marginTop:36, borderTop:'1px solid #1a1610', paddingTop:20, textAlign:'center'}}>
           <p style={{fontSize:11, letterSpacing:4, color:'#5a4a32'}}>16 SEALED</p>
-          <p style={{fontSize:11, color:'#6a5a42', marginTop:10, lineHeight:1.6}}>The remaining relics remain completely unnamed and sealed. They will be revealed only as their songs and stories are completed.</p>
-          <div style={{marginTop:14, display:'grid', gridTemplateColumns:'1fr 1fr', gap:8, opacity:0.35}}>
-            {Array.from({length:16}).map((_,i)=>(<div key={i} style={{border:'1px solid #1e1a14', borderRadius:8, padding:'10px', textAlign:'center', fontSize:10, color:'#5a4a32'}}>SEALED {String(i+4).padStart(2,'0')}</div>))}
+          <p style={{fontSize:11, color:'#6a5a42', marginTop:10, lineHeight:1.6, maxWidth:300, marginLeft:'auto', marginRight:'auto'}}>The remaining relics remain completely unnamed and sealed.</p>
+          <div style={{marginTop:20, border:'1px solid #1e1a14', borderRadius:12, padding:'28px 20px', background:'radial-gradient(ellipse at center, rgba(30,26,20,0.6) 0%, transparent 70%)'}}>
+            <div style={{fontSize:20, color:'#3a3020'}}>◍</div>
+            <div style={{fontSize:10, letterSpacing:4, color:'#4a3a22', marginTop:12}}>SEALED PAGES</div>
+            <div style={{fontSize:10, color:'#3a3020', marginTop:8, lineHeight:1.5}}>To be revealed only as their songs and stories are completed.</div>
           </div>
         </div>
         <a href="/" style={{marginTop:32, display:'inline-block', fontSize:11, color:'#6a5a42', textDecoration:'none', border:'1px solid #1e1a14', borderRadius:20, padding:'8px 16px'}}>← RETURN TO COVER</a>
