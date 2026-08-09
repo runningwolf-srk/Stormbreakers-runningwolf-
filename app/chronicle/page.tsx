@@ -48,8 +48,8 @@ export default function ChroniclePage(){
         </div>
 
         <div style={{marginTop:20, opacity:0.35, border:'1px dashed #2a2318', borderRadius:12, padding:'18px', textAlign:'center'}}>
-          <p style={{fontSize:10, letterSpacing:3, color:'#5a4a32'}}>I. THE BREAKING — WAITING FOR TRUE WORDS</p>
-          <p style={{fontSize:10, color:'#4a3a22', marginTop:6, lineHeight:1.5}}>When real testimony is reviewed and ready, it will appear here as the first true page after this oath.</p>
+          <p style={{fontSize:11, letterSpacing:3, color:'#b88a3a'}}>I. THE BREAKING</p>
+          <p style={{fontSize:10, color:'#6a5a42', marginTop:6, lineHeight:1.5, fontStyle:'italic'}}>Awaiting the Keeper's true words.</p>
         </div>
 
         <a href="/" style={{marginTop:28, display:'inline-block', fontSize:11, color:'#6a5a42', textDecoration:'none', border:'1px solid #1e1a14', borderRadius:20, padding:'8px 16px'}}>← RETURN TO COVER</a>
