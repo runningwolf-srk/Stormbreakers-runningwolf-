@@ -1,16 +1,18 @@
-export default function Library() {
-  return (
-    <div style={{background:'#080808', color:'#e5e5e5', minHeight:'100vh', padding:20, display:'flex', alignItems:'center', justifyContent:'center'}}>
-      <div style={{maxWidth:520, width:'100%', background:'#121212', border:'1px solid #222', borderRadius:16, padding:32, textAlign:'center'}}>
-        <h1>THE LIBRARY</h1>
-        <div style={{marginTop:20, display:'grid', gap:10, textAlign:'left'}}>
-          <div style={{padding:12, background:'#1a1a1a', borderRadius:10, border:'1px solid #2a2a2a'}}><p>Chronicle Volumes</p><p style={{fontSize:12, color:'#666'}}>Coming Soon</p></div>
-          <div style={{padding:12, background:'#1a1a1a', borderRadius:10, border:'1px solid #2a2a2a'}}><p>Devotionals</p><p style={{fontSize:12, color:'#666'}}>Coming Soon</p></div>
-          <div style={{padding:12, background:'#1a1a1a', borderRadius:10, border:'1px solid #2a2a2a'}}><p>Study Guides</p><p style={{fontSize:12, color:'#666'}}>Coming Soon</p></div>
-          <div style={{padding:12, background:'#1a1a1a', borderRadius:10, border:'1px solid #2a2a2a'}}><p>Artwork Archive</p><p style={{fontSize:12, color:'#666'}}>Coming Soon</p></div>
-          <div style={{padding:12, background:'#1a1a1a', borderRadius:10, border:'1px solid #2a2a2a'}}><p>Canon Timeline</p><p style={{fontSize:12, color:'#666'}}>Coming Soon</p></div>
+export default function Library(){
+  return(
+    <div style={{background:'#050507', color:'#e8e0c8', minHeight:'100vh'}}>
+      <div style={{maxWidth:640, margin:'0 auto', padding:'20px 18px'}}>
+        <a href="/" style={{color:'#9a8a6e', fontSize:11, textDecoration:'none', letterSpacing:2}}>← STORMBREAKERS</a>
+        <h1 style={{fontSize:22, fontWeight:900, marginTop:16}}>THE LIBRARY</h1>
+        <p style={{fontSize:10, color:'#b88a3a', letterSpacing:3, marginTop:4}}>EXPANDING</p>
+        <div style={{marginTop:20, display:'grid', gap:10}}>
+          <div style={{padding:14, background:'#0e0c0a', border:'1px solid #2a2318', borderRadius:12}}>Volumes — Coming</div>
+          <div style={{padding:14, background:'#0e0c0a', border:'1px solid #2a2318', borderRadius:12}}>Devotionals — Coming</div>
+          <div style={{padding:14, background:'#0e0c0a', border:'1px solid #2a2318', borderRadius:12}}>Study Guides — Coming</div>
+          <div style={{padding:14, background:'#0e0c0a', border:'1px solid #2a2318', borderRadius:12}}>Artwork — Coming</div>
+          <div style={{padding:14, background:'#0e0c0a', border:'1px solid #2a2318', borderRadius:12}}>Timeline — Coming</div>
         </div>
-        <div style={{marginTop:24}}><a href="/" style={{color:'#aaa'}}>← RETURN TO COVER</a></div>
+        <a href="/" style={{display:'block', marginTop:24, textAlign:'center', padding:12, background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#b88a3a', textDecoration:'none', fontSize:12}}>← Back to Cover</a>
       </div>
     </div>
   )
