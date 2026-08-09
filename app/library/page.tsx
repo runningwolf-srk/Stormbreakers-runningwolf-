@@ -1,3 +1,13 @@
 export default function Library() {
-  return (<div className="min-h-screen bg-[#040404] text-zinc-100 px-6 py-20"><div className="max-w-3xl mx-auto text-center"><p className="text-[10px] tracking-[0.6em] text-amber-700/60">📚 THE LIBRARY</p><h1 className="text-3xl font-black mt-4">How do I go deeper?</h1><div className="mt-12 border border-zinc-800 p-6 rounded-xl text-left opacity-60"><p className="text-xs font-bold">🔥 SOURCE DOC — CINEMATIC DRAFT FROM 3 SONGS — PRESERVED SEPARATELY</p><p className="text-[10px] text-zinc-500 mt-2">Not final testimony. Language, themes, relic connections.</p></div><div className="mt-8"><a href="/" className="text-[10px] tracking-[0.5em] text-zinc-600">← RETURN TO COVER</a></div></div></div>);
+  return (
+    <div style={{background:'#040404', color:'white', textAlign:'center', padding:40}}>
+      <h1>THE LIBRARY</h1>
+      <p>Chronicle Volumes - Coming Soon</p>
+      <p>Devotionals - Coming Soon</p>
+      <p>Study Guides - Coming Soon</p>
+      <p>Artwork Archive - Coming Soon</p>
+      <p>Canon Timeline - Coming Soon</p>
+      <br /><a href="/">RETURN TO COVER</a>
+    </div>
+  )
 }
