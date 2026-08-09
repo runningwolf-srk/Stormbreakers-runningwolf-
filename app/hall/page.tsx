@@ -41,7 +41,7 @@ export default function HallPage(){
           <div style={{marginTop:20, border:'1px solid #1e1a14', borderRadius:12, padding:'28px 20px', background:'radial-gradient(ellipse at center, rgba(30,26,20,0.6) 0%, transparent 70%)'}}>
             <div style={{fontSize:20, color:'#3a3020'}}>◍</div>
             <div style={{fontSize:10, letterSpacing:4, color:'#4a3a22', marginTop:12}}>SEALED PAGES</div>
-            <div style={{fontSize:10, color:'#3a3020', marginTop:8, lineHeight:1.5}}>To be revealed only as their songs and stories are completed.</div>
+            <div style={{fontSize:10, color:'#3a3020', marginTop:8, lineHeight:1.5}}>To be revealed only when their songs and stories are ready.</div>
           </div>
         </div>
         <a href="/" style={{marginTop:32, display:'inline-block', fontSize:11, color:'#6a5a42', textDecoration:'none', border:'1px solid #1e1a14', borderRadius:20, padding:'8px 16px'}}>← RETURN TO COVER</a>
