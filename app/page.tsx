@@ -13,26 +13,7 @@ export default function Home(){
   },[]);
   return(
     <div style={{background:'#050507', color:'#e8e0c8', minHeight:'100vh', position:'relative', overflow:'hidden', display:'flex', flexDirection:'column', alignItems:'center', textAlign:'center'}}>
-      <style>{`
-        @keyframes lightDrift {
-          0% { transform: translate(-15%, -10%) scale(1); opacity:0.35; }
-          50% { transform: translate(15%, 10%) scale(1.1); opacity:0.55; }
-          100% { transform: translate(-15%, -10%) scale(1); opacity:0.35; }
-        }
-        @keyframes glowPulse {
-          0% { box-shadow: 0 0 20px rgba(184,138,58,0.15), 0 0 60px rgba(60,100,200,0.1); }
-          50% { box-shadow: 0 0 35px rgba(184,138,58,0.28), 0 0 90px rgba(60,100,200,0.18); }
-          100% { box-shadow: 0 0 20px rgba(184,138,58,0.15), 0 0 60px rgba(60,100,200,0.1); }
-        }
-        @keyframes dust {
-          0% { transform: translateY(0) translateX(0); opacity:0; }
-          10% { opacity:0.4; }
-          90% { opacity:0.4; }
-          100% { transform: translateY(-600px) translateX(20px); opacity:0; }
-        }
-      .door:hover { border-color:#b88a3a!important; box-shadow:0 0 18px rgba(184,138,58,0.35); transform: translateY(-1px); }
-      .door { transition: all 0.4s ease; }
-      `}</style>
+      <style>{`@keyframes lightDrift{0%{transform:translate(-15%,-10%) scale(1);opacity:0.35}50%{transform:translate(15%,10%) scale(1.1);opacity:0.55}100%{transform:translate(-15%,-10%) scale(1);opacity:0.35}}@keyframes glowPulse{0%{box-shadow:0 0 20px rgba(184,138,58,0.15),0 0 60px rgba(60,100,200,0.1)}50%{box-shadow:0 0 35px rgba(184,138,58,0.28),0 0 90px rgba(60,100,200,0.18)}100%{box-shadow:0 0 20px rgba(184,138,58,0.15),0 0 60px rgba(60,100,200,0.1)}}@keyframes dust{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:0.4}90%{opacity:0.4}100%{transform:translateY(-600px) translateX(20px);opacity:0}}.door:hover{border-color:#b88a3a!important;box-shadow:0 0 18px rgba(184,138,58,0.35);transform:translateY(-1px)}.door{transition:all 0.4s ease}`}</style>
       <div style={{position:'absolute', top:'-20%', left:'-20%', width:'140%', height:'140%', background:'radial-gradient(ellipse at 30% 40%, rgba(90,140,255,0.18) 0%, rgba(184,138,58,0.12) 25%, transparent 60%)', animation:'lightDrift 22s ease-in-out infinite', pointerEvents:'none', zIndex:0}}></div>
       <div style={{position:'absolute', top:0, left:0, width:'100%', height:'100%', pointerEvents:'none', zIndex:0}}>
         <div style={{position:'absolute', top:'30%', left:'15%', width:2, height:2, background:'#b88a3a', borderRadius:'50%', animation:'dust 18s linear infinite'}}></div>
