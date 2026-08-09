@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 export default function Home(){
-  const =useState({x:0,y:0});
+  const = useState({x:0,y:0});
   useEffect(()=>{
     const handleMove=(e:any)=>{
       const x=(e.clientX / window.innerWidth - 0.5)*12;
@@ -30,8 +30,8 @@ export default function Home(){
           90% { opacity:0.4; }
           100% { transform: translateY(-600px) translateX(20px); opacity:0; }
         }
-       .door:hover { border-color:#b88a3a!important; box-shadow:0 0 18px rgba(184,138,58,0.35); transform: translateY(-1px); }
-       .door { transition: all 0.4s ease; }
+      .door:hover { border-color:#b88a3a!important; box-shadow:0 0 18px rgba(184,138,58,0.35); transform: translateY(-1px); }
+      .door { transition: all 0.4s ease; }
       `}</style>
       <div style={{position:'absolute', top:'-20%', left:'-20%', width:'140%', height:'140%', background:'radial-gradient(ellipse at 30% 40%, rgba(90,140,255,0.18) 0%, rgba(184,138,58,0.12) 25%, transparent 60%)', animation:'lightDrift 22s ease-in-out infinite', pointerEvents:'none', zIndex:0}}></div>
       <div style={{position:'absolute', top:0, left:0, width:'100%', height:'100%', pointerEvents:'none', zIndex:0}}>
@@ -55,10 +55,10 @@ export default function Home(){
           <p style={{fontSize:11, color:'#b88a3a', marginTop:8, fontStyle:'italic'}}>The Word guides the blade.</p>
         </div>
         <div style={{marginTop:22, display:'grid', gap:10, width:'100%'}}>
-          <a href="/hall" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>⚔️ Hall of Relics — 3 Revealed</a>
-          <a href="/word" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>✝️ The Word — Scripture Live</a>
-          <a href="/chronicle" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>📖 Chapter I — The Keeper's Oath</a>
-          <a href="/library" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>📚 The Library — Expanding</a>
+          <a href="/hall" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>Hall of Relics — 3 Revealed</a>
+          <a href="/word" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>The Word — Scripture Live</a>
+          <a href="/chronicle" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>Chapter I — The Keepers Oath</a>
+          <a href="/library" className="door" style={{padding:'14px', background:'#141210', border:'1px solid #2a2318', borderRadius:12, color:'#e8e0c8', textDecoration:'none'}}>The Library — Expanding</a>
         </div>
         <p style={{fontSize:9, marginTop:22, color:'#6a5a42', letterSpacing:3}}>THE KING → THE WORD → THE CHRONICLE → THE KEEPER → THE RELICS</p>
       </div>
