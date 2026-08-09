@@ -12,6 +12,7 @@ export default function Hall(){
             <div style={{marginTop:12, width:'100%', aspectRatio:'16 / 9', borderRadius:8, overflow:'hidden', background:'#000'}}>
               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CZ6tylWuerQ" title="RunningWolf Blade" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{border:0}}></iframe>
             </div>
+          </div>
           <div style={{padding:16, background:'#0e0c0a', border:'1px solid #2a2318', borderRadius:12}}>
             <p style={{fontSize:13, fontWeight:800}}>Lord of Lords</p>
             <p style={{fontSize:10, color:'#b88a3a', marginTop:4}}>Revelation 19:16 — When the Keeper kneels, the King stands</p>
@@ -25,6 +26,7 @@ export default function Hall(){
             <div style={{marginTop:12, width:'100%', aspectRatio:'16 / 9', borderRadius:8, overflow:'hidden', background:'#000'}}>
               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4lcbjsNLlzo" title="Blood of Cross" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{border:0}}></iframe>
             </div>
+          </div>
           <div style={{padding:16, background:'#141210', border:'1px dashed #2a2318', borderRadius:12, opacity:0.6}}>
             <p style={{fontSize:11}}>16 Sealed Relics — Awaiting Unveiling</p>
           </div>
@@ -33,4 +35,4 @@ export default function Hall(){
       </div>
     </div>
   )
-        }
+}
