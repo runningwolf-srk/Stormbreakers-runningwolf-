@@ -7,7 +7,7 @@ export default function ChroniclePage(){
         <h1 style={{fontSize:22, letterSpacing:4, marginTop:24, fontWeight:900}}>📖 THE CHRONICLE</h1>
         <p style={{fontSize:11, letterSpacing:2, color:'#b88a3a', marginTop:8, fontWeight:700}}>WHY WAS THIS CREATED?</p>
         <div style={{marginTop:18, borderLeft:'2px solid #2a2318', paddingLeft:14}}>
-          <p style={{fontSize:13, lineHeight:1.6, color:'#c8b896'}}>The stories behind the artifacts will be preserved here—not as mythology, but as testimony.</p>
+          <p style={{fontSize:13, lineHeight:1.6, color:'#c8b896'}}>The stories behind the artifacts will be written here—not as mythology, but as testimony.</p>
         </div>
         <div style={{marginTop:28, background:'#0e0c0a', border:'1px solid #1e1a14', borderRadius:12, padding:'20px'}}>
           <p style={{fontSize:13, fontWeight:800, letterSpacing:2}}>CHAPTER I — THE KEEPER'S OATH</p>
@@ -22,6 +22,7 @@ export default function ChroniclePage(){
           <p style={{fontSize:11, letterSpacing:3, color:'#5a4a32'}}>FUTURE PAGES SEALED</p>
           <p style={{fontSize:10, color:'#4a3a22', marginTop:8}}>Pages will appear here like an open book when written.</p>
         </div>
+        <a href="/" style={{marginTop:28, display:'inline-block', fontSize:11, color:'#6a5a42', textDecoration:'none', border:'1px solid #1e1a14', borderRadius:20, padding:'8px 16px'}}>← RETURN TO COVER</a>
       </div>
     </div>
   )
