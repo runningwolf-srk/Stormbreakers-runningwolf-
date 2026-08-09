@@ -25,10 +25,10 @@ export default function Cover() {
         <div className="max-w-5xl mx-auto">
           <p className="text-center text-[10px] tracking-[0.6em] text-zinc-600 mb-6">CHOOSE A DOOR</p>
           <div className="grid md:grid-cols-4 gap-4">
-            <a href="/music" className="border border-zinc-800 p-6 rounded-xl text-center bg-zinc-900/20 hover:border-amber-900/30 transition"><p className="text-2xl">⚔️</p><p className="text-xs font-bold mt-3 tracking-widest">HALL OF RELICS</p><p className="text-[9px] text-zinc-500 mt-1">What was created?</p></a>
-            <a href="/chronicle" className="border border-zinc-800 p-6 rounded-xl text-center bg-zinc-900/20 hover:border-amber-900/30 transition"><p className="text-2xl">📖</p><p className="text-xs font-bold mt-3 tracking-widest">THE CHRONICLE</p><p className="text-[9px] text-zinc-500 mt-1">Why was it created?</p></a>
-            <a href="/word" className="border border-zinc-800 p-6 rounded-xl text-center bg-zinc-900/20 hover:border-amber-900/30 transition"><p className="text-2xl">✝️</p><p className="text-xs font-bold mt-3 tracking-widest">THE WORD</p><p className="text-[9px] text-zinc-500 mt-1">What is its foundation?</p></a>
-            <a href="/library" className="border border-zinc-800 p-6 rounded-xl text-center bg-zinc-900/20 hover:border-amber-900/30 transition"><p className="text-2xl">📚</p><p className="text-xs font-bold mt-3 tracking-widest">THE LIBRARY</p><p className="text-[9px] text-zinc-500 mt-1">How do I go deeper?</p></a>
+            <a href="/music" className="border border-zinc-800 p-6 rounded-xl text-center bg-zinc-900/20"><p className="text-2xl">⚔️</p><p className="text-xs font-bold mt-3 tracking-widest">HALL OF RELICS</p><p className="text-[9px] text-zinc-500 mt-1">3 Revealed • 16 Sealed</p></a>
+            <a href="/chronicle" className="border border-amber-900/20 p-6 rounded-xl text-center bg-zinc-900/20"><p className="text-2xl">📖</p><p className="text-xs font-bold mt-3 tracking-widest">THE CHRONICLE</p><p className="text-[9px] text-amber-700/50 mt-1">Framework locked • Chapter I in progress</p></a>
+            <a href="/word" className="border border-zinc-800 p-6 rounded-xl text-center bg-zinc-900/20"><p className="text-2xl">✝️</p><p className="text-xs font-bold mt-3 tracking-widest">THE WORD</p><p className="text-[9px] text-zinc-500 mt-1">Foundation</p></a>
+            <a href="/library" className="border border-zinc-800 p-6 rounded-xl text-center bg-zinc-900/20"><p className="text-2xl">📚</p><p className="text-xs font-bold mt-3 tracking-widest">THE LIBRARY</p><p className="text-[9px] text-zinc-500 mt-1">Deeper</p></a>
           </div>
         </div>
       </div>
