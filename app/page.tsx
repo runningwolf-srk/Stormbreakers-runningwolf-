@@ -2,9 +2,9 @@ export default function Cover() {
   return (
     <div style={{background:'#050507', color:'#e8e0c8', minHeight:'100vh'}}>
       <div style={{width:'100%', maxWidth:640, margin:'0 auto', background:'#000', borderRadius:'0 0 14px 14px', overflow:'hidden'}}>
-        <div style={{width:'100%', height:85, overflow:'hidden', position:'relative'}}>
-          <img src="/763847743_1664822977910376_5098702148838621819_n-1.webp" style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block'}} alt="Stormbreakers" />
-          <div style={{position:'absolute', bottom:0, left:0, right:0, height:60, background:'linear-gradient(to top, #050507, rgba(0,0,0,0))'}}></div>
+        <div style={{width:'100%', height:82, overflow:'hidden', position:'relative'}}>
+          <img src="/763847743_1664822977910376_5098702148838621819_n-1.webp" style={{width:'100%', height:'100%', objectFit:'cover', objectPosition:'center 42%', display:'block'}} alt="Stormbreakers" />
+          <div style={{position:'absolute', bottom:0, left:0, right:0, height:40, background:'linear-gradient(to top, #050507, rgba(0,0,0,0))'}}></div>
         </div>
       </div>
       <div style={{maxWidth:640, margin:'0 auto', padding:'10px 18px 20px', textAlign:'center'}}>
