@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 export default function Home(){
-  const = useState
+  const p = useState({x:0,y:0});
+  const pos = p.at(0) as any;
+  const setPos = p.at(1) as any;
   useEffect(()=>{
     const handleMove=(e:any)=>{
       const x=(e.clientX / window.innerWidth - 0.5)*12;
@@ -45,4 +47,4 @@ export default function Home(){
       </div>
     </div>
   )
-
+            }
